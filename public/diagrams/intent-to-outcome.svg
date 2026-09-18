@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1100 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="io-title io-desc">
+  <title id="io-title">Intent equals outcome</title>
+  <desc id="io-desc">A human starts the work. The agent launches in a context window with observability. Authentication and security open the path. Memory and data sit at the core. Tools, guardrails, evals, and governance condition the work. It lands. Outcome is the value.</desc>
+
+  <defs>
+    <pattern id="io-fabric" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)">
+      <rect width="8" height="8" fill="#FBF9F4"/>
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#1F2937" stroke-width="0.7" stroke-opacity="0.22"/>
+      <line x1="0" y1="0" x2="8" y2="0" stroke="#FACC15" stroke-width="0.55" stroke-opacity="0.55"/>
+    </pattern>
+    <marker id="io-gold-head" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#FACC15"/>
+    </marker>
+  </defs>
+
+  <rect width="1100" height="640" fill="#FBF9F4"/>
+
+  <text x="550" y="42" text-anchor="middle" font-weight="900" font-size="26" fill="#1F2937" letter-spacing="-0.3" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">INTENT EQUALS OUTCOME</text>
+  <text x="550" y="66" text-anchor="middle" font-style="italic" font-size="14" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">A human starts it. An agent runs it. Value comes out the other side.</text>
+
+  <circle cx="640" cy="360" r="168" fill="none" stroke="url(#io-fabric)" stroke-width="86"/>
+  <circle cx="640" cy="360" r="211" fill="none" stroke="#1F2937" stroke-width="1.1" stroke-opacity="0.28"/>
+  <circle cx="640" cy="360" r="125" fill="none" stroke="#1F2937" stroke-width="1" stroke-dasharray="4 4" stroke-opacity="0.22"/>
+  <text x="640" y="128" text-anchor="middle" font-style="italic" font-size="11" fill="#6B6860" letter-spacing="2.2" font-family="Georgia, 'Times New Roman', serif">THE WORK IN BETWEEN</text>
+
+  <g stroke="#1F2937" stroke-width="1.15" stroke-opacity="0.38" fill="none">
+    <line x1="522" y1="360" x2="581" y2="258"/>
+    <line x1="581" y1="258" x2="699" y2="258"/>
+    <line x1="699" y1="258" x2="758" y2="360"/>
+    <line x1="758" y1="360" x2="699" y2="462"/>
+    <line x1="699" y1="462" x2="581" y2="462"/>
+    <line x1="581" y1="462" x2="522" y2="360"/>
+    <line x1="522" y1="360" x2="758" y2="360"/>
+    <line x1="581" y1="258" x2="699" y2="462"/>
+    <line x1="699" y1="258" x2="581" y2="462"/>
+  </g>
+
+  <line x1="180" y1="360" x2="248" y2="360" stroke="#FACC15" stroke-width="5" stroke-linecap="round"/>
+  <line x1="416" y1="360" x2="930" y2="360" stroke="#FACC15" stroke-width="5" stroke-linecap="round" marker-end="url(#io-gold-head)"/>
+
+  <!-- the human is the loop -->
+  <circle cx="130" cy="360" r="50" fill="#FACC15" stroke="#1F2937" stroke-width="2.2"/>
+  <text x="130" y="354" text-anchor="middle" font-weight="900" font-size="13" fill="#142840" letter-spacing="1.2" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">INTENT</text>
+  <text x="130" y="372" text-anchor="middle" font-size="10" fill="#142840" font-family="Georgia, 'Times New Roman', serif" font-style="italic">human in the loop</text>
+
+  <!-- launch: context window + observability -->
+  <rect x="248" y="288" width="168" height="144" rx="5" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.6"/>
+  <rect x="248" y="288" width="168" height="18" fill="#1F2937"/>
+  <rect x="256" y="293" width="8" height="8" fill="#FACC15"/>
+  <text x="270" y="301" fill="#FACC15" font-size="9" font-weight="700" letter-spacing="1.2" font-family="system-ui, -apple-system, sans-serif">THE AGENT</text>
+  <text x="262" y="328" fill="#1F2937" font-size="10" font-weight="700" font-family="system-ui, -apple-system, sans-serif">Context window</text>
+  <rect x="262" y="338" width="118" height="5" fill="#1F2937" opacity="0.22"/>
+  <rect x="262" y="350" width="92" height="5" fill="#1F2937" opacity="0.16"/>
+  <rect x="262" y="362" width="104" height="5" fill="#1F2937" opacity="0.12"/>
+  <rect x="368" y="360" width="7" height="10" fill="#FACC15"/>
+  <line x1="248" y1="384" x2="416" y2="384" stroke="#1F2937" stroke-width="1" opacity="0.25"/>
+  <text x="332" y="404" text-anchor="middle" fill="#1F2937" font-size="10" font-weight="700" font-family="system-ui, -apple-system, sans-serif">Observability</text>
+  <text x="332" y="418" text-anchor="middle" fill="#6B6860" font-size="9" font-family="Georgia, 'Times New Roman', serif" font-style="italic">watch the run</text>
+
+  <!-- core: memory and data -->
+  <circle cx="640" cy="360" r="58" fill="#FACC15" fill-opacity="0.22"/>
+  <circle cx="640" cy="360" r="46" fill="#FACC15" stroke="#1F2937" stroke-width="2.2"/>
+  <text x="640" y="354" text-anchor="middle" font-weight="900" font-size="11" fill="#142840" letter-spacing="0.6" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">MEMORY</text>
+  <text x="640" y="370" text-anchor="middle" font-weight="900" font-size="11" fill="#142840" letter-spacing="0.6" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">AND DATA</text>
+
+  <g font-family="system-ui, -apple-system, sans-serif" text-anchor="middle">
+    <circle cx="581" cy="258" r="20" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.6"/>
+    <text x="581" y="230" font-size="11" font-weight="700" fill="#1F2937">Guardrails</text>
+
+    <circle cx="699" cy="258" r="20" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.6"/>
+    <text x="699" y="218" font-size="11" font-weight="700" fill="#1F2937">Tools</text>
+    <text x="699" y="232" font-size="10" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif" font-style="italic">the agent acts</text>
+
+    <circle cx="522" cy="360" r="42" fill="#2E9A5C" fill-opacity="0.20"/>
+    <circle cx="522" cy="360" r="34" fill="none" stroke="#2E9A5C" stroke-width="2.4"/>
+    <circle cx="522" cy="360" r="26" fill="#2E9A5C" stroke="#1F2937" stroke-width="1.6"/>
+    <circle cx="522" cy="360" r="7" fill="#FBF9F4"/>
+    <text x="522" y="406" font-size="11" font-weight="800" fill="#1F5C38">Authentication</text>
+    <text x="522" y="420" font-size="10" fill="#1F5C38">and security</text>
+
+    <circle cx="758" cy="360" r="42" fill="#2A7AB8" fill-opacity="0.20"/>
+    <circle cx="758" cy="360" r="34" fill="none" stroke="#2A7AB8" stroke-width="2.4"/>
+    <circle cx="758" cy="360" r="26" fill="#2A7AB8" stroke="#1F2937" stroke-width="1.6"/>
+    <circle cx="758" cy="360" r="7" fill="#FBF9F4"/>
+    <text x="758" y="406" font-size="11" font-weight="800" fill="#1A4F7A">Land</text>
+    <text x="758" y="422" font-size="10" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif" font-style="italic">time to land</text>
+
+    <circle cx="581" cy="462" r="20" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.6"/>
+    <text x="581" y="494" font-size="11" font-weight="700" fill="#1F2937">Evals</text>
+    <text x="581" y="508" font-size="10" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif" font-style="italic">was it good</text>
+
+    <circle cx="699" cy="462" r="20" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.6"/>
+    <text x="699" y="498" font-size="11" font-weight="700" fill="#1F2937">Governance</text>
+  </g>
+
+  <circle cx="980" cy="360" r="52" fill="#FACC15" stroke="#1F2937" stroke-width="2.4"/>
+  <text x="980" y="356" text-anchor="middle" font-weight="900" font-size="12" fill="#1F2937" letter-spacing="0.8" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">OUTCOME</text>
+  <text x="980" y="376" text-anchor="middle" font-size="11" fill="#1F2937" font-family="Georgia, 'Times New Roman', serif" font-style="italic">the full output</text>
+
+  <text x="550" y="612" text-anchor="middle" font-style="italic" font-size="15" fill="#1F2937" font-family="Georgia, 'Times New Roman', serif">I turn zeros and ones into work the business can use.</text>
+</svg>

@@ -12,34 +12,34 @@ export const metadata: Metadata = {
   alternates: { canonical: "/application-layer/" },
 };
 
-const sectors = [
+const operators = [
   {
     title: "CPG, Wine & Food",
-    logos: [
-      ["sierra-nevada.png", "Sierra Nevada Brewing"],
-      ["duckhorn.webp", "Duckhorn"],
-      ["foley-family-wines.png", "Foley Family Wines"],
-      ["everytable.svg", "Everytable"],
-      ["greenham.svg", "Greenham"],
-      ["valley-fine-foods.png", "Valley Fine Foods"],
+    names: [
+      "Sierra Nevada Brewing",
+      "Duckhorn",
+      "Foley Family Wines",
+      "Everytable",
+      "Greenham",
+      "Valley Fine Foods",
     ],
   },
   {
     title: "Architecture & Construction",
-    logos: [
-      ["turner.svg", "Turner Construction"],
-      ["pcl.svg", "PCL Construction"],
-      ["som.svg", "SOM"],
-      ["hok.svg", "HOK"],
+    names: [
+      "Turner Construction",
+      "PCL Construction",
+      "SOM",
+      "HOK",
     ],
   },
   {
     title: "Sports, Entertainment & Healthcare",
-    logos: [
-      ["wynn-resorts.svg", "Wynn Resorts"],
-      ["mgm-resorts.svg", "MGM Resorts"],
-      ["hca-healthcare.svg", "HCA Healthcare"],
-      ["san-jose-sharks-wordmark.png", "San Jose Sharks"],
+    names: [
+      "Wynn Resorts",
+      "MGM Resorts",
+      "HCA Healthcare",
+      "San Jose Sharks",
     ],
   },
 ] as const;
@@ -384,33 +384,15 @@ export default function ApplicationLayerPage() {
           <p className="p-kicker">Who I have sat with</p>
           <h2 className="p-h2">Companies that already run it.</h2>
           <div className="portfolio-strip">
-            <div className="mb-6 flex flex-wrap items-baseline justify-between gap-3">
-              <p className="portfolio-label">Client Portfolio</p>
-              <p className="portfolio-sub">
-                Past transformations, leadership, and operational delivery
-              </p>
-            </div>
-            {sectors.map((sector) => (
+            <p className="portfolio-sub">
+              Past transformations, leadership, and operational delivery
+            </p>
+            {operators.map((sector) => (
               <div key={sector.title} className="sector-block">
                 <p className="sector-title">{sector.title}</p>
-                <div className="sector-logos">
-                  {sector.logos.map(([file, name]) => (
-                    <div key={file} className="logo-card" title={name}>
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={`/brand/field/operators/${file}`}
-                        alt={name}
-                      />
-                    </div>
-                  ))}
-                </div>
+                <p className="operator-names">{sector.names.join(" · ")}</p>
               </div>
             ))}
-            <p className="portfolio-disclaimer">
-              All product names, logos, and brands are property of their
-              respective owners and are used for identification purposes only.
-              Reference to past clients does not imply endorsement.
-            </p>
           </div>
         </div>
       </section>

@@ -14,6 +14,6 @@ export const PRIMARY_NAV: readonly NavItem[] = [
   { href: "/agentic-layer/", label: "Agentic layer" },
   { href: "/contact/", label: "Contact" },
   ...(process.env.NODE_ENV !== "production"
-    ? [{ href: "/preview-geometry/", label: "Preview ⚡", isDevOnly: true }]
+    ? [{ href: "/preview-agentic/", label: "Preview ⚡", isDevOnly: true }]
     : []),
 ];

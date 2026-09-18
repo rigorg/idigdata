@@ -471,6 +471,14 @@
   margin-bottom: 12px;
 }
 
+.presence .operator-names {
+  font-family: var(--font-vollkorn);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.55;
+  color: var(--p-navy);
+}
+
 .presence .sector-logos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
@@ -689,6 +697,34 @@
   box-shadow: inset 0 1px 0 #ffffff, 0 2px 8px rgba(20, 40, 64, 0.04), 0 10px 24px -6px rgba(20, 40, 64, 0.04);
   padding: 16px 18px;
   max-width: 30ch;
+}
+
+.presence .intent-plate {
+  margin-top: 36px;
+  position: relative;
+  background: linear-gradient(180deg, #FAF7F1 0%, #F1EAE0 100%);
+  border: 1px solid rgba(20, 40, 64, 0.16);
+  border-radius: 6px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), inset 0 0 0 1px rgba(255, 255, 255, 0.4), 0 2px 8px rgba(20, 40, 64, 0.04), 0 16px 36px -8px rgba(20, 40, 64, 0.05);
+  padding: 32px 28px 26px;
+}
+
+.presence .intent-plate .p-h2 {
+  margin-top: 6px;
+}
+
+.presence .intent-plate .p-prose {
+  max-width: 58ch;
+}
+
+.presence .intent-plate img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  background: #fbf9f4;
+  border: 1px solid rgba(20, 40, 64, 0.1);
+  border-radius: 4px;
 }
 
 .presence .waves-doc {
@@ -1224,6 +1260,7 @@
     margin-top: 24px;
   }
 
+  .presence .intent-plate,
   .presence .waves-doc {
     padding: 22px 16px 18px;
     margin-top: 24px;

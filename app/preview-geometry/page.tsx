@@ -74,6 +74,43 @@ export default function PreviewGeometryPage() {
         </p>
       </div>
 
+      <section className="mb-16 rounded-2xl border-2 border-[#142840] bg-[#FAF7F1] p-6 shadow-xl sm:p-10">
+        <div className="mb-6 flex flex-wrap items-end justify-between gap-3 border-b border-[#142840]/10 pb-4">
+          <div>
+            <p className="font-vollkorn text-xs font-extrabold uppercase tracking-[0.2em] text-[#B48A05]">
+              Candidate · Agentic layer
+            </p>
+            <h2 className="mt-2 font-vollkorn text-3xl font-black text-navy">
+              Intent equals outcome
+            </h2>
+            <p className="mt-2 max-w-[58ch] text-[15px] leading-relaxed text-navy/75">
+              Live on /agentic-layer/. Intent is the human. The agent
+              launches in the window. Memory and data sit in the core.
+            </p>
+          </div>
+          <span className="rounded-full bg-[#142840] px-3 py-1 text-[11px] font-extrabold uppercase tracking-wider text-[#FACC15]">
+            Live
+          </span>
+        </div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/diagrams/intent-to-outcome.svg?c=13"
+          alt="Intent equals outcome: a human speaks or types, the estate in between, value lands"
+          className="mx-auto block h-auto w-full max-w-[62rem]"
+        />
+        <div className="mt-6 flex items-center justify-between border-t border-[#142840]/10 pt-4 text-xs text-navy/70">
+          <span>Pure vector SVG · cream substrate · charcoal · sun-gold path</span>
+          <a
+            href="/diagrams/intent-to-outcome.svg"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-bold text-navy underline hover:opacity-80"
+          >
+            Open raw vector SVG
+          </a>
+        </div>
+      </section>
+
       {/* Page Header */}
       <div className="text-center max-w-3xl mx-auto mb-14">
         <p className="font-vollkorn text-xs font-extrabold uppercase tracking-[0.2em] text-[#A37E2C] mb-3">
