@@ -9,11 +9,19 @@ export default function FolioHome() {
         <div className="page-well">
           <div className="hero-split">
             <div>
-              <h1 className="p-h1">Your transformation gets an owner.</h1>
+              <p className="p-kicker">Robert Paddock · Customer-side</p>
+              <h1 className="p-h1">
+                Digital transformation fails when nobody owns the whole.
+              </h1>
               <p className="p-dek">
-                Application systems and agentic AI. I have done both layers, and
-                I come inside to own delivery. You keep what we build. The
-                operation stays up.
+                Your ERP already failed the business. Everyone is bolting
+                agents onto that data anyway. I don't. I take people, data,
+                and systems - and drive it home.
+              </p>
+              <p className="p-prose mt-4">
+                I come inside $100M-$1B operators. I name the real mandate. I
+                hold command. A crew lands it - small or 20 to 40. You keep
+                what we build.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-6">
                 <Link href="/contact/" className="p-btn">
@@ -46,10 +54,8 @@ export default function FolioHome() {
               <p className="p-prose">
                 Everyone owns their piece. Vendors own the product map. SIs own
                 the delivery map for their mandate. The company rarely owns the
-                operating map above them. Systems, six process constellations,
-                and people on a company-owned data core. I have spent 30 years
-                doing exactly that: keeping the operation up while the stack
-                moves.
+                operating map above them. I have spent 30 years doing that job:
+                keeping the operation up while the stack moves.
               </p>
             </div>
           </article>
@@ -66,29 +72,31 @@ export default function FolioHome() {
                 The company must know what is running, control what it can
                 reach and do, keep an accountable person in command, and prove
                 what happened. Governance and risk are operating questions now.
-                Few companies have a path they can own.
+                Few companies have a path they can own. Agentics rides the
+                application layer. It is not a second door.
               </p>
             </div>
           </article>
 
           <article className="beat-gold">
-            <div className="beat" style={{ borderBottom: "none", paddingBottom: 0 }}>
+            <div
+              className="beat"
+              style={{ borderBottom: "none", paddingBottom: 0 }}
+            >
               <h3 className="beat-kicker">Both layers</h3>
               <div>
                 <h2 className="beat-h2">
-                  What you get is both layers under one owner. The application
-                  layer keeps the business running while the stack moves.
-                  Enterprise-Agentics is the new layer: owned, not rented. The
-                  result is a living asset the company keeps. The work remains
-                  one job across people, data, and workflows.
+                  What you get is both layers under one owner.
                 </h2>
                 <p className="p-prose">
-                  A capital asset that protects and expands{" "}
-                  <strong>Operating Income</strong>, not another expense line.
-                  Operating Income is the heart and soul of enterprise
-                  health: real operating cash flow and gross margin defense, not
-                  EBITDA abstractions. Keep-running lives on the application
-                  layer. The agentic layer is how the new arrival actually runs.
+                  The application layer keeps the business running while the
+                  stack moves. Enterprise-Agentics is the new layer: owned, not
+                  rented. The result is a living asset the company keeps. The
+                  work remains one job across people, data, and workflows.
+                </p>
+                <p className="p-prose">
+                  I take Operating Income (OI) seriously. Technology should
+                  protect and enable OI while the business keeps running.
                 </p>
               </div>
             </div>
@@ -145,16 +153,15 @@ export default function FolioHome() {
           <article className="beat" style={{ borderBottom: "none" }}>
             <h3 className="beat-kicker">An owner</h3>
             <div>
-              <h2 className="beat-h2">Your transformation gets an owner.</h2>
+              <h2 className="beat-h2">I take command. I drive it home.</h2>
               <p className="p-prose">
-                I have done both layers, and I come inside to own delivery under
-                the right mandate. The application layer is earned ground: more
-                than 50 implementations and 15 full transformations taken
-                through production. The agentic layer is live work right now:
-                Enterprise-Agentics in production, with guardrails and an
-                operating path the company owns. This is not shadow work on a
-                laptop. The insurance is earned judgment on the first layer and
-                live practice on the second.
+                I have done both layers, and I come inside to own delivery. The
+                application layer is earned ground: more than 50 implementations
+                and 15 full transformations taken through production. The
+                agentic layer is live work right now: Enterprise-Agentics in
+                production, with guardrails and an operating path the company
+                owns. This is not shadow work on a laptop. I hold command. A
+                crew lands it.
               </p>
               <div className="lattice-object">
                 <HaloFilm
@@ -187,12 +194,11 @@ export default function FolioHome() {
                   in the field.
                 </p>
                 <p className="dossier-entry">
-                  Dock to the boardroom. Full-time or embedded, the shape
-                  follows the mandate.
+                  Dock to the boardroom. The shape follows the mandate.
                 </p>
                 <p className="dossier-spine">
                   30 years · 50+ implementations · 15 full transformations at
-                  scale · $100M–$1B operators · agentic AI in production.
+                  scale · $100M-$1B operators · agentic AI in production.
                 </p>
               </div>
             </div>
@@ -202,14 +208,14 @@ export default function FolioHome() {
 
       <section className="p-section p-section--close">
         <div className="page-well">
-          <h2 className="p-h2 mx-auto max-w-[18ch]">
-            If the work needs an owner, start there.
+          <h2 className="p-h2 mx-auto max-w-[22ch]">
+            If your company needs a real transformation owned from inside the
+            business, let&apos;s talk.
           </h2>
           <p className="mx-auto mt-5 max-w-[42rem] text-[18px] leading-[1.65]">
-            No deck. No proposal theater. Bring the real situation: the legacy
-            stack, the stalled modernization, the keep-running constraint.
-            I&apos;ll walk you through exactly how I&apos;d own it. Permanent or
-            fractional. The ownership standard does not change.
+            Bring the real situation: the legacy stack, the stalled
+            modernization, the keep-running constraint. I will walk you through
+            how I would own it, and how a crew would land it.
           </p>
           <div className="mt-8">
             <Link href="/contact/" className="p-btn">

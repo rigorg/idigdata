@@ -55,8 +55,6 @@ const personSchema = {
     "Architecture-engineering-construction (AEC)",
     "Beverage consumer packaged goods (CPG)",
     "Wellness and fitness operations",
-    "Healthcare operations",
-    "Electronic medical records (EMR)",
     "Hospitality and gaming operations",
     "Fintech banking and POS integration",
   ],

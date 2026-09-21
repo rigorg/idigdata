@@ -15,19 +15,23 @@ export const metadata: Metadata = {
 const FAQ = [
   {
     q: "Who is the fit?",
-    a: "$100M-$1B operators. CPG and AEC first, plus manufacturing, distribution, logistics, construction, healthcare estates, and other operations-heavy work where people, data, systems, and workflows have to move as one. I embed on the customer side and own the path above the vendors.",
+    a: "$100M-$1B operators. CPG and AEC first, plus manufacturing, distribution, logistics, construction, and other operations-heavy work where people, data, systems, and workflows have to move as one. I embed on the customer side and own the path above the vendors.",
   },
   {
     q: "What is a non-fit?",
-    a: "If the operating problem is not a real transformation the company will own, I will say so.",
+    a: "Hospitals, urgent care, and medical clinics. If the operating problem is not a real transformation the company will own, I will say so.",
   },
   {
     q: "What do you hire?",
-    a: "The application layer, the agentic layer, or both. The application layer is the estate, the walk, and the receipts. The agentic layer can be hired on an existing owned path or together with it. It is not a pilot beside a broken estate.",
+    a: "The application layer, the agentic layer, or both. The agentic layer rides the same seat. It is not a pilot beside a broken estate.",
   },
   {
     q: "What does the company keep?",
-    a: "Mapped workflows, governed data, visible delivery state, and people who can run the next cycle. On the agentic layer: agents under boundaries with named owners. The production path stays. That is what stays when I leave.",
+    a: "Mapped workflows, governed data, visible delivery state, and people who can run the next cycle. On the agentic layer: agents under boundaries with named owners. The production path stays.",
+  },
+  {
+    q: "Are BOSS, The Rig, and FlowCraft for sale?",
+    a: "No. They are how I do the work.",
   },
 ] as const;
 
@@ -80,7 +84,7 @@ export default function FaqPage() {
               </div>
             ))}
             <div className="faq-item">
-              <div className="faq-idx">05</div>
+              <div className="faq-idx">06</div>
               <div>
                 <dt className="faq-q">How do I start?</dt>
                 <dd className="faq-a">
@@ -109,10 +113,10 @@ export default function FaqPage() {
 
       <section className="p-section p-section--close">
         <div className="page-well">
-          <h2 className="p-h2">Bring the real operating problem.</h2>
-          <p className="mx-auto mt-4 max-w-[44rem] text-[18px]">
-            Permanent or fractional. The ownership standard does not change.
-          </p>
+          <h2 className="p-h2">
+            If your company needs a real transformation owned from inside the
+            business, let&apos;s talk.
+          </h2>
           <div className="mt-8">
             <Link href="/contact/" className="p-btn">
               <span className="p-gold-sq" aria-hidden="true" />

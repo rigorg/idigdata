@@ -6,20 +6,20 @@ export const metadata: Metadata = {
     absolute: "Robert Paddock · Transformational CIO | idigdata",
   },
   description:
-    "Your transformation gets an owner. The business keeps running.",
+    "Digital transformation fails when nobody owns the whole. Your ERP already failed the business. Everyone is bolting agents onto that data anyway. I don't.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/",
     title: "Robert Paddock · Transformational CIO",
     description:
-      "Your transformation gets an owner. The business keeps running.",
+      "Digital transformation fails when nobody owns the whole. Your ERP already failed the business. Everyone is bolting agents onto that data anyway. I don't.",
     images: [
       {
         url: "/og-image.png?v=20260828",
         width: 1200,
         height: 630,
-        alt: "Your transformation gets an owner. The business keeps running.",
+        alt: "Digital transformation fails when nobody owns the whole.",
       },
     ],
   },

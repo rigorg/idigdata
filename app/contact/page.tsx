@@ -7,7 +7,7 @@ import PresenceShell from "@/components/presence/PresenceShell";
 export const metadata: Metadata = {
   title: { absolute: "Contact | idigdata" },
   description:
-    "Bring the real operating problem. Permanent or fractional. The ownership standard does not change.",
+    "If your company needs a real transformation owned from inside the business, let's talk.",
   alternates: { canonical: "/contact/" },
 };
 
@@ -36,18 +36,23 @@ export default function ContactPage() {
               <p className="p-kicker">Contact</p>
               <h1 className="p-h1">Bring the real operating problem.</h1>
               <p className="p-dek">
-                Come with the shape, the stakes, and the constraints. We will know
-                quickly if I am the fit.
+                If your company needs a real transformation owned from inside
+                the business, let&apos;s talk.
               </p>
               <div className="p-lead">
                 <p>
-                  I take on the application layer, the agentic layer, or both. One
-                  owner. Permanent or fractional embed. The ownership standard does
-                  not change.
+                  Come with the shape, the stakes, and the constraints. We will
+                  know quickly if I am the fit.
                 </p>
                 <p>
-                  Built for enterprise and mid-market operators ($100M–$1B+) focused
-                  on protecting and expanding Operating Income.
+                  I take on the application layer, the agentic layer, or both.
+                  One owner. I hold command. A crew of 20 to 40 lands it.
+                  Agentics rides the same seat.
+                </p>
+                <p>
+                  I fit $100M-$1B operators best - CPG and AEC first, with
+                  relevant experience across adjacent operating environments.
+                  Hospitals, urgent care, and medical clinics are a non-fit.
                 </p>
               </div>
             </div>
@@ -112,8 +117,8 @@ export default function ContactPage() {
                 You speak with the person who does the work.
               </h3>
               <p className="mt-3 text-[17px] leading-[1.65]">
-                No account executives, no junior bench, no pitch decks. One
-                real problem lands with an accountable owner.
+                You talk to me. No account theater. I land it with a crew.
+                One real problem lands with an accountable owner.
               </p>
               <p className="mt-4 text-[15px] leading-[1.55] text-[#5A6978]">
                 Pacific Time

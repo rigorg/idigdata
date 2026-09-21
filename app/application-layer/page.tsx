@@ -8,7 +8,7 @@ import BeehiveFilm from "@/components/presence/BeehiveFilm";
 export const metadata: Metadata = {
   title: { absolute: "Application layer | idigdata" },
   description:
-    "Thirty years inside companies that already run it. The Systemverse, the Beehive, and the transformation you keep.",
+    "I own the map above the vendors. CPG and AEC first. $100M-$1B. I hold command. A crew lands it.",
   alternates: { canonical: "/application-layer/" },
 };
 
@@ -34,11 +34,10 @@ const operators = [
     ],
   },
   {
-    title: "Sports, Entertainment & Healthcare",
+    title: "Sports & Entertainment",
     names: [
       "Wynn Resorts",
       "MGM Resorts",
-      "HCA Healthcare",
       "San Jose Sharks",
     ],
   },
@@ -71,11 +70,6 @@ const estate = [
       "Workday · Enterprise HCM & Core Human Capital",
       "UKG · Workforce Management, Time & Labor, Payroll",
     ],
-  },
-  {
-    title: "Clinical Records",
-    tag: "EMR",
-    rows: ["Tebra · Electronic Medical Records (EMR)"],
   },
   {
     title: "Manufacturing & Plant Automation",
@@ -164,7 +158,7 @@ const constellations = [
     code: "D2R",
     name: "Data to Report",
     tagline: "Analytics + awareness",
-    desc: "Corporate planning, executive BI, financial consolidation, margin telemetry, and statutory reporting. Every enterprise has this — the old record-to-report spine, widened to the data that steers the company.",
+    desc: "Corporate planning, executive BI, financial consolidation, margin telemetry, and statutory reporting. Every enterprise has this - the old record-to-report spine, widened to the data that steers the company.",
   },
   {
     code: "MDM",
@@ -180,12 +174,12 @@ export default function ApplicationLayerPage() {
       <header className="p-section p-section--hire">
         <div className="page-well">
           <p className="p-kicker">The application layer</p>
-          <h1 className="p-h1" style={{ maxWidth: "20ch" }}>
-            Thirty years inside companies that already run it.
+          <h1 className="p-h1" style={{ maxWidth: "18ch" }}>
+            I own the map above the vendors.
           </h1>
           <p className="p-dek">
-            CPG, AEC, wine, sports and entertainment, healthcare. I sit
-            alongside the people who already run the work.
+            CPG and AEC first. $100M-$1B. I hold command. A crew of 20 to 40
+            lands it. The company keeps running.
           </p>
           <div className="p-lead">
             <p>
@@ -194,9 +188,10 @@ export default function ApplicationLayerPage() {
             </p>
             <p>
               First port of call is the CFO. The application layer comes down to
-              the ERP and the P&amp;L. For most enterprise operators, the WMS,
-              MES, and supply chain sit next to it, defending gross margins and
-              protecting Operating Income.
+              the ERP and the P&amp;L. For most operators, WMS, MES, and supply
+              chain sit next to it, defending gross margins and protecting OI.
+              Hire me for this layer. Add Agentics on the same path when the
+              production bar is real.
             </p>
           </div>
         </div>
@@ -400,7 +395,7 @@ export default function ApplicationLayerPage() {
       <section className="p-section">
         <div className="page-well">
           <p className="p-kicker">The estate</p>
-          <h2 className="p-h2">Named systems I have run.</h2>
+          <h2 className="p-h2">The estate I have commanded.</h2>
           <p className="portfolio-sub">
             Contracts negotiated. Vendors run. Customer-side command.
           </p>
@@ -444,8 +439,8 @@ export default function ApplicationLayerPage() {
           <p className="p-prose mt-3">
             When systems fight the frontline with bad data and fragmented silos,
             people spend their days firefighting. When systems are unified,
-            governed, and joyful to use, the friction vanishes—and the business
-            sings. That is the Beehive.
+            governed, and joyful to use, the friction vanishes - and the
+            business sings. That is the Beehive.
           </p>
 
           <div className="command-plate mt-8">
@@ -479,9 +474,9 @@ export default function ApplicationLayerPage() {
                 Sovereign ownership
               </p>
               <p className="mt-2 text-[15.5px] leading-[1.6]">
-                I hold the roadmap, decisions, and timeline on one customer-side
-                rail. Partners deliver into it, but your team holds the keys from
-                day one. The business does not rent command.
+                I hold the roadmap, decisions, and timeline. A crew of 20 to 40
+                lands the work. Partners deliver as trades. Your team holds the
+                keys from day one. The business does not rent command.
               </p>
             </li>
             <li className="mechanic-card">
@@ -515,7 +510,7 @@ export default function ApplicationLayerPage() {
             <h2 className="p-h2">What you get is the transformation.</h2>
             <p className="p-prose">
               This layer, taken through production. Vendors are trades. Someone
-              still has to own the build.
+              still has to own the build. I hold command. A crew lands it.
             </p>
             <div className="dossier">
               <p className="dossier-entry">
@@ -528,16 +523,12 @@ export default function ApplicationLayerPage() {
                 Systems that had to hold in the field.
               </p>
               <p className="dossier-entry">
-                <strong>Healthcare: HCA Healthcare.</strong> Tebra EMR on that
-                estate, including medical-spa work on the same record.
-              </p>
-              <p className="dossier-entry">
                 $350M post-M&amp;A estate in 11 months. Stalled $8M ERP
                 recovered. Company ownership preserved.
               </p>
               <p className="dossier-spine">
                 30 years · 50+ implementations · 15 full transformations ·
-                $100M–$1B operators
+                $100M-$1B operators
               </p>
             </div>
           </div>

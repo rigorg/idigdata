@@ -36,9 +36,9 @@ export default function AgenticLayerView({ mock = false }: { mock?: boolean }) {
                 Outcome is the point.
               </h1>
               <p className="p-dek">
-                I make agents work inside the enterprise. The harness is how
-                the company runs the work — you see the spend, a person
-                authorizes the write, and the path stays yours.
+                I nest Agentics on the transformation. The harness is how the
+                company runs the work - you see the spend, a person authorizes
+                the write, and the path stays yours.
               </p>
             </div>
             <div className="mandate-card">
@@ -116,12 +116,13 @@ export default function AgenticLayerView({ mock = false }: { mock?: boolean }) {
             Start with the work, not the headcount, not the model.
           </p>
           <h2 className="p-h2">I start where the work gets stuck.</h2>
-          <p className="p-prose">
-            Agents arrive in a business with old handoffs, conflicting
-            records, and knowledge held by a few people. I find where work
-            waits, where people repeat it, and where a wrong action would
-            matter.
-          </p>
+            <p className="p-prose">
+              Agents arrive in a business with old handoffs, conflicting
+              records, and knowledge held by a few people. I find where work
+              waits, where people repeat it, and where a wrong action would
+              matter. This layer rides the application estate. It is not a
+              second door.
+            </p>
         </div>
       </section>
 
@@ -367,8 +368,8 @@ export default function AgenticLayerView({ mock = false }: { mock?: boolean }) {
           <h2 className="p-h2">I come inside as the owner.</h2>
           <p className="mx-auto mt-4 max-w-[48ch] text-[18px] leading-[1.6]">
             If you want proof, I will show you the work. If you want the
-            people who already ran it, I can put you on the phone. If you want
-            to hire the owner, hire the owner.
+            people who already ran it, I can put you on the phone. I own the
+            path. A crew lands it.
           </p>
           <div className="mt-8">
             <Link href="/contact/" className="p-btn">

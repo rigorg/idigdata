@@ -115,7 +115,8 @@ export default function FolioLayer({
             If the work needs an owner, start there.
           </h2>
           <p className="mx-auto mt-5 max-w-[42rem] text-[18px] leading-[1.6] text-ink">
-            Permanent or fractional. The ownership standard does not change.
+            I hold command. A crew lands it. The ownership standard does not
+            change.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-6">
             <Link

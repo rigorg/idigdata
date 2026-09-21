@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     template: "%s | idigdata",
   },
   description:
-    "Your transformation gets an owner. The business keeps running.",
+    "Digital transformation fails when nobody owns the whole. Your ERP already failed the business. Everyone is bolting agents onto that data anyway. I don't.",
   alternates: {
     canonical: "/",
     types: {
@@ -61,13 +61,13 @@ export const metadata: Metadata = {
     siteName: "idigdata",
     title: "Robert Paddock · Transformational CIO",
     description:
-      "Your transformation gets an owner. The business keeps running.",
+      "Digital transformation fails when nobody owns the whole. Your ERP already failed the business. Everyone is bolting agents onto that data anyway. I don't.",
     images: [
       {
         url: "/og-image.png?v=20260828",
         width: 1200,
         height: 630,
-        alt: "Your transformation gets an owner. The business keeps running.",
+        alt: "Digital transformation fails when nobody owns the whole.",
       },
     ],
   },

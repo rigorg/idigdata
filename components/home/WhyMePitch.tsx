@@ -60,7 +60,7 @@ export default function WhyMePitch() {
           <p className="mt-4 text-[17px] leading-[1.55] text-ink">
             No deck. No proposal theater. Bring the real situation: the legacy
             stack, the stalled modernization, the keep-running constraint. I'll
-            walk you through exactly how I'd own it. Permanent or fractional.
+            walk you through how I would own it, and how a crew would land it.
             The ownership standard does not change.
           </p>
           <div className="mt-8">
