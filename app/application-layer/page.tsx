@@ -96,6 +96,9 @@ const estate = [
       "Aras · Product Lifecycle Management (PLM)",
       "Brightly Asset Essentials · Enterprise Asset Management (EAM / CMMS)",
       "Procore · Capital Project & Construction Management",
+      "Oracle Primavera · Project scheduling and controls",
+      "Autodesk Revit · Building information modeling",
+      "SketchUp · Trimble · 3D design for construction",
     ],
   },
   {
