@@ -5,7 +5,7 @@ import AgenticLayerView from "@/components/agentic/AgenticLayerView";
 export const metadata: Metadata = {
   title: { absolute: "Agentic layer | idigdata" },
   description:
-    "Outcome is the point. Agentics rides the application layer. I own the path. A crew lands it.",
+    "Applied agentics, in production, on company-owned data. A named person stays accountable.",
   alternates: { canonical: "/agentic-layer/" },
 };
 

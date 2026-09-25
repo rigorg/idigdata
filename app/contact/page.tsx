@@ -7,7 +7,7 @@ import PresenceShell from "@/components/presence/PresenceShell";
 export const metadata: Metadata = {
   title: { absolute: "Contact | idigdata" },
   description:
-    "If your company needs a real transformation owned from inside the business, let's talk.",
+    "Have a substantial technology mandate? Let's talk.",
   alternates: { canonical: "/contact/" },
 };
 
@@ -34,27 +34,11 @@ export default function ContactPage() {
           <div className="hero-split">
             <div>
               <p className="p-kicker">Contact</p>
-              <h1 className="p-h1">Bring the real operating problem.</h1>
+              <h1 className="p-h1">Have a substantial technology mandate?</h1>
               <p className="p-dek">
-                If your company needs a real transformation owned from inside
-                the business, let&apos;s talk.
+                Let&apos;s talk. Bring the situation in your own words. If I am
+                not the fit, I will say so.
               </p>
-              <div className="p-lead">
-                <p>
-                  Come with the shape, the stakes, and the constraints. We will
-                  know quickly if I am the fit.
-                </p>
-                <p>
-                  I take on the application layer, the agentic layer, or both.
-                  One owner. I hold command. A crew of 20 to 40 lands it.
-                  Agentics rides the same seat.
-                </p>
-                <p>
-                  I fit $100M-$1B operators best - CPG and AEC first, with
-                  relevant experience across adjacent operating environments.
-                  Hospitals, urgent care, and medical clinics are a non-fit.
-                </p>
-              </div>
             </div>
             <div className="home-watermark" aria-hidden="true">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -102,6 +86,18 @@ export default function ContactPage() {
               </p>
             </aside>
           </div>
+
+          <div className="mt-12 rounded-lg border border-[#142840]/12 bg-[#FBF9F4] p-6">
+            <p className="font-brand text-[11px] font-bold uppercase tracking-[0.16em] text-[#B48A05]">
+              Fit &amp; Non-Fit
+            </p>
+            <p className="mt-2 text-[15px] leading-[1.65] text-[#334155]">
+              <strong>$100M-$1B enterprise operators.</strong> The work has run across AEC,
+              manufacturing, food and beverage, wineries and breweries, health and
+              wellness, and logistics, including family-owned, PE-backed, and M&amp;A.
+              Hospitals, urgent care, and medical clinics remain a non-fit.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -117,8 +113,8 @@ export default function ContactPage() {
                 You speak with the person who does the work.
               </h3>
               <p className="mt-3 text-[17px] leading-[1.65]">
-                You talk to me. No account theater. I land it with a crew.
-                One real problem lands with an accountable owner.
+                You talk to me. No account theater. One real problem lands with
+                an accountable owner.
               </p>
               <p className="mt-4 text-[15px] leading-[1.55] text-[#5A6978]">
                 Pacific Time

@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     template: "%s | idigdata",
   },
   description:
-    "Digital transformation fails when nobody owns the whole. Your ERP already failed the business. Everyone is bolting agents onto that data anyway. I don't.",
+    "Substantial technology mandates. The business keeps running while the work moves.",
   alternates: {
     canonical: "/",
     types: {
@@ -61,13 +61,13 @@ export const metadata: Metadata = {
     siteName: "idigdata",
     title: "Robert Paddock · Transformational CIO",
     description:
-      "Digital transformation fails when nobody owns the whole. Your ERP already failed the business. Everyone is bolting agents onto that data anyway. I don't.",
+      "Substantial technology mandates. The business keeps running while the work moves.",
     images: [
       {
         url: "/og-image.png?v=20260828",
         width: 1200,
         height: 630,
-        alt: "Digital transformation fails when nobody owns the whole.",
+        alt: "Substantial technology mandates. The business keeps running while the work moves.",
       },
     ],
   },

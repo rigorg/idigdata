@@ -60,8 +60,7 @@ export default function SiteFooter() {
               Pacific Time
             </p>
             <p className="mt-4 font-body text-[13px] leading-relaxed text-porcelain/55">
-              If your company needs a real transformation owned from inside
-              the business, let&apos;s talk.
+              Have a substantial technology mandate? Let&apos;s talk.
             </p>
           </div>
         </div>

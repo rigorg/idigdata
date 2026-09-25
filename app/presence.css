@@ -1318,3 +1318,85 @@
 
 
 
+
+/* --- Plate Header Grid & Summary Cards --- */
+.presence .waves-doc svg,
+.presence .waves-doc img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+
+.presence .plate-header-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 820px) {
+  .presence .plate-header-grid {
+    grid-template-columns: 1fr 330px;
+    align-items: start;
+    gap: 36px;
+  }
+}
+
+.presence .plate-main-text .p-prose {
+  max-width: 58ch;
+}
+
+.presence .plate-aside-card {
+  background: rgba(255, 253, 248, 0.88);
+  border: 1px solid rgba(20, 40, 64, 0.16);
+  border-radius: 6px;
+  padding: 20px 20px 18px;
+  box-shadow: inset 0 1px 0 #ffffff, 0 2px 8px rgba(20, 40, 64, 0.04);
+}
+
+.presence .plate-aside-tag {
+  font-family: var(--font-vollkorn);
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--p-warm);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.presence .plate-aside-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.presence .plate-aside-item {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--p-navy);
+  border-top: 1px solid rgba(20, 40, 64, 0.08);
+  padding-top: 10px;
+}
+
+.presence .plate-aside-item:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.presence .plate-aside-item strong {
+  font-weight: 700;
+  color: var(--p-navy);
+  display: block;
+}
+
+.presence .plate-aside-item span {
+  color: #5A6978;
+  display: block;
+  font-size: 12.5px;
+  margin-top: 2px;
+  line-height: 1.45;
+}

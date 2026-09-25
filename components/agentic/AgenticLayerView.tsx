@@ -26,85 +26,58 @@ const issues = [
 export default function AgenticLayerView({ mock = false }: { mock?: boolean }) {
   return (
     <>
-      <section className="p-section">
+      <header className="p-section p-section--hire">
         <div className="page-well">
           {mock ? <p className="p-kicker">Local mock · not live</p> : null}
           <div className="hero-split">
             <div>
               <p className="p-kicker">Applied Agentics</p>
-              <h1 className="p-h1" style={{ maxWidth: "16ch" }}>
-                Outcome is the point.
+              <h1 className="p-h1" style={{ maxWidth: "22ch" }}>
+                Applied agentics, in production,<br className="hidden sm:inline" /> on company-owned data.
               </h1>
               <p className="p-dek">
-                I nest Agentics on the transformation. The harness is how the
-                company runs the work - you see the spend, a person authorizes
-                the write, and the path stays yours.
+                Security, compliance, authentication, observability, and
+                governance are built in from the start, for people and for
+                agents. A named person stays accountable.
               </p>
             </div>
-            <div className="mandate-card">
-              <p className="font-vollkorn text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#B48A05]">
-                In production
-              </p>
-              <p className="mt-2 text-[14.5px] leading-[1.5]">
-                CIO, Sierra Nevada Brewing (~$420M). Named owner. Path they
-                kept. Not a chatbot beside the business.
-              </p>
+            <div className="home-watermark" aria-hidden="true">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/idigdata-mark.svg" alt="" />
             </div>
           </div>
+        </div>
+      </header>
 
+      <section className="p-section">
+        <div className="page-well">
           <figure className="waves-doc">
-            <p className="p-kicker">The time is now</p>
-            <h2 className="p-h2" style={{ maxWidth: "22ch" }}>
-              Every ten-year wave was the same game. This one is not.
-            </h2>
-            <p className="p-prose">
-              Mainframe. Client-server and ERP. Cloud and SaaS. A new
-              platform, a long implementation, then keep-running. Fairly
-              similar, every time.
-            </p>
-            <p className="p-prose">
-              Agents do not wait for a decade. They land on the stack you
-              already have. The game is forever changed.
-            </p>
-            <svg
-              className="w-full"
-              viewBox="0 0 900 320"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Four waves of technology. The first three rhyme. Enterprise-Agentics does not."
-            >
-              <line x1="30" y1="240" x2="870" y2="240" stroke="#142840" strokeWidth="2" />
-              <path d="M 50 240 Q 130 195, 210 240" stroke="rgba(20,40,64,0.30)" strokeWidth="2" />
-              <circle cx="130" cy="217" r="4.5" fill="#142840" />
-              <text x="130" y="265" fill="#142840" fontFamily="Vollkorn" fontSize="14" fontWeight="700" textAnchor="middle">1960s–70s</text>
-              <text x="130" y="175" fill="#142840" fontFamily="Vollkorn" fontSize="16" fontWeight="800" textAnchor="middle">Mainframe</text>
-              <text x="130" y="195" fill="#6B6860" fontFamily="Source Sans 3" fontSize="12" textAnchor="middle">Central Compute</text>
-              <text x="130" y="290" fill="#7A756A" fontFamily="Source Sans 3" fontSize="11" fontStyle="italic" textAnchor="middle">Same game</text>
-              <path d="M 230 240 Q 330 145, 430 240" stroke="rgba(20,40,64,0.45)" strokeWidth="2.2" />
-              <circle cx="330" cy="170" r="4.5" fill="#142840" />
-              <text x="330" y="265" fill="#142840" fontFamily="Vollkorn" fontSize="14" fontWeight="700" textAnchor="middle">1980s–90s</text>
-              <text x="330" y="130" fill="#142840" fontFamily="Vollkorn" fontSize="16" fontWeight="800" textAnchor="middle">Client-Server & ERP</text>
-              <text x="330" y="150" fill="#6B6860" fontFamily="Source Sans 3" fontSize="12" textAnchor="middle">Distributed Systems</text>
-              <text x="330" y="290" fill="#7A756A" fontFamily="Source Sans 3" fontSize="11" fontStyle="italic" textAnchor="middle">Same game</text>
-              <path d="M 450 240 Q 560 95, 670 240" stroke="rgba(20,40,64,0.65)" strokeWidth="2.4" />
-              <circle cx="560" cy="130" r="4.5" fill="#142840" />
-              <text x="560" y="265" fill="#142840" fontFamily="Vollkorn" fontSize="14" fontWeight="700" textAnchor="middle">2000s–10s</text>
-              <text x="560" y="85" fill="#142840" fontFamily="Vollkorn" fontSize="16" fontWeight="800" textAnchor="middle">Cloud & SaaS</text>
-              <text x="560" y="105" fill="#6B6860" fontFamily="Source Sans 3" fontSize="12" textAnchor="middle">Multi-Tenant Platforms</text>
-              <text x="560" y="290" fill="#7A756A" fontFamily="Source Sans 3" fontSize="11" fontStyle="italic" textAnchor="middle">Same game</text>
-              <path d="M 670 240 Q 770 20, 870 240" fill="rgba(250,204,21,0.14)" stroke="#142840" strokeWidth="3" />
-              <line x1="770" y1="240" x2="770" y2="130" stroke="#FACC15" strokeWidth="2.5" strokeDasharray="3 3" />
-              <circle cx="770" cy="130" r="7" fill="#FACC15" stroke="#142840" strokeWidth="2.5" />
-              <text x="770" y="265" fill="#142840" fontFamily="Vollkorn" fontSize="15" fontWeight="800" textAnchor="middle">2020s+</text>
-              <rect x="668" y="32" width="204" height="26" fill="#142840" rx="3" />
-              <text x="770" y="50" fill="#FACC15" fontFamily="Vollkorn" fontSize="13" fontWeight="800" textAnchor="middle">THE BREAK</text>
-              <text x="770" y="82" fill="#142840" fontFamily="Vollkorn" fontSize="14" fontWeight="700" textAnchor="middle">Enterprise-Agentics</text>
-              <text x="770" y="100" fill="#6B6860" fontFamily="Source Sans 3" fontSize="12" textAnchor="middle">Not another decade</text>
-              <text x="770" y="290" fill="#B48A05" fontFamily="Source Sans 3" fontSize="11.5" fontWeight="700" textAnchor="middle">The game changed</text>
-            </svg>
+            <div className="plate-main-text">
+                <p className="p-kicker">The time is now</p>
+                <h2 className="p-h2">
+                  Every ten-year wave was the same game. This one is not.
+                </h2>
+                <p className="p-prose">
+                  Mainframe. Client-server and ERP. Cloud and SaaS. A new platform, a
+                  decade-long implementation, and years of change fatigue. Fairly
+                  similar, every time.
+                </p>
+                <p className="p-prose">
+                  Applied agentics does not wait for a decade. It lands directly on
+                  the stack and data you already own. The game changed.
+                </p>
+              </div>
+
+            <div className="mt-8 overflow-hidden rounded-xl border border-[#142840]/15 bg-[#FBF9F4] p-3 shadow-sm md:p-6">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/diagrams/four-waves.svg?c=4"
+                alt="The Four Waves of Enterprise Technology. Three decade-long replacement cycles followed by the immediate architectural break of Applied Agentics."
+                className="w-full h-auto"
+              />
+            </div>
             <figcaption className="waves-caption">
-              The first three waves rhyme. The fourth does not.
+              The first three waves rhyme as platform replacements. The fourth wave lands on the systems you already own.
             </figcaption>
           </figure>
         </div>
@@ -270,23 +243,31 @@ export default function AgenticLayerView({ mock = false }: { mock?: boolean }) {
       <section className="p-section">
         <div className="page-well">
           <figure className="intent-plate">
-            <p className="p-kicker">The work</p>
-            <h2 className="p-h2" style={{ maxWidth: "22ch" }}>
-              Intent equals outcome.
-            </h2>
-            <p className="p-prose">
-              A person starts the work. The harness runs it inside the
-              systems the company already owns. A named person authorizes
-              the write. Watched. Evaluated. Landed. Costed.
-            </p>
-            <p className="p-prose">
-              I can show you a live run. The conversation is not a trial.
-            </p>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/diagrams/intent-to-outcome.svg?c=14"
-              alt="Intent equals outcome. The harness around the model: authentication, memory and data, tools, guardrails, evals, governance, spend. The work lands. Outcome is the value."
-            />
+            <div className="plate-main-text">
+                <p className="p-kicker">The core equation</p>
+                <h2 className="p-h2">
+                  Intent equals outcome.
+                </h2>
+                <p className="p-prose">
+                  A leader sets the mandate in plain language. The governed estate
+                  runs it directly on the company-owned data core, bounded by authentication,
+                  fenced by guardrails, and executed across live enterprise applications.
+                  A named person authorizes every write at the gate.
+                </p>
+                <p className="p-prose">
+                  Value lands in the systems you already run. Evidence verifies the result,
+                  and the continuous learning loop updates the company&apos;s living capability.
+                </p>
+              </div>
+
+            <div className="mt-8 overflow-hidden rounded-xl border border-[#142840]/15 bg-[#FBF9F4] p-3 shadow-sm md:p-6">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/diagrams/intent-to-outcome.svg?c=23"
+                alt="Intent equals outcome. Human command enters the harness aperture, executes across the hexagonal capability lattice around the central company-owned data core, halts at human authorization gates, and lands durable business capability in enterprise systems, reinforced by continuous learning."
+                className="w-full h-auto"
+              />
+            </div>
           </figure>
         </div>
       </section>
@@ -349,6 +330,93 @@ export default function AgenticLayerView({ mock = false }: { mock?: boolean }) {
         </div>
       </section>
 
+            <section className="p-section">
+        <div className="page-well">
+          <p className="p-kicker">Systems in production</p>
+          <h2 className="p-h2" style={{ maxWidth: "22ch" }}>
+            The three types of agentic systems.
+          </h2>
+          <p className="p-prose">
+            Through Data Integration Group, applied agentics is delivered across
+            three proven production patterns:
+          </p>
+
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            <article className="rounded-lg border border-[#142840]/15 bg-[#FBF9F4] p-6">
+              <span className="font-brand text-[11px] font-bold uppercase tracking-[0.16em] text-[#B48A05]">
+                Pattern 01
+              </span>
+              <h3 className="mt-2 font-vollkorn text-[19px] font-bold text-navy">
+                Enterprise transformation management
+              </h3>
+              <p className="mt-2 text-[14.5px] leading-[1.6] text-[#334155]">
+                From planning through go-live. Tracking milestones, cutover dependencies,
+                and delivery evidence.
+              </p>
+            </article>
+
+            <article className="rounded-lg border border-[#142840]/15 bg-[#FBF9F4] p-6">
+              <span className="font-brand text-[11px] font-bold uppercase tracking-[0.16em] text-[#B48A05]">
+                Pattern 02
+              </span>
+              <h3 className="mt-2 font-vollkorn text-[19px] font-bold text-navy">
+                Governed software delivery
+              </h3>
+              <p className="mt-2 text-[14.5px] leading-[1.6] text-[#334155]">
+                Traceable decisions, delivery evidence, verified audit trails, and
+                human authorization gates.
+              </p>
+            </article>
+
+            <article className="rounded-lg border border-[#142840]/15 bg-[#FBF9F4] p-6">
+              <span className="font-brand text-[11px] font-bold uppercase tracking-[0.16em] text-[#B48A05]">
+                Pattern 03
+              </span>
+              <h3 className="mt-2 font-vollkorn text-[19px] font-bold text-navy">
+                Workflows executed by people and agents
+              </h3>
+              <p className="mt-2 text-[14.5px] leading-[1.6] text-[#334155]">
+                Using company-owned data. Human judgment at critical gates; work that
+                lands inside enterprise systems.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="p-section" style={{ background: "#F3ECE0" }}>
+        <div className="page-well">
+          <div className="beat-gold">
+            <p className="p-kicker">Receipts</p>
+            <h2 className="p-h2">Production evidence on company data.</h2>
+            <div className="dossier mt-6">
+              <p className="dossier-entry">
+                <strong>Data Integration Group - Four years applying agentics.</strong>{" "}
+                Operating agentic systems on company-owned data cores, with traceable
+                audit trails, delivery evidence, and human authorization gates.
+                Live runs demonstrated on company data.
+              </p>
+              <p className="dossier-entry">
+                <strong>Sierra Nevada Brewing, CIO (~$420M).</strong> Agentic systems
+                in production on the company-owned data core, with accountable
+                business owners. The capability and the operating knowledge
+                transferred to the internal team.
+              </p>
+            </div>
+
+            <div className="mt-8 border-t border-[#142840]/10 pt-6">
+              <p className="font-brand text-[11px] font-bold uppercase tracking-[0.16em] text-[#B48A05]">
+                What the company keeps
+              </p>
+              <p className="p-prose mt-2">
+                People who can run it and extend it. Workflows and data the
+                company owns. Agents inside boundaries a person can halt.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="p-section">
         <div className="page-well">
           <p className="p-kicker">Models</p>
@@ -357,20 +425,17 @@ export default function AgenticLayerView({ mock = false }: { mock?: boolean }) {
           </h2>
           <p className="p-prose">
             Small models on company truth where they meet the task. Frontier
-            models where the work calls for them. That choice is spend
-            control.
+            models where the work calls for them. That choice is spend control.
+            Models are instruments; the harness and the outcome belong to you.
           </p>
         </div>
       </section>
 
       <section className="p-section p-section--close">
         <div className="page-well">
-          <h2 className="p-h2">I come inside as the owner.</h2>
-          <p className="mx-auto mt-4 max-w-[48ch] text-[18px] leading-[1.6]">
-            If you want proof, I will show you the work. If you want the
-            people who already ran it, I can put you on the phone. I own the
-            path. A crew lands it.
-          </p>
+          <h2 className="p-h2">
+            Have a substantial technology mandate? Let&apos;s talk.
+          </h2>
           <div className="mt-8">
             <Link href="/contact/" className="p-btn">
               <span className="p-gold-sq" aria-hidden="true" />

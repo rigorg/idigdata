@@ -29,10 +29,6 @@ const FAQ = [
     q: "What does the company keep?",
     a: "Mapped workflows, governed data, visible delivery state, and people who can run the next cycle. On the agentic layer: agents under boundaries with named owners. The production path stays.",
   },
-  {
-    q: "Are BOSS, The Rig, and FlowCraft for sale?",
-    a: "No. They are how I do the work.",
-  },
 ] as const;
 
 const faqPageJsonLd = {
@@ -114,8 +110,7 @@ export default function FaqPage() {
       <section className="p-section p-section--close">
         <div className="page-well">
           <h2 className="p-h2">
-            If your company needs a real transformation owned from inside the
-            business, let&apos;s talk.
+            Have a substantial technology mandate? Let&apos;s talk.
           </h2>
           <div className="mt-8">
             <Link href="/contact/" className="p-btn">

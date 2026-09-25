@@ -32,10 +32,10 @@ export function HeroCopy({
     <>
       <p className="font-body text-[14.5px] text-gold">
         <span className="md:hidden">
-          Transformational CIO · $100M–$1B operators
+          Transformational CIO · $100M-$1B operators
         </span>
         <span className="hidden md:inline">
-          Transformational CIO · $100M–$1B operators · systems you own
+          Transformational CIO · $100M-$1B operators · systems you own
         </span>
       </p>
       <h1 className="mt-3 max-w-[16ch] font-vollkorn text-[clamp(30px,3.6vw,52px)] font-bold leading-[1.12] text-porcelain">

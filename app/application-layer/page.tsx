@@ -8,7 +8,7 @@ import BeehiveFilm from "@/components/presence/BeehiveFilm";
 export const metadata: Metadata = {
   title: { absolute: "Application layer | idigdata" },
   description:
-    "I own the map above the vendors. CPG and AEC first. $100M-$1B. I hold command. A crew lands it.",
+    "The applications you already own, put to work. The company keeps a data foundation it owns.",
   alternates: { canonical: "/application-layer/" },
 };
 
@@ -173,26 +173,30 @@ export default function ApplicationLayerPage() {
     <PresenceShell>
       <header className="p-section p-section--hire">
         <div className="page-well">
-          <p className="p-kicker">The application layer</p>
-          <h1 className="p-h1" style={{ maxWidth: "18ch" }}>
-            I own the map above the vendors.
-          </h1>
-          <p className="p-dek">
-            CPG and AEC first. $100M-$1B. I hold command. A crew of 20 to 40
-            lands it. The company keeps running.
-          </p>
-          <div className="p-lead">
-            <p>
-              ERP programs fail on people, vendors, SI work, and data. Nobody
-              owns the map above them.
-            </p>
-            <p>
-              First port of call is the CFO. The application layer comes down to
-              the ERP and the P&amp;L. For most operators, WMS, MES, and supply
-              chain sit next to it, defending gross margins and protecting OI.
-              Hire me for this layer. Add Agentics on the same path when the
-              production bar is real.
-            </p>
+          <div className="hero-split">
+            <div>
+              <p className="p-kicker">The application layer</p>
+              <h1 className="p-h1" style={{ maxWidth: "18ch" }}>
+                The applications you already own, put to work.
+              </h1>
+              <p className="p-dek">
+                I connect ERP, planning, warehouse, manufacturing, finance, and
+                compliance around how the business actually runs. The company keeps
+                a data foundation it owns.
+              </p>
+              <div className="p-lead">
+                <p>
+                  I direct the roadmap, the budget, and the delivery with the
+                  company&apos;s business leaders. The work runs from discovery
+                  through cutover, stabilization, and the next cycle. The business
+                  keeps running while the work moves.
+                </p>
+              </div>
+            </div>
+            <div className="home-watermark" aria-hidden="true">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/idigdata-mark.svg" alt="" />
+            </div>
           </div>
         </div>
       </header>
@@ -204,7 +208,7 @@ export default function ApplicationLayerPage() {
           <p className="mt-4 font-vollkorn text-[20px] italic leading-[1.45]">
             Best practice where you are standard. Your sauce where you are not.
             The work is knowing which is which, then anchoring the systems and
-            processes to a sovereign company core.
+            processes to a company-owned data core.
           </p>
           <p className="p-prose mt-4">
             Most of the estate should look like a well-run peer. A thin slice
@@ -419,28 +423,28 @@ export default function ApplicationLayerPage() {
 
       <section className="p-section">
         <div className="page-well">
-          <p className="p-kicker">The Human Operating Model</p>
-          <h2 className="p-h2">Data is the crown asset. People are the juice.</h2>
+          <p className="p-kicker">Operating Model</p>
+          <h2 className="p-h2">Internal capability. Frontline adoption.</h2>
 
           <div className="mt-4 border-l-3 border-[#FACC15] pl-4 py-1">
             <p className="font-vollkorn text-[22px] font-bold italic leading-[1.4] text-navy">
-              &ldquo;Happy systems, happy people.&rdquo;
+              &ldquo;Systems fight the business when data is fragmented.&rdquo;
             </p>
             <p className="mt-1 font-brand text-[11px] font-semibold uppercase tracking-[0.2em] text-[#B48A05]">
-              Core Operating Doctrine
+              Delivery Reality
             </p>
           </div>
 
           <p className="p-prose mt-6">
-            The market is consumed with whether AI agents will replace jobs.
-            Tools shift and routine toil disappears, but people remain the
-            unmistakable soul and competitive edge of any enterprise.
+            Transformation fails when software is deployed in a vacuum and frontline
+            teams are left firefighting bad data and broken handoffs. True adoption
+            happens when workflows reflect the actual business, data is governed at the
+            source, and internal teams are developed to own the capability from day one.
           </p>
           <p className="p-prose mt-3">
-            When systems fight the frontline with bad data and fragmented silos,
-            people spend their days firefighting. When systems are unified,
-            governed, and joyful to use, the friction vanishes - and the
-            business sings. That is the Beehive.
+            The Beehive maps how work actually crosses departments and functional
+            groups-connecting the warehouse bays and manufacturing floor directly to
+            executive reporting.
           </p>
 
           <div className="command-plate mt-8">
@@ -466,22 +470,23 @@ export default function ApplicationLayerPage() {
           </div>
 
           <p className="mt-10 font-brand text-[11px] font-semibold uppercase tracking-[0.22em] text-warm-gray">
-            Human delivery mechanics
+            Execution mechanics
           </p>
           <ul className="mechanics-grid">
             <li className="mechanic-card">
               <p className="font-vollkorn text-[18px] font-bold text-navy">
-                Sovereign ownership
+                Internal ownership
               </p>
               <p className="mt-2 text-[15.5px] leading-[1.6]">
-                I hold the roadmap, decisions, and timeline. A crew of 20 to 40
-                lands the work. Partners deliver as trades. Your team holds the
-                keys from day one. The business does not rent command.
+                I architect and build. I develop the internal team and hold
+                vendors and systems integrators accountable for cost and
+                delivery. The company keeps ownership of its data, knowledge,
+                and custom software.
               </p>
             </li>
             <li className="mechanic-card">
               <p className="font-vollkorn text-[18px] font-bold text-navy">
-                Frontline respect
+                Frontline reality
               </p>
               <p className="mt-2 text-[15.5px] leading-[1.6]">
                 From warehouse bays and plant floors to the executive boardroom,
@@ -503,32 +508,45 @@ export default function ApplicationLayerPage() {
         </div>
       </section>
 
-      <section className="p-section" style={{ background: "#F3ECE0" }}>
+            <section className="p-section" style={{ background: "#F3ECE0" }}>
         <div className="page-well">
           <div className="beat-gold">
-            <p className="p-kicker">The transformation</p>
-            <h2 className="p-h2">What you get is the transformation.</h2>
+            <p className="p-kicker">Receipts</p>
+            <h2 className="p-h2">The receipts at enterprise scale.</h2>
             <p className="p-prose">
-              This layer, taken through production. Vendors are trades. Someone
-              still has to own the build. I hold command. A crew lands it.
+              The business keeps running while the work moves. Customer-side command
+              from discovery through cutover and stabilization.
             </p>
             <div className="dossier">
               <p className="dossier-entry">
-                <strong>Most recent: CIO, Sierra Nevada Brewing (~$420M).</strong>{" "}
-                $15M estate transformation on a company-owned data core. Rebuilt
-                the IS function.
+                <strong>Data Integration Group.</strong> $350M post-M&amp;A
+                estate in 11 months. Financial close from 18 days to four.
+                Chart of accounts and WMS unified. Item records standardized.
               </p>
               <p className="dossier-entry">
-                <strong>Earlier: CEO/CTO, Timberline.</strong> $250K to $130M.
-                Systems that had to hold in the field.
+                <strong>Data Integration Group.</strong> Stalled $8M ERP
+                recovered, with $2M saved, and a company-owned API bridge.
               </p>
               <p className="dossier-entry">
-                $350M post-M&amp;A estate in 11 months. Stalled $8M ERP
-                recovered. Company ownership preserved.
+                <strong>Sierra Nevada Brewing, CIO (~$420M).</strong> Owned the
+                technology roadmap and budget. $15M estate transformation: more
+                than 200 disparate systems brought to 25 connected enterprise
+                systems on a company-owned data core. IS/IT team rebuilt. More
+                than 150 people at peak.
               </p>
               <p className="dossier-spine">
-                30 years · 50+ implementations · 15 full transformations ·
-                $100M-$1B operators
+                30 years · 50+ implementations · 15 transformations at scale ·
+                $100M-$1B enterprise operators
+              </p>
+            </div>
+
+            <div className="mt-8 border-t border-[#142840]/10 pt-6">
+              <p className="font-brand text-[11px] font-bold uppercase tracking-[0.16em] text-[#B48A05]">
+                What the company keeps
+              </p>
+              <p className="p-prose mt-2">
+                Mapped workflows, governed data, people who can run the next
+                cycle, and ownership of the data and the custom software.
               </p>
             </div>
           </div>
@@ -537,7 +555,9 @@ export default function ApplicationLayerPage() {
 
       <section className="p-section p-section--close">
         <div className="page-well">
-          <h2 className="p-h2">If this layer needs an owner, start there.</h2>
+          <h2 className="p-h2">
+            Have a substantial technology mandate? Let&apos;s talk.
+          </h2>
           <div className="mt-8">
             <Link href="/contact/" className="p-btn">
               <span className="p-gold-sq" aria-hidden="true" />

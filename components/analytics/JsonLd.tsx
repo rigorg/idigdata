@@ -6,7 +6,7 @@ const organizationSchema = {
   url: "https://idigdata.com",
   logo: "https://idigdata.com/idigdata-mark.svg",
   description:
-    "idigdata is the independent practice of transformational CIO Robert Paddock (Data Integration Group / DIG LLC), founded 2016. Both layers under one owner: the application layer that keeps the business running, and Enterprise-Agentics the company owns. Embeds inside $100M-$1B operators above the vendors. Vendor-agnostic.",
+    "Robert Paddock builds and develops teams around substantial technology mandates. Enterprise systems and applied AI become capabilities the company can own, operate, and improve. The business keeps running while the work moves. $100M-$1B enterprise operators.",
   founder: {
     "@type": "Person",
     name: "Robert Paddock",
@@ -25,7 +25,7 @@ const personSchema = {
   name: "Robert Paddock",
   jobTitle: "Transformational Chief Information Officer",
   description:
-    "Transformational CIO and founder of idigdata. Owns delivery on both layers: the application estate and Enterprise-Agentics in production. 30 years inside mid-market ($100M-$1B) enterprise change; 50+ implementations including 15 full transformations; recent CIO residency at Sierra Nevada Brewing (~$420M).",
+    "Technology executive. 30 years, 50+ implementations, 15 transformations at scale, four years applying agentics. Substantial mandates for $100M-$1B businesses. The business keeps running while the work moves.",
   worksFor: {
     "@type": "Organization",
     name: "Data Integration Group",
