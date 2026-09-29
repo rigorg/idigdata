@@ -522,24 +522,22 @@ export default function ApplicationLayerPage() {
             </p>
             <div className="dossier">
               <p className="dossier-entry">
-                <strong>Data Integration Group.</strong> $350M post-M&amp;A
+                <strong>Data Integration Group.</strong> A post-M&amp;A
                 estate in 11 months. Financial close from 18 days to four.
                 Chart of accounts and WMS unified. Item records standardized.
               </p>
               <p className="dossier-entry">
-                <strong>Data Integration Group.</strong> Stalled $8M ERP
-                recovered, with $2M saved, and a company-owned API bridge.
+                <strong>Data Integration Group.</strong> A stalled ERP
+                recovered, and a company-owned API bridge.
               </p>
               <p className="dossier-entry">
-                <strong>Sierra Nevada Brewing, CIO (~$420M).</strong> Owned the
-                technology roadmap and budget. $15M estate transformation: more
-                than 200 disparate systems brought to 25 connected enterprise
-                systems on a company-owned data core. IS/IT team rebuilt. More
-                than 150 people at peak.
+                <strong>Sierra Nevada Brewing, CIO.</strong> I owned the
+                technology roadmap and budget. More than 200 disparate systems
+                brought to 25 connected enterprise systems on a company-owned
+                data core. IS/IT team rebuilt. More than 150 people at peak.
               </p>
               <p className="dossier-spine">
-                30 years · 50+ implementations · 15 transformations at scale ·
-                $100M-$1B enterprise operators
+                30 years · 50+ implementations · 15 transformations at scale
               </p>
             </div>
 
@@ -559,7 +557,7 @@ export default function ApplicationLayerPage() {
       <section className="p-section p-section--close">
         <div className="page-well">
           <h2 className="p-h2">
-            Have a substantial technology mandate? Let&apos;s talk.
+            Outcomes the company can own.
           </h2>
           <div className="mt-8">
             <Link href="/contact/" className="p-btn">

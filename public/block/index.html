@@ -1,0 +1,1842 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mandate Studio · Data Integration Group | idigdata</title>
+  <meta name="description" content="Thirty years of enterprise architecture and contract CIO leadership. Describe your challenge and synthesize custom 3-point Standard Block mandates in real time." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root, [data-theme="light"] {
+      --field: #f8f6f0;
+      --field-subtle: #f1ecdf;
+      --surface: #ffffff;
+      --surface-elevated: #faf8f5;
+      --type: #1a1a18;
+      --type-muted: #544f47;
+      --type-dim: #7d776d;
+      --copper: #b85d19;
+      --copper-hover: #9c4c11;
+      --copper-faint: rgba(184, 93, 25, 0.08);
+      --copper-border: rgba(184, 93, 25, 0.35);
+      --blue: #0284c7;
+      --blue-faint: rgba(2, 132, 199, 0.08);
+      --blue-border: rgba(2, 132, 199, 0.35);
+      --purple: #7c3aed;
+      --green: #059669;
+      --green-faint: rgba(5, 150, 105, 0.08);
+      --amber: #d97706;
+      --red: #dc2626;
+      --red-faint: rgba(220, 38, 38, 0.08);
+      --red-border: rgba(220, 38, 38, 0.35);
+      --line: rgba(30, 24, 18, 0.12);
+      --line-strong: rgba(30, 24, 18, 0.22);
+      --grid-dot: rgba(30, 24, 18, 0.18);
+      --grid-major: rgba(30, 24, 18, 0.04);
+      --dossier-bg: #ffffff;
+
+      --badge-lead-bg: rgba(184, 93, 25, 0.12);
+      --badge-lead-fg: #94450a;
+      --badge-arch-bg: rgba(2, 132, 199, 0.12);
+      --badge-arch-fg: #0369a1;
+      --badge-exec-bg: rgba(124, 58, 237, 0.12);
+      --badge-exec-fg: #6d28d9;
+      --badge-intel-bg: rgba(5, 150, 105, 0.12);
+      --badge-intel-fg: #047857;
+
+      --card-shadow: 0 1px 3px rgba(30, 24, 18, 0.05);
+      --card-shadow-hover: 0 6px 18px rgba(30, 24, 18, 0.08);
+    }
+
+    [data-theme="dark"] {
+      --field: #0d1117;
+      --field-subtle: #161b22;
+      --surface: #121820;
+      --surface-elevated: #1a222d;
+      --type: #f0f6fc;
+      --type-muted: #9ba5b1;
+      --type-dim: #6e7681;
+      --copper: #d97706;
+      --copper-hover: #b45309;
+      --copper-faint: rgba(217, 119, 6, 0.15);
+      --copper-border: rgba(217, 119, 6, 0.45);
+      --blue: #38bdf8;
+      --blue-faint: rgba(56, 189, 248, 0.12);
+      --blue-border: rgba(56, 189, 248, 0.40);
+      --purple: #a855f7;
+      --green: #34d399;
+      --green-faint: rgba(52, 211, 153, 0.15);
+      --amber: #f59e0b;
+      --red: #f87171;
+      --red-faint: rgba(248, 113, 113, 0.15);
+      --red-border: rgba(248, 113, 113, 0.45);
+      --line: rgba(240, 246, 252, 0.12);
+      --line-strong: rgba(240, 246, 252, 0.22);
+      --grid-dot: rgba(240, 246, 252, 0.14);
+      --grid-major: rgba(240, 246, 252, 0.03);
+      --dossier-bg: #141b24;
+
+      --badge-lead-bg: rgba(217, 119, 6, 0.22);
+      --badge-lead-fg: #fbbf24;
+      --badge-arch-bg: rgba(56, 189, 248, 0.22);
+      --badge-arch-fg: #7dd3fc;
+      --badge-exec-bg: rgba(168, 85, 247, 0.22);
+      --badge-exec-fg: #d8b4fe;
+      --badge-intel-bg: rgba(52, 211, 153, 0.22);
+      --badge-intel-fg: #6ee7b7;
+
+      --card-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+      --card-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.6);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { min-height: 100%; margin: 0; }
+    body {
+      background-color: var(--field);
+      background-image: 
+        linear-gradient(to right, var(--grid-major) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-major) 1px, transparent 1px),
+        radial-gradient(var(--grid-dot) 0.75px, transparent 0.75px);
+      background-size: 64px 64px, 64px 64px, 16px 16px;
+      color: var(--type);
+      font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+      font-size: 14.5px;
+      line-height: 1.5;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    button, input, textarea { font: inherit; color: inherit; }
+    button { cursor: pointer; background: transparent; border: 0; text-align: left; }
+    a { color: inherit; text-decoration: none; }
+
+    .studio-wrapper {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 0 clamp(16px, 3vw, 48px);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Masthead */
+    header.masthead {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .block-mark-svg {
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+    }
+    .brand-title { font-weight: 600; color: var(--type); }
+    .brand-sub { color: var(--type-dim); }
+    
+    .header-ctrls {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .theme-toggle {
+      border: 1px solid var(--line);
+      padding: 5px 11px;
+      border-radius: 2px;
+      font-size: 11px;
+      color: var(--type-muted);
+      transition: all 0.15s;
+    }
+    .theme-toggle:hover { border-color: var(--copper); color: var(--type); }
+
+    /* Studio Main Layout */
+    .studio-main {
+      padding: 32px 0 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      flex: 1;
+    }
+
+    /* Section 1: The Executive Intake & Blurb Synthesizer */
+    .intake-section {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .hero-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .hero-meta h1 {
+      font-family: Newsreader, Georgia, serif;
+      font-size: clamp(28px, 3.4vw, 42px);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      margin: 0;
+      color: var(--type);
+      line-height: 1.15;
+    }
+    .hero-meta h1 em {
+      font-style: italic;
+      color: var(--copper);
+    }
+    .studio-law-pill {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      background: var(--surface);
+      border: 1px solid var(--line-strong);
+      border-radius: 2px;
+      color: var(--type-muted);
+    }
+
+    /* The Blurb Synthesizer Box */
+    .synthesizer-box {
+      background: var(--surface);
+      border: 1px solid var(--line-strong);
+      border-radius: 3px;
+      box-shadow: var(--card-shadow);
+      padding: 20px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+    }
+    .synthesizer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--type-dim);
+    }
+    .synthesizer-top b { color: var(--copper); }
+
+    .blurb-input-area {
+      position: relative;
+    }
+    textarea.blurb-input {
+      width: 100%;
+      min-height: 82px;
+      padding: 12px 14px;
+      background: var(--field-subtle);
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--type);
+      resize: vertical;
+      transition: border-color 0.2s;
+    }
+    textarea.blurb-input:focus {
+      outline: none;
+      border-color: var(--copper);
+      background: var(--surface);
+    }
+
+    .preset-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+    .preset-label {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 10.5px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--type-dim);
+    }
+    .preset-pill {
+      padding: 6px 12px;
+      background: var(--field);
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      color: var(--type-muted);
+      transition: all 0.15s;
+    }
+    .preset-pill:hover {
+      border-color: var(--copper);
+      color: var(--type);
+    }
+    .preset-pill.active {
+      background: var(--copper);
+      color: #fff;
+      border-color: var(--copper);
+      font-weight: 600;
+    }
+    .preset-pill.overhaul {
+      border-color: var(--copper-border);
+      background: var(--copper-faint);
+      color: var(--copper);
+      font-weight: 600;
+    }
+    .preset-pill.overhaul:hover {
+      background: var(--copper);
+      color: #fff;
+    }
+
+    .synthesizer-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 6px;
+      border-top: 1px solid var(--line);
+    }
+    .btn-synthesize-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      background: var(--copper);
+      color: #fff;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: background 0.15s;
+    }
+    .btn-synthesize-action:hover { background: var(--copper-hover); }
+
+    /* Section 2: The Enterprise Architecture Matrix Switchboard */
+    .matrix-section {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .section-title-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--type-dim);
+    }
+    .section-title-bar b { color: var(--type); }
+
+    .matrix-layers {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+    }
+    .matrix-layer {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .layer-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--type-dim);
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--line);
+    }
+    .layer-head span.tag {
+      padding: 2px 6px;
+      border-radius: 2px;
+    }
+
+    .layer-nodes {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .node-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 10px 12px;
+      background: var(--field);
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.15s ease-out;
+    }
+    .node-card:hover {
+      border-color: var(--line-strong);
+      transform: translateY(-1px);
+    }
+    .node-card[aria-pressed="true"] {
+      border-color: var(--copper);
+      background: var(--surface-elevated);
+      box-shadow: 0 0 0 1px var(--copper);
+    }
+    .node-card[aria-pressed="true"]::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--copper);
+    }
+    .node-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .node-name {
+      font-family: Newsreader, Georgia, serif;
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--type);
+      line-height: 1.2;
+    }
+    .node-pts {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 10.5px;
+      font-weight: 600;
+      color: var(--type-dim);
+      white-space: nowrap;
+    }
+    .node-card[aria-pressed="true"] .node-pts { color: var(--copper); }
+    .node-desc {
+      font-size: 11.5px;
+      color: var(--type-muted);
+      line-height: 1.35;
+      margin: 0;
+    }
+
+    /* Capacity Status Bar */
+    .cadence-bar-strip {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      background: var(--surface);
+      border: 1px solid var(--line-strong);
+      border-radius: 2px;
+      padding: 12px 18px;
+    }
+    .cadence-metric {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .meter-slots {
+      display: flex;
+      gap: 6px;
+    }
+    .cad-slot {
+      width: 24px;
+      height: 9px;
+      background: var(--line);
+      border-radius: 1px;
+      transition: all 0.2s;
+    }
+    .cad-slot.filled { background: var(--copper); box-shadow: 0 0 6px var(--copper-border); }
+    .cad-slot.partial { background: var(--blue); }
+    .cad-slot.overflow { background: var(--red); box-shadow: 0 0 6px var(--red-border); }
+
+    /* Section 3: The Living Synthesized Mandate Dossier */
+    .dossier-section {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .dossier-paper {
+      background: var(--dossier-bg);
+      border: 1px solid var(--line-strong);
+      border-radius: 3px;
+      box-shadow: var(--card-shadow-hover);
+      padding: clamp(20px, 3.5vw, 36px);
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .dossier-masthead {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--type);
+    }
+    .dossier-badge-block {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .dossier-kicker {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--copper);
+    }
+    .dossier-title {
+      font-family: Newsreader, Georgia, serif;
+      font-size: clamp(24px, 2.8vw, 34px);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin: 0;
+      color: var(--type);
+      line-height: 1.2;
+    }
+    .dossier-status-pill {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 2px;
+      background: var(--field-subtle);
+      border: 1px solid var(--line);
+      color: var(--type);
+    }
+    .dossier-status-pill.sealed {
+      background: var(--copper-faint);
+      border-color: var(--copper-border);
+      color: var(--copper);
+    }
+    .dossier-status-pill.alert {
+      background: var(--red-faint);
+      border-color: var(--red-border);
+      color: var(--red);
+    }
+
+    /* Executive Synthesis Narrative */
+    .executive-thesis {
+      background: var(--field-subtle);
+      border-left: 4px solid var(--copper);
+      border-radius: 1px;
+      padding: 14px 18px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--type);
+    }
+    .executive-thesis strong {
+      display: block;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 10.5px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--copper);
+      margin-bottom: 4px;
+    }
+
+    /* Overcapacity / Full-Time Resolution Banner */
+    .overcapacity-resolution-box {
+      display: none;
+      background: var(--red-faint);
+      border: 1px solid var(--red-border);
+      border-radius: 2px;
+      padding: 16px 20px;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .overcapacity-resolution-box.show {
+      display: flex;
+    }
+    .overcapacity-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+    .overcapacity-text {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--type);
+    }
+    .resolution-tabs {
+      display: flex;
+      gap: 10px;
+    }
+    .res-tab-btn {
+      flex: 1;
+      padding: 8px 12px;
+      border: 1px solid var(--red-border);
+      background: var(--surface);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--type-muted);
+      border-radius: 2px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .res-tab-btn.active {
+      background: var(--type);
+      color: var(--field);
+      border-color: var(--type);
+    }
+
+    /* Assembled Blocks Grid */
+    .assembled-blocks-deck {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 18px;
+    }
+    .mandate-block-box {
+      border: 1px solid var(--line);
+      background: var(--field);
+      border-radius: 2px;
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .mandate-block-box.sealed {
+      border-color: var(--copper-border);
+      background: var(--copper-faint);
+    }
+    .mandate-block-box.phase2 {
+      border-style: dashed;
+      border-color: var(--blue-border);
+      background: var(--blue-faint);
+    }
+    .block-meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .block-phase-tag {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 9.5px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--type-dim);
+    }
+    .block-pts-tag {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--copper);
+    }
+    .block-name {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--type);
+      line-height: 1.3;
+    }
+    .block-capacity-line {
+      height: 4px;
+      background: var(--line);
+      border-radius: 1px;
+      overflow: hidden;
+    }
+    .block-capacity-fill {
+      height: 100%;
+      background: var(--copper);
+      transition: width 0.25s ease;
+    }
+    .block-capacity-fill.partial { background: var(--blue); }
+
+    .block-items-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .item-token {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+    }
+    .item-token .t-name { font-weight: 500; color: var(--type); }
+    .item-token .t-pts { font-family: "IBM Plex Mono", monospace; font-size: 11px; color: var(--type-dim); }
+
+    .deliverables-bay {
+      background: var(--surface);
+      border-left: 2px solid var(--copper);
+      padding: 9px 12px;
+      border-radius: 1px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .deliv-header {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--copper);
+    }
+    .deliv-line {
+      font-size: 12px;
+      color: var(--type-muted);
+      line-height: 1.35;
+      display: flex;
+      gap: 6px;
+    }
+    .deliv-line::before {
+      content: "→";
+      color: var(--copper);
+      font-family: monospace;
+    }
+
+    /* Full-Time Retainer Charter View */
+    .charter-retainer-view {
+      display: none;
+      background: var(--surface);
+      border: 1px solid var(--line-strong);
+      border-left: 4px solid var(--type);
+      border-radius: 2px;
+      padding: 24px;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .charter-retainer-view.show { display: flex; }
+    .charter-pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+      margin: 8px 0;
+    }
+    .pillar-box {
+      background: var(--field-subtle);
+      padding: 12px 14px;
+      border-radius: 2px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .pillar-kicker { font-family: "IBM Plex Mono", monospace; font-size: 9.5px; font-weight: 600; color: var(--copper); }
+    .pillar-head { font-size: 13px; font-weight: 600; color: var(--type); }
+    .pillar-body { font-size: 11.5px; color: var(--type-muted); line-height: 1.35; }
+
+    /* Dossier Footer & Dispatch */
+    .dossier-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+    .notes-box {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .notes-box label {
+      display: flex;
+      justify-content: space-between;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--type-dim);
+    }
+    textarea.notes-box-input {
+      width: 100%;
+      min-height: 60px;
+      padding: 9px 12px;
+      background: var(--field-subtle);
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      font-size: 13px;
+      color: var(--type);
+      resize: vertical;
+    }
+    textarea.notes-box-input:focus { outline: none; border-color: var(--copper); background: var(--surface); }
+
+    .dossier-actions-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .btn-dispatch-dossier {
+      padding: 13px 26px;
+      background: var(--copper);
+      color: #fff;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: background 0.15s;
+    }
+    .btn-dispatch-dossier:hover { background: var(--copper-hover); }
+    .btn-dispatch-dossier.fulltime { background: var(--type); }
+    .btn-reset-studio {
+      padding: 13px 18px;
+      border: 1px solid var(--line);
+      color: var(--type-muted);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: all 0.15s;
+    }
+    .btn-reset-studio:hover { border-color: var(--type); color: var(--type); }
+
+    /* Footer Base */
+    footer.base {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding: 20px 0;
+      border-top: 1px solid var(--line);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--type-dim);
+    }
+    footer.base a:hover { color: var(--copper); }
+  </style>
+</head>
+<body>
+  <div class="studio-wrapper">
+    <!-- Masthead -->
+    <header class="masthead">
+      <div class="brand-group">
+        <svg class="block-mark-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="12 2, 21 6.5, 12 11, 3 6.5" fill="rgba(184, 93, 25, 0.18)" stroke="currentColor" />
+          <polygon points="3 6.5, 12 11, 12 21, 3 16.5" fill="none" stroke="currentColor" />
+          <polygon points="21 6.5, 12 11, 12 21, 21 16.5" fill="none" stroke="currentColor" />
+          <line x1="12" y1="11" x2="12" y2="21" stroke="currentColor" stroke-width="1.2" />
+        </svg>
+        <span class="brand-title">Data Integration Group</span>
+        <span class="brand-sub">/ idigdata</span>
+      </div>
+      <div class="header-ctrls">
+        <span style="font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--copper); font-weight:600;">Standard Block Mandate Studio</span>
+        <button type="button" class="theme-toggle" id="theme-btn" aria-label="Toggle theme">☼ Light</button>
+      </div>
+    </header>
+
+    <!-- Studio Main Body -->
+    <main class="studio-main">
+      
+      <!-- Section 1: Executive Intake & Blurb Synthesizer -->
+      <section class="intake-section">
+        <div class="hero-meta">
+          <h1>Thirty years of enterprise architecture. <em>Configured in real time.</em></h1>
+          <span class="studio-law-pill">Law: 3 Pts = 1 Standard Block · Max 4 Blocks / Month (12 Pts)</span>
+        </div>
+
+        <div class="synthesizer-box">
+          <div class="synthesizer-top">
+            <span><b>01 · The Executive Challenge</b> // Describe Your Situation</span>
+            <span id="synth-status">Live Synthesis Ready</span>
+          </div>
+
+          <div class="blurb-input-area">
+            <textarea class="blurb-input" id="blurb-text" placeholder="Describe your corporate situation (e.g., 'PE firm acquiring $150M manufacturer. Need to cut over legacy SAP to NetSuite, consolidate 40 redundant software tools, and build a client-owned data core without halting warehouse shipments')..."></textarea>
+          </div>
+
+          <div class="preset-row">
+            <span class="preset-label">Calibrate Fast:</span>
+            <button type="button" class="preset-pill overhaul" data-preset="full_overhaul" id="pill-all">⚡ Select All 10 (Full Enterprise Overhaul - 15 Pts / 5 Blocks)</button>
+            <button type="button" class="preset-pill" data-preset="pe_turnaround">PE Portfolio Turnaround (3 Pts)</button>
+            <button type="button" class="preset-pill" data-preset="erp_cutover">Post-Merger ERP Cutover (6 Pts)</button>
+            <button type="button" class="preset-pill" data-preset="sovereign_ai">Autonomous Agent Platform (6 Pts)</button>
+            <button type="button" class="preset-pill" data-preset="interim_cio">Contract CIO / IT Restructure (6 Pts)</button>
+          </div>
+
+          <div class="synthesizer-actions">
+            <span style="font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--type-dim); text-transform:uppercase;">
+              Type a blurb or click any scenario to auto-synthesize your mandate dossier below
+            </span>
+            <button type="button" class="btn-synthesize-action" id="btn-synthesize">
+              ✦ Synthesize Mandate Flight Plan
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: The Enterprise Architecture Matrix Switchboard -->
+      <section class="matrix-section">
+        <div class="section-title-bar">
+          <span><b>02 · Architecture & Capability Switchboard</b> // Click To Toggle Nodes</span>
+          <span id="matrix-counter">0 OF 10 ACTIVE</span>
+        </div>
+
+        <!-- 4 Distinct Operational Layers -->
+        <div class="matrix-layers">
+          <!-- Layer 1: Leadership & Governance -->
+          <div class="matrix-layer">
+            <div class="layer-head">
+              <span>Command &amp; Governance</span>
+              <span class="tag" style="background:var(--badge-lead-bg); color:var(--badge-lead-fg)">LEADERSHIP</span>
+            </div>
+            <div class="layer-nodes">
+              <div class="node-card" data-id="time" role="button" tabindex="0" aria-pressed="false">
+                <div class="node-top">
+                  <span class="node-name">Executive Time</span>
+                  <span class="node-pts">1 PT</span>
+                </div>
+                <p class="node-desc">A week of the chair. Fractional CIO, CTO, or transformation leadership.</p>
+              </div>
+              <div class="node-card" data-id="board_pe" role="button" tabindex="0" aria-pressed="false">
+                <div class="node-top">
+                  <span class="node-name">Board &amp; PE Alignment</span>
+                  <span class="node-pts">1 PT</span>
+                </div>
+                <p class="node-desc">Technology audit readiness, tech debt ledgers, and sponsor reporting.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Layer 2: Foundation Architecture -->
+          <div class="matrix-layer">
+            <div class="layer-head">
+              <span>Foundation Architecture</span>
+              <span class="tag" style="background:var(--badge-arch-bg); color:var(--badge-arch-fg)">ARCHITECTURE</span>
+            </div>
+            <div class="layer-nodes">
+              <div class="node-card" data-id="mapping" role="button" tabindex="0" aria-pressed="false">
+                <div class="node-top">
+                  <span class="node-name">Systems &amp; People Mapping</span>
+                  <span class="node-pts">1 PT</span>
+                </div>
+                <p class="node-desc">Map all systems, data pathways, people, and vendors. Clarity on who carries what.</p>
+              </div>
+              <div class="node-card" data-id="datacore" role="button" tabindex="0" aria-pressed="false">
+                <div class="node-top">
+                  <span class="node-name">Data Core</span>
+                  <span class="node-pts">2 PTS</span>
+                </div>
+                <p class="node-desc">A company-owned core. The reliable center all operational systems connect to.</p>
+              </div>
+              <div class="node-card" data-id="integrations" role="button" tabindex="0" aria-pressed="false">
+                <div class="node-top">
+                  <span class="node-name">Integrations Fabric</span>
+                  <span class="node-pts">1 PT</span>
+                </div>
+                <p class="node-desc">API and event fabric connecting live systems without breaking current flight.</p>
+              </div>
+              <div class="node-card" data-id="rationalization" role="button" tabindex="0" aria-pressed="false">
+                <div class="node-top">
+                  <span class="node-name">System Rationalization</span>
+                  <span class="node-pts">1 PT</span>
+                </div>
+                <p class="node-desc">Consolidate redundant sprawl. Bringing 200 disparate tools down to 25.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Layer 3: Execution & Cutover -->
+          <div class="matrix-layer">
+            <div class="layer-head">
+              <span>Execution &amp; Cutover</span>
+              <span class="tag" style="background:var(--badge-exec-bg); color:var(--badge-exec-fg)">EXECUTION</span>
+            </div>
+            <div class="layer-nodes">
+              <div class="node-card" data-id="is_function" role="button" tabindex="0" aria-pressed="false">
+                <div class="node-top">
+                  <span class="node-name">The IS Function</span>
+                  <span class="node-pts">2 PTS</span>
+                </div>
+                <p class="node-desc">Rebuild internal team structure, delivery cadence, and engineering governance.</p>
+              </div>
+              <div class="node-card" data-id="implementation" role="button" tabindex="0" aria-pressed="false">
+                <div class="node-top">
+                  <span class="node-name">Implementation</span>
+                  <span class="node-pts">2 PTS</span>
+                </div>
+                <p class="node-desc">The scheme. Tailored blocks fitted to how you sell, buy, plan, make, and account.</p>
+              </div>
+              <div class="node-card" data-id="cutover" role="button" tabindex="0" aria-pressed="false">
+                <div class="node-top">
+                  <span class="node-name">Cutover Command</span>
+                  <span class="node-pts">2 PTS</span>
+                </div>
+                <p class="node-desc">Zero-downtime cutover leadership, 24/7 war room, and rollback protection.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Layer 4: Production Intelligence -->
+          <div class="matrix-layer">
+            <div class="layer-head">
+              <span>Production Intelligence</span>
+              <span class="tag" style="background:var(--badge-intel-bg); color:var(--badge-intel-fg)">INTELLIGENCE</span>
+            </div>
+            <div class="layer-nodes">
+              <div class="node-card" data-id="agentic" role="button" tabindex="0" aria-pressed="false">
+                <div class="node-top">
+                  <span class="node-name">Agentic Delivery</span>
+                  <span class="node-pts">2 PTS</span>
+                </div>
+                <p class="node-desc">Zeros and ones, checked, on your disk. Autonomous agents running in production.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Cadence Status Bar -->
+        <div class="cadence-bar-strip">
+          <div class="cadence-metric">
+            <span style="color:var(--type-dim)">Active Scope:</span>
+            <strong id="strip-pts" style="color:var(--type)">0 POINTS</strong>
+            <span style="color:var(--line-strong)">|</span>
+            <strong id="strip-blocks" style="color:var(--copper)">0 STANDARD BLOCKS</strong>
+          </div>
+          <div class="cadence-metric">
+            <span style="color:var(--type-dim)">Monthly Flight Rack:</span>
+            <div class="meter-slots">
+              <div class="cad-slot" id="slot-1" title="Block 1"></div>
+              <div class="cad-slot" id="slot-2" title="Block 2"></div>
+              <div class="cad-slot" id="slot-3" title="Block 3"></div>
+              <div class="cad-slot" id="slot-4" title="Block 4"></div>
+            </div>
+            <span id="strip-cadence-label" style="font-weight:600; color:var(--type)">Standby</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: The Living Synthesized Mandate Dossier -->
+      <section class="dossier-section">
+        <div class="section-title-bar">
+          <span><b>03 · Living Mandate Dossier</b> // Generated Executive Artifact</span>
+          <span id="dossier-date">CONFIDENTIAL · ROBERT PADDOCK</span>
+        </div>
+
+        <div class="dossier-paper">
+          <!-- Dossier Masthead -->
+          <div class="dossier-masthead">
+            <div class="dossier-badge-block">
+              <span class="dossier-kicker" id="dossier-domain-kicker">EXECUTIVE MANDATE FLIGHT PLAN</span>
+              <h2 class="dossier-title" id="dossier-title">Sovereign Data Core &amp; Architecture Mandate</h2>
+            </div>
+            <div class="dossier-status-pill" id="dossier-status-pill">● 2 BLOCKS SEALED</div>
+          </div>
+
+          <!-- Executive Thesis (Narrative generated from blurb) -->
+          <div class="executive-thesis">
+            <strong>Executive Thesis &amp; Strategy</strong>
+            <span id="dossier-narrative">
+              Select capabilities on the switchboard or enter your blurb above to generate your customized executive mandate thesis.
+            </span>
+          </div>
+
+          <!-- Overcapacity Resolution Box (Triggered when > 4 blocks / 15 pts) -->
+          <div class="overcapacity-resolution-box" id="overcapacity-box">
+            <div class="overcapacity-head">
+              <span>⚠ CAPACITY THRESHOLD REACHED (15 POINTS / 5 BLOCKS)</span>
+              <span>ENTERPRISE TRANSFORMATION SCOPE</span>
+            </div>
+            <p class="overcapacity-text">
+              You have selected all 10 capabilities. A monthly modular flight is capped at 4 Blocks (12 Points) to protect execution quality and avoid operational thrash.
+              <br /><br />
+              Beyond 4 blocks, this is no longer an à la carte sprint flight—this is a <b>Full-Time Mandate (&quot;Let&apos;s Talk&quot;)</b> where Robert Paddock steps directly into the chair.
+            </p>
+            <div class="resolution-tabs">
+              <button type="button" class="res-tab-btn active" id="tab-phased">View 2-Month Phased Roadmap</button>
+              <button type="button" class="res-tab-btn" id="tab-fulltime">View Full-Time Mandate Charter</button>
+            </div>
+          </div>
+
+          <!-- Assembled Blocks Container -->
+          <div class="assembled-blocks-deck" id="blocks-deck"></div>
+
+          <!-- Dedicated Full-Time Mandate Charter Box -->
+          <div class="charter-retainer-view" id="charter-view">
+            <div style="display:flex; justify-content:space-between; font-family:'IBM Plex Mono', monospace; font-size:11px; font-weight:700; text-transform:uppercase;">
+              <span>Executive Transformation Charter</span>
+              <span style="color:var(--copper);">Dedicated Executive Retainer</span>
+            </div>
+            <h3 style="font-family:Newsreader, Georgia, serif; font-size:22px; margin:0; font-weight:500;">
+              Contract CIO &amp; Chief Transformation Leader
+            </h3>
+            <p style="font-size:13px; color:var(--type-muted); margin:0; line-height:1.5;">
+              When an enterprise commissions all ten portfolio capabilities, sprint-by-sprint modular packaging is replaced by dedicated leadership in the chair. Robert Paddock brings 30 years of systems architecture, zero-downtime cutovers, and sovereign data core engineering directly to your executive committee.
+            </p>
+            <div class="charter-pillars-grid">
+              <div class="pillar-box">
+                <span class="pillar-kicker">PILLAR 01</span>
+                <span class="pillar-head">War Room &amp; Cutover Command</span>
+                <span class="pillar-body">Daily operational authority, zero-downtime cutover choreography, automated reconciliation, and immediate rollback protection.</span>
+              </div>
+              <div class="pillar-box">
+                <span class="pillar-kicker">PILLAR 02</span>
+                <span class="pillar-head">Sovereign Data Core</span>
+                <span class="pillar-body">Deploying a client-owned central data engine and event fabric that frees the enterprise from vendor lock.</span>
+              </div>
+              <div class="pillar-box">
+                <span class="pillar-kicker">PILLAR 03</span>
+                <span class="pillar-head">IS Function Rebuild</span>
+                <span class="pillar-body">Re-engineering internal engineering teams, vendor governance, and establishing weekly delivery cadence.</span>
+              </div>
+              <div class="pillar-box">
+                <span class="pillar-kicker">PILLAR 04</span>
+                <span class="pillar-head">Autonomous Production AI</span>
+                <span class="pillar-body">Deploying self-hosted, code-checked autonomous agent runtimes directly onto client infrastructure.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dossier Footer & Dispatch Action -->
+          <div class="dossier-footer">
+            <div class="notes-box">
+              <label for="dossier-notes">
+                <span>In Your Words // Mandate Context, Timelines &amp; PE Sponsor Constraints</span>
+                <span>Persisted on Disk</span>
+              </label>
+              <textarea class="notes-box-input" id="dossier-notes" placeholder="Add specific timeline requirements, vendor constraints, or PE sponsor context..."></textarea>
+            </div>
+
+            <div class="dossier-actions-row">
+              <button type="button" class="btn-dispatch-dossier" id="btn-dispatch">
+                Send Mandate to Robert Paddock →
+              </button>
+              <button type="button" class="btn-reset-studio" id="btn-reset">
+                Reset Studio
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="base">
+      <span>Data Integration Group · Robert Paddock</span>
+      <span>Sierra Nevada · Contract CIO Chapter</span>
+      <span>Autonomous Agents in Production</span>
+      <a href="https://idigdata.com" target="_blank" rel="noopener">idigdata.com</a>
+    </footer>
+  </div>
+
+  <script>
+    var PIECES = [
+      {
+        id: "time",
+        cat: "Leadership",
+        pts: 1,
+        title: "Executive Time",
+        desc: "A week of the chair. Fractional CIO, CTO, or transformation leadership. A firm can hold the contract.",
+        deliverables: [
+          "Weekly executive steering & war room leadership",
+          "Executive Sponsor & Board progress memos",
+          "Vendor negotiation & contract leverage review"
+        ]
+      },
+      {
+        id: "mapping",
+        cat: "Architecture",
+        pts: 1,
+        title: "Systems & People Mapping",
+        desc: "Map all enterprise systems, data pathways, people, and vendors. Clarity on the stack and who carries it.",
+        deliverables: [
+          "Enterprise Systems & Human Dependency Topology",
+          "Data lineage & integration flow matrix",
+          "Single-point-of-failure risk inventory"
+        ]
+      },
+      {
+        id: "datacore",
+        cat: "Architecture",
+        pts: 2,
+        title: "Data Core",
+        desc: "A company-owned core. The reliable center all operational systems connect to without vendor lock.",
+        deliverables: [
+          "Sovereign, client-owned relational data core schemas",
+          "Real-time event extraction connectors from operational ERP/CRM",
+          "Immutable transaction ledger & audit trail"
+        ]
+      },
+      {
+        id: "integrations",
+        cat: "Architecture",
+        pts: 1,
+        title: "Integrations Fabric",
+        desc: "API and event fabric connecting systems already running without breaking current flight.",
+        deliverables: [
+          "High-throughput API & webhook event bus",
+          "Asynchronous message queue for resilient system-to-system sync",
+          "Zero-data-loss fallback & retry handlers"
+        ]
+      },
+      {
+        id: "rationalization",
+        cat: "Architecture",
+        pts: 1,
+        title: "System Rationalization",
+        desc: "Consolidate redundant software sprawl. Bringing 200 disparate systems down to 25 connected tools.",
+        deliverables: [
+          "Software spend rationalization audit (EBITDA savings)",
+          "Application consolidation & deprecation timeline",
+          "License optimization & vendor exit strategy"
+        ]
+      },
+      {
+        id: "is_function",
+        cat: "Execution",
+        pts: 2,
+        title: "The IS Function",
+        desc: "Rebuild the team, internal governance, and operating cadence directly around the work.",
+        deliverables: [
+          "Re-engineered IS organization chart & skill matrix",
+          "Weekly agile sprint & production release cadence",
+          "Internal engineering standards & QA governance"
+        ]
+      },
+      {
+        id: "implementation",
+        cat: "Execution",
+        pts: 2,
+        title: "Implementation",
+        desc: "The scheme. Uniquely standard blocks fitted to how that company sells, buys, plans, makes, and accounts.",
+        deliverables: [
+          "Tailored operational business scheme (Sell/Buy/Plan/Make/Account)",
+          "Production-ready workflow automation scripts",
+          "Operator playbooks & departmental handover docs"
+        ]
+      },
+      {
+        id: "cutover",
+        cat: "Execution",
+        pts: 2,
+        title: "Cutover Command",
+        desc: "Zero-downtime cutover leadership, war room coordination, stabilization, and immediate rollback protection.",
+        deliverables: [
+          "Minute-by-minute cutover runbook & rehearsal logs",
+          "24/7 cutover war room command & incident triage",
+          "Automated reconciliation scripts & instant rollback triggers"
+        ]
+      },
+      {
+        id: "agentic",
+        cat: "Intelligence",
+        pts: 2,
+        title: "Agentic Delivery",
+        desc: "Zeros and ones, checked, on your disk. Autonomous agents in production that you own and keep.",
+        deliverables: [
+          "Containerized autonomous agent runtimes in client Git",
+          "Agent task pipelines with deterministic validation",
+          "Local telemetry & human-in-the-loop escalation guardrails"
+        ]
+      },
+      {
+        id: "board_pe",
+        cat: "Leadership",
+        pts: 1,
+        title: "Board & PE Alignment",
+        desc: "Technology audit readiness, capital efficiency reviews, and operating partner reporting for PE portfolios.",
+        deliverables: [
+          "PE Technology Due Diligence & Technical Debt Ledger",
+          "Value creation roadmap & CapEx/OpEx efficiency models",
+          "Quarterly Operating Partner executive briefing deck"
+        ]
+      }
+    ];
+
+    var PRESETS = {
+      pe_turnaround: {
+        name: "PE Portfolio Turnaround",
+        blurb: "PE sponsor portfolio company turnaround: 60-day technology audit, vendor sprawl consolidation, and EBITDA optimization.",
+        pieces: ["board_pe", "mapping", "rationalization"],
+        thesis: "Data Integration Group deploys an expedited technology audit and rationalization sprint. We establish immediate clarity across the application stack, identify EBITDA cost reductions across redundant SaaS licenses, and deliver an audit-ready technical debt ledger for the board."
+      },
+      erp_cutover: {
+        name: "Post-Merger ERP Cutover",
+        blurb: "High-stakes post-merger ERP cutover: Migrating legacy core systems without stopping 24/7 production and warehouse operations.",
+        pieces: ["datacore", "integrations", "cutover", "time"],
+        thesis: "Dual-track cutover command and sovereign data fabric flight. We anchor client data in a reliable, company-owned core while deploying 24/7 war room cutover command with minute-by-minute runbooks and automated rollback safeguards."
+      },
+      sovereign_ai: {
+        name: "Autonomous Agent Operations",
+        blurb: "Deploying production autonomous AI agents on company hardware with complete data sovereignty and zero vendor captive lock.",
+        pieces: ["mapping", "datacore", "agentic", "integrations"],
+        thesis: "Delivering production-grade autonomous agent runtimes directly checked into client Git repositories. Supported by a private relational data core and real-time event integration mesh, allowing agents to execute deterministic operational workflows safely."
+      },
+      interim_cio: {
+        name: "Contract CIO / IT Restructure",
+        blurb: "Executive leadership vacancy: Restructuring internal IT engineering teams, setting agile cadence, and holding the CIO chair.",
+        pieces: ["time", "is_function", "mapping", "implementation"],
+        thesis: "Robert Paddock steps into the CIO chair with direct executive authority to restructure the internal IS organization. We re-align the team directly around delivery cadence, establish QA engineering standards, and configure bespoke operational schemes."
+      },
+      full_overhaul: {
+        name: "Enterprise-Wide Overhaul (All 10 Capabilities)",
+        blurb: "Comprehensive enterprise transformation: End-to-end overhaul spanning leadership, systems architecture, cutover, and autonomous production AI.",
+        pieces: ["time", "mapping", "datacore", "integrations", "rationalization", "is_function", "implementation", "cutover", "agentic", "board_pe"],
+        thesis: "Full enterprise transformation encompassing the complete 10-capability portfolio. Because monthly modular bandwidth is capped at 4 Standard Blocks (12 Points) to protect execution quality, this mandate operates as a sequential 2-month flight plan or a dedicated Full-Time Contract CIO engagement."
+      }
+    };
+
+    var STORAGE_KEY = "standard_block_studio_v5";
+    var selectedIds = new Set(["datacore", "integrations"]);
+    var customBlurb = "";
+    var customNotes = "";
+    var activeTab = "phased"; // 'phased' or 'fulltime'
+
+    function loadState() {
+      try {
+        var raw = localStorage.getItem(STORAGE_KEY);
+        if (raw) {
+          var d = JSON.parse(raw);
+          if (Array.isArray(d.selected)) selectedIds = new Set(d.selected);
+          if (typeof d.blurb === "string") customBlurb = d.blurb;
+          if (typeof d.notes === "string") customNotes = d.notes;
+        }
+      } catch (e) {
+        console.warn("Storage load error:", e);
+      }
+    }
+
+    function saveState() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({
+          selected: Array.from(selectedIds),
+          blurb: customBlurb,
+          notes: customNotes
+        }));
+      } catch (e) {
+        console.warn("Storage save error:", e);
+      }
+    }
+
+    loadState();
+
+    // DOM Elements
+    var blurbInput = document.getElementById("blurb-text");
+    var synthStatus = document.getElementById("synth-status");
+    var matrixCounter = document.getElementById("matrix-counter");
+    var stripPts = document.getElementById("strip-pts");
+    var stripBlocks = document.getElementById("strip-blocks");
+    var stripCadenceLabel = document.getElementById("strip-cadence-label");
+    var dossierTitle = document.getElementById("dossier-title");
+    var dossierDomainKicker = document.getElementById("dossier-domain-kicker");
+    var dossierStatusPill = document.getElementById("dossier-status-pill");
+    var dossierNarrative = document.getElementById("dossier-narrative");
+    var overcapacityBox = document.getElementById("overcapacity-box");
+    var blocksDeck = document.getElementById("blocks-deck");
+    var charterView = document.getElementById("charter-view");
+    var dossierNotes = document.getElementById("dossier-notes");
+    var btnDispatch = document.getElementById("btn-dispatch");
+    var themeBtn = document.getElementById("theme-btn");
+
+    var tabPhased = document.getElementById("tab-phased");
+    var tabFulltime = document.getElementById("tab-fulltime");
+
+    // Canonical Solver: Groups into 3-point Standard Blocks
+    function solveBlocks() {
+      var selected = PIECES.filter(function (p) { return selectedIds.has(p.id); });
+      var totalPts = selected.reduce(function (sum, p) { return sum + p.pts; }, 0);
+      var unassigned = selected.slice();
+      var blocks = [];
+
+      var CANONICAL_PAIRS = [
+        {
+          ids: ["mapping", "datacore"],
+          title: "Sovereign Data Hub & Systems Topology",
+          domain: "Architecture Foundation",
+          deliverables: [
+            "Complete Enterprise Systems & Human Dependency Topology",
+            "Sovereign, client-owned relational data core schemas",
+            "Data extraction connectors for operational ERP/CRM"
+          ]
+        },
+        {
+          ids: ["integrations", "cutover"],
+          title: "Cutover Command & Integrations Fabric",
+          domain: "Zero-Downtime Execution",
+          deliverables: [
+            "Real-time event fabric connecting legacy & target systems",
+            "Minute-by-minute cutover runbook & rollback choreography",
+            "24/7 war room leadership & immediate incident triage"
+          ]
+        },
+        {
+          ids: ["time", "is_function"],
+          title: "Contract CIO & IS Function Rebuild",
+          domain: "Executive Leadership & Team",
+          deliverables: [
+            "Fractional CIO leadership with direct operational authority",
+            "Re-engineered IS organization chart & skill matrix",
+            "Weekly agile sprint & production release cadence"
+          ]
+        },
+        {
+          ids: ["rationalization", "implementation"],
+          title: "System Rationalization & Business Scheme",
+          domain: "Operational Efficiency",
+          deliverables: [
+            "Vendor sprawl reduction (consolidating 200 apps to 25)",
+            "Tailored operational business scheme (Sell/Buy/Plan/Make/Account)",
+            "Software spend rationalization audit (EBITDA savings)"
+          ]
+        },
+        {
+          ids: ["board_pe", "agentic"],
+          title: "Autonomous AI Delivery & Board Strategy",
+          domain: "Production Intelligence",
+          deliverables: [
+            "Containerized autonomous agent runtimes in client Git",
+            "PE Technology Due Diligence & Technical Debt Ledger",
+            "Autonomous production workflows with local human oversight"
+          ]
+        }
+      ];
+
+      // Match canonical pairs
+      CANONICAL_PAIRS.forEach(function (pair) {
+        var hasAll = pair.ids.every(function (id) {
+          return unassigned.some(function (p) { return p.id === id; });
+        });
+        if (hasAll) {
+          var matchedItems = unassigned.filter(function (p) { return pair.ids.indexOf(p.id) !== -1; });
+          unassigned = unassigned.filter(function (p) { return pair.ids.indexOf(p.id) === -1; });
+          blocks.push({
+            num: blocks.length + 1,
+            title: pair.title,
+            domain: pair.domain,
+            pts: 3,
+            items: matchedItems,
+            deliverables: pair.deliverables
+          });
+        }
+      });
+
+      // Assemble remaining pieces
+      var cur = null;
+      unassigned.forEach(function (item) {
+        if (!cur) {
+          cur = {
+            num: blocks.length + 1,
+            title: item.title + " Focus Mandate",
+            domain: item.cat + " Domain",
+            pts: item.pts,
+            items: [item],
+            deliverables: item.deliverables.slice(0, 3)
+          };
+          if (cur.pts === 3) {
+            blocks.push(cur);
+            cur = null;
+          }
+        } else if (cur.pts + item.pts <= 3) {
+          cur.items.push(item);
+          cur.pts += item.pts;
+          cur.title = cur.items.map(function (it) { return it.title; }).join(" + ") + " Mandate";
+          cur.deliverables = cur.deliverables.concat(item.deliverables).slice(0, 3);
+          if (cur.pts === 3) {
+            blocks.push(cur);
+            cur = null;
+          }
+        } else {
+          blocks.push(cur);
+          cur = {
+            num: blocks.length + 1,
+            title: item.title + " Focus Mandate",
+            domain: item.cat + " Domain",
+            pts: item.pts,
+            items: [item],
+            deliverables: item.deliverables.slice(0, 3)
+          };
+          if (cur.pts === 3) {
+            blocks.push(cur);
+            cur = null;
+          }
+        }
+      });
+
+      if (cur) blocks.push(cur);
+
+      return {
+        pieces: selected,
+        totalPts: totalPts,
+        blocks: blocks
+      };
+    }
+
+    function generateThesis(state) {
+      if (customBlurb && customBlurb.trim().length > 10) {
+        return "Custom Executive Flight Synthesis: " + customBlurb.trim() + " — Data Integration Group structures this engagement into " + state.blocks.length + " Standard Blocks (" + state.totalPts + " points), prioritizing architecture stabilization and zero-downtime execution.";
+      }
+      if (state.pieces.length === 0) {
+        return "Select portfolio pieces on the switchboard or enter your executive blurb above to generate your customized mandate flight plan.";
+      }
+      var nb = state.blocks.length;
+      if (nb === 1) {
+        return "High-Impact Focus Sprint (1 Block / 3 Pts): Rapid-deployment executive flight targeting immediate stabilization, architecture clarity, or sponsor technology audit readiness.";
+      }
+      if (nb === 2) {
+        return "Synchronized Dual-Track Flight (2 Blocks / 6 Pts): Balanced operational execution pairing foundational architecture & data core with live cutover leadership.";
+      }
+      if (nb === 3) {
+        return "Major Transformation Flight (3 Blocks / 9 Pts): Deep multi-system overhaul spanning executive leadership in the chair, data hub deployment, and organizational team rebuild.";
+      }
+      if (nb === 4) {
+        return "Full Monthly Cadence (4 Blocks / 12 Pts - Maximum Bandwidth): Running 4 synchronized Standard Blocks across the complete enterprise spectrum without team thrash.";
+      }
+      return "Full Enterprise Transformation (15 Points / 5 Blocks): Scope encompasses all 10 capabilities. Because monthly modular cadence caps at 4 Blocks (12 Points) to preserve execution fidelity, this operates as a sequential 2-month flight plan or a dedicated Full-Time Contract CIO engagement.";
+    }
+
+    function renderMatrix() {
+      document.querySelectorAll(".node-card").forEach(function (card) {
+        var id = card.getAttribute("data-id");
+        card.setAttribute("aria-pressed", selectedIds.has(id) ? "true" : "false");
+      });
+      matrixCounter.textContent = selectedIds.size + " OF " + PIECES.length + " ACTIVE";
+    }
+
+    function renderDossier() {
+      var state = solveBlocks();
+      var numBlocks = state.blocks.length;
+      var totalPts = state.totalPts;
+      var isOver = numBlocks > 4;
+
+      stripPts.textContent = totalPts + (totalPts === 1 ? " POINT" : " POINTS");
+      stripBlocks.textContent = numBlocks + (numBlocks === 1 ? " STANDARD BLOCK" : " STANDARD BLOCKS");
+
+      // Cadence slots
+      for (var s = 1; s <= 4; s++) {
+        var slotEl = document.getElementById("slot-" + s);
+        if (slotEl) {
+          slotEl.className = "cad-slot";
+          if (isOver) {
+            slotEl.classList.add("overflow");
+          } else if (s <= numBlocks) {
+            var b = state.blocks[s - 1];
+            if (b && b.pts === 3) slotEl.classList.add("filled");
+            else slotEl.classList.add("partial");
+          }
+        }
+      }
+
+      if (numBlocks === 0) {
+        stripCadenceLabel.textContent = "Standby (No Blocks)";
+        dossierDomainKicker.textContent = "EXECUTIVE MANDATE FLIGHT PLAN";
+        dossierTitle.textContent = "Mandate Studio // Standby";
+        dossierStatusPill.className = "dossier-status-pill";
+        dossierStatusPill.textContent = "● STANDBY // SELECT NODES";
+        dossierNarrative.textContent = generateThesis(state);
+        overcapacityBox.classList.remove("show");
+        charterView.classList.remove("show");
+        blocksDeck.style.display = "grid";
+        blocksDeck.innerHTML = '<div style="grid-column:1/-1; padding:36px; text-align:center; border:1px dashed var(--line); border-radius:2px; color:var(--type-dim);">' +
+          '<p style="margin:0 0 6px; font-family:Newsreader,serif; font-size:20px; font-style:italic; color:var(--type-muted)">No capabilities activated yet.</p>' +
+          '<span style="font-family:monospace; font-size:11px; text-transform:uppercase">Toggle nodes on the switchboard above or type your challenge</span>' +
+        '</div>';
+        btnDispatch.classList.remove("fulltime");
+        btnDispatch.textContent = "Send Mandate to Robert Paddock →";
+        return;
+      }
+
+      if (isOver) {
+        stripCadenceLabel.textContent = "Capacity Limit Exceeded (> 4 Blocks / Mo)";
+        dossierDomainKicker.textContent = "FULL ENTERPRISE OVERHAUL (15 PTS / 5 BLOCKS)";
+        dossierTitle.textContent = "Contract CIO & Enterprise Transformation Mandate";
+        dossierStatusPill.className = "dossier-status-pill alert";
+        dossierStatusPill.textContent = "⚠ CAPACITY THRESHOLD EXCEEDED";
+        overcapacityBox.classList.add("show");
+
+        if (activeTab === "fulltime") {
+          charterView.classList.add("show");
+          blocksDeck.style.display = "none";
+          btnDispatch.classList.add("fulltime");
+          btnDispatch.textContent = "Schedule Full-Time Mandate Consultation →";
+        } else {
+          charterView.classList.remove("show");
+          blocksDeck.style.display = "grid";
+          btnDispatch.classList.remove("fulltime");
+          btnDispatch.textContent = "Request Phased Transformation Flight →";
+        }
+      } else {
+        stripCadenceLabel.textContent = numBlocks === 1 ? "Sprint Flight (1 Block / Mo)" : numBlocks === 2 ? "Dual-Track (2 Blocks / Mo)" : numBlocks === 3 ? "Major Flight (3 Blocks / Mo)" : "Maximum Flight (4 Blocks / Month)";
+        dossierDomainKicker.textContent = numBlocks === 1 ? "1-BLOCK FOCUS SPRINT" : numBlocks === 2 ? "2-BLOCK DUAL-TRACK FLIGHT" : numBlocks === 3 ? "3-BLOCK TRANSFORMATION FLIGHT" : "4-BLOCK FULL MONTHLY CADENCE";
+        dossierTitle.textContent = state.blocks.map(function(b){ return b.title; }).join(" & ");
+        dossierStatusPill.className = "dossier-status-pill sealed";
+        dossierStatusPill.textContent = "● " + state.blocks.filter(function(b){ return b.pts === 3; }).length + " BLOCKS SEALED";
+        overcapacityBox.classList.remove("show");
+        charterView.classList.remove("show");
+        blocksDeck.style.display = "grid";
+        btnDispatch.classList.remove("fulltime");
+        btnDispatch.textContent = "Send Mandate to Robert Paddock →";
+      }
+
+      dossierNarrative.textContent = generateThesis(state);
+
+      // Render assembled block cards
+      var deckHtml = "";
+      state.blocks.forEach(function (b, idx) {
+        var isSealed = b.pts === 3;
+        var isPhase2 = idx >= 4;
+        var fillPct = Math.min(100, Math.round((b.pts / 3) * 100));
+
+        deckHtml += '<div class="mandate-block-box ' + (isSealed ? 'sealed' : '') + ' ' + (isPhase2 ? 'phase2' : '') + '">' +
+          '<div class="block-meta-row">' +
+            '<span class="block-phase-tag">' + (isPhase2 ? 'PHASE 2 FLIGHT · ' : 'MONTH 1 FLIGHT · ') + b.domain + '</span>' +
+            '<span class="block-pts-tag">' + b.pts + '/3 PTS ' + (isSealed ? '[SEALED]' : '') + '</span>' +
+          '</div>' +
+          '<div class="block-name">BLOCK 0' + b.num + ': ' + b.title + '</div>' +
+          '<div class="block-capacity-line">' +
+            '<div class="block-capacity-fill ' + (isSealed ? '' : 'partial') + '" style="width:' + fillPct + '%"></div>' +
+          '</div>' +
+          '<div class="block-items-stack">';
+
+        b.items.forEach(function (it) {
+          deckHtml += '<div class="item-token">' +
+            '<span class="t-name">' + it.title + '</span>' +
+            '<span class="t-pts">' + it.pts + (it.pts === 1 ? ' pt' : ' pts') + '</span>' +
+          '</div>';
+        });
+
+        if (!isSealed) {
+          deckHtml += '<div style="font-family:monospace; font-size:10.5px; color:var(--blue); margin-top:2px;">' +
+            '+ Open Capacity: ' + (3 - b.pts) + ' pt remaining to seal block' +
+          '</div>';
+        }
+
+        deckHtml += '</div>';
+
+        if (b.deliverables && b.deliverables.length > 0) {
+          deckHtml += '<div class="deliverables-bay">' +
+            '<span class="deliv-header">Core Deliverable Artifacts</span>';
+          b.deliverables.forEach(function (d) {
+            deckHtml += '<div class="deliv-line"><span>' + d + '</span></div>';
+          });
+          deckHtml += '</div>';
+        }
+
+        deckHtml += '</div>';
+      });
+
+      blocksDeck.innerHTML = deckHtml;
+      saveState();
+    }
+
+    function render() {
+      renderMatrix();
+      renderDossier();
+    }
+
+    // Switchboard Node Click
+    document.querySelectorAll(".node-card").forEach(function (card) {
+      card.addEventListener("click", function () {
+        var id = card.getAttribute("data-id");
+        if (selectedIds.has(id)) selectedIds.delete(id);
+        else selectedIds.add(id);
+        document.querySelectorAll(".preset-pill").forEach(function(p){ p.classList.remove("active"); });
+        render();
+      });
+    });
+
+    // Preset Selection
+    document.querySelectorAll(".preset-pill").forEach(function (pill) {
+      pill.addEventListener("click", function () {
+        var key = pill.getAttribute("data-preset");
+        var pr = PRESETS[key];
+        if (!pr) return;
+
+        document.querySelectorAll(".preset-pill").forEach(function(p){ p.classList.remove("active"); });
+        pill.classList.add("active");
+
+        selectedIds = new Set(pr.pieces);
+        customBlurb = pr.blurb;
+        blurbInput.value = customBlurb;
+        synthStatus.textContent = "Loaded: " + pr.name;
+        render();
+      });
+    });
+
+    // Synthesize Action Button & Textarea Enter
+    function runSynthesis() {
+      var text = (blurbInput.value || "").toLowerCase().trim();
+      customBlurb = blurbInput.value || "";
+      if (!text) return;
+
+      var matched = new Set();
+      if (text.includes("all") || text.includes("everything") || text.includes("overhaul") || text.includes("complete") || text.includes("entire")) {
+        PIECES.forEach(function(p){ matched.add(p.id); });
+      } else {
+        if (text.includes("pe") || text.includes("private equity") || text.includes("audit") || text.includes("sponsor") || text.includes("board")) {
+          matched.add("board_pe");
+          matched.add("mapping");
+          matched.add("rationalization");
+        }
+        if (text.includes("erp") || text.includes("cutover") || text.includes("downtime") || text.includes("sap") || text.includes("migration")) {
+          matched.add("datacore");
+          matched.add("integrations");
+          matched.add("cutover");
+          matched.add("time");
+        }
+        if (text.includes("agent") || text.includes("ai") || text.includes("autonomous") || text.includes("llm")) {
+          matched.add("agentic");
+          matched.add("datacore");
+          matched.add("integrations");
+        }
+        if (text.includes("restructure") || text.includes("team") || text.includes("hire") || text.includes("cio") || text.includes("is function")) {
+          matched.add("time");
+          matched.add("is_function");
+          matched.add("mapping");
+        }
+        if (matched.size === 0) {
+          matched.add("mapping");
+          matched.add("datacore");
+          matched.add("implementation");
+          matched.add("time");
+        }
+      }
+
+      selectedIds = matched;
+      synthStatus.textContent = "Synthesized " + selectedIds.size + " capabilities from blurb";
+      render();
+    }
+
+    document.getElementById("btn-synthesize").addEventListener("click", runSynthesis);
+    blurbInput.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" && !e.shiftKey) {
+        e.preventDefault();
+        runSynthesis();
+      }
+    });
+
+    // Resolution Tabs
+    tabPhased.addEventListener("click", function () {
+      activeTab = "phased";
+      tabPhased.classList.add("active");
+      tabFulltime.classList.remove("active");
+      renderDossier();
+    });
+
+    tabFulltime.addEventListener("click", function () {
+      activeTab = "fulltime";
+      tabFulltime.classList.add("active");
+      tabPhased.classList.remove("active");
+      renderDossier();
+    });
+
+    // Notes
+    dossierNotes.value = customNotes;
+    dossierNotes.addEventListener("input", function (e) {
+      customNotes = e.target.value;
+      saveState();
+    });
+
+    // Reset
+    document.getElementById("btn-reset").addEventListener("click", function () {
+      selectedIds.clear();
+      customBlurb = "";
+      customNotes = "";
+      blurbInput.value = "";
+      dossierNotes.value = "";
+      document.querySelectorAll(".preset-pill").forEach(function(p){ p.classList.remove("active"); });
+      synthStatus.textContent = "Studio Reset";
+      render();
+    });
+
+    // Dispatch
+    btnDispatch.addEventListener("click", function () {
+      var state = solveBlocks();
+      if (state.pieces.length === 0) {
+        alert("Please select at least one capability to configure your mandate.");
+        return;
+      }
+
+      var isOver = state.blocks.length > 4;
+      var subject = isOver && activeTab === "fulltime"
+        ? "Full-Time Mandate Consultation Request · Robert Paddock"
+        : "Standard Block Mandate Dossier (" + state.blocks.length + " Blocks / " + state.totalPts + " Points)";
+
+      var blockSummary = state.blocks.map(function (b) {
+        var itemsList = b.items.map(function (it) { return "  • " + it.title + " (" + it.pts + " pt)"; }).join("\n");
+        var delivsList = b.deliverables.map(function (d) { return "    - " + d; }).join("\n");
+        return "BLOCK 0" + b.num + ": " + b.title + " [" + b.pts + "/3 PTS" + (b.pts === 3 ? " SEALED" : "") + "]\n" + itemsList + "\n  Deliverables:\n" + delivsList;
+      }).join("\n\n");
+
+      var emailBody = [
+        "MANDATE FLIGHT DOSSIER · DATA INTEGRATION GROUP",
+        "==================================================",
+        "Executive Situation & Blurb:",
+        customBlurb || "(Configured via Mandate Studio)",
+        "",
+        "Total Scope: " + state.blocks.length + " Blocks (" + state.totalPts + " total points)",
+        "Cadence Target: " + (isOver ? "Enterprise Overhaul (Phased Multi-Month Flight or Dedicated Full-Time Mandate)" : state.blocks.length + " Blocks / Month"),
+        "",
+        "Configured Mandate Blocks & Deliverables:",
+        "--------------------------------------------------",
+        blockSummary,
+        "",
+        "==================================================",
+        "Client Context & Timeline:",
+        (customNotes || "").trim() || "(No custom notes entered)",
+        "",
+        "Source: DIG Mandate Studio (idigdata.com)"
+      ].join("\n");
+
+      window.location.href = "mailto:robert@idigdata.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(emailBody);
+    });
+
+    // Theme Toggle
+    function initTheme() {
+      var saved = localStorage.getItem("standard_block_theme") || "light";
+      document.documentElement.setAttribute("data-theme", saved);
+      themeBtn.textContent = saved === "dark" ? "☾ Dark" : "☼ Light";
+    }
+
+    themeBtn.addEventListener("click", function () {
+      var current = document.documentElement.getAttribute("data-theme") || "light";
+      var next = current === "light" ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", next);
+      localStorage.setItem("standard_block_theme", next);
+      themeBtn.textContent = next === "dark" ? "☾ Dark" : "☼ Light";
+    });
+
+    if (customBlurb) blurbInput.value = customBlurb;
+    initTheme();
+    render();
+  </script>
+</body>
+</html>

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const FAQ = [
   {
     q: "Who is the fit?",
-    a: "$100M-$1B operators. CPG and AEC first, plus manufacturing, distribution, logistics, construction, and other operations-heavy work where people, data, systems, and workflows have to move as one. I embed on the customer side and own the path above the vendors.",
+    a: "Enterprise operators across AEC, manufacturing, food and beverage, distribution, logistics, and construction, where people, data, systems, and workflows have to move as one. I take the path above the vendors.",
   },
   {
     q: "What is a non-fit?",
@@ -110,7 +110,7 @@ export default function FaqPage() {
       <section className="p-section p-section--close">
         <div className="page-well">
           <h2 className="p-h2">
-            Have a substantial technology mandate? Let&apos;s talk.
+            Outcomes the company can own.
           </h2>
           <div className="mt-8">
             <Link href="/contact/" className="p-btn">

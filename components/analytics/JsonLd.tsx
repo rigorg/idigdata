@@ -6,7 +6,7 @@ const organizationSchema = {
   url: "https://idigdata.com",
   logo: "https://idigdata.com/idigdata-mark.svg",
   description:
-    "Robert Paddock builds and develops teams around substantial technology mandates. Enterprise systems and applied AI become capabilities the company can own, operate, and improve. The business keeps running while the work moves. $100M-$1B enterprise operators.",
+    "Robert Paddock takes responsibility for technology outcomes a company can own, operate, and improve. The business keeps running while the work moves.",
   founder: {
     "@type": "Person",
     name: "Robert Paddock",
@@ -25,7 +25,7 @@ const personSchema = {
   name: "Robert Paddock",
   jobTitle: "Transformational Chief Information Officer",
   description:
-    "Technology executive. 30 years, 50+ implementations, 15 transformations at scale, four years applying agentics. Substantial mandates for $100M-$1B businesses. The business keeps running while the work moves.",
+    "CIO. 30 years, 50+ implementations, 15 transformations at scale, four years applying agentics in production. The business keeps running while the work moves.",
   worksFor: {
     "@type": "Organization",
     name: "Data Integration Group",

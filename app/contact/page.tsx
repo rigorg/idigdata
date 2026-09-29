@@ -7,7 +7,7 @@ import PresenceShell from "@/components/presence/PresenceShell";
 export const metadata: Metadata = {
   title: { absolute: "Contact | idigdata" },
   description:
-    "Have a substantial technology mandate? Let's talk.",
+    "Open to executive roles, fractional leadership, and focused engagements.",
   alternates: { canonical: "/contact/" },
 };
 
@@ -34,10 +34,11 @@ export default function ContactPage() {
           <div className="hero-split">
             <div>
               <p className="p-kicker">Contact</p>
-              <h1 className="p-h1">Have a substantial technology mandate?</h1>
+              <h1 className="p-h1">Start with the situation.</h1>
               <p className="p-dek">
-                Let&apos;s talk. Bring the situation in your own words. If I am
-                not the fit, I will say so.
+                Open to executive roles, fractional leadership, and focused
+                engagements. Bring the situation in your own words. If I am not
+                the fit, I will say so.
               </p>
             </div>
             <div className="home-watermark" aria-hidden="true">
@@ -92,7 +93,7 @@ export default function ContactPage() {
               Fit &amp; Non-Fit
             </p>
             <p className="mt-2 text-[15px] leading-[1.65] text-[#334155]">
-              <strong>$100M-$1B enterprise operators.</strong> The work has run across AEC,
+              <strong>Enterprise operators.</strong> The work has run across AEC,
               manufacturing, food and beverage, wineries and breweries, health and
               wellness, and logistics, including family-owned, PE-backed, and M&amp;A.
               Hospitals, urgent care, and medical clinics remain a non-fit.

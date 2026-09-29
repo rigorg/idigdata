@@ -397,7 +397,7 @@ export default function AgenticLayerView({ mock = false }: { mock?: boolean }) {
                 Live runs demonstrated on company data.
               </p>
               <p className="dossier-entry">
-                <strong>Sierra Nevada Brewing, CIO (~$420M).</strong> Agentic systems
+                <strong>Sierra Nevada Brewing, CIO.</strong> Agentic systems
                 in production on the company-owned data core, with accountable
                 business owners. The capability and the operating knowledge
                 transferred to the internal team.
@@ -434,7 +434,7 @@ export default function AgenticLayerView({ mock = false }: { mock?: boolean }) {
       <section className="p-section p-section--close">
         <div className="page-well">
           <h2 className="p-h2">
-            Have a substantial technology mandate? Let&apos;s talk.
+            Outcomes the company can own.
           </h2>
           <div className="mt-8">
             <Link href="/contact/" className="p-btn">

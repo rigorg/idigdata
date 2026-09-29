@@ -34,11 +34,11 @@ const vollkorn = Vollkorn({
 export const metadata: Metadata = {
   metadataBase: new URL("https://idigdata.com"),
   title: {
-    default: "Robert Paddock · Transformational CIO | idigdata",
+    default: "Robert Paddock · Enterprise Technology Leader | idigdata",
     template: "%s | idigdata",
   },
   description:
-    "Substantial technology mandates. The business keeps running while the work moves.",
+    "A living business asset. The full mandate, or a defined part.",
   alternates: {
     canonical: "/",
     types: {
@@ -59,15 +59,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://idigdata.com",
     siteName: "idigdata",
-    title: "Robert Paddock · Transformational CIO",
+    title: "Robert Paddock · Enterprise Technology Leader",
     description:
-      "Substantial technology mandates. The business keeps running while the work moves.",
+      "A living business asset. The full mandate, or a defined part.",
     images: [
       {
         url: "/og-image.png?v=20260828",
         width: 1200,
         height: 630,
-        alt: "Substantial technology mandates. The business keeps running while the work moves.",
+        alt: "A living business asset. The full mandate, or a defined part.",
       },
     ],
   },
