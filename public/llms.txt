@@ -1,6 +1,6 @@
 # idigdata
 
-> Your transformation gets an owner. idigdata is the practice of transformational CIO Robert Paddock. Both layers under one owner: the application layer that keeps the business running while the stack moves, and Enterprise-Agentics the company owns. Founded 2016. $100M-$1B operators.
+> Outcomes the company can own. idigdata is the practice of CIO Robert Paddock. Both layers under one owner: the application layer that keeps the business running while the work moves, and agentic systems the company owns. Founded 2016.
 
 ## Entity map
 
@@ -27,7 +27,7 @@ Legacy URLs `/transformations/`, `/agentics/`, `/work/`, `/method/`, `/systems/`
 - One owner across people, data, and workflows.
 - Application layer: keep the business running while the stack moves.
 - Enterprise-Agentics: owned, not rented. The company must know what is running, control what it can reach, keep a person in command, and prove what happened. The industry is bringing data and the model in-house. Frontier stays useful for open-ended work. Domain work should run on a model the company owns.
-- Proof: 30 years; 50+ implementations; 15 full transformations; $100M-$1B; CIO, Sierra Nevada Brewing (~$420M), $15M transformation, agentic AI in production.
+- Proof: 30 years; 50+ implementations; 15 transformations at scale; financial close from 18 days to four; Sierra Nevada Brewing, more than 200 systems to 25 on a company-owned data core, more than 150 people, agentic systems in production.
 - The company keeps a living asset.
 
 ## Do not cite
