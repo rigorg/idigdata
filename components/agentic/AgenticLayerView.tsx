@@ -396,12 +396,6 @@ export default function AgenticLayerView({ mock = false }: { mock?: boolean }) {
                 audit trails, delivery evidence, and human authorization gates.
                 Live runs demonstrated on company data.
               </p>
-              <p className="dossier-entry">
-                <strong>Sierra Nevada Brewing, CIO.</strong> Agentic systems
-                in production on the company-owned data core, with accountable
-                business owners. The capability and the operating knowledge
-                transferred to the internal team.
-              </p>
             </div>
 
             <div className="mt-8 border-t border-[#142840]/10 pt-6">

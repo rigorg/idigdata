@@ -31,11 +31,6 @@ const par = (file: string) => `/brand/field/partners/${file}`;
 const mod = (file: string) => `/brand/field/models/${file}`;
 
 export const MARQUEE_CPG: FieldMark[] = [
-  {
-    name: "Sierra Nevada Brewing",
-    src: op("sierra-nevada.png"),
-    includesWord: true,
-  },
   { name: "Duckhorn", src: op("duckhorn.webp"), includesWord: true },
   {
     name: "H.W. Greenham & Sons",
@@ -100,16 +95,15 @@ export const MARQUEE_HOSPITALITY: FieldMark[] = [MGM, WYNN, HCA, SHARKS];
 
 /** Mixed types - CPG, AEC, food, wine, sports and entertainment, healthcare. */
 export const MARQUEE_OPERATORS: FieldMark[] = [
-  MARQUEE_CPG[0],
   MARQUEE_AEC[0],
   EVERYTABLE,
   MARQUEE_AEC[2],
   FOLEY,
   SHARKS,
   MARQUEE_AEC[1],
-  MARQUEE_CPG[1],
+  MARQUEE_CPG[0],
   MGM,
-  MARQUEE_CPG[2],
+  MARQUEE_CPG[1],
   WYNN,
   MARQUEE_AEC[3],
 ];
@@ -120,10 +114,9 @@ export const MARQUEE_OPERATOR_GROUPS: FieldMarkGroup[] = [
     label: "CPG, wine, and food",
     marks: [
       MARQUEE_CPG[0],
-      MARQUEE_CPG[1],
       FOLEY,
+      MARQUEE_CPG[1],
       MARQUEE_CPG[2],
-      MARQUEE_CPG[3],
       EVERYTABLE,
     ],
     columns: 3,
