@@ -23,11 +23,11 @@ const FAQ = [
   },
   {
     q: "What do you hire?",
-    a: "The application layer, the agentic layer, or both. The agentic layer rides the same seat. It is not a pilot beside a broken estate.",
+    a: "The full mandate, or a defined part of it. Executive roles, fractional leadership, and focused engagements. Agentic work rides the same ground. It is not a pilot beside a broken estate.",
   },
   {
     q: "What does the company keep?",
-    a: "Mapped workflows, governed data, visible delivery state, and people who can run the next cycle. On the agentic layer: agents under boundaries with named owners. The production path stays.",
+    a: "The asset, and the ability to keep running it. Mapped workflows, governed data, and people who can run the next cycle. Agents stay inside boundaries a named person can halt.",
   },
 ] as const;
 

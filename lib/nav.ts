@@ -1,5 +1,5 @@
 /** Shared primary nav - keep header and footer in lockstep.
- * Home, Application layer, Agentic layer, The Block, Contact.
+ * Home, Experience, The Block, Contact.
  */
 export type NavItem = {
   href: string;
@@ -9,8 +9,7 @@ export type NavItem = {
 
 export const PRIMARY_NAV: readonly NavItem[] = [
   { href: "/", label: "Home" },
-  { href: "/application-layer/", label: "Application layer" },
-  { href: "/agentic-layer/", label: "Agentic layer" },
+  { href: "/experience/", label: "Experience" },
   { href: "/block/", label: "The Block" },
   { href: "/contact/", label: "Contact" },
 ];

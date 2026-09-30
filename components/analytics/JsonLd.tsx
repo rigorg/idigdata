@@ -10,7 +10,7 @@ const organizationSchema = {
   founder: {
     "@type": "Person",
     name: "Robert Paddock",
-    jobTitle: "Transformational Chief Information Officer",
+    jobTitle: "Enterprise Technology Leader",
     sameAs: ["https://www.linkedin.com/in/robertpaddock"],
   },
   foundingDate: "2016",
@@ -23,9 +23,9 @@ const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Robert Paddock",
-  jobTitle: "Transformational Chief Information Officer",
+  jobTitle: "Enterprise Technology Leader",
   description:
-    "CIO. 30 years, 50+ implementations, 15 transformations at scale, four years applying agentics in production. The business keeps running while the work moves.",
+    "Enterprise Technology Leader. 30 years, 50+ implementations, 15 transformations at scale, four years applying agentics in production. The business keeps running while the work moves.",
   worksFor: {
     "@type": "Organization",
     name: "Data Integration Group",

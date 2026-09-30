@@ -29,35 +29,22 @@ export default function ContactPage() {
   return (
     <PresenceShell>
       <JsonLdScript data={breadcrumbJsonLd} />
-      <header className="p-section p-section--hire">
+      <header className="p-section p-section--tight">
         <div className="page-well">
-          <div className="hero-split">
-            <div>
-              <p className="p-kicker">Contact</p>
-              <h1 className="p-h1">Start with the situation.</h1>
-              <p className="p-dek">
-                Open to executive roles, fractional leadership, and focused
-                engagements. Bring the situation in your own words. If I am not
-                the fit, I will say so.
-              </p>
-            </div>
-            <div className="home-watermark" aria-hidden="true">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/idigdata-mark.svg" alt="" />
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <section className="p-section p-section--job">
-        <div className="page-well">
-          <p className="p-kicker">The note</p>
-          <h2 className="p-h2">Write it in your own words.</h2>
-          <p className="p-prose">
-            If the fit is wrong, I will say so plainly. If the mandate is real,
-            we will know the next useful step.
+          <p className="p-kicker">Contact</p>
+          <h1 className="p-h1">Start with the situation.</h1>
+          <p className="p-dek">
+            A focused outcome, fractional leadership, or the full mandate.
+            Write the situation in your own words, or email{" "}
+            <a
+              href="mailto:robert@idigdata.com"
+              className="font-semibold text-navy underline decoration-navy/40 underline-offset-4"
+            >
+              robert@idigdata.com
+            </a>
+            .
           </p>
-          <div className="form-grid">
+          <div className="form-grid mt-8">
             <ContactForm />
             <aside>
               <p className="font-vollkorn text-[16px] font-bold text-navy">
@@ -87,16 +74,20 @@ export default function ContactPage() {
               </p>
             </aside>
           </div>
+        </div>
+      </header>
 
-          <div className="mt-12 rounded-lg border border-[#142840]/12 bg-[#FBF9F4] p-6">
+      <section className="p-section">
+        <div className="page-well">
+          <div className="rounded-lg border border-[#142840]/12 bg-[#FBF9F4] p-6">
             <p className="font-brand text-[11px] font-bold uppercase tracking-[0.16em] text-[#B48A05]">
-              Fit &amp; Non-Fit
+              Where the work has run
             </p>
             <p className="mt-2 text-[15px] leading-[1.65] text-[#334155]">
-              <strong>Enterprise operators.</strong> The work has run across AEC,
-              manufacturing, food and beverage, wineries and breweries, health and
-              wellness, and logistics, including family-owned, PE-backed, and M&amp;A.
-              Hospitals, urgent care, and medical clinics remain a non-fit.
+              Architecture and construction, manufacturing, food and beverage,
+              wineries and breweries, health and wellness, and logistics.
+              Family-owned companies, investor-backed companies, and companies
+              coming through a merger. Not hospitals, urgent care, or clinics.
             </p>
           </div>
         </div>
@@ -114,8 +105,8 @@ export default function ContactPage() {
                 You speak with the person who does the work.
               </h3>
               <p className="mt-3 text-[17px] leading-[1.65]">
-                You talk to me. No account theater. One real problem lands with
-                an accountable owner.
+                You talk to me. One situation lands with the person who does
+                the work.
               </p>
               <p className="mt-4 text-[15px] leading-[1.55] text-[#5A6978]">
                 Pacific Time

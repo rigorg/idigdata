@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useState, type FormEvent } from "react";
+import { useEffect, useId, useState, type FormEvent } from "react";
 import {
   INTEREST_OPTIONS,
   type InterestType,
@@ -15,11 +15,50 @@ type Props = {
   showInterestSelect?: boolean;
 };
 
+type EngagementDraft = {
+  totalBlocks?: number;
+  pacing?: string;
+  activeItemNames: string[];
+  activeToolNames: string[];
+  domainNotes: [string, string][];
+  fromIntent: boolean;
+};
+
 type FieldErrors = {
   name?: string;
   email?: string;
   role?: string;
 };
+
+function asStrings(value: unknown): string[] {
+  if (!Array.isArray(value)) return [];
+  return value.filter((item): item is string => typeof item === "string" && item.trim().length > 0);
+}
+
+function asNotes(value: unknown): [string, string][] {
+  if (!value || typeof value !== "object") return [];
+  return Object.entries(value as Record<string, unknown>).flatMap(([key, note]) =>
+    typeof note === "string" && note.trim() ? [[key.replaceAll("_", " "), note.trim()] as [string, string]] : [],
+  );
+}
+
+function draftText(draft: EngagementDraft): string {
+  const lines = ["Proposed engagement"];
+  if (typeof draft.totalBlocks === "number" && Number.isFinite(draft.totalBlocks)) {
+    lines.push(`Blocks: ${draft.totalBlocks}`);
+  }
+  if (draft.pacing) lines.push(`Pacing: ${draft.pacing}`);
+  if (draft.activeItemNames.length) {
+    lines.push("Outcomes:", ...draft.activeItemNames.map((name) => `- ${name}`));
+  }
+  if (draft.activeToolNames.length) {
+    lines.push("Builds:", ...draft.activeToolNames.map((name) => `- ${name}`));
+  }
+  if (draft.domainNotes.length) {
+    lines.push("Notes:", ...draft.domainNotes.map(([key, note]) => `- ${key}: ${note}`));
+  }
+  return lines.join("\n");
+}
 
 function isEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -37,6 +76,41 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
   const [status, setStatus] = useState<Status>("idle");
   const [leadId, setLeadId] = useState<string | null>(null);
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
+  const [draft, setDraft] = useState<EngagementDraft | null>(null);
+
+  useEffect(() => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const intent = params.get("intent");
+      const blocksParam = params.get("blocks");
+      const raw = sessionStorage.getItem("idigdata_engagement_draft") || sessionStorage.getItem("idigdata.proposed-engagement.v1");
+      const parsed = raw ? (JSON.parse(raw) as Record<string, unknown>) : null;
+      const fromStore = parsed !== null && typeof parsed === "object";
+      if (!fromStore && intent !== "scoping_review") return;
+      const blocksFromUrl = blocksParam && /^\d+$/.test(blocksParam) ? Number(blocksParam) : undefined;
+      const totalBlocks =
+        fromStore && typeof parsed.totalBlocks === "number" ? parsed.totalBlocks : blocksFromUrl;
+      setDraft({
+        totalBlocks,
+        pacing: fromStore && typeof parsed.pacing === "string" ? parsed.pacing : undefined,
+        activeItemNames: fromStore ? asStrings(parsed.activeItemNames) : [],
+        activeToolNames: fromStore ? asStrings(parsed.activeToolNames) : [],
+        domainNotes: fromStore ? asNotes(parsed.domainNotes) : [],
+        fromIntent: intent === "scoping_review",
+      });
+    } catch {
+      setDraft(null);
+    }
+  }, []);
+
+  function addDraftToNote() {
+    if (!draft) return;
+    const block = draftText(draft);
+    if (block === "Proposed engagement") return;
+    setMessage((prev) =>
+      prev.includes(block) ? prev : prev.trim() ? `${prev.trim()}\n\n${block}` : block,
+    );
+  }
 
   const idBase = useId();
   const nameId = `${idBase}-name`;
@@ -54,7 +128,6 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
     if (!name.trim()) next.name = "Name is required.";
     if (!email.trim()) next.email = "Email is required.";
     else if (!isEmail(email.trim())) next.email = "Enter a working email.";
-    if (!role.trim()) next.role = "Role / title is required.";
     return next;
   }
 
@@ -100,6 +173,8 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
           },
         });
         setStatus(data.notification === "sent" ? "success" : "recorded");
+        sessionStorage.removeItem("idigdata_engagement_draft");
+        sessionStorage.removeItem("idigdata.proposed-engagement.v1");
       } else {
         setStatus("error");
       }
@@ -184,6 +259,52 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
         />
       </div>
 
+      {draft ? (
+        <div className="mb-6 rounded-lg border border-[#142840]/12 bg-[#FBF9F4] p-4">
+          <p className="font-vollkorn text-[16px] font-bold text-navy">
+            Proposed engagement
+          </p>
+          <p className="mt-2 text-[14px] leading-[1.55] text-[#334155]">
+            Brought across from The Block. The notes stay on this page until
+            you add them. They are not in the address bar.
+          </p>
+          {typeof draft.totalBlocks === "number" ? (
+            <p className="mt-3 text-[15px] leading-[1.5]">Blocks: {draft.totalBlocks}</p>
+          ) : null}
+          {draft.pacing ? (
+            <p className="mt-1 text-[15px] leading-[1.5]">{draft.pacing}</p>
+          ) : null}
+          {draft.activeItemNames.length ? (
+            <ul className="mt-3 list-disc pl-5 text-[15px] leading-[1.5]">
+              {draft.activeItemNames.map((name) => (
+                <li key={name}>{name}</li>
+              ))}
+            </ul>
+          ) : null}
+          {draft.activeToolNames.length ? (
+            <ul className="mt-3 list-disc pl-5 text-[15px] leading-[1.5]">
+              {draft.activeToolNames.map((name) => (
+                <li key={name}>{name}</li>
+              ))}
+            </ul>
+          ) : null}
+          {draft.domainNotes.map(([key, note]) => (
+            <p key={key} className="mt-2 text-[14px] leading-[1.5] text-[#334155]">
+              {key}: {note}
+            </p>
+          ))}
+          {!draft.activeItemNames.length && !draft.activeToolNames.length && !draft.domainNotes.length ? (
+            <p className="mt-3 text-[14px] leading-[1.5] text-[#334155]">
+              The detail did not come across. You can still write the situation below.
+            </p>
+          ) : (
+            <button type="button" className="p-link mt-3" onClick={addDraftToNote}>
+              Add this to the note
+            </button>
+          )}
+        </div>
+      ) : null}
+
       <div>
         <label htmlFor={nameId} className={labelClasses}>
           Name
@@ -244,13 +365,12 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
 
       <div>
         <label htmlFor={roleId} className={labelClasses}>
-          Role / title
+          Role / title (optional)
         </label>
         <input
           id={roleId}
           name="role"
           type="text"
-          required
           autoComplete="organization-title"
           value={role}
           aria-invalid={fieldErrors.role ? true : undefined}
