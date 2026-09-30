@@ -386,12 +386,9 @@ export default function ExperiencePage() {
 
           <div className="dossier mt-10">
             <p className="dossier-entry">
-              <strong>Sierra Nevada Brewing, CIO.</strong> I owned the
-              technology roadmap and budget. More than 150 people at peak,
-              across the company&apos;s teams and the partners on that work.
-              That peak is the team, not a count of systems. This frame is
-              how that many people stay on one map: process in the
-              constellations, people crossing functions in the Beehive.
+              My executive experience includes leading technology across
+              multi-site manufacturing businesses, with responsibility for
+              direction, investment, and the people delivering the work.
             </p>
             <p className="dossier-entry">
               I build with the people and the systems the company already has,
@@ -451,11 +448,6 @@ export default function ExperiencePage() {
             <p className="dossier-entry">
               <strong>Data Integration Group.</strong> A separate delivery: a
               stalled ERP recovered, and a company-owned API bridge.
-            </p>
-            <p className="dossier-entry">
-              <strong>Sierra Nevada Brewing, CIO.</strong> More than 200
-              disparate systems brought to 25 connected enterprise systems on
-              a company-owned data core. The IS/IT team rebuilt.
             </p>
             <p className="dossier-spine">
               30 years · 50+ implementations · 15 transformations at scale
@@ -542,11 +534,6 @@ export default function ExperiencePage() {
               agentics on company-owned data, with a trail of the source, the
               action, the approval, and the result. A named person authorizes
               the write.
-            </p>
-            <p className="dossier-entry">
-              <strong>Sierra Nevada Brewing, CIO.</strong> Agentic systems in
-              production on the company-owned data core, with accountable
-              business owners.
             </p>
           </div>
         </div>
