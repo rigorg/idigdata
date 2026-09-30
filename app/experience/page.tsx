@@ -403,6 +403,24 @@ export default function ExperiencePage() {
         </div>
       </section>
 
+      <section className="p-section">
+        <div className="page-well">
+          <p className="p-kicker">How I work</p>
+          <h2 className="p-h2">Find the cause. Own the change. Check the result.</h2>
+          <p className="p-prose mt-4">
+            I trace how people, process, data, and technology connect to find
+            the cause behind the friction. Then I own the targeted delivery
+            with your team, accounting for the dependencies around it.
+          </p>
+          <p className="p-prose mt-4">
+            Applied agentics helps accelerate investigation, building, and
+            testing. Before delivery, we agree explicit acceptance criteria
+            and how to verify the change. Afterward, we check the operational
+            result against those criteria, with a named person accountable.
+          </p>
+        </div>
+      </section>
+
       <section className="p-section" style={{ background: "#F3ECE0" }}>
         <div className="page-well">
           <p className="p-kicker">Companies and receipts</p>
@@ -423,7 +441,12 @@ export default function ExperiencePage() {
             <p className="dossier-entry">
               <strong>Data Integration Group.</strong> A post-M&amp;A estate
               in 11 months. Financial close from 18 days to four. Chart of
-              accounts and WMS unified. Item records standardized.
+              accounts and WMS unified.
+            </p>
+            <p className="dossier-entry">
+              <strong>Data Integration Group.</strong> Standardized complex
+              item records into a common item master for enterprise and
+              third-party integration.
             </p>
             <p className="dossier-entry">
               <strong>Data Integration Group.</strong> A separate delivery: a
@@ -443,8 +466,8 @@ export default function ExperiencePage() {
             what they can reach, who can change the books, and a trail of what
             ran. When agents can reach the same estate, the questions are the
             same kind: what is already running, what it can see and do, who
-            authorizes the write, and what it cost. Spend is per outcome. A
-            named person can halt the work.
+            authorizes the write, and what it cost. Track costs against the
+            work and the outcomes it supports. A named person can halt the work.
           </p>
         </div>
       </section>

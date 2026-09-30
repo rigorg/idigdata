@@ -1,11 +1,13 @@
 "use client";
 
-import { useEffect, useId, useState, type FormEvent } from "react";
+import { useId, useState, type FormEvent } from "react";
 import {
   INTEREST_OPTIONS,
   type InterestType,
 } from "@/lib/contact/schema";
 import { getAnonSessionId, trackWebsiteEvent } from "@/components/analytics/websiteEvents";
+
+import { composeEngagementMessage, engagementSummary, useEngagementDraft } from "@/lib/engagement-draft";
 
 type Status = "idle" | "submitting" | "success" | "recorded" | "error";
 
@@ -15,50 +17,12 @@ type Props = {
   showInterestSelect?: boolean;
 };
 
-type EngagementDraft = {
-  totalBlocks?: number;
-  pacing?: string;
-  activeItemNames: string[];
-  activeToolNames: string[];
-  domainNotes: [string, string][];
-  fromIntent: boolean;
-};
-
 type FieldErrors = {
   name?: string;
   email?: string;
   role?: string;
+  message?: string;
 };
-
-function asStrings(value: unknown): string[] {
-  if (!Array.isArray(value)) return [];
-  return value.filter((item): item is string => typeof item === "string" && item.trim().length > 0);
-}
-
-function asNotes(value: unknown): [string, string][] {
-  if (!value || typeof value !== "object") return [];
-  return Object.entries(value as Record<string, unknown>).flatMap(([key, note]) =>
-    typeof note === "string" && note.trim() ? [[key.replaceAll("_", " "), note.trim()] as [string, string]] : [],
-  );
-}
-
-function draftText(draft: EngagementDraft): string {
-  const lines = ["Proposed engagement"];
-  if (typeof draft.totalBlocks === "number" && Number.isFinite(draft.totalBlocks)) {
-    lines.push(`Blocks: ${draft.totalBlocks}`);
-  }
-  if (draft.pacing) lines.push(`Pacing: ${draft.pacing}`);
-  if (draft.activeItemNames.length) {
-    lines.push("Outcomes:", ...draft.activeItemNames.map((name) => `- ${name}`));
-  }
-  if (draft.activeToolNames.length) {
-    lines.push("Builds:", ...draft.activeToolNames.map((name) => `- ${name}`));
-  }
-  if (draft.domainNotes.length) {
-    lines.push("Notes:", ...draft.domainNotes.map(([key, note]) => `- ${key}: ${note}`));
-  }
-  return lines.join("\n");
-}
 
 function isEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -70,48 +34,15 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
   const [company, setCompany] = useState("");
   const [role, setRole] = useState("");
   const [interest, setInterest] = useState<InterestType>("not_sure");
-  const [message, setMessage] = useState("");
+  const { draft, notice, update, complete } = useEngagementDraft();
+  const message = draft?.contactMessage ?? "";
+  const composed = draft ? composeEngagementMessage(draft) : { message: "", error: null };
+  const summary = draft ? engagementSummary(draft) : "";
   const [hp, setHp] = useState("");
 
   const [status, setStatus] = useState<Status>("idle");
   const [leadId, setLeadId] = useState<string | null>(null);
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
-  const [draft, setDraft] = useState<EngagementDraft | null>(null);
-
-  useEffect(() => {
-    try {
-      const params = new URLSearchParams(window.location.search);
-      const intent = params.get("intent");
-      const blocksParam = params.get("blocks");
-      const raw = sessionStorage.getItem("idigdata_engagement_draft") || sessionStorage.getItem("idigdata.proposed-engagement.v1");
-      const parsed = raw ? (JSON.parse(raw) as Record<string, unknown>) : null;
-      const fromStore = parsed !== null && typeof parsed === "object";
-      if (!fromStore && intent !== "scoping_review") return;
-      const blocksFromUrl = blocksParam && /^\d+$/.test(blocksParam) ? Number(blocksParam) : undefined;
-      const totalBlocks =
-        fromStore && typeof parsed.totalBlocks === "number" ? parsed.totalBlocks : blocksFromUrl;
-      setDraft({
-        totalBlocks,
-        pacing: fromStore && typeof parsed.pacing === "string" ? parsed.pacing : undefined,
-        activeItemNames: fromStore ? asStrings(parsed.activeItemNames) : [],
-        activeToolNames: fromStore ? asStrings(parsed.activeToolNames) : [],
-        domainNotes: fromStore ? asNotes(parsed.domainNotes) : [],
-        fromIntent: intent === "scoping_review",
-      });
-    } catch {
-      setDraft(null);
-    }
-  }, []);
-
-  function addDraftToNote() {
-    if (!draft) return;
-    const block = draftText(draft);
-    if (block === "Proposed engagement") return;
-    setMessage((prev) =>
-      prev.includes(block) ? prev : prev.trim() ? `${prev.trim()}\n\n${block}` : block,
-    );
-  }
-
   const idBase = useId();
   const nameId = `${idBase}-name`;
   const emailId = `${idBase}-email`;
@@ -128,12 +59,13 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
     if (!name.trim()) next.name = "Name is required.";
     if (!email.trim()) next.email = "Email is required.";
     else if (!isEmail(email.trim())) next.email = "Enter a working email.";
+    if (composed.error) next.message = composed.error;
     return next;
   }
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (status === "submitting") return;
+    if (status === "submitting" || !draft) return;
 
     const nextErrors = validate();
     setFieldErrors(nextErrors);
@@ -150,7 +82,7 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
         email,
         company,
         role,
-        message,
+        message: composed.message,
         interestType: interest,
         anon_session_id: getAnonSessionId(),
         _hp: hp,
@@ -161,9 +93,10 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
         body: JSON.stringify(payload),
       });
       const data = await res.json();
-      if (res.ok && data.ok) {
+      if (res.ok && data.ok === true) {
+        complete(res.ok, data);
         setLeadId(data.lead_id ?? null);
-        trackWebsiteEvent({
+        try { trackWebsiteEvent({
           event_type: "contact_submit",
           payload: {
             interest_type: interest,
@@ -171,10 +104,9 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
             company_present: Boolean(company.trim()),
             notification: data.notification ?? null,
           },
-        });
+        }); } catch { /* Submission remains accepted if analytics is unavailable. */ }
         setStatus(data.notification === "sent" ? "success" : "recorded");
-        sessionStorage.removeItem("idigdata_engagement_draft");
-        sessionStorage.removeItem("idigdata.proposed-engagement.v1");
+
       } else {
         setStatus("error");
       }
@@ -195,6 +127,9 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
             ? "Got it. This lands straight in my inbox - no bot, no queue. I read every one."
             : "Got it. The note is recorded. Email notify did not fire - write robert@idigdata.com if you need a same-day reply."}
         </p>
+        {notice === "clear-failed" && (
+          <p className="text-sm text-warm-gray">Your note was accepted, but this browser could not clear its saved draft. Do not submit it again.</p>
+        )}
         {leadId && leadId !== "silenced" ? (
           <p className="font-body text-[13px] text-warm-gray">
             Reference: <span className="font-mono">{leadId}</span>
@@ -259,49 +194,22 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
         />
       </div>
 
-      {draft ? (
+      {notice !== "none" && (
+        <p role="status" className="text-sm text-aubergine">
+          {notice === "invalid"
+            ? "The saved draft could not be read. Write your situation below or return to The Block."
+            : "This browser could not save or restore the draft. Keep this page open and copy your note before leaving."}
+        </p>
+      )}
+      {summary ? (
         <div className="mb-6 rounded-lg border border-[#142840]/12 bg-[#FBF9F4] p-4">
-          <p className="font-vollkorn text-[16px] font-bold text-navy">
-            Proposed engagement
-          </p>
+          <p className="font-vollkorn text-[16px] font-bold text-navy">Included with your note</p>
           <p className="mt-2 text-[14px] leading-[1.55] text-[#334155]">
-            Brought across from The Block. The notes stay on this page until
-            you add them. They are not in the address bar.
+            These priorities and Block notes will be sent with the message below when you submit.{" "}
+            {notice === "unavailable" ? "The draft is currently kept on this page only." : "Your draft is saved in this browser tab, not in the address bar."}
           </p>
-          {typeof draft.totalBlocks === "number" ? (
-            <p className="mt-3 text-[15px] leading-[1.5]">Blocks: {draft.totalBlocks}</p>
-          ) : null}
-          {draft.pacing ? (
-            <p className="mt-1 text-[15px] leading-[1.5]">{draft.pacing}</p>
-          ) : null}
-          {draft.activeItemNames.length ? (
-            <ul className="mt-3 list-disc pl-5 text-[15px] leading-[1.5]">
-              {draft.activeItemNames.map((name) => (
-                <li key={name}>{name}</li>
-              ))}
-            </ul>
-          ) : null}
-          {draft.activeToolNames.length ? (
-            <ul className="mt-3 list-disc pl-5 text-[15px] leading-[1.5]">
-              {draft.activeToolNames.map((name) => (
-                <li key={name}>{name}</li>
-              ))}
-            </ul>
-          ) : null}
-          {draft.domainNotes.map(([key, note]) => (
-            <p key={key} className="mt-2 text-[14px] leading-[1.5] text-[#334155]">
-              {key}: {note}
-            </p>
-          ))}
-          {!draft.activeItemNames.length && !draft.activeToolNames.length && !draft.domainNotes.length ? (
-            <p className="mt-3 text-[14px] leading-[1.5] text-[#334155]">
-              The detail did not come across. You can still write the situation below.
-            </p>
-          ) : (
-            <button type="button" className="p-link mt-3" onClick={addDraftToNote}>
-              Add this to the note
-            </button>
-          )}
+          <p className="mt-3 whitespace-pre-wrap text-[14px] leading-[1.55] text-[#334155]">{summary}</p>
+          <a href="/block/" className="p-link mt-3 inline-block">Edit priorities or Block notes</a>
         </div>
       ) : null}
 
@@ -325,7 +233,7 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
             }
           }}
           className={inputClasses}
-          disabled={status === "submitting"}
+          disabled={status === "submitting" || !draft}
         />
         {fieldErrors.name ? (
           <p id={`${nameId}-error`} className="mt-1.5 font-body text-[13px] text-aubergine">
@@ -354,7 +262,7 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
             }
           }}
           className={inputClasses}
-          disabled={status === "submitting"}
+          disabled={status === "submitting" || !draft}
         />
         {fieldErrors.email ? (
           <p id={`${emailId}-error`} className="mt-1.5 font-body text-[13px] text-aubergine">
@@ -382,7 +290,7 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
             }
           }}
           className={inputClasses}
-          disabled={status === "submitting"}
+          disabled={status === "submitting" || !draft}
         />
         {fieldErrors.role ? (
           <p id={`${roleId}-error`} className="mt-1.5 font-body text-[13px] text-aubergine">
@@ -403,7 +311,7 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
           value={company}
           onChange={(e) => setCompany(e.target.value)}
           className={inputClasses}
-          disabled={status === "submitting"}
+          disabled={status === "submitting" || !draft}
         />
       </div>
 
@@ -418,7 +326,7 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
             value={interest}
             onChange={(e) => setInterest(e.target.value as InterestType)}
             className={inputClasses}
-            disabled={status === "submitting"}
+            disabled={status === "submitting" || !draft}
           >
             {INTEREST_OPTIONS.map((opt) => (
               <option key={opt.value} value={opt.value}>
@@ -437,25 +345,31 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
         <textarea
           id={messageId}
           name="message"
+          maxLength={8000}
           rows={5}
           value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          aria-describedby={messageHelpId}
+          onChange={(e) => {
+            update({ contactMessage: e.target.value });
+            setFieldErrors((prev) => ({ ...prev, message: undefined }));
+          }}
+          aria-describedby={`${messageHelpId}${composed.error ? ` ${messageId}-error` : ""}`}
+          aria-invalid={Boolean(composed.error)}
           className={`${inputClasses} resize-y`}
-          disabled={status === "submitting"}
+          disabled={status === "submitting" || !draft}
         />
         <p
           id={messageHelpId}
           className="mt-1.5 font-body text-[13px] text-warm-gray"
         >
-          The real operating problem in your own words. We take it from there.
+          The real operating problem in your own words. {composed.message.length.toLocaleString()} / 4,000 characters including selected priorities and Block notes.
         </p>
       </div>
 
+      {composed.error && <p id={`${messageId}-error`} role="alert" className="text-sm text-aubergine">{composed.error}</p>}
       <div className="pt-2">
         <button
           type="submit"
-          disabled={status === "submitting"}
+          disabled={status === "submitting" || !draft}
           className="inline-flex items-center gap-2.5 rounded-[2px] bg-navy px-7 py-3.5 font-vollkorn text-[15px] font-bold tracking-[0.04em] text-porcelain hover:bg-navy-deep focus:outline-2 focus:outline-offset-2 focus:outline-navy disabled:cursor-not-allowed disabled:opacity-60"
         >
           <span

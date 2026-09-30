@@ -1,15 +1,14 @@
 "use client";
 
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect, useRef } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { TheBlockLogo } from "@/components/TheBlockLogo";
 import {
   PUBLIC_OUTCOME_DOMAINS,
   PUBLIC_CATALOG_ITEMS,
-  CatalogDomain,
-  CatalogItem
 } from "@/lib/catalog";
+import { ENGAGEMENT_CONTACT_URL, useEngagementDraft } from "@/lib/engagement-draft";
 
 // ============================================================================
 // THE BLOCK · GAMIFIED OUTCOME CONFIGURATOR & MARKETING PORTAL
@@ -24,46 +23,39 @@ import {
 export default function TheBlockConfiguratorPage() {
   const router = useRouter();
 
-  // State
-  const [selectedOutcomeIds, setSelectedOutcomeIds] = useState<string[]>([]);
+  const { draft, notice, update } = useEngagementDraft();
+  const selectedOutcomeIds = draft?.outcomeIds ?? [];
+  const customNotes = draft?.notes ?? "";
   const [activeDomainId, setActiveDomainId] = useState<string | null>(null);
-  const [cadence, setCadence] = useState<"sprint" | "quarterly" | "continuous">("sprint");
-  const [concurrency, setConcurrency] = useState<"sequential" | "parallel">("sequential");
   const [filterMode, setFilterMode] = useState<"all" | "finite" | "ongoing">("all");
-  const [customNotes, setCustomNotes] = useState<string>("");
+  const dialogRef = useRef<HTMLDivElement>(null);
 
-  // Restore from sessionStorage if exists
   useEffect(() => {
-    try {
-      const saved = sessionStorage.getItem("the_block_selection");
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        if (parsed.outcomeIds && Array.isArray(parsed.outcomeIds)) {
-          setSelectedOutcomeIds(parsed.outcomeIds);
-        }
-        if (parsed.cadence) setCadence(parsed.cadence);
-        if (parsed.concurrency) setConcurrency(parsed.concurrency);
+    if (!activeDomainId) return;
+    const opener = document.activeElement as HTMLElement | null;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const dialog = dialogRef.current;
+    dialog?.querySelector<HTMLButtonElement>("button")?.focus();
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") { event.preventDefault(); setActiveDomainId(null); }
+      if (event.key !== "Tab" || !dialog) return;
+      const targets = Array.from(dialog.querySelectorAll<HTMLElement>('button:not(:disabled), [tabindex="0"], textarea:not(:disabled)'));
+      const first = targets[0];
+      const last = targets[targets.length - 1];
+      if (event.shiftKey && (document.activeElement === first || !dialog.contains(document.activeElement))) {
+        event.preventDefault(); last?.focus();
+      } else if (!event.shiftKey && (document.activeElement === last || !dialog.contains(document.activeElement))) {
+        event.preventDefault(); first?.focus();
       }
-    } catch {
-      // ignore
-    }
-  }, []);
-
-  // Save to sessionStorage whenever selection changes
-  useEffect(() => {
-    try {
-      const payload = {
-        outcomeIds: selectedOutcomeIds,
-        cadence,
-        concurrency,
-        notes: customNotes,
-        updatedAt: new Date().toISOString()
-      };
-      sessionStorage.setItem("the_block_selection", JSON.stringify(payload));
-    } catch {
-      // ignore
-    }
-  }, [selectedOutcomeIds, cadence, concurrency, customNotes]);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", onKey);
+      opener?.focus();
+    };
+  }, [activeDomainId]);
 
   // Active domain object
   const activeDomain = useMemo(() => {
@@ -98,26 +90,12 @@ export default function TheBlockConfiguratorPage() {
   }, [selectedItems]);
 
   const toggleOutcome = (id: string) => {
-    setSelectedOutcomeIds((prev) =>
-      prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
-    );
+    update({ stage: "editing", outcomeIds: selectedOutcomeIds.includes(id)
+      ? selectedOutcomeIds.filter((value) => value !== id) : [...selectedOutcomeIds, id] });
   };
 
   const handleHandoff = () => {
-    try {
-      const payload = {
-        outcomeIds: selectedOutcomeIds,
-        itemNames: selectedItems.map((i) => i.name),
-        cadence,
-        concurrency,
-        customNotes,
-        timestamp: new Date().toISOString()
-      };
-      sessionStorage.setItem("the_block_handoff", JSON.stringify(payload));
-    } catch {
-      // ignore
-    }
-    router.push("/contact/");
+    if (update({ stage: "handoff" })) router.push(ENGAGEMENT_CONTACT_URL);
   };
 
   return (
@@ -125,40 +103,49 @@ export default function TheBlockConfiguratorPage() {
 
       {/* TOP COMMAND HEADER */}
       <header className="sticky top-0 z-40 bg-[#060E18]/90 backdrop-blur-md border-b border-white/10 px-6 py-4">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-6">
             <Link href="/" className="hover:opacity-90 transition-opacity">
               <TheBlockLogo size="md" variant="white" showWordmark={true} />
             </Link>
             <div className="hidden md:flex items-center gap-2 text-xs font-mono text-white/50 border-l border-white/10 pl-6">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span>OPERATIONAL ARCHITECTURE</span>
+              <span>EXPLORE OUTCOMES</span>
               <span className="text-white/20">&bull;</span>
-              <span>5 CORE DOMAINS</span>
+              <span>{PUBLIC_OUTCOME_DOMAINS.length} AREAS</span>
             </div>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-3">
             {selectedOutcomeIds.length > 0 && (
-              <div className="flex items-center gap-3 bg-[#0B1624] border border-[#B48A05]/40 px-3 py-1.5 rounded-full text-xs">
+              <div className="hidden sm:flex items-center gap-3 bg-[#0B1624] border border-[#B48A05]/40 px-3 py-1.5 rounded-full text-xs">
                 <span className="font-mono text-[#B48A05] font-semibold">
                   {selectedOutcomeIds.length} OUTCOME{selectedOutcomeIds.length > 1 ? "S" : ""}
                 </span>
                 <span className="text-white/40">&bull;</span>
                 <span className="text-white/70">
-                  {Object.values(selectionByDomain).filter((c) => c > 0).length} BLOCK{Object.values(selectionByDomain).filter((c) => c > 0).length > 1 ? "S" : ""} ACTIVE
+                  {Object.values(selectionByDomain).filter((c) => c > 0).length} AREA{Object.values(selectionByDomain).filter((c) => c > 0).length > 1 ? "S" : ""} SELECTED
                 </span>
               </div>
             )}
             <button
               onClick={handleHandoff}
-              className="bg-[#B48A05] hover:bg-[#D4A310] text-[#060E18] font-semibold text-xs tracking-wider uppercase px-4 py-2 rounded-md transition-all shadow-lg shadow-[#B48A05]/10"
+              disabled={!draft}
+              className="shrink-0 bg-[#B48A05] hover:bg-[#D4A310] text-[#060E18] font-semibold text-xs tracking-wider uppercase px-4 py-2 rounded-md transition-all shadow-lg shadow-[#B48A05]/10"
             >
-              Request Blueprint
+              Start a conversation
             </button>
           </div>
         </div>
       </header>
+
+      {notice !== "none" && (
+        <p role="status" className="px-6 py-3 text-sm text-white bg-[#0B1624]">
+          {notice === "invalid"
+            ? "The saved draft could not be read. Start a new selection or add your notes below."
+            : "This browser could not save your draft. Keep this page open and copy your notes before leaving. Contact handoff needs browser storage."}
+        </p>
+      )}
 
       {/* MARKETING HERO SECTION ("SLAP THEM BETWEEN THE EYES") */}
       <section className="relative pt-16 pb-12 px-6 border-b border-white/5 overflow-hidden">
@@ -167,18 +154,21 @@ export default function TheBlockConfiguratorPage() {
 
         <div className="max-w-5xl mx-auto text-center relative z-10">
           <div className="inline-flex items-center gap-2 text-[11px] font-mono tracking-widest uppercase text-[#B48A05] bg-[#B48A05]/10 border border-[#B48A05]/30 px-3 py-1 rounded-full mb-6">
-            <span>Executive Technology Leadership & Capability</span>
+            <span>THE BLOCK</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-6 leading-[1.1]">
-            Turn the potential of your people and technology<br />
+            What do you want your business<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FBF9F4] via-[#F3EFE6] to-[#B48A05]">
-              into business performance.
+              to be able to do?
             </span>
           </h1>
 
           <p className="text-base sm:text-lg text-white/70 max-w-3xl mx-auto mb-10 leading-relaxed">
-            I lead the work and build the capability—across your systems, data, and people. No open-ended advisory or speculative roadmaps. You configure agreed operational outcomes across our five core domains, delivered with company-owned assets and clear milestone acceptance.
+            Explore outcomes across leadership, business systems, data and knowledge, financial systems, and workflows. Choose what matters to your business to shape a starting point for our conversation.
+          </p>
+          <p className="text-base sm:text-lg text-white/70 max-w-3xl mx-auto mb-10 leading-relaxed">
+            A Block brings together bounded time and capability around agreed scope and outcomes. Together, we establish the priorities, dependencies, and what successful delivery looks like.
           </p>
 
           {/* 3 High-Impact Tenet Badges */}
@@ -186,22 +176,41 @@ export default function TheBlockConfiguratorPage() {
             <div className="bg-[#0B1624]/60 border border-white/10 rounded-lg p-4 backdrop-blur-sm">
               <div className="text-xs font-mono font-bold text-[#B48A05] mb-1">01 &bull; AGREED OUTCOMES</div>
               <div className="text-xs text-white/70">
-                Clearly scoped milestones, verifiable reconciliation, and operational acceptance defined upfront with your team.
+                Priorities, scope, dependencies, and success measures agreed with your team before delivery.
               </div>
             </div>
             <div className="bg-[#0B1624]/60 border border-white/10 rounded-lg p-4 backdrop-blur-sm">
-              <div className="text-xs font-mono font-bold text-[#B48A05] mb-1">02 &bull; CLIENT ASSET OWNERSHIP</div>
+              <div className="text-xs font-mono font-bold text-[#B48A05] mb-1">02 &bull; OWNERSHIP & CAPABILITY</div>
               <div className="text-xs text-white/70">
-                Data models, cloud blueprints, and automation workflows transfer 100% to your internal team.
+                The company keeps what we build—and the capability to run and improve it.
               </div>
             </div>
             <div className="bg-[#0B1624]/60 border border-white/10 rounded-lg p-4 backdrop-blur-sm">
               <div className="text-xs font-mono font-bold text-[#B48A05] mb-1">03 &bull; ACCOUNTABLE LEADERSHIP</div>
               <div className="text-xs text-white/70">
-                Direct executive flight control across systems, vendors, and internal teams to deliver real operational performance.
+                Clear responsibility for the agreed work across systems, vendors, and your team.
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="px-6 pt-12 max-w-7xl mx-auto">
+        <div className="bg-[#0B1624] border border-white/10 rounded-xl p-6 max-w-4xl">
+          <h2 className="text-2xl font-bold text-white mb-3">
+            Know what is getting in the way, but not what needs to change?
+          </h2>
+          <p className="text-sm text-white/70 leading-relaxed mb-3">
+            You may know the outcome you want, or only the friction you feel.
+            Start with either. A bounded diagnosis maps the causes and
+            dependencies across people, process, data, and technology, sets
+            priorities, and identifies the first testable change.
+          </p>
+          <p className="text-sm text-white/70 leading-relaxed">
+            Before delivery, we agree the acceptance criteria and verification
+            approach. After the change, we verify the operational result
+            against those criteria.
+          </p>
         </div>
       </section>
 
@@ -210,20 +219,20 @@ export default function TheBlockConfiguratorPage() {
         <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 mb-8">
           <div>
             <div className="text-xs font-mono tracking-widest text-[#B48A05] uppercase mb-1">
-              Interactive Selection Matrix
+              Explore the outcomes
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-              Select Your Operational Blocks
+              Where do you want to make progress?
             </h2>
             <p className="text-xs sm:text-sm text-white/60 mt-1">
-              Click any of the 5 core blocks below to open its outcome screen and assemble your program.
+              Choose an area to explore outcomes and select the priorities you want to discuss.
             </p>
           </div>
 
           <div className="flex items-center gap-2 text-xs font-mono text-white/40">
-            <span>5 CORE BLOCKS</span>
+            <span>{PUBLIC_OUTCOME_DOMAINS.length} AREAS</span>
             <span>&bull;</span>
-            <span>21 VERIFIED OUTCOMES</span>
+            <span>{PUBLIC_CATALOG_ITEMS.length} OUTCOMES TO EXPLORE</span>
           </div>
         </div>
 
@@ -237,7 +246,16 @@ export default function TheBlockConfiguratorPage() {
             return (
               <div
                 key={domain.id}
-                onClick={() => setActiveDomainId(domain.id)}
+                role="button"
+                tabIndex={draft ? 0 : -1}
+                aria-disabled={!draft}
+                aria-haspopup="dialog"
+                onKeyDown={(event) => {
+                  if (draft && (event.key === "Enter" || event.key === " ")) {
+                    event.preventDefault(); setActiveDomainId(domain.id);
+                  }
+                }}
+                onClick={(event) => { if (draft) { event.currentTarget.focus(); setActiveDomainId(domain.id); } }}
                 className={`group relative bg-[#0B1624] border rounded-xl p-6 cursor-pointer transition-all duration-300 flex flex-col justify-between hover:translate-y-[-2px] ${
                   isSelected
                     ? "border-[#B48A05] shadow-lg shadow-[#B48A05]/10 ring-1 ring-[#B48A05]/30"
@@ -249,7 +267,7 @@ export default function TheBlockConfiguratorPage() {
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-2">
                       <span className="text-xs font-mono font-bold text-[#B48A05] bg-[#B48A05]/10 border border-[#B48A05]/30 px-2 py-0.5 rounded">
-                        BLOCK 0{index + 1}
+                        AREA 0{index + 1}
                       </span>
                       <span className="text-xs font-mono text-white/40 font-semibold">
                         [{domain.code}]
@@ -302,7 +320,7 @@ export default function TheBlockConfiguratorPage() {
                   </div>
 
                   <span className="text-xs font-semibold text-[#B48A05] group-hover:translate-x-1 transition-transform flex items-center gap-1">
-                    <span>Configure Block</span>
+                    <span>Explore outcomes</span>
                     <span>&rarr;</span>
                   </span>
                 </div>
@@ -315,48 +333,63 @@ export default function TheBlockConfiguratorPage() {
             <div>
               <div className="flex items-center justify-between mb-4">
                 <span className="text-xs font-mono font-bold text-emerald-400 bg-emerald-950/60 border border-emerald-500/30 px-2 py-0.5 rounded">
-                  ACTIVE DOSSIER
+                  SELECTED PRIORITIES
                 </span>
                 <span className="text-xs font-mono text-white/40">
-                  PROGRAM BLUEPRINT
+                  STARTING POINT
                 </span>
               </div>
 
               <h3 className="text-xl font-bold text-white mb-2">
-                Your Configured Engagement
+                Your conversation starting point
               </h3>
               <p className="text-xs text-white/60 mb-4 leading-relaxed">
-                As you select outcomes across the 5 blocks, your bespoke operational program is assembled here in real time.
+                Your selected priorities appear here. Together, we will agree the scope and delivery approach, including any Blocks needed.
               </p>
 
               <div className="space-y-2 mb-6 text-xs font-mono">
                 <div className="flex justify-between py-1 border-b border-white/5 text-white/60">
                   <span>Selected Outcomes:</span>
-                  <span className="text-white font-semibold">{selectedOutcomeIds.length} / 17</span>
+                  <span className="text-white font-semibold">{selectedOutcomeIds.length} / {PUBLIC_CATALOG_ITEMS.length}</span>
                 </div>
                 <div className="flex justify-between py-1 border-b border-white/5 text-white/60">
-                  <span>Active Blocks:</span>
+                  <span>Areas selected:</span>
                   <span className="text-white font-semibold">
-                    {Object.values(selectionByDomain).filter((c) => c > 0).length} / 5
+                    {Object.values(selectionByDomain).filter((c) => c > 0).length} / {PUBLIC_OUTCOME_DOMAINS.length}
                   </span>
                 </div>
                 <div className="flex justify-between py-1 text-white/60">
-                  <span>Delivery Cadence:</span>
-                  <span className="text-[#B48A05] font-semibold uppercase">{cadence}</span>
+                  <span>Delivery cadence:</span>
+                  <span className="text-[#B48A05] font-semibold uppercase">To agree</span>
                 </div>
               </div>
             </div>
 
+            <div className="mb-4">
+              <label htmlFor="block-notes" className="block text-sm font-semibold text-white mb-2">
+                Your situation or notes
+              </label>
+              <textarea id="block-notes" rows={4} maxLength={8000}
+                value={customNotes} disabled={!draft}
+                onChange={(event) => update({ notes: event.target.value, stage: "editing" })}
+                aria-describedby="block-notes-help"
+                className="w-full rounded-md border border-white/20 bg-[#060E18] p-3 text-sm text-white"
+              />
+              <p id="block-notes-help" className="mt-2 text-xs text-white/60">
+                {notice === "unavailable" ? "Notes are kept on this page only. Copy them before leaving." : "You can start with notes alone. Saved in this browser tab for your Contact draft; nothing is sent until you submit it."}
+              </p>
+            </div>
+
             <button
               onClick={handleHandoff}
-              disabled={selectedOutcomeIds.length === 0}
+              disabled={!draft || (!selectedOutcomeIds.length && !customNotes.trim())}
               className={`w-full py-3 rounded-lg text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2 ${
-                selectedOutcomeIds.length > 0
+                (selectedOutcomeIds.length > 0 || customNotes.trim())
                   ? "bg-[#B48A05] hover:bg-[#D4A310] text-[#060E18] shadow-lg shadow-[#B48A05]/20 cursor-pointer"
                   : "bg-white/5 text-white/30 cursor-not-allowed border border-white/5"
               }`}
             >
-              <span>Lock In Block & Request Blueprint</span>
+              <span>Review Contact draft</span>
               <span>&rarr;</span>
             </button>
           </div>
@@ -366,14 +399,14 @@ export default function TheBlockConfiguratorPage() {
       {/* INTERACTIVE BLOCK OUTCOME SCREEN (DRAWER / OVERLAY) */}
       {activeDomain && (
         <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-end animate-fadeIn">
-          <div className="bg-[#0B1624] border-l border-white/10 w-full max-w-3xl h-full flex flex-col justify-between overflow-hidden shadow-2xl animate-slideLeft">
+          <div ref={dialogRef} role="dialog" aria-modal="true" aria-labelledby="outcome-dialog-title" className="bg-[#0B1624] border-l border-white/10 w-full max-w-3xl h-[100dvh] min-h-0 flex flex-col justify-between overflow-hidden shadow-2xl animate-slideLeft">
 
             {/* SCREEN HEADER */}
-            <div className="p-6 border-b border-white/10 bg-[#060E18]">
+            <div className="p-6 shrink-0 border-b border-white/10 bg-[#060E18]">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2">
                   <span className="text-xs font-mono font-bold text-[#B48A05] bg-[#B48A05]/10 border border-[#B48A05]/30 px-2 py-0.5 rounded">
-                    BLOCK [{activeDomain.code}]
+                    AREA [{activeDomain.code}]
                   </span>
                   <span className="text-xs font-mono text-white/50">
                     {activeItems.length} OUTCOMES AVAILABLE
@@ -389,7 +422,7 @@ export default function TheBlockConfiguratorPage() {
                 </button>
               </div>
 
-              <h2 className="text-2xl font-bold text-white mb-2">
+              <h2 id="outcome-dialog-title" className="text-2xl font-bold text-white mb-2">
                 {activeDomain.name}
               </h2>
               <p className="text-xs text-white/70 mb-4 leading-relaxed">
@@ -398,12 +431,12 @@ export default function TheBlockConfiguratorPage() {
 
               {/* Essence Banner */}
               <div className="text-xs font-mono text-white/90 bg-[#0B1624] border border-[#B48A05]/30 p-3 rounded-lg leading-relaxed">
-                <span className="text-[#B48A05] font-bold">DELIVERY ESSENCE: </span>
+                <span className="text-[#B48A05] font-bold">AREA FOCUS: </span>
                 {activeDomain.essence}
               </div>
 
               {/* Filter Tabs */}
-              <div className="flex items-center gap-2 mt-4 pt-3 border-t border-white/5">
+              <div className="flex flex-wrap items-center gap-2 mt-4 pt-3 border-t border-white/5">
                 <button
                   onClick={() => setFilterMode("all")}
                   className={`text-xs font-mono px-3 py-1 rounded transition-colors ${
@@ -438,13 +471,21 @@ export default function TheBlockConfiguratorPage() {
             </div>
 
             {/* SCREEN BODY: OUTCOMES DECK */}
-            <div className="p-6 flex-1 overflow-y-auto space-y-4">
+            <div className="p-6 flex-1 min-h-0 overflow-y-auto overscroll-contain space-y-4">
               {activeItems.map((item) => {
                 const isSelected = selectedOutcomeIds.includes(item.id);
 
                 return (
                   <div
                     key={item.id}
+                    role="button"
+                    tabIndex={0}
+                    aria-pressed={isSelected}
+                    onKeyDown={(event) => {
+                      if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault(); toggleOutcome(item.id);
+                      }
+                    }}
                     onClick={() => toggleOutcome(item.id)}
                     className={`border rounded-xl p-5 cursor-pointer transition-all ${
                       isSelected
@@ -493,7 +534,7 @@ export default function TheBlockConfiguratorPage() {
                     {item.deliverables && item.deliverables.length > 0 && (
                       <div className="mt-3 pt-3 border-t border-white/5">
                         <div className="text-[10px] font-mono uppercase text-white/40 mb-1.5">
-                          Tangible Artifacts:
+                          Delivery and scope:
                         </div>
                         <div className="flex flex-wrap gap-1.5">
                           {item.deliverables.map((deliv, idx) => (
@@ -513,12 +554,12 @@ export default function TheBlockConfiguratorPage() {
             </div>
 
             {/* SCREEN FOOTER */}
-            <div className="p-4 border-t border-white/10 bg-[#060E18] flex items-center justify-between">
+            <div className="p-4 shrink-0 border-t border-white/10 bg-[#060E18] flex flex-wrap gap-3 items-center justify-between">
               <div className="text-xs font-mono text-white/60">
                 <span className="text-[#B48A05] font-bold">
                   {selectionByDomain[activeDomain.id] || 0}
                 </span>{" "}
-                of {PUBLIC_CATALOG_ITEMS.filter((i) => i.domainId === activeDomain.id).length} selected in this block
+                of {PUBLIC_CATALOG_ITEMS.filter((i) => i.domainId === activeDomain.id).length} selected in this area
               </div>
 
               <div className="flex items-center gap-3">
@@ -526,13 +567,13 @@ export default function TheBlockConfiguratorPage() {
                   onClick={() => setActiveDomainId(null)}
                   className="px-4 py-2 rounded-md text-xs font-mono text-white/70 hover:text-white bg-white/5 hover:bg-white/10 transition-colors"
                 >
-                  Return to Blocks
+                  Return to areas
                 </button>
                 <button
                   onClick={handleHandoff}
                   className="px-4 py-2 rounded-md text-xs font-bold uppercase tracking-wider bg-[#B48A05] hover:bg-[#D4A310] text-[#060E18] transition-colors shadow-md"
                 >
-                  Review Dossier &rarr;
+                  Discuss priorities &rarr;
                 </button>
               </div>
             </div>

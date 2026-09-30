@@ -39,8 +39,8 @@ const scales = [
     text: "Responsibility for part of the role, over a longer calendar.",
   },
   {
-    name: "Full mandate",
-    text: "The whole function, sustained.",
+    name: "Executive roles",
+    text: "The full mandate: leadership and accountability for the whole function.",
   },
 ] as const;
 
@@ -153,8 +153,8 @@ export default function FolioHome() {
             <article>
               <h3>The work</h3>
               <p>
-                Data Integration Group standardized the item records, unified
-                the chart of accounts, and integrated the warehouse system.
+                Data Integration Group unified the chart of accounts and
+                integrated the warehouse system.
               </p>
             </article>
             <article>
@@ -174,9 +174,10 @@ export default function FolioHome() {
         <div className="page-well">
           <h2 className="p-h2">A result, a share of the role, or the mandate.</h2>
           <p className="home-engage-lead">
-            Engage my time and capability in defined blocks, with the outcome
-            and the scope agreed up front. The work can include software your
-            company owns and operates.
+            Engage me for an executive role, fractional leadership, or focused
+            work with an agreed scope and outcome. For focused work, The Block
+            brings together bounded time and capability. The work can include
+            software your company owns and operates.
           </p>
           <div className="home-scales">
             {scales.map((scale) => (
