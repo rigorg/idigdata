@@ -7,7 +7,7 @@ import PresenceShell from "@/components/presence/PresenceShell";
 export const metadata: Metadata = {
   title: { absolute: "Contact | idigdata" },
   description:
-    "Open to executive roles, fractional leadership, and focused engagements.",
+    "Executive roles, focused transformation work, and fractional leadership.",
   alternates: { canonical: "/contact/" },
 };
 
@@ -31,11 +31,13 @@ export default function ContactPage() {
       <JsonLdScript data={breadcrumbJsonLd} />
       <header className="p-section p-section--tight">
         <div className="page-well">
+          <div className="hero-split">
+          <div className="home-hero-copy">
           <p className="p-kicker">Contact</p>
-          <h1 className="p-h1">Start with the situation.</h1>
+          <h1 className="p-h1">Start with the role, the transformation, or the problem.</h1>
           <p className="p-dek">
-            A focused outcome, fractional leadership, or the full mandate.
-            Write the situation in your own words, or email{" "}
+            An executive appointment, focused work, or fractional leadership.
+            Tell me what your business needs, or email{" "}
             <a
               href="mailto:robert@idigdata.com"
               className="font-semibold text-navy underline decoration-navy/40 underline-offset-4"
@@ -44,6 +46,11 @@ export default function ContactPage() {
             </a>
             .
           </p>
+          </div>
+          <div className="home-watermark" aria-hidden="true">
+            <img src="/idigdata-mark.svg" alt="" />
+          </div>
+          </div>
           <div className="form-grid mt-8">
             <ContactForm />
             <aside>
@@ -84,10 +91,7 @@ export default function ContactPage() {
               Where the work has run
             </p>
             <p className="mt-2 text-[15px] leading-[1.65] text-[#334155]">
-              Architecture and construction, manufacturing, food and beverage,
-              wineries and breweries, health and wellness, and logistics.
-              Family-owned companies, investor-backed companies, and companies
-              coming through a merger. Not hospitals, urgent care, or clinics.
+              Manufacturing, distribution, food and beverage, wineries and breweries, construction, hospitality, healthcare, health and wellness, logistics, and services. Family-owned, private equity-backed, and post-acquisition businesses.
             </p>
           </div>
         </div>
@@ -102,11 +106,10 @@ export default function ContactPage() {
                 Direct
               </p>
               <h3 className="mt-1 font-vollkorn text-[clamp(24px,3vw,32px)] font-extrabold text-navy">
-                You speak with the person who does the work.
+                Talk directly with me.
               </h3>
               <p className="mt-3 text-[17px] leading-[1.65]">
-                You talk to me. One situation lands with the person who does
-                the work.
+                We’ll discuss what the work calls for, where my experience fits, and the right scope of responsibility.
               </p>
               <p className="mt-4 text-[15px] leading-[1.55] text-[#5A6978]">
                 Pacific Time

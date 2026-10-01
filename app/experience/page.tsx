@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import PresenceShell from "@/components/presence/PresenceShell";
 import HaloFilm from "@/components/presence/HaloFilm";
@@ -7,40 +8,10 @@ import BeehiveFilm from "@/components/presence/BeehiveFilm";
 export const metadata: Metadata = {
   title: { absolute: "Experience | idigdata" },
   description:
-    "Systems, people, and agentic work on the same ground.",
+    "Executive leadership and enterprise transformation across 50+ implementations and 15 enterprise transformations at scale.",
   alternates: { canonical: "/experience/" },
 };
 
-const operators = [
-  {
-    title: "CPG, Wine & Food",
-    names: [
-      "Sierra Nevada Brewing",
-      "Duckhorn",
-      "Foley Family Wines",
-      "Everytable",
-      "Greenham",
-      "Valley Fine Foods",
-    ],
-  },
-  {
-    title: "Architecture & Construction",
-    names: [
-      "Turner Construction",
-      "PCL Construction",
-      "SOM",
-      "HOK",
-    ],
-  },
-  {
-    title: "Sports & Entertainment",
-    names: [
-      "Wynn Resorts",
-      "MGM Resorts",
-      "San Jose Sharks",
-    ],
-  },
-] as const;
 
 const estate = [
   {
@@ -164,48 +135,72 @@ const constellations = [
   },
 ] as const;
 
-const patterns = [
-  {
-    code: "01",
-    name: "Enterprise transformation management",
-    desc: "From planning through go-live. Tracking milestones, cutover dependencies, and delivery evidence.",
-  },
-  {
-    code: "02",
-    name: "Governed software delivery",
-    desc: "Traceable decisions, delivery evidence, verified audit trails, and human authorization gates.",
-  },
-  {
-    code: "03",
-    name: "Workflows executed by people and agents",
-    desc: "Using company-owned data. Human judgment at critical gates. Work that lands inside enterprise systems.",
-  },
-] as const;
-
 export default function ExperiencePage() {
   return (
     <PresenceShell>
-      <header className="p-section p-section--hire">
-        <div className="page-well">
-          <div className="hero-split">
-            <div>
-              <p className="p-kicker">Experience</p>
-              <h1 className="p-h1" style={{ maxWidth: "16ch" }}>
-                The domain, the people, and the work in production.
-              </h1>
-              <p className="p-dek">
-                Systems, process, and agentic work sit on the same ground.
-              </p>
-            </div>
-            <div className="home-watermark" aria-hidden="true">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/idigdata-mark.svg" alt="" />
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <section className="p-section p-section--job">
+<header className="p-section">
+<div className="page-well">
+<div className="hero-split">
+<div className="home-hero-copy">
+<p className="p-kicker">Experience</p>
+<h1 className="p-h1">{"The breadth to see how the pieces fit."}</h1>
+<p className="p-dek">{"I built and ran a $130M operating business, then brought that perspective to enterprise technology leadership. My career spans 50+ implementations and 15 enterprise transformations at scale, including complex, highly regulated businesses where financial integrity, compliance, and operational continuity shape delivery."}</p>
+<p className="p-prose mt-4">{"Through Data Integration Group, I lead client-side transformation across people, data, applications, and delivery partners. Earlier partner-side work at Access IT gave me an inside understanding of how systems integrators, software vendors, and resellers deliver. I bring both perspectives to the work."}</p>
+</div>
+<div className="home-watermark" aria-hidden="true">
+<img src="/idigdata-mark.svg" alt="" />
+</div>
+</div>
+</div>
+</header>
+<section className="p-section">
+<div className="page-well">
+<h2 className="p-h2">{"Selected transformation work"}</h2>
+<div className="executive-stories">
+<article>
+<h3>{"Financial integration after acquisition"}</h3>
+<p className="p-prose mt-4">{"Reduced financial close from 18 days to four in an 11-month transformation of a $350M post-acquisition business. Consolidated systems, reconciled master data, unified the chart of accounts, and integrated warehouses across entities and currencies."}</p>
+</article>
+<article>
+<h3>{"Recovery of a stalled ERP program"}</h3>
+<p className="p-prose mt-4">{"Recovered a stalled $8M ERP program and saved $2M. Reset partner governance and delivery; built a company-owned API bridge connecting the new ERP to an existing production platform."}</p>
+</article>
+<article>
+<h3>{"Integrated business planning and supply chain"}</h3>
+<p className="p-prose mt-4">{"Unified planning and supply-chain operations for a $200M multi-entity, multi-facility wine producer. Replaced spreadsheet and PowerPoint preparation for monthly meetings with continuously updated planning across acquired operations. Delivered purchasing and freight savings, improved inventory management, reduced SKUs and labor costs, and strengthened labor scheduling and waste visibility."}</p>
+</article>
+<article>
+<h3>{"Enterprise application architecture and development"}</h3>
+<p className="p-prose mt-4">{"Co-architected and helped develop an integrated winemaking platform connecting a complex legacy application with ERP, WMS, and MES. Led client-side collaboration with the vendor, partner, and developers; negotiated pilot-customer terms eliminating software charges for the client."}</p>
+</article>
+<article>
+<h3>{"Master data that connects the business"}</h3>
+<p className="p-prose mt-4">{"Standardized complex item records into a common item master for enterprise and third-party integration."}</p>
+</article>
+</div>
+</div>
+</section>
+<section className="p-section">
+<div className="page-well">
+<h2 className="p-h2">{"Executive leadership, grounded in operating experience"}</h2>
+<h3 className="executive-role">{"Sierra Nevada Brewing Co. | Chief Information Officer"}</h3>
+<p className="p-prose mt-4">{"Owned technology strategy, investment, operations, data, cybersecurity, and governance for an approximately $420M multi-site brewer. Served on the executive leadership team and presented to the board."}</p>
+<p className="p-prose mt-4">{"Led a $15M modernization consolidating 200+ systems to 25 connected enterprise systems. Rebuilt IS/IT and led 150+ combined internal and partner personnel at peak, coordinating 25 task forces across business functions, technical teams, and implementation partners. Change spanned finance, warehousing, manufacturing and planning, including laboratory systems, food safety, SQF, and TTB requirements."}</p>
+<h3 className="executive-role">{"Timberline | Business ownership and technology leadership"}</h3>
+<p className="p-prose mt-4">{"Founded and operated a contractor, manufacturer, and distributor of architectural openings. Grew revenue from $250K in year one to $130M by year 10, with P&L responsibility and 100+ employees. Built proprietary software connecting estimating, project delivery, purchasing, production, inventory, distribution, and finance."}</p>
+<p className="p-prose mt-4">{"Engaged multiple private equity firms on expansion financing; separately advised a PE team on troubled distributors, applying operating experience across ERP, warehouse, and shop-floor systems."}</p>
+<h3 className="executive-role">{"Access IT | Partner-side delivery"}</h3>
+<p className="p-prose mt-4">{"Led Microsoft Dynamics and ContractERP implementations across functional, technical, and solution architecture responsibilities, from requirements and customization through migration, integration, testing, cutover, and stabilization."}</p>
+</div>
+</section>
+<section className="p-section">
+<div className="page-well">
+<h2 className="p-h2">{"Systems, workflows, and the people doing the work"}</h2>
+<p className="p-prose mt-4">{"All businesses are uniquely standard. The fundamentals are familiar; the people, constraints, and consequential exceptions shape the solution."}</p>
+<p className="p-prose mt-4">{"I work with the CFO and compliance officer, the functional leads, the developers and delivery partners, and the warehouse team using the scanners. The architecture has to support the work across those groups."}</p>
+<p className="p-prose mt-4">{"My enterprise application experience also includes electronic medical records (EMR/EHR)."}</p>
+</div>
+</section>      <section className="p-section p-section--job">
         <div className="page-well">
           <p className="p-kicker">The systems</p>
           <h2 className="p-h2">The Systemverse, and the systems beside it.</h2>
@@ -384,160 +379,47 @@ export default function ExperiencePage() {
             ))}
           </div>
 
-          <div className="dossier mt-10">
-            <p className="dossier-entry">
-              My executive experience includes leading technology across
-              multi-site manufacturing businesses, with responsibility for
-              direction, investment, and the people delivering the work.
-            </p>
-            <p className="dossier-entry">
-              I build with the people and the systems the company already has,
-              and I stay accountable. When the work needs more than that team,
-              I bring engineers, project managers, partners, and specialists
-              for the agreed scope.
-            </p>
-          </div>
+
         </div>
       </section>
 
-      <section className="p-section">
-        <div className="page-well">
-          <p className="p-kicker">How I work</p>
-          <h2 className="p-h2">Find the cause. Own the change. Check the result.</h2>
-          <p className="p-prose mt-4">
-            I trace how people, process, data, and technology connect to find
-            the cause behind the friction. Then I own the targeted delivery
-            with your team, accounting for the dependencies around it.
-          </p>
-          <p className="p-prose mt-4">
-            Applied agentics helps accelerate investigation, building, and
-            testing. Before delivery, we agree explicit acceptance criteria
-            and how to verify the change. Afterward, we check the operational
-            result against those criteria, with a named person accountable.
-          </p>
-        </div>
-      </section>
-
-      <section className="p-section" style={{ background: "#F3ECE0" }}>
-        <div className="page-well">
-          <p className="p-kicker">Companies and receipts</p>
-          <h2 className="p-h2">Names that show the breadth.</h2>
-          <p className="portfolio-sub">
-            These are companies where I led the transformation, the
-            technology function, or the delivery.
-          </p>
-          <div className="portfolio-strip">
-            {operators.map((sector) => (
-              <div key={sector.title} className="sector-block">
-                <p className="sector-title">{sector.title}</p>
-                <p className="operator-names">{sector.names.join(" · ")}</p>
-              </div>
-            ))}
-          </div>
-          <div className="dossier">
-            <p className="dossier-entry">
-              <strong>Data Integration Group.</strong> A post-M&amp;A estate
-              in 11 months. Financial close from 18 days to four. Chart of
-              accounts and WMS unified.
-            </p>
-            <p className="dossier-entry">
-              <strong>Data Integration Group.</strong> Standardized complex
-              item records into a common item master for enterprise and
-              third-party integration.
-            </p>
-            <p className="dossier-entry">
-              <strong>Data Integration Group.</strong> A separate delivery: a
-              stalled ERP recovered, and a company-owned API bridge.
-            </p>
-            <p className="dossier-spine">
-              30 years · 50+ implementations · 15 transformations at scale
-            </p>
-          </div>
-          <p className="p-prose mt-8">
-            That evidence has to hold under scrutiny. Who is on the estate,
-            what they can reach, who can change the books, and a trail of what
-            ran. When agents can reach the same estate, the questions are the
-            same kind: what is already running, what it can see and do, who
-            authorizes the write, and what it cost. Track costs against the
-            work and the outcomes it supports. A named person can halt the work.
-          </p>
-        </div>
-      </section>
-
-      <section className="p-section">
-        <div className="page-well">
-          <figure className="waves-doc">
-            <div className="plate-main-text">
-              <p className="p-kicker">The time is now</p>
-              <h2 className="p-h2">
-                Every ten-year wave was the same game. This one is not.
-              </h2>
-              <p className="p-prose">
-                Mainframe. Client-server and ERP. Cloud and SaaS. Each one was
-                a new platform and a long replacement. Applied agentics does
-                not wait for a decade. It lands on the stack and the data you
-                already own.
-              </p>
-            </div>
-            <div className="mt-8 overflow-hidden rounded-xl border border-[#142840]/15 bg-[#FBF9F4] p-3 shadow-sm md:p-6">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/diagrams/four-waves.svg?c=4"
-                alt="Four waves of enterprise technology. Three replacement cycles, then applied agentics on the systems you already own."
-                className="h-auto w-full"
-              />
-              <p className="mt-3 text-left">
-                <a className="p-link" href="/diagrams/four-waves.svg?c=4" target="_blank" rel="noopener noreferrer">
-                  Open the diagram
-                </a>
-              </p>
-            </div>
-            <figcaption className="waves-caption">
-              The first three waves rhyme as platform replacements. The fourth
-              wave lands on the systems you already own.
-            </figcaption>
-          </figure>
-        </div>
-      </section>
-
-      <section className="p-section">
-        <div className="page-well">
-          <p className="p-kicker">On that same ground</p>
-          <h2 className="p-h2" style={{ maxWidth: "22ch" }}>
-            Three types of agentic systems in production.
-          </h2>
-          <p className="p-prose">
-            Three types of agentic systems in production, through Data
-            Integration Group. BOSS is one of the systems on this ground.
-          </p>
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
-            {patterns.map((pattern) => (
-              <article
-                key={pattern.code}
-                className="rounded-lg border border-[#142840]/15 bg-[#FBF9F4] p-6"
-              >
-                <span className="font-brand text-[11px] font-bold uppercase tracking-[0.16em] text-[#B48A05]">
-                  Type {pattern.code}
-                </span>
-                <h3 className="mt-2 font-vollkorn text-[19px] font-bold text-navy">
-                  {pattern.name}
-                </h3>
-                <p className="mt-2 text-[14.5px] leading-[1.6] text-[#334155]">
-                  {pattern.desc}
-                </p>
-              </article>
-            ))}
-          </div>
-          <div className="dossier">
-            <p className="dossier-entry">
-              <strong>Data Integration Group.</strong> Four years applying
-              agentics on company-owned data, with a trail of the source, the
-              action, the approval, and the result. A named person authorizes
-              the write.
-            </p>
-          </div>
-        </div>
-      </section>
-    </PresenceShell>
+<section className="p-section">
+<div className="page-well">
+<h2 className="p-h2">{"Find the cause. Own the change. Check the result."}</h2>
+<p className="p-prose mt-4">{"I assess how people, data, and technology connect, identify the causes behind the friction, and agree priorities with the people responsible for the business. I align internal teams, vendors, and systems integrators around shared workflows and clear accountability."}</p>
+<p className="p-prose mt-4">{"Before delivery, we agree what success means and how to verify it. Through implementation and adoption, I keep financial integrity, compliance, and operational continuity in view."}</p>
+</div>
+</section>
+<section className="p-section" id="applied-agentics">
+<div className="page-well">
+<h2 className="p-h2">{"Applied agentics on the enterprise already running"}</h2>
+<p className="p-prose mt-4">{"I architect, develop, and deploy agentic applications on company-owned data. The work includes transformation management through go-live, governed software delivery, and workflows executed by people and agents."}</p>
+<div className="home-scales">
+<article>
+<h3>{"Enterprise transformation management"}</h3>
+<p className="p-prose mt-4">{"Planning, milestones, cutover dependencies, and delivery evidence through go-live."}</p>
+</article>
+<article>
+<h3>{"Governed software delivery"}</h3>
+<p className="p-prose mt-4">{"Traceable decisions, testing and delivery evidence, and human authorization."}</p>
+</article>
+<article>
+<h3>{"Workflows across people and systems"}</h3>
+<p className="p-prose mt-4">{"Company-owned data, defined permissions, and human judgment at consequential steps."}</p>
+</article>
+</div>
+<p className="p-prose mt-4">{"Security, observability, and traceability are part of the design. The work includes the documentation, operating knowledge, and team capability needed to support the resulting systems."}</p>
+</div>
+</section>
+<section className="p-section">
+<div className="page-well">
+<h2 className="p-h2">{"What does your next transformation require?"}</h2>
+<p className="p-prose mt-4">{"Executive leadership, recovery of a troubled program, or a defined part of the work. Tell me where your business is."}</p>
+<div className="home-hero-actions">
+<Link className="p-btn" href="/contact/">{"Start a conversation"}</Link>
+</div>
+</div>
+</section>
+</PresenceShell>
   );
 }

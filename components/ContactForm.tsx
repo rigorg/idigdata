@@ -339,7 +339,7 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
 
       <div>
         <label htmlFor={messageId} className={labelClasses}>
-          The operating problem{" "}
+          Your situation{" "}
           <span className="text-warm-gray text-[13px]">(optional)</span>
         </label>
         <textarea
@@ -361,7 +361,7 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
           id={messageHelpId}
           className="mt-1.5 font-body text-[13px] text-warm-gray"
         >
-          The real operating problem in your own words. {composed.message.length.toLocaleString()} / 4,000 characters including selected priorities and Block notes.
+          Tell me about the role, priorities, or operating problem. {composed.message.length.toLocaleString()} / 4,000 characters including selected priorities and Block notes.
         </p>
       </div>
 
@@ -376,7 +376,7 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
             aria-hidden="true"
             className="inline-block h-[7px] w-[7px] bg-gold"
           />
-          {status === "submitting" ? "Sending…" : "Bring the problem"}
+          {status === "submitting" ? "Sending…" : "Start a conversation"}
         </button>
       </div>
     </form>

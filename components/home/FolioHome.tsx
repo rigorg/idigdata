@@ -1,216 +1,131 @@
 import Link from "next/link";
 import PresenceShell from "@/components/presence/PresenceShell";
-
-const outcomes = [
-  {
-    category: "Leadership & Direction",
-    title: "Clear priorities. Accountable delivery.",
-    text: "One owner carries the priority from the decision through the day the work is done.",
-  },
-  {
-    category: "IT & Business Systems",
-    title: "Business systems your team can run.",
-    text: "Platforms, vendors, and the service have one owner, and your team can keep them running.",
-  },
-  {
-    category: "Data & Knowledge",
-    title: "Trusted records. Clear ownership.",
-    text: "The records the business uses have an owner, and the know-how stays with the company.",
-  },
-  {
-    category: "Financial Systems",
-    title: "Books that reconcile.",
-    text: "The close and the books are brought to where they tie, with a trail of what changed.",
-  },
-  {
-    category: "Workflows & Automation",
-    title: "Work that reaches completion.",
-    text: "A job moves across people, systems, and data, and it finishes.",
-  },
-] as const;
-
-const scales = [
-  {
-    name: "Focused work",
-    text: "A defined result, with the outcome and the scope agreed up front.",
-  },
-  {
-    name: "Fractional leadership",
-    text: "Responsibility for part of the role, over a longer calendar.",
-  },
-  {
-    name: "Executive roles",
-    text: "The full mandate: leadership and accountability for the whole function.",
-  },
-] as const;
-
 export default function FolioHome() {
   return (
     <PresenceShell>
-      <section className="p-section p-section--tight">
-        <div className="page-well">
-          <div className="hero-split">
-            <div className="home-hero-copy">
-              <h1 className="p-h1 home-hero-title">
-                Turn the potential
-                <br />
-                of your people
-                <br />
-                and technology
-                <br />
-                into business
-                <br />
-                outcomes.
-              </h1>
-              <p className="p-dek">
-                I lead enterprise technology work and build the capability
-                behind it - connecting your systems, data, and people. Engage
-                me for a focused outcome, fractional leadership, or the full
-                mandate.
-              </p>
-              <div className="home-hero-actions">
-                <Link href="/contact/" className="p-btn">
-                  <span className="p-gold-sq" aria-hidden="true" />
-                  Start a conversation
-                </Link>
-                <Link href="/block/" className="p-link">
-                  Explore The Block
-                </Link>
-              </div>
-            </div>
-            <div className="home-watermark" aria-hidden="true">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/idigdata-mark.svg" alt="" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="p-section home-know">
-        <div className="page-well">
-          <div className="home-know-head">
-            <h2 className="p-h2">
-              Put the full knowledge of your business to work.
-            </h2>
-            <p className="home-psd">
-              <span>People</span>
-              <span>Systems</span>
-              <span>Data</span>
-            </p>
-          </div>
-          <div className="home-beats">
-            <p>
-              Years of operating knowledge live across your people, your data,
-              and your systems. Connect that knowledge to the decisions and
-              the work it should support.
-            </p>
-            <p>
-              Applied agentics opens new ways to do it, building on the
-              business you already run.
-            </p>
-            <p>
-              The company keeps what is built, and your people can run it.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="p-section">
-        <div className="page-well">
-          <p className="p-kicker">What needs to change</p>
-          <p className="home-crosscut">
-            Governance runs across the work: who may decide, who may change a
-            record, who approved it, and the evidence.
-          </p>
-          <div className="home-cards">
-            {outcomes.map((item) => (
-              <article key={item.category} className="home-card">
-                <p className="home-card-cat">{item.category}</p>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </article>
-            ))}
-          </div>
-          <p className="home-more">
-            <Link href="/block/" className="p-link">
-              Explore The Block
-            </Link>
-          </p>
-        </div>
-      </section>
-
-      <section className="p-section">
-        <div className="page-well">
-          <p className="p-kicker">One result</p>
-          <h2 className="p-h2 home-story-title">
-            The close went from 18 days to four.
-          </h2>
-          <div className="home-story">
-            <article>
-              <h3>Before</h3>
-              <p>After a merger, the financial close took 18 days.</p>
-            </article>
-            <article>
-              <h3>The work</h3>
-              <p>
-                Data Integration Group unified the chart of accounts and
-                integrated the warehouse system.
-              </p>
-            </article>
-            <article>
-              <h3>Result</h3>
-              <p>The close finished in four days.</p>
-            </article>
-          </div>
-          <p className="home-more">
-            <Link href="/experience/" className="p-link">
-              The fuller record is on Experience
-            </Link>
-          </p>
-        </div>
-      </section>
-
-      <section className="p-section">
-        <div className="page-well">
-          <h2 className="p-h2">A result, a share of the role, or the mandate.</h2>
-          <p className="home-engage-lead">
-            Engage me for an executive role, fractional leadership, or focused
-            work with an agreed scope and outcome. For focused work, The Block
-            brings together bounded time and capability. The work can include
-            software your company owns and operates.
-          </p>
-          <div className="home-scales">
-            {scales.map((scale) => (
-              <article key={scale.name}>
-                <h3>{scale.name}</h3>
-                <p>{scale.text}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="p-section p-section--close">
-        <div className="page-well">
-          <h2 className="p-h2 mx-auto" style={{ maxWidth: "16em" }}>
-            The company keeps it, and keeps running it.
-          </h2>
-          <p className="p-prose mx-auto mt-4" style={{ maxWidth: "38em" }}>
-            The data, the knowledge, the workflows, the software where it
-            belongs, and people able to run and improve what was built. That
-            is a living business asset.
-          </p>
-          <div className="home-hero-actions home-close-actions">
-            <Link href="/contact/" className="p-btn">
-              <span className="p-gold-sq" aria-hidden="true" />
-              Start a conversation
-            </Link>
-            <Link href="/block/" className="p-link">
-              Explore The Block
-            </Link>
-          </div>
-        </div>
-      </section>
-    </PresenceShell>
+<section className="p-section p-section--tight">
+<div className="page-well">
+<div className="hero-split">
+<div className="home-hero-copy">
+<h1 className="p-h1 home-hero-title">{"Turn the potential of your people and technology into business outcomes."}</h1>
+<p className="p-dek">{"I lead enterprise technology work and build the capability behind it, connecting your people, data, and systems. I bring CIO experience and the perspective of someone who built and ran a $130M business to the work of transforming others."}</p>
+<p className="executive-proof">{"50+ implementations · 15 enterprise transformations at scale"}</p>
+<div className="home-hero-actions">
+<Link className="p-btn" href="/contact/">{"Start a conversation"}</Link>
+<Link className="p-link" href="/experience/">{"Explore my experience"}</Link>
+</div>
+</div>
+<div className="home-watermark" aria-hidden="true">
+<img src="/idigdata-mark.svg" alt="" />
+</div>
+</div>
+</div>
+</section>
+<section className="p-section">
+<div className="page-well">
+<h2 className="p-h2">{"Transformation in practice."}</h2>
+<p className="p-prose mt-4">{"These separate engagements show how I connect delivery decisions to financial and operating results."}</p>
+<div className="home-story">
+<article>
+<h3>{"18 days to four"}</h3>
+<p className="p-prose mt-4">{"Reduced financial close in an 11-month transformation of a $350M post-acquisition business, connecting financial records and warehouses across entities and currencies."}</p>
+</article>
+<article>
+<h3>{"$8M ERP program recovered"}</h3>
+<p className="p-prose mt-4">{"Recovered a stalled program and saved $2M. Reset partner governance and delivery, and built a company-owned API bridge to an existing production platform."}</p>
+</article>
+<article>
+<h3>{"Planning across acquired operations"}</h3>
+<p className="p-prose mt-4">{"Unified integrated business planning and supply-chain operations for a $200M multi-entity wine producer, with purchasing and freight savings, better inventory management, and lower labor costs."}</p>
+</article>
+</div>
+<p className="home-more">
+<Link className="p-link" href="/experience/">{"Explore the work and the experience behind it."}</Link>
+</p>
+</div>
+</section>
+<section className="p-section">
+<div className="page-well">
+<h2 className="p-h2">{"Put the full knowledge of your business to work."}</h2>
+<p className="home-know-line">{"People. Data. Systems."}</p>
+<p className="p-prose mt-4">{"Years of operating knowledge live across your people, your data, and your systems. I connect that knowledge to the decisions and the work it should support."}</p>
+<p className="p-prose mt-4">{"I start with how your people work, follow the data across applications, and address the handoffs and exceptions that keep the business from working as a whole. Applied agentics extends that capability on the business you already run."}</p>
+</div>
+</section>
+<section className="p-section">
+<div className="page-well">
+<h2 className="p-h2">{"What needs to change?"}</h2>
+<p className="home-crosscut">{"Governance runs across the work: clear decision rights, accountable owners, and evidence of what changed."}</p>
+<div className="home-cards">
+<article className="home-card">
+<p className="home-card-cat">{"Leadership & Direction"}</p>
+<h3>{"Clear priorities. Accountable leadership."}</h3>
+<p className="p-prose mt-4">{"Align technology investment, teams, and delivery partners around what the business needs to accomplish."}</p>
+<Link className="p-link capability-link" href="/block/">{"Explore outcomes in The Block"}</Link>
+</article>
+<article className="home-card">
+<p className="home-card-cat">{"IT & Business Systems"}</p>
+<h3>{"Enterprise applications that work together."}</h3>
+<p className="p-prose mt-4">{"Connect ERP, manufacturing, warehouse, and other business systems around the people and processes they support."}</p>
+<Link className="p-link capability-link" href="/block/">{"Explore outcomes in The Block"}</Link>
+</article>
+<article className="home-card">
+<p className="home-card-cat">{"Data & Knowledge"}</p>
+<h3>{"Trusted information. Knowledge the company owns."}</h3>
+<p className="p-prose mt-4">{"Reconcile business records, connect information across systems, and make operating knowledge usable."}</p>
+<Link className="p-link capability-link" href="/block/">{"Explore outcomes in The Block"}</Link>
+</article>
+<article className="home-card">
+<p className="home-card-cat">{"Financial Systems"}</p>
+<h3>{"Financial integrity through change."}</h3>
+<p className="p-prose mt-4">{"Bring financial records and reporting together across entities, with reconciliation, traceability, and finance retaining control of accounting decisions."}</p>
+<Link className="p-link capability-link" href="/block/">{"Explore outcomes in The Block"}</Link>
+</article>
+<article className="home-card">
+<p className="home-card-cat">{"Workflows & Automation"}</p>
+<h3>{"Better handoffs. Less repeated work."}</h3>
+<p className="p-prose mt-4">{"Connect work across people and applications, with clear responsibilities, tested changes, and a way to recover when something fails."}</p>
+<Link className="p-link capability-link" href="/block/">{"Explore outcomes in The Block"}</Link>
+</article>
+<article className="home-card">
+<p className="home-card-cat">{"Applied Agentics"}</p>
+<h3>{"AI grounded in your business."}</h3>
+<p className="p-prose mt-4">{"Develop agentic applications on company-owned data, with defined permissions, traceable actions, and human oversight."}</p>
+<Link className="p-link capability-link" href="/experience/#applied-agentics">{"Explore applied agentics"}</Link>
+</article>
+</div>
+</div>
+</section>
+<section className="p-section">
+<div className="page-well">
+<h2 className="p-h2">{"The full mandate, or a defined part."}</h2>
+<p className="home-engage-lead">{"Engage me for an executive role, focused transformation work, or fractional leadership. The responsibilities, scope, and outcomes are agreed around what your business needs."}</p>
+<div className="home-scales">
+<article>
+<h3>{"Executive roles"}</h3>
+<p className="p-prose mt-4">{"Technology direction, investment, people, and delivery, with accountability for the whole function."}</p>
+</article>
+<article>
+<h3>{"Focused work"}</h3>
+<p className="p-prose mt-4">{"A defined operating problem or transformation outcome. The Block helps frame priorities and scope for our conversation."}</p>
+</article>
+<article>
+<h3>{"Fractional leadership"}</h3>
+<p className="p-prose mt-4">{"Executive responsibility for an agreed part of the role. Interim mandates are also welcome."}</p>
+</article>
+</div>
+</div>
+</section>
+<section className="p-section">
+<div className="page-well">
+<h2 className="p-h2">{"Build what your business needs next."}</h2>
+<p className="p-prose mt-4">{"The result should be more than a system going live: people equipped to do the work, trusted data for decisions, and technology your company can operate and improve."}</p>
+<p className="p-prose mt-4">{"Bring me the role, the transformation, or the problem you need to solve."}</p>
+<div className="home-hero-actions">
+<Link className="p-btn" href="/contact/">{"Start a conversation"}</Link>
+</div>
+</div>
+</section>
+</PresenceShell>
   );
 }

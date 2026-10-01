@@ -6,14 +6,14 @@ export const metadata: Metadata = {
     absolute: "Robert Paddock · Enterprise Technology Leader | idigdata",
   },
   description:
-    "Turn the potential of your people and technology into business outcomes.",
+    "Enterprise technology leadership grounded in 50+ implementations and 15 enterprise transformations at scale.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/",
     title: "Robert Paddock · Enterprise Technology Leader",
     description:
-      "Turn the potential of your people and technology into business outcomes.",
+      "Enterprise technology leadership grounded in 50+ implementations and 15 enterprise transformations at scale.",
     images: [
       {
         url: "/og-image.png?v=20260828",
