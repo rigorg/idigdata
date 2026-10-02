@@ -5,13 +5,10 @@ import Link from "next/link";
 import {
   PUBLIC_OUTCOME_DOMAINS,
   PUBLIC_CATALOG_ITEMS,
-  type CatalogItem,
-  type CatalogDomain,
 } from "@/lib/catalog";
 import {
   useEngagementDraft,
   ENGAGEMENT_CONTACT_URL,
-  type EngagementDraft,
 } from "@/lib/engagement-draft";
 
 // Strictly: 0 dollars, 0 phone numbers, ASCII hyphens only.
@@ -23,6 +20,7 @@ interface DomainItem {
   subtitle: string;
   essence: string;
   badge?: string;
+  accentColor?: string;
 }
 
 const AGENTIC_DOMAIN: DomainItem = {
@@ -48,7 +46,7 @@ export default function TheBlockPage() {
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
   const [agenticNotes, setAgenticNotes] = useState<string>("");
   const [generalNotes, setGeneralNotes] = useState<string>("");
-  
+
   // Modals
   const [activeModalDomainId, setActiveModalDomainId] = useState<string | null>(null);
   const [domainFilter, setDomainFilter] = useState<"all" | "finite" | "ongoing">("all");
@@ -218,93 +216,113 @@ export default function TheBlockPage() {
 
   return (
     <div className="min-h-screen bg-[#FBF9F4] text-[#142840] selection:bg-[#B48A05]/20">
-      {/* 1. HERO & POSITIONING HEADER */}
-      <section className="pt-12 pb-10 border-b border-[#142840]/10 bg-gradient-to-b from-white to-[#FBF9F4]">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8">
-            <div className="space-y-3 max-w-3xl">
+      
+      {/* 1. DISTINCT MASTHEAD & HERO FOR THE BLOCK */}
+      <section className="pt-12 pb-12 border-b border-[#142840]/15 bg-[#142840] text-white relative overflow-hidden">
+        {/* Subtle architectural grid pattern */}
+        <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: "radial-gradient(#fff 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
+        
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-white/10">
+            <div className="space-y-4 max-w-3xl">
+              
+              {/* Prominent The Block Mark & Brand Title */}
               <div className="flex items-center gap-3">
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#142840] text-white font-mono text-[10px] uppercase font-bold tracking-widest">
-                  <svg className="w-3 h-3 text-[#B48A05]" viewBox="0 0 24 24" fill="currentColor">
-                    <rect x="2" y="2" width="6" height="6" rx="1" />
-                    <rect x="9" y="2" width="6" height="6" rx="1" />
-                    <rect x="16" y="2" width="6" height="6" rx="1" />
-                    <rect x="2" y="9" width="6" height="6" rx="1" />
-                    <rect x="9" y="9" width="6" height="6" rx="1" className="text-amber-400" />
-                    <rect x="16" y="9" width="6" height="6" rx="1" />
-                    <rect x="2" y="16" width="6" height="6" rx="1" />
-                    <rect x="9" y="16" width="6" height="6" rx="1" />
-                    <rect x="16" y="16" width="6" height="6" rx="1" />
+                <div className="w-10 h-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center p-1.5 shadow-sm">
+                  <svg className="w-full h-full text-white" viewBox="0 0 24 24" fill="currentColor">
+                    <rect x="2" y="2" width="6" height="6" rx="1" className="text-white/60" />
+                    <rect x="9" y="2" width="6" height="6" rx="1" className="text-white/60" />
+                    <rect x="16" y="2" width="6" height="6" rx="1" className="text-white/60" />
+                    <rect x="2" y="9" width="6" height="6" rx="1" className="text-white/60" />
+                    <rect x="9" y="9" width="6" height="6" rx="1" className="text-[#E5B21D]" />
+                    <rect x="16" y="9" width="6" height="6" rx="1" className="text-white/60" />
+                    <rect x="2" y="16" width="6" height="6" rx="1" className="text-white/60" />
+                    <rect x="9" y="16" width="6" height="6" rx="1" className="text-white/60" />
+                    <rect x="16" y="16" width="6" height="6" rx="1" className="text-white/60" />
                   </svg>
-                  TB · THE BLOCK
-                </span>
-                <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#5A6978]">
-                  Operational Capability &amp; Scope Configurator
-                </span>
+                </div>
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="font-mono text-sm uppercase font-extrabold tracking-widest text-[#E5B21D]">
+                      THE BLOCK
+                    </span>
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-white/10 text-slate-300 font-bold uppercase tracking-wider">
+                      STOREFRONT &middot; CONFIGURATOR
+                    </span>
+                  </div>
+                  <span className="text-xs font-mono text-slate-300">
+                    Boutique Systems Engineering &middot; Executive Scoping
+                  </span>
+                </div>
               </div>
-              <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#142840] leading-tight">
+
+              <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
                 What do you want your business to be able to do?
               </h1>
-              <p className="font-serif italic text-base sm:text-lg text-[#334155] leading-relaxed">
-                Explore outcomes across leadership, business systems, company data, financial integrity, workflows, and boutique agentic software. Choose what matters to shape a concrete quote.
+              <p className="font-serif italic text-base sm:text-lg text-slate-200 leading-relaxed max-w-2xl">
+                Explore outcomes across leadership, business systems, data, financial integrity, workflows, and boutique agentic software. Configure what matters to receive an exact delivery quote.
               </p>
             </div>
 
-            {/* Quick telemetry badge */}
-            <div className="flex items-center gap-4 bg-white border border-[#142840]/15 rounded-lg p-3.5 shadow-xs">
-              <div className="text-right">
-                <div className="text-[11px] font-mono uppercase tracking-wider text-[#5A6978]">Active Selection</div>
-                <div className="font-mono text-sm font-bold text-[#142840]">
-                  {totalItems} {totalItems === 1 ? "Outcome" : "Outcomes"} · {calculatedBlocks} {calculatedBlocks === 1 ? "Block" : "Blocks"}
-                </div>
+            {/* Live Scope Telemetry Plate */}
+            <div className="bg-[#0B1624] border border-white/15 rounded-xl p-4 shadow-lg min-w-[260px]">
+              <div className="flex items-center justify-between text-[11px] font-mono text-slate-400 mb-1">
+                <span>CONFIGURED SCOPE</span>
+                <span className="text-[#E5B21D] font-bold">LIVE HUD</span>
+              </div>
+              <div className="font-mono text-xl font-bold text-white mb-3">
+                {totalItems} {totalItems === 1 ? "Outcome" : "Outcomes"} &middot; {calculatedBlocks} {calculatedBlocks === 1 ? "Block" : "Blocks"}
               </div>
               <button
                 type="button"
                 onClick={() => setIsQuoteModalOpen(true)}
-                className="px-4 py-2 rounded bg-[#142840] hover:bg-[#1C385A] text-white font-serif font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer"
+                className="w-full py-2.5 rounded bg-[#E5B21D] hover:bg-amber-400 text-[#0B1624] font-serif font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer shadow-xs"
               >
-                Request Quote
+                Request a Quote &rarr;
               </button>
             </div>
           </div>
 
-          {/* 3 Core Architecture Guarantees */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-6 border-t border-[#142840]/10 text-xs">
-            <div className="p-3.5 bg-white/70 rounded border border-[#142840]/10">
-              <span className="font-mono font-bold text-[#B48A05] uppercase tracking-wider block mb-1">01 · Agreed Outcomes</span>
-              <p className="text-[#334155] leading-normal">
+          {/* 3 Core Delivery Guarantees */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-6 text-xs">
+            <div className="p-3.5 bg-white/5 rounded-lg border border-white/10">
+              <span className="font-mono font-bold text-[#E5B21D] uppercase tracking-wider block mb-1">01 &middot; Agreed Outcomes</span>
+              <p className="text-slate-300 leading-normal">
                 Priorities, scope, dependencies, and verification measures agreed before delivery begins.
               </p>
             </div>
-            <div className="p-3.5 bg-white/70 rounded border border-[#142840]/10">
-              <span className="font-mono font-bold text-[#B48A05] uppercase tracking-wider block mb-1">02 · Company-Owned Assets</span>
-              <p className="text-[#334155] leading-normal">
+            <div className="p-3.5 bg-white/5 rounded-lg border border-white/10">
+              <span className="font-mono font-bold text-[#E5B21D] uppercase tracking-wider block mb-1">02 &middot; Company-Owned Assets</span>
+              <p className="text-slate-300 leading-normal">
                 Code, data schemas, and agent runtimes deployed in your Git repositories. Zero vendor lock-in.
               </p>
             </div>
-            <div className="p-3.5 bg-white/70 rounded border border-[#142840]/10">
-              <span className="font-mono font-bold text-[#B48A05] uppercase tracking-wider block mb-1">03 · Accountable Leadership</span>
-              <p className="text-[#334155] leading-normal">
-                Grounded in 50+ implementations, 15 enterprise transformations, and boutique software engineering.
+            <div className="p-3.5 bg-white/5 rounded-lg border border-white/10">
+              <span className="font-mono font-bold text-[#E5B21D] uppercase tracking-wider block mb-1">03 &middot; Boutique Engineering</span>
+              <p className="text-slate-300 leading-normal">
+                Elite engineering pods backed by the Rig build engine and 50+ enterprise implementations.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 2. THE 6 BLOCKS PANORAMIC GRID */}
+      {/* 2. THE 6 OPERATIONAL DOMAINS (PANORAMIC GRID) */}
       <section className="py-12 max-w-6xl mx-auto px-6">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-8">
           <div>
-            <span className="text-[11px] font-mono uppercase tracking-widest text-[#B48A05] font-bold block mb-1">
-              THE 6 OPERATIONAL DOMAINS
-            </span>
+            <div className="flex items-center gap-2 mb-1">
+              <span className="w-2 h-2 rounded-full bg-[#B48A05]" />
+              <span className="text-[11px] font-mono uppercase tracking-widest text-[#B48A05] font-bold">
+                THE 6 OPERATIONAL BLOCKS
+              </span>
+            </div>
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#142840]">
               Select a block to configure outcomes
             </h2>
           </div>
           <p className="text-xs text-[#5A6978] font-mono">
-            Click any block below to open its outcome selector. Click, click, done.
+            Click any block to open its outcome selector. Click, click, done.
           </p>
         </div>
 
@@ -325,13 +343,13 @@ export default function TheBlockPage() {
                   hasActive
                     ? "border-[#B48A05] ring-2 ring-[#B48A05]/20 shadow-xs"
                     : isAgentic
-                    ? "border-[#142840]/30 bg-gradient-to-b from-white to-[#F3ECE0]/30"
+                    ? "border-[#142840]/30 bg-gradient-to-b from-white to-[#F3ECE0]/40"
                     : "border-[#142840]/15"
                 }`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="px-2 py-0.5 rounded font-mono text-[10px] font-bold tracking-wider uppercase bg-[#142840]/5 text-[#142840] group-hover:bg-[#142840] group-hover:text-white transition-colors">
+                    <span className="px-2.5 py-0.5 rounded font-mono text-[10px] font-bold tracking-wider uppercase bg-[#142840]/5 text-[#142840] group-hover:bg-[#142840] group-hover:text-white transition-colors">
                       BLOCK 0{idx + 1} [{domain.code}]
                     </span>
                     {hasActive ? (
@@ -377,7 +395,7 @@ export default function TheBlockPage() {
         </div>
       </section>
 
-      {/* 3. LIVE BLOCK CALCULATOR & ENGAGEMENT DOSSIER */}
+      {/* 3. LIVE BLOCK CALCULATOR & ENGAGEMENT HUD */}
       <section className="py-12 bg-[#EDE8DF] border-y border-[#142840]/15">
         <div className="max-w-6xl mx-auto px-6">
           <div className="bg-white rounded-xl border border-[#142840]/20 shadow-md p-6 sm:p-8">
@@ -402,7 +420,7 @@ export default function TheBlockPage() {
                   <div className="flex items-center justify-between text-[11px] font-mono">
                     <span className="text-[#5A6978]">BLOCK FLIGHT METER</span>
                     <span className="font-bold text-[#142840]">
-                      {totalItems} Selected · {calculatedBlocks} Calculated
+                      {totalItems} Selected &middot; {calculatedBlocks} Calculated
                     </span>
                   </div>
                   <div className="grid grid-cols-4 gap-2.5">
@@ -426,7 +444,7 @@ export default function TheBlockPage() {
                   </div>
                   {isOvercapacity && (
                     <div className="p-3 rounded bg-amber-50 border border-amber-200 text-xs text-amber-900 mt-2">
-                      <strong>Full Mandate Detected:</strong> Selecting more than 4 blocks indicates a broad organizational transformation. Robert Paddock will review your scope for a dedicated executive role or phased roadmap.
+                      <strong>Full Mandate Detected:</strong> Selecting more than 4 blocks indicates a broad organizational transformation. Our principals will review your scope for a dedicated executive role or phased roadmap.
                     </div>
                   )}
                 </div>
@@ -481,13 +499,13 @@ export default function TheBlockPage() {
               <div className="w-full lg:max-w-md bg-[#FBF9F4] p-5 rounded-lg border border-[#142840]/15 space-y-4">
                 <div>
                   <span className="text-[10px] font-mono uppercase tracking-wider text-[#B48A05] font-bold block">
-                    HUMAN-TO-HUMAN INTAKE
+                    SCOPE REVIEW &middot; INTAKE
                   </span>
                   <h4 className="font-serif text-lg font-bold text-[#142840]">
                     Your situation and context
                   </h4>
                   <p className="text-xs text-[#5A6978] mt-0.5">
-                    "Send this over to me. Fill this out as best and as accurately as you can to reflect your desired outcomes, and I'll get back to you right away with a quote."
+                    Send your scope over to us. Fill this out as accurately as you can to reflect your desired outcomes, and we will get back to you right away with a quote.
                   </p>
                 </div>
 
@@ -772,7 +790,7 @@ export default function TheBlockPage() {
         </div>
       )}
 
-      {/* 6. MODAL: DIRECT QUOTE REQUEST (HUMAN-TO-HUMAN) */}
+      {/* 6. MODAL: DIRECT QUOTE REQUEST (STUDIO FIRM VOICE) */}
       {isQuoteModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#142840]/60 backdrop-blur-xs">
           <div className="bg-white rounded-xl border border-[#142840]/20 shadow-2xl max-w-xl w-full max-h-[90vh] flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-150">
@@ -780,7 +798,7 @@ export default function TheBlockPage() {
             <div className="p-6 border-b border-[#142840]/10 bg-[#FBF9F4] flex items-start justify-between gap-4">
               <div>
                 <span className="px-2 py-0.5 rounded font-mono text-[10px] font-bold tracking-wider uppercase bg-[#142840] text-white block w-fit mb-1.5">
-                  TB // DIRECT EXECUTIVE REVIEW
+                  TB // THE BLOCK &middot; DIRECT SCOPE REVIEW
                 </span>
                 <h3 className="font-serif text-2xl font-bold text-[#142840]">
                   Request a quote on this scope
@@ -808,7 +826,7 @@ export default function TheBlockPage() {
                     Scope request received
                   </h4>
                   <p className="text-xs text-[#5A6978] leading-relaxed max-w-sm mx-auto">
-                    Thank you. Robert Paddock will personally analyze your operational context and desired outcomes and get back to you right away with a quote.
+                    Thank you. We will analyze your operational context and desired outcomes and get back to you right away with a concrete quote and flight timeline.
                   </p>
                   <button
                     type="button"
@@ -823,12 +841,9 @@ export default function TheBlockPage() {
                 </div>
               ) : (
                 <form onSubmit={handleQuoteSubmit} className="space-y-4">
-                  {/* Executive Quote Callout */}
+                  {/* Executive Firm Instruction */}
                   <div className="p-3.5 rounded bg-[#FBF9F4] border-l-2 border-[#B48A05] text-xs font-serif italic text-[#334155] leading-relaxed">
-                    "Send this over to me. Fill this out as best and as accurately as you can to reflect your desired outcomes, and I'll get back to you right away with a quote."
-                    <span className="block font-sans not-italic text-[11px] font-bold text-[#142840] mt-1">
-                      &mdash; Robert Paddock
-                    </span>
+                    "Send your scope over to us. Fill this out as best and as accurately as you can to reflect your desired outcomes, and we will get back to you right away with a quote and delivery timeline."
                   </div>
 
                   {/* Summary pills */}
@@ -900,10 +915,10 @@ export default function TheBlockPage() {
                       className="w-full py-3 rounded bg-[#142840] hover:bg-[#1C385A] text-white font-serif font-bold text-xs uppercase tracking-wider transition-colors shadow-xs flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
                     >
                       {quoteStatus === "submitting" ? (
-                        <span>Sending request...</span>
+                        <span>Submitting scope request...</span>
                       ) : (
                         <>
-                          <span>Send to Robert &rarr;</span>
+                          <span>Submit Scope for Quote &rarr;</span>
                         </>
                       )}
                     </button>
