@@ -77,13 +77,23 @@ export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-navy/10 bg-[#FBF9F4]/95 backdrop-blur-md">
       <div className="page-well flex items-center justify-between py-3.5 md:py-5">
-        <Link
-          href="/"
-          className="flex items-center"
-          aria-label="idigdata - home"
-        >
-          <HeaderWordmark />
-        </Link>
+        <div className="flex items-center gap-3">
+          <Link
+            href="/"
+            className="flex items-center"
+            aria-label="idigdata - home"
+          >
+            <HeaderWordmark />
+          </Link>
+          {path.startsWith("/block") && (
+            <div className="flex items-center gap-2 pl-3 border-l border-navy/20">
+              <span className="font-mono text-xs font-bold uppercase tracking-wider text-navy/85 bg-navy/5 px-2.5 py-1 rounded border border-navy/10 flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#B48A05]" />
+                The Block
+              </span>
+            </div>
+          )}
+        </div>
 
         <nav
           className="hidden items-center gap-8 font-vollkorn text-[15px] font-semibold text-navy md:flex"

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { TheBlockLogo } from "@/components/TheBlockLogo";
 import {
   PUBLIC_OUTCOME_DOMAINS,
   PUBLIC_CATALOG_ITEMS,
@@ -129,32 +130,39 @@ export default function TheBlockPage() {
   let calculatedBlocks = totalItems;
   let pacingTitle = "Select outcomes to calculate";
   let pacingDesc = "Choose priorities across the 6 blocks to calculate engagement flight duration.";
+  let flightWeeks = "0 Weeks";
   let isOvercapacity = false;
 
   if (totalItems === 0) {
     pacingTitle = "0 Blocks (Awaiting Selections)";
     pacingDesc = "Explore the 6 enterprise blocks below to assemble your required outcomes.";
+    flightWeeks = "Awaiting Scope";
   } else if (totalItems === 1) {
     calculatedBlocks = 1;
     pacingTitle = "1 Standard Block · 2-4 Weeks";
     pacingDesc = "Surgical Sprint: Fixed boundary addressing a single high-priority operational friction point.";
+    flightWeeks = "2-4 Weeks";
   } else if (totalItems === 2) {
     calculatedBlocks = 2;
     pacingTitle = "2 Standard Blocks · 4-8 Weeks";
     pacingDesc = "Dual-Track Flight: Cohesive paired deliverables executed in rapid succession or parallel workstreams.";
+    flightWeeks = "4-8 Weeks";
   } else if (totalItems === 3) {
     calculatedBlocks = 3;
     pacingTitle = "3 Standard Blocks · 6-12 Weeks";
     pacingDesc = "Multi-Stream Program: Substantial operational transformation across systems, ledgers, and team handoffs.";
+    flightWeeks = "6-12 Weeks";
   } else if (totalItems === 4) {
     calculatedBlocks = 4;
     pacingTitle = "4 Standard Blocks · 12-16 Weeks";
     pacingDesc = "Maximum Modular Flight: Full quarterly capacity ceiling to ensure organizational absorption without thrash.";
+    flightWeeks = "12-16 Weeks";
   } else {
     isOvercapacity = true;
     calculatedBlocks = totalItems;
     pacingTitle = `${totalItems} Blocks · Full Mandate Advisory`;
     pacingDesc = "Broad transformation detected. Sizing indicates a dedicated Executive Appointment or phased flights rather than modular sprints.";
+    flightWeeks = "Phased Roadmap";
   }
 
   // Active domain for modal
@@ -217,106 +225,142 @@ export default function TheBlockPage() {
   return (
     <div className="min-h-screen bg-[#FBF9F4] text-[#142840] selection:bg-[#B48A05]/20">
       
-      {/* 1. DISTINCT MASTHEAD & HERO FOR THE BLOCK */}
-      <section className="pt-12 pb-12 border-b border-[#142840]/15 bg-[#142840] text-white relative overflow-hidden">
-        {/* Subtle architectural grid pattern */}
-        <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: "radial-gradient(#fff 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
-        
+      {/* 1. DISTINCT STOREFRONT MASTHEAD & HERO FOR THE BLOCK */}
+      <section className="pt-10 pb-12 border-b border-[#142840]/15 bg-[#0E1E32] text-white relative overflow-hidden">
+        {/* Subtle architectural background pattern */}
+        <div
+          className="absolute inset-0 opacity-5 pointer-events-none"
+          style={{
+            backgroundImage: "radial-gradient(#fff 1px, transparent 1px)",
+            backgroundSize: "24px 24px",
+          }}
+        />
+
         <div className="max-w-6xl mx-auto px-6 relative z-10">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-white/10">
+          
+          {/* Top Identity Rail */}
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs font-mono mb-6 pb-4 border-b border-white/10">
+            <span className="px-2.5 py-0.5 rounded bg-[#E5B21D] text-[#0B1624] font-bold uppercase tracking-wider">
+              STOREFRONT &middot; CONFIGURATOR
+            </span>
+            <span className="text-white/40 hidden sm:inline">&bull;</span>
+            <span className="text-slate-300 uppercase tracking-widest font-semibold">
+              AN IDIGDATA FRAMEWORK
+            </span>
+            <span className="text-white/40 hidden sm:inline">&bull;</span>
+            <span className="text-[#E5B21D] uppercase tracking-wider font-semibold">
+              RIG ENGINE BACKED
+            </span>
+          </div>
+
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-8 border-b border-white/10">
             <div className="space-y-4 max-w-3xl">
               
-              {/* Prominent The Block Mark & Brand Title */}
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center p-1.5 shadow-sm">
-                  <svg className="w-full h-full text-white" viewBox="0 0 24 24" fill="currentColor">
-                    <rect x="2" y="2" width="6" height="6" rx="1" className="text-white/60" />
-                    <rect x="9" y="2" width="6" height="6" rx="1" className="text-white/60" />
-                    <rect x="16" y="2" width="6" height="6" rx="1" className="text-white/60" />
-                    <rect x="2" y="9" width="6" height="6" rx="1" className="text-white/60" />
-                    <rect x="9" y="9" width="6" height="6" rx="1" className="text-[#E5B21D]" />
-                    <rect x="16" y="9" width="6" height="6" rx="1" className="text-white/60" />
-                    <rect x="2" y="16" width="6" height="6" rx="1" className="text-white/60" />
-                    <rect x="9" y="16" width="6" height="6" rx="1" className="text-white/60" />
-                    <rect x="16" y="16" width="6" height="6" rx="1" className="text-white/60" />
-                  </svg>
-                </div>
+              {/* Prominent The Block Mark & H1 */}
+              <div className="flex items-center gap-4">
+                <TheBlockLogo variant="gold" size="lg" showWordmark={false} />
                 <div>
-                  <div className="flex items-center gap-2">
-                    <span className="font-mono text-sm uppercase font-extrabold tracking-widest text-[#E5B21D]">
-                      THE BLOCK
-                    </span>
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-white/10 text-slate-300 font-bold uppercase tracking-wider">
-                      STOREFRONT &middot; CONFIGURATOR
-                    </span>
-                  </div>
-                  <span className="text-xs font-mono text-slate-300">
-                    Boutique Systems Engineering &middot; Executive Scoping
+                  <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-none">
+                    THE BLOCK
+                  </h1>
+                  <span className="text-xs font-mono text-slate-300 uppercase tracking-widest block mt-1.5">
+                    Scoping &amp; Outcome Configurator
                   </span>
                 </div>
               </div>
 
-              <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
+              {/* The Core Question */}
+              <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-white font-medium mt-3 leading-snug">
                 What do you want your business to be able to do?
-              </h1>
-              <p className="font-serif italic text-base sm:text-lg text-slate-200 leading-relaxed max-w-2xl">
-                Explore outcomes across leadership, business systems, data, financial integrity, workflows, and boutique agentic software. Configure what matters to receive an exact delivery quote.
+              </h2>
+
+              <p className="font-sans text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl">
+                The productized capability configurator from idigdata. Explore modular outcomes across six operational domains. Select your required capabilities, calculate your flight duration, and receive an exact delivery quote.
               </p>
+
+              {/* Explicit Distinction Callout: idigdata vs The Block */}
+              <div className="mt-5 p-4 rounded-xl bg-white/[0.08] border border-white/15 max-w-2xl backdrop-blur-xs">
+                <div className="flex items-center gap-2 mb-1.5 font-mono text-[11px] font-bold uppercase tracking-wider text-[#E5B21D]">
+                  <span>Brand Architecture</span>
+                  <span>&middot;</span>
+                  <span>idigdata vs. The Block</span>
+                </div>
+                <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-sans">
+                  <strong className="text-white font-serif">idigdata</strong> is our senior systems and data advisory practice. 
+                  <strong className="text-[#E5B21D] font-mono ml-1 font-bold">THE BLOCK</strong> is our productized delivery framework and interactive capability configurator. Rather than open-ended consulting hours or vague proposals, we scope and deliver targeted enterprise capabilities in discrete, verified, company-owned capability flights.
+                </p>
+              </div>
             </div>
 
             {/* Live Scope Telemetry Plate */}
-            <div className="bg-[#0B1624] border border-white/15 rounded-xl p-4 shadow-lg min-w-[260px]">
-              <div className="flex items-center justify-between text-[11px] font-mono text-slate-400 mb-1">
-                <span>CONFIGURED SCOPE</span>
-                <span className="text-[#E5B21D] font-bold">LIVE HUD</span>
+            <div className="bg-[#07101B] border border-white/20 rounded-xl p-5 shadow-2xl min-w-[280px] lg:self-start mt-4 lg:mt-0">
+              <div className="flex items-center justify-between text-[11px] font-mono text-slate-400 mb-1.5">
+                <span>CONFIGURED FLIGHT SCOPE</span>
+                <span className="text-[#E5B21D] font-bold flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-[#E5B21D] animate-pulse" />
+                  LIVE HUD
+                </span>
               </div>
-              <div className="font-mono text-xl font-bold text-white mb-3">
-                {totalItems} {totalItems === 1 ? "Outcome" : "Outcomes"} &middot; {calculatedBlocks} {calculatedBlocks === 1 ? "Block" : "Blocks"}
+              <div className="font-mono text-2xl font-bold text-white mb-0.5">
+                {totalItems} {totalItems === 1 ? "Outcome" : "Outcomes"}
+              </div>
+              <div className="font-mono text-xs text-[#E5B21D] font-semibold mb-3">
+                {calculatedBlocks} Delivery {calculatedBlocks === 1 ? "Block" : "Blocks"} ({flightWeeks})
               </div>
               <button
                 type="button"
                 onClick={() => setIsQuoteModalOpen(true)}
-                className="w-full py-2.5 rounded bg-[#E5B21D] hover:bg-amber-400 text-[#0B1624] font-serif font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer shadow-xs"
+                className="w-full py-2.5 rounded bg-[#E5B21D] hover:bg-amber-400 text-[#0B1624] font-serif font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer shadow-sm"
               >
                 Request a Quote &rarr;
               </button>
+              <a
+                href="#flight-calculator"
+                className="block text-center text-[11px] font-mono text-slate-400 hover:text-white mt-2.5 transition-colors"
+              >
+                View flight math ladder &darr;
+              </a>
             </div>
           </div>
 
           {/* 3 Core Delivery Guarantees */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-6 text-xs">
             <div className="p-3.5 bg-white/5 rounded-lg border border-white/10">
-              <span className="font-mono font-bold text-[#E5B21D] uppercase tracking-wider block mb-1">01 &middot; Agreed Outcomes</span>
+              <span className="font-mono font-bold text-[#E5B21D] uppercase tracking-wider block mb-1">
+                01 &middot; Agreed Outcomes
+              </span>
               <p className="text-slate-300 leading-normal">
                 Priorities, scope, dependencies, and verification measures agreed before delivery begins.
               </p>
             </div>
             <div className="p-3.5 bg-white/5 rounded-lg border border-white/10">
-              <span className="font-mono font-bold text-[#E5B21D] uppercase tracking-wider block mb-1">02 &middot; Company-Owned Assets</span>
+              <span className="font-mono font-bold text-[#E5B21D] uppercase tracking-wider block mb-1">
+                02 &middot; Company-Owned Assets
+              </span>
               <p className="text-slate-300 leading-normal">
                 Code, data schemas, and agent runtimes deployed in your Git repositories. Zero vendor lock-in.
               </p>
             </div>
             <div className="p-3.5 bg-white/5 rounded-lg border border-white/10">
-              <span className="font-mono font-bold text-[#E5B21D] uppercase tracking-wider block mb-1">03 &middot; Boutique Engineering</span>
+              <span className="font-mono font-bold text-[#E5B21D] uppercase tracking-wider block mb-1">
+                03 &middot; Boutique Engineering Pod
+              </span>
               <p className="text-slate-300 leading-normal">
-                Elite engineering pods backed by the Rig build engine and 50+ enterprise implementations.
+                Elite engineering bench backed by the Rig build engine and 50+ enterprise implementations.
               </p>
             </div>
           </div>
+
         </div>
       </section>
 
-      {/* 2. THE 6 OPERATIONAL DOMAINS (PANORAMIC GRID) */}
+      {/* 2. THE 6 OPERATIONAL BLOCKS (PANORAMIC GRID) */}
       <section className="py-12 max-w-6xl mx-auto px-6">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
           <div>
-            <div className="flex items-center gap-2 mb-1">
-              <span className="w-2 h-2 rounded-full bg-[#B48A05]" />
-              <span className="text-[11px] font-mono uppercase tracking-widest text-[#B48A05] font-bold">
-                THE 6 OPERATIONAL BLOCKS
-              </span>
-            </div>
+            <span className="text-[11px] font-mono uppercase tracking-widest text-[#B48A05] font-bold block mb-1">
+              THE 6 OPERATIONAL BLOCKS
+            </span>
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#142840]">
               Select a block to configure outcomes
             </h2>
@@ -338,7 +382,15 @@ export default function TheBlockPage() {
             return (
               <div
                 key={domain.id}
+                role="button"
+                tabIndex={0}
                 onClick={() => setActiveModalDomainId(domain.id)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setActiveModalDomainId(domain.id);
+                  }
+                }}
                 className={`group relative bg-white rounded-xl p-6 border transition-all duration-200 cursor-pointer flex flex-col justify-between hover:shadow-md hover:translate-y-[-2px] ${
                   hasActive
                     ? "border-[#B48A05] ring-2 ring-[#B48A05]/20 shadow-xs"
@@ -396,7 +448,7 @@ export default function TheBlockPage() {
       </section>
 
       {/* 3. LIVE BLOCK CALCULATOR & ENGAGEMENT HUD */}
-      <section className="py-12 bg-[#EDE8DF] border-y border-[#142840]/15">
+      <section id="flight-calculator" className="py-12 bg-[#EDE8DF] border-y border-[#142840]/15 scroll-mt-20">
         <div className="max-w-6xl mx-auto px-6">
           <div className="bg-white rounded-xl border border-[#142840]/20 shadow-md p-6 sm:p-8">
             <div className="flex flex-col lg:flex-row gap-8 items-start justify-between">
@@ -418,7 +470,7 @@ export default function TheBlockPage() {
                 {/* 4 Block Visual Meter */}
                 <div className="space-y-2">
                   <div className="flex items-center justify-between text-[11px] font-mono">
-                    <span className="text-[#5A6978]">BLOCK FLIGHT METER</span>
+                    <span className="text-[#5A6978]">MODULAR FLIGHT METER</span>
                     <span className="font-bold text-[#142840]">
                       {totalItems} Selected &middot; {calculatedBlocks} Calculated
                     </span>
@@ -447,6 +499,26 @@ export default function TheBlockPage() {
                       <strong>Full Mandate Detected:</strong> Selecting more than 4 blocks indicates a broad organizational transformation. Our principals will review your scope for a dedicated executive role or phased roadmap.
                     </div>
                   )}
+                </div>
+
+                {/* Flight Sizing Ladder Reference */}
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-[11px] font-mono pt-1">
+                  <div className={`p-2.5 rounded border ${calculatedBlocks === 1 ? "bg-[#142840] text-white border-[#142840]" : "bg-[#FBF9F4] border-[#142840]/10 text-[#5A6978]"}`}>
+                    <div className="font-bold">1 BLOCK</div>
+                    <div>2-4 Weeks</div>
+                  </div>
+                  <div className={`p-2.5 rounded border ${calculatedBlocks === 2 ? "bg-[#142840] text-white border-[#142840]" : "bg-[#FBF9F4] border-[#142840]/10 text-[#5A6978]"}`}>
+                    <div className="font-bold">2 BLOCKS</div>
+                    <div>4-8 Weeks</div>
+                  </div>
+                  <div className={`p-2.5 rounded border ${calculatedBlocks === 3 ? "bg-[#142840] text-white border-[#142840]" : "bg-[#FBF9F4] border-[#142840]/10 text-[#5A6978]"}`}>
+                    <div className="font-bold">3 BLOCKS</div>
+                    <div>6-12 Weeks</div>
+                  </div>
+                  <div className={`p-2.5 rounded border ${calculatedBlocks === 4 ? "bg-[#142840] text-white border-[#142840]" : "bg-[#FBF9F4] border-[#142840]/10 text-[#5A6978]"}`}>
+                    <div className="font-bold">4 BLOCKS</div>
+                    <div>12-16 Weeks</div>
+                  </div>
                 </div>
 
                 {/* Selected Priorities Tag Cloud */}

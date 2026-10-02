@@ -108,6 +108,9 @@ export default function FolioHome() {
 <article>
 <h3>{"Focused work"}</h3>
 <p className="p-prose mt-4">{"A defined operating problem or transformation outcome. The Block helps frame priorities and scope for our conversation."}</p>
+<Link className="p-link capability-link mt-3 inline-flex items-center gap-1.5 font-semibold text-[#142840]" href="/block/">
+  {"Configure in The Block &rarr;"}
+</Link>
 </article>
 <article>
 <h3>{"Fractional leadership"}</h3>
