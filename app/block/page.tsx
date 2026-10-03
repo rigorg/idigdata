@@ -218,6 +218,18 @@ export default function TheBlockPage() {
     handleAgenticNotesChange(next);
   };
 
+  const handleResetScope = () => {
+    setSelectedIds(new Set());
+    setAgenticNotes("");
+    setGeneralNotes("");
+    setQuoteNotes("");
+    update({
+      outcomeIds: [],
+      notes: "",
+      contactMessage: "",
+    });
+  };
+
   // Outcome selection metrics (Pure Capo scoping law: no fake block formulas)
   const catalogCount = selectedIds.size;
   const hasAgentic = agenticNotes.trim().length > 0;
@@ -368,12 +380,30 @@ export default function TheBlockPage() {
               </span>
             </div>
 
-            <div className="flex items-center gap-3 text-xs font-mono text-slate-400">
-              <span className={totalItems > 0 ? "text-[#E5B21D] font-bold" : "text-slate-400"}>
-                {totalItems > 0 ? `${totalItems} Outcomes in Active Scope` : "0 Outcomes in Active Scope"}
-              </span>
+            <div className="flex items-center gap-3 text-xs font-mono">
+              {totalItems > 0 ? (
+                <div className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#E5B21D] animate-pulse" />
+                  <span className="text-[#E5B21D] font-bold">
+                    {totalItems} {totalItems === 1 ? "Outcome" : "Outcomes"} in Scope (Draft Saved)
+                  </span>
+                  <span className="text-slate-500">&middot;</span>
+                  <button
+                    type="button"
+                    onClick={handleResetScope}
+                    className="text-[10px] text-slate-400 hover:text-rose-400 underline decoration-dotted cursor-pointer transition-colors"
+                    title="Reset all selections and start fresh from 0"
+                  >
+                    Reset to 0
+                  </button>
+                </div>
+              ) : (
+                <span className="text-slate-400">
+                  0 Outcomes in Scope &middot; Choose Capabilities Below
+                </span>
+              )}
               <span className="hidden md:inline text-slate-600">&bull;</span>
-              <span className="hidden md:inline text-slate-300">Deterministic Sprint Architecture</span>
+              <span className="hidden md:inline text-slate-400">Deterministic Sprint Architecture</span>
             </div>
           </div>
 
@@ -663,14 +693,10 @@ export default function TheBlockPage() {
                     </span>
                     <button
                       type="button"
-                      onClick={() => {
-                        setSelectedIds(new Set());
-                        setAgenticNotes("");
-                        syncDraft(new Set(), "", generalNotes);
-                      }}
+                      onClick={handleResetScope}
                       className="text-[10px] font-mono text-slate-400 hover:text-rose-400 transition-colors cursor-pointer"
                     >
-                      Clear All
+                      Clear All (Reset to 0)
                     </button>
                   </div>
                   <div className="flex flex-wrap gap-1.5 max-h-32 overflow-y-auto pt-0.5">

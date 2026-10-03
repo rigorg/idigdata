@@ -165,12 +165,30 @@ export class EngagementDraftSession {
   }
 }
 
+function getBrowserStorage(): StoragePort {
+  try {
+    const testKey = "__idigdata_storage_test__";
+    window.localStorage.setItem(testKey, testKey);
+    window.localStorage.removeItem(testKey);
+    try {
+      const sessionRaw = window.sessionStorage.getItem(ENGAGEMENT_DRAFT_KEY);
+      const localRaw = window.localStorage.getItem(ENGAGEMENT_DRAFT_KEY);
+      if (sessionRaw && !localRaw) {
+        window.localStorage.setItem(ENGAGEMENT_DRAFT_KEY, sessionRaw);
+      }
+    } catch {}
+    return window.localStorage;
+  } catch {
+    return window.sessionStorage;
+  }
+}
+
 export function useEngagementDraft() {
   const session = useRef<EngagementDraftSession | null>(null);
   const [draft, setDraft] = useState<EngagementDraft | null>(null);
   const [notice, setNotice] = useState<DraftNotice>("none");
   useEffect(() => {
-    const current = new EngagementDraftSession(() => window.sessionStorage);
+    const current = new EngagementDraftSession(getBrowserStorage);
     session.current = current;
     setDraft(current.hydrate());
     setNotice(current.notice);
