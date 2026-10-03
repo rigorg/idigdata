@@ -147,48 +147,47 @@ export default function TheBlockPage() {
   let pacingTitle = "0 Outcomes Selected";
   let pacingDesc = "Select outcomes across the 6 blocks below. 1 Block is 2 weeks of focused execution.";
 
+  // Capo Law: 1 Block = 2 to 4 weeks of focused delivery time (2-week build sprint + cutover stabilization).
+  // Sizing ceiling: Up to 4 blocks for modular flights. Beyond 4 outcomes / multi-domain, transitions to Executive Mandate.
+  const isExecutiveMandate = totalItems >= 5 || (totalItems >= 4 && activeDomainsCount >= 3);
+
   if (totalItems === 0) {
     flightSummary = "Awaiting Scope";
     flightTier = 0;
     pacingTitle = "0 Outcomes Selected";
-    pacingDesc = "Select outcomes across the 6 blocks below. 1 Block = 2 Weeks of focused execution.";
+    pacingDesc = "Select outcomes across the 6 blocks below. 1 Block is 2 to 4 weeks of focused delivery.";
   } else if (totalItems === 1) {
-    flightSummary = "1 Block · 2 Weeks";
+    flightSummary = "1 Block · 2-4 Weeks";
     flightTier = 1;
-    pacingTitle = "1 Block · 2-Week Surgical Sprint";
-    pacingDesc = "Surgical Sprint: Fixed 2-week execution block addressing a single high-priority friction point.";
+    pacingTitle = "1 Block · 2-4 Week Surgical Sprint";
+    pacingDesc = "Surgical Sprint: Fixed 2 to 4 week boundary addressing a single high-priority friction point.";
   } else if (totalItems === 2) {
     if (activeDomainsCount === 1) {
       flightSummary = "1-2 Blocks · 2-4 Weeks";
       flightTier = 1;
       pacingTitle = "1-2 Blocks · 2-4 Weeks";
-      pacingDesc = "Focused Sprint: Paired deliverables in the same domain packaged into 1 to 2 two-week execution blocks.";
+      pacingDesc = "Focused Sprint: Paired deliverables in the same operational domain packaged into 1 to 2 execution blocks.";
     } else {
-      flightSummary = "2 Blocks · 4 Weeks";
+      flightSummary = "2 Blocks · 4-8 Weeks";
       flightTier = 2;
-      pacingTitle = "2 Blocks · 4-Week Dual Flight";
-      pacingDesc = "Dual-Track Flight: 2 discrete two-week execution blocks across separate systems.";
+      pacingTitle = "2 Blocks · 4-8 Week Dual Flight";
+      pacingDesc = "Dual-Track Flight: 2 discrete execution blocks across separate business systems.";
     }
   } else if (totalItems === 3) {
-    flightSummary = "2-3 Blocks · 4-6 Weeks";
+    flightSummary = "2-3 Blocks · 4-8 Weeks";
     flightTier = 3;
-    pacingTitle = "2-3 Blocks · 4-6 Weeks";
-    pacingDesc = "Multi-Stream Flight: 2 to 3 two-week blocks (4 to 6 weeks of dedicated execution, phased across operational checkpoints).";
-  } else if (totalItems === 4) {
-    flightSummary = "2-4 Blocks · 4-8 Weeks";
+    pacingTitle = "2-3 Blocks · 4-8 Weeks";
+    pacingDesc = "Multi-Stream Flight: 2 to 3 execution blocks (4 to 8 weeks, up to 12 weeks for phased cutovers).";
+  } else if (totalItems === 4 && !isExecutiveMandate) {
+    flightSummary = "3-4 Blocks · 6-12 Weeks";
     flightTier = 4;
-    pacingTitle = "2-4 Blocks · 4-8 Weeks";
-    pacingDesc = "Comprehensive Flight: Up to 4 two-week execution blocks structured in coordinated delivery waves.";
-  } else if (totalItems <= 6) {
-    flightSummary = "3-4 Blocks · 6-8 Weeks";
-    flightTier = 4;
-    pacingTitle = "3-4 Blocks · 6-8 Weeks (Quarterly Ceiling)";
-    pacingDesc = "Quarterly Flight Ceiling: 3 to 4 two-week blocks designed for organizational absorption without operational thrash.";
+    pacingTitle = "3-4 Blocks · 6-12 Weeks (Modular Ceiling)";
+    pacingDesc = "Comprehensive Flight: Full modular quarterly ceiling designed for absorption without operational thrash.";
   } else {
-    flightSummary = "Full Mandate · 12-24 Months";
+    flightSummary = "Executive Mandate · 12-24 Months";
     flightTier = 5;
-    pacingTitle = `${totalItems} Outcomes · Full Mandate / 12-24 Month Transformation`;
-    pacingDesc = "Broad enterprise transformation or executive appointment. Sizing indicates a full-time CIO mandate, fractional leadership, or multi-quarter transformation program.";
+    pacingTitle = `${totalItems} Outcomes · Executive Mandate (12-24 Months)`;
+    pacingDesc = "Enterprise Transformation: Scope spans multiple core organizational areas. Structured as a Fractional CIO / VP Operations Mandate with embedded leadership, rather than piecemeal project sprints.";
   }
 
   // Active domain for modal
@@ -307,7 +306,7 @@ export default function TheBlockPage() {
                 onClick={() => setIsQuoteModalOpen(true)}
                 className="px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-[#E5B21D] hover:bg-amber-400 text-[#0B1624] font-serif font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer shadow-sm flex items-center gap-1.5"
               >
-                <span>Request Scope Quote</span>
+                <span>{isExecutiveMandate ? "Discuss Executive Mandate" : "Request Scope Quote"}</span>
                 <span>&rarr;</span>
               </button>
             </div>
@@ -448,7 +447,7 @@ export default function TheBlockPage() {
                     : "bg-[#FBF9F4] border-[#142840]/10 text-[#5A6978]"
                 }`}>
                   <div className="font-bold">1 BLOCK</div>
-                  <div className={flightTier === 1 ? "text-[#E5B21D]" : "text-[#142840]"}>2 Weeks</div>
+                  <div className={flightTier === 1 ? "text-[#E5B21D]" : "text-[#142840]"}>2-4 Weeks</div>
                   <div className="text-[9px] mt-0.5 opacity-75">Surgical Sprint</div>
                 </div>
 
@@ -458,7 +457,7 @@ export default function TheBlockPage() {
                     : "bg-[#FBF9F4] border-[#142840]/10 text-[#5A6978]"
                 }`}>
                   <div className="font-bold">2 BLOCKS</div>
-                  <div className={flightTier === 2 ? "text-[#E5B21D]" : "text-[#142840]"}>4 Weeks</div>
+                  <div className={flightTier === 2 ? "text-[#E5B21D]" : "text-[#142840]"}>4-8 Weeks</div>
                   <div className="text-[9px] mt-0.5 opacity-75">Dual-Track Flight</div>
                 </div>
 
@@ -468,7 +467,7 @@ export default function TheBlockPage() {
                     : "bg-[#FBF9F4] border-[#142840]/10 text-[#5A6978]"
                 }`}>
                   <div className="font-bold">3 BLOCKS</div>
-                  <div className={flightTier === 3 ? "text-[#E5B21D]" : "text-[#142840]"}>6 Weeks</div>
+                  <div className={flightTier === 3 ? "text-[#E5B21D]" : "text-[#142840]"}>6-12 Weeks</div>
                   <div className="text-[9px] mt-0.5 opacity-75">Multi-Stream Flight</div>
                 </div>
 
@@ -478,14 +477,14 @@ export default function TheBlockPage() {
                     : "bg-[#FBF9F4] border-[#142840]/10 text-[#5A6978]"
                 }`}>
                   <div className="font-bold">4 BLOCKS</div>
-                  <div className={flightTier === 4 ? "text-[#E5B21D]" : "text-[#142840]"}>8 Weeks</div>
-                  <div className="text-[9px] mt-0.5 opacity-75">Quarterly Ceiling</div>
+                  <div className={flightTier === 4 ? "text-[#E5B21D]" : "text-[#142840]"}>8-16 Weeks</div>
+                  <div className="text-[9px] mt-0.5 opacity-75">Modular Ceiling</div>
                 </div>
               </div>
 
               {/* Delivery Rule Callout */}
               <div className="p-3 rounded bg-[#FBF9F4] border-l-2 border-[#B48A05] text-xs font-serif text-[#334155] leading-relaxed">
-                Standard execution unit: <strong>1 Block is 2 weeks of dedicated delivery</strong>. Depending on technical dependencies, 1 to 2 related outcomes can be packaged per 2-week block flight.
+                Standard execution unit: <strong>1 Block is 2 to 4 weeks of dedicated delivery</strong> (2-week build sprint + cutover stabilization). Sizing spans up to 4 blocks for modular flights. When scope spans 5+ outcomes across multiple domains, it transitions into an <strong>Executive Mandate (12-24 Months)</strong>.
               </div>
 
               {/* Active Priorities Chips */}
