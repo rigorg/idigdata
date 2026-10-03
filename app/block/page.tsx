@@ -132,93 +132,74 @@ const DOMAIN_CONFIGS: DomainConfig[] = [
   },
 ];
 
-// 3D face normals in world space (before container rotation)
-const FACE_NORMALS: Record<string, [number, number, number]> = {
-  leadership_direction: [0, 0, 1], // front
-  business_systems: [1, 0, 0],     // right
-  it_ot_operations: [0, 0, -1],    // back
-  data_knowledge: [-1, 0, 0],      // left
-  financial_systems: [0, -1, 0],   // top (in screen coords, up is -Y)
-  workflows_automation: [0, 1, 0]  // bottom (in screen coords, down is +Y)
+// 3D face adjacency map for natural, game-like swipe transitions in all directions.
+// Every face has an unambiguous, right-side-up neighbor for UP, DOWN, LEFT, and RIGHT gestures.
+const FACE_NEIGHBORS: Record<
+  string,
+  {
+    UP: string;
+    DOWN: string;
+    LEFT: string;
+    RIGHT: string;
+  }
+> = {
+  leadership_direction: {
+    UP: "workflows_automation",
+    DOWN: "financial_systems",
+    LEFT: "business_systems",
+    RIGHT: "data_knowledge",
+  },
+  business_systems: {
+    UP: "workflows_automation",
+    DOWN: "financial_systems",
+    LEFT: "it_ot_operations",
+    RIGHT: "leadership_direction",
+  },
+  it_ot_operations: {
+    UP: "workflows_automation",
+    DOWN: "financial_systems",
+    LEFT: "data_knowledge",
+    RIGHT: "business_systems",
+  },
+  data_knowledge: {
+    UP: "workflows_automation",
+    DOWN: "financial_systems",
+    LEFT: "leadership_direction",
+    RIGHT: "it_ot_operations",
+  },
+  financial_systems: {
+    UP: "it_ot_operations",
+    DOWN: "leadership_direction",
+    LEFT: "business_systems",
+    RIGHT: "data_knowledge",
+  },
+  workflows_automation: {
+    UP: "leadership_direction",
+    DOWN: "it_ot_operations",
+    LEFT: "business_systems",
+    RIGHT: "data_knowledge",
+  },
 };
 
-// 3D vector rotation helpers for snapping
-function rotateVector(v: [number, number, number], rxDeg: number, ryDeg: number): [number, number, number] {
-  const rx = (rxDeg * Math.PI) / 180;
-  const ry = (ryDeg * Math.PI) / 180;
+// Calculate canonical snap angles so each face lands perfectly right-side up,
+// taking the shortest angular path without gratuitous full-circle spins.
+function getCanonicalRotationForDomain(
+  targetDomainId: string,
+  currentRotation: { x: number; y: number }
+): { x: number; y: number } {
+  const config = DOMAIN_CONFIGS.find((d) => d.id === targetDomainId) || DOMAIN_CONFIGS[0];
+  const targetX = config.cubeRotation.x;
 
-  // Rotate around Y axis
-  const cosY = Math.cos(ry);
-  const sinY = Math.sin(ry);
-  const x1 = v[0] * cosY + v[2] * sinY;
-  const y1 = v[1];
-  const z1 = -v[0] * sinY + v[2] * cosY;
-
-  // Rotate around X axis
-  const cosX = Math.cos(rx);
-  const sinX = Math.sin(rx);
-  const x2 = x1;
-  const y2 = y1 * cosX - z1 * sinX;
-  const z2 = y1 * sinX + z1 * cosX;
-
-  return [x2, y2, z2];
-}
-
-// Compute the closest face and the canonical snap angles (always right-side up!)
-function calculateSnapTarget(rx: number, ry: number): { domainId: string; targetRotation: { x: number; y: number } } {
-  let closestDomainId = "leadership_direction";
-  let maxZ = -Infinity;
-
-  for (const [id, normal] of Object.entries(FACE_NORMALS)) {
-    const transformed = rotateVector(normal, rx, ry);
-    // transformed[2] is the Z-component pointing toward viewer (+Z)
-    if (transformed[2] > maxZ) {
-      maxZ = transformed[2];
-      closestDomainId = id;
-    }
+  if (targetDomainId === "financial_systems" || targetDomainId === "workflows_automation") {
+    const nearest360 = Math.round(currentRotation.y / 360) * 360;
+    return { x: targetX, y: nearest360 };
   }
 
-  const k360 = Math.round(ry / 360) * 360;
-
-  switch (closestDomainId) {
-    case "financial_systems":
-      // Top face: snap upright with y aligned to nearest 360
-      return {
-        domainId: closestDomainId,
-        targetRotation: { x: -90, y: k360 },
-      };
-    case "workflows_automation":
-      // Bottom face: snap upright with y aligned to nearest 360
-      return {
-        domainId: closestDomainId,
-        targetRotation: { x: 90, y: k360 },
-      };
-    case "business_systems":
-      // Right face: nearest -90 (or 270)
-      return {
-        domainId: closestDomainId,
-        targetRotation: { x: -12, y: Math.round((ry + 90) / 360) * 360 - 90 },
-      };
-    case "it_ot_operations":
-      // Back face: nearest 180 or -180
-      return {
-        domainId: closestDomainId,
-        targetRotation: { x: -12, y: Math.round((ry + 180) / 360) * 360 - 180 },
-      };
-    case "data_knowledge":
-      // Left face: nearest 90
-      return {
-        domainId: closestDomainId,
-        targetRotation: { x: -12, y: Math.round((ry - 90) / 360) * 360 + 90 },
-      };
-    case "leadership_direction":
-    default:
-      // Front face: nearest 0 (or multiple of 360)
-      return {
-        domainId: closestDomainId,
-        targetRotation: { x: -12, y: k360 },
-      };
-  }
+  const baseTargetY = config.cubeRotation.y;
+  let diff = (baseTargetY - currentRotation.y) % 360;
+  if (diff > 180) diff -= 360;
+  if (diff < -180) diff += 360;
+  return { x: targetX, y: currentRotation.y + diff };
 }
 
 function DomainBlockIcon({
@@ -336,20 +317,11 @@ export default function TheBlockConfiguratorPage() {
 
   // Handle snap-rotation when clicking quick buttons
   const handleSnapToDomain = (domainId: string) => {
-    const config = DOMAIN_CONFIGS.find((d) => d.id === domainId);
-    if (config) {
-      setActiveDomainId(domainId);
-      // Smoothly snap to canonical angle closest to current rotation
-      const k360 = Math.round(cubeRotation.y / 360) * 360;
-      let targetY = config.cubeRotation.y + k360;
-      // Normalize targetY to be within 180 degrees of current y
-      while (targetY - cubeRotation.y > 180) targetY -= 360;
-      while (targetY - cubeRotation.y < -180) targetY += 360;
-      setCubeRotation({ x: config.cubeRotation.x, y: targetY });
-    }
+    setActiveDomainId(domainId);
+    setCubeRotation((current) => getCanonicalRotationForDomain(domainId, current));
   };
 
-  // Drag physics for free spinning the cube
+  // Drag physics for natural, game-like 3D cube spinning
   const handlePointerDown = (e: React.PointerEvent) => {
     setIsDragging(true);
     hasDraggedRef.current = false;
@@ -366,17 +338,40 @@ export default function TheBlockConfiguratorPage() {
     if (!isDragging) return;
     const dx = e.clientX - dragStartRef.current.x;
     const dy = e.clientY - dragStartRef.current.y;
-    if (Math.abs(dx) > 5 || Math.abs(dy) > 5) {
+    if (Math.hypot(dx, dy) > 5) {
       hasDraggedRef.current = true;
     }
-    const sensitivity = 0.55;
-    const newRotY = dragStartRef.current.rotY + dx * sensitivity;
-    // Constrain X during drag so the cube does not flip completely upside down in mid-air
-    const newRotX = Math.max(-85, Math.min(85, dragStartRef.current.rotX - dy * sensitivity));
-    setCubeRotation({ x: newRotX, y: newRotY });
+
+    const sensitivity = 0.45;
+    const startX = dragStartRef.current.rotX;
+    const startY = dragStartRef.current.rotY;
+
+    if (activeDomainId === "workflows_automation") {
+      // Bottom face:
+      // Pushing UP (dy < 0) tilts toward Leadership (rotX goes down toward -12)
+      // Pulling DOWN (dy > 0) tilts toward IT/OT (rotX goes up toward 180)
+      const tiltX = startX + dy * sensitivity;
+      const tiltY = startY + dx * sensitivity;
+      setCubeRotation({ x: tiltX, y: tiltY });
+    } else if (activeDomainId === "financial_systems") {
+      // Top face:
+      // Pulling DOWN (dy > 0) tilts toward Leadership (rotX goes up toward -12)
+      // Pushing UP (dy < 0) tilts toward IT/OT (rotX goes down toward -180)
+      const tiltX = startX + dy * sensitivity;
+      const tiltY = startY + dx * sensitivity;
+      setCubeRotation({ x: tiltX, y: tiltY });
+    } else {
+      // Horizontal faces (LD, BS, IT, DK):
+      // Pushing UP (dy < 0) tilts up toward Workflows (rotX increases)
+      // Pulling DOWN (dy > 0) tilts down toward Financial (rotX decreases)
+      // Dragging LEFT/RIGHT rotates around Y
+      const tiltX = startX - dy * sensitivity;
+      const tiltY = startY + dx * sensitivity;
+      setCubeRotation({ x: tiltX, y: tiltY });
+    }
   };
 
-  // ON DRAG RELEASE: Automatic snap right-side-up to closest face!
+  // ON DRAG RELEASE: Automatic snap right-side-up based on gesture vector!
   const handlePointerUp = (e: React.PointerEvent) => {
     setIsDragging(false);
     try {
@@ -384,10 +379,32 @@ export default function TheBlockConfiguratorPage() {
     } catch {}
 
     if (hasDraggedRef.current) {
-      // User dragged: automatically snap right-side up to the closest face!
-      const snap = calculateSnapTarget(cubeRotation.x, cubeRotation.y);
-      setActiveDomainId(snap.domainId);
-      setCubeRotation(snap.targetRotation);
+      const dx = e.clientX - dragStartRef.current.x;
+      const dy = e.clientY - dragStartRef.current.y;
+      const absDx = Math.abs(dx);
+      const absDy = Math.abs(dy);
+      const swipeThreshold = 20;
+
+      let nextDomainId = activeDomainId;
+
+      if (absDx > absDy) {
+        // Horizontal gesture
+        if (dx < -swipeThreshold) {
+          nextDomainId = FACE_NEIGHBORS[activeDomainId]?.LEFT ?? activeDomainId;
+        } else if (dx > swipeThreshold) {
+          nextDomainId = FACE_NEIGHBORS[activeDomainId]?.RIGHT ?? activeDomainId;
+        }
+      } else {
+        // Vertical gesture
+        if (dy < -swipeThreshold) {
+          nextDomainId = FACE_NEIGHBORS[activeDomainId]?.UP ?? activeDomainId;
+        } else if (dy > swipeThreshold) {
+          nextDomainId = FACE_NEIGHBORS[activeDomainId]?.DOWN ?? activeDomainId;
+        }
+      }
+
+      setActiveDomainId(nextDomainId);
+      setCubeRotation((current) => getCanonicalRotationForDomain(nextDomainId, current));
     }
   };
 
