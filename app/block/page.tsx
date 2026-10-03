@@ -62,6 +62,16 @@ export default function TheBlockPage() {
   const [quoteStatus, setQuoteStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [quoteErrorMsg, setQuoteErrorMsg] = useState<string>("");
 
+  // Ensure entire document background is dark while on /block
+  useEffect(() => {
+    document.body.classList.add("bg-[#070E17]");
+    document.documentElement.classList.add("bg-[#070E17]");
+    return () => {
+      document.body.classList.remove("bg-[#070E17]");
+      document.documentElement.classList.remove("bg-[#070E17]");
+    };
+  }, []);
+
   // Sync from draft on mount
   useEffect(() => {
     if (!draft) return;
@@ -219,8 +229,8 @@ export default function TheBlockPage() {
       }}
     >
       
-      {/* 1. TOP COMMAND BAR (BADASS DARK AESTHETIC) */}
-      <section className="bg-[#0B1624]/90 backdrop-blur-md border-b border-white/10 text-white sticky top-0 z-30 shadow-2xl">
+      {/* 1. TOP COMMAND BAR (BADASS DARK AESTHETIC - DOCKED UNDER HEADER) */}
+      <section className="bg-[#0B1624]/95 backdrop-blur-md border-b border-white/10 text-white sticky top-[69px] md:top-[85px] z-30 shadow-2xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
             

@@ -7,7 +7,7 @@ import { PRIMARY_NAV } from "@/lib/nav";
 
 const NAV = PRIMARY_NAV;
 
-function HeaderWordmark() {
+function HeaderWordmark({ isDark = false }: { isDark?: boolean }) {
   return (
     <svg
       viewBox="0 0 620 130"
@@ -20,7 +20,7 @@ function HeaderWordmark() {
       <text
         x="322"
         y="100"
-        fill="#142840"
+        fill={isDark ? "#F7F5EE" : "#142840"}
         textAnchor="end"
         letterSpacing="-1"
         style={{
@@ -35,7 +35,7 @@ function HeaderWordmark() {
       <text
         x="346"
         y="100"
-        fill="#142840"
+        fill={isDark ? "#F7F5EE" : "#142840"}
         textAnchor="start"
         letterSpacing="-1"
         style={{
@@ -55,6 +55,7 @@ export default function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   const path = (pathname ?? "/").replace(/\/+$/, "") || "/";
+  const isBlock = path.startsWith("/block");
 
   useEffect(() => {
     if (!open) return;
@@ -75,7 +76,13 @@ export default function SiteHeader() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-navy/10 bg-[#FBF9F4]/95 backdrop-blur-md">
+    <header
+      className={`sticky top-0 z-50 w-full border-b backdrop-blur-md transition-colors duration-200 ${
+        isBlock
+          ? "border-white/10 bg-[#070E17]/95 text-white"
+          : "border-navy/10 bg-[#FBF9F4]/95 text-navy"
+      }`}
+    >
       <div className="page-well flex items-center justify-between py-3.5 md:py-5">
         <div className="flex items-center gap-3">
           <Link
@@ -83,12 +90,12 @@ export default function SiteHeader() {
             className="flex items-center"
             aria-label="idigdata - home"
           >
-            <HeaderWordmark />
+            <HeaderWordmark isDark={isBlock} />
           </Link>
-          {path.startsWith("/block") && (
-            <div className="flex items-center gap-2 pl-3 border-l border-navy/20">
-              <span className="font-mono text-xs font-bold uppercase tracking-wider text-navy/85 bg-navy/5 px-2.5 py-1 rounded border border-navy/10 flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#B48A05]" />
+          {isBlock && (
+            <div className="flex items-center gap-2 pl-3 border-l border-white/20">
+              <span className="font-mono text-xs font-bold uppercase tracking-wider text-[#E5B21D] bg-[#E5B21D]/10 px-2.5 py-1 rounded border border-[#E5B21D]/30 flex items-center gap-1.5 shadow-[0_0_12px_rgba(229,178,29,0.15)]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#E5B21D] animate-pulse" />
                 The Block
               </span>
             </div>
@@ -96,7 +103,9 @@ export default function SiteHeader() {
         </div>
 
         <nav
-          className="hidden items-center gap-8 font-vollkorn text-[15px] font-semibold text-navy md:flex"
+          className={`hidden items-center gap-8 font-vollkorn text-[15px] font-semibold md:flex ${
+            isBlock ? "text-slate-300" : "text-navy"
+          }`}
           aria-label="Primary"
         >
           {NAV.map((item) => {
@@ -109,8 +118,12 @@ export default function SiteHeader() {
                 aria-current={active ? "page" : undefined}
                 className={`nav-underline transition-colors ${
                   active
-                    ? "font-semibold text-navy"
-                    : "text-navy/75 hover:text-navy"
+                    ? isBlock
+                      ? "font-semibold text-[#E5B21D]"
+                      : "font-semibold text-navy"
+                    : isBlock
+                      ? "text-slate-300 hover:text-white"
+                      : "text-navy/75 hover:text-navy"
                 }`}
               >
                 {item.label}
@@ -124,7 +137,9 @@ export default function SiteHeader() {
           <button
             type="button"
             onClick={() => setOpen((prev) => !prev)}
-            className="-mr-2 inline-flex h-11 w-11 cursor-pointer items-center justify-center text-navy focus:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+            className={`-mr-2 inline-flex h-11 w-11 cursor-pointer items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-gold ${
+              isBlock ? "text-white hover:text-[#E5B21D]" : "text-navy hover:text-navy/80"
+            }`}
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? "Close menu" : "Open menu"}
@@ -168,13 +183,17 @@ export default function SiteHeader() {
       {open && (
         <>
           <div
-            className="fixed inset-0 top-[60px] z-40 bg-navy/40 backdrop-blur-sm md:hidden"
+            className="fixed inset-0 top-[60px] z-40 bg-black/60 backdrop-blur-sm md:hidden"
             aria-hidden="true"
             onClick={() => setOpen(false)}
           />
           <nav
             id="mobile-nav"
-            className="absolute left-0 right-0 top-full z-50 border-b border-navy/15 bg-[#FBF9F4] shadow-2xl md:hidden"
+            className={`absolute left-0 right-0 top-full z-50 border-b shadow-2xl md:hidden ${
+              isBlock
+                ? "border-white/10 bg-[#0B1624] text-white"
+                : "border-navy/15 bg-[#FBF9F4] text-navy"
+            }`}
             aria-label="Primary Mobile"
           >
             <ul className="page-well flex flex-col py-3">
@@ -187,8 +206,14 @@ export default function SiteHeader() {
                       prefetch={false}
                       onClick={() => setOpen(false)}
                       aria-current={active ? "page" : undefined}
-                      className={`flex items-center gap-3 border-b border-navy/10 py-3.5 font-body text-[18px] text-navy transition-colors last:border-b-0 ${
-                        active ? "font-bold text-navy" : "hover:text-navy/70"
+                      className={`flex items-center gap-3 border-b py-3.5 font-body text-[18px] transition-colors last:border-b-0 ${
+                        isBlock
+                          ? `border-white/10 ${
+                              active ? "font-bold text-[#E5B21D]" : "text-slate-200 hover:text-white"
+                            }`
+                          : `border-navy/10 ${
+                              active ? "font-bold text-navy" : "text-navy hover:text-navy/70"
+                            }`
                       }`}
                     >
                       {active && (
