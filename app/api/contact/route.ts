@@ -109,7 +109,11 @@ export async function POST(req: NextRequest) {
     doorSessionId: req.cookies.get(CONTACT_DOOR_SESSION_COOKIE)?.value,
     attributionCookie: req.cookies.get(ATTRIBUTION_COOKIE)?.value,
   });
-  const subject = `[idigdata] Reach out: ${safeName} / ${safeEmail}`;
+  const isBlockQuote =
+    message.includes("THE BLOCK") || message.includes("FLIGHT SCOPE QUOTE");
+  const subject = isBlockQuote
+    ? `[The Block Quote] ${safeName}${company ? ` (${sanitizeHeaderField(company)})` : ""} / ${safeEmail}`
+    : `[idigdata] Reach out: ${safeName} / ${safeEmail}`;
   const lines = [
     `From: ${safeName} <${safeEmail}>`,
     role ? `Role: ${sanitizeHeaderField(role)}` : null,
