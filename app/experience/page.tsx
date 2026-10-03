@@ -171,7 +171,7 @@ export default function ExperiencePage() {
 </article>
 <article>
 <h3>{"Enterprise application architecture and development"}</h3>
-<p className="p-prose mt-4">{"Co-architected and helped develop an integrated winemaking platform connecting a complex legacy application with ERP, WMS, and MES. Led client-side collaboration with the vendor, partner, and developers; negotiated pilot-customer terms eliminating software charges for the client."}</p>
+<p className="p-prose mt-4">{"Brought together the client, ERP partner, and a custom software firm to design and build an integrated winemaking platform connecting a legacy application with ERP, WMS, and MES, under a shared-IP arrangement, and oversaw its development. Negotiated pilot-customer terms that eliminated software charges for the client."}</p>
 </article>
 <article>
 <h3>{"Master data that connects the business"}</h3>
