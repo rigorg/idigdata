@@ -308,32 +308,36 @@ export default function TheBlockPage() {
       
       {/* 1. TOP COMMAND BAR (BADASS DARK AESTHETIC - DOCKED UNDER HEADER) */}
       <section className="bg-[#0B1624]/95 backdrop-blur-md border-b border-white/10 text-white sticky top-[69px] md:top-[85px] z-30 shadow-2xl">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2.5 sm:py-3">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 lg:gap-4">
             
-            {/* Left: Brand & Question */}
-            <div className="flex items-center gap-3.5">
+            {/* Left: Brand Lockup */}
+            <div className="flex items-center gap-3 shrink-0">
               <TheBlockLogo variant="gold" size="md" showWordmark={false} />
-              <div>
-                <div className="flex items-center gap-2">
-                  <span className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-white leading-none">
-                    THE BLOCK
-                  </span>
-                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#E5B21D]/15 text-[#E5B21D] border border-[#E5B21D]/30 font-bold uppercase tracking-wider">
-                    CAPABILITY STOREFRONT
-                  </span>
-                  <span className="text-[11px] font-mono text-slate-400 hidden md:inline">
-                    &middot; by idigdata
-                  </span>
-                </div>
-                <p className="font-serif text-xs sm:text-sm text-slate-300 mt-1 leading-snug">
-                  What do you want your business to be able to do?
-                </p>
+              <div className="flex items-center gap-2">
+                <span className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-white leading-none">
+                  THE BLOCK
+                </span>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#E5B21D]/15 text-[#E5B21D] border border-[#E5B21D]/30 font-bold uppercase tracking-wider">
+                  CAPABILITY STOREFRONT
+                </span>
+                <span className="text-[11px] font-mono text-slate-400 hidden xl:inline">
+                  &middot; by idigdata
+                </span>
               </div>
             </div>
 
-            {/* Right: 1 Block = 2-4 Weeks Anchor + Selection Pill + Action Button */}
-            <div className="flex items-center gap-2.5 sm:gap-3 self-end sm:self-auto">
+            {/* Center: The Core Essence Statement (Bigger, Centered, Single-Line, with Gold "Ting") */}
+            <div className="flex-1 flex items-center justify-center text-center px-2 py-0.5 lg:py-0">
+              <p className="font-display italic text-sm sm:text-base lg:text-[17px] text-[#F7F5EE] tracking-tight leading-none drop-shadow-xs lg:whitespace-nowrap">
+                <span className="text-[#E5B21D] font-serif not-italic text-base sm:text-lg mr-1 select-none">&ldquo;</span>
+                What do you want your business to be able to do?
+                <span className="text-[#E5B21D] font-serif not-italic text-base sm:text-lg ml-0.5 select-none">&rdquo;</span>
+              </p>
+            </div>
+
+            {/* Right: 1 Block = 2-4 Weeks Anchor + Action Button */}
+            <div className="flex items-center gap-2.5 sm:gap-3 self-end lg:self-auto shrink-0">
               
               {/* Delivery standard anchor pill (Strictly 1 Block = 2 to 4 Weeks; zero outcome count equation) */}
               <div className="px-3.5 py-1.5 rounded-lg bg-[#E5B21D]/10 border border-[#E5B21D]/30 text-xs font-mono flex items-center gap-2 shadow-xs">
@@ -365,11 +369,11 @@ export default function TheBlockPage() {
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#E5B21D] shadow-[0_0_8px_#E5B21D]" />
             <h2 className="font-mono text-xs font-bold uppercase tracking-wider text-slate-300">
-              Operational Capability Board &middot; 6 Blocks
+              Operational Capability Board &middot; 6 Capability Configurators
             </h2>
           </div>
           <span className="text-[11px] font-mono text-slate-400 hidden sm:inline">
-            Click any block to configure required capabilities
+            Click any configurator to select outcomes and state operational context
           </span>
         </div>
 
@@ -421,7 +425,7 @@ export default function TheBlockPage() {
                               ? "bg-[#E5B21D]/20 text-[#E5B21D] border border-[#E5B21D]/40"
                               : "bg-white/10 text-slate-200 border border-white/15"
                         }`}>
-                          BLOCK {blockNum}
+                          CONFIGURATOR {blockNum}
                         </span>
                         <span className="font-mono text-xs font-bold text-[#E5B21D]">
                           [{domain.code}]
@@ -477,7 +481,7 @@ export default function TheBlockPage() {
                   </div>
 
                   <span className="font-serif font-bold text-xs uppercase tracking-wider text-[#E5B21D] group-hover:translate-x-1 transition-transform flex items-center gap-1 bg-[#E5B21D]/10 px-2.5 py-1 rounded border border-[#E5B21D]/25 group-hover:border-[#E5B21D]/50 group-hover:bg-[#E5B21D]/20">
-                    <span>Configure Block</span>
+                    <span>Open Configurator</span>
                     <span>&rarr;</span>
                   </span>
                 </div>
@@ -605,7 +609,7 @@ export default function TheBlockPage() {
                   value={generalNotes}
                   onChange={(e) => handleGeneralNotesChange(e.target.value)}
                   rows={3}
-                  spellCheck={false}
+                  spellCheck={true}
                   placeholder="e.g. ERP cutover delayed by off-track integrator, need independent scope reset and cutover steering & stabilization..."
                   className="w-full mt-2.5 p-3 text-xs rounded-lg border border-white/20 bg-[#0B1624] focus:outline-none focus:border-[#E5B21D] focus:ring-1 focus:ring-[#E5B21D] text-white font-sans placeholder:text-slate-500"
                 />
@@ -629,168 +633,177 @@ export default function TheBlockPage() {
         </div>
       </section>
 
-      {/* 4. FAST CENTERED MODAL: BLOCKS 01-05 (BADASS DARK SCANNABLE OUTCOME ROWS) */}
-      {activeModalDomainId && activeModalDomainId !== "agentic_systems" && activeDomain && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#070E17]/85 backdrop-blur-md">
-          <div className="bg-[#0B1624] text-white rounded-2xl border border-white/20 shadow-2xl max-w-2xl w-full max-h-[85vh] flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-150">
-            
-            {/* Modal Header */}
-            <div className="p-4 sm:p-5 border-b border-white/10 bg-[#070E17] flex items-start justify-between gap-4">
-              <div>
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="font-mono text-xs font-bold text-[#E5B21D]">
-                    [{activeDomain.code}]
-                  </span>
-                  <span className="font-mono text-[11px] text-slate-400 uppercase tracking-wider">
-                    Operational Block
-                  </span>
+      {/* 4. EXPANSIVE COCKPIT CONFIGURATOR (CONFIGURATORS 01-05): TACTILE OUTCOME GRID + OPERATING CONTEXT WINDOW */}
+      {activeModalDomainId && activeModalDomainId !== "agentic_systems" && activeDomain && (() => {
+        const domainItems = PUBLIC_CATALOG_ITEMS.filter((it) => it.domainId === activeDomain.id);
+        const domainSelectedCount = domainItems.filter((it) => selectedIds.has(it.id)).length;
+
+        return (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-[#070E17]/90 backdrop-blur-md">
+            <div className="bg-[#0B1624] text-white rounded-2xl border border-white/20 shadow-2xl max-w-6xl w-full h-[90vh] max-h-[860px] flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+              
+              {/* Cockpit Header */}
+              <div className="p-4 sm:p-5 border-b border-white/10 bg-[#070E17] flex items-start justify-between gap-4 shrink-0">
+                <div>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-[#E5B21D] text-[#070E17]">
+                      CONFIGURATOR [{activeDomain.code}]
+                    </span>
+                    <span className="font-mono text-xs text-slate-400 uppercase tracking-wider">
+                      CAPABILITY CONFIGURATOR
+                    </span>
+                  </div>
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">
+                    {activeDomain.name}
+                  </h3>
+                  <p className="text-xs text-slate-300 mt-0.5 leading-relaxed">
+                    {activeDomain.subtitle}
+                  </p>
                 </div>
-                <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">
-                  {activeDomain.name}
-                </h3>
-                <p className="text-xs text-slate-300 mt-0.5 leading-relaxed">
-                  {activeDomain.subtitle}
-                </p>
+
+                <div className="flex items-center gap-3">
+                  <span className="hidden sm:inline-flex text-xs font-mono px-3 py-1 rounded-full bg-[#E5B21D]/15 border border-[#E5B21D]/30 text-[#E5B21D] font-bold">
+                    {domainSelectedCount} in Scope
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => setActiveModalDomainId(null)}
+                    className="w-9 h-9 rounded-full border border-white/20 hover:bg-white/10 flex items-center justify-center text-slate-300 hover:text-white font-bold text-base cursor-pointer transition-colors"
+                  >
+                    &times;
+                  </button>
+                </div>
               </div>
-              <button
-                type="button"
-                onClick={() => setActiveModalDomainId(null)}
-                className="w-8 h-8 rounded-full border border-white/20 hover:bg-white/10 flex items-center justify-center text-slate-300 hover:text-white font-bold text-sm cursor-pointer"
-              >
-                &times;
-              </button>
-            </div>
 
-            {/* Filter Tabs */}
-            <div className="px-5 py-2.5 bg-[#0A1420] border-b border-white/10 flex items-center gap-2 text-xs font-mono">
-              <button
-                type="button"
-                onClick={() => setDomainFilter("all")}
-                className={`px-3 py-1 rounded-md cursor-pointer transition-colors ${
-                  domainFilter === "all" ? "bg-[#E5B21D] text-[#070E17] font-bold" : "text-slate-400 hover:bg-white/5 hover:text-white"
-                }`}
-              >
-                All Capabilities
-              </button>
-              <button
-                type="button"
-                onClick={() => setDomainFilter("finite")}
-                className={`px-3 py-1 rounded-md cursor-pointer transition-colors ${
-                  domainFilter === "finite" ? "bg-[#E5B21D] text-[#070E17] font-bold" : "text-slate-400 hover:bg-white/5 hover:text-white"
-                }`}
-              >
-                Finite Sprints
-              </button>
-              <button
-                type="button"
-                onClick={() => setDomainFilter("ongoing")}
-                className={`px-3 py-1 rounded-md cursor-pointer transition-colors ${
-                  domainFilter === "ongoing" ? "bg-[#E5B21D] text-[#070E17] font-bold" : "text-slate-400 hover:bg-white/5 hover:text-white"
-                }`}
-              >
-                Executive Mandates
-              </button>
-            </div>
+              {/* Cockpit Main Body: 2-Column Side-by-Side (Outcomes Grid + Operating Context Window) */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 p-4 sm:p-6 flex-1 overflow-hidden bg-[#0B1624]">
+                
+                {/* Left 7 Cols: Rapid Clickable Outcome Tiles (Zero tabs, no endless scroll) */}
+                <div className="lg:col-span-7 flex flex-col min-h-0">
+                  <div className="flex items-center justify-between gap-2 mb-3 shrink-0">
+                    <span className="font-mono text-xs font-bold uppercase tracking-wider text-[#E5B21D]">
+                      Available Capabilities ({domainItems.length})
+                    </span>
+                    <span className="text-[11px] font-mono text-slate-400">
+                      Click tile to select or remove
+                    </span>
+                  </div>
 
-            {/* Modal Body: Scannable 1-line Outcome Rows */}
-            <div className="p-3 sm:p-4 overflow-y-auto space-y-2 flex-1 bg-[#0B1624]">
-              {PUBLIC_CATALOG_ITEMS.filter((it) => it.domainId === activeDomain.id)
-                .filter((it) => (domainFilter === "all" ? true : it.kind === domainFilter))
-                .map((item) => {
-                  const isChecked = selectedIds.has(item.id);
-                  return (
-                    <div
-                      key={item.id}
-                      role="checkbox"
-                      aria-checked={isChecked}
-                      tabIndex={0}
-                      onClick={() => toggleOutcome(item.id)}
-                      onKeyDown={(e) => {
-                        if (e.key === "Enter" || e.key === " ") {
-                          e.preventDefault();
-                          toggleOutcome(item.id);
-                        }
-                      }}
-                      className={`group flex items-start justify-between gap-3 p-3.5 rounded-xl border transition-all cursor-pointer select-none ${
-                        isChecked
-                          ? "bg-[#E5B21D]/15 border-[#E5B21D] shadow-[0_0_15px_rgba(229,178,29,0.15)] text-white"
-                          : "bg-white/5 hover:bg-white/10 border-white/10 hover:border-white/25 text-slate-200"
-                      }`}
-                    >
-                      {/* Checkbox indicator */}
-                      <div className="flex items-start gap-3 min-w-0">
-                        <div className={`w-5 h-5 rounded flex items-center justify-center border font-bold text-xs shrink-0 mt-0.5 transition-colors ${
-                          isChecked
-                            ? "bg-[#E5B21D] border-[#E5B21D] text-[#070E17]"
-                            : "border-white/30 bg-[#070E17] group-hover:border-white/60"
-                        }`}>
-                          {isChecked ? "✓" : ""}
-                        </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 overflow-y-auto pr-1 flex-1">
+                    {domainItems.map((item) => {
+                      const isChecked = selectedIds.has(item.id);
+                      return (
+                        <div
+                          key={item.id}
+                          onClick={() => toggleOutcome(item.id)}
+                          className={`p-4 rounded-xl border transition-all duration-150 cursor-pointer select-none flex flex-col justify-between ${
+                            isChecked
+                              ? "bg-[#0E1E32] border-[#E5B21D] shadow-[0_0_18px_rgba(229,178,29,0.22)] text-white ring-1 ring-[#E5B21D]"
+                              : "bg-white/5 hover:bg-white/10 border-white/10 hover:border-white/30 text-slate-200"
+                          }`}
+                        >
+                          <div>
+                            <div className="flex items-center justify-between gap-2 mb-2">
+                              <span className={`text-[10px] font-mono px-2 py-0.5 rounded font-bold uppercase tracking-wider ${
+                                isChecked
+                                  ? "bg-[#E5B21D] text-[#070E17]"
+                                  : "bg-white/10 text-slate-300"
+                              }`}>
+                                {item.tagline || activeDomain.code}
+                              </span>
+                              <div className={`w-5 h-5 rounded flex items-center justify-center border font-bold text-xs shrink-0 transition-colors ${
+                                isChecked
+                                  ? "bg-[#E5B21D] border-[#E5B21D] text-[#070E17]"
+                                  : "border-white/30 bg-[#070E17]"
+                              }`}>
+                                {isChecked ? "✓" : ""}
+                              </div>
+                            </div>
 
-                        <div className="min-w-0">
-                          <div className="flex items-center gap-2">
-                            <h4 className="font-serif text-sm font-bold truncate text-white">
+                            <h4 className="font-serif text-sm font-bold text-white leading-snug">
                               {item.name}
                             </h4>
-                            <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded shrink-0 ${
-                              isChecked ? "bg-white/20 text-white" : "bg-white/10 text-slate-300"
-                            }`}>
+
+                            <p className="text-xs mt-2 line-clamp-2 text-slate-300 leading-relaxed font-sans">
+                              {item.outcome.split("Success check:")[0]?.trim() || item.outcome}
+                            </p>
+                          </div>
+
+                          <div className="mt-3.5 pt-2.5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+                            <span className={`font-bold ${isChecked ? "text-[#E5B21D]" : "text-slate-400"}`}>
+                              {isChecked ? "● IN SCOPE" : "+ ADD TO SCOPE"}
+                            </span>
+                            <span className="text-slate-400">
                               {item.kind === "finite" ? "Sprint" : "Mandate"}
                             </span>
                           </div>
-                          <p className="text-xs mt-0.5 line-clamp-2 text-slate-300">
-                            {item.outcome.split("Success check:")[0]?.trim() || item.outcome}
-                          </p>
-                          {item.tagline && (
-                            <span className={`text-[10px] font-mono font-medium block pt-0.5 ${
-                              isChecked ? "text-[#E5B21D]" : "text-amber-400/90"
-                            }`}>
-                              &bull; {item.tagline}
-                            </span>
-                          )}
                         </div>
-                      </div>
+                      );
+                    })}
+                  </div>
+                </div>
 
-                      {/* Right side tag */}
-                      <span className={`text-[11px] font-mono shrink-0 font-bold ${
-                        isChecked ? "text-[#E5B21D]" : "text-slate-400 group-hover:text-white"
-                      }`}>
-                        {isChecked ? "SELECTED" : "+ SELECT"}
+                {/* Right 5 Cols: THE DEDICATED CONTEXT WINDOW */}
+                <div className="lg:col-span-5 flex flex-col justify-between bg-[#070E17] p-4 sm:p-5 rounded-xl border border-white/15 min-h-0">
+                  <div className="flex flex-col flex-1 min-h-0">
+                    <div className="flex items-center gap-2 mb-1 shrink-0">
+                      <span className="w-2 h-2 rounded-full bg-[#E5B21D] animate-pulse" />
+                      <span className="text-[10px] font-mono uppercase tracking-wider text-[#E5B21D] font-bold">
+                        OPERATING CONTEXT WINDOW
                       </span>
                     </div>
-                  );
-                })}
-            </div>
 
-            {/* Modal Footer */}
-            <div className="p-3 sm:p-4 border-t border-white/10 bg-[#070E17] flex items-center justify-between gap-3">
-              <span className="text-xs font-mono text-slate-400">
-                {PUBLIC_CATALOG_ITEMS.filter((it) => it.domainId === activeDomain.id && selectedIds.has(it.id)).length} selected in this block
-              </span>
-              <button
-                type="button"
-                onClick={() => setActiveModalDomainId(null)}
-                className="px-4 py-2 rounded-lg bg-[#E5B21D] hover:bg-amber-400 text-[#070E17] font-serif font-bold text-xs uppercase tracking-wider cursor-pointer shadow-xs"
-              >
-                Apply &amp; Close
-              </button>
-            </div>
+                    <h4 className="font-serif text-base font-bold text-white shrink-0">
+                      State your context, constraints &amp; systems
+                    </h4>
+                    
+                    <p className="text-xs text-slate-300 mt-1 leading-relaxed shrink-0">
+                      What systems are in play, what is broken, or what specific operating constraints should Capo know when scoping your blocks?
+                    </p>
 
+                    <textarea
+                      value={generalNotes}
+                      onChange={(e) => handleGeneralNotesChange(e.target.value)}
+                      spellCheck={true}
+                      placeholder="e.g. Current ERP cutover off-track by 6 weeks, need independent executive steering and integration scope reset..."
+                      className="w-full flex-1 min-h-[180px] mt-3 p-3.5 text-xs rounded-lg border border-white/20 bg-[#0B1624] text-white font-sans placeholder:text-slate-500 focus:outline-none focus:border-[#E5B21D] focus:ring-1 focus:ring-[#E5B21D] leading-relaxed resize-none"
+                    />
+                  </div>
+
+                  <div className="mt-4 pt-3 border-t border-white/10 shrink-0 space-y-3">
+                    <div className="text-[11px] font-mono text-slate-400 flex items-center justify-between">
+                      <span className="text-[#E5B21D] font-bold">1 Block = 2 to 4 Weeks</span>
+                      <span>{domainSelectedCount} in {activeDomain.code} &middot; {totalItems} Total</span>
+                    </div>
+
+                    <button
+                      type="button"
+                      onClick={() => setActiveModalDomainId(null)}
+                      className="w-full py-3 px-4 rounded-lg bg-[#E5B21D] hover:bg-amber-400 text-[#070E17] font-serif font-bold text-xs uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(229,178,29,0.3)] flex items-center justify-center gap-2 cursor-pointer"
+                    >
+                      <span>Apply Scope &amp; Close Configurator &rarr;</span>
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
           </div>
-        </div>
-      )}
+        );
+      })()}
 
-      {/* 5. FAST CENTERED MODAL: BLOCK 06 AGENTIC SYSTEMS (DEDICATED STOREFRONT POD) */}
+      {/* 5. EXPANSIVE COCKPIT CONFIGURATOR: CONFIGURATOR 06 AGENTIC SYSTEMS (SEEDS + CONTEXT WINDOW) */}
       {activeModalDomainId === "agentic_systems" && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#070E17]/85 backdrop-blur-md">
-          <div className="bg-[#0B1624] text-white rounded-2xl border border-[#E5B21D]/60 shadow-2xl max-w-2xl w-full max-h-[85vh] flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-[#070E17]/90 backdrop-blur-md">
+          <div className="bg-[#0B1624] text-white rounded-2xl border border-[#E5B21D]/60 shadow-2xl max-w-6xl w-full h-[90vh] max-h-[860px] flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-150">
             
-            {/* Modal Header */}
-            <div className="p-4 sm:p-5 border-b border-white/10 bg-[#070E17] flex items-start justify-between gap-4">
+            {/* Cockpit Header */}
+            <div className="p-4 sm:p-5 border-b border-white/10 bg-[#070E17] flex items-start justify-between gap-4 shrink-0">
               <div>
                 <div className="flex items-center gap-2 mb-1">
                   <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-[#E5B21D] text-[#070E17]">
-                    BLOCK 06
+                    CONFIGURATOR 06
                   </span>
                   <span className="font-mono text-xs font-bold text-[#E5B21D]">
                     [AS] BESPOKE STOREFRONT
@@ -799,103 +812,135 @@ export default function TheBlockPage() {
                 <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">
                   Agentic Systems &amp; Bespoke Software
                 </h3>
-                <p className="text-xs text-slate-300 mt-1 leading-relaxed">
+                <p className="text-xs text-slate-300 mt-0.5 leading-relaxed">
                   Boutique engineering pod delivering governed multi-agent runtimes, custom API bridges, and private enterprise applications.
                 </p>
               </div>
-              <button
-                type="button"
-                onClick={() => setActiveModalDomainId(null)}
-                className="w-8 h-8 rounded-full border border-white/20 hover:bg-white/10 flex items-center justify-center text-slate-300 hover:text-white font-bold text-sm cursor-pointer"
-              >
-                &times;
-              </button>
-            </div>
 
-            {/* Modal Body */}
-            <div className="p-4 sm:p-5 overflow-y-auto space-y-4 flex-1 bg-[#0B1624]">
-              
-              {/* 3 Core Delivery Pillars */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
-                <div className="p-3 rounded-lg bg-white/5 border border-white/10">
-                  <div className="font-mono font-bold text-[#E5B21D] text-[10px] uppercase">Pillar 01</div>
-                  <div className="font-serif font-bold text-white mt-1">Autonomous Pods</div>
-                  <p className="text-[11px] text-slate-300 mt-1 leading-snug">
-                    Deterministic agent loops wired to live databases, webhooks, and ERPs.
-                  </p>
-                </div>
-                <div className="p-3 rounded-lg bg-white/5 border border-white/10">
-                  <div className="font-mono font-bold text-[#E5B21D] text-[10px] uppercase">Pillar 02</div>
-                  <div className="font-serif font-bold text-white mt-1">API Bridges &amp; Mesh</div>
-                  <p className="text-[11px] text-slate-300 mt-1 leading-snug">
-                    Zero-leakage data pipelines connecting legacy software without rip-and-replace.
-                  </p>
-                </div>
-                <div className="p-3 rounded-lg bg-white/5 border border-white/10">
-                  <div className="font-mono font-bold text-[#E5B21D] text-[10px] uppercase">Pillar 03</div>
-                  <div className="font-serif font-bold text-white mt-1">Sovereign Runtimes</div>
-                  <p className="text-[11px] text-slate-300 mt-1 leading-snug">
-                    Private LLM architectures deployed within your tenant; zero model vendor training on your data.
-                  </p>
-                </div>
-              </div>
-
-              {/* Anti-Vibe-Coding Standard */}
-              <div className="p-3 rounded-lg bg-white/5 border border-[#E5B21D]/30 flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-[#E5B21D] shrink-0 shadow-[0_0_6px_#E5B21D]" />
-                <p className="text-xs text-slate-200 font-mono leading-relaxed">
-                  <strong>The idigdata Standard:</strong> No flimsy prototype wrappers or uninspected vibe-coding. Every agentic system ships with automated verification suites, typed schemas, and human oversight gates.
-                </p>
-              </div>
-
-              {/* Starter Idea Seeds */}
-              <div>
-                <span className="text-[10px] font-mono uppercase tracking-wider text-[#E5B21D] font-bold block mb-2">
-                  Click a Starter Idea Seed to populate your mandate:
+              <div className="flex items-center gap-3">
+                <span className="hidden sm:inline-flex text-xs font-mono px-3 py-1 rounded-full bg-[#E5B21D]/15 border border-[#E5B21D]/30 text-[#E5B21D] font-bold">
+                  {hasAgentic ? "Mandate Specified" : "Bespoke Pod"}
                 </span>
-                <div className="flex flex-wrap gap-1.5">
-                  {AGENTIC_IDEA_SEEDS.map((seed) => (
-                    <button
-                      key={seed}
-                      type="button"
-                      onClick={() => addSeedToAgentic(seed)}
-                      className="px-2.5 py-1 rounded-md bg-white/10 hover:bg-[#E5B21D] hover:text-[#070E17] text-xs font-mono text-slate-200 transition-colors cursor-pointer text-left"
-                    >
-                      + {seed}
-                    </button>
-                  ))}
+                <button
+                  type="button"
+                  onClick={() => setActiveModalDomainId(null)}
+                  className="w-9 h-9 rounded-full border border-white/20 hover:bg-white/10 flex items-center justify-center text-slate-300 hover:text-white font-bold text-base cursor-pointer transition-colors"
+                >
+                  &times;
+                </button>
+              </div>
+            </div>
+
+            {/* Cockpit Main Body: 2-Column Side-by-Side (Seeds & Pillars + Bespoke Context Window) */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 p-4 sm:p-6 flex-1 overflow-hidden bg-[#0B1624]">
+              
+              {/* Left 7 Cols: Architectural Mandate Seeds & Pillars */}
+              <div className="lg:col-span-7 flex flex-col min-h-0 space-y-4 overflow-y-auto pr-1">
+                <div>
+                  <label className="text-xs font-mono font-bold text-[#E5B21D] block mb-2 uppercase tracking-wider">
+                    Common Architectural Mandates (Click to inject into Context):
+                  </label>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    {AGENTIC_IDEA_SEEDS.map((seed) => {
+                      const isAdded = agenticNotes.includes(seed);
+                      return (
+                        <button
+                          key={seed}
+                          type="button"
+                          onClick={() => addSeedToAgentic(seed)}
+                          className={`text-left text-xs p-3.5 rounded-xl border font-mono transition-all duration-150 flex items-center justify-between gap-2 cursor-pointer ${
+                            isAdded
+                              ? "bg-[#0E1E32] border-[#E5B21D] text-white ring-1 ring-[#E5B21D] shadow-[0_0_15px_rgba(229,178,29,0.2)]"
+                              : "bg-white/5 hover:bg-white/10 border-white/10 text-slate-300 hover:text-white"
+                          }`}
+                        >
+                          <span className="truncate">{seed}</span>
+                          <span className="text-[#E5B21D] font-bold text-base shrink-0">
+                            {isAdded ? "✓" : "+"}
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Anti-Vibe-Coding Standard */}
+                <div className="p-3.5 rounded-xl bg-white/5 border border-[#E5B21D]/30 flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-[#E5B21D] shrink-0 shadow-[0_0_6px_#E5B21D]" />
+                  <p className="text-xs text-slate-200 font-mono leading-relaxed">
+                    <strong>The idigdata Standard:</strong> No flimsy prototype wrappers or uninspected vibe-coding. Every agentic system ships with automated verification suites, typed schemas, and human oversight gates.
+                  </p>
+                </div>
+
+                {/* 3 Core Delivery Pillars */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs pt-1">
+                  <div className="p-3.5 rounded-xl bg-white/5 border border-white/10">
+                    <div className="font-mono font-bold text-[#E5B21D] text-[10px] uppercase">Pillar 01</div>
+                    <div className="font-serif font-bold text-white mt-1">Autonomous Pods</div>
+                    <p className="text-[11px] text-slate-300 mt-1 leading-snug">
+                      Deterministic agent loops wired to live databases, webhooks, and ERPs.
+                    </p>
+                  </div>
+                  <div className="p-3.5 rounded-xl bg-white/5 border border-white/10">
+                    <div className="font-mono font-bold text-[#E5B21D] text-[10px] uppercase">Pillar 02</div>
+                    <div className="font-serif font-bold text-white mt-1">API Bridges &amp; Mesh</div>
+                    <p className="text-[11px] text-slate-300 mt-1 leading-snug">
+                      Zero-leakage data pipelines connecting legacy software without rip-and-replace.
+                    </p>
+                  </div>
+                  <div className="p-3.5 rounded-xl bg-white/5 border border-white/10">
+                    <div className="font-mono font-bold text-[#E5B21D] text-[10px] uppercase">Pillar 03</div>
+                    <div className="font-serif font-bold text-white mt-1">Sovereign Runtimes</div>
+                    <p className="text-[11px] text-slate-300 mt-1 leading-snug">
+                      Private LLM orchestration and secure tool execution inside your boundary.
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              {/* Custom Mandate Input */}
-              <div>
-                <label className="text-xs font-mono font-bold text-white block mb-1">
-                  Describe your bespoke system mandate or technical challenge:
-                </label>
-                <textarea
-                  value={agenticNotes}
-                  onChange={(e) => handleAgenticNotesChange(e.target.value)}
-                  rows={4}
-                  spellCheck={false}
-                  placeholder="e.g. Build an autonomous multi-agent pipeline that ingests daily 3PL freight invoices, validates against contract rate cards, and writes approved adjustments into NetSuite via REST API..."
-                  className="w-full p-3 text-xs rounded-lg border border-white/20 bg-[#070E17] text-white font-sans placeholder:text-slate-500 focus:outline-none focus:border-[#E5B21D] focus:ring-1 focus:ring-[#E5B21D]"
-                />
+              {/* Right 5 Cols: Dedicated Bespoke Context Window */}
+              <div className="lg:col-span-5 flex flex-col justify-between bg-[#070E17] p-4 sm:p-5 rounded-xl border border-white/15 min-h-0">
+                <div className="flex flex-col flex-1 min-h-0">
+                  <div className="flex items-center gap-2 mb-1 shrink-0">
+                    <span className="w-2 h-2 rounded-full bg-[#E5B21D] animate-pulse" />
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-[#E5B21D] font-bold">
+                      BESPOKE CONTEXT WINDOW
+                    </span>
+                  </div>
+
+                  <h4 className="font-serif text-base font-bold text-white shrink-0">
+                    Describe your bespoke engineering mandate
+                  </h4>
+                  
+                  <p className="text-xs text-slate-300 mt-1 leading-relaxed shrink-0">
+                    Specify private AI runtimes, custom API endpoints, event triggers, or integrations to engineer.
+                  </p>
+
+                  <textarea
+                    value={agenticNotes}
+                    onChange={(e) => handleAgenticNotesChange(e.target.value)}
+                    spellCheck={true}
+                    placeholder="e.g. Build an autonomous multi-agent pipeline that ingests daily 3PL freight invoices, validates against contract rate cards, and writes approved adjustments into NetSuite via REST API..."
+                    className="w-full flex-1 min-h-[180px] mt-3 p-3.5 text-xs rounded-lg border border-white/20 bg-[#0B1624] text-white font-sans placeholder:text-slate-500 focus:outline-none focus:border-[#E5B21D] focus:ring-1 focus:ring-[#E5B21D] leading-relaxed resize-none"
+                  />
+                </div>
+
+                <div className="mt-4 pt-3 border-t border-white/10 shrink-0 space-y-3">
+                  <div className="text-[11px] font-mono text-slate-400 flex items-center justify-between">
+                    <span className="text-[#E5B21D] font-bold">1 Block = 2 to 4 Weeks</span>
+                    <span>{hasAgentic ? "1 Bespoke Block in Scope" : "Ready to specify"}</span>
+                  </div>
+
+                  <button
+                    type="button"
+                    onClick={() => setActiveModalDomainId(null)}
+                    className="w-full py-3 px-4 rounded-lg bg-[#E5B21D] hover:bg-amber-400 text-[#070E17] font-serif font-bold text-xs uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(229,178,29,0.3)] flex items-center justify-center gap-2 cursor-pointer"
+                  >
+                    <span>Apply Bespoke Scope &amp; Close &rarr;</span>
+                  </button>
+                </div>
               </div>
 
-            </div>
-
-            {/* Modal Footer */}
-            <div className="p-4 border-t border-white/10 bg-[#070E17] flex items-center justify-between gap-3">
-              <span className="text-xs font-mono text-slate-300">
-                {hasAgentic ? "1 Bespoke Block added to project mandate" : "No custom requirement added"}
-              </span>
-              <button
-                type="button"
-                onClick={() => setActiveModalDomainId(null)}
-                className="px-4 py-1.5 rounded-lg bg-[#E5B21D] hover:bg-amber-400 text-[#070E17] font-serif font-bold text-xs uppercase tracking-wider cursor-pointer shadow-xs"
-              >
-                Save Scope &amp; Close
-              </button>
             </div>
 
           </div>
@@ -1102,7 +1147,7 @@ export default function TheBlockPage() {
                     <textarea
                       id="quote-notes"
                       rows={2}
-                      spellCheck={false}
+                      spellCheck={true}
                       value={quoteNotes}
                       onChange={(e) => setQuoteNotes(e.target.value)}
                       placeholder="e.g. ERP cutover delayed by integrator, need independent scope reset..."
