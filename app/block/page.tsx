@@ -126,6 +126,7 @@ export default function TheBlockPage() {
   const [agenticNotes, setAgenticNotes] = useState<string>("");
   const [generalNotes, setGeneralNotes] = useState<string>("");
   const [activeModalDomainId, setActiveModalDomainId] = useState<string | null>(null);
+  const [activeProtocolStep, setActiveProtocolStep] = useState<"step1" | "step2" | "step3" | null>(null);
   const [domainFilter, setDomainFilter] = useState<"all" | "finite" | "ongoing">("all");
 
   // Quote modal state
@@ -328,13 +329,20 @@ export default function TheBlockPage() {
               </p>
             </div>
 
-            {/* Right: 1 Block = 2-4 Weeks Delivery Standard Anchor */}
+            {/* Right: 1 Block = 2-4 Weeks Delivery Standard Anchor (Clickable Definition) */}
             <div className="flex items-center justify-end shrink-0">
-              <div className="px-3.5 py-1.5 rounded-lg bg-[#E5B21D]/10 border border-[#E5B21D]/30 text-xs font-mono flex items-center gap-2 shadow-xs">
+              <div
+                onClick={() => setActiveProtocolStep("step3")}
+                role="button"
+                tabIndex={0}
+                title="Click to view Block Delivery Model definition"
+                className="px-3.5 py-1.5 rounded-lg bg-[#E5B21D]/10 hover:bg-[#E5B21D]/20 border border-[#E5B21D]/30 hover:border-[#E5B21D]/60 text-xs font-mono flex items-center gap-2 shadow-xs cursor-pointer transition-all duration-150"
+              >
                 <span className="w-1.5 h-1.5 rounded-full bg-[#E5B21D] animate-pulse" />
                 <span className="text-[#E5B21D] font-bold tracking-wide whitespace-nowrap">
                   1 Block = 2 to 4 Weeks
                 </span>
+                <span className="text-[10px] text-slate-400 group-hover:text-white">&rarr;</span>
               </div>
             </div>
 
@@ -369,53 +377,76 @@ export default function TheBlockPage() {
             </div>
           </div>
 
-          {/* 3 Interconnected Execution Steps */}
+          {/* 3 Interconnected Execution Steps (Fully Clickable with Definitions) */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
             
             {/* Step 01 */}
-            <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 flex flex-col justify-between hover:border-white/20 transition-colors group">
+            <div
+              onClick={() => setActiveProtocolStep("step1")}
+              role="button"
+              tabIndex={0}
+              className="p-4 rounded-xl bg-white/5 border border-white/10 flex flex-col justify-between hover:border-[#E5B21D]/50 hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-150 cursor-pointer group shadow-sm"
+            >
               <div>
-                <div className="flex items-center justify-between gap-2 mb-1.5">
-                  <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-[#E5B21D]/20 text-[#E5B21D] border border-[#E5B21D]/40">
+                <div className="flex items-center justify-between gap-2 mb-2">
+                  <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-[#E5B21D]/20 text-[#E5B21D] border border-[#E5B21D]/40 group-hover:bg-[#E5B21D] group-hover:text-[#070E17] transition-colors">
                     STEP 01
                   </span>
-                  <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">
+                  <span className="text-[10px] font-mono text-slate-400 group-hover:text-slate-200 uppercase tracking-wider">
                     Select Capabilities
                   </span>
                 </div>
                 <h3 className="font-serif text-sm font-bold text-white group-hover:text-[#E5B21D] transition-colors">
                   Choose Business Outcomes
                 </h3>
-                <p className="text-xs text-slate-300 mt-1 leading-relaxed">
+                <p className="text-xs text-slate-300 mt-1.5 leading-relaxed">
                   Click any configurator below. Select the discrete deliverables your business needs to execute.
                 </p>
+              </div>
+              <div className="mt-3 pt-2.5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-[#E5B21D]">
+                <span>Click for Definition</span>
+                <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
               </div>
             </div>
 
             {/* Step 02 */}
-            <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 flex flex-col justify-between hover:border-white/20 transition-colors group">
+            <div
+              onClick={() => setActiveProtocolStep("step2")}
+              role="button"
+              tabIndex={0}
+              className="p-4 rounded-xl bg-white/5 border border-white/10 flex flex-col justify-between hover:border-[#E5B21D]/50 hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-150 cursor-pointer group shadow-sm"
+            >
               <div>
-                <div className="flex items-center justify-between gap-2 mb-1.5">
-                  <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-[#E5B21D]/20 text-[#E5B21D] border border-[#E5B21D]/40">
+                <div className="flex items-center justify-between gap-2 mb-2">
+                  <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-[#E5B21D]/20 text-[#E5B21D] border border-[#E5B21D]/40 group-hover:bg-[#E5B21D] group-hover:text-[#070E17] transition-colors">
                     STEP 02
                   </span>
-                  <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">
+                  <span className="text-[10px] font-mono text-slate-400 group-hover:text-slate-200 uppercase tracking-wider">
                     Context Window
                   </span>
                 </div>
                 <h3 className="font-serif text-sm font-bold text-white group-hover:text-[#E5B21D] transition-colors">
                   State Systems &amp; Reality
                 </h3>
-                <p className="text-xs text-slate-300 mt-1 leading-relaxed">
+                <p className="text-xs text-slate-300 mt-1.5 leading-relaxed">
                   State your live ERP, vendor friction, team bottlenecks, or operational constraints in the context window.
                 </p>
+              </div>
+              <div className="mt-3 pt-2.5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-[#E5B21D]">
+                <span>Click for Context Guide</span>
+                <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
               </div>
             </div>
 
             {/* Step 03 */}
-            <div className="p-3.5 rounded-xl bg-[#0E1E32]/70 border border-[#E5B21D]/30 flex flex-col justify-between hover:border-[#E5B21D]/60 transition-colors group shadow-xs">
+            <div
+              onClick={() => setActiveProtocolStep("step3")}
+              role="button"
+              tabIndex={0}
+              className="p-4 rounded-xl bg-[#0E1E32]/70 border border-[#E5B21D]/30 flex flex-col justify-between hover:border-[#E5B21D]/70 hover:bg-[#0E1E32] hover:-translate-y-0.5 transition-all duration-150 cursor-pointer group shadow-xs"
+            >
               <div>
-                <div className="flex items-center justify-between gap-2 mb-1.5">
+                <div className="flex items-center justify-between gap-2 mb-2">
                   <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-[#E5B21D] text-[#070E17]">
                     STEP 03
                   </span>
@@ -426,9 +457,13 @@ export default function TheBlockPage() {
                 <h3 className="font-serif text-sm font-bold text-white group-hover:text-[#E5B21D] transition-colors">
                   We Quote 2 to 4 Week Blocks
                 </h3>
-                <p className="text-xs text-slate-300 mt-1 leading-relaxed">
-                  No open-ended retainers. Capo reviews your context and returns an exact block allocation and schedule.
+                <p className="text-xs text-slate-300 mt-1.5 leading-relaxed">
+                  No open-ended retainers. We review your context and return an exact block allocation and schedule.
                 </p>
+              </div>
+              <div className="mt-3 pt-2.5 border-t border-[#E5B21D]/20 flex items-center justify-between text-[11px] font-mono text-[#E5B21D]">
+                <span>Click for Delivery Model</span>
+                <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
               </div>
             </div>
 
@@ -571,24 +606,48 @@ export default function TheBlockPage() {
                 </p>
               </div>
 
-              {/* 3 Delivery Pillars */}
+              {/* 3 Delivery Pillars (Clickable to open Block Architecture Guide) */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs font-mono">
-                <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 space-y-1">
-                  <div className="font-bold text-[#E5B21D]">1 BLOCK = 2-4 WKS</div>
+                <div
+                  onClick={() => setActiveProtocolStep("step3")}
+                  role="button"
+                  tabIndex={0}
+                  className="p-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-[#E5B21D]/50 hover:bg-white/10 transition-colors cursor-pointer space-y-1"
+                >
+                  <div className="font-bold text-[#E5B21D] flex items-center justify-between">
+                    <span>1 BLOCK = 2-4 WKS</span>
+                    <span className="text-[10px] text-slate-400">&rarr;</span>
+                  </div>
                   <p className="text-[11px] text-slate-300 font-sans leading-snug">
                     Fixed execution unit. Each block is a dedicated delivery sprint with clear operational boundaries.
                   </p>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 space-y-1">
-                  <div className="font-bold text-[#E5B21D]">OUTCOME SCOPING</div>
+                <div
+                  onClick={() => setActiveProtocolStep("step3")}
+                  role="button"
+                  tabIndex={0}
+                  className="p-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-[#E5B21D]/50 hover:bg-white/10 transition-colors cursor-pointer space-y-1"
+                >
+                  <div className="font-bold text-[#E5B21D] flex items-center justify-between">
+                    <span>OUTCOME SCOPING</span>
+                    <span className="text-[10px] text-slate-400">&rarr;</span>
+                  </div>
                   <p className="text-[11px] text-slate-300 font-sans leading-snug">
                     Outcomes vary in depth. Some project mandates fit multiple outcomes into one block; complex cutovers take dedicated blocks.
                   </p>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 space-y-1">
-                  <div className="font-bold text-[#E5B21D]">NO GUESSWORK</div>
+                <div
+                  onClick={() => setActiveProtocolStep("step3")}
+                  role="button"
+                  tabIndex={0}
+                  className="p-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-[#E5B21D]/50 hover:bg-white/10 transition-colors cursor-pointer space-y-1"
+                >
+                  <div className="font-bold text-[#E5B21D] flex items-center justify-between">
+                    <span>NO GUESSWORK</span>
+                    <span className="text-[10px] text-slate-400">&rarr;</span>
+                  </div>
                   <p className="text-[11px] text-slate-300 font-sans leading-snug">
                     Select 1 outcome, 5, or all 21. We review your requirements and tell you exactly how many blocks it will take.
                   </p>
@@ -690,6 +749,204 @@ export default function TheBlockPage() {
           </div>
         </div>
       </section>
+
+            {/* 3.5. PROTOCOL DEFINITION MODAL (CLICKABLE DEFINITION DECK FOR STEPS 01, 02, 03) */}
+      {activeProtocolStep && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#070E17]/90 backdrop-blur-md">
+          <div className="bg-[#0B1624] text-white rounded-2xl border border-[#E5B21D]/40 shadow-2xl max-w-2xl w-full max-h-[88vh] flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+            
+            {/* Modal Header */}
+            <div className="p-5 border-b border-white/10 bg-[#070E17] flex items-start justify-between gap-4 shrink-0">
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-[#E5B21D] text-[#070E17]">
+                    {activeProtocolStep === "step1" ? "PROTOCOL DEFINITION · STEP 01" : activeProtocolStep === "step2" ? "PROTOCOL DEFINITION · STEP 02" : "PROTOCOL DEFINITION · STEP 03"}
+                  </span>
+                  <span className="font-mono text-[11px] text-slate-400 uppercase tracking-wider">
+                    OPERATIONAL METHODOLOGY
+                  </span>
+                </div>
+                <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">
+                  {activeProtocolStep === "step1" && "Choose Business Outcomes"}
+                  {activeProtocolStep === "step2" && "State Systems & Operating Reality"}
+                  {activeProtocolStep === "step3" && "We Quote 2 to 4 Week Blocks"}
+                </h3>
+                <p className="text-xs text-slate-300 mt-1 leading-relaxed">
+                  {activeProtocolStep === "step1" && "Browse 21 verified capabilities across the 6 core enterprise operating engines."}
+                  {activeProtocolStep === "step2" && "Why real-world constraints, legacy databases, and vendor friction dictate delivery."}
+                  {activeProtocolStep === "step3" && "Deterministic delivery architecture. Discrete sprint units with zero open-ended retainers."}
+                </p>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => setActiveProtocolStep(null)}
+                className="w-8 h-8 rounded-full border border-white/20 hover:bg-white/10 flex items-center justify-center text-slate-300 hover:text-white font-bold text-sm cursor-pointer"
+              >
+                &times;
+              </button>
+            </div>
+
+            {/* Modal Body */}
+            <div className="p-5 overflow-y-auto space-y-4 flex-1 bg-[#0B1624] text-xs leading-relaxed text-slate-300">
+              {activeProtocolStep === "step1" && (
+                <div className="space-y-4">
+                  <div className="p-3.5 rounded-xl bg-white/5 border border-white/10">
+                    <h4 className="font-serif text-sm font-bold text-white mb-1">
+                      Outcomes Over Headcounts
+                    </h4>
+                    <p>
+                      You do not buy generic advisory hours, open-ended retainers, or junior consultant headcounts. You select discrete, verifiable business capabilities your company needs to operate effectively.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="font-mono text-[11px] font-bold text-[#E5B21D] uppercase tracking-wider mb-2">
+                      The 6 Enterprise Operating Engines:
+                    </h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 font-mono text-[11px]">
+                      <div className="p-2.5 rounded-lg bg-[#070E17] border border-white/10">
+                        <span className="text-[#E5B21D] font-bold">[LD] Leadership &amp; Direction:</span>
+                        <p className="text-slate-300 font-sans text-xs mt-0.5">Executive tech ownership, vendor scope accountability, IT capacity.</p>
+                      </div>
+                      <div className="p-2.5 rounded-lg bg-[#070E17] border border-white/10">
+                        <span className="text-[#E5B21D] font-bold">[IT] IT &amp; Business Systems:</span>
+                        <p className="text-slate-300 font-sans text-xs mt-0.5">ERP readiness, cutover stabilization, platform selection.</p>
+                      </div>
+                      <div className="p-2.5 rounded-lg bg-[#070E17] border border-white/10">
+                        <span className="text-[#E5B21D] font-bold">[DK] Data &amp; Knowledge:</span>
+                        <p className="text-slate-300 font-sans text-xs mt-0.5">Traceable reporting, single operational truth, consistent records.</p>
+                      </div>
+                      <div className="p-2.5 rounded-lg bg-[#070E17] border border-white/10">
+                        <span className="text-[#E5B21D] font-bold">[FS] Financial Systems:</span>
+                        <p className="text-slate-300 font-sans text-xs mt-0.5">Reconciliation engines, invoice audit, multi-entity ledger integrity.</p>
+                      </div>
+                      <div className="p-2.5 rounded-lg bg-[#070E17] border border-white/10">
+                        <span className="text-[#E5B21D] font-bold">[WA] Workflows &amp; Automation:</span>
+                        <p className="text-slate-300 font-sans text-xs mt-0.5">Cross-system event mesh, shop-floor sync, exception dispatch.</p>
+                      </div>
+                      <div className="p-2.5 rounded-lg bg-[#070E17] border border-white/10">
+                        <span className="text-[#E5B21D] font-bold">[AS] Agentic Systems:</span>
+                        <p className="text-slate-300 font-sans text-xs mt-0.5">Autonomous agent pods, custom API bridges, private LLM runtimes.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="p-3 rounded-lg bg-[#E5B21D]/10 border border-[#E5B21D]/30 flex items-center justify-between">
+                    <span className="font-mono text-slate-200">
+                      Active selections across all engines: <strong className="text-[#E5B21D]">{totalItems} configured</strong>
+                    </span>
+                  </div>
+                </div>
+              )}
+
+              {activeProtocolStep === "step2" && (
+                <div className="space-y-4">
+                  <div className="p-3.5 rounded-xl bg-white/5 border border-white/10">
+                    <h4 className="font-serif text-sm font-bold text-white mb-1">
+                      Why Context Dictates Delivery Speed
+                    </h4>
+                    <p>
+                      Deliverables never succeed in a vacuum. Scoping a high-velocity 2 to 4 week block requires understanding which ERPs are live, what legacy databases must not break, and where past integrators or vendors became stalled.
+                    </p>
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="font-mono text-[11px] font-bold text-[#E5B21D] uppercase tracking-wider block">
+                      Operating Context &amp; Constraints Editor:
+                    </label>
+                    <textarea
+                      value={generalNotes}
+                      onChange={(e) => handleGeneralNotesChange(e.target.value)}
+                      spellCheck={true}
+                      rows={5}
+                      placeholder="e.g. NetSuite ERP cutover off-track by 6 weeks; legacy EDI flat-files failing with warehouse 3PL; need independent technical steer..."
+                      className="w-full p-3.5 text-xs rounded-lg border border-white/20 bg-[#070E17] text-white font-sans placeholder:text-slate-500 focus:outline-none focus:border-[#E5B21D] focus:ring-1 focus:ring-[#E5B21D] leading-relaxed resize-none"
+                    />
+                    <p className="text-[11px] text-slate-400 font-mono">
+                      &bull; Edits made here immediately sync to your active project scope manifest.
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {activeProtocolStep === "step3" && (
+                <div className="space-y-4">
+                  <div className="p-3.5 rounded-xl bg-[#0E1E32] border border-[#E5B21D]/40 space-y-1.5">
+                    <div className="font-mono font-bold text-[#E5B21D] text-sm">
+                      1 BLOCK = 2 TO 4 WEEKS
+                    </div>
+                    <p className="text-slate-200">
+                      The core delivery standard of idigdata. Each Block is a discrete 2 to 4 week execution unit: 2 weeks of dedicated hands-on engineering build sprint, plus 1 to 2 weeks of verification suites, live cutover stabilization, and team handoff.
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 font-mono text-xs">
+                    <div className="p-3 rounded-lg bg-white/5 border border-white/10 space-y-1">
+                      <div className="font-bold text-white">Outcome Depth</div>
+                      <p className="text-slate-300 font-sans text-xs">
+                        Outcomes vary in complexity. Some project mandates combine multiple outcomes into a single block; complex multi-entity cutovers require dedicated blocks.
+                      </p>
+                    </div>
+                    <div className="p-3 rounded-lg bg-white/5 border border-white/10 space-y-1">
+                      <div className="font-bold text-white">Firm Scoping Turnaround</div>
+                      <p className="text-slate-300 font-sans text-xs">
+                        Within 1 business day of receiving your scope and context, our principals return an exact block allocation, schedule, and fixed quote.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="p-3 rounded-lg bg-white/5 border border-white/10 text-[11px] font-mono flex justify-between items-center text-slate-300">
+                    <span>Active Selected Scope:</span>
+                    <strong className="text-[#E5B21D]">{totalItems} outcomes configured</strong>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Modal Footer */}
+            <div className="p-4 border-t border-white/10 bg-[#070E17] flex items-center justify-between gap-3 shrink-0">
+              <span className="text-[11px] font-mono text-slate-400">
+                1 Block = 2 to 4 Weeks &middot; idigdata Delivery Standard
+              </span>
+
+              {activeProtocolStep === "step1" && (
+                <button
+                  type="button"
+                  onClick={() => setActiveProtocolStep(null)}
+                  className="px-4 py-2 rounded-lg bg-[#E5B21D] hover:bg-amber-400 text-[#070E17] font-serif font-bold text-xs uppercase tracking-wider cursor-pointer"
+                >
+                  Explore Configurators Below &darr;
+                </button>
+              )}
+
+              {activeProtocolStep === "step2" && (
+                <button
+                  type="button"
+                  onClick={() => setActiveProtocolStep(null)}
+                  className="px-4 py-2 rounded-lg bg-[#E5B21D] hover:bg-amber-400 text-[#070E17] font-serif font-bold text-xs uppercase tracking-wider cursor-pointer"
+                >
+                  Save Context &amp; Close &rarr;
+                </button>
+              )}
+
+              {activeProtocolStep === "step3" && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setActiveProtocolStep(null);
+                    setIsQuoteModalOpen(true);
+                  }}
+                  className="px-4 py-2 rounded-lg bg-[#E5B21D] hover:bg-amber-400 text-[#070E17] font-serif font-bold text-xs uppercase tracking-wider cursor-pointer shadow-[0_0_15px_rgba(229,178,29,0.3)]"
+                >
+                  Request Delivery Quote &rarr;
+                </button>
+              )}
+            </div>
+
+          </div>
+        </div>
+      )}
 
       {/* 4. EXPANSIVE COCKPIT CONFIGURATOR (CONFIGURATORS 01-05): TACTILE OUTCOME GRID + OPERATING CONTEXT WINDOW */}
       {activeModalDomainId && activeModalDomainId !== "agentic_systems" && activeDomain && (() => {
@@ -816,7 +1073,7 @@ export default function TheBlockPage() {
                     </h4>
                     
                     <p className="text-xs text-slate-300 mt-1 leading-relaxed shrink-0">
-                      What systems are in play, what is broken, or what specific operating constraints should Capo know when scoping your blocks?
+                      What systems are in play, what is broken, or what specific operating constraints should we know when scoping your blocks?
                     </p>
 
                     <textarea
@@ -1077,7 +1334,7 @@ export default function TheBlockPage() {
                       <strong className="text-[#E5B21D] font-bold">1 Block = 2 to 4 Weeks</strong>
                     </div>
                     <div className="text-[10px] text-slate-400 pt-1 border-t border-white/10">
-                      Capo reviews your technical dependencies and returns an exact block allocation.
+                      We review your technical dependencies and return an exact block allocation.
                     </div>
                   </div>
 
