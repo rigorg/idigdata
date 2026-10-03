@@ -309,52 +309,33 @@ export default function TheBlockPage() {
       {/* 1. TOP COMMAND BAR (BADASS DARK AESTHETIC - DOCKED UNDER HEADER) */}
       <section className="bg-[#0B1624]/95 backdrop-blur-md border-b border-white/10 text-white sticky top-[69px] md:top-[85px] z-30 shadow-2xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2.5 sm:py-3">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 lg:gap-4">
+          <div className="flex flex-col md:grid md:grid-cols-[1fr_auto_1fr] items-center gap-3 md:gap-4">
             
-            {/* Left: Brand Lockup */}
-            <div className="flex items-center gap-3 shrink-0">
+            {/* Left: Brand Lockup (Clean: Logo + THE BLOCK) */}
+            <div className="flex items-center gap-2.5 justify-start shrink-0">
               <TheBlockLogo variant="gold" size="md" showWordmark={false} />
-              <div className="flex items-center gap-2">
-                <span className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-white leading-none">
-                  THE BLOCK
-                </span>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#E5B21D]/15 text-[#E5B21D] border border-[#E5B21D]/30 font-bold uppercase tracking-wider">
-                  CAPABILITY STOREFRONT
-                </span>
-                <span className="text-[11px] font-mono text-slate-400 hidden xl:inline">
-                  &middot; by idigdata
-                </span>
-              </div>
+              <span className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-white leading-none">
+                THE BLOCK
+              </span>
             </div>
 
-            {/* Center: The Core Essence Statement (Bigger, Centered, Single-Line, with Gold "Ting") */}
-            <div className="flex-1 flex items-center justify-center text-center px-2 py-0.5 lg:py-0">
-              <p className="font-display italic text-sm sm:text-base lg:text-[17px] text-[#F7F5EE] tracking-tight leading-none drop-shadow-xs lg:whitespace-nowrap">
-                <span className="text-[#E5B21D] font-serif not-italic text-base sm:text-lg mr-1 select-none">&ldquo;</span>
+            {/* Center: The Core Pitch (Centered Horizontally, Elevated Typography with Gold Ting) */}
+            <div className="flex items-center justify-center text-center px-2 py-0.5 md:py-0">
+              <p className="font-display italic text-base sm:text-lg lg:text-xl text-[#F7F5EE] tracking-tight leading-none drop-shadow-sm md:whitespace-nowrap">
+                <span className="text-[#E5B21D] font-serif not-italic text-lg sm:text-xl lg:text-2xl mr-1 select-none drop-shadow-[0_0_8px_rgba(229,178,29,0.35)]">&ldquo;</span>
                 What do you want your business to be able to do?
-                <span className="text-[#E5B21D] font-serif not-italic text-base sm:text-lg ml-0.5 select-none">&rdquo;</span>
+                <span className="text-[#E5B21D] font-serif not-italic text-lg sm:text-xl lg:text-2xl ml-0.5 select-none drop-shadow-[0_0_8px_rgba(229,178,29,0.35)]">&rdquo;</span>
               </p>
             </div>
 
-            {/* Right: 1 Block = 2-4 Weeks Anchor + Action Button */}
-            <div className="flex items-center gap-2.5 sm:gap-3 self-end lg:self-auto shrink-0">
-              
-              {/* Delivery standard anchor pill (Strictly 1 Block = 2 to 4 Weeks; zero outcome count equation) */}
+            {/* Right: 1 Block = 2-4 Weeks Delivery Standard Anchor */}
+            <div className="flex items-center justify-end shrink-0">
               <div className="px-3.5 py-1.5 rounded-lg bg-[#E5B21D]/10 border border-[#E5B21D]/30 text-xs font-mono flex items-center gap-2 shadow-xs">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#E5B21D] animate-pulse" />
-                <span className="text-[#E5B21D] font-bold tracking-wide">
+                <span className="text-[#E5B21D] font-bold tracking-wide whitespace-nowrap">
                   1 Block = 2 to 4 Weeks
                 </span>
               </div>
-
-              <button
-                type="button"
-                onClick={() => setIsQuoteModalOpen(true)}
-                className="px-4 py-1.5 sm:py-2 rounded-lg bg-[#E5B21D] hover:bg-amber-400 text-[#070E17] font-serif font-bold text-xs uppercase tracking-wider transition-all cursor-pointer shadow-[0_0_15px_rgba(229,178,29,0.25)] flex items-center gap-1.5"
-              >
-                <span>Request Delivery Quote</span>
-                <span>&rarr;</span>
-              </button>
             </div>
 
           </div>
