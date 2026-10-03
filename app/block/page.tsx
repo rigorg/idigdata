@@ -1,20 +1,21 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import Link from "next/link";
 import { TheBlockLogo } from "@/components/TheBlockLogo";
 import {
   PUBLIC_OUTCOME_DOMAINS,
   PUBLIC_CATALOG_ITEMS,
+  CatalogItem,
 } from "@/lib/catalog";
 import {
   useEngagementDraft,
-  ENGAGEMENT_CONTACT_URL,
 } from "@/lib/engagement-draft";
 
-// Strictly: 0 dollars, 0 phone numbers, ASCII hyphens only.
-// Capo Badass Dark Theme: sovereign, executive flight deck aesthetic.
-// Capo Law: 1 Block = 2 to 4 Weeks. Client selects outcomes, Capo quotes blocks.
+// Strictly: 0 dollars ($), 0 phone numbers, ASCII hyphens only.
+// Sovereign executive flight deck aesthetic.
+// Delivery Standard: 1 Block = 2 to 4 Weeks. Client selects outcomes, we quote blocks.
+// Client-facing voice: strictly collective sovereign voice ("We", "Our team", "Our principals").
 
 interface DomainItem {
   id: string;
@@ -23,100 +24,196 @@ interface DomainItem {
   subtitle: string;
   essence: string;
   badge?: string;
+  archetype?: string;
+  accentColor?: string;
 }
 
 const AGENTIC_DOMAIN: DomainItem = {
   id: "agentic_systems",
   code: "AS",
   name: "Agentic Systems & Bespoke Software",
-  subtitle: "Boutique engineering pod, private AI runtimes, custom API bridges, and autonomous event meshes",
+  subtitle: "Boutique engineering pod delivering private AI runtimes, custom API bridges, and autonomous event meshes",
   essence: "We engineer production-grade applications, custom API bridges, and autonomous workflows directly into your company repositories.",
   badge: "BESPOKE STOREFRONT",
+  archetype: "AUTONOMOUS AI POD FOUNDRY",
+  accentColor: "#E5B21D",
 };
 
 const AGENTIC_IDEA_SEEDS = [
-  "Autonomous Financial Reconciliation Agent",
-  "Multi-System Ingestion & Event Mesh",
+  "Autonomous Freight Invoice Reconciler",
   "Legacy ERP / EDI Integration Bridge",
+  "Multi-System Ingestion & Event Mesh",
   "Governed Executive Knowledge Engine",
   "Real-Time Operational Exception Dispatcher",
   "Custom Inventory Allocation Pipeline",
 ];
 
-const DOMAIN_SAMPLE_CAPABILITIES: Record<string, string[]> = {
-  leadership_direction: ["Executive IT Mandate", "Vendor Scope Reset", "Team Capability"],
-  it_business_systems: ["ERP & Cutover Readiness", "Platform Selection", "Reliable Services"],
-  data_knowledge: ["Consistent Records", "Traceable Reporting", "Operational Truth"],
-  financial_systems: ["Reconciliation Engine", "Invoice Audit & Review", "Multi-Entity Ledger"],
-  workflows_automation: ["Cross-System Integrations", "Exception Dispatcher", "Process Automation"],
-  agentic_systems: ["Private AI Runtimes", "Custom API Bridges", "Autonomous Event Meshes"],
+const DOMAIN_METADATA: Record<string, { archetype: string; accentBorder: string; accentGlow: string; tagBg: string }> = {
+  leadership_direction: {
+    archetype: "EXECUTIVE GOVERNANCE CONSOLE",
+    accentBorder: "border-amber-500/40",
+    accentGlow: "rgba(245, 158, 11, 0.2)",
+    tagBg: "bg-amber-500/15 text-amber-300 border-amber-500/30",
+  },
+  it_business_systems: {
+    archetype: "PLATFORM & CUTOVER WORKBENCH",
+    accentBorder: "border-cyan-500/40",
+    accentGlow: "rgba(6, 182, 212, 0.2)",
+    tagBg: "bg-cyan-500/15 text-cyan-300 border-cyan-500/30",
+  },
+  data_knowledge: {
+    archetype: "TRUTH ENGINE & LINEAGE MATRIX",
+    accentBorder: "border-indigo-500/40",
+    accentGlow: "rgba(99, 102, 241, 0.2)",
+    tagBg: "bg-indigo-500/15 text-indigo-300 border-indigo-500/30",
+  },
+  financial_systems: {
+    archetype: "LEDGER & AUDIT INTEGRITY VAULT",
+    accentBorder: "border-emerald-500/40",
+    accentGlow: "rgba(16, 185, 129, 0.2)",
+    tagBg: "bg-emerald-500/15 text-emerald-300 border-emerald-500/30",
+  },
+  workflows_automation: {
+    archetype: "EVENT MESH & DISPATCH SWITCHBOARD",
+    accentBorder: "border-teal-500/40",
+    accentGlow: "rgba(20, 184, 166, 0.2)",
+    tagBg: "bg-teal-500/15 text-teal-300 border-teal-500/30",
+  },
+  agentic_systems: {
+    archetype: "AUTONOMOUS AI POD FOUNDRY",
+    accentBorder: "border-[#E5B21D]/60",
+    accentGlow: "rgba(229, 178, 29, 0.3)",
+    tagBg: "bg-[#E5B21D]/20 text-[#E5B21D] border-[#E5B21D]/40",
+  },
 };
 
-function IsometricBlockGlyph({
-  active = false,
-  highlight = false,
-  className = "w-6 h-6",
+// Gamified 3D Isometric Visualizer Reactor
+function IsometricBlockVisualizer({
+  totalItems,
+  activeDomainsCount,
+  activeDomainCodes,
 }: {
-  active?: boolean;
-  highlight?: boolean;
-  className?: string;
+  totalItems: number;
+  activeDomainsCount: number;
+  activeDomainCodes: string[];
 }) {
-  const strokeColor = highlight
-    ? "#E5B21D"
-    : active
-      ? "#E5B21D"
-      : "rgba(255, 255, 255, 0.4)";
-  const topFill = highlight
-    ? "rgba(229, 178, 29, 0.45)"
-    : active
-      ? "rgba(229, 178, 29, 0.28)"
-      : "rgba(255, 255, 255, 0.08)";
-  const leftFill = highlight
-    ? "rgba(229, 178, 29, 0.22)"
-    : active
-      ? "rgba(229, 178, 29, 0.14)"
-      : "rgba(255, 255, 255, 0.03)";
-  const rightFill = highlight
-    ? "rgba(229, 178, 29, 0.32)"
-    : active
-      ? "rgba(229, 178, 29, 0.2)"
-      : "rgba(255, 255, 255, 0.05)";
+  const isStandby = totalItems === 0;
 
   return (
-    <svg
-      viewBox="0 0 28 28"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={`${className} transition-all duration-300 ${
-        active || highlight ? "drop-shadow-[0_0_8px_rgba(229,178,29,0.5)]" : ""
-      }`}
-      aria-hidden="true"
-    >
-      <polygon
-        points="14,3 24,8.5 14,14 4,8.5"
-        fill={topFill}
-        stroke={strokeColor}
-        strokeWidth="1.2"
-        strokeLinejoin="round"
+    <div className="relative flex flex-col items-center justify-center p-4 sm:p-5 rounded-2xl bg-[#070E17] border border-white/15 overflow-hidden shadow-2xl group">
+      {/* Background ambient radar / energy mesh */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-40 transition-opacity duration-500"
+        style={{
+          backgroundImage: isStandby
+            ? "radial-gradient(circle at 50% 50%, rgba(229, 178, 29, 0.05) 0%, transparent 70%)"
+            : "radial-gradient(circle at 50% 50%, rgba(229, 178, 29, 0.2) 0%, rgba(14, 30, 50, 0.4) 60%, transparent 100%)",
+        }}
       />
-      <polygon
-        points="4,8.5 14,14 14,25 4,19.5"
-        fill={leftFill}
-        stroke={strokeColor}
-        strokeWidth="1.2"
-        strokeLinejoin="round"
-      />
-      <polygon
-        points="14,14 24,8.5 24,19.5 14,25"
-        fill={rightFill}
-        stroke={strokeColor}
-        strokeWidth="1.2"
-        strokeLinejoin="round"
-      />
-      {(active || highlight) && (
-        <circle cx="14" cy="14" r="1.5" fill="#E5B21D" />
-      )}
-    </svg>
+
+      {/* Isometric 3D Reactor Block SVG */}
+      <div className="relative w-36 h-36 sm:w-44 sm:h-44 transition-transform duration-500 group-hover:scale-105">
+        <svg
+          viewBox="0 0 160 160"
+          className="w-full h-full drop-shadow-[0_10px_25px_rgba(0,0,0,0.8)]"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          {/* Base Grid Plinth */}
+          <polygon
+            points="80,120 140,90 80,60 20,90"
+            fill="rgba(11, 22, 36, 0.8)"
+            stroke={isStandby ? "rgba(255,255,255,0.15)" : "rgba(229,178,29,0.4)"}
+            strokeWidth="1.2"
+            strokeDasharray={isStandby ? "4,4" : "none"}
+          />
+
+          {/* Isometric Cube Faces */}
+          {/* Top Face */}
+          <polygon
+            points="80,24 135,53 80,82 25,53"
+            fill={isStandby ? "rgba(255, 255, 255, 0.05)" : "rgba(229, 178, 29, 0.5)"}
+            stroke={isStandby ? "rgba(255,255,255,0.25)" : "#E5B21D"}
+            strokeWidth={isStandby ? "1.2" : "2"}
+            className="transition-all duration-300"
+          />
+
+          {/* Left Face */}
+          <polygon
+            points="25,53 80,82 80,136 25,107"
+            fill={isStandby ? "rgba(255, 255, 255, 0.02)" : "rgba(180, 138, 5, 0.35)"}
+            stroke={isStandby ? "rgba(255,255,255,0.2)" : "rgba(229, 178, 29, 0.7)"}
+            strokeWidth={isStandby ? "1.2" : "1.8"}
+            className="transition-all duration-300"
+          />
+
+          {/* Right Face */}
+          <polygon
+            points="80,82 135,53 135,107 80,136"
+            fill={isStandby ? "rgba(255, 255, 255, 0.04)" : "rgba(229, 178, 29, 0.35)"}
+            stroke={isStandby ? "rgba(255,255,255,0.25)" : "#E5B21D"}
+            strokeWidth={isStandby ? "1.2" : "1.8"}
+            className="transition-all duration-300"
+          />
+
+          {/* Active Internal Core Lines & Nodes */}
+          {!isStandby && (
+            <>
+              {/* Internal vertical core light */}
+              <line x1="80" y1="24" x2="80" y2="136" stroke="#FFFFFF" strokeWidth="1" strokeOpacity="0.7" />
+              {/* Energy Nodes */}
+              <circle cx="80" cy="82" r="4.5" fill="#FFFFFF" className="animate-pulse" />
+              <circle cx="80" cy="82" r="8" stroke="#E5B21D" strokeWidth="1.5" strokeOpacity="0.8" />
+              <circle cx="80" cy="24" r="2.5" fill="#E5B21D" />
+              <circle cx="135" cy="53" r="2.5" fill="#E5B21D" />
+              <circle cx="25" cy="53" r="2.5" fill="#E5B21D" />
+              <circle cx="80" cy="136" r="2.5" fill="#E5B21D" />
+            </>
+          )}
+
+          {isStandby && (
+            <circle cx="80" cy="82" r="3" fill="rgba(255,255,255,0.3)" />
+          )}
+        </svg>
+
+        {/* Pulse beacon badge */}
+        {!isStandby && (
+          <span className="absolute -top-1 -right-1 flex h-3.5 w-3.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E5B21D] opacity-75" />
+            <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#E5B21D]" />
+          </span>
+        )}
+      </div>
+
+      {/* Assembly Status Caption */}
+      <div className="mt-3 text-center">
+        <div className="font-mono text-[11px] font-bold uppercase tracking-wider text-slate-400">
+          {isStandby ? (
+            <span className="text-slate-400">AWAITING SELECTION &middot; STANDBY</span>
+          ) : totalItems <= 3 ? (
+            <span className="text-[#E5B21D] font-bold">1 BLOCK FORMATION ACTIVATED</span>
+          ) : (
+            <span className="text-[#E5B21D] font-bold">MULTI-BLOCK CADENCE ACTIVATED</span>
+          )}
+        </div>
+
+        {/* Active Engine Pill Bar */}
+        <div className="flex items-center justify-center gap-1.5 mt-2 flex-wrap">
+          {activeDomainCodes.length > 0 ? (
+            activeDomainCodes.map((code) => (
+              <span
+                key={code}
+                className="text-[9px] font-mono font-bold px-1.5 py-0.5 rounded bg-[#E5B21D]/20 text-[#E5B21D] border border-[#E5B21D]/40"
+              >
+                [{code}]
+              </span>
+            ))
+          ) : (
+            <span className="text-[10px] font-mono text-slate-400">0 of 6 Engines Wired</span>
+          )}
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -126,8 +223,16 @@ export default function TheBlockPage() {
   const [agenticNotes, setAgenticNotes] = useState<string>("");
   const [generalNotes, setGeneralNotes] = useState<string>("");
   const [activeModalDomainId, setActiveModalDomainId] = useState<string | null>(null);
-  const [activeProtocolStep, setActiveProtocolStep] = useState<"step1" | "step2" | "step3" | null>(null);
-  const [domainFilter, setDomainFilter] = useState<"all" | "finite" | "ongoing">("all");
+  
+  // Interactive Wiki & Protocol Spec Drawer
+  const [isWikiOpen, setIsWikiOpen] = useState<boolean>(false);
+  const [activeWikiTab, setActiveWikiTab] = useState<"rule1" | "rule2" | "rule3">("rule1");
+
+  // Filtering on Command Board
+  const [activeFilter, setActiveFilter] = useState<"all" | "finite" | "ongoing" | "active">("all");
+
+  // Expandable items state for domains with many outcomes (e.g. LD with 7 items)
+  const [expandedDomainIds, setExpandedDomainIds] = useState<Set<string>>(new Set());
 
   // Quote modal state
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState<boolean>(false);
@@ -218,6 +323,18 @@ export default function TheBlockPage() {
     handleAgenticNotesChange(next);
   };
 
+  const toggleDomainExpanded = (domainId: string) => {
+    setExpandedDomainIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(domainId)) {
+        next.delete(domainId);
+      } else {
+        next.add(domainId);
+      }
+      return next;
+    });
+  };
+
   const handleResetScope = () => {
     setSelectedIds(new Set());
     setAgenticNotes("");
@@ -236,14 +353,21 @@ export default function TheBlockPage() {
   const totalItems = catalogCount + (hasAgentic ? 1 : 0);
 
   // Group selected items by domain
-  const activeDomainsCount = new Set(
-    Array.from(selectedIds)
-      .map((id) => PUBLIC_CATALOG_ITEMS.find((it) => it.id === id)?.domainId)
-      .filter(Boolean)
-  ).size + (hasAgentic ? 1 : 0);
+  const activeDomainCodes = useMemo(() => {
+    const codes = new Set<string>();
+    Array.from(selectedIds).forEach((id) => {
+      const it = PUBLIC_CATALOG_ITEMS.find((c) => c.id === id);
+      const dom = PUBLIC_OUTCOME_DOMAINS.find((d) => d.id === it?.domainId);
+      if (dom) codes.add(dom.code);
+    });
+    if (hasAgentic) codes.add("AS");
+    return Array.from(codes);
+  }, [selectedIds, hasAgentic]);
+
+  const activeDomainsCount = activeDomainCodes.length;
 
   // Active domain for modal
-  const allDomains: DomainItem[] = [...PUBLIC_OUTCOME_DOMAINS, AGENTIC_DOMAIN];
+  const allDomains: DomainItem[] = useMemo(() => [...PUBLIC_OUTCOME_DOMAINS, AGENTIC_DOMAIN], []);
   const activeDomain = allDomains.find((d) => d.id === activeModalDomainId);
 
   // Submit quote handler (Transmits exact scope manifest to Capo)
@@ -319,12 +443,12 @@ export default function TheBlockPage() {
       }}
     >
       
-      {/* 1. TOP COMMAND BAR (BADASS DARK AESTHETIC - DOCKED UNDER HEADER) */}
+      {/* 1. TOP COMMAND BAR (ELEVATED TYPOGRAPHY WITH GOLD TING QUOTES) */}
       <section className="bg-[#0B1624]/95 backdrop-blur-md border-b border-white/10 text-white sticky top-[69px] md:top-[85px] z-30 shadow-2xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2.5 sm:py-3">
           <div className="flex flex-col md:grid md:grid-cols-[1fr_auto_1fr] items-center gap-3 md:gap-4">
             
-            {/* Left: Brand Lockup (Clean: Logo + THE BLOCK) */}
+            {/* Left: Brand Lockup */}
             <div className="flex items-center gap-2.5 justify-start shrink-0">
               <TheBlockLogo variant="gold" size="md" showWordmark={false} />
               <span className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-white leading-none">
@@ -332,7 +456,7 @@ export default function TheBlockPage() {
               </span>
             </div>
 
-            {/* Center: The Core Pitch (Centered Horizontally, Elevated Typography with Gold Ting) */}
+            {/* Center: The Core Question (Centered Horizontally, Elevated Typography with Gold Ting) */}
             <div className="flex items-center justify-center text-center px-2 py-0.5 md:py-0">
               <p className="font-display italic text-base sm:text-lg lg:text-xl text-[#F7F5EE] tracking-tight leading-none drop-shadow-sm md:whitespace-nowrap">
                 <span className="text-[#E5B21D] font-serif not-italic text-lg sm:text-xl lg:text-2xl mr-1 select-none drop-shadow-[0_0_8px_rgba(229,178,29,0.35)]">&ldquo;</span>
@@ -341,13 +465,15 @@ export default function TheBlockPage() {
               </p>
             </div>
 
-            {/* Right: 1 Block = 2-4 Weeks Delivery Standard Anchor (Clickable Definition) */}
+            {/* Right: 1 Block = 2-4 Weeks Delivery Standard Anchor (Opens Wiki Rule 3) */}
             <div className="flex items-center justify-end shrink-0">
-              <div
-                onClick={() => setActiveProtocolStep("step3")}
-                role="button"
-                tabIndex={0}
-                title="Click to view Block Delivery Model definition"
+              <button
+                type="button"
+                onClick={() => {
+                  setActiveWikiTab("rule3");
+                  setIsWikiOpen(true);
+                }}
+                title="Click to view Delivery Standard Specification"
                 className="px-3.5 py-1.5 rounded-lg bg-[#E5B21D]/10 hover:bg-[#E5B21D]/20 border border-[#E5B21D]/30 hover:border-[#E5B21D]/60 text-xs font-mono flex items-center gap-2 shadow-xs cursor-pointer transition-all duration-150"
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-[#E5B21D] animate-pulse" />
@@ -355,351 +481,556 @@ export default function TheBlockPage() {
                   1 Block = 2 to 4 Weeks
                 </span>
                 <span className="text-[10px] text-slate-400 group-hover:text-white">&rarr;</span>
-              </div>
+              </button>
             </div>
 
           </div>
         </div>
       </section>
 
-      {/* 2. THE 6 OPERATIONAL BLOCKS (PANORAMIC COMMAND BOARD - DARK AESTHETIC) */}
-      <section className="py-7 max-w-7xl mx-auto px-4 sm:px-6">
-        
-        {/* 3-STEP ENTERPRISE SCOPING PROTOCOL & ENGINE DECK */}
-        <div className="mb-6 rounded-2xl bg-[#0B1624]/90 border border-white/15 p-4 sm:p-5 shadow-2xl backdrop-blur-md">
-          {/* Top telemetry & protocol identity bar */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 pb-3 mb-3.5 border-b border-white/10">
+      {/* 2. DISTINCT INSTRUCTIONAL PROTOCOL WIKI / HANDBOOK (NOT CLUTTERING THE CONFIGURATOR) */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 pt-5">
+        <div className="rounded-xl border border-white/10 bg-[#0B1624]/60 backdrop-blur-md overflow-hidden transition-all duration-200">
+          
+          {/* Wiki Ribbon Header (Toggleable Specification Strip) */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between px-4 py-3 gap-2 bg-[#070E17]/80 border-b border-white/5">
             <div className="flex items-center gap-2.5">
-              <span className="w-2 h-2 rounded-full bg-[#E5B21D] shadow-[0_0_8px_#E5B21D] animate-pulse" />
-              <h2 className="font-mono text-xs font-bold uppercase tracking-wider text-white">
-                Enterprise Scoping Protocol
-              </h2>
-              <span className="text-slate-500 font-mono text-xs">&middot;</span>
-              <span className="text-xs font-mono text-[#E5B21D] font-bold">
-                6 Operating Engines
+              <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-white/10 text-slate-300 border border-white/10">
+                PROTOCOL SPEC
+              </span>
+              <span className="text-xs font-mono text-slate-300 font-semibold">
+                Delivery Instructions &amp; Scoping Wiki
+              </span>
+              <span className="hidden md:inline text-slate-600">&bull;</span>
+              <span className="hidden md:inline text-xs font-mono text-slate-400">
+                Rule 01: Outcome Scoping &middot; Rule 02: Operating Context &middot; Rule 03: 1 Block = 2 to 4 Weeks
               </span>
             </div>
 
-            <div className="flex items-center gap-3 text-xs font-mono">
-              {totalItems > 0 ? (
-                <div className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#E5B21D] animate-pulse" />
-                  <span className="text-[#E5B21D] font-bold">
-                    {totalItems} {totalItems === 1 ? "Outcome" : "Outcomes"} in Scope (Draft Saved)
-                  </span>
-                  <span className="text-slate-500">&middot;</span>
+            <button
+              type="button"
+              onClick={() => setIsWikiOpen(!isWikiOpen)}
+              className="inline-flex items-center gap-1.5 text-xs font-mono text-[#E5B21D] hover:text-amber-300 transition-colors cursor-pointer self-start sm:self-auto"
+            >
+              <span>{isWikiOpen ? "Hide Instructions & Wiki" : "Read Instructions & Wiki"}</span>
+              <span>{isWikiOpen ? "▴" : "▾"}</span>
+            </button>
+          </div>
+
+          {/* Expanded Wiki Body (Distinct Documentation View) */}
+          {isWikiOpen && (
+            <div className="p-5 sm:p-6 bg-[#09121E] border-t border-white/5 space-y-4 animate-in fade-in duration-200">
+              {/* Wiki Navigation Tabs */}
+              <div className="flex items-center gap-2 border-b border-white/10 pb-3">
+                <button
+                  type="button"
+                  onClick={() => setActiveWikiTab("rule1")}
+                  className={`text-xs font-mono px-3 py-1.5 rounded-lg border transition-colors cursor-pointer ${
+                    activeWikiTab === "rule1"
+                      ? "bg-[#E5B21D] text-[#070E17] font-bold border-[#E5B21D]"
+                      : "bg-white/5 text-slate-300 border-white/10 hover:bg-white/10"
+                  }`}
+                >
+                  &sect; 01 Outcome Scoping
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setActiveWikiTab("rule2")}
+                  className={`text-xs font-mono px-3 py-1.5 rounded-lg border transition-colors cursor-pointer ${
+                    activeWikiTab === "rule2"
+                      ? "bg-[#E5B21D] text-[#070E17] font-bold border-[#E5B21D]"
+                      : "bg-white/5 text-slate-300 border-white/10 hover:bg-white/10"
+                  }`}
+                >
+                  &sect; 02 Operating Context
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setActiveWikiTab("rule3")}
+                  className={`text-xs font-mono px-3 py-1.5 rounded-lg border transition-colors cursor-pointer ${
+                    activeWikiTab === "rule3"
+                      ? "bg-[#E5B21D] text-[#070E17] font-bold border-[#E5B21D]"
+                      : "bg-white/5 text-slate-300 border-white/10 hover:bg-white/10"
+                  }`}
+                >
+                  &sect; 03 The 1-Block Law (2 to 4 Wks)
+                </button>
+              </div>
+
+              {/* Wiki Tab 1 */}
+              {activeWikiTab === "rule1" && (
+                <div className="space-y-3 text-xs leading-relaxed text-slate-300">
+                  <div className="font-mono text-sm font-bold text-white flex items-center gap-2">
+                    <span className="text-[#E5B21D]">&sect; 01.0</span>
+                    <span>Outcomes Over Headcounts: Choose Discrete Capabilities</span>
+                  </div>
+                  <p>
+                    Enterprise buyers do not buy generic advisory hours, open-ended retainers, or junior consultant headcounts. On The Block, you select discrete, verified business outcomes across 6 core operating engines.
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3 pt-1">
+                    <div className="p-3 rounded-lg bg-white/5 border border-white/10 font-mono text-[11px]">
+                      <span className="text-[#E5B21D] font-bold block mb-1">Finite Sprints (17)</span>
+                      Clear start, defined deliverables, verified acceptance, explicit cutover handoff.
+                    </div>
+                    <div className="p-3 rounded-lg bg-white/5 border border-white/10 font-mono text-[11px]">
+                      <span className="text-[#E5B21D] font-bold block mb-1">Executive Mandates (4)</span>
+                      Fractional CIO leadership, continuous cyber resilience, and governance gating.
+                    </div>
+                    <div className="p-3 rounded-lg bg-white/5 border border-white/10 font-mono text-[11px]">
+                      <span className="text-[#E5B21D] font-bold block mb-1">Bespoke Pods (AS)</span>
+                      Custom API bridges, autonomous agent loops, and private LLM event meshes.
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Wiki Tab 2 */}
+              {activeWikiTab === "rule2" && (
+                <div className="space-y-3 text-xs leading-relaxed text-slate-300">
+                  <div className="font-mono text-sm font-bold text-white flex items-center gap-2">
+                    <span className="text-[#E5B21D]">&sect; 02.0</span>
+                    <span>Operational Reality &amp; Constraints Dictate Speed</span>
+                  </div>
+                  <p>
+                    Capabilities never succeed in an abstract vacuum. Delivery feasibility depends on the live ERPs in play, legacy database schemas, third-party logistics (3PL) constraints, or stalled integrators. State your reality in the Context Window so our team quotes an accurate block allocation.
+                  </p>
+                  <div className="p-3 rounded-lg bg-white/5 border border-white/10 font-mono text-[11px] text-slate-300">
+                    <span className="text-[#E5B21D] font-bold block mb-0.5">Example Context Mandate:</span>
+                    &ldquo;NetSuite cutover stalled by off-track vendor; EDI 856 flat-files dropping from 3PL warehouse; need independent technical steer and cutover stabilization.&rdquo;
+                  </div>
+                </div>
+              )}
+
+              {/* Wiki Tab 3 */}
+              {activeWikiTab === "rule3" && (
+                <div className="space-y-3 text-xs leading-relaxed text-slate-300">
+                  <div className="font-mono text-sm font-bold text-white flex items-center gap-2">
+                    <span className="text-[#E5B21D]">&sect; 03.0</span>
+                    <span>The Delivery Standard: 1 Block = 2 to 4 Weeks</span>
+                  </div>
+                  <p>
+                    A Block is our fixed execution unit. Each Block represents 2 to 4 weeks of focused delivery: a 2-week hands-on engineering build sprint, followed by 1 to 2 weeks of verification suites, test scenarios, and cutover stabilization.
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
+                    <div className="p-3 rounded-lg bg-white/5 border border-white/10 font-mono text-[11px]">
+                      <span className="text-[#E5B21D] font-bold block mb-1">Deterministic Delivery</span>
+                      No open-ended retainers. You select the outcomes. Our principals analyze technical complexity and return an exact block allocation and schedule.
+                    </div>
+                    <div className="p-3 rounded-lg bg-white/5 border border-white/10 font-mono text-[11px]">
+                      <span className="text-[#E5B21D] font-bold block mb-1">Firm Turnaround</span>
+                      Within 1 business day of receiving your scope and context, we return an exact block quote and delivery schedule.
+                    </div>
+                  </div>
+                </div>
+              )}
+
+            </div>
+          )}
+
+        </div>
+      </section>
+
+      {/* 3. THE STAR OF THE SHOW: GAMIFIED BLOCK ASSEMBLY FLIGHT DECK */}
+      <section className="pt-6 pb-4 max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="p-5 sm:p-6 rounded-2xl bg-[#0B1624]/90 border border-white/15 shadow-2xl backdrop-blur-md">
+          
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            
+            {/* Left Col: 3D Isometric Reactor Visualizer */}
+            <div className="lg:col-span-4 flex justify-center">
+              <IsometricBlockVisualizer
+                totalItems={totalItems}
+                activeDomainsCount={activeDomainsCount}
+                activeDomainCodes={activeDomainCodes}
+              />
+            </div>
+
+            {/* Right Col: Assembly HUD & Live Gamified Telemetry */}
+            <div className="lg:col-span-8 space-y-4">
+              
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 pb-3 border-b border-white/10">
+                <div>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="w-2 h-2 rounded-full bg-[#E5B21D] shadow-[0_0_8px_#E5B21D] animate-pulse" />
+                    <span className="font-mono text-xs font-bold uppercase tracking-wider text-[#E5B21D]">
+                      INTERACTIVE BLOCK CONFIGURATOR
+                    </span>
+                    <span className="text-slate-500 font-mono text-xs">&middot;</span>
+                    <span className="text-xs font-mono text-slate-300">
+                      6 Specialized Engines
+                    </span>
+                  </div>
+                  <h2 className="font-serif text-xl sm:text-2xl font-bold text-white">
+                    Assemble Your Business Capabilities
+                  </h2>
+                </div>
+
+                {/* Instant Clean Slate / Reset Control */}
+                {totalItems > 0 && (
                   <button
                     type="button"
                     onClick={handleResetScope}
-                    className="text-[10px] text-slate-400 hover:text-rose-400 underline decoration-dotted cursor-pointer transition-colors"
-                    title="Reset all selections and start fresh from 0"
+                    className="self-start sm:self-auto px-3 py-1.5 rounded-lg bg-rose-500/10 hover:bg-rose-500/20 border border-rose-500/30 text-rose-300 text-xs font-mono flex items-center gap-1.5 transition-colors cursor-pointer"
                   >
-                    Reset to 0
+                    <span>Reset Build to 0</span>
+                    <span>&times;</span>
                   </button>
-                </div>
-              ) : (
-                <span className="text-slate-400">
-                  0 Outcomes in Scope &middot; Choose Capabilities Below
-                </span>
-              )}
-              <span className="hidden md:inline text-slate-600">&bull;</span>
-              <span className="hidden md:inline text-slate-400">Deterministic Sprint Architecture</span>
-            </div>
-          </div>
+                )}
+              </div>
 
-          {/* 3 Interconnected Execution Steps (Fully Clickable with Definitions) */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
-            
-            {/* Step 01 */}
-            <div
-              onClick={() => setActiveProtocolStep("step1")}
-              role="button"
-              tabIndex={0}
-              className="p-4 rounded-xl bg-white/5 border border-white/10 flex flex-col justify-between hover:border-[#E5B21D]/50 hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-150 cursor-pointer group shadow-sm"
-            >
-              <div>
-                <div className="flex items-center justify-between gap-2 mb-2">
-                  <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-[#E5B21D]/20 text-[#E5B21D] border border-[#E5B21D]/40 group-hover:bg-[#E5B21D] group-hover:text-[#070E17] transition-colors">
-                    STEP 01
-                  </span>
-                  <span className="text-[10px] font-mono text-slate-400 group-hover:text-slate-200 uppercase tracking-wider">
-                    Select Capabilities
-                  </span>
+              {/* Real-time Assembly Metrics Bar */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 font-mono text-xs">
+                <div className="p-3 rounded-xl bg-white/5 border border-white/10 space-y-1">
+                  <span className="text-slate-400 text-[10px] uppercase tracking-wider block">Outcomes Assembled</span>
+                  <div className="text-lg font-bold text-white flex items-baseline gap-1">
+                    <span className={totalItems > 0 ? "text-[#E5B21D]" : "text-white"}>{totalItems}</span>
+                    <span className="text-slate-500 text-xs">/ 21</span>
+                  </div>
                 </div>
-                <h3 className="font-serif text-sm font-bold text-white group-hover:text-[#E5B21D] transition-colors">
-                  Choose Business Outcomes
-                </h3>
-                <p className="text-xs text-slate-300 mt-1.5 leading-relaxed">
-                  Click any configurator below. Select the discrete deliverables your business needs to execute.
-                </p>
-              </div>
-              <div className="mt-3 pt-2.5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-[#E5B21D]">
-                <span>Click for Definition</span>
-                <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
-              </div>
-            </div>
 
-            {/* Step 02 */}
-            <div
-              onClick={() => setActiveProtocolStep("step2")}
-              role="button"
-              tabIndex={0}
-              className="p-4 rounded-xl bg-white/5 border border-white/10 flex flex-col justify-between hover:border-[#E5B21D]/50 hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-150 cursor-pointer group shadow-sm"
-            >
-              <div>
-                <div className="flex items-center justify-between gap-2 mb-2">
-                  <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-[#E5B21D]/20 text-[#E5B21D] border border-[#E5B21D]/40 group-hover:bg-[#E5B21D] group-hover:text-[#070E17] transition-colors">
-                    STEP 02
-                  </span>
-                  <span className="text-[10px] font-mono text-slate-400 group-hover:text-slate-200 uppercase tracking-wider">
-                    Context Window
-                  </span>
+                <div className="p-3 rounded-xl bg-white/5 border border-white/10 space-y-1">
+                  <span className="text-slate-400 text-[10px] uppercase tracking-wider block">Operating Engines</span>
+                  <div className="text-lg font-bold text-white flex items-baseline gap-1">
+                    <span className={activeDomainsCount > 0 ? "text-[#E5B21D]" : "text-white"}>{activeDomainsCount}</span>
+                    <span className="text-slate-500 text-xs">/ 6</span>
+                  </div>
                 </div>
-                <h3 className="font-serif text-sm font-bold text-white group-hover:text-[#E5B21D] transition-colors">
-                  State Systems &amp; Reality
-                </h3>
-                <p className="text-xs text-slate-300 mt-1.5 leading-relaxed">
-                  State your live ERP, vendor friction, team bottlenecks, or operational constraints in the context window.
-                </p>
-              </div>
-              <div className="mt-3 pt-2.5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-[#E5B21D]">
-                <span>Click for Context Guide</span>
-                <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
-              </div>
-            </div>
 
-            {/* Step 03 */}
-            <div
-              onClick={() => setActiveProtocolStep("step3")}
-              role="button"
-              tabIndex={0}
-              className="p-4 rounded-xl bg-[#0E1E32]/70 border border-[#E5B21D]/30 flex flex-col justify-between hover:border-[#E5B21D]/70 hover:bg-[#0E1E32] hover:-translate-y-0.5 transition-all duration-150 cursor-pointer group shadow-xs"
-            >
-              <div>
-                <div className="flex items-center justify-between gap-2 mb-2">
-                  <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-[#E5B21D] text-[#070E17]">
-                    STEP 03
-                  </span>
-                  <span className="text-[10px] font-mono text-[#E5B21D] font-bold uppercase tracking-wider">
-                    Block Allocation
-                  </span>
+                <div className="p-3 rounded-xl bg-white/5 border border-white/10 space-y-1">
+                  <span className="text-slate-400 text-[10px] uppercase tracking-wider block">Delivery Unit</span>
+                  <div className="text-sm font-bold text-[#E5B21D] leading-tight">
+                    1 Block
+                    <span className="block text-[10px] text-slate-400 font-normal">2 to 4 Weeks</span>
+                  </div>
                 </div>
-                <h3 className="font-serif text-sm font-bold text-white group-hover:text-[#E5B21D] transition-colors">
-                  We Quote 2 to 4 Week Blocks
-                </h3>
-                <p className="text-xs text-slate-300 mt-1.5 leading-relaxed">
-                  No open-ended retainers. We review your context and return an exact block allocation and schedule.
-                </p>
+
+                <div className="p-3 rounded-xl bg-white/5 border border-white/10 space-y-1">
+                  <span className="text-slate-400 text-[10px] uppercase tracking-wider block">Draft Persistence</span>
+                  <div className="text-xs font-bold text-emerald-400 flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                    <span>Multi-Day Saved</span>
+                  </div>
+                  <span className="block text-[9px] text-slate-400 font-mono">Retained on reload</span>
+                </div>
               </div>
-              <div className="mt-3 pt-2.5 border-t border-[#E5B21D]/20 flex items-center justify-between text-[11px] font-mono text-[#E5B21D]">
-                <span>Click for Delivery Model</span>
-                <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
+
+              {/* Interactive Engine Filter Switchboard */}
+              <div className="flex flex-wrap items-center gap-2 pt-1 text-xs font-mono">
+                <span className="text-slate-400 text-[11px] mr-1">Filter View:</span>
+                <button
+                  type="button"
+                  onClick={() => setActiveFilter("all")}
+                  className={`px-3 py-1 rounded-lg border transition-colors cursor-pointer ${
+                    activeFilter === "all"
+                      ? "bg-[#E5B21D] text-[#070E17] font-bold border-[#E5B21D]"
+                      : "bg-white/5 text-slate-300 border-white/10 hover:bg-white/10"
+                  }`}
+                >
+                  All 6 Engines
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setActiveFilter("finite")}
+                  className={`px-3 py-1 rounded-lg border transition-colors cursor-pointer ${
+                    activeFilter === "finite"
+                      ? "bg-[#E5B21D] text-[#070E17] font-bold border-[#E5B21D]"
+                      : "bg-white/5 text-slate-300 border-white/10 hover:bg-white/10"
+                  }`}
+                >
+                  Finite Sprints (17)
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setActiveFilter("ongoing")}
+                  className={`px-3 py-1 rounded-lg border transition-colors cursor-pointer ${
+                    activeFilter === "ongoing"
+                      ? "bg-[#E5B21D] text-[#070E17] font-bold border-[#E5B21D]"
+                      : "bg-white/5 text-slate-300 border-white/10 hover:bg-white/10"
+                  }`}
+                >
+                  Executive Mandates (4)
+                </button>
+                {totalItems > 0 && (
+                  <button
+                    type="button"
+                    onClick={() => setActiveFilter("active")}
+                    className={`px-3 py-1 rounded-lg border transition-colors cursor-pointer ${
+                      activeFilter === "active"
+                        ? "bg-[#E5B21D] text-[#070E17] font-bold border-[#E5B21D]"
+                        : "bg-[#E5B21D]/15 text-[#E5B21D] border-[#E5B21D]/30 hover:bg-[#E5B21D]/25"
+                    }`}
+                  >
+                    Active in Scope ({totalItems})
+                  </button>
+                )}
               </div>
+
             </div>
 
           </div>
+
         </div>
+      </section>
 
-        {/* 6 Blocks Grid (3x2 on desktop, architectural modular blocks) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+      {/* 4. THE 6 UNIQUE CONFIGURATORS: EACH IS ITS OWN FUNCTIONAL, TACTILE MINI-CONFIGURATOR */}
+      <section className="py-6 max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {allDomains.map((domain, idx) => {
             const isAgentic = domain.id === "agentic_systems";
             const blockNum = String(idx + 1).padStart(2, "0");
+            const meta = DOMAIN_METADATA[domain.id] || DOMAIN_METADATA.leadership_direction;
             
             // Domain items count
             const domainItems = PUBLIC_CATALOG_ITEMS.filter((it) => it.domainId === domain.id);
+            const filteredDomainItems = domainItems.filter((it) => {
+              if (activeFilter === "finite") return it.kind === "finite";
+              if (activeFilter === "ongoing") return it.kind === "ongoing";
+              if (activeFilter === "active") return selectedIds.has(it.id);
+              return true;
+            });
+
             const domainSelectedCount = isAgentic
               ? hasAgentic ? 1 : 0
               : domainItems.filter((it) => selectedIds.has(it.id)).length;
             const isBlockActive = domainSelectedCount > 0;
+            const isExpanded = expandedDomainIds.has(domain.id);
+
+            // In LD, show top 3 outcomes, and collapse remaining 4 if not expanded
+            const visibleItems = isExpanded || domainItems.length <= 4
+              ? filteredDomainItems
+              : filteredDomainItems.slice(0, 3);
+            const remainingCount = filteredDomainItems.length - visibleItems.length;
 
             return (
               <div
                 key={domain.id}
-                onClick={() => setActiveModalDomainId(domain.id)}
-                className={`group relative rounded-xl border-t-2 border-l border-r border-b-4 p-5 sm:p-6 cursor-pointer transition-all duration-300 flex flex-col justify-between min-h-[310px] sm:min-h-[330px] ${
+                className={`relative rounded-2xl border-t-2 border-l border-r border-b-4 p-5 sm:p-6 transition-all duration-300 flex flex-col justify-between ${
                   isAgentic
-                    ? "bg-gradient-to-br from-[#0E1E32] via-[#0B1624] to-[#142840] border-t-[#E5B21D] border-l-[#E5B21D]/60 border-r-[#E5B21D]/60 border-b-[#B48A05] text-white shadow-[0_16px_30px_-6px_rgba(0,0,0,0.85),0_4px_0_0_#B48A05,inset_0_1px_0_rgba(229,178,29,0.5),0_0_30px_rgba(229,178,29,0.2)] hover:-translate-y-1.5 hover:shadow-[0_24px_45px_-8px_rgba(229,178,29,0.35),0_6px_0_0_#B48A05,inset_0_1px_0_rgba(229,178,29,0.7)]"
+                    ? "bg-gradient-to-br from-[#0E1E32] via-[#0B1624] to-[#142840] border-t-[#E5B21D] border-l-[#E5B21D]/60 border-r-[#E5B21D]/60 border-b-[#B48A05] text-white shadow-[0_16px_35px_-6px_rgba(0,0,0,0.85),0_4px_0_0_#B48A05,inset_0_1px_0_rgba(229,178,29,0.5),0_0_25px_rgba(229,178,29,0.15)]"
                     : isBlockActive
-                      ? "bg-[#0E1E32] border-t-[#E5B21D] border-l-[#E5B21D]/50 border-r-[#E5B21D]/50 border-b-[#B48A05] text-white shadow-[0_16px_30px_-6px_rgba(0,0,0,0.85),0_4px_0_0_#B48A05,inset_0_1px_0_rgba(229,178,29,0.4),0_0_20px_rgba(229,178,29,0.15)] hover:-translate-y-1.5 hover:shadow-[0_24px_40px_-8px_rgba(0,0,0,0.95),0_6px_0_0_#B48A05]"
-                      : "bg-[#0B1624] hover:bg-[#0E1E32] border-t-white/20 border-l-white/10 border-r-white/10 border-b-[#050B12] text-white shadow-[0_16px_30px_-6px_rgba(0,0,0,0.85),0_4px_0_0_#050B12,inset_0_1px_0_rgba(255,255,255,0.12)] hover:-translate-y-1.5 hover:shadow-[0_24px_40px_-8px_rgba(0,0,0,0.95),0_6px_0_0_#070E17,inset_0_1px_0_rgba(229,178,29,0.35)] hover:border-t-[#E5B21D]/70"
+                      ? "bg-[#0E1E32] border-t-[#E5B21D] border-l-[#E5B21D]/50 border-r-[#E5B21D]/50 border-b-[#B48A05] text-white shadow-[0_16px_30px_-6px_rgba(0,0,0,0.85),0_4px_0_0_#B48A05,inset_0_1px_0_rgba(229,178,29,0.35),0_0_20px_rgba(229,178,29,0.1)]"
+                      : "bg-[#0B1624] border-t-white/20 border-l-white/10 border-r-white/10 border-b-[#050B12] text-white shadow-[0_16px_30px_-6px_rgba(0,0,0,0.85),0_4px_0_0_#050B12,inset_0_1px_0_rgba(255,255,255,0.1)] hover:border-t-[#E5B21D]/70"
                 }`}
               >
-                {/* 4 Machined Corner Notches */}
-                <div className="absolute top-1.5 left-1.5 w-2 h-2 border-t border-l border-white/20 group-hover:border-[#E5B21D]/60 transition-colors pointer-events-none" />
-                <div className="absolute top-1.5 right-1.5 w-2 h-2 border-t border-r border-white/20 group-hover:border-[#E5B21D]/60 transition-colors pointer-events-none" />
-                <div className="absolute bottom-1.5 left-1.5 w-2 h-2 border-b border-l border-white/20 group-hover:border-[#E5B21D]/60 transition-colors pointer-events-none" />
-                <div className="absolute bottom-1.5 right-1.5 w-2 h-2 border-b border-r border-white/20 group-hover:border-[#E5B21D]/60 transition-colors pointer-events-none" />
+                {/* 4 Machined Corner Accents */}
+                <div className="absolute top-2 left-2 w-2 h-2 border-t border-l border-white/20 pointer-events-none" />
+                <div className="absolute top-2 right-2 w-2 h-2 border-t border-r border-white/20 pointer-events-none" />
+                <div className="absolute bottom-2 left-2 w-2 h-2 border-b border-l border-white/20 pointer-events-none" />
+                <div className="absolute bottom-2 right-2 w-2 h-2 border-b border-r border-white/20 pointer-events-none" />
 
-                {/* Block Header Plate */}
                 <div>
+                  {/* Configurator Header Plate */}
                   <div className="flex items-center justify-between gap-2 mb-3">
-                    <div className="flex items-center gap-2.5">
-                      <IsometricBlockGlyph
-                        active={isBlockActive}
-                        highlight={isAgentic}
-                        className="w-5 h-5 sm:w-6 sm:h-6 shrink-0"
-                      />
-                      <div className="flex items-center gap-1.5">
-                        <span className={`font-mono text-xs font-bold px-2 py-0.5 rounded tracking-wider ${
-                          isAgentic
-                            ? "bg-[#E5B21D] text-[#070E17]"
-                            : isBlockActive
-                              ? "bg-[#E5B21D]/20 text-[#E5B21D] border border-[#E5B21D]/40"
-                              : "bg-white/10 text-slate-200 border border-white/15"
-                        }`}>
-                          CONFIGURATOR {blockNum}
-                        </span>
-                        <span className="font-mono text-xs font-bold text-[#E5B21D]">
-                          [{domain.code}]
-                        </span>
-                      </div>
+                    <div className="flex items-center gap-2">
+                      <span className={`font-mono text-xs font-bold px-2 py-0.5 rounded tracking-wider ${
+                        isAgentic
+                          ? "bg-[#E5B21D] text-[#070E17]"
+                          : isBlockActive
+                            ? "bg-[#E5B21D]/20 text-[#E5B21D] border border-[#E5B21D]/40"
+                            : "bg-white/10 text-slate-200 border border-white/15"
+                      }`}>
+                        CONFIGURATOR {blockNum}
+                      </span>
+                      <span className="font-mono text-xs font-bold text-[#E5B21D]">
+                        [{domain.code}]
+                      </span>
                     </div>
 
-                    {domain.badge && (
-                      <span className="text-[9px] font-mono font-bold px-2 py-0.5 rounded bg-[#E5B21D]/20 text-[#E5B21D] border border-[#E5B21D]/40 uppercase tracking-wider">
-                        {domain.badge}
-                      </span>
-                    )}
-
-                    {isBlockActive && !domain.badge && (
-                      <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-[#E5B21D]/20 text-[#E5B21D] border border-[#E5B21D]/40 flex items-center gap-1.5 shadow-[0_0_10px_rgba(229,178,29,0.2)]">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#E5B21D] animate-pulse" />
-                        <span>{domainSelectedCount} in Scope</span>
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Block Title & Thesis */}
-                  <h3 className="font-serif text-lg sm:text-xl font-bold leading-tight tracking-tight text-white group-hover:text-[#E5B21D] transition-colors">
-                    {domain.name}
-                  </h3>
-
-                  <p className="text-xs mt-2 line-clamp-2 leading-relaxed text-slate-300">
-                    {domain.subtitle}
-                  </p>
-
-                  {/* Modular Capability Sub-Blocks / Tags */}
-                  <div className="mt-3.5 flex flex-wrap gap-1.5">
-                    {(DOMAIN_SAMPLE_CAPABILITIES[domain.id] || []).map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 border border-white/10 text-slate-300 group-hover:border-white/20 transition-colors"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Tactile Block Base Plate */}
-                <div className="mt-5 pt-3.5 border-t border-white/10 flex items-center justify-between text-xs font-mono">
-                  <div className="flex items-center gap-1.5 text-slate-400">
-                    <span className="w-1.5 h-1.5 rounded-sm bg-slate-500 group-hover:bg-[#E5B21D] transition-colors" />
-                    <span>
-                      {isAgentic
-                        ? hasAgentic ? "Custom Spec Configured" : "Bespoke Engineering Pod"
-                        : `${domainItems.length} Deliverable Outcomes`}
+                    {/* Domain Archetype Badge */}
+                    <span className={`text-[9px] font-mono font-bold px-2 py-0.5 rounded border uppercase tracking-wider ${meta.tagBg}`}>
+                      {domain.badge || meta.archetype.split(" ")[0]}
                     </span>
                   </div>
 
-                  <span className="font-serif font-bold text-xs uppercase tracking-wider text-[#E5B21D] group-hover:translate-x-1 transition-transform flex items-center gap-1 bg-[#E5B21D]/10 px-2.5 py-1 rounded border border-[#E5B21D]/25 group-hover:border-[#E5B21D]/50 group-hover:bg-[#E5B21D]/20">
-                    <span>Open Configurator</span>
+                  {/* Configurator Title & Subtitle */}
+                  <h3 className="font-serif text-lg sm:text-xl font-bold leading-tight tracking-tight text-white">
+                    {domain.name}
+                  </h3>
+                  <p className="text-xs mt-1.5 leading-relaxed text-slate-300">
+                    {domain.subtitle}
+                  </p>
+
+                  {/* Configurator Specific Body: Interactive Capability Toggles (CONFIGURATORS 01-05) */}
+                  {!isAgentic && (
+                    <div className="mt-4 space-y-2">
+                      <div className="flex items-center justify-between text-[11px] font-mono text-slate-400 pb-1">
+                        <span>Select Deliverables ({domainSelectedCount}/{domainItems.length} active):</span>
+                        <button
+                          type="button"
+                          onClick={() => setActiveModalDomainId(domain.id)}
+                          className="text-[#E5B21D] hover:underline cursor-pointer"
+                        >
+                          Deep Dive Specs &rarr;
+                        </button>
+                      </div>
+
+                      {visibleItems.map((item) => {
+                        const isChecked = selectedIds.has(item.id);
+                        return (
+                          <div
+                            key={item.id}
+                            onClick={() => toggleOutcome(item.id)}
+                            className={`p-2.5 rounded-xl border text-xs transition-all duration-150 cursor-pointer select-none flex items-start gap-2.5 ${
+                              isChecked
+                                ? "bg-[#0E1E32] border-[#E5B21D] text-white shadow-[0_0_12px_rgba(229,178,29,0.2)] ring-1 ring-[#E5B21D]"
+                                : "bg-white/5 hover:bg-white/10 border-white/10 text-slate-300 hover:text-white"
+                            }`}
+                          >
+                            <div className={`mt-0.5 w-4 h-4 rounded flex items-center justify-center border text-[10px] font-bold shrink-0 transition-colors ${
+                              isChecked
+                                ? "bg-[#E5B21D] border-[#E5B21D] text-[#070E17]"
+                                : "border-white/30 bg-[#070E17]"
+                            }`}>
+                              {isChecked ? "✓" : ""}
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <div className="font-serif font-bold text-xs leading-snug truncate">
+                                {item.name}
+                              </div>
+                              <div className="text-[10px] font-mono text-slate-400 mt-0.5 flex items-center gap-1.5">
+                                <span className={isChecked ? "text-[#E5B21D] font-bold" : "text-slate-400"}>
+                                  {isChecked ? "● IN ACTIVE SCOPE" : "+ CLICK TO ADD"}
+                                </span>
+                                <span>&middot;</span>
+                                <span>{item.kind === "finite" ? "Sprint" : "Mandate"}</span>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
+
+                      {/* Expand / Collapse toggle for domains with more than 3 items */}
+                      {domainItems.length > 4 && (
+                        <button
+                          type="button"
+                          onClick={() => toggleDomainExpanded(domain.id)}
+                          className="w-full text-center py-1.5 mt-1 text-[11px] font-mono text-slate-400 hover:text-[#E5B21D] bg-white/5 hover:bg-white/10 rounded-lg transition-colors cursor-pointer"
+                        >
+                          {isExpanded
+                            ? "▴ Show fewer capabilities"
+                            : `▾ Show ${remainingCount} more capabilities`}
+                        </button>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Configurator 06: Agentic Systems & Bespoke Software Specific Foundry Controls */}
+                  {isAgentic && (
+                    <div className="mt-4 space-y-3">
+                      <div>
+                        <span className="text-[10px] font-mono text-[#E5B21D] font-bold uppercase tracking-wider block mb-1.5">
+                          Architectural Mandate Seeds (Click to Inject):
+                        </span>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+                          {AGENTIC_IDEA_SEEDS.slice(0, 4).map((seed) => {
+                            const isAdded = agenticNotes.includes(seed);
+                            return (
+                              <button
+                                key={seed}
+                                type="button"
+                                onClick={() => addSeedToAgentic(seed)}
+                                className={`text-left text-[11px] font-mono p-2 rounded-lg border transition-colors flex items-center justify-between gap-1.5 cursor-pointer ${
+                                  isAdded
+                                    ? "bg-[#0E1E32] border-[#E5B21D] text-[#E5B21D] font-bold"
+                                    : "bg-white/5 hover:bg-white/10 border-white/10 text-slate-300 hover:text-white"
+                                }`}
+                              >
+                                <span className="truncate">{seed}</span>
+                                <span className="text-xs shrink-0">{isAdded ? "✓" : "+"}</span>
+                              </button>
+                            );
+                          })}
+                        </div>
+                      </div>
+
+                      {/* Inline Mandate Editor */}
+                      <div>
+                        <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-wider block mb-1">
+                          Bespoke Engineering Specification:
+                        </span>
+                        <textarea
+                          value={agenticNotes}
+                          onChange={(e) => handleAgenticNotesChange(e.target.value)}
+                          rows={3}
+                          spellCheck={true}
+                          placeholder="Specify custom API bridge, private AI runtime, or event mesh..."
+                          className="w-full p-2.5 text-xs rounded-lg border border-white/20 bg-[#070E17] text-white font-sans placeholder:text-slate-500 focus:outline-none focus:border-[#E5B21D] focus:ring-1 focus:ring-[#E5B21D] resize-none"
+                        />
+                      </div>
+
+                      <div className="p-2.5 rounded-lg bg-white/5 border border-white/10 text-[10px] font-mono text-slate-300 flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#E5B21D] shrink-0" />
+                        <span>Committed directly to company repositories. Typed schemas only.</span>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Tactile Configurator Base Bar */}
+                <div className="mt-5 pt-3.5 border-t border-white/10 flex items-center justify-between text-xs font-mono">
+                  <div className="flex items-center gap-1.5 text-slate-400">
+                    <span className="w-1.5 h-1.5 rounded-sm bg-slate-500" />
+                    <span>
+                      {isAgentic
+                        ? hasAgentic ? "Custom Mandate Active" : "Bespoke Pod Ready"
+                        : `${domainSelectedCount} Selected of ${domainItems.length}`}
+                    </span>
+                  </div>
+
+                  <button
+                    type="button"
+                    onClick={() => setActiveModalDomainId(domain.id)}
+                    className="font-serif font-bold text-xs uppercase tracking-wider text-[#E5B21D] hover:text-white flex items-center gap-1 bg-[#E5B21D]/10 hover:bg-[#E5B21D]/20 px-2.5 py-1 rounded border border-[#E5B21D]/25 hover:border-[#E5B21D]/50 transition-colors cursor-pointer"
+                  >
+                    <span>Full Specs</span>
                     <span>&rarr;</span>
-                  </span>
+                  </button>
                 </div>
               </div>
             );
           })}
         </div>
-
       </section>
 
-      {/* 3. HOW THE BLOCK WORKS: 1 BLOCK = 2 TO 4 WEEKS (BADASS DARK DELIVERY DECK) */}
-      <section className="pb-14 max-w-7xl mx-auto px-4 sm:px-6">
+      {/* 5. DELIVERY SCOPE MANIFEST & OPERATING CONTEXT TRAY (NO CLUTTER, MISSION LAUNCH DECK) */}
+      <section className="pb-16 max-w-7xl mx-auto px-4 sm:px-6">
         <div className="bg-[#0B1624]/90 rounded-2xl border border-white/15 p-5 sm:p-7 shadow-2xl backdrop-blur-md">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
             
-            {/* Left 7 cols: Delivery Philosophy (1 Block = 2-4 Weeks) */}
+            {/* Left 7 cols: Configured Scope Manifest */}
             <div className="lg:col-span-7 space-y-4">
               <div>
-                <div className="flex items-center gap-2 mb-1.5">
+                <div className="flex items-center justify-between gap-2 mb-1.5">
                   <span className="font-mono text-xs font-bold text-[#E5B21D] uppercase tracking-wider">
-                    THE DELIVERY MODEL &middot; 1 BLOCK = 2 TO 4 WEEKS
+                    CONFIGURED SCOPE MANIFEST &middot; 1 BLOCK = 2 TO 4 WEEKS
                   </span>
-                </div>
-                <h4 className="font-serif text-xl sm:text-2xl font-bold text-white">
-                  Configure your outcomes. We quote the blocks.
-                </h4>
-                <p className="text-xs text-slate-300 mt-1.5 leading-relaxed">
-                  A Block is a discrete 2 to 4 week period of focused delivery time (2-week hands-on build sprint + verification and cutover stabilization). You select the exact capabilities your business needs. Send your scope over and our principals will analyze outcome complexity and return an exact block allocation and schedule.
-                </p>
-              </div>
-
-              {/* 3 Delivery Pillars (Clickable to open Block Architecture Guide) */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs font-mono">
-                <div
-                  onClick={() => setActiveProtocolStep("step3")}
-                  role="button"
-                  tabIndex={0}
-                  className="p-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-[#E5B21D]/50 hover:bg-white/10 transition-colors cursor-pointer space-y-1"
-                >
-                  <div className="font-bold text-[#E5B21D] flex items-center justify-between">
-                    <span>1 BLOCK = 2-4 WKS</span>
-                    <span className="text-[10px] text-slate-400">&rarr;</span>
-                  </div>
-                  <p className="text-[11px] text-slate-300 font-sans leading-snug">
-                    Fixed execution unit. Each block is a dedicated delivery sprint with clear operational boundaries.
-                  </p>
-                </div>
-
-                <div
-                  onClick={() => setActiveProtocolStep("step3")}
-                  role="button"
-                  tabIndex={0}
-                  className="p-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-[#E5B21D]/50 hover:bg-white/10 transition-colors cursor-pointer space-y-1"
-                >
-                  <div className="font-bold text-[#E5B21D] flex items-center justify-between">
-                    <span>OUTCOME SCOPING</span>
-                    <span className="text-[10px] text-slate-400">&rarr;</span>
-                  </div>
-                  <p className="text-[11px] text-slate-300 font-sans leading-snug">
-                    Outcomes vary in depth. Some project mandates fit multiple outcomes into one block; complex cutovers take dedicated blocks.
-                  </p>
-                </div>
-
-                <div
-                  onClick={() => setActiveProtocolStep("step3")}
-                  role="button"
-                  tabIndex={0}
-                  className="p-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-[#E5B21D]/50 hover:bg-white/10 transition-colors cursor-pointer space-y-1"
-                >
-                  <div className="font-bold text-[#E5B21D] flex items-center justify-between">
-                    <span>NO GUESSWORK</span>
-                    <span className="text-[10px] text-slate-400">&rarr;</span>
-                  </div>
-                  <p className="text-[11px] text-slate-300 font-sans leading-snug">
-                    Select 1 outcome, 5, or all 21. We review your requirements and tell you exactly how many blocks it will take.
-                  </p>
-                </div>
-              </div>
-
-              {/* Active Priorities Chips */}
-              {totalItems > 0 && (
-                <div className="space-y-1.5 pt-1">
-                  <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 font-bold block">
-                      Configured Outcomes ({totalItems}):
-                    </span>
+                  {totalItems > 0 && (
                     <button
                       type="button"
                       onClick={handleResetScope}
-                      className="text-[10px] font-mono text-slate-400 hover:text-rose-400 transition-colors cursor-pointer"
+                      className="text-xs font-mono text-slate-400 hover:text-rose-400 cursor-pointer transition-colors"
                     >
                       Clear All (Reset to 0)
                     </button>
-                  </div>
-                  <div className="flex flex-wrap gap-1.5 max-h-32 overflow-y-auto pt-0.5">
+                  )}
+                </div>
+                <h4 className="font-serif text-xl sm:text-2xl font-bold text-white">
+                  {totalItems > 0 ? `${totalItems} Capabilities Configured for Delivery` : "Awaiting Outcome Configuration"}
+                </h4>
+                <p className="text-xs text-slate-300 mt-1.5 leading-relaxed">
+                  {totalItems > 0
+                    ? "Each Block is a focused 2 to 4 week execution period (2-week build sprint + cutover verification). Send your scope over and our team will analyze technical dependencies and quote an exact block allocation."
+                    : "Toggle capabilities in any of the 6 configurators above to assemble your project scope. As outcomes are selected, your live delivery manifest will build here in real time."}
+                </p>
+              </div>
+
+              {/* Active Priorities Chips */}
+              {totalItems > 0 ? (
+                <div className="space-y-2 pt-1">
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 font-bold block">
+                    Active Scope Items ({totalItems}):
+                  </span>
+                  <div className="flex flex-wrap gap-1.5 max-h-36 overflow-y-auto pt-0.5">
                     {Array.from(selectedIds).map((id) => {
                       const it = PUBLIC_CATALOG_ITEMS.find((item) => item.id === id);
                       const domain = PUBLIC_OUTCOME_DOMAINS.find((d) => d.id === it?.domainId);
@@ -709,7 +1040,7 @@ export default function TheBlockPage() {
                           className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/10 border border-white/15 text-xs font-mono text-slate-200"
                         >
                           <span className="font-bold text-[#E5B21D]">[{domain?.code}]</span>
-                          <span className="truncate max-w-[200px]">{it?.name}</span>
+                          <span className="truncate max-w-[220px]">{it?.name}</span>
                           <button
                             type="button"
                             onClick={(e) => {
@@ -717,6 +1048,7 @@ export default function TheBlockPage() {
                               toggleOutcome(id);
                             }}
                             className="text-slate-400 hover:text-rose-400 font-bold ml-0.5 cursor-pointer"
+                            title="Remove from scope"
                           >
                             &times;
                           </button>
@@ -732,6 +1064,11 @@ export default function TheBlockPage() {
                     )}
                   </div>
                 </div>
+              ) : (
+                <div className="p-4 rounded-xl bg-white/5 border border-white/10 font-mono text-xs text-slate-400 flex items-center justify-between">
+                  <span>0 Capabilities Active &middot; Ready to assemble</span>
+                  <span className="text-[#E5B21D]">1 Block = 2 to 4 Weeks</span>
+                </div>
               )}
             </div>
 
@@ -739,13 +1076,13 @@ export default function TheBlockPage() {
             <div className="lg:col-span-5 bg-[#070E17]/90 p-5 rounded-xl border border-white/15 flex flex-col justify-between space-y-4">
               <div>
                 <span className="text-[10px] font-mono uppercase tracking-wider text-[#E5B21D] font-bold block mb-1">
-                  INTAKE CONTEXT &middot; STEP 2 OF 2
+                  DELIVERY QUOTE &middot; OPERATING CONTEXT
                 </span>
                 <h5 className="font-serif text-base font-bold text-white">
                   Operating Context &amp; Constraints
                 </h5>
                 <p className="text-xs text-slate-300 mt-1 leading-relaxed">
-                  Add specific context, systems, or delivery constraints. We will review your scope and quote the required blocks.
+                  Add specific context, systems, or delivery constraints. We review your scope and return an exact block quote.
                 </p>
 
                 <textarea
@@ -753,7 +1090,7 @@ export default function TheBlockPage() {
                   onChange={(e) => handleGeneralNotesChange(e.target.value)}
                   rows={3}
                   spellCheck={true}
-                  placeholder="e.g. ERP cutover delayed by off-track integrator, need independent scope reset and cutover steering & stabilization..."
+                  placeholder="e.g. Current ERP cutover delayed by off-track integrator, need independent scope reset and cutover steering & stabilization..."
                   className="w-full mt-2.5 p-3 text-xs rounded-lg border border-white/20 bg-[#0B1624] focus:outline-none focus:border-[#E5B21D] focus:ring-1 focus:ring-[#E5B21D] text-white font-sans placeholder:text-slate-500"
                 />
               </div>
@@ -776,205 +1113,7 @@ export default function TheBlockPage() {
         </div>
       </section>
 
-            {/* 3.5. PROTOCOL DEFINITION MODAL (CLICKABLE DEFINITION DECK FOR STEPS 01, 02, 03) */}
-      {activeProtocolStep && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#070E17]/90 backdrop-blur-md">
-          <div className="bg-[#0B1624] text-white rounded-2xl border border-[#E5B21D]/40 shadow-2xl max-w-2xl w-full max-h-[88vh] flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-150">
-            
-            {/* Modal Header */}
-            <div className="p-5 border-b border-white/10 bg-[#070E17] flex items-start justify-between gap-4 shrink-0">
-              <div>
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-[#E5B21D] text-[#070E17]">
-                    {activeProtocolStep === "step1" ? "PROTOCOL DEFINITION · STEP 01" : activeProtocolStep === "step2" ? "PROTOCOL DEFINITION · STEP 02" : "PROTOCOL DEFINITION · STEP 03"}
-                  </span>
-                  <span className="font-mono text-[11px] text-slate-400 uppercase tracking-wider">
-                    OPERATIONAL METHODOLOGY
-                  </span>
-                </div>
-                <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">
-                  {activeProtocolStep === "step1" && "Choose Business Outcomes"}
-                  {activeProtocolStep === "step2" && "State Systems & Operating Reality"}
-                  {activeProtocolStep === "step3" && "We Quote 2 to 4 Week Blocks"}
-                </h3>
-                <p className="text-xs text-slate-300 mt-1 leading-relaxed">
-                  {activeProtocolStep === "step1" && "Browse 21 verified capabilities across the 6 core enterprise operating engines."}
-                  {activeProtocolStep === "step2" && "Why real-world constraints, legacy databases, and vendor friction dictate delivery."}
-                  {activeProtocolStep === "step3" && "Deterministic delivery architecture. Discrete sprint units with zero open-ended retainers."}
-                </p>
-              </div>
-
-              <button
-                type="button"
-                onClick={() => setActiveProtocolStep(null)}
-                className="w-8 h-8 rounded-full border border-white/20 hover:bg-white/10 flex items-center justify-center text-slate-300 hover:text-white font-bold text-sm cursor-pointer"
-              >
-                &times;
-              </button>
-            </div>
-
-            {/* Modal Body */}
-            <div className="p-5 overflow-y-auto space-y-4 flex-1 bg-[#0B1624] text-xs leading-relaxed text-slate-300">
-              {activeProtocolStep === "step1" && (
-                <div className="space-y-4">
-                  <div className="p-3.5 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="font-serif text-sm font-bold text-white mb-1">
-                      Outcomes Over Headcounts
-                    </h4>
-                    <p>
-                      You do not buy generic advisory hours, open-ended retainers, or junior consultant headcounts. You select discrete, verifiable business capabilities your company needs to operate effectively.
-                    </p>
-                  </div>
-
-                  <div>
-                    <h4 className="font-mono text-[11px] font-bold text-[#E5B21D] uppercase tracking-wider mb-2">
-                      The 6 Enterprise Operating Engines:
-                    </h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 font-mono text-[11px]">
-                      <div className="p-2.5 rounded-lg bg-[#070E17] border border-white/10">
-                        <span className="text-[#E5B21D] font-bold">[LD] Leadership &amp; Direction:</span>
-                        <p className="text-slate-300 font-sans text-xs mt-0.5">Executive tech ownership, vendor scope accountability, IT capacity.</p>
-                      </div>
-                      <div className="p-2.5 rounded-lg bg-[#070E17] border border-white/10">
-                        <span className="text-[#E5B21D] font-bold">[IT] IT &amp; Business Systems:</span>
-                        <p className="text-slate-300 font-sans text-xs mt-0.5">ERP readiness, cutover stabilization, platform selection.</p>
-                      </div>
-                      <div className="p-2.5 rounded-lg bg-[#070E17] border border-white/10">
-                        <span className="text-[#E5B21D] font-bold">[DK] Data &amp; Knowledge:</span>
-                        <p className="text-slate-300 font-sans text-xs mt-0.5">Traceable reporting, single operational truth, consistent records.</p>
-                      </div>
-                      <div className="p-2.5 rounded-lg bg-[#070E17] border border-white/10">
-                        <span className="text-[#E5B21D] font-bold">[FS] Financial Systems:</span>
-                        <p className="text-slate-300 font-sans text-xs mt-0.5">Reconciliation engines, invoice audit, multi-entity ledger integrity.</p>
-                      </div>
-                      <div className="p-2.5 rounded-lg bg-[#070E17] border border-white/10">
-                        <span className="text-[#E5B21D] font-bold">[WA] Workflows &amp; Automation:</span>
-                        <p className="text-slate-300 font-sans text-xs mt-0.5">Cross-system event mesh, shop-floor sync, exception dispatch.</p>
-                      </div>
-                      <div className="p-2.5 rounded-lg bg-[#070E17] border border-white/10">
-                        <span className="text-[#E5B21D] font-bold">[AS] Agentic Systems:</span>
-                        <p className="text-slate-300 font-sans text-xs mt-0.5">Autonomous agent pods, custom API bridges, private LLM runtimes.</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="p-3 rounded-lg bg-[#E5B21D]/10 border border-[#E5B21D]/30 flex items-center justify-between">
-                    <span className="font-mono text-slate-200">
-                      Active selections across all engines: <strong className="text-[#E5B21D]">{totalItems} configured</strong>
-                    </span>
-                  </div>
-                </div>
-              )}
-
-              {activeProtocolStep === "step2" && (
-                <div className="space-y-4">
-                  <div className="p-3.5 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="font-serif text-sm font-bold text-white mb-1">
-                      Why Context Dictates Delivery Speed
-                    </h4>
-                    <p>
-                      Deliverables never succeed in a vacuum. Scoping a high-velocity 2 to 4 week block requires understanding which ERPs are live, what legacy databases must not break, and where past integrators or vendors became stalled.
-                    </p>
-                  </div>
-
-                  <div className="space-y-2">
-                    <label className="font-mono text-[11px] font-bold text-[#E5B21D] uppercase tracking-wider block">
-                      Operating Context &amp; Constraints Editor:
-                    </label>
-                    <textarea
-                      value={generalNotes}
-                      onChange={(e) => handleGeneralNotesChange(e.target.value)}
-                      spellCheck={true}
-                      rows={5}
-                      placeholder="e.g. NetSuite ERP cutover off-track by 6 weeks; legacy EDI flat-files failing with warehouse 3PL; need independent technical steer..."
-                      className="w-full p-3.5 text-xs rounded-lg border border-white/20 bg-[#070E17] text-white font-sans placeholder:text-slate-500 focus:outline-none focus:border-[#E5B21D] focus:ring-1 focus:ring-[#E5B21D] leading-relaxed resize-none"
-                    />
-                    <p className="text-[11px] text-slate-400 font-mono">
-                      &bull; Edits made here immediately sync to your active project scope manifest.
-                    </p>
-                  </div>
-                </div>
-              )}
-
-              {activeProtocolStep === "step3" && (
-                <div className="space-y-4">
-                  <div className="p-3.5 rounded-xl bg-[#0E1E32] border border-[#E5B21D]/40 space-y-1.5">
-                    <div className="font-mono font-bold text-[#E5B21D] text-sm">
-                      1 BLOCK = 2 TO 4 WEEKS
-                    </div>
-                    <p className="text-slate-200">
-                      The core delivery standard of idigdata. Each Block is a discrete 2 to 4 week execution unit: 2 weeks of dedicated hands-on engineering build sprint, plus 1 to 2 weeks of verification suites, live cutover stabilization, and team handoff.
-                    </p>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 font-mono text-xs">
-                    <div className="p-3 rounded-lg bg-white/5 border border-white/10 space-y-1">
-                      <div className="font-bold text-white">Outcome Depth</div>
-                      <p className="text-slate-300 font-sans text-xs">
-                        Outcomes vary in complexity. Some project mandates combine multiple outcomes into a single block; complex multi-entity cutovers require dedicated blocks.
-                      </p>
-                    </div>
-                    <div className="p-3 rounded-lg bg-white/5 border border-white/10 space-y-1">
-                      <div className="font-bold text-white">Firm Scoping Turnaround</div>
-                      <p className="text-slate-300 font-sans text-xs">
-                        Within 1 business day of receiving your scope and context, our principals return an exact block allocation, schedule, and fixed quote.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="p-3 rounded-lg bg-white/5 border border-white/10 text-[11px] font-mono flex justify-between items-center text-slate-300">
-                    <span>Active Selected Scope:</span>
-                    <strong className="text-[#E5B21D]">{totalItems} outcomes configured</strong>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Modal Footer */}
-            <div className="p-4 border-t border-white/10 bg-[#070E17] flex items-center justify-between gap-3 shrink-0">
-              <span className="text-[11px] font-mono text-slate-400">
-                1 Block = 2 to 4 Weeks &middot; idigdata Delivery Standard
-              </span>
-
-              {activeProtocolStep === "step1" && (
-                <button
-                  type="button"
-                  onClick={() => setActiveProtocolStep(null)}
-                  className="px-4 py-2 rounded-lg bg-[#E5B21D] hover:bg-amber-400 text-[#070E17] font-serif font-bold text-xs uppercase tracking-wider cursor-pointer"
-                >
-                  Explore Configurators Below &darr;
-                </button>
-              )}
-
-              {activeProtocolStep === "step2" && (
-                <button
-                  type="button"
-                  onClick={() => setActiveProtocolStep(null)}
-                  className="px-4 py-2 rounded-lg bg-[#E5B21D] hover:bg-amber-400 text-[#070E17] font-serif font-bold text-xs uppercase tracking-wider cursor-pointer"
-                >
-                  Save Context &amp; Close &rarr;
-                </button>
-              )}
-
-              {activeProtocolStep === "step3" && (
-                <button
-                  type="button"
-                  onClick={() => {
-                    setActiveProtocolStep(null);
-                    setIsQuoteModalOpen(true);
-                  }}
-                  className="px-4 py-2 rounded-lg bg-[#E5B21D] hover:bg-amber-400 text-[#070E17] font-serif font-bold text-xs uppercase tracking-wider cursor-pointer shadow-[0_0_15px_rgba(229,178,29,0.3)]"
-                >
-                  Request Delivery Quote &rarr;
-                </button>
-              )}
-            </div>
-
-          </div>
-        </div>
-      )}
-
-      {/* 4. EXPANSIVE COCKPIT CONFIGURATOR (CONFIGURATORS 01-05): TACTILE OUTCOME GRID + OPERATING CONTEXT WINDOW */}
+      {/* 6. DEEP-DIVE COCKPIT MODAL (CONFIGURATORS 01-05 SPECIFICATION VIEW) */}
       {activeModalDomainId && activeModalDomainId !== "agentic_systems" && activeDomain && (() => {
         const domainItems = PUBLIC_CATALOG_ITEMS.filter((it) => it.domainId === activeDomain.id);
         const domainSelectedCount = domainItems.filter((it) => selectedIds.has(it.id)).length;
@@ -991,7 +1130,7 @@ export default function TheBlockPage() {
                       CONFIGURATOR [{activeDomain.code}]
                     </span>
                     <span className="font-mono text-xs text-slate-400 uppercase tracking-wider">
-                      CAPABILITY CONFIGURATOR
+                      SPECIFICATION COCKPIT
                     </span>
                   </div>
                   <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">
@@ -1016,10 +1155,10 @@ export default function TheBlockPage() {
                 </div>
               </div>
 
-              {/* Cockpit Main Body: 2-Column Side-by-Side (Outcomes Grid + Operating Context Window) */}
+              {/* Cockpit Main Body */}
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 p-4 sm:p-6 flex-1 overflow-hidden bg-[#0B1624]">
                 
-                {/* Left 7 Cols: Rapid Clickable Outcome Tiles (Zero tabs, no endless scroll) */}
+                {/* Left 7 Cols: Detailed Outcome Specifications */}
                 <div className="lg:col-span-7 flex flex-col min-h-0">
                   <div className="flex items-center justify-between gap-2 mb-3 shrink-0">
                     <span className="font-mono text-xs font-bold uppercase tracking-wider text-[#E5B21D]">
@@ -1084,7 +1223,7 @@ export default function TheBlockPage() {
                   </div>
                 </div>
 
-                {/* Right 5 Cols: THE DEDICATED CONTEXT WINDOW */}
+                {/* Right 5 Cols: Operating Context Window */}
                 <div className="lg:col-span-5 flex flex-col justify-between bg-[#070E17] p-4 sm:p-5 rounded-xl border border-white/15 min-h-0">
                   <div className="flex flex-col flex-1 min-h-0">
                     <div className="flex items-center gap-2 mb-1 shrink-0">
@@ -1122,7 +1261,7 @@ export default function TheBlockPage() {
                       onClick={() => setActiveModalDomainId(null)}
                       className="w-full py-3 px-4 rounded-lg bg-[#E5B21D] hover:bg-amber-400 text-[#070E17] font-serif font-bold text-xs uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(229,178,29,0.3)] flex items-center justify-center gap-2 cursor-pointer"
                     >
-                      <span>Apply Scope &amp; Close Configurator &rarr;</span>
+                      <span>Apply Scope &amp; Close Cockpit &rarr;</span>
                     </button>
                   </div>
                 </div>
@@ -1134,12 +1273,12 @@ export default function TheBlockPage() {
         );
       })()}
 
-      {/* 5. EXPANSIVE COCKPIT CONFIGURATOR: CONFIGURATOR 06 AGENTIC SYSTEMS (SEEDS + CONTEXT WINDOW) */}
+      {/* 7. DEEP-DIVE COCKPIT MODAL (CONFIGURATOR 06 AGENTIC SYSTEMS SPECIFICATION VIEW) */}
       {activeModalDomainId === "agentic_systems" && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-[#070E17]/90 backdrop-blur-md">
           <div className="bg-[#0B1624] text-white rounded-2xl border border-[#E5B21D]/60 shadow-2xl max-w-6xl w-full h-[90vh] max-h-[860px] flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-150">
             
-            {/* Cockpit Header */}
+            {/* Header */}
             <div className="p-4 sm:p-5 border-b border-white/10 bg-[#070E17] flex items-start justify-between gap-4 shrink-0">
               <div>
                 <div className="flex items-center gap-2 mb-1">
@@ -1172,7 +1311,7 @@ export default function TheBlockPage() {
               </div>
             </div>
 
-            {/* Cockpit Main Body: 2-Column Side-by-Side (Seeds & Pillars + Bespoke Context Window) */}
+            {/* Body */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 p-4 sm:p-6 flex-1 overflow-hidden bg-[#0B1624]">
               
               {/* Left 7 Cols: Architectural Mandate Seeds & Pillars */}
@@ -1239,7 +1378,7 @@ export default function TheBlockPage() {
                 </div>
               </div>
 
-              {/* Right 5 Cols: Dedicated Bespoke Context Window */}
+              {/* Right 5 Cols: Bespoke Context Window */}
               <div className="lg:col-span-5 flex flex-col justify-between bg-[#070E17] p-4 sm:p-5 rounded-xl border border-white/15 min-h-0">
                 <div className="flex flex-col flex-1 min-h-0">
                   <div className="flex items-center gap-2 mb-1 shrink-0">
@@ -1288,7 +1427,7 @@ export default function TheBlockPage() {
         </div>
       )}
 
-      {/* 6. MODAL: THE BLOCK · DELIVERY QUOTE REQUEST (BADASS DARK THEME) */}
+      {/* 8. MODAL: THE BLOCK · DELIVERY QUOTE REQUEST */}
       {isQuoteModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#070E17]/85 backdrop-blur-md">
           <div className="bg-[#0B1624] text-white rounded-2xl border border-white/20 shadow-2xl max-w-xl w-full max-h-[90vh] flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-150">
@@ -1398,133 +1537,110 @@ export default function TheBlockPage() {
                   {/* Client Info Grid */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
-                      <label htmlFor="quote-name" className="block text-xs font-serif font-bold text-white mb-1">
+                      <label className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block mb-1">
                         Your Name *
                       </label>
                       <input
-                        id="quote-name"
                         type="text"
                         required
-                        spellCheck={false}
                         value={quoteName}
                         onChange={(e) => setQuoteName(e.target.value)}
-                        placeholder="Jane Doe"
-                        className="w-full text-xs p-2.5 rounded-lg border border-white/20 bg-[#070E17] text-white focus:outline-none focus:border-[#E5B21D]"
+                        placeholder="Alex Morgan"
+                        className="w-full p-2.5 text-xs rounded-lg border border-white/20 bg-[#070E17] text-white focus:outline-none focus:border-[#E5B21D]"
                       />
                     </div>
-
                     <div>
-                      <label htmlFor="quote-email" className="block text-xs font-serif font-bold text-white mb-1">
+                      <label className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block mb-1">
                         Work Email *
                       </label>
                       <input
-                        id="quote-email"
                         type="email"
                         required
-                        spellCheck={false}
                         value={quoteEmail}
                         onChange={(e) => setQuoteEmail(e.target.value)}
-                        placeholder="jane@company.com"
-                        className="w-full text-xs p-2.5 rounded-lg border border-white/20 bg-[#070E17] text-white focus:outline-none focus:border-[#E5B21D]"
+                        placeholder="alex@company.com"
+                        className="w-full p-2.5 text-xs rounded-lg border border-white/20 bg-[#070E17] text-white focus:outline-none focus:border-[#E5B21D]"
                       />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
-                      <label htmlFor="quote-company" className="block text-xs font-serif font-bold text-white mb-1">
-                        Company / Organization
+                      <label className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block mb-1">
+                        Company Name
                       </label>
                       <input
-                        id="quote-company"
                         type="text"
-                        spellCheck={false}
                         value={quoteCompany}
                         onChange={(e) => setQuoteCompany(e.target.value)}
-                        placeholder="Acme Operations, Inc."
-                        className="w-full text-xs p-2.5 rounded-lg border border-white/20 bg-[#070E17] text-white focus:outline-none focus:border-[#E5B21D]"
+                        placeholder="Acme Operations LLC"
+                        className="w-full p-2.5 text-xs rounded-lg border border-white/20 bg-[#070E17] text-white focus:outline-none focus:border-[#E5B21D]"
                       />
                     </div>
-
                     <div>
-                      <label htmlFor="quote-role" className="block text-xs font-serif font-bold text-white mb-1">
-                        Operational Role / Title
+                      <label className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block mb-1">
+                        Your Role / Title
                       </label>
                       <input
-                        id="quote-role"
                         type="text"
-                        spellCheck={false}
                         value={quoteRole}
                         onChange={(e) => setQuoteRole(e.target.value)}
-                        placeholder="COO / VP Ops / CFO / CIO"
-                        className="w-full text-xs p-2.5 rounded-lg border border-white/20 bg-[#070E17] text-white focus:outline-none focus:border-[#E5B21D]"
+                        placeholder="VP Operations / CIO / CFO"
+                        className="w-full p-2.5 text-xs rounded-lg border border-white/20 bg-[#070E17] text-white focus:outline-none focus:border-[#E5B21D]"
                       />
                     </div>
                   </div>
 
-                  {/* Target Project Kickoff Window */}
                   <div>
-                    <label htmlFor="quote-launch" className="block text-xs font-serif font-bold text-white mb-1">
-                      Target Project Kickoff Window
+                    <label className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block mb-1">
+                      Kickoff Window Preference
                     </label>
                     <select
-                      id="quote-launch"
                       value={quoteLaunch}
                       onChange={(e) => setQuoteLaunch(e.target.value)}
-                      className="w-full text-xs p-2.5 rounded-lg border border-white/20 bg-[#070E17] text-white focus:outline-none focus:border-[#E5B21D] font-mono"
+                      className="w-full p-2.5 text-xs rounded-lg border border-white/20 bg-[#070E17] text-white focus:outline-none focus:border-[#E5B21D]"
                     >
                       <option value="Immediate / Next Available Window">Immediate / Next Available Window</option>
-                      <option value="Within 30 Days">Within 30 Days</option>
-                      <option value="Within 60-90 Days / Next Quarter">Within 60-90 Days / Next Quarter</option>
-                      <option value="Exploring Scope / Budgeting">Exploring Scope / Budgeting</option>
+                      <option value="Within 2-4 Weeks">Within 2 to 4 Weeks</option>
+                      <option value="Next Fiscal Quarter">Next Fiscal Quarter</option>
+                      <option value="Exploratory Scoping Only">Exploratory Scoping Only</option>
                     </select>
                   </div>
 
-                  {/* Context & Constraints Textarea */}
                   <div>
-                    <label htmlFor="quote-notes" className="block text-xs font-serif font-bold text-white mb-1">
-                      Operational Context, Integrations &amp; Constraints
+                    <label className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block mb-1">
+                      Operating Systems &amp; Delivery Constraints (Optional)
                     </label>
                     <textarea
-                      id="quote-notes"
-                      rows={2}
-                      spellCheck={true}
                       value={quoteNotes}
-                      onChange={(e) => setQuoteNotes(e.target.value)}
-                      placeholder="e.g. ERP cutover delayed by integrator, need independent scope reset..."
-                      className="w-full text-xs p-2.5 rounded-lg border border-white/20 bg-[#070E17] text-white focus:outline-none focus:border-[#E5B21D]"
+                      onChange={(e) => {
+                        setQuoteNotes(e.target.value);
+                        setGeneralNotes(e.target.value);
+                      }}
+                      rows={3}
+                      spellCheck={true}
+                      placeholder="Note any critical ERPs, warehouse 3PLs, or past delivery hurdles..."
+                      className="w-full p-2.5 text-xs rounded-lg border border-white/20 bg-[#070E17] text-white focus:outline-none focus:border-[#E5B21D] font-sans"
                     />
                   </div>
 
-                  <div className="pt-1">
+                  <div className="pt-2">
                     <button
                       type="submit"
                       disabled={quoteStatus === "submitting"}
-                      className="w-full py-3 rounded-lg bg-[#E5B21D] hover:bg-amber-400 text-[#070E17] font-serif font-bold text-xs uppercase tracking-wider transition-all shadow-[0_0_15px_rgba(229,178,29,0.25)] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
+                      className="w-full py-3 px-4 rounded-lg bg-[#E5B21D] hover:bg-amber-400 text-[#070E17] font-serif font-bold text-xs uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(229,178,29,0.3)] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                     >
-                      {quoteStatus === "submitting" ? (
-                        <span>Submitting scope request...</span>
-                      ) : (
-                        <span>Submit Scope for Delivery Quote &rarr;</span>
-                      )}
+                      <span>{quoteStatus === "submitting" ? "Transmitting Scope Request..." : "Transmit Scope & Request Quote →"}</span>
                     </button>
+                    <div className="text-[10px] font-mono text-center text-slate-400 mt-2">
+                      Direct transmission to idigdata leadership team &middot; 1 business day response
+                    </div>
                   </div>
+
                 </form>
               )}
             </div>
 
-            {/* Footer fallback */}
-            {quoteStatus !== "success" && (
-              <div className="p-3.5 px-5 border-t border-white/10 bg-[#070E17] text-center">
-                <Link
-                  href={ENGAGEMENT_CONTACT_URL}
-                  onClick={() => setIsQuoteModalOpen(false)}
-                  className="text-xs font-mono text-slate-400 hover:text-[#E5B21D] transition-colors"
-                >
-                  Prefer to review in the general contact page? Proceed to Contact form &rarr;
-                </Link>
-              </div>
-            )}
           </div>
         </div>
       )}
