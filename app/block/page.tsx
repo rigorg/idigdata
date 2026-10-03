@@ -345,17 +345,94 @@ export default function TheBlockPage() {
       {/* 2. THE 6 OPERATIONAL BLOCKS (PANORAMIC COMMAND BOARD - DARK AESTHETIC) */}
       <section className="py-7 max-w-7xl mx-auto px-4 sm:px-6">
         
-        {/* Subtle subheader instructions */}
-        <div className="flex items-center justify-between gap-4 mb-4">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#E5B21D] shadow-[0_0_8px_#E5B21D]" />
-            <h2 className="font-mono text-xs font-bold uppercase tracking-wider text-slate-300">
-              Operational Capability Board &middot; 6 Capability Configurators
-            </h2>
+        {/* 3-STEP ENTERPRISE SCOPING PROTOCOL & ENGINE DECK */}
+        <div className="mb-6 rounded-2xl bg-[#0B1624]/90 border border-white/15 p-4 sm:p-5 shadow-2xl backdrop-blur-md">
+          {/* Top telemetry & protocol identity bar */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 pb-3 mb-3.5 border-b border-white/10">
+            <div className="flex items-center gap-2.5">
+              <span className="w-2 h-2 rounded-full bg-[#E5B21D] shadow-[0_0_8px_#E5B21D] animate-pulse" />
+              <h2 className="font-mono text-xs font-bold uppercase tracking-wider text-white">
+                Enterprise Scoping Protocol
+              </h2>
+              <span className="text-slate-500 font-mono text-xs">&middot;</span>
+              <span className="text-xs font-mono text-[#E5B21D] font-bold">
+                6 Operating Engines
+              </span>
+            </div>
+
+            <div className="flex items-center gap-3 text-xs font-mono text-slate-400">
+              <span className={totalItems > 0 ? "text-[#E5B21D] font-bold" : "text-slate-400"}>
+                {totalItems > 0 ? `${totalItems} Outcomes in Active Scope` : "0 Outcomes in Active Scope"}
+              </span>
+              <span className="hidden md:inline text-slate-600">&bull;</span>
+              <span className="hidden md:inline text-slate-300">Deterministic Sprint Architecture</span>
+            </div>
           </div>
-          <span className="text-[11px] font-mono text-slate-400 hidden sm:inline">
-            Click any configurator to select outcomes and state operational context
-          </span>
+
+          {/* 3 Interconnected Execution Steps */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
+            
+            {/* Step 01 */}
+            <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 flex flex-col justify-between hover:border-white/20 transition-colors group">
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-1.5">
+                  <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-[#E5B21D]/20 text-[#E5B21D] border border-[#E5B21D]/40">
+                    STEP 01
+                  </span>
+                  <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">
+                    Select Capabilities
+                  </span>
+                </div>
+                <h3 className="font-serif text-sm font-bold text-white group-hover:text-[#E5B21D] transition-colors">
+                  Choose Business Outcomes
+                </h3>
+                <p className="text-xs text-slate-300 mt-1 leading-relaxed">
+                  Click any configurator below. Select the discrete deliverables your business needs to execute.
+                </p>
+              </div>
+            </div>
+
+            {/* Step 02 */}
+            <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 flex flex-col justify-between hover:border-white/20 transition-colors group">
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-1.5">
+                  <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-[#E5B21D]/20 text-[#E5B21D] border border-[#E5B21D]/40">
+                    STEP 02
+                  </span>
+                  <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">
+                    Context Window
+                  </span>
+                </div>
+                <h3 className="font-serif text-sm font-bold text-white group-hover:text-[#E5B21D] transition-colors">
+                  State Systems &amp; Reality
+                </h3>
+                <p className="text-xs text-slate-300 mt-1 leading-relaxed">
+                  State your live ERP, vendor friction, team bottlenecks, or operational constraints in the context window.
+                </p>
+              </div>
+            </div>
+
+            {/* Step 03 */}
+            <div className="p-3.5 rounded-xl bg-[#0E1E32]/70 border border-[#E5B21D]/30 flex flex-col justify-between hover:border-[#E5B21D]/60 transition-colors group shadow-xs">
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-1.5">
+                  <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-[#E5B21D] text-[#070E17]">
+                    STEP 03
+                  </span>
+                  <span className="text-[10px] font-mono text-[#E5B21D] font-bold uppercase tracking-wider">
+                    Block Allocation
+                  </span>
+                </div>
+                <h3 className="font-serif text-sm font-bold text-white group-hover:text-[#E5B21D] transition-colors">
+                  We Quote 2 to 4 Week Blocks
+                </h3>
+                <p className="text-xs text-slate-300 mt-1 leading-relaxed">
+                  No open-ended retainers. Capo reviews your context and returns an exact block allocation and schedule.
+                </p>
+              </div>
+            </div>
+
+          </div>
         </div>
 
         {/* 6 Blocks Grid (3x2 on desktop, architectural modular blocks) */}
