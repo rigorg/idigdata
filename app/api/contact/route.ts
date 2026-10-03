@@ -110,7 +110,7 @@ export async function POST(req: NextRequest) {
     attributionCookie: req.cookies.get(ATTRIBUTION_COOKIE)?.value,
   });
   const isBlockQuote =
-    message.includes("THE BLOCK") || message.includes("FLIGHT SCOPE QUOTE");
+    message.includes("THE BLOCK") || message.includes("BLOCK SCOPE QUOTE") || message.includes("DELIVERY QUOTE") || message.includes("FLIGHT SCOPE QUOTE");
   const subject = isBlockQuote
     ? `[The Block Quote] ${safeName}${company ? ` (${sanitizeHeaderField(company)})` : ""} / ${safeEmail}`
     : `[idigdata] Reach out: ${safeName} / ${safeEmail}`;

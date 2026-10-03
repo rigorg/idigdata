@@ -5,7 +5,7 @@ export const metadata: Metadata = {
     absolute: "The Block · Scoping & Outcome Configurator | idigdata",
   },
   description:
-    "The Block is idigdata's productized capability configurator. Explore outcomes across leadership, business systems, data, financial integrity, workflows, and bespoke agentic engineering. Configure your scope and calculate delivery flights.",
+    "The Block is idigdata's productized capability configurator. Explore outcomes across leadership, business systems, data, financial integrity, workflows, and bespoke agentic engineering. Configure your scope and structure your delivery blocks.",
   alternates: { canonical: "/block/" },
   openGraph: {
     type: "website",

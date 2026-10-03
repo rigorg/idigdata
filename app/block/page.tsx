@@ -43,6 +43,83 @@ const AGENTIC_IDEA_SEEDS = [
   "Custom Inventory Allocation Pipeline",
 ];
 
+const DOMAIN_SAMPLE_CAPABILITIES: Record<string, string[]> = {
+  leadership_direction: ["Executive IT Mandate", "Vendor Scope Reset", "Team Capability"],
+  it_business_systems: ["ERP & Cutover Readiness", "Platform Selection", "Reliable Services"],
+  data_knowledge: ["Consistent Records", "Traceable Reporting", "Operational Truth"],
+  financial_systems: ["Reconciliation Engine", "Invoice Audit & Review", "Multi-Entity Ledger"],
+  workflows_automation: ["Cross-System Integrations", "Exception Dispatcher", "Process Automation"],
+  agentic_systems: ["Private AI Runtimes", "Custom API Bridges", "Autonomous Event Meshes"],
+};
+
+function IsometricBlockGlyph({
+  active = false,
+  highlight = false,
+  className = "w-6 h-6",
+}: {
+  active?: boolean;
+  highlight?: boolean;
+  className?: string;
+}) {
+  const strokeColor = highlight
+    ? "#E5B21D"
+    : active
+      ? "#E5B21D"
+      : "rgba(255, 255, 255, 0.4)";
+  const topFill = highlight
+    ? "rgba(229, 178, 29, 0.45)"
+    : active
+      ? "rgba(229, 178, 29, 0.28)"
+      : "rgba(255, 255, 255, 0.08)";
+  const leftFill = highlight
+    ? "rgba(229, 178, 29, 0.22)"
+    : active
+      ? "rgba(229, 178, 29, 0.14)"
+      : "rgba(255, 255, 255, 0.03)";
+  const rightFill = highlight
+    ? "rgba(229, 178, 29, 0.32)"
+    : active
+      ? "rgba(229, 178, 29, 0.2)"
+      : "rgba(255, 255, 255, 0.05)";
+
+  return (
+    <svg
+      viewBox="0 0 28 28"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={`${className} transition-all duration-300 ${
+        active || highlight ? "drop-shadow-[0_0_8px_rgba(229,178,29,0.5)]" : ""
+      }`}
+      aria-hidden="true"
+    >
+      <polygon
+        points="14,3 24,8.5 14,14 4,8.5"
+        fill={topFill}
+        stroke={strokeColor}
+        strokeWidth="1.2"
+        strokeLinejoin="round"
+      />
+      <polygon
+        points="4,8.5 14,14 14,25 4,19.5"
+        fill={leftFill}
+        stroke={strokeColor}
+        strokeWidth="1.2"
+        strokeLinejoin="round"
+      />
+      <polygon
+        points="14,14 24,8.5 24,19.5 14,25"
+        fill={rightFill}
+        stroke={strokeColor}
+        strokeWidth="1.2"
+        strokeLinejoin="round"
+      />
+      {(active || highlight) && (
+        <circle cx="14" cy="14" r="1.5" fill="#E5B21D" />
+      )}
+    </svg>
+  );
+}
+
 export default function TheBlockPage() {
   const { draft, update } = useEngagementDraft();
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
@@ -57,7 +134,7 @@ export default function TheBlockPage() {
   const [quoteEmail, setQuoteEmail] = useState<string>("");
   const [quoteCompany, setQuoteCompany] = useState<string>("");
   const [quoteRole, setQuoteRole] = useState<string>("");
-  const [quoteLaunch, setQuoteLaunch] = useState<string>("Immediate / Next Available Flight");
+  const [quoteLaunch, setQuoteLaunch] = useState<string>("Immediate / Next Available Window");
   const [quoteNotes, setQuoteNotes] = useState<string>("");
   const [quoteStatus, setQuoteStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [quoteErrorMsg, setQuoteErrorMsg] = useState<string>("");
@@ -180,7 +257,7 @@ export default function TheBlockPage() {
       `Work Email: ${quoteEmail.trim()}`,
       quoteCompany.trim() ? `Company: ${quoteCompany.trim()}` : "",
       quoteRole.trim() ? `Operational Role: ${quoteRole.trim()}` : "",
-      `Target Flight Launch: ${quoteLaunch}`,
+      `Target Project Kickoff Window: ${quoteLaunch}`,
       `Delivery Standard: 1 Block = 2 to 4 Weeks`,
       `Total Outcomes Selected: ${totalItems} active across ${activeDomainsCount} domain(s)`,
       ``,
@@ -202,7 +279,7 @@ export default function TheBlockPage() {
         body: JSON.stringify({
           name: quoteName.trim(),
           email: quoteEmail.trim(),
-          role: quoteRole.trim() || "The Block Flight Quote Requester",
+          role: quoteRole.trim() || "The Block Delivery Quote Requester",
           company: quoteCompany.trim(),
           message: fullMessage,
           interestType: hasAgentic ? "applied_agentics" : "core_transformation",
@@ -258,14 +335,11 @@ export default function TheBlockPage() {
             {/* Right: 1 Block = 2-4 Weeks Anchor + Selection Pill + Action Button */}
             <div className="flex items-center gap-2.5 sm:gap-3 self-end sm:self-auto">
               
-              {/* Delivery standard anchor pill */}
-              <div className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/15 text-xs font-mono flex items-center gap-2 shadow-xs">
-                <span className="text-[#E5B21D] font-bold">
-                  1 Block = 2-4 Weeks
-                </span>
-                <span className="text-white/30">&bull;</span>
-                <span className="text-slate-200">
-                  {totalItems === 0 ? "Select Capabilities" : `${totalItems} ${totalItems === 1 ? "Outcome" : "Outcomes"}`}
+              {/* Delivery standard anchor pill (Strictly 1 Block = 2 to 4 Weeks; zero outcome count equation) */}
+              <div className="px-3.5 py-1.5 rounded-lg bg-[#E5B21D]/10 border border-[#E5B21D]/30 text-xs font-mono flex items-center gap-2 shadow-xs">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#E5B21D] animate-pulse" />
+                <span className="text-[#E5B21D] font-bold tracking-wide">
+                  1 Block = 2 to 4 Weeks
                 </span>
               </div>
 
@@ -299,8 +373,8 @@ export default function TheBlockPage() {
           </span>
         </div>
 
-        {/* 6 Blocks Grid (3x2 on desktop, fully on screen) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
+        {/* 6 Blocks Grid (3x2 on desktop, architectural modular blocks) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {allDomains.map((domain, idx) => {
             const isAgentic = domain.id === "agentic_systems";
             const blockNum = String(idx + 1).padStart(2, "0");
@@ -310,29 +384,49 @@ export default function TheBlockPage() {
             const domainSelectedCount = isAgentic
               ? hasAgentic ? 1 : 0
               : domainItems.filter((it) => selectedIds.has(it.id)).length;
+            const isBlockActive = domainSelectedCount > 0;
 
             return (
               <div
                 key={domain.id}
                 onClick={() => setActiveModalDomainId(domain.id)}
-                className={`group relative rounded-xl border p-4.5 cursor-pointer transition-all duration-200 flex flex-col justify-between ${
+                className={`group relative rounded-xl border-t-2 border-l border-r border-b-4 p-5 sm:p-6 cursor-pointer transition-all duration-300 flex flex-col justify-between min-h-[310px] sm:min-h-[330px] ${
                   isAgentic
-                    ? "bg-gradient-to-br from-[#0E1E32] to-[#142840] text-white border-[#E5B21D] shadow-[0_0_25px_rgba(229,178,29,0.2)] hover:shadow-[0_0_35px_rgba(229,178,29,0.3)]"
-                    : "bg-[#0B1624]/90 hover:bg-[#0E1E32] border-white/10 hover:border-[#E5B21D]/60 hover:shadow-[0_0_25px_rgba(229,178,29,0.12)] text-white"
+                    ? "bg-gradient-to-br from-[#0E1E32] via-[#0B1624] to-[#142840] border-t-[#E5B21D] border-l-[#E5B21D]/60 border-r-[#E5B21D]/60 border-b-[#B48A05] text-white shadow-[0_16px_30px_-6px_rgba(0,0,0,0.85),0_4px_0_0_#B48A05,inset_0_1px_0_rgba(229,178,29,0.5),0_0_30px_rgba(229,178,29,0.2)] hover:-translate-y-1.5 hover:shadow-[0_24px_45px_-8px_rgba(229,178,29,0.35),0_6px_0_0_#B48A05,inset_0_1px_0_rgba(229,178,29,0.7)]"
+                    : isBlockActive
+                      ? "bg-[#0E1E32] border-t-[#E5B21D] border-l-[#E5B21D]/50 border-r-[#E5B21D]/50 border-b-[#B48A05] text-white shadow-[0_16px_30px_-6px_rgba(0,0,0,0.85),0_4px_0_0_#B48A05,inset_0_1px_0_rgba(229,178,29,0.4),0_0_20px_rgba(229,178,29,0.15)] hover:-translate-y-1.5 hover:shadow-[0_24px_40px_-8px_rgba(0,0,0,0.95),0_6px_0_0_#B48A05]"
+                      : "bg-[#0B1624] hover:bg-[#0E1E32] border-t-white/20 border-l-white/10 border-r-white/10 border-b-[#050B12] text-white shadow-[0_16px_30px_-6px_rgba(0,0,0,0.85),0_4px_0_0_#050B12,inset_0_1px_0_rgba(255,255,255,0.12)] hover:-translate-y-1.5 hover:shadow-[0_24px_40px_-8px_rgba(0,0,0,0.95),0_6px_0_0_#070E17,inset_0_1px_0_rgba(229,178,29,0.35)] hover:border-t-[#E5B21D]/70"
                 }`}
               >
-                {/* Top row */}
+                {/* 4 Machined Corner Notches */}
+                <div className="absolute top-1.5 left-1.5 w-2 h-2 border-t border-l border-white/20 group-hover:border-[#E5B21D]/60 transition-colors pointer-events-none" />
+                <div className="absolute top-1.5 right-1.5 w-2 h-2 border-t border-r border-white/20 group-hover:border-[#E5B21D]/60 transition-colors pointer-events-none" />
+                <div className="absolute bottom-1.5 left-1.5 w-2 h-2 border-b border-l border-white/20 group-hover:border-[#E5B21D]/60 transition-colors pointer-events-none" />
+                <div className="absolute bottom-1.5 right-1.5 w-2 h-2 border-b border-r border-white/20 group-hover:border-[#E5B21D]/60 transition-colors pointer-events-none" />
+
+                {/* Block Header Plate */}
                 <div>
-                  <div className="flex items-center justify-between gap-2 mb-2">
-                    <div className="flex items-center gap-2">
-                      <span className={`font-mono text-xs font-bold px-2 py-0.5 rounded ${
-                        isAgentic ? "bg-[#E5B21D] text-[#070E17]" : "bg-white/10 text-white border border-white/10"
-                      }`}>
-                        BLOCK {blockNum}
-                      </span>
-                      <span className="font-mono text-xs font-semibold text-[#E5B21D]">
-                        [{domain.code}]
-                      </span>
+                  <div className="flex items-center justify-between gap-2 mb-3">
+                    <div className="flex items-center gap-2.5">
+                      <IsometricBlockGlyph
+                        active={isBlockActive}
+                        highlight={isAgentic}
+                        className="w-5 h-5 sm:w-6 sm:h-6 shrink-0"
+                      />
+                      <div className="flex items-center gap-1.5">
+                        <span className={`font-mono text-xs font-bold px-2 py-0.5 rounded tracking-wider ${
+                          isAgentic
+                            ? "bg-[#E5B21D] text-[#070E17]"
+                            : isBlockActive
+                              ? "bg-[#E5B21D]/20 text-[#E5B21D] border border-[#E5B21D]/40"
+                              : "bg-white/10 text-slate-200 border border-white/15"
+                        }`}>
+                          BLOCK {blockNum}
+                        </span>
+                        <span className="font-mono text-xs font-bold text-[#E5B21D]">
+                          [{domain.code}]
+                        </span>
+                      </div>
                     </div>
 
                     {domain.badge && (
@@ -341,31 +435,49 @@ export default function TheBlockPage() {
                       </span>
                     )}
 
-                    {domainSelectedCount > 0 && !domain.badge && (
-                      <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                        {domainSelectedCount} in Flight
+                    {isBlockActive && !domain.badge && (
+                      <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-[#E5B21D]/20 text-[#E5B21D] border border-[#E5B21D]/40 flex items-center gap-1.5 shadow-[0_0_10px_rgba(229,178,29,0.2)]">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#E5B21D] animate-pulse" />
+                        <span>{domainSelectedCount} in Scope</span>
                       </span>
                     )}
                   </div>
 
-                  <h3 className="font-serif text-lg font-bold leading-snug tracking-tight text-white group-hover:text-[#E5B21D] transition-colors">
+                  {/* Block Title & Thesis */}
+                  <h3 className="font-serif text-lg sm:text-xl font-bold leading-tight tracking-tight text-white group-hover:text-[#E5B21D] transition-colors">
                     {domain.name}
                   </h3>
 
-                  <p className="text-xs mt-1.5 line-clamp-2 leading-relaxed text-slate-300">
+                  <p className="text-xs mt-2 line-clamp-2 leading-relaxed text-slate-300">
                     {domain.subtitle}
                   </p>
+
+                  {/* Modular Capability Sub-Blocks / Tags */}
+                  <div className="mt-3.5 flex flex-wrap gap-1.5">
+                    {(DOMAIN_SAMPLE_CAPABILITIES[domain.id] || []).map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 border border-white/10 text-slate-300 group-hover:border-white/20 transition-colors"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
 
-                {/* Bottom preview info */}
-                <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-slate-400">
-                  <span>
-                    {isAgentic
-                      ? hasAgentic ? "Custom Spec Configured" : "Bespoke Engineering Pod"
-                      : `${domainItems.length} Deliverable Outcomes`}
-                  </span>
-                  <span className="font-serif font-bold text-[#E5B21D] group-hover:translate-x-0.5 transition-transform flex items-center gap-1">
-                    <span>Configure</span>
+                {/* Tactile Block Base Plate */}
+                <div className="mt-5 pt-3.5 border-t border-white/10 flex items-center justify-between text-xs font-mono">
+                  <div className="flex items-center gap-1.5 text-slate-400">
+                    <span className="w-1.5 h-1.5 rounded-sm bg-slate-500 group-hover:bg-[#E5B21D] transition-colors" />
+                    <span>
+                      {isAgentic
+                        ? hasAgentic ? "Custom Spec Configured" : "Bespoke Engineering Pod"
+                        : `${domainItems.length} Deliverable Outcomes`}
+                    </span>
+                  </div>
+
+                  <span className="font-serif font-bold text-xs uppercase tracking-wider text-[#E5B21D] group-hover:translate-x-1 transition-transform flex items-center gap-1 bg-[#E5B21D]/10 px-2.5 py-1 rounded border border-[#E5B21D]/25 group-hover:border-[#E5B21D]/50 group-hover:bg-[#E5B21D]/20">
+                    <span>Configure Block</span>
                     <span>&rarr;</span>
                   </span>
                 </div>
@@ -409,7 +521,7 @@ export default function TheBlockPage() {
                 <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 space-y-1">
                   <div className="font-bold text-[#E5B21D]">OUTCOME SCOPING</div>
                   <p className="text-[11px] text-slate-300 font-sans leading-snug">
-                    Outcomes vary in depth. Some flights fit multiple outcomes into one block; complex cutovers take dedicated blocks.
+                    Outcomes vary in depth. Some project mandates fit multiple outcomes into one block; complex cutovers take dedicated blocks.
                   </p>
                 </div>
 
@@ -494,7 +606,7 @@ export default function TheBlockPage() {
                   onChange={(e) => handleGeneralNotesChange(e.target.value)}
                   rows={3}
                   spellCheck={false}
-                  placeholder="e.g. ERP cutover delayed by off-track integrator, need independent scope reset and cutover flight control..."
+                  placeholder="e.g. ERP cutover delayed by off-track integrator, need independent scope reset and cutover steering & stabilization..."
                   className="w-full mt-2.5 p-3 text-xs rounded-lg border border-white/20 bg-[#0B1624] focus:outline-none focus:border-[#E5B21D] focus:ring-1 focus:ring-[#E5B21D] text-white font-sans placeholder:text-slate-500"
                 />
               </div>
@@ -508,7 +620,7 @@ export default function TheBlockPage() {
                   <span>Submit Scope for Delivery Quote &rarr;</span>
                 </button>
                 <div className="text-[10px] font-mono text-center text-slate-400 mt-2">
-                  1 Block = 2 to 4 Weeks &middot; Dedicated Delivery Flight
+                  1 Block = 2 to 4 Weeks &middot; Dedicated Delivery Mandate
                 </div>
               </div>
             </div>
@@ -775,14 +887,14 @@ export default function TheBlockPage() {
             {/* Modal Footer */}
             <div className="p-4 border-t border-white/10 bg-[#070E17] flex items-center justify-between gap-3">
               <span className="text-xs font-mono text-slate-300">
-                {hasAgentic ? "1 Bespoke Block added to flight" : "No custom requirement added"}
+                {hasAgentic ? "1 Bespoke Block added to project mandate" : "No custom requirement added"}
               </span>
               <button
                 type="button"
                 onClick={() => setActiveModalDomainId(null)}
                 className="px-4 py-1.5 rounded-lg bg-[#E5B21D] hover:bg-amber-400 text-[#070E17] font-serif font-bold text-xs uppercase tracking-wider cursor-pointer shadow-xs"
               >
-                Add to Flight &amp; Done
+                Save Scope &amp; Close
               </button>
             </div>
 
@@ -835,7 +947,7 @@ export default function TheBlockPage() {
                     Scope Request Received
                   </h4>
                   <p className="text-xs text-slate-300 leading-relaxed max-w-sm mx-auto">
-                    Thank you. We have received your selected outcomes ({totalItems} active). Our principals will review your requirements and operational context, and return an exact flight quote with the required block allocation and delivery timeline within 1 business day.
+                    Thank you. We have received your selected outcomes ({totalItems} active). Our principals will review your requirements and operational context, and return an exact delivery quote with the required block allocation and delivery timeline within 1 business day.
                   </p>
                   <button
                     type="button"
@@ -964,10 +1076,10 @@ export default function TheBlockPage() {
                     </div>
                   </div>
 
-                  {/* Target Flight Launch Window */}
+                  {/* Target Project Kickoff Window */}
                   <div>
                     <label htmlFor="quote-launch" className="block text-xs font-serif font-bold text-white mb-1">
-                      Target Flight Launch Window
+                      Target Project Kickoff Window
                     </label>
                     <select
                       id="quote-launch"
@@ -975,7 +1087,7 @@ export default function TheBlockPage() {
                       onChange={(e) => setQuoteLaunch(e.target.value)}
                       className="w-full text-xs p-2.5 rounded-lg border border-white/20 bg-[#070E17] text-white focus:outline-none focus:border-[#E5B21D] font-mono"
                     >
-                      <option value="Immediate / Next Available Flight">Immediate / Next Available Flight</option>
+                      <option value="Immediate / Next Available Window">Immediate / Next Available Window</option>
                       <option value="Within 30 Days">Within 30 Days</option>
                       <option value="Within 60-90 Days / Next Quarter">Within 60-90 Days / Next Quarter</option>
                       <option value="Exploring Scope / Budgeting">Exploring Scope / Budgeting</option>
