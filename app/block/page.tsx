@@ -30,7 +30,6 @@ interface DomainConfig {
   borderClass: string;
   bgGlowClass: string;
   pillClass: string;
-  glyph: string;
 }
 
 const DOMAIN_CONFIGS: DomainConfig[] = [
@@ -46,7 +45,6 @@ const DOMAIN_CONFIGS: DomainConfig[] = [
     borderClass: "border-amber-500/40 hover:border-amber-400",
     bgGlowClass: "from-amber-500/10 via-transparent to-transparent",
     pillClass: "bg-amber-500/15 text-amber-300 border-amber-500/30",
-    glyph: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5",
   },
   {
     id: "it_business_systems",
@@ -60,7 +58,6 @@ const DOMAIN_CONFIGS: DomainConfig[] = [
     borderClass: "border-cyan-500/40 hover:border-cyan-400",
     bgGlowClass: "from-cyan-500/10 via-transparent to-transparent",
     pillClass: "bg-cyan-500/15 text-cyan-300 border-cyan-500/30",
-    glyph: "M4 6h16M4 10h16M4 14h16M4 18h16",
   },
   {
     id: "data_knowledge",
@@ -74,7 +71,6 @@ const DOMAIN_CONFIGS: DomainConfig[] = [
     borderClass: "border-violet-500/40 hover:border-violet-400",
     bgGlowClass: "from-violet-500/10 via-transparent to-transparent",
     pillClass: "bg-violet-500/15 text-violet-300 border-violet-500/30",
-    glyph: "M12 3v18m-9-9h18M5 5l14 14M5 19L19 5",
   },
   {
     id: "financial_systems",
@@ -88,7 +84,6 @@ const DOMAIN_CONFIGS: DomainConfig[] = [
     borderClass: "border-emerald-500/40 hover:border-emerald-400",
     bgGlowClass: "from-emerald-500/10 via-transparent to-transparent",
     pillClass: "bg-emerald-500/15 text-emerald-300 border-emerald-500/30",
-    glyph: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V6m0 10v2",
   },
   {
     id: "workflows_automation",
@@ -102,7 +97,6 @@ const DOMAIN_CONFIGS: DomainConfig[] = [
     borderClass: "border-teal-500/40 hover:border-teal-400",
     bgGlowClass: "from-teal-500/10 via-transparent to-transparent",
     pillClass: "bg-teal-500/15 text-teal-300 border-teal-500/30",
-    glyph: "M13 10V3L4 14h7v7l9-11h-7z",
   },
   {
     id: "agentic_systems",
@@ -116,9 +110,87 @@ const DOMAIN_CONFIGS: DomainConfig[] = [
     borderClass: "border-[#E5B21D]/60 hover:border-amber-300",
     bgGlowClass: "from-[#E5B21D]/15 via-transparent to-transparent",
     pillClass: "bg-[#E5B21D]/20 text-[#E5B21D] border-[#E5B21D]/40",
-    glyph: "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
   },
 ];
+
+// Unique, simple, cool-looking icons representing each of the 6 blocks
+function DomainBlockIcon({
+  code,
+  className = "w-6 h-6",
+  color = "currentColor",
+}: {
+  code: string;
+  className?: string;
+  color?: string;
+}) {
+  switch (code) {
+    case "LD":
+      // Executive Apex Crown & Compass Directive Helm
+      return (
+        <svg viewBox="0 0 24 24" fill="none" className={className} stroke={color} strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="9.5" strokeOpacity="0.35" strokeDasharray="3 3" />
+          <polygon points="12 2.5 15 9.5 22 12 15 14.5 12 21.5 9 14.5 2 12 9 9.5 12 2.5" fill={`${color}25`} />
+          <polygon points="12 4.5 14 10 12 12 10 10 12 4.5" fill={color} stroke="none" />
+          <circle cx="12" cy="12" r="2" fill="#070E17" stroke={color} strokeWidth="2" />
+        </svg>
+      );
+    case "IT":
+      // Modular Platform Cube & Interconnected Bus Nodes
+      return (
+        <svg viewBox="0 0 24 24" fill="none" className={className} stroke={color} strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 2.5L3.5 7.5v9l8.5 5 8.5-5v-9l-8.5-5z" fill={`${color}20`} strokeOpacity="0.85" />
+          <path d="M12 12.5L3.5 7.5" />
+          <path d="M12 12.5v9" />
+          <path d="M12 12.5l8.5-5" />
+          <circle cx="12" cy="7.5" r="1.5" fill={color} stroke="none" />
+          <circle cx="7.75" cy="15" r="1.5" fill={color} stroke="none" />
+          <circle cx="16.25" cy="15" r="1.5" fill={color} stroke="none" />
+        </svg>
+      );
+    case "DK":
+      // Faceted Truth Prism & Data Lineage Crystal
+      return (
+        <svg viewBox="0 0 24 24" fill="none" className={className} stroke={color} strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M6 3.5h12l4 6.5-10 11.5L2 10l4-6.5z" fill={`${color}20`} strokeOpacity="0.85" />
+          <path d="M2 10h20" />
+          <path d="M12 21.5L7.5 10 10 3.5" />
+          <path d="M12 21.5l4.5-11.5L14 3.5" />
+          <circle cx="12" cy="10" r="1.75" fill={color} stroke="#070E17" strokeWidth="1.5" />
+        </svg>
+      );
+    case "FS":
+      // Precision Calibrated Balance Scale & Ledger Equilibrium (Strictly NO $)
+      return (
+        <svg viewBox="0 0 24 24" fill="none" className={className} stroke={color} strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 3v17.5M7 20.5h10" />
+          <path d="M4 7.5l8-2 8 2" />
+          <path d="M4 7.5l-2.5 5.5a3.5 3.5 0 007 0L6 7.5" fill={`${color}25`} strokeOpacity="0.85" />
+          <path d="M20 7.5l-2.5 5.5a3.5 3.5 0 007 0L22 7.5" fill={`${color}25`} strokeOpacity="0.85" />
+          <circle cx="12" cy="5.5" r="1.75" fill={color} stroke="none" />
+        </svg>
+      );
+    case "WA":
+      // Automated Cyclic Pipeline Loop & Kinetic Dispatch Spark
+      return (
+        <svg viewBox="0 0 24 24" fill="none" className={className} stroke={color} strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M4 12a8 8 0 0114.5-4.5M20 12a8 8 0 01-14.5 4.5" strokeOpacity="0.5" strokeWidth="1.5" />
+          <path d="M19.5 3.5v4.5h-4.5M4.5 20.5v-4.5h4.5" strokeWidth="1.75" />
+          <polygon points="13 6 8 13.5 12 13.5 11 18 16 10.5 12 10.5 13 6" fill={color} stroke="none" />
+        </svg>
+      );
+    case "AS":
+      // Autonomous Cybernetic Core & AI Neural Matrix
+      return (
+        <svg viewBox="0 0 24 24" fill="none" className={className} stroke={color} strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="5.5" y="5.5" width="13" height="13" rx="2.5" fill={`${color}25`} strokeOpacity="0.85" />
+          <polygon points="12 8 15.5 12 12 16 8.5 12" fill={color} stroke="none" />
+          <path d="M9 2v3.5M15 2v3.5M9 18.5v3.5M15 18.5v3.5M2 9h3.5M2 15h3.5M18.5 9h3.5M18.5 15h3.5" strokeWidth="1.75" />
+        </svg>
+      );
+    default:
+      return null;
+  }
+}
 
 const AGENTIC_IDEA_SEEDS = [
   "Autonomous Freight Invoice Reconciler",
@@ -479,7 +551,7 @@ export default function TheBlockPage() {
 
   return (
     <div
-      className="min-h-screen bg-[#070E17] text-slate-100 selection:bg-[#E5B21D]/30 flex flex-col justify-between"
+      className="bg-[#070E17] text-slate-100 selection:bg-[#E5B21D]/30 flex flex-col"
       style={{
         backgroundImage: "radial-gradient(ellipse 90% 45% at 50% -5%, rgba(229, 178, 29, 0.08), transparent 70%)",
       }}
@@ -622,8 +694,8 @@ export default function TheBlockPage() {
         </div>
       </section>
 
-      {/* 3. THE 6 EQUAL-SIZED BLOCKS: FUN, COMPACT, DISTINCT COLORS, HIT IT AND EXPLORE IT */}
-      <section className="py-2.5 max-w-7xl mx-auto px-4 sm:px-6 w-full flex-1">
+      {/* 3. THE 6 EQUAL-SIZED BLOCKS: 3D MODULAR BLOCKS, FUN, DISTINCT COLORS, HIT IT AND EXPLORE IT */}
+      <section className="pt-2 pb-2 max-w-7xl mx-auto px-4 sm:px-6 w-full">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
           {DOMAIN_CONFIGS.map((cfg, idx) => {
             const isAgentic = cfg.id === "agentic_systems";
@@ -640,80 +712,109 @@ export default function TheBlockPage() {
                 onClick={() => setActiveModalDomainId(cfg.id)}
                 role="button"
                 tabIndex={0}
-                className={`relative rounded-xl border p-4 cursor-pointer transition-all duration-200 flex flex-col justify-between select-none group h-[145px] sm:h-[155px] ${
+                className={`relative rounded-xl border transition-all duration-200 flex flex-col justify-between select-none group cursor-pointer overflow-hidden min-h-[160px] sm:min-h-[170px] hover:-translate-y-1 active:translate-y-0.5 ${
                   isBlockActive
-                    ? `bg-[#0E1E32] ${cfg.borderClass} shadow-[0_8px_20px_rgba(0,0,0,0.6),0_0_15px_${cfg.accentHex}30]`
-                    : `bg-[#0B1624] hover:bg-[#0E1E32]/70 border-white/10 hover:${cfg.borderClass} shadow-[0_4px_12px_rgba(0,0,0,0.5)]`
+                    ? "bg-[#0E1E32]"
+                    : "bg-[#0B1624] hover:bg-[#0E1E32]/80"
                 }`}
+                style={{
+                  borderColor: isBlockActive ? `${cfg.accentHex}80` : "rgba(255,255,255,0.12)",
+                  boxShadow: isBlockActive
+                    ? `0 6px 0 ${cfg.accentHex}99, 0 10px 0 #02060C, 0 16px 26px rgba(0,0,0,0.85), 0 0 25px ${cfg.accentHex}25`
+                    : `0 6px 0 ${cfg.accentHex}30, 0 9px 0 #02060C, 0 12px 20px rgba(0,0,0,0.7)`,
+                }}
               >
-                {/* Subtle top edge accent glow */}
+                {/* 3D Beveled Modular Block Cap / Roof Facet */}
                 <div
-                  className="absolute top-0 left-0 right-0 h-[2px] rounded-t-xl transition-opacity duration-300"
+                  className="px-3.5 py-1.5 border-b flex items-center justify-between transition-colors duration-200"
                   style={{
-                    backgroundColor: cfg.accentHex,
-                    opacity: isBlockActive ? 1 : 0.4,
+                    background: isBlockActive
+                      ? `linear-gradient(90deg, ${cfg.accentHex}30, ${cfg.accentHex}10)`
+                      : "linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.01))",
+                    borderColor: isBlockActive ? `${cfg.accentHex}50` : "rgba(255,255,255,0.08)",
                   }}
-                />
-
-                {/* Card Top: Code + Number + Archetype Badge */}
-                <div>
-                  <div className="flex items-center justify-between gap-2 mb-2">
-                    <div className="flex items-center gap-2">
-                      <span
-                        className="font-mono text-[10px] font-bold px-2 py-0.5 rounded tracking-wider"
-                        style={{
-                          backgroundColor: `${cfg.accentHex}25`,
-                          color: cfg.accentHex,
-                          border: `1px solid ${cfg.accentHex}50`,
-                        }}
-                      >
-                        {blockNum} &middot; [{cfg.code}]
-                      </span>
-                      <span className="font-serif text-sm font-bold text-white group-hover:text-white truncate">
-                        {cfg.shortName}
-                      </span>
-                    </div>
-
-                    {/* Badge */}
-                    <span className={`text-[9px] font-mono font-bold px-1.5 py-0.5 rounded border uppercase tracking-wider ${cfg.pillClass}`}>
-                      {cfg.badge}
-                    </span>
-                  </div>
-
-                  {/* Subtitle / Thesis (1-2 lines, clean) */}
-                  <p className="text-xs text-slate-300 line-clamp-2 leading-relaxed">
-                    {cfg.subtitle}
-                  </p>
-                </div>
-
-                {/* Card Bottom: Tactile Status Indicator + Hit It & Explore Button */}
-                <div className="pt-2 border-t border-white/10 flex items-center justify-between text-xs font-mono">
-                  <div className="flex items-center gap-1.5">
+                >
+                  {/* Block index and modular registration pins */}
+                  <div className="flex items-center gap-2">
                     <span
-                      className="w-2 h-2 rounded-full transition-colors"
+                      className="w-1.5 h-1.5 rounded-full transition-all"
                       style={{
-                        backgroundColor: isBlockActive ? cfg.accentHex : "rgba(255,255,255,0.25)",
+                        backgroundColor: isBlockActive ? cfg.accentHex : "rgba(255,255,255,0.3)",
                         boxShadow: isBlockActive ? `0 0 6px ${cfg.accentHex}` : "none",
                       }}
                     />
-                    <span className={isBlockActive ? "font-bold text-white text-[11px]" : "text-slate-400 text-[11px]"}>
-                      {isAgentic
-                        ? hasAgentic ? "Mandate Configured" : "0 Configured"
-                        : `${domainSelectedCount} of ${domainItems.length} Configured`}
+                    <span
+                      className="font-mono text-[9px] font-bold tracking-widest uppercase"
+                      style={{ color: cfg.accentHex }}
+                    >
+                      BLOCK {blockNum} &middot; [{cfg.code}]
                     </span>
                   </div>
 
-                  <span
-                    className="font-serif font-bold text-[11px] uppercase tracking-wider flex items-center gap-1 px-2 py-0.5 rounded transition-all group-hover:translate-x-0.5"
-                    style={{
-                      color: cfg.accentHex,
-                      backgroundColor: `${cfg.accentHex}15`,
-                      border: `1px solid ${cfg.accentHex}40`,
-                    }}
-                  >
-                    <span>Configure</span>
-                    <span>&rarr;</span>
+                  {/* Archetype Badge */}
+                  <span className={`text-[8.5px] font-mono font-bold px-1.5 py-0.5 rounded border uppercase tracking-wider ${cfg.pillClass}`}>
+                    {cfg.badge}
                   </span>
+                </div>
+
+                {/* Block Body: Icon Plinth + Domain Core */}
+                <div className="p-3 sm:p-3.5 flex-1 flex flex-col justify-between">
+                  <div className="flex items-start gap-3">
+                    {/* Tactile 3D Modular Icon Plinth */}
+                    <div
+                      className="w-11 h-11 sm:w-12 sm:h-12 rounded-lg border shrink-0 flex items-center justify-center transition-all duration-300 shadow-inner group-hover:scale-105"
+                      style={{
+                        backgroundColor: isBlockActive ? `${cfg.accentHex}22` : "rgba(0,0,0,0.5)",
+                        borderColor: isBlockActive ? `${cfg.accentHex}60` : "rgba(255,255,255,0.12)",
+                        boxShadow: isBlockActive
+                          ? `inset 0 2px 4px rgba(255,255,255,0.15), 0 0 12px ${cfg.accentHex}35`
+                          : "inset 0 2px 4px rgba(0,0,0,0.6)",
+                      }}
+                    >
+                      <DomainBlockIcon code={cfg.code} className="w-6 h-6" color={cfg.accentHex} />
+                    </div>
+
+                    {/* Title & Scope Thesis */}
+                    <div className="min-w-0 flex-1">
+                      <h3 className="font-serif text-sm sm:text-base font-bold text-white group-hover:text-white leading-tight truncate">
+                        {cfg.shortName}
+                      </h3>
+                      <p className="text-[11px] sm:text-xs text-slate-300 line-clamp-2 leading-relaxed mt-1">
+                        {cfg.subtitle}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Block Bottom Shelf: LED Metric + Recessed Configure Button */}
+                  <div className="pt-2 border-t border-white/10 flex items-center justify-between text-xs font-mono mt-2">
+                    <div className="flex items-center gap-1.5">
+                      <span
+                        className="w-2 h-2 rounded-full transition-colors"
+                        style={{
+                          backgroundColor: isBlockActive ? cfg.accentHex : "rgba(255,255,255,0.25)",
+                          boxShadow: isBlockActive ? `0 0 6px ${cfg.accentHex}` : "none",
+                        }}
+                      />
+                      <span className={isBlockActive ? "font-bold text-white text-[11px]" : "text-slate-400 text-[11px]"}>
+                        {isAgentic
+                          ? hasAgentic ? "Mandate Configured" : "0 Configured"
+                          : `${domainSelectedCount} of ${domainItems.length} Configured`}
+                      </span>
+                    </div>
+
+                    <span
+                      className="font-serif font-bold text-[11px] uppercase tracking-wider flex items-center gap-1 px-2.5 py-1 rounded transition-all group-hover:translate-x-0.5"
+                      style={{
+                        color: cfg.accentHex,
+                        backgroundColor: `${cfg.accentHex}18`,
+                        border: `1px solid ${cfg.accentHex}40`,
+                        boxShadow: isBlockActive ? `0 0 10px ${cfg.accentHex}20` : "none",
+                      }}
+                    >
+                      <span>Configure</span>
+                      <span>&rarr;</span>
+                    </span>
+                  </div>
                 </div>
               </div>
             );
@@ -722,7 +823,7 @@ export default function TheBlockPage() {
       </section>
 
       {/* 4. COMPACT SCOPE MANIFEST & DELIVERY QUOTE DOCKED TRAY (TIGHT, 1-PAGE ENGINE) */}
-      <footer className="pt-2 pb-3 max-w-7xl mx-auto px-4 sm:px-6 w-full shrink-0">
+      <footer className="pt-1 pb-4 max-w-7xl mx-auto px-4 sm:px-6 w-full shrink-0">
         <div className="p-3 sm:p-4 rounded-xl bg-[#0B1624]/95 border border-white/15 shadow-2xl backdrop-blur-md">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
             
@@ -819,27 +920,39 @@ export default function TheBlockPage() {
                 borderTop: `3px solid ${activeDomainConfig.accentHex}`,
               }}
             >
-              <div>
-                <div className="flex items-center gap-2 mb-1">
-                  <span
-                    className="font-mono text-xs font-bold px-2 py-0.5 rounded"
-                    style={{
-                      backgroundColor: activeDomainConfig.accentHex,
-                      color: "#070E17",
-                    }}
-                  >
-                    CONFIGURATOR [{activeDomainConfig.code}]
-                  </span>
-                  <span className="font-mono text-xs text-slate-400 uppercase tracking-wider">
-                    {activeDomainConfig.badge}
-                  </span>
+              <div className="flex items-start gap-3.5">
+                <div
+                  className="w-12 h-12 rounded-xl border shrink-0 flex items-center justify-center shadow-lg"
+                  style={{
+                    backgroundColor: `${activeDomainConfig.accentHex}20`,
+                    borderColor: `${activeDomainConfig.accentHex}60`,
+                    boxShadow: `0 0 15px ${activeDomainConfig.accentHex}30`,
+                  }}
+                >
+                  <DomainBlockIcon code={activeDomainConfig.code} className="w-7 h-7" color={activeDomainConfig.accentHex} />
                 </div>
-                <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">
-                  {activeDomainConfig.name}
-                </h3>
-                <p className="text-xs text-slate-300 mt-0.5 leading-relaxed">
-                  {activeDomainConfig.subtitle}
-                </p>
+                <div>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span
+                      className="font-mono text-xs font-bold px-2 py-0.5 rounded"
+                      style={{
+                        backgroundColor: activeDomainConfig.accentHex,
+                        color: "#070E17",
+                      }}
+                    >
+                      CONFIGURATOR [{activeDomainConfig.code}]
+                    </span>
+                    <span className="font-mono text-xs text-slate-400 uppercase tracking-wider">
+                      {activeDomainConfig.badge}
+                    </span>
+                  </div>
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">
+                    {activeDomainConfig.name}
+                  </h3>
+                  <p className="text-xs text-slate-300 mt-0.5 leading-relaxed">
+                    {activeDomainConfig.subtitle}
+                  </p>
+                </div>
               </div>
 
               <div className="flex items-center gap-3">
