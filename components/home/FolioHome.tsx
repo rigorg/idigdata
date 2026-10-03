@@ -8,7 +8,7 @@ export default function FolioHome() {
 <div className="hero-split">
 <div className="home-hero-copy">
 <h1 className="p-h1 home-hero-title">{"Turn the potential of your people and technology into business outcomes."}</h1>
-<p className="p-dek">{"I lead enterprise technology work and build the capability behind it, connecting your people, data, and systems. I bring CIO experience and the perspective of someone who built and ran a $130M business to the work of transforming others."}</p>
+<p className="p-dek">{"I am a technology executive. I build on the people and technology you have already invested in, aligning stakeholders, teams, and delivery partners around your operating priorities. I connect people, data, and systems and lead change through adoption while the business keeps running."}</p>
 <p className="executive-proof">{"50+ implementations · 15 enterprise transformations at scale"}</p>
 <div className="home-hero-actions">
 <Link className="p-btn" href="/contact/">{"Start a conversation"}</Link>
@@ -88,10 +88,10 @@ export default function FolioHome() {
 <Link className="p-link capability-link" href="/block/">{"Explore outcomes in The Block"}</Link>
 </article>
 <article className="home-card">
-<p className="home-card-cat">{"Applied Agentics"}</p>
-<h3>{"AI grounded in your business."}</h3>
-<p className="p-prose mt-4">{"Develop agentic applications on company-owned data, with defined permissions, traceable actions, and human oversight."}</p>
-<Link className="p-link capability-link" href="/experience/#applied-agentics">{"Explore applied agentics"}</Link>
+<p className="home-card-cat">{"Bespoke Agentic Software"}</p>
+<h3>{"Software built around your business knowledge."}</h3>
+<p className="p-prose mt-4">{"Co-create custom software and agentic workflows around your company knowledge, with defined permissions, traceable actions, and clear human authority."}</p>
+<Link className="p-link capability-link" href="/block/">{"Explore bespoke software in The Block"}</Link>
 </article>
 </div>
 </div>
@@ -109,7 +109,7 @@ export default function FolioHome() {
 <h3>{"Focused work"}</h3>
 <p className="p-prose mt-4">{"A defined operating problem or transformation outcome. The Block helps frame priorities and scope for our conversation."}</p>
 <Link className="p-link capability-link mt-3 inline-flex items-center gap-1.5 font-semibold text-[#142840]" href="/block/">
-  {"Configure in The Block &rarr;"}
+  {"Configure in The Block →"}
 </Link>
 </article>
 <article>
