@@ -168,14 +168,14 @@ const FACE_NEIGHBORS: Record<
     RIGHT: "it_ot_operations",
   },
   financial_systems: {
-    UP: "it_ot_operations",
-    DOWN: "leadership_direction",
+    UP: "leadership_direction",
+    DOWN: "it_ot_operations",
     LEFT: "business_systems",
     RIGHT: "data_knowledge",
   },
   workflows_automation: {
-    UP: "leadership_direction",
-    DOWN: "it_ot_operations",
+    UP: "it_ot_operations",
+    DOWN: "leadership_direction",
     LEFT: "business_systems",
     RIGHT: "data_knowledge",
   },
@@ -346,29 +346,14 @@ export default function TheBlockConfiguratorPage() {
     const startX = dragStartRef.current.rotX;
     const startY = dragStartRef.current.rotY;
 
-    if (activeDomainId === "workflows_automation") {
-      // Bottom face:
-      // Pushing UP (dy < 0) tilts toward Leadership (rotX goes down toward -12)
-      // Pulling DOWN (dy > 0) tilts toward IT/OT (rotX goes up toward 180)
-      const tiltX = startX + dy * sensitivity;
-      const tiltY = startY + dx * sensitivity;
-      setCubeRotation({ x: tiltX, y: tiltY });
-    } else if (activeDomainId === "financial_systems") {
-      // Top face:
-      // Pulling DOWN (dy > 0) tilts toward Leadership (rotX goes up toward -12)
-      // Pushing UP (dy < 0) tilts toward IT/OT (rotX goes down toward -180)
-      const tiltX = startX + dy * sensitivity;
-      const tiltY = startY + dx * sensitivity;
-      setCubeRotation({ x: tiltX, y: tiltY });
-    } else {
-      // Horizontal faces (LD, BS, IT, DK):
-      // Pushing UP (dy < 0) tilts up toward Workflows (rotX increases)
-      // Pulling DOWN (dy > 0) tilts down toward Financial (rotX decreases)
-      // Dragging LEFT/RIGHT rotates around Y
-      const tiltX = startX - dy * sensitivity;
-      const tiltY = startY + dx * sensitivity;
-      setCubeRotation({ x: tiltX, y: tiltY });
-    }
+    // Universal direct-manipulation physics for all faces:
+    // Dragging UP (dy < 0) always tilts the cube UPWARDS (+X)
+    // Dragging DOWN (dy > 0) always tilts the cube DOWNWARDS (-X)
+    // Dragging LEFT (dx < 0) always turns the cube LEFTWARDS (-Y)
+    // Dragging RIGHT (dx > 0) always turns the cube RIGHTWARDS (+Y)
+    const tiltX = startX - dy * sensitivity;
+    const tiltY = startY + dx * sensitivity;
+    setCubeRotation({ x: tiltX, y: tiltY });
   };
 
   // ON DRAG RELEASE: Automatic snap right-side-up based on gesture vector!
