@@ -56,8 +56,8 @@ export const PUBLIC_OUTCOME_DOMAINS: CatalogDomain[] = [
     "id": "it_ot_operations",
     "code": "IT",
     "name": "IT Operations & Security",
-    "subtitle": "Modernize the IT function to support reliable business operations, connected plants, and governed agentic capabilities.",
-    "essence": "Dependable infrastructure, operational resilience, qualified cyber coordination, and plant-floor OT."
+    "subtitle": "Maintain dependable enterprise infrastructure, cybersecurity, and operational continuity across business and plant systems.",
+    "essence": "Dependable infrastructure, cybersecurity, and operational continuity across business and plant systems; the plant floor's controllers are coordinated with their owners, not authored."
   },
   {
     "id": "data_knowledge",

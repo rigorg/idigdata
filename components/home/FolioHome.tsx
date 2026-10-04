@@ -54,6 +54,9 @@ export default function FolioHome() {
 <p className="home-know-line">{"People. Data. Systems."}</p>
 <p className="p-prose mt-4">{"Years of operating knowledge live across your people, your data, and your systems. I connect that knowledge to the decisions and the work it should support."}</p>
 <p className="p-prose mt-4">{"I start with how your people work, follow the data across applications, and address the handoffs and exceptions that keep the business from working as a whole. Applied agentics extends that capability on the business you already run."}</p>
+<p className="home-more">
+<Link className="p-link" href="/experience/#applied-agentics">{"Enterprise agentics"}</Link>
+</p>
 </div>
 </section>
 <section className="p-section">
@@ -62,15 +65,21 @@ export default function FolioHome() {
 <p className="home-crosscut">{"Governance runs across the work: clear decision rights, accountable owners, and evidence of what changed."}</p>
 <div className="home-cards">
 <article className="home-card">
-<p className="home-card-cat">{"Leadership & Direction"}</p>
+<p className="home-card-cat">{"Leadership, Direction & Transformation"}</p>
 <h3>{"Clear priorities. Accountable leadership."}</h3>
 <p className="p-prose mt-4">{"Align technology investment, teams, and delivery partners around what the business needs to accomplish."}</p>
 <Link className="p-link capability-link" href="/block/">{"Explore outcomes in The Block"}</Link>
 </article>
 <article className="home-card">
-<p className="home-card-cat">{"IT & Business Systems"}</p>
+<p className="home-card-cat">{"Business Systems & Integration"}</p>
 <h3>{"Enterprise applications that work together."}</h3>
 <p className="p-prose mt-4">{"Connect ERP, manufacturing, warehouse, and other business systems around the people and processes they support."}</p>
+<Link className="p-link capability-link" href="/block/">{"Explore outcomes in The Block"}</Link>
+</article>
+<article className="home-card">
+<p className="home-card-cat">{"IT Operations & Security"}</p>
+<h3>{"A modern IT function for the operation."}</h3>
+<p className="p-prose mt-4">{"Maintain dependable enterprise infrastructure, cybersecurity, and operational continuity across business and plant systems."}</p>
 <Link className="p-link capability-link" href="/block/">{"Explore outcomes in The Block"}</Link>
 </article>
 <article className="home-card">
@@ -90,12 +99,6 @@ export default function FolioHome() {
 <h3>{"Better handoffs. Less repeated work."}</h3>
 <p className="p-prose mt-4">{"Connect work across people and applications, with clear responsibilities, tested changes, and a way to recover when something fails."}</p>
 <Link className="p-link capability-link" href="/block/">{"Explore outcomes in The Block"}</Link>
-</article>
-<article className="home-card">
-<p className="home-card-cat">{"Bespoke Agentic Software"}</p>
-<h3>{"Software built around your business knowledge."}</h3>
-<p className="p-prose mt-4">{"Co-create custom software and agentic workflows around your company knowledge, with defined permissions, traceable actions, and clear human authority."}</p>
-<Link className="p-link capability-link" href="/block/">{"Explore bespoke software in The Block"}</Link>
 </article>
 </div>
 </div>

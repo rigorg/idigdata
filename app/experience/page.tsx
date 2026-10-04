@@ -199,6 +199,7 @@ export default function ExperiencePage() {
 <p className="p-prose mt-4">{"All businesses are uniquely standard. The fundamentals are familiar; the people, constraints, and consequential exceptions shape the solution."}</p>
 <p className="p-prose mt-4">{"I work with the CFO and compliance officer, the functional leads, the developers and delivery partners, and the warehouse team using the scanners. The architecture has to support the work across those groups."}</p>
 <p className="p-prose mt-4">{"My enterprise application experience also includes electronic medical records (EMR/EHR)."}</p>
+<p className="p-prose mt-4">{"IT operations and security. The manufacturing execution system is part of IT. The lines, panels, and sensors run on programmable logic controllers: that is operational technology (OT), and it is not my wheelhouse. Ignition sits on the IT side and runs those lines. The work is breaking the wall between the two."}</p>
 </div>
 </section>      <section className="p-section p-section--job">
         <div className="page-well">
