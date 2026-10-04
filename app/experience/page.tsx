@@ -144,7 +144,7 @@ export default function ExperiencePage() {
 <div className="home-hero-copy">
 <p className="p-kicker">Experience</p>
 <h1 className="p-h1">{"The breadth to see how the pieces fit."}</h1>
-<p className="p-dek">{"I built and ran a $130M operating business, then brought that perspective to enterprise technology leadership. My career spans 50+ implementations and 15 enterprise transformations at scale, including complex, highly regulated businesses where financial integrity, compliance, and operational continuity shape delivery."}</p>
+<p className="p-dek">{"I bring CIO experience and the perspective of someone who built and ran a $130M business to enterprise technology leadership. My career spans 50+ implementations and 15 enterprise transformations at scale, including complex, highly regulated businesses where financial integrity, compliance, and operational continuity shape delivery."}</p>
 <p className="p-prose mt-4">{"Through Data Integration Group, I lead client-side transformation across people, data, applications, and delivery partners. Earlier partner-side work at Access IT gave me an inside understanding of how systems integrators, software vendors, and resellers deliver. I bring both perspectives to the work."}</p>
 </div>
 <div className="home-watermark" aria-hidden="true">
@@ -183,7 +183,7 @@ export default function ExperiencePage() {
 <section className="p-section">
 <div className="page-well">
 <h2 className="p-h2">{"Executive leadership, grounded in operating experience"}</h2>
-<h3 className="executive-role">{"Sierra Nevada Brewing Co. | Chief Information Officer"}</h3>
+<h3 className="executive-role">{"Sierra Nevada Brewing Co. | Chief Information Officer (Contract)"}</h3>
 <p className="p-prose mt-4">{"Owned technology strategy, investment, operations, data, cybersecurity, and governance for an approximately $420M multi-site brewer. Served on the executive leadership team and presented to the board."}</p>
 <p className="p-prose mt-4">{"Led a $15M modernization consolidating 200+ systems to 25 connected enterprise systems. Rebuilt IS/IT and led 150+ combined internal and partner personnel at peak, coordinating 25 task forces across business functions, technical teams, and implementation partners. Change spanned finance, warehousing, manufacturing and planning, including laboratory systems, food safety, SQF, and TTB requirements."}</p>
 <h3 className="executive-role">{"Timberline | Business ownership and technology leadership"}</h3>
@@ -393,7 +393,7 @@ export default function ExperiencePage() {
 <section className="p-section" id="applied-agentics">
 <div className="page-well">
 <h2 className="p-h2">{"Applied agentics on the enterprise already running"}</h2>
-<p className="p-prose mt-4">{"I architect, develop, and deploy agentic applications on company-owned data. The work includes transformation management through go-live, governed software delivery, and workflows executed by people and agents."}</p>
+<p className="p-prose mt-4">{"I architect, develop, and deploy agentic workflows on company-owned data. The work includes transformation management through go-live, governed software delivery, and workflows executed by people and agents."}</p>
 <div className="home-scales">
 <article>
 <h3>{"Enterprise transformation management"}</h3>

@@ -27,6 +27,10 @@ export default function FolioHome() {
 <p className="p-prose mt-4">{"These separate engagements show how I connect delivery decisions to financial and operating results."}</p>
 <div className="home-story">
 <article>
+<h3>{"200+ systems to 25"}</h3>
+<p className="p-prose mt-4">{"Led a $15M modernization for a $420M multi-site brewer as Chief Information Officer, consolidating 200+ systems into 25 connected enterprise systems around a company-owned data core."}</p>
+</article>
+<article>
 <h3>{"18 days to four"}</h3>
 <p className="p-prose mt-4">{"Reduced financial close in an 11-month transformation of a $350M post-acquisition business, connecting financial records and warehouses across entities and currencies."}</p>
 </article>
@@ -103,7 +107,7 @@ export default function FolioHome() {
 <div className="home-scales">
 <article>
 <h3>{"Executive roles"}</h3>
-<p className="p-prose mt-4">{"Technology direction, investment, people, and delivery, with accountability for the whole function."}</p>
+<p className="p-prose mt-4">{"A CIO or CTO seat. Technology direction, investment, people, and delivery, with accountability for the whole function."}</p>
 </article>
 <article>
 <h3>{"Focused work"}</h3>
