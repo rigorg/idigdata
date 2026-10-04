@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1584 396" width="1584" height="396" fill="none">
+  <defs>
+    <!-- Rich Authentic Brand Navy Background -->
+    <rect id="bgRect" width="1584" height="396" fill="#142840" />
+
+    <!-- Intense Gold Plasma Glow Filter -->
+    <filter id="goldGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur1" />
+      <feGaussianBlur stdDeviation="2" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur1" />
+        <feMergeNode in="blur2" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <linearGradient id="goldLinear" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stopColor="#FFFBEB" />
+      <stop offset="30%" stopColor="#FDE047" />
+      <stop offset="100%" stopColor="#EAB308" />
+    </linearGradient>
+  </defs>
+
+  <!-- Solid Authentic Brand Navy #142840 -->
+  <rect width="1584" height="396" fill="#142840" />
+
+  <!-- Outer Hairline Perimeter Frame with 4 Gold Corner Pins -->
+  <rect x="18" y="18" width="1548" height="360" rx="4" stroke="rgba(247, 245, 238, 0.18)" strokeWidth="1.2" />
+  <circle cx="18" cy="18" r="3" fill="#FACC15" />
+  <circle cx="1566" cy="18" r="3" fill="#FACC15" />
+  <circle cx="18" cy="378" r="3" fill="#FACC15" />
+  <circle cx="1566" cy="378" r="3" fill="#FACC15" />
+
+  <!-- Top Gold Crown Accent Hairline -->
+  <rect x="0" y="0" width="1584" height="3.5" fill="url(#goldLinear)" />
+
+  <!-- LEFT & CENTER: POWERHOUSE TYPOGRAPHY RUNWAY (Positioned at x=420 to 100% clear avatar, +1 Font Size on Eyebrow and Subline) -->
+  <g transform="translate(420, 134)">
+    <!-- Gold Vertical Accent Pillar -->
+    <rect x="-24" y="-36" width="5" height="158" fill="url(#goldLinear)" filter="url(#goldGlow)" />
+
+    <!-- Top Eyebrow in Large Crisp Sun-Gold (+1 Size -> 17px Bold) -->
+    <text x="0" y="-28" fill="#FDE047" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="17" letter-spacing="2.2" text-transform="uppercase">
+      Customer-Side Transformation Leadership
+    </text>
+
+    <!-- Line 1: The Offer in Large Bold White Georgia Serif (41px) -->
+    <text x="0" y="22" fill="#FFFFFF" font-family="Georgia, serif" font-weight="700" font-size="41" letter-spacing="-0.4">
+      Your transformation gets an owner.
+    </text>
+    
+    <!-- Line 2: The Condition in Large Glowing Gold Italic Georgia Serif (35px) -->
+    <text x="0" y="72" fill="#FDE047" font-family="Georgia, serif" font-style="italic" font-weight="400" font-size="35" letter-spacing="-0.2">
+      The business keeps running.
+    </text>
+
+    <!-- Bottom Subline in Large High-Contrast White (+1 Size -> 17px Bold) -->
+    <text x="0" y="118" fill="#FFFFFF" opacity="0.95" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="17" letter-spacing="1.2" text-transform="uppercase">
+      $100M–$1B Enterprise Operators <tspan fill="#FACC15">·</tspan> ERP + Applied Agentics
+    </text>
+  </g>
+
+  <!-- RIGHT: THE EXACT CIRCULAR DISC CONSTELLATION GRAPHIC (Centered at x: 1350, y: 198) -->
+  <g transform="translate(1350, 198)">
+    <!-- 1. Deep Midnight Base Disc with Gold Stroke -->
+    <circle cx="0" cy="0" r="130" fill="#0B1624" stroke="rgba(250, 204, 21, 0.4)" strokeWidth="1.5" />
+    <circle cx="0" cy="0" r="110" stroke="rgba(255, 255, 255, 0.15)" strokeWidth="0.8" strokeDasharray="3,4" />
+    <circle cx="0" cy="0" r="80" stroke="rgba(250, 204, 21, 0.25)" strokeWidth="1" strokeDasharray="4,6" />
+
+    <!-- 2. Six Radiant Gold Spoke Beams -->
+    <g stroke="#FACC15" strokeWidth="1.8" opacity="0.85" strokeDasharray="4,4">
+      <line x1="0" y1="0" x2="0" y2="-90" />
+      <line x1="0" y1="0" x2="77.9" y2="-45" />
+      <line x1="0" y1="0" x2="77.9" y2="45" />
+      <line x1="0" y1="0" x2="0" y2="90" />
+      <line x1="0" y1="0" x2="-77.9" y2="45" />
+      <line x1="0" y1="0" x2="-77.9" y2="-45" />
+    </g>
+
+    <!-- 3. Six Glowing Outer Process Constellation Nodes -->
+    <!-- 12 o'clock -->
+    <circle cx="0" cy="-90" r="9" fill="#FACC15" opacity="0.35" filter="url(#goldGlow)" />
+    <circle cx="0" cy="-90" r="6.5" fill="#FDE047" stroke="#0B1624" strokeWidth="2" />
+    <circle cx="0" cy="-90" r="2.5" fill="#FFFFFF" />
+
+    <!-- 2 o'clock -->
+    <circle cx="77.9" cy="-45" r="9" fill="#FACC15" opacity="0.35" filter="url(#goldGlow)" />
+    <circle cx="77.9" cy="-45" r="6.5" fill="#FDE047" stroke="#0B1624" strokeWidth="2" />
+    <circle cx="77.9" cy="-45" r="2.5" fill="#FFFFFF" />
+
+    <!-- 4 o'clock -->
+    <circle cx="77.9" cy="45" r="9" fill="#FACC15" opacity="0.35" filter="url(#goldGlow)" />
+    <circle cx="77.9" cy="45" r="6.5" fill="#FDE047" stroke="#0B1624" strokeWidth="2" />
+    <circle cx="77.9" cy="45" r="2.5" fill="#FFFFFF" />
+
+    <!-- 6 o'clock -->
+    <circle cx="0" cy="90" r="9" fill="#FACC15" opacity="0.35" filter="url(#goldGlow)" />
+    <circle cx="0" cy="90" r="6.5" fill="#FDE047" stroke="#0B1624" strokeWidth="2" />
+    <circle cx="0" cy="90" r="2.5" fill="#FFFFFF" />
+
+    <!-- 8 o'clock -->
+    <circle cx="-77.9" cy="45" r="9" fill="#FACC15" opacity="0.35" filter="url(#goldGlow)" />
+    <circle cx="-77.9" cy="45" r="6.5" fill="#FDE047" stroke="#0B1624" strokeWidth="2" />
+    <circle cx="-77.9" cy="45" r="2.5" fill="#FFFFFF" />
+
+    <!-- 10 o'clock -->
+    <circle cx="-77.9" cy="-45" r="9" fill="#FACC15" opacity="0.35" filter="url(#goldGlow)" />
+    <circle cx="-77.9" cy="-45" r="6.5" fill="#FDE047" stroke="#0B1624" strokeWidth="2" />
+    <circle cx="-77.9" cy="-45" r="2.5" fill="#FFFFFF" />
+
+    <!-- 4. High-Definition Center 3x3 M4 Kinetic Lattice System -->
+    <g transform="translate(-46, -46)">
+      <!-- 4 Corner Blocks with High-Contrast White Bevels -->
+      <rect x="0" y="0" width="25" height="25" rx="3" fill="#142840" stroke="#FFFFFF" strokeWidth="1.8" />
+      <rect x="67" y="0" width="25" height="25" rx="3" fill="#142840" stroke="#FFFFFF" strokeWidth="1.8" />
+      <rect x="0" y="67" width="25" height="25" rx="3" fill="#142840" stroke="#FFFFFF" strokeWidth="1.8" />
+      <rect x="67" y="67" width="25" height="25" rx="3" fill="#142840" stroke="#FFFFFF" strokeWidth="1.8" />
+      
+      <!-- 4 Open Framed Connectors with Gold Highlighting -->
+      <rect x="34" y="2" width="24" height="21" rx="2.5" fill="#1B3A5C" stroke="#FACC15" strokeWidth="1.8" />
+      <rect x="2" y="34" width="21" height="24" rx="2.5" fill="#1B3A5C" stroke="#FACC15" strokeWidth="1.8" />
+      <rect x="69" y="34" width="21" height="24" rx="2.5" fill="#1B3A5C" stroke="#FACC15" strokeWidth="1.8" />
+      <rect x="34" y="69" width="24" height="21" rx="2.5" fill="#1B3A5C" stroke="#FACC15" strokeWidth="1.8" />
+      
+      <!-- Solid Gold Radiant Center Sovereign Core -->
+      <rect x="27" y="27" width="38" height="38" rx="4" fill="#FACC15" filter="url(#goldGlow)" />
+      <rect x="30" y="30" width="32" height="32" rx="3" fill="url(#goldLinear)" stroke="#0B1624" strokeWidth="2.5" />
+      <rect x="40" y="40" width="12" height="12" fill="#0B1624" />
+    </g>
+  </g>
+
+  <!-- Large, Bold, Effortlessly Readable Domain Tag Bottom Right (20px Bold) -->
+  <text x="1540" y="354" text-anchor="end" fill="#FFFFFF" opacity="0.95" font-family="Georgia, serif" font-weight="700" font-size="20" letter-spacing="1.2">
+    idig<tspan fill="#FACC15">■</tspan>data.com
+  </text>
+</svg>

@@ -13,21 +13,318 @@
   --color-pale-navy: #F5F5F8;
 
   /* Moonshot pass (2026-07): deep-navy hero plane + strata atmosphere */
-  --color-navy-deep: #0C1A2C;
+  --color-navy-deep: #0B1624;
   --color-navy-mid: #1B3A5C;
+  --color-gold-ink: #B48A05;
+  --color-cream-paper: #F3ECE0;
   --color-porcelain: #F7F5EE;
   --color-tint: #EEF1F6;
 
   --font-display: var(--next-font-display), Cambria, Lora, Georgia, serif;
-  --font-body: var(--next-font-body), Calibri, "Source Sans 3", "Inter", system-ui, sans-serif;
+  --font-body: var(--next-font-body), Calibri, "Source Sans 3", system-ui, sans-serif;
   --font-vollkorn: var(--next-font-vollkorn), "Vollkorn", var(--next-font-display), Cambria, Georgia, serif;
-  --font-brand: var(--next-font-brand), "Bricolage Grotesque", "Archivo", system-ui, sans-serif;
+  --font-brand: var(--next-font-body), Calibri, "Source Sans 3", system-ui, sans-serif;
 
   --tracking-section: 0.12em;
 }
 
 @utility max-w-content {
   max-width: 1040px;
+}
+
+/* One centered well. Same box as the header. Not the viewport edges. */
+.page-well {
+  width: 100%;
+  max-width: 1040px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* Application-layer folio interior (AG still 02-folio-interior). Page-scoped. */
+.folio-interior {
+  background: #fbf9f4;
+  color: #1a1a1a;
+}
+
+.folio-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid rgba(20, 40, 64, 0.12);
+  padding-block: 0.65rem;
+  font-family: var(--font-vollkorn);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6b6860;
+}
+
+.folio-lead {
+  max-width: 72ch;
+  border-left: 3px solid #142840;
+  background: #f3ece0;
+  padding: 1.35rem 1.6rem;
+}
+
+.folio-lead p + p {
+  margin-top: 0.85rem;
+}
+
+.folio-section {
+  display: grid;
+  gap: 1.5rem;
+  padding-block: 4.25rem;
+  border-bottom: 1px solid rgba(20, 40, 64, 0.12);
+}
+
+.folio-section-gold {
+  border-left: 3px solid #facc15;
+  background: #f3ece0;
+  padding-left: 1.75rem;
+}
+
+.folio-hero-plate {
+  border: 1px solid rgba(20, 40, 64, 0.22);
+  background: #f3ece0;
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.folio-beat-gold {
+  border-left: 3px solid #facc15;
+  background: #f3ece0;
+  padding: 1.75rem 1.5rem 1.75rem 1.75rem;
+}
+
+.folio-marginalia {
+  border-bottom: 1px solid rgba(20, 40, 64, 0.12);
+  padding-bottom: 0.75rem;
+}
+
+.folio-plate {
+  margin-top: 2rem;
+  border: 1px solid rgba(20, 40, 64, 0.22);
+  background: #f3ece0;
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+}
+
+/* Original Waves of Technology as a document on cream. No navy television. */
+.folio-wave {
+  margin-top: 2.25rem;
+  border: 1px solid rgba(20, 40, 64, 0.22);
+  background: #f3ece0;
+  padding: 1.25rem 1.25rem 1.5rem;
+  text-align: center;
+}
+
+.folio-wave img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.folio-wave-caption {
+  margin-top: 1.15rem;
+  font-family: var(--font-vollkorn);
+  font-size: 18px;
+  font-weight: 600;
+  font-style: italic;
+  color: #142840;
+}
+
+/* Agentic interiors: kickers above, full well. Do not steal the 210px side column. */
+.folio-stack {
+  display: block;
+  padding-block: 4.25rem;
+  border-bottom: 1px solid rgba(20, 40, 64, 0.12);
+}
+
+.two-planes {
+  margin: 0;
+  width: 100%;
+  border: 1px solid rgba(20, 40, 64, 0.22);
+  background: #f3ece0;
+  padding: 1.25rem 1rem 1rem;
+}
+
+.two-planes-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.two-planes-caption {
+  margin-top: 0.85rem;
+  font-family: var(--font-vollkorn);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #142840;
+  text-align: center;
+}
+
+.plane-app {
+  transform-origin: 320px 160px;
+  animation: plane-app-settle 0.82s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.plane-agentic {
+  transform-origin: 320px 60px;
+  animation: plane-agentic-align 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+}
+
+.plane-vector {
+  animation: plane-vector-reveal 0.55s ease-out 0.62s both;
+}
+
+.plane-stroke {
+  stroke-dasharray: 120;
+  stroke-dashoffset: 120;
+  animation: plane-stroke-draw 0.7s ease-out 0.62s both;
+}
+
+.gold-owner-coin {
+  /* Sol: the coin never moves. */
+}
+
+@keyframes plane-app-settle {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes plane-agentic-align {
+  from {
+    opacity: 0;
+    transform: translate(18px, -26px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes plane-vector-reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes plane-stroke-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plane-app,
+  .plane-agentic,
+  .plane-vector,
+  .plane-stroke {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+}
+
+.folio-issue {
+  border-left: 2px solid #facc15;
+  padding-left: 1rem;
+}
+
+.folio-film-plate {
+  margin: 0;
+  width: 100%;
+  border: 1px solid rgba(20, 40, 64, 0.22);
+  background: #f3ece0;
+  padding: 1.75rem 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.folio-film-plate video,
+.folio-film-plate .folio-film-still,
+.folio-film-plate .lattice-loop,
+.folio-film-plate .lastmove-film,
+.folio-film-plate .threshold-film,
+.folio-film-plate .systemverse-film,
+.folio-film-plate .agentics-loop,
+.folio-film-plate .systemverse-loop {
+  display: block;
+  width: min(100%, 28rem) !important;
+  height: auto !important;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.folio-film-plate--hero video,
+.folio-film-plate--hero .folio-film-still,
+.folio-film-plate--hero .lattice-loop,
+.folio-film-plate--hero .agentics-loop {
+  width: min(100%, 32rem) !important;
+}
+
+.folio-film-caption {
+  margin-top: 1rem;
+  font-family: var(--font-vollkorn);
+  font-size: 15px;
+  font-weight: 700;
+  color: #142840;
+  text-align: center;
+}
+
+.folio-circle-loop {
+  width: 136px;
+  height: 136px;
+  margin-inline: auto;
+  margin-top: 1.75rem;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #f3ece0;
+  box-shadow: 0 0 0 1px rgba(20, 40, 64, 0.15);
+}
+
+.folio-circle-loop .systemverse-film,
+.folio-circle-loop .agentics-loop,
+.folio-circle-loop .lattice-loop,
+.folio-circle-loop .lastmove-film,
+.folio-circle-loop .threshold-film {
+  width: 136px;
+  height: 136px;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .folio-section {
+    grid-template-columns: 210px 1fr;
+    gap: 2.75rem;
+  }
+
+  .folio-marginalia {
+    border-bottom: 0;
+    border-right: 1px solid rgba(20, 40, 64, 0.12);
+    padding-right: 1.75rem;
+    padding-bottom: 0;
+  }
+}
+
+/* Same well as the header (logo left, nav right). Not a nested 42rem column. */
+.field-measure {
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
 }
 
 :root {
@@ -56,8 +353,8 @@ html, body {
 }
 
 body {
-  font-size: 17px;
-  line-height: 1.55;
+  font-size: 18px;
+  line-height: 1.65;
 }
 
 ::selection {
@@ -80,9 +377,196 @@ body {
 }
 
 .hero-rise {
+  opacity: 1;
+}
+
+.cta-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  background: #facc15;
+  color: #142840;
+  padding: 0.7rem 1.25rem;
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cta-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  border: 1px solid color-mix(in srgb, #f7f5ee 35%, transparent);
+  color: #f7f5ee;
+  padding: 0.7rem 1.25rem;
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 600;
+  background: transparent;
+  text-decoration: none;
+}
+
+.cta-gold:hover {
+  background: #ffd84d;
+}
+
+.agentics-loop,
+.lattice-loop,
+.lastmove-film,
+.threshold-film {
+  display: block;
+  width: 136px;
+  height: auto;
+  margin-inline: auto;
+}
+
+.systemverse-loop,
+.systemverse-film {
+  display: block;
+  width: 136px;
+  height: auto;
+  margin-inline: auto;
+}
+
+.sv-worker,
+.sv-dock-fill {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.sv-dock-fill {
   opacity: 0;
-  animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  animation-delay: calc(var(--rise, 0) * 110ms);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sv-worker {
+    animation: sv-dock 4.8s ease-in-out infinite;
+  }
+
+  .sv-dock-fill {
+    animation: sv-seat 4.8s ease-in-out infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sv-worker {
+    opacity: 0;
+  }
+
+  .sv-dock-fill {
+    opacity: 1;
+  }
+}
+
+@keyframes sv-dock {
+  0%,
+  8% {
+    transform: translate(0, 0);
+    opacity: 0.35;
+  }
+  32%,
+  62% {
+    transform: translate(var(--dx), var(--dy));
+    opacity: 1;
+  }
+  86%,
+  100% {
+    transform: translate(0, 0);
+    opacity: 0.35;
+  }
+}
+
+@keyframes sv-seat {
+  0%,
+  24% {
+    opacity: 0;
+  }
+  36%,
+  66% {
+    opacity: 1;
+  }
+  82%,
+  100% {
+    opacity: 0;
+  }
+}
+
+
+.cta-ghost:hover {
+  border-color: #facc15;
+  color: #facc15;
+}
+
+.two-planes svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.two-planes-app,
+.two-planes-ag,
+.two-planes-gold,
+.two-planes-line {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .two-planes-app {
+    animation: plane-in 0.9s ease both;
+  }
+  .two-planes-ag {
+    animation: plane-down 1s ease 0.15s both;
+  }
+  .two-planes-gold {
+    animation: gold-hold 0.8s ease 0.55s both;
+  }
+  .two-planes-line {
+    animation: line-in 0.45s ease 0.7s both;
+  }
+}
+
+@keyframes plane-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes plane-down {
+  from {
+    opacity: 0;
+    transform: translateY(-22px) translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes gold-hold {
+  from {
+    opacity: 0.35;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes line-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* ---------- Sovereign Data Spine film ----------
@@ -447,7 +931,25 @@ header.header-on-film button {
     seam-rule-breathe 5.5s ease-in-out 1.5s infinite;
 }
 
+@keyframes field-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.field-marquee {
+  animation: field-marquee 42s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .field-marquee {
+    animation: none;
+  }
   .hero-rise {
     animation: none;
     opacity: 1;

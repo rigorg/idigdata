@@ -1,0 +1,14 @@
+#!/bin/sh
+# idigdata-site — refuse GitHub push until Capo Ship.
+# Live path is branch `working` → Vercel → idigdata.com.
+# Local craft is localhost:3100. Push is the publish trigger.
+if [ "$IDIGDATA_SHIP" = "1" ]; then
+  exit 0
+fi
+echo ""
+echo "REFUSED: idigdata push is fenced."
+echo "Craft stays on localhost:3100. Pushing working publishes idigdata.com."
+echo "Capo Ship only: restore origin push URL, then IDIGDATA_SHIP=1 git push."
+echo "See LOCAL-ONLY.md"
+echo ""
+exit 1

@@ -1,9 +1,15 @@
-/** Shared primary nav - keep header and footer in lockstep. */
-export const PRIMARY_NAV = [
+/** Shared primary nav - keep header and footer in lockstep.
+ * Home, Experience, The Block, Contact.
+ */
+export type NavItem = {
+  href: string;
+  label: string;
+  isDevOnly?: boolean;
+};
+
+export const PRIMARY_NAV: readonly NavItem[] = [
   { href: "/", label: "Home" },
-  { href: "/work/", label: "The Work" },
-  { href: "/approach/", label: "Approach" },
-  { href: "/applied-agentics/", label: "Applied Agentics" },
-  { href: "/engagement/", label: "Engagement" },
-  { href: "/contact/", label: "Reach out" },
-] as const;
+  { href: "/experience/", label: "Experience" },
+  { href: "/block/", label: "The Block" },
+  { href: "/contact/", label: "Contact" },
+];

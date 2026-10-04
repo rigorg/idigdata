@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Version 5: The Radial Rosette Integration">
+  <defs>
+    <!-- Circular Mask to bound Honeycomb inside concentric tracks -->
+    <mask id="v5-honeycomb-mask">
+      <rect x="-500" y="-500" width="1000" height="1000" fill="white"/>
+      <circle cx="0" cy="0" r="86" fill="black"/>
+    </mask>
+
+    <linearGradient id="v5-p2m" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#142840"/>
+      <stop offset="35%" stop-color="#FACC15"/>
+      <stop offset="70%" stop-color="#C2410C"/>
+      <stop offset="100%" stop-color="#142840"/>
+    </linearGradient>
+
+    <linearGradient id="v5-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#142840"/>
+      <stop offset="50%" stop-color="#FACC15"/>
+      <stop offset="100%" stop-color="#142840"/>
+    </linearGradient>
+
+    <pattern id="v5-mesh" patternUnits="userSpaceOnUse" width="10" height="10" patternTransform="rotate(45)">
+      <rect width="10" height="10" fill="#FBF9F4"/>
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#142840" stroke-width="0.8" stroke-opacity="0.22"/>
+      <line x1="0" y1="0" x2="10" y2="0" stroke="#FACC15" stroke-width="0.8" stroke-opacity="0.45"/>
+    </pattern>
+  </defs>
+
+  <rect width="1000" height="1000" fill="#FBF9F4"/>
+
+  <g transform="translate(500, 500)">
+    <!-- 1. Background Fabric & Concentric Orbital Guides -->
+    <circle cx="0" cy="0" r="325" fill="none" stroke="url(#v5-mesh)" stroke-width="220"/>
+    <circle cx="0" cy="0" r="435" fill="none" stroke="#142840" stroke-width="2" stroke-opacity="0.4"/>
+    <circle cx="0" cy="0" r="370" fill="none" stroke="#142840" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.3"/>
+    <circle cx="0" cy="0" r="295" fill="none" stroke="#142840" stroke-width="2" stroke-opacity="0.5"/>
+    <circle cx="0" cy="0" r="200" fill="none" stroke="#FACC15" stroke-width="1.5" stroke-opacity="0.6"/>
+    <circle cx="0" cy="0" r="105" fill="none" stroke="#142840" stroke-width="2" stroke-opacity="0.4"/>
+
+    <!-- 2. Circular-Bounded Beehive Rosette Matrix (r=28 for perfect tight packing) -->
+    <!-- Pointy-top hex r=28 (w=48.5, h=56) -->
+    <g mask="url(#v5-honeycomb-mask)" stroke="#142840" stroke-width="1.8" fill="#FBF9F4">
+      <!-- Shell 1: 6 Hexagons tightly hugging Data Core -->
+      <polygon points="0,-28 24.2,-14 24.2,14 0,28 -24.2,14 -24.2,-14" transform="translate(0, -97)" fill="#FACC15" fill-opacity="0.25"/>
+      <polygon points="0,-28 24.2,-14 24.2,14 0,28 -24.2,14 -24.2,-14" transform="translate(84, -48.5)" fill="#FBF9F4"/>
+      <polygon points="0,-28 24.2,-14 24.2,14 0,28 -24.2,14 -24.2,-14" transform="translate(84, 48.5)" fill="#FACC15" fill-opacity="0.25"/>
+      <polygon points="0,-28 24.2,-14 24.2,14 0,28 -24.2,14 -24.2,-14" transform="translate(0, 97)" fill="#FBF9F4"/>
+      <polygon points="0,-28 24.2,-14 24.2,14 0,28 -24.2,14 -24.2,-14" transform="translate(-84, 48.5)" fill="#FACC15" fill-opacity="0.25"/>
+      <polygon points="0,-28 24.2,-14 24.2,14 0,28 -24.2,14 -24.2,-14" transform="translate(-84, -48.5)" fill="#FBF9F4"/>
+
+      <!-- Shell 2: 12 Intermediate Hexagons -->
+      <polygon points="0,-28 24.2,-14 24.2,14 0,28 -24.2,14 -24.2,-14" transform="translate(0, -194)" fill="#FDE68A" fill-opacity="0.5"/>
+      <polygon points="0,-28 24.2,-14 24.2,14 0,28 -24.2,14 -24.2,-14" transform="translate(84, -145.5)" fill="#FBF9F4"/>
+      <polygon points="0,-28 24.2,-14 24.2,14 0,28 -24.2,14 -24.2,-14" transform="translate(168, -97)" fill="#FDE68A" fill-opacity="0.5"/>
+      <polygon points="0,-28 24.2,-14 24.2,14 0,28 -24.2,14 -24.2,-14" transform="translate(168, 0)" fill="#FACC15" fill-opacity="0.35"/>
+      <polygon points="0,-28 24.2,-14 24.2,14 0,28 -24.2,14 -24.2,-14" transform="translate(168, 97)" fill="#FDE68A" fill-opacity="0.5"/>
+      <polygon points="0,-28 24.2,-14 24.2,14 0,28 -24.2,14 -24.2,-14" transform="translate(84, 145.5)" fill="#FBF9F4"/>
+      <polygon points="0,-28 24.2,-14 24.2,14 0,28 -24.2,14 -24.2,-14" transform="translate(0, 194)" fill="#FDE68A" fill-opacity="0.5"/>
+      <polygon points="0,-28 24.2,-14 24.2,14 0,28 -24.2,14 -24.2,-14" transform="translate(-84, 145.5)" fill="#FBF9F4"/>
+      <polygon points="0,-28 24.2,-14 24.2,14 0,28 -24.2,14 -24.2,-14" transform="translate(-168, 97)" fill="#FDE68A" fill-opacity="0.5"/>
+      <polygon points="0,-28 24.2,-14 24.2,14 0,28 -24.2,14 -24.2,-14" transform="translate(-168, 0)" fill="#FACC15" fill-opacity="0.35"/>
+      <polygon points="0,-28 24.2,-14 24.2,14 0,28 -24.2,14 -24.2,-14" transform="translate(-168, -97)" fill="#FDE68A" fill-opacity="0.5"/>
+      <polygon points="0,-28 24.2,-14 24.2,14 0,28 -24.2,14 -24.2,-14" transform="translate(-84, -145.5)" fill="#FBF9F4"/>
+    </g>
+
+    <!-- 3. Intersecting Chords & Spokes (Geometric Harmony) -->
+    <g stroke="#142840" stroke-width="1.4" opacity="0.35">
+      <line x1="0" y1="0" x2="0" y2="-435"/><line x1="0" y1="0" x2="166.5" y2="-401.9"/>
+      <line x1="0" y1="0" x2="307.6" y2="-307.6"/><line x1="0" y1="0" x2="401.9" y2="-166.5"/>
+      <line x1="0" y1="0" x2="435" y2="0"/><line x1="0" y1="0" x2="401.9" y2="166.5"/>
+      <line x1="0" y1="0" x2="307.6" y2="307.6"/><line x1="0" y1="0" x2="166.5" y2="401.9"/>
+      <line x1="0" y1="0" x2="0" y2="435"/><line x1="0" y1="0" x2="-166.5" y2="401.9"/>
+      <line x1="0" y1="0" x2="-307.6" y2="307.6"/><line x1="0" y1="0" x2="-401.9" y2="166.5"/>
+      <line x1="0" y1="0" x2="-435" y2="0"/><line x1="0" y1="0" x2="-401.9" y2="-166.5"/>
+      <line x1="0" y1="0" x2="-307.6" y2="-307.6"/><line x1="0" y1="0" x2="-166.5" y2="-401.9"/>
+    </g>
+
+    <!-- 4. Six Process Constellation Hubs (R=295, radius r=58) -->
+    <g transform="translate(0, -295)">
+      <circle cx="0" cy="0" r="68" fill="none" stroke="url(#v5-gold)" stroke-width="12"/>
+      <circle cx="0" cy="0" r="58" fill="#FBF9F4" stroke="#142840" stroke-width="2.5"/>
+      <circle cx="0" cy="0" r="38" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.8"/>
+      <circle cx="0" cy="0" r="12" fill="#142840"/>
+    </g>
+    <g transform="translate(255.5, -147.5)">
+      <circle cx="0" cy="0" r="68" fill="none" stroke="url(#v5-gold)" stroke-width="12"/>
+      <circle cx="0" cy="0" r="58" fill="#FBF9F4" stroke="#142840" stroke-width="2.5"/>
+      <circle cx="0" cy="0" r="38" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.8"/>
+      <circle cx="0" cy="0" r="12" fill="#142840"/>
+    </g>
+    <g transform="translate(255.5, 147.5)">
+      <circle cx="0" cy="0" r="68" fill="none" stroke="url(#v5-p2m)" stroke-width="12"/>
+      <circle cx="0" cy="0" r="58" fill="#FBF9F4" stroke="#142840" stroke-width="2.5"/>
+      <circle cx="0" cy="0" r="38" fill="#C2410C" fill-opacity="0.35" stroke="#142840" stroke-width="2"/>
+      <circle cx="0" cy="0" r="12" fill="#C2410C"/>
+    </g>
+    <g transform="translate(0, 295)">
+      <circle cx="0" cy="0" r="68" fill="none" stroke="url(#v5-gold)" stroke-width="12"/>
+      <circle cx="0" cy="0" r="58" fill="#FBF9F4" stroke="#142840" stroke-width="2.5"/>
+      <circle cx="0" cy="0" r="38" fill="#FDE68A" fill-opacity="0.6" stroke="#142840" stroke-width="1.8"/>
+      <circle cx="0" cy="0" r="12" fill="#142840"/>
+    </g>
+    <g transform="translate(-255.5, 147.5)">
+      <circle cx="0" cy="0" r="68" fill="none" stroke="url(#v5-gold)" stroke-width="12"/>
+      <circle cx="0" cy="0" r="58" fill="#FBF9F4" stroke="#142840" stroke-width="2.5"/>
+      <circle cx="0" cy="0" r="38" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.8"/>
+      <circle cx="0" cy="0" r="12" fill="#142840"/>
+    </g>
+    <g transform="translate(-255.5, -147.5)">
+      <circle cx="0" cy="0" r="68" fill="none" stroke="url(#v5-gold)" stroke-width="12"/>
+      <circle cx="0" cy="0" r="58" fill="#FBF9F4" stroke="#142840" stroke-width="2.5"/>
+      <circle cx="0" cy="0" r="38" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.8"/>
+      <circle cx="0" cy="0" r="12" fill="#142840"/>
+    </g>
+
+    <!-- 5. Solid Technical Data Core (Center) -->
+    <circle cx="0" cy="0" r="85" fill="#FACC15" stroke="#142840" stroke-width="3"/>
+    <circle cx="0" cy="0" r="70" fill="none" stroke="#142840" stroke-width="1.8" stroke-dasharray="4,3" stroke-opacity="0.6"/>
+    <circle cx="0" cy="0" r="50" fill="none" stroke="#142840" stroke-width="1.4" stroke-opacity="0.5"/>
+    <circle cx="0" cy="0" r="30" fill="#FBF9F4" stroke="#142840" stroke-width="2"/>
+    <circle cx="0" cy="0" r="12" fill="#142840"/>
+
+    <!-- 6. 16 Large Outer Systemverse Hubs (R=435, radius r=35) -->
+    <g>
+      <g transform="translate(0, -435)"><circle cx="0" cy="0" r="35" fill="#FBF9F4" stroke="#142840" stroke-width="2.4"/><circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.4"/><circle cx="0" cy="0" r="8" fill="#142840"/></g>
+      <g transform="translate(166.5, -401.9)"><circle cx="0" cy="0" r="35" fill="#FBF9F4" stroke="#142840" stroke-width="2.4"/><circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.4"/><circle cx="0" cy="0" r="8" fill="#142840"/></g>
+      <g transform="translate(307.6, -307.6)"><circle cx="0" cy="0" r="35" fill="#FBF9F4" stroke="#142840" stroke-width="2.4"/><circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.4"/><circle cx="0" cy="0" r="8" fill="#142840"/></g>
+      <g transform="translate(401.9, -166.5)"><circle cx="0" cy="0" r="35" fill="#FBF9F4" stroke="#142840" stroke-width="2.4"/><circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.4"/><circle cx="0" cy="0" r="8" fill="#142840"/></g>
+      <g transform="translate(435, 0)"><circle cx="0" cy="0" r="35" fill="#FBF9F4" stroke="#142840" stroke-width="2.4"/><circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.4"/><circle cx="0" cy="0" r="8" fill="#142840"/></g>
+      <g transform="translate(401.9, 166.5)"><circle cx="0" cy="0" r="35" fill="#FBF9F4" stroke="#142840" stroke-width="2.4"/><circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.4"/><circle cx="0" cy="0" r="8" fill="#142840"/></g>
+      <g transform="translate(307.6, 307.6)"><circle cx="0" cy="0" r="35" fill="#FBF9F4" stroke="#142840" stroke-width="2.4"/><circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.4"/><circle cx="0" cy="0" r="8" fill="#142840"/></g>
+      <g transform="translate(166.5, 401.9)"><circle cx="0" cy="0" r="35" fill="#FBF9F4" stroke="#142840" stroke-width="2.4"/><circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.4"/><circle cx="0" cy="0" r="8" fill="#142840"/></g>
+      <g transform="translate(0, 435)"><circle cx="0" cy="0" r="35" fill="#FBF9F4" stroke="#142840" stroke-width="2.4"/><circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.4"/><circle cx="0" cy="0" r="8" fill="#142840"/></g>
+      <g transform="translate(-166.5, 401.9)"><circle cx="0" cy="0" r="35" fill="#FBF9F4" stroke="#142840" stroke-width="2.4"/><circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.4"/><circle cx="0" cy="0" r="8" fill="#142840"/></g>
+      <g transform="translate(-307.6, 307.6)"><circle cx="0" cy="0" r="35" fill="#FBF9F4" stroke="#142840" stroke-width="2.4"/><circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.4"/><circle cx="0" cy="0" r="8" fill="#142840"/></g>
+      <g transform="translate(-401.9, 166.5)"><circle cx="0" cy="0" r="35" fill="#FBF9F4" stroke="#142840" stroke-width="2.4"/><circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.4"/><circle cx="0" cy="0" r="8" fill="#142840"/></g>
+      <g transform="translate(-435, 0)"><circle cx="0" cy="0" r="35" fill="#FBF9F4" stroke="#142840" stroke-width="2.4"/><circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.4"/><circle cx="0" cy="0" r="8" fill="#142840"/></g>
+      <g transform="translate(-401.9, -166.5)"><circle cx="0" cy="0" r="35" fill="#FBF9F4" stroke="#142840" stroke-width="2.4"/><circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.4"/><circle cx="0" cy="0" r="8" fill="#142840"/></g>
+      <g transform="translate(-307.6, -307.6)"><circle cx="0" cy="0" r="35" fill="#FBF9F4" stroke="#142840" stroke-width="2.4"/><circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.4"/><circle cx="0" cy="0" r="8" fill="#142840"/></g>
+      <g transform="translate(-166.5, -401.9)"><circle cx="0" cy="0" r="35" fill="#FBF9F4" stroke="#142840" stroke-width="2.4"/><circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.4"/><circle cx="0" cy="0" r="8" fill="#142840"/></g>
+    </g>
+  </g>
+</svg>

@@ -63,3 +63,7 @@ next-env.d.ts
 
 # supabase CLI scratch (never commit Capo/project refs)
 /supabase/.temp/
+
+# Next.js generate-agent-files output: never commit (rig pointer files are seat-scoped)
+AGENTS.md
+CLAUDE.md

@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { PRIMARY_NAV } from "@/lib/nav";
+import OrgAdminLink from "@/components/OrgAdminLink";
 
 const NAV = PRIMARY_NAV;
 
 export default function SiteFooter() {
   return (
     <footer className="relative overflow-hidden border-t border-porcelain/10 bg-navy-deep text-porcelain">
-      <div className="mx-auto max-w-content px-6 pt-14 pb-10">
+      <div className="page-well pt-14 pb-10">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
           {/* Brand */}
           <div>
@@ -19,7 +20,7 @@ export default function SiteFooter() {
               data
             </p>
             <p className="mt-3 font-display text-[14px] italic leading-relaxed text-porcelain/50">
-              Data-centric &middot; Vendor-agnostic &middot; Exit-by-design
+              Data-centric &middot; Vendor-agnostic
             </p>
           </div>
 
@@ -33,6 +34,7 @@ export default function SiteFooter() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
+                    prefetch={false}
                     className="text-porcelain/70 transition-colors hover:text-gold"
                   >
                     {item.label}
@@ -42,10 +44,10 @@ export default function SiteFooter() {
             </ul>
           </div>
 
-          {/* Reach out */}
+          {/* Contact */}
           <div>
             <p className="mb-4 font-brand text-[11px] font-semibold uppercase tracking-[0.24em] text-gold">
-              Reach out
+              Contact
             </p>
             <p className="font-body text-[15px] leading-relaxed text-porcelain/70">
               <a
@@ -58,21 +60,38 @@ export default function SiteFooter() {
               Pacific Time
             </p>
             <p className="mt-4 font-body text-[13px] leading-relaxed text-porcelain/55">
-              Open to permanent, interim, and fractional executive mandates.
+              The business keeps running while the work moves.
             </p>
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center gap-2 border-t border-porcelain/10 pt-6 sm:flex-row sm:justify-between">
-          <p className="font-body text-[12.5px] text-porcelain/40">
-            © idigdata · Data Integration Group · est. 2016
+        <div className="mt-12 border-t border-porcelain/10 pt-6">
+          <div className="flex flex-col items-center gap-2 sm:flex-row sm:justify-between">
+            <p className="font-body text-[12.5px] text-porcelain/40">
+              © idigdata · Data Integration Group · est. 2016
+            </p>
+            <div className="flex items-center gap-4">
+              <OrgAdminLink />
+              <Link
+                href="/faq/"
+                className="font-body text-[12.5px] text-porcelain/50 transition-colors hover:text-gold"
+              >
+                FAQ
+              </Link>
+              <Link
+                href="/privacy/"
+                className="font-body text-[12.5px] text-porcelain/50 transition-colors hover:text-gold"
+              >
+                Privacy
+              </Link>
+            </div>
+          </div>
+          <p className="mt-4 max-w-[62ch] font-body text-[11.5px] leading-relaxed text-porcelain/35">
+            All product names, logos, and brands are property of their
+            respective owners and are used for identification purposes only.
+            Reference to past clients does not imply their endorsement of
+            idigdata.
           </p>
-          <Link
-            href="/privacy/"
-            className="font-body text-[12.5px] text-porcelain/50 transition-colors hover:text-gold"
-          >
-            Privacy
-          </Link>
         </div>
       </div>
 

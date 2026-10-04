@@ -10,7 +10,7 @@ describe("contact schema", () => {
     const parsed = ContactSchema.safeParse({
       name: "Alex Operator",
       email: "alex@example.com",
-      interestType: "agentics",
+      interestType: "applied_agentics",
       message: "Need a living asset review.",
     });
     assert.equal(parsed.success, true);

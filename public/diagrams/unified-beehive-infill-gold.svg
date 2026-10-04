@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Unified Systemic Architecture · Master Gold Edition">
+  <defs>
+    <!-- Clip Path: Exactly bounding the Beehive inside the Major Constellation Hexagon -->
+    <clipPath id="gold-hex-clip">
+      <polygon points="0,-270 233.8,-135 233.8,135 0,270 -233.8,135 -233.8,-135"/>
+    </clipPath>
+
+    <!-- Mask to exclude the center core from honeycomb lines -->
+    <mask id="gold-core-mask">
+      <rect x="-500" y="-500" width="1000" height="1000" fill="white"/>
+      <circle cx="0" cy="0" r="54" fill="black"/>
+    </mask>
+
+    <pattern id="gold-honeycomb-pattern" patternUnits="userSpaceOnUse" width="36" height="62.35" patternTransform="rotate(0)">
+      <!-- Seamless regular hexagonal tessellation: w=36, h=62.35 -->
+      <path d="M 0,0 L 18,10.39 L 18,31.18 L 0,41.57 L -18,31.18 L -18,10.39 Z
+               M 36,0 L 54,10.39 L 54,31.18 L 36,41.57 L 18,31.18 L 18,10.39 Z
+               M 0,62.35 L 18,72.74 L 18,93.53 L 0,103.92 L -18,93.53 L -18,72.74 Z
+               M 36,62.35 L 54,72.74 L 54,93.53 L 36,103.92 L 18,93.53 L 18,72.74 Z
+               M 18,31.18 L 36,41.57 L 36,62.35 L 18,72.74 L 0,62.35 L 0,41.57 Z"
+            fill="none" stroke="#A37E2C" stroke-width="1.2" stroke-opacity="0.85"/>
+    </pattern>
+  </defs>
+
+  <!-- Clean Warm Cream Substrate -->
+  <rect width="1000" height="1000" fill="#FAF6EE"/>
+
+  <g transform="translate(500, 500)">
+    <!-- ============================================================== -->
+    <!-- 1. CONCENTRIC ORBITAL GUIDE ARCS (ELEGANT DOUBLE TRACKS)       -->
+    <!-- ============================================================== -->
+    <circle cx="0" cy="0" r="445" fill="none" stroke="#A37E2C" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="415" fill="none" stroke="#A37E2C" stroke-width="1.8"/>
+    <circle cx="0" cy="0" r="335" fill="none" stroke="#A37E2C" stroke-width="1.8"/>
+    <circle cx="0" cy="0" r="270" fill="none" stroke="#A37E2C" stroke-width="2"/>
+
+    <!-- ============================================================== -->
+    <!-- 2. THE 16 THIN RADIAL SPOKES (OUTER SYSTEMS -> CORE)          -->
+    <!-- ============================================================== -->
+    <g stroke="#A37E2C" stroke-width="1.6" stroke-opacity="0.75">
+      <line x1="0" y1="0" x2="0" y2="-445"/>
+      <line x1="0" y1="0" x2="170.3" y2="-411.1"/>
+      <line x1="0" y1="0" x2="314.7" y2="-314.7"/>
+      <line x1="0" y1="0" x2="411.1" y2="-170.3"/>
+      <line x1="0" y1="0" x2="445" y2="0"/>
+      <line x1="0" y1="0" x2="411.1" y2="170.3"/>
+      <line x1="0" y1="0" x2="314.7" y2="314.7"/>
+      <line x1="0" y1="0" x2="170.3" y2="411.1"/>
+      <line x1="0" y1="0" x2="0" y2="445"/>
+      <line x1="0" y1="0" x2="-170.3" y2="411.1"/>
+      <line x1="0" y1="0" x2="-314.7" y2="314.7"/>
+      <line x1="0" y1="0" x2="-411.1" y2="170.3"/>
+      <line x1="0" y1="0" x2="-445" y2="0"/>
+      <line x1="0" y1="0" x2="-411.1" y2="-170.3"/>
+      <line x1="0" y1="0" x2="-314.7" y2="-314.7"/>
+      <line x1="0" y1="0" x2="-170.3" y2="-411.1"/>
+    </g>
+
+    <!-- ============================================================== -->
+    <!-- 3. LAYER 1: THE BEEHIVE (SEAMLESS HONEYCOMB INFILL)           -->
+    <!-- ============================================================== -->
+    <rect x="-300" y="-300" width="600" height="600"
+          fill="url(#gold-honeycomb-pattern)"
+          clip-path="url(#gold-hex-clip)"
+          mask="url(#gold-core-mask)"/>
+
+    <!-- ============================================================== -->
+    <!-- 4. LAYER 2: THE MAJOR HEXAGON & 6 BOLD CONSTELLATION SPOKES    -->
+    <!-- ============================================================== -->
+    <!-- Double-Stroke Perimeter Hexagon -->
+    <polygon points="0,-270 233.8,-135 233.8,135 0,270 -233.8,135 -233.8,-135" fill="none" stroke="#A37E2C" stroke-width="5"/>
+    <polygon points="0,-280 242.5,-140 242.5,140 0,280 -242.5,140 -242.5,-140" fill="none" stroke="#A37E2C" stroke-width="1.5" stroke-opacity="0.6"/>
+
+    <!-- 6 Heavy Radial Spokes from Center Core to Constellations -->
+    <g stroke="#A37E2C" stroke-width="4.5" stroke-linecap="round">
+      <line x1="0" y1="0" x2="0" y2="-270"/>
+      <line x1="0" y1="0" x2="233.8" y2="-135"/>
+      <line x1="0" y1="0" x2="233.8" y2="135"/>
+      <line x1="0" y1="0" x2="0" y2="270"/>
+      <line x1="0" y1="0" x2="-233.8" y2="135"/>
+      <line x1="0" y1="0" x2="-233.8" y2="-135"/>
+    </g>
+
+    <!-- ============================================================== -->
+    <!-- 5. THE SIX LARGE CONSTELLATION HUBS (Commanding Size: r=48)   -->
+    <!-- ============================================================== -->
+    <!-- 12h -->
+    <g transform="translate(0, -270)">
+      <circle cx="0" cy="0" r="50" fill="#FAF6EE" stroke="#A37E2C" stroke-width="4"/>
+      <circle cx="0" cy="0" r="40" fill="none" stroke="#A37E2C" stroke-width="1.8"/>
+    </g>
+    <!-- 2h -->
+    <g transform="translate(233.8, -135)">
+      <circle cx="0" cy="0" r="50" fill="#FAF6EE" stroke="#A37E2C" stroke-width="4"/>
+      <circle cx="0" cy="0" r="40" fill="none" stroke="#A37E2C" stroke-width="1.8"/>
+    </g>
+    <!-- 4h -->
+    <g transform="translate(233.8, 135)">
+      <circle cx="0" cy="0" r="50" fill="#FAF6EE" stroke="#A37E2C" stroke-width="4"/>
+      <circle cx="0" cy="0" r="40" fill="none" stroke="#A37E2C" stroke-width="1.8"/>
+    </g>
+    <!-- 6h -->
+    <g transform="translate(0, 270)">
+      <circle cx="0" cy="0" r="50" fill="#FAF6EE" stroke="#A37E2C" stroke-width="4"/>
+      <circle cx="0" cy="0" r="40" fill="none" stroke="#A37E2C" stroke-width="1.8"/>
+    </g>
+    <!-- 8h -->
+    <g transform="translate(-233.8, 135)">
+      <circle cx="0" cy="0" r="50" fill="#FAF6EE" stroke="#A37E2C" stroke-width="4"/>
+      <circle cx="0" cy="0" r="40" fill="none" stroke="#A37E2C" stroke-width="1.8"/>
+    </g>
+    <!-- 10h -->
+    <g transform="translate(-233.8, -135)">
+      <circle cx="0" cy="0" r="50" fill="#FAF6EE" stroke="#A37E2C" stroke-width="4"/>
+      <circle cx="0" cy="0" r="40" fill="none" stroke="#A37E2C" stroke-width="1.8"/>
+    </g>
+
+    <!-- ============================================================== -->
+    <!-- 6. THE CENTRAL DATA CORE (MDM + CDM HUB)                       -->
+    <!-- ============================================================== -->
+    <circle cx="0" cy="0" r="54" fill="#FAF6EE" stroke="#A37E2C" stroke-width="4.5"/>
+    <circle cx="0" cy="0" r="42" fill="#C9982E" stroke="#A37E2C" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="28" fill="#D8A938"/>
+
+    <!-- ============================================================== -->
+    <!-- 7. THE 16 SYSTEM BUBBLES (OUTER ORBIT AT R=415, r=26)          -->
+    <!-- ============================================================== -->
+    <g id="gold-system-bubbles">
+      <g transform="translate(0, -415)"><circle cx="0" cy="0" r="26" fill="#FAF6EE" stroke="#A37E2C" stroke-width="2.8"/><circle cx="0" cy="0" r="16" fill="none" stroke="#A37E2C" stroke-width="1.2"/></g>
+      <g transform="translate(158.8, -383.4)"><circle cx="0" cy="0" r="26" fill="#FAF6EE" stroke="#A37E2C" stroke-width="2.8"/><circle cx="0" cy="0" r="16" fill="none" stroke="#A37E2C" stroke-width="1.2"/></g>
+      <g transform="translate(293.4, -293.4)"><circle cx="0" cy="0" r="26" fill="#FAF6EE" stroke="#A37E2C" stroke-width="2.8"/><circle cx="0" cy="0" r="16" fill="none" stroke="#A37E2C" stroke-width="1.2"/></g>
+      <g transform="translate(383.4, -158.8)"><circle cx="0" cy="0" r="26" fill="#FAF6EE" stroke="#A37E2C" stroke-width="2.8"/><circle cx="0" cy="0" r="16" fill="none" stroke="#A37E2C" stroke-width="1.2"/></g>
+      <g transform="translate(415, 0)"><circle cx="0" cy="0" r="26" fill="#FAF6EE" stroke="#A37E2C" stroke-width="2.8"/><circle cx="0" cy="0" r="16" fill="none" stroke="#A37E2C" stroke-width="1.2"/></g>
+      <g transform="translate(383.4, 158.8)"><circle cx="0" cy="0" r="26" fill="#FAF6EE" stroke="#A37E2C" stroke-width="2.8"/><circle cx="0" cy="0" r="16" fill="none" stroke="#A37E2C" stroke-width="1.2"/></g>
+      <g transform="translate(293.4, 293.4)"><circle cx="0" cy="0" r="26" fill="#FAF6EE" stroke="#A37E2C" stroke-width="2.8"/><circle cx="0" cy="0" r="16" fill="none" stroke="#A37E2C" stroke-width="1.2"/></g>
+      <g transform="translate(158.8, 383.4)"><circle cx="0" cy="0" r="26" fill="#FAF6EE" stroke="#A37E2C" stroke-width="2.8"/><circle cx="0" cy="0" r="16" fill="none" stroke="#A37E2C" stroke-width="1.2"/></g>
+      <g transform="translate(0, 415)"><circle cx="0" cy="0" r="26" fill="#FAF6EE" stroke="#A37E2C" stroke-width="2.8"/><circle cx="0" cy="0" r="16" fill="none" stroke="#A37E2C" stroke-width="1.2"/></g>
+      <g transform="translate(-158.8, 383.4)"><circle cx="0" cy="0" r="26" fill="#FAF6EE" stroke="#A37E2C" stroke-width="2.8"/><circle cx="0" cy="0" r="16" fill="none" stroke="#A37E2C" stroke-width="1.2"/></g>
+      <g transform="translate(-293.4, 293.4)"><circle cx="0" cy="0" r="26" fill="#FAF6EE" stroke="#A37E2C" stroke-width="2.8"/><circle cx="0" cy="0" r="16" fill="none" stroke="#A37E2C" stroke-width="1.2"/></g>
+      <g transform="translate(-383.4, 158.8)"><circle cx="0" cy="0" r="26" fill="#FAF6EE" stroke="#A37E2C" stroke-width="2.8"/><circle cx="0" cy="0" r="16" fill="none" stroke="#A37E2C" stroke-width="1.2"/></g>
+      <g transform="translate(-415, 0)"><circle cx="0" cy="0" r="26" fill="#FAF6EE" stroke="#A37E2C" stroke-width="2.8"/><circle cx="0" cy="0" r="16" fill="none" stroke="#A37E2C" stroke-width="1.2"/></g>
+      <g transform="translate(-383.4, -158.8)"><circle cx="0" cy="0" r="26" fill="#FAF6EE" stroke="#A37E2C" stroke-width="2.8"/><circle cx="0" cy="0" r="16" fill="none" stroke="#A37E2C" stroke-width="1.2"/></g>
+      <g transform="translate(-293.4, -293.4)"><circle cx="0" cy="0" r="26" fill="#FAF6EE" stroke="#A37E2C" stroke-width="2.8"/><circle cx="0" cy="0" r="16" fill="none" stroke="#A37E2C" stroke-width="1.2"/></g>
+      <g transform="translate(-158.8, -383.4)"><circle cx="0" cy="0" r="26" fill="#FAF6EE" stroke="#A37E2C" stroke-width="2.8"/><circle cx="0" cy="0" r="16" fill="none" stroke="#A37E2C" stroke-width="1.2"/></g>
+    </g>
+  </g>
+</svg>

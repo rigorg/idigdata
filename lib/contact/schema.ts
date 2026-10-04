@@ -2,12 +2,10 @@ import { z } from "zod";
 
 /** Shared contact contract — client and /api/contact must stay aligned. */
 export const InterestTypeSchema = z.enum([
-  "general",
-  "cio_search",
-  "embedded",
-  "fractional",
-  "agentics",
-  "speaking",
+  "core_transformation",
+  "transformation_recovery",
+  "applied_agentics",
+  "not_sure",
 ]);
 
 export const ContactSchema = z.object({
@@ -16,7 +14,7 @@ export const ContactSchema = z.object({
   role: z.string().max(120).optional().default(""),
   company: z.string().max(200).optional().default(""),
   message: z.string().max(4000).optional().default(""),
-  interestType: InterestTypeSchema.optional().default("general"),
+  interestType: InterestTypeSchema.optional().default("not_sure"),
   anon_session_id: z.string().max(128).optional().nullable(),
   _hp: z.string().max(0).optional(),
 });
@@ -25,12 +23,16 @@ export type ContactPayload = z.infer<typeof ContactSchema>;
 export type InterestType = z.infer<typeof InterestTypeSchema>;
 
 export const INTEREST_OPTIONS: { value: InterestType; label: string }[] = [
-  { value: "general", label: "General" },
-  { value: "cio_search", label: "CIO / executive search" },
-  { value: "embedded", label: "Embedded engagement" },
-  { value: "fractional", label: "Fractional engagement" },
-  { value: "agentics", label: "Agentic AI engagement" },
-  { value: "speaking", label: "Speaking / advisory" },
+  { value: "core_transformation", label: "Core transformation" },
+  { value: "transformation_recovery", label: "Transformation recovery" },
+  {
+    value: "applied_agentics",
+    label: "Applied Agentics inside the same mandate",
+  },
+  {
+    value: "not_sure",
+    label: "Not sure yet - start with the operating problem",
+  },
 ];
 
 /** Strip CR/LF before using values in email headers. */

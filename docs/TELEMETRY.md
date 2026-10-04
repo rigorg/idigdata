@@ -13,11 +13,13 @@ Entrance truth lives in DigOps Supabase. Client beacons are opt-in.
 
 Default production posture: **door-knock only** + Vercel Analytics. Do not turn on page navigation tracking without Operator word.
 
+DigOps `/website` **People** means a person on a live page. Live pages include Home, Application Layer, Agentic Layer, and Contact — not only the old IA routes. Arrival on that page is [GA4 Default Channel Grouping](https://support.google.com/analytics/answer/9756891) from stored UTM + referrer. Vercel Analytics does not write into DigOps.
+
 ## Markers
 
 | Marker | How | Notes |
 |---|---|---|
-| Internal | `?internal=1` or `DIGOPS_INTERNAL_IPS` | Year cookie; records as `rob_internal` |
+| Internal | `?internal=1`, `DIGOPS_INTERNAL_IPS`, or localhost | Year cookie / allowlist / local host; records as `rob_internal`. DigOps **You**, never People. |
 | Fleet | Header `x-digops-traffic: fleet:<DIGOPS_FLEET_BEACON_SECRET>` | Production ignores bare `?fleet=1` |
 | Attribution | UTM/gclid landing → `idig_attr` cookie (30d) | Fills UTMs after navigation |
 
@@ -25,10 +27,9 @@ Clear: `?clear_internal=1`, `?clear_fleet=1`, `?clear_attr=1`.
 
 ## PII posture (door-knock)
 
-- IP stored as salted SHA-256 prefix (`h:…`), not raw
+- IP stored as HMAC-SHA-256 prefix (`h:…`) using `DIGOPS_IP_HASH_SALT`. No raw IP. If the secret is unset, the fingerprint is skipped.
 - Coarse geo only (country / region / city) — no lat/long
 - `headers_json` allowlist excludes IP / forwarded / ray ids
-- Optional salt: `DIGOPS_IP_HASH_SALT`
 
 ## Rate limits
 

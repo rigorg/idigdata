@@ -3,18 +3,17 @@ import { Resend } from "resend";
 import {
   ContactSchema,
   sanitizeHeaderField,
-  type ContactPayload,
 } from "@/lib/contact/schema";
 import { getDigOpsSupabaseForContact } from "@/lib/server/digopsSupabase";
 import { guardJsonPost, parseBoundedJson } from "@/lib/server/requestSecurity";
 
+import { CONTACT_DOOR_SESSION_COOKIE, contactIntakeRow, recordContactIntake, type ContactIntakeRow, type CrmInsertResult } from "@/lib/contact/intake";
+
+import { ATTRIBUTION_COOKIE } from "@/lib/traffic/attribution";
+
 export const runtime = "nodejs";
 
-type CrmInsertResult =
-  | { ok: true; id: string | null }
-  | { ok: false; error: "not_configured" | "insert_failed" };
-
-async function insertContactRow(row: Record<string, unknown>): Promise<CrmInsertResult> {
+async function insertContactRow(row: ContactIntakeRow): Promise<CrmInsertResult> {
   const supabase = getDigOpsSupabaseForContact();
   if (!supabase) {
     console.warn("contact form: DigOps Supabase env not configured");
@@ -49,21 +48,27 @@ async function insertContactRow(row: Record<string, unknown>): Promise<CrmInsert
   return { ok: true, id: null };
 }
 
-async function writeCrmIntake(
-  data: ContactPayload,
-  req: NextRequest,
-): Promise<CrmInsertResult> {
-  return insertContactRow({
-    name: data.name,
-    email: data.email,
-    role: data.role.trim() || "(not supplied)",
-    company: data.company.trim() || null,
-    message: data.message.trim() || "(no message supplied)",
-    source: `website-${data.interestType}`,
-    source_url: req.headers.get("referer"),
-    user_agent: req.headers.get("user-agent"),
-    anon_session_id: data.anon_session_id?.trim() || null,
+async function sendNotifyEmail(input: {
+  apiKey: string;
+  fromAddr: string;
+  notifyTo: string;
+  replyTo: string;
+  subject: string;
+  text: string;
+}): Promise<boolean> {
+  const resend = new Resend(input.apiKey);
+  const { error } = await resend.emails.send({
+    from: input.fromAddr,
+    to: input.notifyTo,
+    replyTo: input.replyTo,
+    subject: input.subject,
+    text: input.text,
   });
+  if (error) {
+    console.error("contact form email error:", error);
+    return false;
+  }
+  return true;
 }
 
 export async function POST(req: NextRequest) {
@@ -100,7 +105,15 @@ export async function POST(req: NextRequest) {
   const fromAddr =
     process.env.EMAIL_NOTIFY_FROM ?? "idigdata website <noreply@idigdata.com>";
 
-  const subject = `[idigdata] Reach out: ${safeName} / ${safeEmail}`;
+  const row = contactIntakeRow(parsed.data, req.headers, {
+    doorSessionId: req.cookies.get(CONTACT_DOOR_SESSION_COOKIE)?.value,
+    attributionCookie: req.cookies.get(ATTRIBUTION_COOKIE)?.value,
+  });
+  const isBlockQuote =
+    message.includes("THE BLOCK") || message.includes("BLOCK SCOPE QUOTE") || message.includes("DELIVERY QUOTE") || message.includes("FLIGHT SCOPE QUOTE");
+  const subject = isBlockQuote
+    ? `[The Block Quote] ${safeName}${company ? ` (${sanitizeHeaderField(company)})` : ""} / ${safeEmail}`
+    : `[idigdata] Reach out: ${safeName} / ${safeEmail}`;
   const lines = [
     `From: ${safeName} <${safeEmail}>`,
     role ? `Role: ${sanitizeHeaderField(role)}` : null,
@@ -111,39 +124,36 @@ export async function POST(req: NextRequest) {
     message.trim().length > 0 ? message : "(no message supplied)",
     ``,
     `---`,
-    `Source: ${req.headers.get("referer") ?? "unknown"}`,
+    `Source: ${row.source_url ?? "unknown"}`,
     `User-Agent: ${req.headers.get("user-agent") ?? "unknown"}`,
-    `Session: ${parsed.data.anon_session_id ?? "none"}`,
+    `Session: ${row.anon_session_id ?? "none"}`,
     `Timestamp: ${new Date().toISOString()}`,
   ].filter((l): l is string => l !== null);
 
-  const crm = await writeCrmIntake(parsed.data, req);
-  if (!crm.ok) {
-    return NextResponse.json({ ok: false, error: "crm_failed" }, { status: 500 });
-  }
-
-  let notification: "sent" | "not_configured" | "failed" = "sent";
-  if (!apiKey) {
-    notification = "not_configured";
-    console.error("contact form: RESEND_API_KEY not set");
-  } else {
-    try {
-      const resend = new Resend(apiKey);
-      await resend.emails.send({
-        from: fromAddr,
-        to: notifyTo,
-        replyTo: safeEmail,
-        subject,
+  if (!apiKey) console.error("contact form: RESEND_API_KEY not set");
+  const result = await recordContactIntake(
+    row,
+    insertContactRow,
+    apiKey ? async () => {
+      const payload = {
+        apiKey, fromAddr, notifyTo, replyTo: safeEmail, subject,
         text: lines.join("\n"),
-      });
-    } catch (err) {
-      notification = "failed";
-      console.error("contact form email error:", err);
-    }
-  }
-
-  return NextResponse.json(
-    { ok: true, lead_id: crm.id, notification },
-    { status: notification === "sent" ? 200 : 202 },
+      };
+      try {
+        let sent = await sendNotifyEmail(payload);
+        if (!sent) sent = await sendNotifyEmail(payload);
+        return sent;
+      } catch (err) {
+        console.error("contact form email error:", err);
+        return false;
+      }
+    } : null,
   );
+  if (!result.ok) {
+    return NextResponse.json(result, { status: 500 });
+  }
+  // The deployed intake table has no notification-status column.
+  // Report the real notification outcome without claiming it was persisted.
+  console.info("contact form notification:", result.notification);
+  return NextResponse.json(result, { status: result.notification === "sent" ? 200 : 202 });
 }

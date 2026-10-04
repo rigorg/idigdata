@@ -6,11 +6,11 @@ const organizationSchema = {
   url: "https://idigdata.com",
   logo: "https://idigdata.com/idigdata-mark.svg",
   description:
-    "idigdata is the independent practice of transformational CIO/CTO Robert Paddock (Data Integration Group / DIG LLC), founded 2016. Customer-side enterprise transformation and Applied Agentics - modernize the core, put agents into production, keep the business in control. Embeds inside $100M-$1B operators above the vendors; delivery architecture includes BOSS, The Rig, and FlowCraft as owned operating systems, not SaaS seats. Vendor-agnostic. Exit-by-design.",
+    "Robert Paddock takes responsibility for technology outcomes a company can own, operate, and improve. The business keeps running while the work moves.",
   founder: {
     "@type": "Person",
     name: "Robert Paddock",
-    jobTitle: "Transformational Chief Information Officer",
+    jobTitle: "Enterprise Technology Leader",
     sameAs: ["https://www.linkedin.com/in/robertpaddock"],
   },
   foundingDate: "2016",
@@ -23,9 +23,9 @@ const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Robert Paddock",
-  jobTitle: "Transformational Chief Information Officer",
+  jobTitle: "Enterprise Technology Leader",
   description:
-    "Transformational CIO/CTO and founder of idigdata. Owns the layer where AI and ERP fail: people, process, and data above the vendors. 30 years inside mid-market ($100M-$1B) enterprise change; 50+ implementations including 15 enterprise transformations at scale; embeds, installs a business-owned operating asset, exits by design. Recent CIO residency: Sierra Nevada Brewing (~$420M).",
+    "Enterprise Technology Leader. 30 years, 50+ implementations, 15 transformations at scale, four years applying agentics in production. The business keeps running while the work moves.",
   worksFor: {
     "@type": "Organization",
     name: "Data Integration Group",
@@ -34,7 +34,7 @@ const personSchema = {
   },
   knowsAbout: [
     "Business transformation",
-    "Transformational CIO/CTO leadership",
+    "Transformational CIO leadership",
     "Legacy ERP modernization",
     "Enterprise resource planning (ERP)",
     "Warehouse management system (WMS)",
@@ -49,7 +49,7 @@ const personSchema = {
     "Decision integrity for agentic AI",
     "Embedded transformation leadership",
     "Vendor-agnostic transformation",
-    "Exit-by-design engagements",
+    "Business-owned operating assets",
     "Discrete manufacturing",
     "Process manufacturing",
     "Architecture-engineering-construction (AEC)",

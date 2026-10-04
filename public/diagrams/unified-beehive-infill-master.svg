@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Beehive Full Infill Master Emblem · idigdata">
+  <defs>
+    <!-- Clip Path: Exactly bounding the Beehive inside the Major Constellation Hexagon -->
+    <clipPath id="infill-hex-clip">
+      <polygon points="0,-270 233.8,-135 233.8,135 0,270 -233.8,135 -233.8,-135"/>
+    </clipPath>
+
+    <!-- Mask to exclude the center core from honeycomb lines -->
+    <mask id="infill-core-mask">
+      <rect x="-500" y="-500" width="1000" height="1000" fill="white"/>
+      <circle cx="0" cy="0" r="58" fill="black"/>
+    </mask>
+
+    <linearGradient id="inf-p2m" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#142840"/>
+      <stop offset="40%" stop-color="#FACC15"/>
+      <stop offset="70%" stop-color="#C2410C"/>
+      <stop offset="100%" stop-color="#142840"/>
+    </linearGradient>
+    <linearGradient id="inf-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#142840"/>
+      <stop offset="50%" stop-color="#FACC15"/>
+      <stop offset="100%" stop-color="#142840"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Clean Warm Cream Substrate -->
+  <rect width="1000" height="1000" fill="#FBF9F4"/>
+
+  <g transform="translate(500, 500)">
+    <!-- ============================================================== -->
+    <!-- 1. LAYER 3: THE SYSTEMVERSE (OUTER CIRCLE & 16 THIN SPOKES)   -->
+    <!-- ============================================================== -->
+
+    <!-- Outer Orbit Circle -->
+    <circle cx="0" cy="0" r="430" fill="none" stroke="#142840" stroke-width="2.5"/>
+
+    <!-- 16 THIN Radial Spokes (1.2px) straight from outer bubbles to Center Core -->
+    <g stroke="#142840" stroke-width="1.2" stroke-opacity="0.45">
+      <line x1="0" y1="0" x2="0" y2="-430"/>
+      <line x1="0" y1="0" x2="164.6" y2="-397.3"/>
+      <line x1="0" y1="0" x2="304.1" y2="-304.1"/>
+      <line x1="0" y1="0" x2="397.3" y2="-164.6"/>
+      <line x1="0" y1="0" x2="430" y2="0"/>
+      <line x1="0" y1="0" x2="397.3" y2="164.6"/>
+      <line x1="0" y1="0" x2="304.1" y2="304.1"/>
+      <line x1="0" y1="0" x2="164.6" y2="397.3"/>
+      <line x1="0" y1="0" x2="0" y2="430"/>
+      <line x1="0" y1="0" x2="-164.6" y2="397.3"/>
+      <line x1="0" y1="0" x2="-304.1" y2="304.1"/>
+      <line x1="0" y1="0" x2="-397.3" y2="164.6"/>
+      <line x1="0" y1="0" x2="-430" y2="0"/>
+      <line x1="0" y1="0" x2="-397.3" y2="-164.6"/>
+      <line x1="0" y1="0" x2="-304.1" y2="-304.1"/>
+      <line x1="0" y1="0" x2="-164.6" y2="-397.3"/>
+    </g>
+
+    <!-- ============================================================== -->
+    <!-- 2. LAYER 1: THE BEEHIVE (FULL INTERIOR HONEYCOMB INFILL)      -->
+    <!-- ============================================================== -->
+
+    <g clip-path="url(#infill-hex-clip)" mask="url(#infill-core-mask)">
+      <!-- Hexagon honeycomb pattern filling the entire interior (r=26, dx=45, dy=78) -->
+      <g stroke="#142840" stroke-width="1.4" fill="#FBF9F4">
+        <!-- Row -4 (y = -234) -->
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(0, -234)"/>
+        
+        <!-- Row -3 (y = -195) -->
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(-67.5, -195)"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(67.5, -195)"/>
+        
+        <!-- Row -2 (y = -156) -->
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(-135, -156)"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(0, -156)" fill="#FACC15" fill-opacity="0.25"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(135, -156)"/>
+        
+        <!-- Row -1 (y = -117) -->
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(-202.5, -117)"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(-67.5, -117)"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(67.5, -117)"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(202.5, -117)"/>
+        
+        <!-- Row 0 (y = -78) -->
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(-135, -78)" fill="#FACC15" fill-opacity="0.25"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(0, -78)"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(135, -78)" fill="#FACC15" fill-opacity="0.25"/>
+        
+        <!-- Row 1 (y = -39) -->
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(-202.5, -39)"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(-67.5, -39)" fill="#FACC15" fill-opacity="0.25"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(67.5, -39)" fill="#FACC15" fill-opacity="0.25"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(202.5, -39)"/>
+        
+        <!-- Row 2 (y = 0) -->
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(-135, 0)"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(135, 0)"/>
+        
+        <!-- Row 3 (y = 39) -->
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(-202.5, 39)"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(-67.5, 39)" fill="#FACC15" fill-opacity="0.25"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(67.5, 39)" fill="#FACC15" fill-opacity="0.25"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(202.5, 39)"/>
+        
+        <!-- Row 4 (y = 78) -->
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(-135, 78)" fill="#FACC15" fill-opacity="0.25"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(0, 78)"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(135, 78)" fill="#FACC15" fill-opacity="0.25"/>
+        
+        <!-- Row 5 (y = 117) -->
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(-202.5, 117)"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(-67.5, 117)"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(67.5, 117)"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(202.5, 117)"/>
+        
+        <!-- Row 6 (y = 156) -->
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(-135, 156)"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(0, 156)" fill="#FACC15" fill-opacity="0.25"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(135, 156)"/>
+        
+        <!-- Row 7 (y = 195) -->
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(-67.5, 195)"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(67.5, 195)"/>
+        
+        <!-- Row 8 (y = 234) -->
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(0, 234)"/>
+      </g>
+    </g>
+
+    <!-- ============================================================== -->
+    <!-- 3. LAYER 2: THE SIX PROCESS CONSTELLATIONS (HEXAGON & SPOKES)  -->
+    <!-- ============================================================== -->
+
+    <!-- Regular Hexagon Perimeter Line (connecting the 6 Constellations) -->
+    <polygon points="0,-270 233.8,-135 233.8,135 0,270 -233.8,135 -233.8,-135" fill="none" stroke="#142840" stroke-width="4.5"/>
+
+    <!-- 6 Bold Radial Spokes (3.5px) straight from each Constellation to Center Core -->
+    <g stroke="#142840" stroke-width="3.5" stroke-linecap="round">
+      <line x1="0" y1="0" x2="0" y2="-270"/>
+      <line x1="0" y1="0" x2="233.8" y2="-135"/>
+      <line x1="0" y1="0" x2="233.8" y2="135"/>
+      <line x1="0" y1="0" x2="0" y2="270"/>
+      <line x1="0" y1="0" x2="-233.8" y2="135"/>
+      <line x1="0" y1="0" x2="-233.8" y2="-135"/>
+    </g>
+
+    <!-- ============================================================== -->
+    <!-- 4. THE SIX LARGE CONSTELLATION HUBS (Commanding Size: r=52)    -->
+    <!-- ============================================================== -->
+
+    <!-- 12h: P2P -->
+    <g transform="translate(0, -270)">
+      <circle cx="0" cy="0" r="62" fill="none" stroke="url(#inf-gold)" stroke-width="10"/>
+      <circle cx="0" cy="0" r="52" fill="#FBF9F4" stroke="#142840" stroke-width="3"/>
+      <circle cx="0" cy="0" r="32" fill="#FACC15" stroke="#142840" stroke-width="2"/>
+      <circle cx="0" cy="0" r="10" fill="#142840"/>
+    </g>
+    <!-- 2h: O2C -->
+    <g transform="translate(233.8, -135)">
+      <circle cx="0" cy="0" r="62" fill="none" stroke="url(#inf-gold)" stroke-width="10"/>
+      <circle cx="0" cy="0" r="52" fill="#FBF9F4" stroke="#142840" stroke-width="3"/>
+      <circle cx="0" cy="0" r="32" fill="#FACC15" stroke="#142840" stroke-width="2"/>
+      <circle cx="0" cy="0" r="10" fill="#142840"/>
+    </g>
+    <!-- 4h: P2M (Criticality Hub) -->
+    <g transform="translate(233.8, 135)">
+      <circle cx="0" cy="0" r="62" fill="none" stroke="url(#inf-p2m)" stroke-width="12"/>
+      <circle cx="0" cy="0" r="52" fill="#FBF9F4" stroke="#142840" stroke-width="3"/>
+      <circle cx="0" cy="0" r="32" fill="#C2410C" stroke="#142840" stroke-width="2"/>
+      <circle cx="0" cy="0" r="10" fill="#C2410C"/>
+    </g>
+    <!-- 6h: S2S -->
+    <g transform="translate(0, 270)">
+      <circle cx="0" cy="0" r="62" fill="none" stroke="url(#inf-gold)" stroke-width="10"/>
+      <circle cx="0" cy="0" r="52" fill="#FBF9F4" stroke="#142840" stroke-width="3"/>
+      <circle cx="0" cy="0" r="32" fill="#FDE68A" stroke="#142840" stroke-width="2"/>
+      <circle cx="0" cy="0" r="10" fill="#142840"/>
+    </g>
+    <!-- 8h: D2R -->
+    <g transform="translate(-233.8, 135)">
+      <circle cx="0" cy="0" r="62" fill="none" stroke="url(#inf-gold)" stroke-width="10"/>
+      <circle cx="0" cy="0" r="52" fill="#FBF9F4" stroke="#142840" stroke-width="3"/>
+      <circle cx="0" cy="0" r="32" fill="#FACC15" stroke="#142840" stroke-width="2"/>
+      <circle cx="0" cy="0" r="10" fill="#142840"/>
+    </g>
+    <!-- 10h: MDM -->
+    <g transform="translate(-233.8, -135)">
+      <circle cx="0" cy="0" r="62" fill="none" stroke="url(#inf-gold)" stroke-width="10"/>
+      <circle cx="0" cy="0" r="52" fill="#FBF9F4" stroke="#142840" stroke-width="3"/>
+      <circle cx="0" cy="0" r="32" fill="#FACC15" stroke="#142840" stroke-width="2"/>
+      <circle cx="0" cy="0" r="10" fill="#142840"/>
+    </g>
+
+    <!-- ============================================================== -->
+    <!-- 5. THE CENTRAL DATA CORE (MDM + CDM)                           -->
+    <!-- ============================================================== -->
+    <circle cx="0" cy="0" r="58" fill="#FACC15" stroke="#142840" stroke-width="3.5"/>
+    <circle cx="0" cy="0" r="42" fill="none" stroke="#142840" stroke-width="1.8" stroke-dasharray="3,3"/>
+    <circle cx="0" cy="0" r="26" fill="#FBF9F4" stroke="#142840" stroke-width="2"/>
+    <circle cx="0" cy="0" r="10" fill="#142840"/>
+
+    <!-- ============================================================== -->
+    <!-- 6. THE 16 SMALLER SYSTEM BUBBLES (Peripheral Size: r=24)       -->
+    <!-- ============================================================== -->
+    <g id="inf-system-bubbles">
+      <g transform="translate(0, -430)"><circle cx="0" cy="0" r="24" fill="#FBF9F4" stroke="#142840" stroke-width="2.5"/><circle cx="0" cy="0" r="13" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#142840"/></g>
+      <g transform="translate(164.6, -397.3)"><circle cx="0" cy="0" r="24" fill="#FBF9F4" stroke="#142840" stroke-width="2.5"/><circle cx="0" cy="0" r="13" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#142840"/></g>
+      <g transform="translate(304.1, -304.1)"><circle cx="0" cy="0" r="24" fill="#FBF9F4" stroke="#142840" stroke-width="2.5"/><circle cx="0" cy="0" r="13" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#142840"/></g>
+      <g transform="translate(397.3, -164.6)"><circle cx="0" cy="0" r="24" fill="#FBF9F4" stroke="#142840" stroke-width="2.5"/><circle cx="0" cy="0" r="13" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#142840"/></g>
+      <g transform="translate(430, 0)"><circle cx="0" cy="0" r="24" fill="#FBF9F4" stroke="#142840" stroke-width="2.5"/><circle cx="0" cy="0" r="13" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#142840"/></g>
+      <g transform="translate(397.3, 164.6)"><circle cx="0" cy="0" r="24" fill="#FBF9F4" stroke="#142840" stroke-width="2.5"/><circle cx="0" cy="0" r="13" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#142840"/></g>
+      <g transform="translate(304.1, 304.1)"><circle cx="0" cy="0" r="24" fill="#FBF9F4" stroke="#142840" stroke-width="2.5"/><circle cx="0" cy="0" r="13" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#142840"/></g>
+      <g transform="translate(164.6, 397.3)"><circle cx="0" cy="0" r="24" fill="#FBF9F4" stroke="#142840" stroke-width="2.5"/><circle cx="0" cy="0" r="13" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#142840"/></g>
+      <g transform="translate(0, 430)"><circle cx="0" cy="0" r="24" fill="#FBF9F4" stroke="#142840" stroke-width="2.5"/><circle cx="0" cy="0" r="13" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#142840"/></g>
+      <g transform="translate(-164.6, 397.3)"><circle cx="0" cy="0" r="24" fill="#FBF9F4" stroke="#142840" stroke-width="2.5"/><circle cx="0" cy="0" r="13" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#142840"/></g>
+      <g transform="translate(-304.1, 304.1)"><circle cx="0" cy="0" r="24" fill="#FBF9F4" stroke="#142840" stroke-width="2.5"/><circle cx="0" cy="0" r="13" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#142840"/></g>
+      <g transform="translate(-397.3, 164.6)"><circle cx="0" cy="0" r="24" fill="#FBF9F4" stroke="#142840" stroke-width="2.5"/><circle cx="0" cy="0" r="13" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#142840"/></g>
+      <g transform="translate(-430, 0)"><circle cx="0" cy="0" r="24" fill="#FBF9F4" stroke="#142840" stroke-width="2.5"/><circle cx="0" cy="0" r="13" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#142840"/></g>
+      <g transform="translate(-397.3, -164.6)"><circle cx="0" cy="0" r="24" fill="#FBF9F4" stroke="#142840" stroke-width="2.5"/><circle cx="0" cy="0" r="13" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#142840"/></g>
+      <g transform="translate(-304.1, -304.1)"><circle cx="0" cy="0" r="24" fill="#FBF9F4" stroke="#142840" stroke-width="2.5"/><circle cx="0" cy="0" r="13" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#142840"/></g>
+      <g transform="translate(-164.6, -397.3)"><circle cx="0" cy="0" r="24" fill="#FBF9F4" stroke="#142840" stroke-width="2.5"/><circle cx="0" cy="0" r="13" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#142840"/></g>
+    </g>
+  </g>
+</svg>

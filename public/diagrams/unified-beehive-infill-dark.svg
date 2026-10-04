@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Beehive Full Infill Master Emblem · Dark Edition">
+  <defs>
+    <clipPath id="infill-hex-clip-dark">
+      <polygon points="0,-270 233.8,-135 233.8,135 0,270 -233.8,135 -233.8,-135"/>
+    </clipPath>
+
+    <mask id="infill-core-mask-dark">
+      <rect x="-500" y="-500" width="1000" height="1000" fill="white"/>
+      <circle cx="0" cy="0" r="58" fill="black"/>
+    </mask>
+
+    <linearGradient id="inf-dark-orange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6B00"/>
+      <stop offset="50%" stop-color="#FACC15"/>
+      <stop offset="100%" stop-color="#FF6B00"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Deep Dark Slate Ground -->
+  <rect width="1000" height="1000" fill="#141923"/>
+
+  <g transform="translate(500, 500)">
+    <!-- 1. Outer Orbit Circle -->
+    <circle cx="0" cy="0" r="430" fill="none" stroke="#FF6B00" stroke-width="2.5"/>
+
+    <!-- 16 Thin Radial Spokes (1.2px) -->
+    <g stroke="#FF6B00" stroke-width="1.2" stroke-opacity="0.45">
+      <line x1="0" y1="0" x2="0" y2="-430"/>
+      <line x1="0" y1="0" x2="164.6" y2="-397.3"/>
+      <line x1="0" y1="0" x2="304.1" y2="-304.1"/>
+      <line x1="0" y1="0" x2="397.3" y2="-164.6"/>
+      <line x1="0" y1="0" x2="430" y2="0"/>
+      <line x1="0" y1="0" x2="397.3" y2="164.6"/>
+      <line x1="0" y1="0" x2="304.1" y2="304.1"/>
+      <line x1="0" y1="0" x2="164.6" y2="397.3"/>
+      <line x1="0" y1="0" x2="0" y2="430"/>
+      <line x1="0" y1="0" x2="-164.6" y2="397.3"/>
+      <line x1="0" y1="0" x2="-304.1" y2="304.1"/>
+      <line x1="0" y1="0" x2="-397.3" y2="164.6"/>
+      <line x1="0" y1="0" x2="-430" y2="0"/>
+      <line x1="0" y1="0" x2="-397.3" y2="-164.6"/>
+      <line x1="0" y1="0" x2="-304.1" y2="-304.1"/>
+      <line x1="0" y1="0" x2="-164.6" y2="-397.3"/>
+    </g>
+
+    <!-- 2. Beehive Honeycomb Full Infill -->
+    <g clip-path="url(#infill-hex-clip-dark)" mask="url(#infill-core-mask-dark)">
+      <g stroke="#FACC15" stroke-width="1.4" stroke-opacity="0.85" fill="#141923">
+        <!-- Row -4 -->
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(0, -234)"/>
+        <!-- Row -3 -->
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(-67.5, -195)"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(67.5, -195)"/>
+        <!-- Row -2 -->
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(-135, -156)"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(0, -156)" fill="#FF6B00" fill-opacity="0.2"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(135, -156)"/>
+        <!-- Row -1 -->
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(-202.5, -117)"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(-67.5, -117)"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(67.5, -117)"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(202.5, -117)"/>
+        <!-- Row 0 -->
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(-135, -78)" fill="#FF6B00" fill-opacity="0.2"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(0, -78)"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(135, -78)" fill="#FF6B00" fill-opacity="0.2"/>
+        <!-- Row 1 -->
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(-202.5, -39)"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(-67.5, -39)" fill="#FF6B00" fill-opacity="0.2"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(67.5, -39)" fill="#FF6B00" fill-opacity="0.2"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(202.5, -39)"/>
+        <!-- Row 2 -->
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(-135, 0)"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(135, 0)"/>
+        <!-- Row 3 -->
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(-202.5, 39)"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(-67.5, 39)" fill="#FF6B00" fill-opacity="0.2"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(67.5, 39)" fill="#FF6B00" fill-opacity="0.2"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(202.5, 39)"/>
+        <!-- Row 4 -->
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(-135, 78)" fill="#FF6B00" fill-opacity="0.2"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(0, 78)"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(135, 78)" fill="#FF6B00" fill-opacity="0.2"/>
+        <!-- Row 5 -->
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(-202.5, 117)"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(-67.5, 117)"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(67.5, 117)"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(202.5, 117)"/>
+        <!-- Row 6 -->
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(-135, 156)"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(0, 156)" fill="#FF6B00" fill-opacity="0.2"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(135, 156)"/>
+        <!-- Row 7 -->
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(-67.5, 195)"/>
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(67.5, 195)"/>
+        <!-- Row 8 -->
+        <polygon points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" transform="translate(0, 234)"/>
+      </g>
+    </g>
+
+    <!-- 3. Hexagon Perimeter Line (4.5px stroke) -->
+    <polygon points="0,-270 233.8,-135 233.8,135 0,270 -233.8,135 -233.8,-135" fill="none" stroke="#FF6B00" stroke-width="4.5"/>
+
+    <!-- 4. Six Direct Radial Spokes to Constellations -->
+    <g stroke="#FACC15" stroke-width="3.5" stroke-linecap="round">
+      <line x1="0" y1="0" x2="0" y2="-270"/>
+      <line x1="0" y1="0" x2="233.8" y2="-135"/>
+      <line x1="0" y1="0" x2="233.8" y2="135"/>
+      <line x1="0" y1="0" x2="0" y2="270"/>
+      <line x1="0" y1="0" x2="-233.8" y2="135"/>
+      <line x1="0" y1="0" x2="-233.8" y2="-135"/>
+    </g>
+
+    <!-- 5. Six Large Constellation Hubs (Commanding Size: r=52) -->
+    <g transform="translate(0, -270)">
+      <circle cx="0" cy="0" r="62" fill="none" stroke="url(#inf-dark-orange)" stroke-width="10"/>
+      <circle cx="0" cy="0" r="52" fill="#141923" stroke="#FF6B00" stroke-width="3"/>
+      <circle cx="0" cy="0" r="32" fill="#FF6B00" stroke="#FACC15" stroke-width="2"/>
+      <circle cx="0" cy="0" r="10" fill="#FACC15"/>
+    </g>
+    <g transform="translate(233.8, -135)">
+      <circle cx="0" cy="0" r="62" fill="none" stroke="url(#inf-dark-orange)" stroke-width="10"/>
+      <circle cx="0" cy="0" r="52" fill="#141923" stroke="#FF6B00" stroke-width="3"/>
+      <circle cx="0" cy="0" r="32" fill="#FF6B00" stroke="#FACC15" stroke-width="2"/>
+      <circle cx="0" cy="0" r="10" fill="#FACC15"/>
+    </g>
+    <g transform="translate(233.8, 135)">
+      <circle cx="0" cy="0" r="62" fill="none" stroke="#FF6B00" stroke-width="12"/>
+      <circle cx="0" cy="0" r="52" fill="#141923" stroke="#FACC15" stroke-width="3.5"/>
+      <circle cx="0" cy="0" r="32" fill="#FACC15" stroke="#FF6B00" stroke-width="2"/>
+      <circle cx="0" cy="0" r="10" fill="#FF6B00"/>
+    </g>
+    <g transform="translate(0, 270)">
+      <circle cx="0" cy="0" r="62" fill="none" stroke="url(#inf-dark-orange)" stroke-width="10"/>
+      <circle cx="0" cy="0" r="52" fill="#141923" stroke="#FF6B00" stroke-width="3"/>
+      <circle cx="0" cy="0" r="32" fill="#FF6B00" stroke="#FACC15" stroke-width="2"/>
+      <circle cx="0" cy="0" r="10" fill="#FACC15"/>
+    </g>
+    <g transform="translate(-233.8, 135)">
+      <circle cx="0" cy="0" r="62" fill="none" stroke="url(#inf-dark-orange)" stroke-width="10"/>
+      <circle cx="0" cy="0" r="52" fill="#141923" stroke="#FF6B00" stroke-width="3"/>
+      <circle cx="0" cy="0" r="32" fill="#FF6B00" stroke="#FACC15" stroke-width="2"/>
+      <circle cx="0" cy="0" r="10" fill="#FACC15"/>
+    </g>
+    <g transform="translate(-233.8, -135)">
+      <circle cx="0" cy="0" r="62" fill="none" stroke="url(#inf-dark-orange)" stroke-width="10"/>
+      <circle cx="0" cy="0" r="52" fill="#141923" stroke="#FF6B00" stroke-width="3"/>
+      <circle cx="0" cy="0" r="32" fill="#FF6B00" stroke="#FACC15" stroke-width="2"/>
+      <circle cx="0" cy="0" r="10" fill="#FACC15"/>
+    </g>
+
+    <!-- 6. Center Data Core -->
+    <circle cx="0" cy="0" r="58" fill="#FF6B00" stroke="#FACC15" stroke-width="3.5"/>
+    <circle cx="0" cy="0" r="42" fill="none" stroke="#FACC15" stroke-width="1.8" stroke-dasharray="3,3"/>
+    <circle cx="0" cy="0" r="26" fill="#141923" stroke="#FACC15" stroke-width="2"/>
+    <circle cx="0" cy="0" r="10" fill="#FACC15"/>
+
+    <!-- 7. 16 Smaller System Bubbles (r=24) -->
+    <g id="inf-system-bubbles-dark">
+      <g transform="translate(0, -430)"><circle cx="0" cy="0" r="24" fill="#141923" stroke="#FF6B00" stroke-width="2.5"/><circle cx="0" cy="0" r="13" fill="#FF6B00" fill-opacity="0.35" stroke="#FACC15" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#FACC15"/></g>
+      <g transform="translate(164.6, -397.3)"><circle cx="0" cy="0" r="24" fill="#141923" stroke="#FF6B00" stroke-width="2.5"/><circle cx="0" cy="0" r="13" fill="#FF6B00" fill-opacity="0.35" stroke="#FACC15" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#FACC15"/></g>
+      <g transform="translate(304.1, -304.1)"><circle cx="0" cy="0" r="24" fill="#141923" stroke="#FF6B00" stroke-width="2.5"/><circle cx="0" cy="0" r="13" fill="#FF6B00" fill-opacity="0.35" stroke="#FACC15" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#FACC15"/></g>
+      <g transform="translate(397.3, -164.6)"><circle cx="0" cy="0" r="24" fill="#141923" stroke="#FF6B00" stroke-width="2.5"/><circle cx="0" cy="0" r="13" fill="#FF6B00" fill-opacity="0.35" stroke="#FACC15" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#FACC15"/></g>
+      <g transform="translate(430, 0)"><circle cx="0" cy="0" r="24" fill="#141923" stroke="#FF6B00" stroke-width="2.5"/><circle cx="0" cy="0" r="13" fill="#FF6B00" fill-opacity="0.35" stroke="#FACC15" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#FACC15"/></g>
+      <g transform="translate(397.3, 164.6)"><circle cx="0" cy="0" r="24" fill="#141923" stroke="#FF6B00" stroke-width="2.5"/><circle cx="0" cy="0" r="13" fill="#FF6B00" fill-opacity="0.35" stroke="#FACC15" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#FACC15"/></g>
+      <g transform="translate(304.1, 304.1)"><circle cx="0" cy="0" r="24" fill="#141923" stroke="#FF6B00" stroke-width="2.5"/><circle cx="0" cy="0" r="13" fill="#FF6B00" fill-opacity="0.35" stroke="#FACC15" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#FACC15"/></g>
+      <g transform="translate(164.6, 397.3)"><circle cx="0" cy="0" r="24" fill="#141923" stroke="#FF6B00" stroke-width="2.5"/><circle cx="0" cy="0" r="13" fill="#FF6B00" fill-opacity="0.35" stroke="#FACC15" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#FACC15"/></g>
+      <g transform="translate(0, 430)"><circle cx="0" cy="0" r="24" fill="#141923" stroke="#FF6B00" stroke-width="2.5"/><circle cx="0" cy="0" r="13" fill="#FF6B00" fill-opacity="0.35" stroke="#FACC15" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#FACC15"/></g>
+      <g transform="translate(-164.6, 397.3)"><circle cx="0" cy="0" r="24" fill="#141923" stroke="#FF6B00" stroke-width="2.5"/><circle cx="0" cy="0" r="13" fill="#FF6B00" fill-opacity="0.35" stroke="#FACC15" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#FACC15"/></g>
+      <g transform="translate(-304.1, 304.1)"><circle cx="0" cy="0" r="24" fill="#141923" stroke="#FF6B00" stroke-width="2.5"/><circle cx="0" cy="0" r="13" fill="#FF6B00" fill-opacity="0.35" stroke="#FACC15" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#FACC15"/></g>
+      <g transform="translate(-397.3, 164.6)"><circle cx="0" cy="0" r="24" fill="#141923" stroke="#FF6B00" stroke-width="2.5"/><circle cx="0" cy="0" r="13" fill="#FF6B00" fill-opacity="0.35" stroke="#FACC15" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#FACC15"/></g>
+      <g transform="translate(-430, 0)"><circle cx="0" cy="0" r="24" fill="#141923" stroke="#FF6B00" stroke-width="2.5"/><circle cx="0" cy="0" r="13" fill="#FF6B00" fill-opacity="0.35" stroke="#FACC15" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#FACC15"/></g>
+      <g transform="translate(-397.3, -164.6)"><circle cx="0" cy="0" r="24" fill="#141923" stroke="#FF6B00" stroke-width="2.5"/><circle cx="0" cy="0" r="13" fill="#FF6B00" fill-opacity="0.35" stroke="#FACC15" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#FACC15"/></g>
+      <g transform="translate(-304.1, -304.1)"><circle cx="0" cy="0" r="24" fill="#141923" stroke="#FF6B00" stroke-width="2.5"/><circle cx="0" cy="0" r="13" fill="#FF6B00" fill-opacity="0.35" stroke="#FACC15" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#FACC15"/></g>
+      <g transform="translate(-164.6, -397.3)"><circle cx="0" cy="0" r="24" fill="#141923" stroke="#FF6B00" stroke-width="2.5"/><circle cx="0" cy="0" r="13" fill="#FF6B00" fill-opacity="0.35" stroke="#FACC15" stroke-width="1.2"/><circle cx="0" cy="0" r="5" fill="#FACC15"/></g>
+    </g>
+  </g>
+</svg>

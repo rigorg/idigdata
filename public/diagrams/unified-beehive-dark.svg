@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Pure 3-Layer Systemic Master · Dark Edition">
+  <defs>
+    <linearGradient id="bh-dark-orange-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6B00"/>
+      <stop offset="50%" stop-color="#FACC15"/>
+      <stop offset="100%" stop-color="#FF6B00"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Deep Dark Slate Ground -->
+  <rect width="1000" height="1000" fill="#141923"/>
+
+  <g transform="translate(500, 500)">
+    <!-- 1. Outer Orbit Circle -->
+    <circle cx="0" cy="0" r="430" fill="none" stroke="#FF6B00" stroke-width="3"/>
+
+    <!-- 2. The 16 Direct Radial Spokes to Outer System Bubbles -->
+    <g stroke="#FF6B00" stroke-width="1.8" stroke-opacity="0.5">
+      <line x1="0" y1="0" x2="0" y2="-430"/>
+      <line x1="0" y1="0" x2="164.6" y2="-397.3"/>
+      <line x1="0" y1="0" x2="304.1" y2="-304.1"/>
+      <line x1="0" y1="0" x2="397.3" y2="-164.6"/>
+      <line x1="0" y1="0" x2="430" y2="0"/>
+      <line x1="0" y1="0" x2="397.3" y2="164.6"/>
+      <line x1="0" y1="0" x2="304.1" y2="304.1"/>
+      <line x1="0" y1="0" x2="164.6" y2="397.3"/>
+      <line x1="0" y1="0" x2="0" y2="430"/>
+      <line x1="0" y1="0" x2="-164.6" y2="397.3"/>
+      <line x1="0" y1="0" x2="-304.1" y2="304.1"/>
+      <line x1="0" y1="0" x2="-397.3" y2="164.6"/>
+      <line x1="0" y1="0" x2="-430" y2="0"/>
+      <line x1="0" y1="0" x2="-397.3" y2="-164.6"/>
+      <line x1="0" y1="0" x2="-304.1" y2="-304.1"/>
+      <line x1="0" y1="0" x2="-164.6" y2="-397.3"/>
+    </g>
+
+    <!-- 3. Hexagon Perimeter connecting the 6 Constellations -->
+    <polygon points="0,-270 233.8,-135 233.8,135 0,270 -233.8,135 -233.8,-135" fill="none" stroke="#FF6B00" stroke-width="4.5"/>
+
+    <!-- 4. The 6 Direct Radial Spokes to the Constellations -->
+    <g stroke="#FACC15" stroke-width="3.5" stroke-linecap="round">
+      <line x1="0" y1="0" x2="0" y2="-270"/>
+      <line x1="0" y1="0" x2="233.8" y2="-135"/>
+      <line x1="0" y1="0" x2="233.8" y2="135"/>
+      <line x1="0" y1="0" x2="0" y2="270"/>
+      <line x1="0" y1="0" x2="-233.8" y2="135"/>
+      <line x1="0" y1="0" x2="-233.8" y2="-135"/>
+    </g>
+
+    <!-- 5. Beehive Honeycomb Cluster (The Working Fabric) -->
+    <g stroke="#FACC15" stroke-width="2" fill="#141923">
+      <!-- Ring 1 -->
+      <polygon points="0,-38 32.9,-19 32.9,19 0,38 -32.9,19 -32.9,-19" transform="translate(0, -76)" fill="#FF6B00" fill-opacity="0.25"/>
+      <polygon points="0,-38 32.9,-19 32.9,19 0,38 -32.9,19 -32.9,-19" transform="translate(65.8, -38)" fill="#141923"/>
+      <polygon points="0,-38 32.9,-19 32.9,19 0,38 -32.9,19 -32.9,-19" transform="translate(65.8, 38)" fill="#FF6B00" fill-opacity="0.25"/>
+      <polygon points="0,-38 32.9,-19 32.9,19 0,38 -32.9,19 -32.9,-19" transform="translate(0, 76)" fill="#141923"/>
+      <polygon points="0,-38 32.9,-19 32.9,19 0,38 -32.9,19 -32.9,-19" transform="translate(-65.8, 38)" fill="#FF6B00" fill-opacity="0.25"/>
+      <polygon points="0,-38 32.9,-19 32.9,19 0,38 -32.9,19 -32.9,-19" transform="translate(-65.8, -38)" fill="#141923"/>
+
+      <!-- Ring 2 -->
+      <polygon points="0,-38 32.9,-19 32.9,19 0,38 -32.9,19 -32.9,-19" transform="translate(0, -152)" fill="#FACC15" fill-opacity="0.15"/>
+      <polygon points="0,-38 32.9,-19 32.9,19 0,38 -32.9,19 -32.9,-19" transform="translate(131.6, -76)" fill="#FACC15" fill-opacity="0.15"/>
+      <polygon points="0,-38 32.9,-19 32.9,19 0,38 -32.9,19 -32.9,-19" transform="translate(131.6, 76)" fill="#FACC15" fill-opacity="0.15"/>
+      <polygon points="0,-38 32.9,-19 32.9,19 0,38 -32.9,19 -32.9,-19" transform="translate(0, 152)" fill="#FACC15" fill-opacity="0.15"/>
+      <polygon points="0,-38 32.9,-19 32.9,19 0,38 -32.9,19 -32.9,-19" transform="translate(-131.6, 76)" fill="#FACC15" fill-opacity="0.15"/>
+      <polygon points="0,-38 32.9,-19 32.9,19 0,38 -32.9,19 -32.9,-19" transform="translate(-131.6, -76)" fill="#FACC15" fill-opacity="0.15"/>
+    </g>
+
+    <!-- 6. Six Process Constellations -->
+    <!-- 12h: P2P -->
+    <g transform="translate(0, -270)">
+      <circle cx="0" cy="0" r="54" fill="none" stroke="url(#bh-dark-orange-gold)" stroke-width="10"/>
+      <circle cx="0" cy="0" r="44" fill="#141923" stroke="#FF6B00" stroke-width="3"/>
+      <circle cx="0" cy="0" r="26" fill="#FF6B00" stroke="#FACC15" stroke-width="2"/>
+      <circle cx="0" cy="0" r="8" fill="#FACC15"/>
+    </g>
+    <!-- 2h: O2C -->
+    <g transform="translate(233.8, -135)">
+      <circle cx="0" cy="0" r="54" fill="none" stroke="url(#bh-dark-orange-gold)" stroke-width="10"/>
+      <circle cx="0" cy="0" r="44" fill="#141923" stroke="#FF6B00" stroke-width="3"/>
+      <circle cx="0" cy="0" r="26" fill="#FF6B00" stroke="#FACC15" stroke-width="2"/>
+      <circle cx="0" cy="0" r="8" fill="#FACC15"/>
+    </g>
+    <!-- 4h: P2M -->
+    <g transform="translate(233.8, 135)">
+      <circle cx="0" cy="0" r="54" fill="none" stroke="#FF6B00" stroke-width="12"/>
+      <circle cx="0" cy="0" r="44" fill="#141923" stroke="#FACC15" stroke-width="3.5"/>
+      <circle cx="0" cy="0" r="26" fill="#FACC15" stroke="#FF6B00" stroke-width="2"/>
+      <circle cx="0" cy="0" r="8" fill="#FF6B00"/>
+    </g>
+    <!-- 6h: S2S -->
+    <g transform="translate(0, 270)">
+      <circle cx="0" cy="0" r="54" fill="none" stroke="url(#bh-dark-orange-gold)" stroke-width="10"/>
+      <circle cx="0" cy="0" r="44" fill="#141923" stroke="#FF6B00" stroke-width="3"/>
+      <circle cx="0" cy="0" r="26" fill="#FF6B00" stroke="#FACC15" stroke-width="2"/>
+      <circle cx="0" cy="0" r="8" fill="#FACC15"/>
+    </g>
+    <!-- 8h: D2R -->
+    <g transform="translate(-233.8, 135)">
+      <circle cx="0" cy="0" r="54" fill="none" stroke="url(#bh-dark-orange-gold)" stroke-width="10"/>
+      <circle cx="0" cy="0" r="44" fill="#141923" stroke="#FF6B00" stroke-width="3"/>
+      <circle cx="0" cy="0" r="26" fill="#FF6B00" stroke="#FACC15" stroke-width="2"/>
+      <circle cx="0" cy="0" r="8" fill="#FACC15"/>
+    </g>
+    <!-- 10h: MDM -->
+    <g transform="translate(-233.8, -135)">
+      <circle cx="0" cy="0" r="54" fill="none" stroke="url(#bh-dark-orange-gold)" stroke-width="10"/>
+      <circle cx="0" cy="0" r="44" fill="#141923" stroke="#FF6B00" stroke-width="3"/>
+      <circle cx="0" cy="0" r="26" fill="#FF6B00" stroke="#FACC15" stroke-width="2"/>
+      <circle cx="0" cy="0" r="8" fill="#FACC15"/>
+    </g>
+
+    <!-- 7. Center Data Core -->
+    <circle cx="0" cy="0" r="56" fill="#FF6B00" stroke="#FACC15" stroke-width="3.5"/>
+    <circle cx="0" cy="0" r="40" fill="none" stroke="#FACC15" stroke-width="1.8" stroke-dasharray="3,3"/>
+    <circle cx="0" cy="0" r="24" fill="#141923" stroke="#FACC15" stroke-width="2"/>
+    <circle cx="0" cy="0" r="10" fill="#FACC15"/>
+
+    <!-- 8. 16 System Bubbles (Outer Ring) -->
+    <g id="bh-system-bubbles-dark">
+      <g transform="translate(0, -430)"><circle cx="0" cy="0" r="32" fill="#141923" stroke="#FF6B00" stroke-width="2.8"/><circle cx="0" cy="0" r="18" fill="#FF6B00" fill-opacity="0.35" stroke="#FACC15" stroke-width="1.4"/><circle cx="0" cy="0" r="6" fill="#FACC15"/></g>
+      <g transform="translate(164.6, -397.3)"><circle cx="0" cy="0" r="32" fill="#141923" stroke="#FF6B00" stroke-width="2.8"/><circle cx="0" cy="0" r="18" fill="#FF6B00" fill-opacity="0.35" stroke="#FACC15" stroke-width="1.4"/><circle cx="0" cy="0" r="6" fill="#FACC15"/></g>
+      <g transform="translate(304.1, -304.1)"><circle cx="0" cy="0" r="32" fill="#141923" stroke="#FF6B00" stroke-width="2.8"/><circle cx="0" cy="0" r="18" fill="#FF6B00" fill-opacity="0.35" stroke="#FACC15" stroke-width="1.4"/><circle cx="0" cy="0" r="6" fill="#FACC15"/></g>
+      <g transform="translate(397.3, -164.6)"><circle cx="0" cy="0" r="32" fill="#141923" stroke="#FF6B00" stroke-width="2.8"/><circle cx="0" cy="0" r="18" fill="#FF6B00" fill-opacity="0.35" stroke="#FACC15" stroke-width="1.4"/><circle cx="0" cy="0" r="6" fill="#FACC15"/></g>
+      <g transform="translate(430, 0)"><circle cx="0" cy="0" r="32" fill="#141923" stroke="#FF6B00" stroke-width="2.8"/><circle cx="0" cy="0" r="18" fill="#FF6B00" fill-opacity="0.35" stroke="#FACC15" stroke-width="1.4"/><circle cx="0" cy="0" r="6" fill="#FACC15"/></g>
+      <g transform="translate(397.3, 164.6)"><circle cx="0" cy="0" r="32" fill="#141923" stroke="#FF6B00" stroke-width="2.8"/><circle cx="0" cy="0" r="18" fill="#FF6B00" fill-opacity="0.35" stroke="#FACC15" stroke-width="1.4"/><circle cx="0" cy="0" r="6" fill="#FACC15"/></g>
+      <g transform="translate(304.1, 304.1)"><circle cx="0" cy="0" r="32" fill="#141923" stroke="#FF6B00" stroke-width="2.8"/><circle cx="0" cy="0" r="18" fill="#FF6B00" fill-opacity="0.35" stroke="#FACC15" stroke-width="1.4"/><circle cx="0" cy="0" r="6" fill="#FACC15"/></g>
+      <g transform="translate(164.6, 397.3)"><circle cx="0" cy="0" r="32" fill="#141923" stroke="#FF6B00" stroke-width="2.8"/><circle cx="0" cy="0" r="18" fill="#FF6B00" fill-opacity="0.35" stroke="#FACC15" stroke-width="1.4"/><circle cx="0" cy="0" r="6" fill="#FACC15"/></g>
+      <g transform="translate(0, 430)"><circle cx="0" cy="0" r="32" fill="#141923" stroke="#FF6B00" stroke-width="2.8"/><circle cx="0" cy="0" r="18" fill="#FF6B00" fill-opacity="0.35" stroke="#FACC15" stroke-width="1.4"/><circle cx="0" cy="0" r="6" fill="#FACC15"/></g>
+      <g transform="translate(-164.6, 397.3)"><circle cx="0" cy="0" r="32" fill="#141923" stroke="#FF6B00" stroke-width="2.8"/><circle cx="0" cy="0" r="18" fill="#FF6B00" fill-opacity="0.35" stroke="#FACC15" stroke-width="1.4"/><circle cx="0" cy="0" r="6" fill="#FACC15"/></g>
+      <g transform="translate(-304.1, 304.1)"><circle cx="0" cy="0" r="32" fill="#141923" stroke="#FF6B00" stroke-width="2.8"/><circle cx="0" cy="0" r="18" fill="#FF6B00" fill-opacity="0.35" stroke="#FACC15" stroke-width="1.4"/><circle cx="0" cy="0" r="6" fill="#FACC15"/></g>
+      <g transform="translate(-397.3, 164.6)"><circle cx="0" cy="0" r="32" fill="#141923" stroke="#FF6B00" stroke-width="2.8"/><circle cx="0" cy="0" r="18" fill="#FF6B00" fill-opacity="0.35" stroke="#FACC15" stroke-width="1.4"/><circle cx="0" cy="0" r="6" fill="#FACC15"/></g>
+      <g transform="translate(-430, 0)"><circle cx="0" cy="0" r="32" fill="#141923" stroke="#FF6B00" stroke-width="2.8"/><circle cx="0" cy="0" r="18" fill="#FF6B00" fill-opacity="0.35" stroke="#FACC15" stroke-width="1.4"/><circle cx="0" cy="0" r="6" fill="#FACC15"/></g>
+      <g transform="translate(-397.3, -164.6)"><circle cx="0" cy="0" r="32" fill="#141923" stroke="#FF6B00" stroke-width="2.8"/><circle cx="0" cy="0" r="18" fill="#FF6B00" fill-opacity="0.35" stroke="#FACC15" stroke-width="1.4"/><circle cx="0" cy="0" r="6" fill="#FACC15"/></g>
+      <g transform="translate(-304.1, -304.1)"><circle cx="0" cy="0" r="32" fill="#141923" stroke="#FF6B00" stroke-width="2.8"/><circle cx="0" cy="0" r="18" fill="#FF6B00" fill-opacity="0.35" stroke="#FACC15" stroke-width="1.4"/><circle cx="0" cy="0" r="6" fill="#FACC15"/></g>
+      <g transform="translate(-164.6, -397.3)"><circle cx="0" cy="0" r="32" fill="#141923" stroke="#FF6B00" stroke-width="2.8"/><circle cx="0" cy="0" r="18" fill="#FF6B00" fill-opacity="0.35" stroke="#FACC15" stroke-width="1.4"/><circle cx="0" cy="0" r="6" fill="#FACC15"/></g>
+    </g>
+  </g>
+</svg>

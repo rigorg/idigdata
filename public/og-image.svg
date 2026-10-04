@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="idigdata OpenGraph card v4.3">
-  <title>idigdata - OpenGraph card, v4.3</title>
-  <desc>Wordmark + v9.4 tagline. Cream background. v4.3 (2026-05-03): connector approach - dot tight to letters (3px gap).</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="idigdata OpenGraph card">
+  <title>idigdata — Your transformation gets an owner</title>
   <rect width="1200" height="630" fill="#FBF9F4"/>
   <text x="582" y="240" font-family="Vollkorn,Lora,Cambria,Georgia,serif" font-weight="700" font-size="148" fill="#142840" text-anchor="end" letter-spacing="-2">idig</text>
   <rect x="585" y="190" width="24" height="24" fill="#FACC15"/>
   <text x="612" y="240" font-family="Vollkorn,Lora,Cambria,Georgia,serif" font-weight="700" font-size="148" fill="#142840" text-anchor="start" letter-spacing="-2">data</text>
   <line x1="200" y1="282" x2="1000" y2="282" stroke="#7A756A" stroke-width="2"/>
-  <text x="600" y="380" font-family="Vollkorn,Lora,Cambria,Georgia,serif" font-weight="500" font-size="36" fill="#142840" text-anchor="middle">Client-owned data &#183; Vendor-agnostic architecture</text>
-  <text x="600" y="430" font-family="Vollkorn,Lora,Cambria,Georgia,serif" font-weight="500" font-size="36" fill="#142840" text-anchor="middle">Transformation that institutionalizes</text>
-  <text x="600" y="566" font-family="Lora,Liberation Serif,Georgia,serif" font-style="italic" font-weight="400" font-size="22" fill="#6B6860" text-anchor="middle" letter-spacing="0.5">idigdata &#8212; Data Integration Group, est. 2016</text>
+  <text x="600" y="380" font-family="Vollkorn,Lora,Cambria,Georgia,serif" font-weight="500" font-size="36" fill="#142840" text-anchor="middle">Your transformation gets an owner.</text>
+  <text x="600" y="430" font-family="Vollkorn,Lora,Cambria,Georgia,serif" font-weight="500" font-size="36" fill="#142840" text-anchor="middle">The business keeps running.</text>
+  <text x="600" y="566" font-family="Lora,Liberation Serif,Georgia,serif" font-style="italic" font-weight="400" font-size="22" fill="#6B6860" text-anchor="middle" letter-spacing="0.5">idigdata.com</text>
 </svg>

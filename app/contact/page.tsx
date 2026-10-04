@@ -1,29 +1,14 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
-import M4Watermark from "@/components/M4Watermark";
-import SectionKicker from "@/components/SectionKicker";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
+import DirectSignalObject from "@/components/presence/DirectSignalObject";
+import PresenceShell from "@/components/presence/PresenceShell";
 
 export const metadata: Metadata = {
-  title: "Reach out",
+  title: { absolute: "Contact | idigdata" },
   description:
-    "Start a direct conversation with Robert Paddock about embedded transformation, ownership above the vendors, or agentic AI that needs an owner.",
+    "Executive roles, focused transformation work, and fractional leadership.",
   alternates: { canonical: "/contact/" },
-  openGraph: {
-    type: "website",
-    url: "https://idigdata.com/contact/",
-    title: "Reach out | idigdata",
-    description:
-      "A direct note about embedded transformation, ownership above the vendors, or agentic AI that needs an owner - permanent, interim, or fractional.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "idigdata - Reach out",
-      },
-    ],
-  },
 };
 
 const breadcrumbJsonLd = {
@@ -31,72 +16,61 @@ const breadcrumbJsonLd = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: "https://idigdata.com/" },
-    { "@type": "ListItem", position: 2, name: "Reach out", item: "https://idigdata.com/contact/" },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Contact",
+      item: "https://idigdata.com/contact/",
+    },
   ],
 };
 
 export default function ContactPage() {
   return (
-    <div className="mx-auto max-w-content px-6">
+    <PresenceShell>
       <JsonLdScript data={breadcrumbJsonLd} />
-
-      <section className="relative pt-20 pb-8 md:pt-24 md:pb-10">
-        <M4Watermark position="top-right" />
-        <SectionKicker className="mb-5">
-          Reach out
-        </SectionKicker>
-        <h1 className="font-vollkorn font-bold text-navy text-[40px] md:text-[52px] leading-[1.05] tracking-tight">
-          Send the real shape.
-        </h1>
-        <p className="mt-5 max-w-[760px] font-display italic text-warm-gray text-[18px] leading-snug">
-          A quick, direct read on whether this is a real fit - no deck, no
-          proposal theater.
-        </p>
-        <p className="mt-4 max-w-[760px] font-body text-warm-gray text-[14.5px] leading-relaxed">
-          Businesses always need to transform. If the work needs an owner above
-          the vendors - or pressure to put agentic AI into production without
-          losing control - send a note. The first conversation is not a deck
-          ritual. It&apos;s a working call where I walk you through how I&apos;d
-          actually own your situation: mandate, systems, people, timing, and
-          whether I can be useful.
-        </p>
-        <p className="mt-4 max-w-[760px] font-body text-warm-gray text-[14.5px] leading-relaxed">
-          A sentence or two is enough: the stalled program, the board pressure,
-          the agentic question, the CFO concern, or the operating knot that
-          keeps resurfacing. Open to permanent, interim, and fractional
-          executive mandates. I read these myself.
-        </p>
-      </section>
-
-      <section className="pt-6 pb-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
-          <div className="md:col-span-2">
-            <ContactForm showInterestSelect />
+      <header className="p-section p-section--tight">
+        <div className="page-well">
+          <div className="hero-split">
+          <div className="home-hero-copy">
+          <p className="p-kicker">Contact</p>
+          <h1 className="p-h1">Start with the role, the transformation, or the problem.</h1>
+          <p className="p-dek">
+            An executive appointment, focused work, or fractional leadership.
+            Tell me what your business needs, or email{" "}
+            <a
+              href="mailto:robert@idigdata.com"
+              className="font-semibold text-navy underline decoration-navy/40 underline-offset-4"
+            >
+              robert@idigdata.com
+            </a>
+            .
+          </p>
           </div>
-
-          <aside className="md:col-span-1">
-            <div className="border-t border-navy pt-6 space-y-3">
-              <p className="font-body uppercase tracking-section text-[12px] text-warm-gray">
+          <div className="home-watermark" aria-hidden="true">
+            <img src="/idigdata-mark.svg" alt="" />
+          </div>
+          </div>
+          <div className="form-grid mt-8">
+            <ContactForm />
+            <aside>
+              <p className="font-vollkorn text-[16px] font-bold text-navy">
                 Direct
               </p>
-              <p className="font-body text-[16px] text-ink leading-relaxed">
+              <p className="mt-3 text-[16px] leading-[1.65]">
                 Pacific Time
                 <br />
                 <a
                   href="mailto:robert@idigdata.com"
-                  className="font-semibold text-navy border-b border-navy/40 hover:border-navy"
+                  className="font-semibold text-navy underline decoration-navy/40 underline-offset-4"
                 >
                   robert@idigdata.com
                 </a>
               </p>
-              <p className="font-body text-[14px] text-warm-gray leading-relaxed">
-                If the fit is wrong, I will say so plainly. If the mandate is
-                real, we will know the next useful step.
-              </p>
-              <p className="font-body text-[14px] text-warm-gray leading-relaxed pt-2">
+              <p className="mt-4 text-[15px] leading-[1.65]">
                 <a
                   href="https://www.linkedin.com/in/robertpaddock"
-                  className="font-semibold text-navy border-b border-navy/40 hover:border-navy"
+                  className="font-semibold text-navy underline decoration-navy/40 underline-offset-4"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -105,10 +79,45 @@ export default function ContactPage() {
                 {" · "}
                 Robert Paddock
               </p>
-            </div>
-          </aside>
+            </aside>
+          </div>
+        </div>
+      </header>
+
+      <section className="p-section">
+        <div className="page-well">
+          <div className="rounded-lg border border-[#142840]/12 bg-[#FBF9F4] p-6">
+            <p className="font-brand text-[11px] font-bold uppercase tracking-[0.16em] text-[#B48A05]">
+              Where the work has run
+            </p>
+            <p className="mt-2 text-[15px] leading-[1.65] text-[#334155]">
+              Manufacturing, distribution, food and beverage, wineries and breweries, construction, hospitality, healthcare, health and wellness, logistics, and services. Family-owned, private equity-backed, and post-acquisition businesses.
+            </p>
+          </div>
         </div>
       </section>
-    </div>
+
+      <section className="p-section" style={{ borderBottom: 0 }}>
+        <div className="page-well">
+          <div className="lastmove-plate">
+            <DirectSignalObject size={220} />
+            <div>
+              <p className="font-vollkorn text-[13px] font-bold uppercase tracking-[0.16em] text-[#B48A05]">
+                Direct
+              </p>
+              <h3 className="mt-1 font-vollkorn text-[clamp(24px,3vw,32px)] font-extrabold text-navy">
+                Talk directly with me.
+              </h3>
+              <p className="mt-3 text-[17px] leading-[1.65]">
+                We’ll discuss what the work calls for, where my experience fits, and the right scope of responsibility.
+              </p>
+              <p className="mt-4 text-[15px] leading-[1.55] text-[#5A6978]">
+                Pacific Time
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </PresenceShell>
   );
 }

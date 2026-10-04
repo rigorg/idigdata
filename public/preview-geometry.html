@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The 4 Master Logo Editions · idigdata</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700&family=Vollkorn:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FAF6EE;
+      --card-bg: #FFFFFF;
+      --navy: #142840;
+      --charcoal: #1F2937;
+      --gold: #A37E2C;
+      --gold-bright: #D8A938;
+      --muted: #6B6860;
+      --border: rgba(163, 126, 44, 0.2);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--charcoal);
+      font-family: 'Source Sans 3', system-ui, sans-serif;
+      padding: 40px 20px;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    header {
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 24px;
+      text-align: center;
+    }
+    .kicker {
+      font-family: 'Vollkorn', Georgia, serif;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-family: 'Vollkorn', Georgia, serif;
+      font-size: clamp(30px, 4.5vw, 44px);
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    .dek {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 80ch;
+      margin: 0 auto;
+    }
+    .section-title {
+      font-family: 'Vollkorn', Georgia, serif;
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--navy);
+      margin: 36px 0 20px 0;
+      text-align: center;
+    }
+    .grid-2x2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+      gap: 32px;
+      margin-bottom: 48px;
+    }
+    @media (max-width: 600px) {
+      .grid-2x2 { grid-template-columns: 1fr; }
+    }
+    .version-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 6px 24px rgba(20, 40, 64, 0.05);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+    }
+    .version-card.winner {
+      border: 2.5px solid var(--gold);
+      box-shadow: 0 10px 36px rgba(163, 126, 44, 0.22);
+      background: #FAF6EE;
+    }
+    .version-card.dark-cosmic {
+      background: #0B132B;
+      border: 2px solid #38BDF8;
+      color: #FFFFFF;
+      box-shadow: 0 10px 36px rgba(56, 189, 248, 0.25);
+    }
+    .version-card.dark-cosmic .version-title { color: #FFFFFF; }
+    .version-card.dark-cosmic .version-desc { color: #94A3B8; }
+    .version-card.dark-cosmic .version-header { border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
+    .version-header {
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+    }
+    .version-num {
+      font-family: 'Vollkorn', Georgia, serif;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--gold);
+    }
+    .dark-cosmic .version-num { color: #38BDF8; }
+    .version-title {
+      font-family: 'Vollkorn', Georgia, serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--navy);
+      margin: 4px 0 6px 0;
+    }
+    .version-desc {
+      font-size: 14.5px;
+      color: var(--muted);
+    }
+    .img-wrap {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 0;
+    }
+    .version-card img {
+      width: 100%;
+      max-width: 480px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    .pill-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-top: 8px;
+    }
+    .pill-gold { background: var(--gold); color: #FAF6EE; }
+    .pill-brand { background: #142840; color: #FACC15; }
+    .pill-mono { background: #1F2937; color: #FFFFFF; }
+    .pill-blowout { background: linear-gradient(135deg, #0284C7, #EA580C, #7C3AED); color: #FFFFFF; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <p class="kicker">The Definitive Architecture · 4 Tight Vector Editions</p>
+      <h1>The 4 Master Logo Editions (100% Infill Lock)</h1>
+      <p class="dek">
+        100% seamless honeycomb infill (zero gaps on left/right quadrants), large double-ringed Constellation hubs at the hexagon vertices, 16 peripheral System bubbles with thin direct spokes into the center Data Core.
+      </p>
+    </header>
+
+    <div class="grid-2x2">
+      <!-- Version 1: Master Architectural Gold -->
+      <div class="version-card winner">
+        <div class="version-header">
+          <span class="version-num">Edition 1 · The Definitive Master</span>
+          <h3 class="version-title">The Master Architectural Gold</h3>
+          <p class="version-desc">Pure 1:1 vector translation of the chosen plate. Warm ochre linework, double orbital tracks, 100% seamless honeycomb infill across all 6 sectors.</p>
+          <span class="pill-tag pill-gold">Primary Master Mark</span>
+        </div>
+        <div class="img-wrap">
+          <img src="/diagrams/unified-v1-architectural-gold.svg" alt="Version 1: Master Architectural Gold" />
+        </div>
+      </div>
+
+      <!-- Version 2: Brand Triad High-Contrast -->
+      <div class="version-card">
+        <div class="version-header">
+          <span class="version-num">Edition 2 · Brand Identity Triad</span>
+          <h3 class="version-title">The Brand Triad High-Contrast</h3>
+          <p class="version-desc">Rich Navy (#142840) and Sun-Gold (#FACC15) with Crimson P2M criticality accent. High-contrast authority for digital headers and badges.</p>
+          <span class="pill-tag pill-brand">Brand Triad Edition</span>
+        </div>
+        <div class="img-wrap">
+          <img src="/diagrams/unified-v2-brand-triad.svg" alt="Version 2: Brand Triad High-Contrast" />
+        </div>
+      </div>
+
+      <!-- Version 3: Technical Blueprint Grayscale -->
+      <div class="version-card">
+        <div class="version-header">
+          <span class="version-num">Edition 3 · Technical Blueprint</span>
+          <h3 class="version-title">The Grayscale Drafting Blueprint</h3>
+          <p class="version-desc">Pure charcoal and stark white architectural drafting edition for patents, engineering diagrams, technical docs, and laser engraving.</p>
+          <span class="pill-tag pill-mono">Technical Blueprint</span>
+        </div>
+        <div class="img-wrap">
+          <img src="/diagrams/unified-v3-grayscale-blueprint.svg" alt="Version 3: Technical Blueprint Grayscale" />
+        </div>
+      </div>
+
+      <!-- Version 4: Full-Power Chromatic Blowout -->
+      <div class="version-card dark-cosmic">
+        <div class="version-header">
+          <span class="version-num">Edition 4 · Complete Color Blowout</span>
+          <h3 class="version-title">The Full-Power Chromatic Apex</h3>
+          <p class="version-desc">Deep cosmic slate with vibrant rainbow orbital tracks, radiant multi-color process constellations (Sapphire, Gold, Crimson, Emerald, Violet), and glowing system halos.</p>
+          <span class="pill-tag pill-blowout">Full Color Blowout</span>
+        </div>
+        <div class="img-wrap">
+          <img src="/diagrams/unified-v4-full-blowout.svg" alt="Version 4: Full-Power Chromatic Blowout" />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

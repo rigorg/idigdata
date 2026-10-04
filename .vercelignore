@@ -1,0 +1,7 @@
+# Vercel Deployment Ignore Rules
+# Keep internal preview and review surfaces local to dev (:3100) only
+
+public/preview-*.html
+public/preview-*
+app/preview-geometry/
+app/geometry/

@@ -3,7 +3,7 @@
 **Home:** `C:\rig001\assets\flowcraft\instances\digops\idigdata-site`  
 **Role:** DigOps instance public hookup for **idigdata.com** (Data Integration Group LLC)  
 **Not:** a personal portfolio repo with DigOps footnotes  
-**Git:** independent · remote `loop-smith/idigdata` · **never push `working` without Operator word**  
+**Git:** independent · remote `rigorg/idigdata` · **push is fenced** until Capo Ship (see [LOCAL-ONLY.md](LOCAL-ONLY.md))  
 **Content twin:** `../brand-content/` (triad + firm ledgers) · **Ops twin:** `../operations/`
 
 **Keepers:** [../../../organization/KEEPERS.md](../../../organization/KEEPERS.md) · Name map: [../../../organization/NAME-MAP.md](../../../organization/NAME-MAP.md) · Infra: [../INFRA-OPEN.md](../INFRA-OPEN.md)
@@ -54,7 +54,11 @@ Do **not** invent marketing copy only in React. Edit hunt messaging in `../brand
 
 ## Deploy posture
 
-Vercel project historically `idigdata` → `idigdata.com`. Auto-deploy on `main` is Capo-era behavior — **confirm before any push**. See [LOCAL-ONLY.md](LOCAL-ONLY.md) and [INFRA-OPEN.md](../INFRA-OPEN.md).
+Vercel hosts **idigdata.com** from this GitHub repo. Branch `working` is the live path. **Push = publish.**
+
+During Field craft, push is mechanically fenced. Capo-eyes stay on `http://localhost:3100`. See [LOCAL-ONLY.md](LOCAL-ONLY.md).
+
+Do not change Vercel project / domain / auto-deploy settings without Capo word.
 
 ## Layout
 

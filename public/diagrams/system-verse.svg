@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg viewBox="0 0 800 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="sv-title sv-desc">
+<svg viewBox="130 5 540 625" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="sv-title sv-desc">
   <title id="sv-title">AV-03 · The Systemverse · brand-v2 · author-v2.2 · 2026-05-09</title>
   <desc id="sv-desc">A celestial composition. Data core at the gravitational center; 16 functional system groups form a tightly-packed ring (touching, no gaps) at the application orbit. Sixteen thin connectivity spokes radiate from each system group to the data core, signaling the constant traffic between every system and the core. An integration fabric annulus (charcoal mesh pattern at low opacity) overlays the spokes — explicit connectivity (spokes) + implicit substrate (mesh) together communicate the integration layer. Same shape every install; bespoke fill per operator. First major engagement deliverable: the future-state systems map handed to the operator at end of Phase 1. Brand v2: charcoal structure, sun-gold data core, cream substrate.</desc>
 
@@ -17,8 +17,9 @@
 
   <!-- Title block · heavy geometric sans (Helvetica Black approximation pending Druk Wide Super) + Georgia italic subtitle -->
   <text x="400" y="50" text-anchor="middle" font-weight="900" font-size="28" fill="#1F2937" letter-spacing="-0.3" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">THE SYSTEMVERSE</text>
-  <text x="400" y="76" text-anchor="middle" font-style="italic" font-size="13" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Future-state systems map · what runs the constellations and data core</text>
+  <text x="400" y="76" text-anchor="middle" font-style="italic" font-size="13" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Future-state systems map · what runs the process flows and data core</text>
 
+  <g transform="translate(0,-110)">
   <!-- Application Layer label (floating just above the orbit) -->
   <text x="400" y="200" text-anchor="middle" font-style="italic" font-size="11" fill="#6B6860" letter-spacing="3" font-family="Georgia, 'Times New Roman', serif">APPLICATION LAYER</text>
 
@@ -47,8 +48,8 @@
     <line x1="321.5" y1="280.5" x2="400" y2="470"/>
   </g>
 
-  <!-- Integration fabric label (single, BOSS vocabulary) · drawn above spokes so it stays readable -->
-  <text x="400" y="345" text-anchor="middle" font-style="italic" font-size="10" fill="#6B6860" letter-spacing="3" font-family="Georgia, 'Times New Roman', serif">INTEGRATION FABRIC</text>
+  <!-- Integration backbone label · drawn above spokes so it stays readable -->
+  <text x="400" y="345" text-anchor="middle" font-style="italic" font-size="10" fill="#6B6860" letter-spacing="2.2" font-family="Georgia, 'Times New Roman', serif">INTEGRATION BACKBONE</text>
 
   <!-- Data Core · sun-gold fill (matches AV-02 v2 treatment); charcoal text inside -->
   <circle cx="400" cy="470" r="95" fill="#FACC15" stroke="#1F2937" stroke-width="2.5"/>
@@ -73,12 +74,10 @@
     <g><circle cx="255" cy="615" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="255" y="619" text-anchor="middle" font-size="10" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">HRIS</text></g>
     <g><circle cx="210.5" cy="548.5" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="210.5" y="552" text-anchor="middle" font-size="10" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Procurement</text></g>
     <g><circle cx="195" cy="470" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="195" y="474" text-anchor="middle" font-size="10" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">FP&amp;A</text></g>
-    <g><circle cx="210.5" cy="391.5" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="210.5" y="395" text-anchor="middle" font-size="10" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Documents</text></g>
+    <g><circle cx="210.5" cy="391.5" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="210.5" y="388" text-anchor="middle" font-size="9" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">IBP /</text><text x="210.5" y="399" text-anchor="middle" font-size="9" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">S&amp;OP</text></g>
     <g><circle cx="255" cy="325" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="255" y="329" text-anchor="middle" font-size="10" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Productivity</text></g>
     <g><circle cx="321.5" cy="280.5" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="321.5" y="284" text-anchor="middle" font-size="10" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">CRM</text></g>
   </g>
+  </g>
 
-  <!-- Stone rule + footer caption -->
-  <line x1="180" y1="825" x2="620" y2="825" stroke="#7A756A" stroke-width="0.8"/>
-  <text x="400" y="845" text-anchor="middle" font-style="italic" font-size="12" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">The substrate the constellations and data core run on · same shape every install</text>
 </svg>

@@ -22,6 +22,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
+        disallow: ["/hold/"],
       },
       ...AI_CRAWLERS.map((userAgent) => ({
         userAgent,

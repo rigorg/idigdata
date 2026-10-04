@@ -36,6 +36,20 @@ describe("websiteSignals", () => {
     assert.equal(isBotUserAgent("Mozilla/5.0"), true);
   });
 
+  it("records localhost as internal instead of dropping the hit", () => {
+    const signal = classifyWebsiteSignal({
+      path: "/",
+      hostname: "localhost",
+      userAgent:
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0",
+    });
+    assert.equal(signal.suppress_pageview, false);
+    assert.equal(signal.is_internal, true);
+    assert.equal(signal.source_kind, "rob_internal");
+    assert.equal(signal.traffic_class, "internal");
+    assert.equal(signal.buyer_signal, false);
+  });
+
   it("treats gclid as campaign", () => {
     const signal = classifyWebsiteSignal({
       path: "/",

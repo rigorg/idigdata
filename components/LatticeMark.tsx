@@ -1,19 +1,23 @@
-type Props = { className?: string };
+type Props = { className?: string; plate?: boolean };
 
-export default function LatticeMark({ className = "" }: Props) {
+export default function LatticeMark({ className = "", plate = false }: Props) {
   return (
     <svg
       aria-hidden="true"
       focusable="false"
       viewBox="0 0 128 128"
       className={className}
-      style={{
-        display: "inline-block",
-        width: "0.95em",
-        height: "0.95em",
-        marginLeft: "0.32em",
-        verticalAlign: "-0.1em",
-      }}
+      style={
+        plate
+          ? { display: "block", width: "100px", height: "100px" }
+          : {
+              display: "inline-block",
+              width: "0.95em",
+              height: "0.95em",
+              marginLeft: "0.32em",
+              verticalAlign: "-0.1em",
+            }
+      }
     >
       <rect x="8" y="8" width="32" height="32" fill="#142840" />
       <rect x="88" y="8" width="32" height="32" fill="#142840" />

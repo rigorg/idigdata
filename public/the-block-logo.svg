@@ -1,0 +1,30 @@
+<svg width="144" height="32" viewBox="0 0 144 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Monogram T|B with overarching T roof: Uniform Block-Within-A-Block (Flush Base) -->
+  <g id="tb-monogram" stroke="#FFFFFF" stroke-linecap="square">
+    <!-- Big T: Roof Bar (tight 4px above letters, x: 5.5 to 30.5, y: 4.5) -->
+    <line x1="5.5" y1="4.5" x2="30.5" y2="4.5" stroke-width="2.0" />
+    
+    <!-- Big T: Central Dividing Stem (ends flush with letters at y=23.5) -->
+    <line x1="18" y1="4.5" x2="18" y2="23.5" stroke-width="2.0" />
+
+    <!-- Left Small T: centered in left quadrant (x: 5.5 to 14.5, y: 8.5 to 23.5) -->
+    <line x1="5.5" y1="8.5" x2="14.5" y2="8.5" stroke-width="1.6" />
+    <line x1="10" y1="8.5" x2="10" y2="23.5" stroke-width="1.6" />
+
+    <!-- Right Small B: centered in right quadrant with 3.5px air to stem (x: 21.5 to 30.5, y: 8.5 to 23.5) -->
+    <line x1="21.5" y1="8.5" x2="21.5" y2="23.5" stroke-width="1.6" />
+    <path d="M21.5 8.5H27C29 8.5 30 9.4 30 11.2C30 13 29 14 27 14H21.5" stroke-width="1.6" stroke-linejoin="round" />
+    <path d="M21.5 14H27.5C29.5 14 30.5 15 30.5 17C30.5 19 29.5 20 27.5 20H21.5" stroke-width="1.6" stroke-linejoin="round" />
+  </g>
+
+  <!-- Wordmark: THE BLOCK (x: 44, y: 21) -->
+  <text
+    x="44"
+    y="21"
+    fill="#FFFFFF"
+    font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif"
+    font-size="14"
+    font-weight="600"
+    letter-spacing="0.08em"
+  >THE BLOCK</text>
+</svg>

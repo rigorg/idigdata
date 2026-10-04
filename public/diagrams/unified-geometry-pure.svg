@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ug-pure-title ug-pure-desc">
+  <title id="ug-pure-title">AV-05 · Unified Operating Architecture · Pure Geometric System</title>
+  <desc id="ug-pure-desc">Pure geometric integration of The Systemverse (16 outer system nodes), The Six Process Constellations (6 radial hubs with BPSc weight bands), and The Beehive (honeycomb matrix), centered around the golden Data Core.</desc>
+
+  <defs>
+    <!-- Integration Fabric Annulus · Technical Cross-Hatch -->
+    <pattern id="tech-fabric" patternUnits="userSpaceOnUse" width="10" height="10" patternTransform="rotate(45)">
+      <rect width="10" height="10" fill="#FBF9F4"/>
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#1F2937" stroke-width="0.8" stroke-opacity="0.22"/>
+      <line x1="0" y1="0" x2="10" y2="0" stroke="#FACC15" stroke-width="0.8" stroke-opacity="0.45"/>
+    </pattern>
+
+    <!-- BPSc Weight Gradient Arcs -->
+    <!-- P2P (12 o'clock) -->
+    <linearGradient id="arc-p2p" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1F2937" stop-opacity="0.90"/>
+      <stop offset="30%" stop-color="#FACC15" stop-opacity="0.85"/>
+      <stop offset="70%" stop-color="#1F2937" stop-opacity="0.90"/>
+      <stop offset="100%" stop-color="#FACC15" stop-opacity="0.75"/>
+    </linearGradient>
+
+    <!-- O2C (2 o'clock) -->
+    <linearGradient id="arc-o2c" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FACC15" stop-opacity="0.95"/>
+      <stop offset="40%" stop-color="#1F2937" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#FACC15" stop-opacity="0.90"/>
+    </linearGradient>
+
+    <!-- P2M (4 o'clock) — Heavy with Deep Orange Criticality Flash -->
+    <linearGradient id="arc-p2m" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1F2937" stop-opacity="0.95"/>
+      <stop offset="30%" stop-color="#FACC15" stop-opacity="0.70"/>
+      <stop offset="65%" stop-color="#C2410C" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#1F2937" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <!-- S2S (6 o'clock) -->
+    <linearGradient id="arc-s2s" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE68A" stop-opacity="0.85"/>
+      <stop offset="50%" stop-color="#FACC15" stop-opacity="0.90"/>
+      <stop offset="100%" stop-color="#FDE68A" stop-opacity="0.75"/>
+    </linearGradient>
+
+    <!-- D2R (8 o'clock) -->
+    <linearGradient id="arc-d2r" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FACC15" stop-opacity="0.90"/>
+      <stop offset="50%" stop-color="#FDE68A" stop-opacity="0.70"/>
+      <stop offset="100%" stop-color="#FACC15" stop-opacity="0.90"/>
+    </linearGradient>
+
+    <!-- MDM (10 o'clock) -->
+    <linearGradient id="arc-mdm" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FACC15" stop-opacity="0.95"/>
+      <stop offset="45%" stop-color="#1F2937" stop-opacity="0.70"/>
+      <stop offset="100%" stop-color="#FACC15" stop-opacity="0.95"/>
+    </linearGradient>
+
+    <!-- Hexagon Macro: pointy-top hex with r=32 (w=55.4, h=64) -->
+    <!-- points="0,-32 27.7,-16 27.7,16 0,32 -27.7,16 -27.7,-16" -->
+  </defs>
+
+  <!-- Clean Background -->
+  <rect width="1000" height="1000" fill="#FBF9F4"/>
+
+  <!-- Master Center Group at (500, 500) -->
+  <g transform="translate(500, 500)">
+
+    <!-- 1. Integration Backbone Fabric Annulus (Substrate) -->
+    <circle cx="0" cy="0" r="315" fill="none" stroke="url(#tech-fabric)" stroke-width="230"/>
+    <circle cx="0" cy="0" r="430" fill="none" stroke="#1F2937" stroke-width="1.5" stroke-opacity="0.35"/>
+    <circle cx="0" cy="0" r="300" fill="none" stroke="#1F2937" stroke-width="1.2" stroke-dasharray="6,6" stroke-opacity="0.30"/>
+    <circle cx="0" cy="0" r="200" fill="none" stroke="#1F2937" stroke-width="1.2" stroke-opacity="0.30"/>
+    <circle cx="0" cy="0" r="100" fill="none" stroke="#1F2937" stroke-width="1.5" stroke-opacity="0.40"/>
+
+    <!-- 2. Technical Connectivity Spokes to the 16 Outer System Nodes -->
+    <g stroke="#1F2937" stroke-width="1.4" stroke-opacity="0.35">
+      <!-- 16 spokes at 22.5° increments -->
+      <!-- 0° (0, -425) -->
+      <line x1="0" y1="0" x2="0" y2="-425"/>
+      <!-- 22.5° (162.6, -392.6) -->
+      <line x1="0" y1="0" x2="162.6" y2="-392.6"/>
+      <!-- 45° (300.5, -300.5) -->
+      <line x1="0" y1="0" x2="300.5" y2="-300.5"/>
+      <!-- 67.5° (392.6, -162.6) -->
+      <line x1="0" y1="0" x2="392.6" y2="-162.6"/>
+      <!-- 90° (425, 0) -->
+      <line x1="0" y1="0" x2="425" y2="0"/>
+      <!-- 112.5° (392.6, 162.6) -->
+      <line x1="0" y1="0" x2="392.6" y2="162.6"/>
+      <!-- 135° (300.5, 300.5) -->
+      <line x1="0" y1="0" x2="300.5" y2="300.5"/>
+      <!-- 157.5° (162.6, 392.6) -->
+      <line x1="0" y1="0" x2="162.6" y2="392.6"/>
+      <!-- 180° (0, 425) -->
+      <line x1="0" y1="0" x2="0" y2="425"/>
+      <!-- 202.5° (-162.6, 392.6) -->
+      <line x1="0" y1="0" x2="-162.6" y2="392.6"/>
+      <!-- 225° (-300.5, 300.5) -->
+      <line x1="0" y1="0" x2="-300.5" y2="300.5"/>
+      <!-- 247.5° (-392.6, 162.6) -->
+      <line x1="0" y1="0" x2="-392.6" y2="162.6"/>
+      <!-- 270° (-425, 0) -->
+      <line x1="0" y1="0" x2="-425" y2="0"/>
+      <!-- 292.5° (-392.6, -162.6) -->
+      <line x1="0" y1="0" x2="-392.6" y2="-162.6"/>
+      <!-- 315° (-300.5, -300.5) -->
+      <line x1="0" y1="0" x2="-300.5" y2="-300.5"/>
+      <!-- 337.5° (-162.6, -392.6) -->
+      <line x1="0" y1="0" x2="-162.6" y2="-392.6"/>
+    </g>
+
+    <!-- 3. The Beehive (Structured Hexagonal Honeycomb Lattice) -->
+    <!-- Pointy-top hex helper: points="0,-32 27.7,-16 27.7,16 0,32 -27.7,16 -27.7,-16" -->
+    <!-- Ring 1 (d = 55.4): angles 30°, 90°, 150°, 210°, 270°, 330° -->
+    <g id="beehive-mesh" stroke="#1F2937" stroke-width="1.8" fill="#FBF9F4">
+      <!-- Ring 1 Cells -->
+      <polygon points="0,-32 27.7,-16 27.7,16 0,32 -27.7,16 -27.7,-16" transform="translate(48, -83.1)" fill="#FBF9F4"/>
+      <polygon points="0,-32 27.7,-16 27.7,16 0,32 -27.7,16 -27.7,-16" transform="translate(96, 0)" fill="#FBF9F4"/>
+      <polygon points="0,-32 27.7,-16 27.7,16 0,32 -27.7,16 -27.7,-16" transform="translate(48, 83.1)" fill="#FBF9F4"/>
+      <polygon points="0,-32 27.7,-16 27.7,16 0,32 -27.7,16 -27.7,-16" transform="translate(-48, 83.1)" fill="#FBF9F4"/>
+      <polygon points="0,-32 27.7,-16 27.7,16 0,32 -27.7,16 -27.7,-16" transform="translate(-96, 0)" fill="#FBF9F4"/>
+      <polygon points="0,-32 27.7,-16 27.7,16 0,32 -27.7,16 -27.7,-16" transform="translate(-48, -83.1)" fill="#FBF9F4"/>
+
+      <!-- Ring 2 Cells (Interlocking Honeycomb Expansion) -->
+      <polygon points="0,-32 27.7,-16 27.7,16 0,32 -27.7,16 -27.7,-16" transform="translate(0, -166.2)" fill="#FDE68A" fill-opacity="0.5"/>
+      <polygon points="0,-32 27.7,-16 27.7,16 0,32 -27.7,16 -27.7,-16" transform="translate(96, -166.2)" fill="#FBF9F4"/>
+      <polygon points="0,-32 27.7,-16 27.7,16 0,32 -27.7,16 -27.7,-16" transform="translate(144, -83.1)" fill="#FBF9F4"/>
+      <polygon points="0,-32 27.7,-16 27.7,16 0,32 -27.7,16 -27.7,-16" transform="translate(192, 0)" fill="#FDE68A" fill-opacity="0.5"/>
+      <polygon points="0,-32 27.7,-16 27.7,16 0,32 -27.7,16 -27.7,-16" transform="translate(144, 83.1)" fill="#FBF9F4"/>
+      <polygon points="0,-32 27.7,-16 27.7,16 0,32 -27.7,16 -27.7,-16" transform="translate(96, 166.2)" fill="#FBF9F4"/>
+      <polygon points="0,-32 27.7,-16 27.7,16 0,32 -27.7,16 -27.7,-16" transform="translate(0, 166.2)" fill="#FDE68A" fill-opacity="0.5"/>
+      <polygon points="0,-32 27.7,-16 27.7,16 0,32 -27.7,16 -27.7,-16" transform="translate(-96, 166.2)" fill="#FBF9F4"/>
+      <polygon points="0,-32 27.7,-16 27.7,16 0,32 -27.7,16 -27.7,-16" transform="translate(-144, 83.1)" fill="#FBF9F4"/>
+      <polygon points="0,-32 27.7,-16 27.7,16 0,32 -27.7,16 -27.7,-16" transform="translate(-192, 0)" fill="#FDE68A" fill-opacity="0.5"/>
+      <polygon points="0,-32 27.7,-16 27.7,16 0,32 -27.7,16 -27.7,-16" transform="translate(-144, -83.1)" fill="#FBF9F4"/>
+      <polygon points="0,-32 27.7,-16 27.7,16 0,32 -27.7,16 -27.7,-16" transform="translate(-96, -166.2)" fill="#FBF9F4"/>
+
+      <!-- Connecting Bridge Honeycomb to Constellations -->
+      <polygon points="0,-32 27.7,-16 27.7,16 0,32 -27.7,16 -27.7,-16" transform="translate(192, -166.2)" fill="#FBF9F4" stroke-opacity="0.6"/>
+      <polygon points="0,-32 27.7,-16 27.7,16 0,32 -27.7,16 -27.7,-16" transform="translate(192, 166.2)" fill="#FBF9F4" stroke-opacity="0.6"/>
+      <polygon points="0,-32 27.7,-16 27.7,16 0,32 -27.7,16 -27.7,-16" transform="translate(-192, 166.2)" fill="#FBF9F4" stroke-opacity="0.6"/>
+      <polygon points="0,-32 27.7,-16 27.7,16 0,32 -27.7,16 -27.7,-16" transform="translate(-192, -166.2)" fill="#FBF9F4" stroke-opacity="0.6"/>
+    </g>
+
+    <!-- 4. Major Radial Spoke Beams to the Six Constellations -->
+    <g stroke="#1F2937" stroke-width="2.6" stroke-opacity="0.55" fill="none">
+      <line x1="0" y1="-85" x2="0" y2="-240"/>
+      <line x1="73.6" y1="-42.5" x2="207.8" y2="-120"/>
+      <line x1="73.6" y1="42.5" x2="207.8" y2="120"/>
+      <line x1="0" y1="85" x2="0" y2="240"/>
+      <line x1="-73.6" y1="42.5" x2="-207.8" y2="120"/>
+      <line x1="-73.6" y1="-42.5" x2="-207.8" y2="-120"/>
+    </g>
+
+    <!-- 5. Six Process Constellation Hubs (R=300, radius r=58) -->
+    <!-- 12 o'clock (0, -300) : P2P -->
+    <g transform="translate(0, -300)">
+      <circle cx="0" cy="0" r="66" fill="none" stroke="url(#arc-p2p)" stroke-width="12"/>
+      <circle cx="0" cy="0" r="58" fill="#FBF9F4" stroke="#1F2937" stroke-width="2.5"/>
+      <circle cx="0" cy="0" r="42" fill="none" stroke="#1F2937" stroke-width="1.2" stroke-dasharray="3,3" stroke-opacity="0.45"/>
+      <circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.35" stroke="#1F2937" stroke-width="1.8"/>
+      <circle cx="0" cy="0" r="8" fill="#1F2937"/>
+    </g>
+
+    <!-- 2 o'clock (259.8, -150) : O2C -->
+    <g transform="translate(259.8, -150)">
+      <circle cx="0" cy="0" r="66" fill="none" stroke="url(#arc-o2c)" stroke-width="12"/>
+      <circle cx="0" cy="0" r="58" fill="#FBF9F4" stroke="#1F2937" stroke-width="2.5"/>
+      <circle cx="0" cy="0" r="42" fill="none" stroke="#1F2937" stroke-width="1.2" stroke-dasharray="3,3" stroke-opacity="0.45"/>
+      <circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.35" stroke="#1F2937" stroke-width="1.8"/>
+      <circle cx="0" cy="0" r="8" fill="#1F2937"/>
+    </g>
+
+    <!-- 4 o'clock (259.8, 150) : P2M (Criticality Core) -->
+    <g transform="translate(259.8, 150)">
+      <circle cx="0" cy="0" r="66" fill="none" stroke="url(#arc-p2m)" stroke-width="12"/>
+      <circle cx="0" cy="0" r="58" fill="#FBF9F4" stroke="#1F2937" stroke-width="2.5"/>
+      <circle cx="0" cy="0" r="42" fill="none" stroke="#C2410C" stroke-width="1.5" stroke-dasharray="3,3" stroke-opacity="0.75"/>
+      <circle cx="0" cy="0" r="22" fill="#C2410C" fill-opacity="0.3" stroke="#1F2937" stroke-width="1.8"/>
+      <circle cx="0" cy="0" r="8" fill="#C2410C"/>
+    </g>
+
+    <!-- 6 o'clock (0, 300) : S2S -->
+    <g transform="translate(0, 300)">
+      <circle cx="0" cy="0" r="66" fill="none" stroke="url(#arc-s2s)" stroke-width="12"/>
+      <circle cx="0" cy="0" r="58" fill="#FBF9F4" stroke="#1F2937" stroke-width="2.5"/>
+      <circle cx="0" cy="0" r="42" fill="none" stroke="#1F2937" stroke-width="1.2" stroke-dasharray="3,3" stroke-opacity="0.45"/>
+      <circle cx="0" cy="0" r="22" fill="#FDE68A" fill-opacity="0.6" stroke="#1F2937" stroke-width="1.8"/>
+      <circle cx="0" cy="0" r="8" fill="#1F2937"/>
+    </g>
+
+    <!-- 8 o'clock (-259.8, 150) : D2R -->
+    <g transform="translate(-259.8, 150)">
+      <circle cx="0" cy="0" r="66" fill="none" stroke="url(#arc-d2r)" stroke-width="12"/>
+      <circle cx="0" cy="0" r="58" fill="#FBF9F4" stroke="#1F2937" stroke-width="2.5"/>
+      <circle cx="0" cy="0" r="42" fill="none" stroke="#1F2937" stroke-width="1.2" stroke-dasharray="3,3" stroke-opacity="0.45"/>
+      <circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.35" stroke="#1F2937" stroke-width="1.8"/>
+      <circle cx="0" cy="0" r="8" fill="#1F2937"/>
+    </g>
+
+    <!-- 10 o'clock (-259.8, -150) : MDM -->
+    <g transform="translate(-259.8, -150)">
+      <circle cx="0" cy="0" r="66" fill="none" stroke="url(#arc-mdm)" stroke-width="12"/>
+      <circle cx="0" cy="0" r="58" fill="#FBF9F4" stroke="#1F2937" stroke-width="2.5"/>
+      <circle cx="0" cy="0" r="42" fill="none" stroke="#1F2937" stroke-width="1.2" stroke-dasharray="3,3" stroke-opacity="0.45"/>
+      <circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.35" stroke="#1F2937" stroke-width="1.8"/>
+      <circle cx="0" cy="0" r="8" fill="#1F2937"/>
+    </g>
+
+    <!-- 6. Central Solid DATA CORE (Clean, Engineering Core — NO Sunburst/Spiritual Rays) -->
+    <circle cx="0" cy="0" r="85" fill="#FACC15" stroke="#1F2937" stroke-width="3"/>
+    <circle cx="0" cy="0" r="72" fill="none" stroke="#1F2937" stroke-width="1.8" stroke-dasharray="4,3" stroke-opacity="0.65"/>
+    <circle cx="0" cy="0" r="54" fill="none" stroke="#1F2937" stroke-width="1.5" stroke-opacity="0.55"/>
+    <circle cx="0" cy="0" r="34" fill="#FBF9F4" stroke="#1F2937" stroke-width="2"/>
+    <circle cx="0" cy="0" r="14" fill="#1F2937"/>
+    <!-- 4 Cardinal Datum Ticks -->
+    <line x1="0" y1="-85" x2="0" y2="-72" stroke="#1F2937" stroke-width="2.5"/>
+    <line x1="85" y1="0" x2="72" y2="0" stroke="#1F2937" stroke-width="2.5"/>
+    <line x1="0" y1="85" x2="0" y2="72" stroke="#1F2937" stroke-width="2.5"/>
+    <line x1="-85" y1="0" x2="-72" y2="0" stroke="#1F2937" stroke-width="2.5"/>
+
+    <!-- 7. Outer Systemverse Orbit: 16 Large, Substantial System Nodes (R=425, radius r=34) -->
+    <g id="systemverse-nodes">
+      <!-- 0: 0° (0, -425) -->
+      <g transform="translate(0, -425)">
+        <circle cx="0" cy="0" r="34" fill="#FBF9F4" stroke="#1F2937" stroke-width="2.2"/>
+        <circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.3" stroke="#1F2937" stroke-width="1.2"/>
+        <circle cx="0" cy="0" r="8" fill="#1F2937"/>
+      </g>
+      <!-- 1: 22.5° (162.6, -392.6) -->
+      <g transform="translate(162.6, -392.6)">
+        <circle cx="0" cy="0" r="34" fill="#FBF9F4" stroke="#1F2937" stroke-width="2.2"/>
+        <circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.3" stroke="#1F2937" stroke-width="1.2"/>
+        <circle cx="0" cy="0" r="8" fill="#1F2937"/>
+      </g>
+      <!-- 2: 45° (300.5, -300.5) -->
+      <g transform="translate(300.5, -300.5)">
+        <circle cx="0" cy="0" r="34" fill="#FBF9F4" stroke="#1F2937" stroke-width="2.2"/>
+        <circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.3" stroke="#1F2937" stroke-width="1.2"/>
+        <circle cx="0" cy="0" r="8" fill="#1F2937"/>
+      </g>
+      <!-- 3: 67.5° (392.6, -162.6) -->
+      <g transform="translate(392.6, -162.6)">
+        <circle cx="0" cy="0" r="34" fill="#FBF9F4" stroke="#1F2937" stroke-width="2.2"/>
+        <circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.3" stroke="#1F2937" stroke-width="1.2"/>
+        <circle cx="0" cy="0" r="8" fill="#1F2937"/>
+      </g>
+      <!-- 4: 90° (425, 0) -->
+      <g transform="translate(425, 0)">
+        <circle cx="0" cy="0" r="34" fill="#FBF9F4" stroke="#1F2937" stroke-width="2.2"/>
+        <circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.3" stroke="#1F2937" stroke-width="1.2"/>
+        <circle cx="0" cy="0" r="8" fill="#1F2937"/>
+      </g>
+      <!-- 5: 112.5° (392.6, 162.6) -->
+      <g transform="translate(392.6, 162.6)">
+        <circle cx="0" cy="0" r="34" fill="#FBF9F4" stroke="#1F2937" stroke-width="2.2"/>
+        <circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.3" stroke="#1F2937" stroke-width="1.2"/>
+        <circle cx="0" cy="0" r="8" fill="#1F2937"/>
+      </g>
+      <!-- 6: 135° (300.5, 300.5) -->
+      <g transform="translate(300.5, 300.5)">
+        <circle cx="0" cy="0" r="34" fill="#FBF9F4" stroke="#1F2937" stroke-width="2.2"/>
+        <circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.3" stroke="#1F2937" stroke-width="1.2"/>
+        <circle cx="0" cy="0" r="8" fill="#1F2937"/>
+      </g>
+      <!-- 7: 157.5° (162.6, 392.6) -->
+      <g transform="translate(162.6, 392.6)">
+        <circle cx="0" cy="0" r="34" fill="#FBF9F4" stroke="#1F2937" stroke-width="2.2"/>
+        <circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.3" stroke="#1F2937" stroke-width="1.2"/>
+        <circle cx="0" cy="0" r="8" fill="#1F2937"/>
+      </g>
+      <!-- 8: 180° (0, 425) -->
+      <g transform="translate(0, 425)">
+        <circle cx="0" cy="0" r="34" fill="#FBF9F4" stroke="#1F2937" stroke-width="2.2"/>
+        <circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.3" stroke="#1F2937" stroke-width="1.2"/>
+        <circle cx="0" cy="0" r="8" fill="#1F2937"/>
+      </g>
+      <!-- 9: 202.5° (-162.6, 392.6) -->
+      <g transform="translate(-162.6, 392.6)">
+        <circle cx="0" cy="0" r="34" fill="#FBF9F4" stroke="#1F2937" stroke-width="2.2"/>
+        <circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.3" stroke="#1F2937" stroke-width="1.2"/>
+        <circle cx="0" cy="0" r="8" fill="#1F2937"/>
+      </g>
+      <!-- 10: 225° (-300.5, 300.5) -->
+      <g transform="translate(-300.5, 300.5)">
+        <circle cx="0" cy="0" r="34" fill="#FBF9F4" stroke="#1F2937" stroke-width="2.2"/>
+        <circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.3" stroke="#1F2937" stroke-width="1.2"/>
+        <circle cx="0" cy="0" r="8" fill="#1F2937"/>
+      </g>
+      <!-- 11: 247.5° (-392.6, 162.6) -->
+      <g transform="translate(-392.6, 162.6)">
+        <circle cx="0" cy="0" r="34" fill="#FBF9F4" stroke="#1F2937" stroke-width="2.2"/>
+        <circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.3" stroke="#1F2937" stroke-width="1.2"/>
+        <circle cx="0" cy="0" r="8" fill="#1F2937"/>
+      </g>
+      <!-- 12: 270° (-425, 0) -->
+      <g transform="translate(-425, 0)">
+        <circle cx="0" cy="0" r="34" fill="#FBF9F4" stroke="#1F2937" stroke-width="2.2"/>
+        <circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.3" stroke="#1F2937" stroke-width="1.2"/>
+        <circle cx="0" cy="0" r="8" fill="#1F2937"/>
+      </g>
+      <!-- 13: 292.5° (-392.6, -162.6) -->
+      <g transform="translate(-392.6, -162.6)">
+        <circle cx="0" cy="0" r="34" fill="#FBF9F4" stroke="#1F2937" stroke-width="2.2"/>
+        <circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.3" stroke="#1F2937" stroke-width="1.2"/>
+        <circle cx="0" cy="0" r="8" fill="#1F2937"/>
+      </g>
+      <!-- 14: 315° (-300.5, -300.5) -->
+      <g transform="translate(-300.5, -300.5)">
+        <circle cx="0" cy="0" r="34" fill="#FBF9F4" stroke="#1F2937" stroke-width="2.2"/>
+        <circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.3" stroke="#1F2937" stroke-width="1.2"/>
+        <circle cx="0" cy="0" r="8" fill="#1F2937"/>
+      </g>
+      <!-- 15: 337.5° (-162.6, -392.6) -->
+      <g transform="translate(-162.6, -392.6)">
+        <circle cx="0" cy="0" r="34" fill="#FBF9F4" stroke="#1F2937" stroke-width="2.2"/>
+        <circle cx="0" cy="0" r="22" fill="#FACC15" fill-opacity="0.3" stroke="#1F2937" stroke-width="1.2"/>
+        <circle cx="0" cy="0" r="8" fill="#1F2937"/>
+      </g>
+    </g>
+
+  </g>
+</svg>

@@ -1,6 +1,6 @@
 import { permanentRedirect } from "next/navigation";
 
-/** Folded into Applied Agentics. */
+/** Legacy route — public name is Agentic layer. */
 export default function AgenticsRedirectPage() {
-  permanentRedirect("/applied-agentics/");
+  permanentRedirect("/experience/");
 }

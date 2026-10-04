@@ -10,19 +10,120 @@ const nextConfig: NextConfig = {
         destination: "https://idigdata.com/:path*/",
         permanent: true,
       },
+      // Legacy IA routes — keep forever for bookmarks / SEO
+      {
+        source: "/application-layer",
+        destination: "/experience/",
+        permanent: true,
+      },
+      {
+        source: "/application-layer/",
+        destination: "/experience/",
+        permanent: true,
+      },
+      {
+        source: "/agentic-layer",
+        destination: "/experience/",
+        permanent: true,
+      },
+      {
+        source: "/agentic-layer/",
+        destination: "/experience/",
+        permanent: true,
+      },
+      {
+        source: "/transformations",
+        destination: "/experience/",
+        permanent: true,
+      },
+      {
+        source: "/transformations/",
+        destination: "/experience/",
+        permanent: true,
+      },
+      {
+        source: "/agentics",
+        destination: "/experience/",
+        permanent: true,
+      },
+      {
+        source: "/agentics/",
+        destination: "/experience/",
+        permanent: true,
+      },
+      {
+        source: "/work",
+        destination: "/experience/",
+        permanent: true,
+      },
+      {
+        source: "/work/",
+        destination: "/experience/",
+        permanent: true,
+      },
+      {
+        source: "/work/:path*",
+        destination: "/experience/",
+        permanent: true,
+      },
+      {
+        source: "/method",
+        destination: "/experience/",
+        permanent: true,
+      },
+      {
+        source: "/method/",
+        destination: "/experience/",
+        permanent: true,
+      },
+      {
+        source: "/method/:path*",
+        destination: "/experience/",
+        permanent: true,
+      },
       {
         source: "/atlas",
-        destination: "/approach/#engagement-roadmap",
+        destination: "/experience/",
         permanent: true,
       },
       {
         source: "/atlas/",
-        destination: "/approach/#engagement-roadmap",
+        destination: "/experience/",
         permanent: true,
       },
       {
         source: "/atlas/:path*",
-        destination: "/approach/#engagement-roadmap",
+        destination: "/experience/",
+        permanent: true,
+      },
+      {
+        source: "/approach",
+        destination: "/experience/",
+        permanent: true,
+      },
+      {
+        source: "/approach/",
+        destination: "/experience/",
+        permanent: true,
+      },
+      {
+        source: "/approach/:path*",
+        destination: "/experience/",
+        permanent: true,
+      },
+      {
+        source: "/applied-agentics",
+        destination: "/experience/",
+        permanent: true,
+      },
+      {
+        source: "/applied-agentics/",
+        destination: "/experience/",
+        permanent: true,
+      },
+      {
+        source: "/applied-agentics/:path*",
+        destination: "/experience/",
         permanent: true,
       },
       {
@@ -37,72 +138,92 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/boss",
-        destination: "/work/#boss",
+        destination: "/experience/",
         permanent: true,
       },
       {
         source: "/boss/",
-        destination: "/work/#boss",
+        destination: "/experience/",
         permanent: true,
       },
       {
         source: "/boss/:path*",
-        destination: "/work/#boss",
+        destination: "/experience/",
         permanent: true,
       },
       {
         source: "/systems",
-        destination: "/work/",
+        destination: "/experience/",
         permanent: true,
       },
       {
         source: "/systems/",
-        destination: "/work/",
+        destination: "/experience/",
         permanent: true,
       },
       {
-        source: "/agentics",
-        destination: "/applied-agentics/",
-        permanent: true,
-      },
-      {
-        source: "/agentics/",
-        destination: "/applied-agentics/",
-        permanent: true,
-      },
-      {
-        source: "/agentics/:path*",
-        destination: "/applied-agentics/",
+        source: "/systems/:path*",
+        destination: "/experience/",
         permanent: true,
       },
       {
         source: "/rig",
-        destination: "/work/#rig",
+        destination: "/experience/",
         permanent: true,
       },
       {
         source: "/rig/",
-        destination: "/work/#rig",
+        destination: "/experience/",
+        permanent: true,
+      },
+      {
+        source: "/rig/:path*",
+        destination: "/experience/",
         permanent: true,
       },
       {
         source: "/flowcraft",
-        destination: "/work/#flowcraft",
+        destination: "/experience/",
         permanent: true,
       },
       {
         source: "/flowcraft/",
-        destination: "/work/#flowcraft",
+        destination: "/experience/",
+        permanent: true,
+      },
+      {
+        source: "/flowcraft/:path*",
+        destination: "/experience/",
         permanent: true,
       },
       {
         source: "/capabilities",
-        destination: "/approach/",
+        destination: "/experience/",
         permanent: true,
       },
       {
         source: "/capabilities/",
-        destination: "/approach/",
+        destination: "/experience/",
+        permanent: true,
+      },
+      {
+        source: "/capabilities/:path*",
+        destination: "/experience/",
+        permanent: true,
+      },
+      {
+        source: "/engagement",
+        destination: "/contact/",
+        permanent: true,
+      },
+      {
+        source: "/engagement/",
+        destination: "/contact/",
+        permanent: true,
+      },
+      {
+        source: "/engagement/:path*",
+        destination: "/contact/",
         permanent: true,
       },
       {

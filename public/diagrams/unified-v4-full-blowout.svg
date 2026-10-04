@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Version 4: The Full-Power Chromatic Blowout Edition">
+  <defs>
+    <clipPath id="v4-hex-clip">
+      <polygon points="0,-270 233.8,-135 233.8,135 0,270 -233.8,135 -233.8,-135"/>
+    </clipPath>
+    <mask id="v4-core-mask">
+      <rect x="-500" y="-500" width="1000" height="1000" fill="white"/>
+      <circle cx="0" cy="0" r="54" fill="black"/>
+    </mask>
+
+    <pattern id="v4-honeycomb" patternUnits="userSpaceOnUse" width="36" height="62.35">
+      <path d="M 0,0 L 18,10.39 L 18,31.18 L 0,41.57 L -18,31.18 L -18,10.39 Z
+               M 36,0 L 54,10.39 L 54,31.18 L 36,41.57 L 18,31.18 L 18,10.39 Z
+               M 0,62.35 L 18,72.74 L 18,93.53 L 0,103.92 L -18,93.53 L -18,72.74 Z
+               M 36,62.35 L 54,72.74 L 54,93.53 L 36,103.92 L 18,93.53 L 18,72.74 Z
+               M 18,31.18 L 36,41.57 L 36,62.35 L 18,72.74 L 0,62.35 L 0,41.57 Z"
+            fill="none" stroke="#FACC15" stroke-width="1.6" stroke-opacity="0.9"/>
+    </pattern>
+
+    <!-- Vibrant Chromatic Constellation Gradients -->
+    <!-- 12h: P2P Sapphire/Cyan -->
+    <radialGradient id="v4-p2p" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="60%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </radialGradient>
+    <!-- 2h: O2C Radiant Sun-Gold -->
+    <radialGradient id="v4-o2c" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FEF08A"/>
+      <stop offset="60%" stop-color="#EAB308"/>
+      <stop offset="100%" stop-color="#713F12"/>
+    </radialGradient>
+    <!-- 4h: P2M Blazing Crimson/Orange Criticality Flare -->
+    <radialGradient id="v4-p2m" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="35%" stop-color="#EA580C"/>
+      <stop offset="70%" stop-color="#DC2626"/>
+      <stop offset="100%" stop-color="#450A0A"/>
+    </radialGradient>
+    <!-- 6h: S2S Emerald/Lime Operational -->
+    <radialGradient id="v4-s2s" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#A7F3D0"/>
+      <stop offset="60%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#064E3B"/>
+    </radialGradient>
+    <!-- 8h: D2R Electric Violet/Purple -->
+    <radialGradient id="v4-d2r" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#DDD6FE"/>
+      <stop offset="60%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#3B0764"/>
+    </radialGradient>
+    <!-- 10h: MDM Royal Gold/Platinum -->
+    <radialGradient id="v4-mdm" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FEF9C3"/>
+      <stop offset="60%" stop-color="#CA8A04"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </radialGradient>
+
+    <!-- Sunburst Data Core Radial Gradient -->
+    <radialGradient id="v4-core-grad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFBEB"/>
+      <stop offset="40%" stop-color="#FACC15"/>
+      <stop offset="80%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#78350F"/>
+    </radialGradient>
+
+    <!-- Outer Rainbow Sweep Gradient -->
+    <linearGradient id="v4-rainbow-ring" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="20%" stop-color="#EAB308"/>
+      <stop offset="40%" stop-color="#DC2626"/>
+      <stop offset="60%" stop-color="#059669"/>
+      <stop offset="80%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Deep Cosmic Navy/Slate Substrate -->
+  <rect width="1000" height="1000" fill="#0B132B"/>
+
+  <g transform="translate(500, 500)">
+    <!-- 1. Outer Rainbow Track -->
+    <circle cx="0" cy="0" r="445" fill="none" stroke="url(#v4-rainbow-ring)" stroke-width="4"/>
+    <circle cx="0" cy="0" r="415" fill="none" stroke="#FACC15" stroke-width="1.8" stroke-opacity="0.6"/>
+    <circle cx="0" cy="0" r="335" fill="none" stroke="#38BDF8" stroke-width="1.8" stroke-dasharray="6,6" stroke-opacity="0.7"/>
+
+    <!-- 2. 16 Glowing Radial Spokes -->
+    <g stroke="url(#v4-rainbow-ring)" stroke-width="1.6" stroke-opacity="0.65">
+      <line x1="0" y1="0" x2="0" y2="-445"/>
+      <line x1="0" y1="0" x2="170.3" y2="-411.1"/>
+      <line x1="0" y1="0" x2="314.7" y2="-314.7"/>
+      <line x1="0" y1="0" x2="411.1" y2="-170.3"/>
+      <line x1="0" y1="0" x2="445" y2="0"/>
+      <line x1="0" y1="0" x2="411.1" y2="170.3"/>
+      <line x1="0" y1="0" x2="314.7" y2="314.7"/>
+      <line x1="0" y1="0" x2="170.3" y2="411.1"/>
+      <line x1="0" y1="0" x2="0" y2="445"/>
+      <line x1="0" y1="0" x2="-170.3" y2="411.1"/>
+      <line x1="0" y1="0" x2="-314.7" y2="314.7"/>
+      <line x1="0" y1="0" x2="-411.1" y2="170.3"/>
+      <line x1="0" y1="0" x2="-445" y2="0"/>
+      <line x1="0" y1="0" x2="-411.1" y2="-170.3"/>
+      <line x1="0" y1="0" x2="-314.7" y2="-314.7"/>
+      <line x1="0" y1="0" x2="-170.3" y2="-411.1"/>
+    </g>
+
+    <!-- 3. Complete Glowing Honeycomb Infill (The Beehive) -->
+    <rect x="-300" y="-300" width="600" height="600"
+          fill="url(#v4-honeycomb)"
+          clip-path="url(#v4-hex-clip)"
+          mask="url(#v4-core-mask)"/>
+
+    <!-- 4. Major Constellation Hexagon Perimeter & 6 Core Spokes -->
+    <polygon points="0,-270 233.8,-135 233.8,135 0,270 -233.8,135 -233.8,-135" fill="none" stroke="url(#v4-rainbow-ring)" stroke-width="6"/>
+    <polygon points="0,-280 242.5,-140 242.5,140 0,280 -242.5,140 -242.5,-140" fill="none" stroke="#FACC15" stroke-width="2" stroke-opacity="0.8"/>
+
+    <!-- 6 Heavy Core Spokes -->
+    <line x1="0" y1="0" x2="0" y2="-270" stroke="#38BDF8" stroke-width="4.5" stroke-linecap="round"/>
+    <line x1="0" y1="0" x2="233.8" y2="-135" stroke="#EAB308" stroke-width="4.5" stroke-linecap="round"/>
+    <line x1="0" y1="0" x2="233.8" y2="135" stroke="#EA580C" stroke-width="5" stroke-linecap="round"/>
+    <line x1="0" y1="0" x2="0" y2="270" stroke="#059669" stroke-width="4.5" stroke-linecap="round"/>
+    <line x1="0" y1="0" x2="-233.8" y2="135" stroke="#7C3AED" stroke-width="4.5" stroke-linecap="round"/>
+    <line x1="0" y1="0" x2="-233.8" y2="-135" stroke="#CA8A04" stroke-width="4.5" stroke-linecap="round"/>
+
+    <!-- 5. Six Chromatic Constellation Hubs (r=52) -->
+    <!-- 12h: P2P Sapphire -->
+    <g transform="translate(0, -270)">
+      <circle cx="0" cy="0" r="54" fill="url(#v4-p2p)" stroke="#38BDF8" stroke-width="3"/>
+      <circle cx="0" cy="0" r="40" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-opacity="0.8"/>
+      <circle cx="0" cy="0" r="14" fill="#38BDF8"/>
+    </g>
+    <!-- 2h: O2C Sun-Gold -->
+    <g transform="translate(233.8, -135)">
+      <circle cx="0" cy="0" r="54" fill="url(#v4-o2c)" stroke="#FEF08A" stroke-width="3"/>
+      <circle cx="0" cy="0" r="40" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-opacity="0.8"/>
+      <circle cx="0" cy="0" r="14" fill="#FEF08A"/>
+    </g>
+    <!-- 4h: P2M Criticality Flare -->
+    <g transform="translate(233.8, 135)">
+      <circle cx="0" cy="0" r="56" fill="url(#v4-p2m)" stroke="#FDE047" stroke-width="4"/>
+      <circle cx="0" cy="0" r="40" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+      <circle cx="0" cy="0" r="16" fill="#FDE047"/>
+    </g>
+    <!-- 6h: S2S Emerald -->
+    <g transform="translate(0, 270)">
+      <circle cx="0" cy="0" r="54" fill="url(#v4-s2s)" stroke="#A7F3D0" stroke-width="3"/>
+      <circle cx="0" cy="0" r="40" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-opacity="0.8"/>
+      <circle cx="0" cy="0" r="14" fill="#A7F3D0"/>
+    </g>
+    <!-- 8h: D2R Violet -->
+    <g transform="translate(-233.8, 135)">
+      <circle cx="0" cy="0" r="54" fill="url(#v4-d2r)" stroke="#DDD6FE" stroke-width="3"/>
+      <circle cx="0" cy="0" r="40" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-opacity="0.8"/>
+      <circle cx="0" cy="0" r="14" fill="#DDD6FE"/>
+    </g>
+    <!-- 10h: MDM Platinum Gold -->
+    <g transform="translate(-233.8, -135)">
+      <circle cx="0" cy="0" r="54" fill="url(#v4-mdm)" stroke="#FEF9C3" stroke-width="3"/>
+      <circle cx="0" cy="0" r="40" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-opacity="0.8"/>
+      <circle cx="0" cy="0" r="14" fill="#FEF9C3"/>
+    </g>
+
+    <!-- 6. Radiant Sunburst Data Core -->
+    <circle cx="0" cy="0" r="58" fill="url(#v4-core-grad)" stroke="#FFFFFF" stroke-width="3.5"/>
+    <circle cx="0" cy="0" r="42" fill="none" stroke="#0B132B" stroke-width="2" stroke-dasharray="4,3"/>
+    <circle cx="0" cy="0" r="26" fill="#FFFBEB" stroke="#0B132B" stroke-width="2"/>
+    <circle cx="0" cy="0" r="10" fill="#D97706"/>
+
+    <!-- 7. 16 Glowing System Bubbles (r=26) -->
+    <g>
+      <g transform="translate(0, -415)"><circle cx="0" cy="0" r="26" fill="#0B132B" stroke="#38BDF8" stroke-width="3"/><circle cx="0" cy="0" r="14" fill="#38BDF8" fill-opacity="0.4"/><circle cx="0" cy="0" r="5" fill="#38BDF8"/></g>
+      <g transform="translate(158.8, -383.4)"><circle cx="0" cy="0" r="26" fill="#0B132B" stroke="#FEF08A" stroke-width="3"/><circle cx="0" cy="0" r="14" fill="#FEF08A" fill-opacity="0.4"/><circle cx="0" cy="0" r="5" fill="#FEF08A"/></g>
+      <g transform="translate(293.4, -293.4)"><circle cx="0" cy="0" r="26" fill="#0B132B" stroke="#EAB308" stroke-width="3"/><circle cx="0" cy="0" r="14" fill="#EAB308" fill-opacity="0.4"/><circle cx="0" cy="0" r="5" fill="#EAB308"/></g>
+      <g transform="translate(383.4, -158.8)"><circle cx="0" cy="0" r="26" fill="#0B132B" stroke="#F97316" stroke-width="3"/><circle cx="0" cy="0" r="14" fill="#F97316" fill-opacity="0.4"/><circle cx="0" cy="0" r="5" fill="#F97316"/></g>
+      <g transform="translate(415, 0)"><circle cx="0" cy="0" r="26" fill="#0B132B" stroke="#EA580C" stroke-width="3"/><circle cx="0" cy="0" r="14" fill="#EA580C" fill-opacity="0.4"/><circle cx="0" cy="0" r="5" fill="#EA580C"/></g>
+      <g transform="translate(383.4, 158.8)"><circle cx="0" cy="0" r="26" fill="#0B132B" stroke="#DC2626" stroke-width="3"/><circle cx="0" cy="0" r="14" fill="#DC2626" fill-opacity="0.4"/><circle cx="0" cy="0" r="5" fill="#DC2626"/></g>
+      <g transform="translate(293.4, 293.4)"><circle cx="0" cy="0" r="26" fill="#0B132B" stroke="#10B981" stroke-width="3"/><circle cx="0" cy="0" r="14" fill="#10B981" fill-opacity="0.4"/><circle cx="0" cy="0" r="5" fill="#10B981"/></g>
+      <g transform="translate(158.8, 383.4)"><circle cx="0" cy="0" r="26" fill="#0B132B" stroke="#059669" stroke-width="3"/><circle cx="0" cy="0" r="14" fill="#059669" fill-opacity="0.4"/><circle cx="0" cy="0" r="5" fill="#059669"/></g>
+      <g transform="translate(0, 415)"><circle cx="0" cy="0" r="26" fill="#0B132B" stroke="#047857" stroke-width="3"/><circle cx="0" cy="0" r="14" fill="#047857" fill-opacity="0.4"/><circle cx="0" cy="0" r="5" fill="#047857"/></g>
+      <g transform="translate(-158.8, 383.4)"><circle cx="0" cy="0" r="26" fill="#0B132B" stroke="#8B5CF6" stroke-width="3"/><circle cx="0" cy="0" r="14" fill="#8B5CF6" fill-opacity="0.4"/><circle cx="0" cy="0" r="5" fill="#8B5CF6"/></g>
+      <g transform="translate(-293.4, 293.4)"><circle cx="0" cy="0" r="26" fill="#0B132B" stroke="#7C3AED" stroke-width="3"/><circle cx="0" cy="0" r="14" fill="#7C3AED" fill-opacity="0.4"/><circle cx="0" cy="0" r="5" fill="#7C3AED"/></g>
+      <g transform="translate(-383.4, 158.8)"><circle cx="0" cy="0" r="26" fill="#0B132B" stroke="#6D28D9" stroke-width="3"/><circle cx="0" cy="0" r="14" fill="#6D28D9" fill-opacity="0.4"/><circle cx="0" cy="0" r="5" fill="#6D28D9"/></g>
+      <g transform="translate(-415, 0)"><circle cx="0" cy="0" r="26" fill="#0B132B" stroke="#CA8A04" stroke-width="3"/><circle cx="0" cy="0" r="14" fill="#CA8A04" fill-opacity="0.4"/><circle cx="0" cy="0" r="5" fill="#CA8A04"/></g>
+      <g transform="translate(-383.4, -158.8)"><circle cx="0" cy="0" r="26" fill="#0B132B" stroke="#EAB308" stroke-width="3"/><circle cx="0" cy="0" r="14" fill="#EAB308" fill-opacity="0.4"/><circle cx="0" cy="0" r="5" fill="#EAB308"/></g>
+      <g transform="translate(-293.4, -293.4)"><circle cx="0" cy="0" r="26" fill="#0B132B" stroke="#38BDF8" stroke-width="3"/><circle cx="0" cy="0" r="14" fill="#38BDF8" fill-opacity="0.4"/><circle cx="0" cy="0" r="5" fill="#38BDF8"/></g>
+      <g transform="translate(-158.8, -383.4)"><circle cx="0" cy="0" r="26" fill="#0B132B" stroke="#0284C7" stroke-width="3"/><circle cx="0" cy="0" r="14" fill="#0284C7" fill-opacity="0.4"/><circle cx="0" cy="0" r="5" fill="#0284C7"/></g>
+    </g>
+  </g>
+</svg>

@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Page not found",
+  robots: { index: false, follow: false },
+};
 
 export default function NotFound() {
   return (
@@ -10,8 +16,8 @@ export default function NotFound() {
         That page is not on this site.
       </h1>
       <p className="mt-4 max-w-xl font-body text-[17px] leading-relaxed text-warm-gray">
-        The URL may be old, mistyped, or never existed. Known routes live under the
-        practice pages — home, approach, systems, engagement, contact.
+        The URL may be old, mistyped, or never existed. Known routes live under
+        Home, Experience, The Block, and Contact.
       </p>
       <div className="mt-8 flex flex-wrap gap-3">
         <Link
@@ -21,10 +27,22 @@ export default function NotFound() {
           Home
         </Link>
         <Link
+          href="/experience/"
+          className="inline-flex h-11 items-center border border-stone/50 px-5 font-body text-[15px] font-semibold text-ink hover:border-navy"
+        >
+          Experience
+        </Link>
+        <Link
+          href="/block/"
+          className="inline-flex h-11 items-center border border-stone/50 px-5 font-body text-[15px] font-semibold text-ink hover:border-navy"
+        >
+          The Block
+        </Link>
+        <Link
           href="/contact/"
           className="inline-flex h-11 items-center border border-stone/50 px-5 font-body text-[15px] font-semibold text-ink hover:border-navy"
         >
-          Reach out
+          Contact
         </Link>
       </div>
     </div>

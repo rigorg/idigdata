@@ -197,13 +197,23 @@ function getClientIp(req: NextRequest): string | null {
   return first ? first.slice(0, 128) : null;
 }
 
-/** One-way truncate+hash so DigOps can correlate without storing raw IP. */
+/** Keyed HMAC so DigOps can correlate without storing raw IP. No public fallback. */
 async function hashClientIp(ip: string | null): Promise<string | null> {
   if (!ip) return null;
-  const salt = process.env.DIGOPS_IP_HASH_SALT?.trim() || "idigdata-door-knock";
-  const data = new TextEncoder().encode(`${salt}:${ip}`);
-  const digest = await crypto.subtle.digest("SHA-256", data);
-  const hex = Array.from(new Uint8Array(digest), (b) =>
+  const secret = process.env.DIGOPS_IP_HASH_SALT?.trim();
+  if (!secret) {
+    console.warn("door knock: DIGOPS_IP_HASH_SALT unset; IP fingerprint skipped");
+    return null;
+  }
+  const key = await crypto.subtle.importKey(
+    "raw",
+    new TextEncoder().encode(secret),
+    { name: "HMAC", hash: "SHA-256" },
+    false,
+    ["sign"],
+  );
+  const sig = await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(ip));
+  const hex = Array.from(new Uint8Array(sig), (b) =>
     b.toString(16).padStart(2, "0"),
   ).join("");
   return `h:${hex.slice(0, 32)}`;

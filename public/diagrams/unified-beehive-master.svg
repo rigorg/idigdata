@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Pure 3-Layer Systemic Master · idigdata">
+  <defs>
+    <linearGradient id="bh-p2m" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#142840"/>
+      <stop offset="40%" stop-color="#FACC15"/>
+      <stop offset="70%" stop-color="#C2410C"/>
+      <stop offset="100%" stop-color="#142840"/>
+    </linearGradient>
+    <linearGradient id="bh-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#142840"/>
+      <stop offset="50%" stop-color="#FACC15"/>
+      <stop offset="100%" stop-color="#142840"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Clean Warm Cream Substrate -->
+  <rect width="1000" height="1000" fill="#FBF9F4"/>
+
+  <g transform="translate(500, 500)">
+    <!-- ========================================== -->
+    <!-- LAYER 3: THE SYSTEMVERSE (OUTER RING)      -->
+    <!-- ========================================== -->
+
+    <!-- 1. The Outer Orbit Circle connecting all 16 systems -->
+    <circle cx="0" cy="0" r="430" fill="none" stroke="#142840" stroke-width="3"/>
+
+    <!-- 2. The 16 Direct Radial Spokes from Center Hub to each System Bubble -->
+    <g stroke="#142840" stroke-width="1.8" stroke-opacity="0.6">
+      <line x1="0" y1="0" x2="0" y2="-430"/>
+      <line x1="0" y1="0" x2="164.6" y2="-397.3"/>
+      <line x1="0" y1="0" x2="304.1" y2="-304.1"/>
+      <line x1="0" y1="0" x2="397.3" y2="-164.6"/>
+      <line x1="0" y1="0" x2="430" y2="0"/>
+      <line x1="0" y1="0" x2="397.3" y2="164.6"/>
+      <line x1="0" y1="0" x2="304.1" y2="304.1"/>
+      <line x1="0" y1="0" x2="164.6" y2="397.3"/>
+      <line x1="0" y1="0" x2="0" y2="430"/>
+      <line x1="0" y1="0" x2="-164.6" y2="397.3"/>
+      <line x1="0" y1="0" x2="-304.1" y2="304.1"/>
+      <line x1="0" y1="0" x2="-397.3" y2="164.6"/>
+      <line x1="0" y1="0" x2="-430" y2="0"/>
+      <line x1="0" y1="0" x2="-397.3" y2="-164.6"/>
+      <line x1="0" y1="0" x2="-304.1" y2="-304.1"/>
+      <line x1="0" y1="0" x2="-164.6" y2="-397.3"/>
+    </g>
+
+    <!-- ========================================== -->
+    <!-- LAYER 2: THE SIX PROCESS CONSTELLATIONS    -->
+    <!-- ========================================== -->
+
+    <!-- 3. The Hexagon Perimeter connecting each of the 6 Constellations -->
+    <polygon points="0,-270 233.8,-135 233.8,135 0,270 -233.8,135 -233.8,-135" fill="none" stroke="#142840" stroke-width="4.5"/>
+
+    <!-- 4. The 6 Direct Radial Spokes from Center Hub to each Constellation -->
+    <g stroke="#142840" stroke-width="3.5" stroke-linecap="round">
+      <line x1="0" y1="0" x2="0" y2="-270"/>
+      <line x1="0" y1="0" x2="233.8" y2="-135"/>
+      <line x1="0" y1="0" x2="233.8" y2="135"/>
+      <line x1="0" y1="0" x2="0" y2="270"/>
+      <line x1="0" y1="0" x2="-233.8" y2="135"/>
+      <line x1="0" y1="0" x2="-233.8" y2="-135"/>
+    </g>
+
+    <!-- ========================================== -->
+    <!-- LAYER 1: THE BEEHIVE (THE WORKING FABRIC)  -->
+    <!-- ========================================== -->
+
+    <!-- 5. Hexagonal Honeycomb Cluster surrounding the Center Core -->
+    <!-- Pointy-top hex r=38 (w=65.8, h=76) -->
+    <g stroke="#142840" stroke-width="2" fill="#FBF9F4">
+      <!-- Ring 1 (6 cells touching the core) -->
+      <polygon points="0,-38 32.9,-19 32.9,19 0,38 -32.9,19 -32.9,-19" transform="translate(0, -76)" fill="#FACC15" fill-opacity="0.3"/>
+      <polygon points="0,-38 32.9,-19 32.9,19 0,38 -32.9,19 -32.9,-19" transform="translate(65.8, -38)" fill="#FBF9F4"/>
+      <polygon points="0,-38 32.9,-19 32.9,19 0,38 -32.9,19 -32.9,-19" transform="translate(65.8, 38)" fill="#FACC15" fill-opacity="0.3"/>
+      <polygon points="0,-38 32.9,-19 32.9,19 0,38 -32.9,19 -32.9,-19" transform="translate(0, 76)" fill="#FBF9F4"/>
+      <polygon points="0,-38 32.9,-19 32.9,19 0,38 -32.9,19 -32.9,-19" transform="translate(-65.8, 38)" fill="#FACC15" fill-opacity="0.3"/>
+      <polygon points="0,-38 32.9,-19 32.9,19 0,38 -32.9,19 -32.9,-19" transform="translate(-65.8, -38)" fill="#FBF9F4"/>
+
+      <!-- Ring 2 (Outer Honeycomb Cells bridging to Constellation nodes) -->
+      <polygon points="0,-38 32.9,-19 32.9,19 0,38 -32.9,19 -32.9,-19" transform="translate(0, -152)" fill="#FDE68A" fill-opacity="0.4"/>
+      <polygon points="0,-38 32.9,-19 32.9,19 0,38 -32.9,19 -32.9,-19" transform="translate(131.6, -76)" fill="#FDE68A" fill-opacity="0.4"/>
+      <polygon points="0,-38 32.9,-19 32.9,19 0,38 -32.9,19 -32.9,-19" transform="translate(131.6, 76)" fill="#FDE68A" fill-opacity="0.4"/>
+      <polygon points="0,-38 32.9,-19 32.9,19 0,38 -32.9,19 -32.9,-19" transform="translate(0, 152)" fill="#FDE68A" fill-opacity="0.4"/>
+      <polygon points="0,-38 32.9,-19 32.9,19 0,38 -32.9,19 -32.9,-19" transform="translate(-131.6, 76)" fill="#FDE68A" fill-opacity="0.4"/>
+      <polygon points="0,-38 32.9,-19 32.9,19 0,38 -32.9,19 -32.9,-19" transform="translate(-131.6, -76)" fill="#FDE68A" fill-opacity="0.4"/>
+    </g>
+
+    <!-- ========================================== -->
+    <!-- 6. THE SIX PROCESS CONSTELLATION HUBS      -->
+    <!-- ========================================== -->
+
+    <!-- 12h: P2P -->
+    <g transform="translate(0, -270)">
+      <circle cx="0" cy="0" r="54" fill="none" stroke="url(#bh-gold)" stroke-width="10"/>
+      <circle cx="0" cy="0" r="44" fill="#FBF9F4" stroke="#142840" stroke-width="3"/>
+      <circle cx="0" cy="0" r="26" fill="#FACC15" stroke="#142840" stroke-width="1.8"/>
+      <circle cx="0" cy="0" r="8" fill="#142840"/>
+    </g>
+    <!-- 2h: O2C -->
+    <g transform="translate(233.8, -135)">
+      <circle cx="0" cy="0" r="54" fill="none" stroke="url(#bh-gold)" stroke-width="10"/>
+      <circle cx="0" cy="0" r="44" fill="#FBF9F4" stroke="#142840" stroke-width="3"/>
+      <circle cx="0" cy="0" r="26" fill="#FACC15" stroke="#142840" stroke-width="1.8"/>
+      <circle cx="0" cy="0" r="8" fill="#142840"/>
+    </g>
+    <!-- 4h: P2M (Criticality Core) -->
+    <g transform="translate(233.8, 135)">
+      <circle cx="0" cy="0" r="54" fill="none" stroke="url(#bh-p2m)" stroke-width="12"/>
+      <circle cx="0" cy="0" r="44" fill="#FBF9F4" stroke="#142840" stroke-width="3"/>
+      <circle cx="0" cy="0" r="26" fill="#C2410C" stroke="#142840" stroke-width="2"/>
+      <circle cx="0" cy="0" r="8" fill="#C2410C"/>
+    </g>
+    <!-- 6h: S2S -->
+    <g transform="translate(0, 270)">
+      <circle cx="0" cy="0" r="54" fill="none" stroke="url(#bh-gold)" stroke-width="10"/>
+      <circle cx="0" cy="0" r="44" fill="#FBF9F4" stroke="#142840" stroke-width="3"/>
+      <circle cx="0" cy="0" r="26" fill="#FDE68A" stroke="#142840" stroke-width="1.8"/>
+      <circle cx="0" cy="0" r="8" fill="#142840"/>
+    </g>
+    <!-- 8h: D2R -->
+    <g transform="translate(-233.8, 135)">
+      <circle cx="0" cy="0" r="54" fill="none" stroke="url(#bh-gold)" stroke-width="10"/>
+      <circle cx="0" cy="0" r="44" fill="#FBF9F4" stroke="#142840" stroke-width="3"/>
+      <circle cx="0" cy="0" r="26" fill="#FACC15" stroke="#142840" stroke-width="1.8"/>
+      <circle cx="0" cy="0" r="8" fill="#142840"/>
+    </g>
+    <!-- 10h: MDM -->
+    <g transform="translate(-233.8, -135)">
+      <circle cx="0" cy="0" r="54" fill="none" stroke="url(#bh-gold)" stroke-width="10"/>
+      <circle cx="0" cy="0" r="44" fill="#FBF9F4" stroke="#142840" stroke-width="3"/>
+      <circle cx="0" cy="0" r="26" fill="#FACC15" stroke="#142840" stroke-width="1.8"/>
+      <circle cx="0" cy="0" r="8" fill="#142840"/>
+    </g>
+
+    <!-- ========================================== -->
+    <!-- 7. THE CENTRAL DATA CORE (MDM + CDM)       -->
+    <!-- ========================================== -->
+    <circle cx="0" cy="0" r="56" fill="#FACC15" stroke="#142840" stroke-width="3.5"/>
+    <circle cx="0" cy="0" r="40" fill="none" stroke="#142840" stroke-width="1.8" stroke-dasharray="3,3"/>
+    <circle cx="0" cy="0" r="24" fill="#FBF9F4" stroke="#142840" stroke-width="2"/>
+    <circle cx="0" cy="0" r="10" fill="#142840"/>
+
+    <!-- ========================================== -->
+    <!-- 8. THE 16 SYSTEM BUBBLES (OUTER RING)      -->
+    <!-- ========================================== -->
+    <g id="bh-system-bubbles">
+      <g transform="translate(0, -430)"><circle cx="0" cy="0" r="32" fill="#FBF9F4" stroke="#142840" stroke-width="2.8"/><circle cx="0" cy="0" r="18" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.4"/><circle cx="0" cy="0" r="6" fill="#142840"/></g>
+      <g transform="translate(164.6, -397.3)"><circle cx="0" cy="0" r="32" fill="#FBF9F4" stroke="#142840" stroke-width="2.8"/><circle cx="0" cy="0" r="18" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.4"/><circle cx="0" cy="0" r="6" fill="#142840"/></g>
+      <g transform="translate(304.1, -304.1)"><circle cx="0" cy="0" r="32" fill="#FBF9F4" stroke="#142840" stroke-width="2.8"/><circle cx="0" cy="0" r="18" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.4"/><circle cx="0" cy="0" r="6" fill="#142840"/></g>
+      <g transform="translate(397.3, -164.6)"><circle cx="0" cy="0" r="32" fill="#FBF9F4" stroke="#142840" stroke-width="2.8"/><circle cx="0" cy="0" r="18" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.4"/><circle cx="0" cy="0" r="6" fill="#142840"/></g>
+      <g transform="translate(430, 0)"><circle cx="0" cy="0" r="32" fill="#FBF9F4" stroke="#142840" stroke-width="2.8"/><circle cx="0" cy="0" r="18" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.4"/><circle cx="0" cy="0" r="6" fill="#142840"/></g>
+      <g transform="translate(397.3, 164.6)"><circle cx="0" cy="0" r="32" fill="#FBF9F4" stroke="#142840" stroke-width="2.8"/><circle cx="0" cy="0" r="18" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.4"/><circle cx="0" cy="0" r="6" fill="#142840"/></g>
+      <g transform="translate(304.1, 304.1)"><circle cx="0" cy="0" r="32" fill="#FBF9F4" stroke="#142840" stroke-width="2.8"/><circle cx="0" cy="0" r="18" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.4"/><circle cx="0" cy="0" r="6" fill="#142840"/></g>
+      <g transform="translate(164.6, 397.3)"><circle cx="0" cy="0" r="32" fill="#FBF9F4" stroke="#142840" stroke-width="2.8"/><circle cx="0" cy="0" r="18" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.4"/><circle cx="0" cy="0" r="6" fill="#142840"/></g>
+      <g transform="translate(0, 430)"><circle cx="0" cy="0" r="32" fill="#FBF9F4" stroke="#142840" stroke-width="2.8"/><circle cx="0" cy="0" r="18" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.4"/><circle cx="0" cy="0" r="6" fill="#142840"/></g>
+      <g transform="translate(-164.6, 397.3)"><circle cx="0" cy="0" r="32" fill="#FBF9F4" stroke="#142840" stroke-width="2.8"/><circle cx="0" cy="0" r="18" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.4"/><circle cx="0" cy="0" r="6" fill="#142840"/></g>
+      <g transform="translate(-304.1, 304.1)"><circle cx="0" cy="0" r="32" fill="#FBF9F4" stroke="#142840" stroke-width="2.8"/><circle cx="0" cy="0" r="18" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.4"/><circle cx="0" cy="0" r="6" fill="#142840"/></g>
+      <g transform="translate(-397.3, 164.6)"><circle cx="0" cy="0" r="32" fill="#FBF9F4" stroke="#142840" stroke-width="2.8"/><circle cx="0" cy="0" r="18" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.4"/><circle cx="0" cy="0" r="6" fill="#142840"/></g>
+      <g transform="translate(-430, 0)"><circle cx="0" cy="0" r="32" fill="#FBF9F4" stroke="#142840" stroke-width="2.8"/><circle cx="0" cy="0" r="18" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.4"/><circle cx="0" cy="0" r="6" fill="#142840"/></g>
+      <g transform="translate(-397.3, -164.6)"><circle cx="0" cy="0" r="32" fill="#FBF9F4" stroke="#142840" stroke-width="2.8"/><circle cx="0" cy="0" r="18" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.4"/><circle cx="0" cy="0" r="6" fill="#142840"/></g>
+      <g transform="translate(-304.1, -304.1)"><circle cx="0" cy="0" r="32" fill="#FBF9F4" stroke="#142840" stroke-width="2.8"/><circle cx="0" cy="0" r="18" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.4"/><circle cx="0" cy="0" r="6" fill="#142840"/></g>
+      <g transform="translate(-164.6, -397.3)"><circle cx="0" cy="0" r="32" fill="#FBF9F4" stroke="#142840" stroke-width="2.8"/><circle cx="0" cy="0" r="18" fill="#FACC15" fill-opacity="0.35" stroke="#142840" stroke-width="1.4"/><circle cx="0" cy="0" r="6" fill="#142840"/></g>
+    </g>
+  </g>
+</svg>

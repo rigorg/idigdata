@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Version 2: The Sovereign Emblem">
+  <defs>
+    <radialGradient id="v2-gold-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFF0A8"/>
+      <stop offset="60%" stop-color="#FACC15"/>
+      <stop offset="100%" stop-color="#B48A05"/>
+    </radialGradient>
+    <linearGradient id="v2-charcoal-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#142840"/>
+      <stop offset="50%" stop-color="#FACC15"/>
+      <stop offset="100%" stop-color="#142840"/>
+    </linearGradient>
+    <linearGradient id="v2-orange-flash" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#142840"/>
+      <stop offset="40%" stop-color="#FACC15"/>
+      <stop offset="80%" stop-color="#C2410C"/>
+      <stop offset="100%" stop-color="#142840"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1000" height="1000" fill="#FBF9F4"/>
+
+  <g transform="translate(500, 500)">
+    <!-- Heavy Structural Outer Shield Ring -->
+    <circle cx="0" cy="0" r="460" fill="none" stroke="#142840" stroke-width="4"/>
+    <circle cx="0" cy="0" r="452" fill="none" stroke="#FACC15" stroke-width="2"/>
+    <circle cx="0" cy="0" r="390" fill="none" stroke="#142840" stroke-width="2" stroke-dasharray="8,8" opacity="0.4"/>
+    <circle cx="0" cy="0" r="280" fill="none" stroke="#142840" stroke-width="3" opacity="0.6"/>
+    <circle cx="0" cy="0" r="110" fill="none" stroke="#142840" stroke-width="4"/>
+
+    <!-- Bold Hexagram Chords connecting Constellation Axes -->
+    <polygon points="0,-280 242.5,140 -242.5,140" fill="none" stroke="#FACC15" stroke-width="2.5" opacity="0.65"/>
+    <polygon points="0,280 242.5,-140 -242.5,-140" fill="none" stroke="#FACC15" stroke-width="2.5" opacity="0.65"/>
+
+    <!-- 16 Heavy Radial Beams to Outer System Nodes -->
+    <g stroke="#142840" stroke-width="2.2" opacity="0.45">
+      <line x1="0" y1="0" x2="0" y2="-450"/><line x1="0" y1="0" x2="172.2" y2="-415.7"/>
+      <line x1="0" y1="0" x2="318.2" y2="-318.2"/><line x1="0" y1="0" x2="415.7" y2="-172.2"/>
+      <line x1="0" y1="0" x2="450" y2="0"/><line x1="0" y1="0" x2="415.7" y2="172.2"/>
+      <line x1="0" y1="0" x2="318.2" y2="318.2"/><line x1="0" y1="0" x2="172.2" y2="415.7"/>
+      <line x1="0" y1="0" x2="0" y2="450"/><line x1="0" y1="0" x2="-172.2" y2="415.7"/>
+      <line x1="0" y1="0" x2="-318.2" y2="318.2"/><line x1="0" y1="0" x2="-415.7" y2="172.2"/>
+      <line x1="0" y1="0" x2="-450" y2="0"/><line x1="0" y1="0" x2="-415.7" y2="-172.2"/>
+      <line x1="0" y1="0" x2="-318.2" y2="-318.2"/><line x1="0" y1="0" x2="-172.2" y2="-415.7"/>
+    </g>
+
+    <!-- Bold Beehive Honeycomb Lattice -->
+    <g stroke="#142840" stroke-width="2.5" fill="#FBF9F4">
+      <polygon points="0,-36 31.2,-18 31.2,18 0,36 -31.2,18 -31.2,-18" transform="translate(54, -93.5)"/>
+      <polygon points="0,-36 31.2,-18 31.2,18 0,36 -31.2,18 -31.2,-18" transform="translate(108, 0)" fill="#FACC15" fill-opacity="0.35"/>
+      <polygon points="0,-36 31.2,-18 31.2,18 0,36 -31.2,18 -31.2,-18" transform="translate(54, 93.5)"/>
+      <polygon points="0,-36 31.2,-18 31.2,18 0,36 -31.2,18 -31.2,-18" transform="translate(-54, 93.5)"/>
+      <polygon points="0,-36 31.2,-18 31.2,18 0,36 -31.2,18 -31.2,-18" transform="translate(-108, 0)" fill="#FACC15" fill-opacity="0.35"/>
+      <polygon points="0,-36 31.2,-18 31.2,18 0,36 -31.2,18 -31.2,-18" transform="translate(-54, -93.5)"/>
+      <!-- Outer Hex Tier -->
+      <polygon points="0,-36 31.2,-18 31.2,18 0,36 -31.2,18 -31.2,-18" transform="translate(0, -187)" fill="#FACC15" fill-opacity="0.5"/>
+      <polygon points="0,-36 31.2,-18 31.2,18 0,36 -31.2,18 -31.2,-18" transform="translate(108, -187)"/>
+      <polygon points="0,-36 31.2,-18 31.2,18 0,36 -31.2,18 -31.2,-18" transform="translate(162, -93.5)"/>
+      <polygon points="0,-36 31.2,-18 31.2,18 0,36 -31.2,18 -31.2,-18" transform="translate(216, 0)" fill="#FACC15" fill-opacity="0.5"/>
+      <polygon points="0,-36 31.2,-18 31.2,18 0,36 -31.2,18 -31.2,-18" transform="translate(162, 93.5)"/>
+      <polygon points="0,-36 31.2,-18 31.2,18 0,36 -31.2,18 -31.2,-18" transform="translate(108, 187)"/>
+      <polygon points="0,-36 31.2,-18 31.2,18 0,36 -31.2,18 -31.2,-18" transform="translate(0, 187)" fill="#FACC15" fill-opacity="0.5"/>
+      <polygon points="0,-36 31.2,-18 31.2,18 0,36 -31.2,18 -31.2,-18" transform="translate(-108, 187)"/>
+      <polygon points="0,-36 31.2,-18 31.2,18 0,36 -31.2,18 -31.2,-18" transform="translate(-162, 93.5)"/>
+      <polygon points="0,-36 31.2,-18 31.2,18 0,36 -31.2,18 -31.2,-18" transform="translate(-216, 0)" fill="#FACC15" fill-opacity="0.5"/>
+      <polygon points="0,-36 31.2,-18 31.2,18 0,36 -31.2,18 -31.2,-18" transform="translate(-162, -93.5)"/>
+      <polygon points="0,-36 31.2,-18 31.2,18 0,36 -31.2,18 -31.2,-18" transform="translate(-108, -187)"/>
+    </g>
+
+    <!-- 6 Bold Constellation Hubs (R=280) -->
+    <g transform="translate(0, -280)">
+      <circle cx="0" cy="0" r="70" fill="none" stroke="url(#v2-charcoal-gold)" stroke-width="14"/>
+      <circle cx="0" cy="0" r="60" fill="#FBF9F4" stroke="#142840" stroke-width="3"/>
+      <circle cx="0" cy="0" r="38" fill="#FACC15" stroke="#142840" stroke-width="2"/>
+      <circle cx="0" cy="0" r="14" fill="#142840"/>
+    </g>
+    <g transform="translate(242.5, -140)">
+      <circle cx="0" cy="0" r="70" fill="none" stroke="url(#v2-charcoal-gold)" stroke-width="14"/>
+      <circle cx="0" cy="0" r="60" fill="#FBF9F4" stroke="#142840" stroke-width="3"/>
+      <circle cx="0" cy="0" r="38" fill="#FACC15" stroke="#142840" stroke-width="2"/>
+      <circle cx="0" cy="0" r="14" fill="#142840"/>
+    </g>
+    <g transform="translate(242.5, 140)">
+      <circle cx="0" cy="0" r="70" fill="none" stroke="url(#v2-orange-flash)" stroke-width="14"/>
+      <circle cx="0" cy="0" r="60" fill="#FBF9F4" stroke="#142840" stroke-width="3"/>
+      <circle cx="0" cy="0" r="38" fill="#C2410C" stroke="#142840" stroke-width="2"/>
+      <circle cx="0" cy="0" r="14" fill="#C2410C"/>
+    </g>
+    <g transform="translate(0, 280)">
+      <circle cx="0" cy="0" r="70" fill="none" stroke="url(#v2-charcoal-gold)" stroke-width="14"/>
+      <circle cx="0" cy="0" r="60" fill="#FBF9F4" stroke="#142840" stroke-width="3"/>
+      <circle cx="0" cy="0" r="38" fill="#FACC15" stroke="#142840" stroke-width="2"/>
+      <circle cx="0" cy="0" r="14" fill="#142840"/>
+    </g>
+    <g transform="translate(-242.5, 140)">
+      <circle cx="0" cy="0" r="70" fill="none" stroke="url(#v2-charcoal-gold)" stroke-width="14"/>
+      <circle cx="0" cy="0" r="60" fill="#FBF9F4" stroke="#142840" stroke-width="3"/>
+      <circle cx="0" cy="0" r="38" fill="#FACC15" stroke="#142840" stroke-width="2"/>
+      <circle cx="0" cy="0" r="14" fill="#142840"/>
+    </g>
+    <g transform="translate(-242.5, -140)">
+      <circle cx="0" cy="0" r="70" fill="none" stroke="url(#v2-charcoal-gold)" stroke-width="14"/>
+      <circle cx="0" cy="0" r="60" fill="#FBF9F4" stroke="#142840" stroke-width="3"/>
+      <circle cx="0" cy="0" r="38" fill="#FACC15" stroke="#142840" stroke-width="2"/>
+      <circle cx="0" cy="0" r="14" fill="#142840"/>
+    </g>
+
+    <!-- Sovereign Gold Core -->
+    <circle cx="0" cy="0" r="92" fill="url(#v2-gold-glow)" stroke="#142840" stroke-width="3.5"/>
+    <circle cx="0" cy="0" r="76" fill="none" stroke="#142840" stroke-width="2" stroke-dasharray="6,4"/>
+    <circle cx="0" cy="0" r="50" fill="#FBF9F4" stroke="#142840" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="22" fill="#142840"/>
+
+    <!-- 16 Large Outer System Nodes (R=450, radius r=38) -->
+    <g>
+      <g transform="translate(0, -450)"><circle cx="0" cy="0" r="38" fill="#FBF9F4" stroke="#142840" stroke-width="3"/><circle cx="0" cy="0" r="24" fill="#FACC15" fill-opacity="0.4" stroke="#142840" stroke-width="1.8"/><circle cx="0" cy="0" r="10" fill="#142840"/></g>
+      <g transform="translate(172.2, -415.7)"><circle cx="0" cy="0" r="38" fill="#FBF9F4" stroke="#142840" stroke-width="3"/><circle cx="0" cy="0" r="24" fill="#FACC15" fill-opacity="0.4" stroke="#142840" stroke-width="1.8"/><circle cx="0" cy="0" r="10" fill="#142840"/></g>
+      <g transform="translate(318.2, -318.2)"><circle cx="0" cy="0" r="38" fill="#FBF9F4" stroke="#142840" stroke-width="3"/><circle cx="0" cy="0" r="24" fill="#FACC15" fill-opacity="0.4" stroke="#142840" stroke-width="1.8"/><circle cx="0" cy="0" r="10" fill="#142840"/></g>
+      <g transform="translate(415.7, -172.2)"><circle cx="0" cy="0" r="38" fill="#FBF9F4" stroke="#142840" stroke-width="3"/><circle cx="0" cy="0" r="24" fill="#FACC15" fill-opacity="0.4" stroke="#142840" stroke-width="1.8"/><circle cx="0" cy="0" r="10" fill="#142840"/></g>
+      <g transform="translate(450, 0)"><circle cx="0" cy="0" r="38" fill="#FBF9F4" stroke="#142840" stroke-width="3"/><circle cx="0" cy="0" r="24" fill="#FACC15" fill-opacity="0.4" stroke="#142840" stroke-width="1.8"/><circle cx="0" cy="0" r="10" fill="#142840"/></g>
+      <g transform="translate(415.7, 172.2)"><circle cx="0" cy="0" r="38" fill="#FBF9F4" stroke="#142840" stroke-width="3"/><circle cx="0" cy="0" r="24" fill="#FACC15" fill-opacity="0.4" stroke="#142840" stroke-width="1.8"/><circle cx="0" cy="0" r="10" fill="#142840"/></g>
+      <g transform="translate(318.2, 318.2)"><circle cx="0" cy="0" r="38" fill="#FBF9F4" stroke="#142840" stroke-width="3"/><circle cx="0" cy="0" r="24" fill="#FACC15" fill-opacity="0.4" stroke="#142840" stroke-width="1.8"/><circle cx="0" cy="0" r="10" fill="#142840"/></g>
+      <g transform="translate(172.2, 415.7)"><circle cx="0" cy="0" r="38" fill="#FBF9F4" stroke="#142840" stroke-width="3"/><circle cx="0" cy="0" r="24" fill="#FACC15" fill-opacity="0.4" stroke="#142840" stroke-width="1.8"/><circle cx="0" cy="0" r="10" fill="#142840"/></g>
+      <g transform="translate(0, 450)"><circle cx="0" cy="0" r="38" fill="#FBF9F4" stroke="#142840" stroke-width="3"/><circle cx="0" cy="0" r="24" fill="#FACC15" fill-opacity="0.4" stroke="#142840" stroke-width="1.8"/><circle cx="0" cy="0" r="10" fill="#142840"/></g>
+      <g transform="translate(-172.2, 415.7)"><circle cx="0" cy="0" r="38" fill="#FBF9F4" stroke="#142840" stroke-width="3"/><circle cx="0" cy="0" r="24" fill="#FACC15" fill-opacity="0.4" stroke="#142840" stroke-width="1.8"/><circle cx="0" cy="0" r="10" fill="#142840"/></g>
+      <g transform="translate(-318.2, 318.2)"><circle cx="0" cy="0" r="38" fill="#FBF9F4" stroke="#142840" stroke-width="3"/><circle cx="0" cy="0" r="24" fill="#FACC15" fill-opacity="0.4" stroke="#142840" stroke-width="1.8"/><circle cx="0" cy="0" r="10" fill="#142840"/></g>
+      <g transform="translate(-415.7, 172.2)"><circle cx="0" cy="0" r="38" fill="#FBF9F4" stroke="#142840" stroke-width="3"/><circle cx="0" cy="0" r="24" fill="#FACC15" fill-opacity="0.4" stroke="#142840" stroke-width="1.8"/><circle cx="0" cy="0" r="10" fill="#142840"/></g>
+      <g transform="translate(-450, 0)"><circle cx="0" cy="0" r="38" fill="#FBF9F4" stroke="#142840" stroke-width="3"/><circle cx="0" cy="0" r="24" fill="#FACC15" fill-opacity="0.4" stroke="#142840" stroke-width="1.8"/><circle cx="0" cy="0" r="10" fill="#142840"/></g>
+      <g transform="translate(-415.7, -172.2)"><circle cx="0" cy="0" r="38" fill="#FBF9F4" stroke="#142840" stroke-width="3"/><circle cx="0" cy="0" r="24" fill="#FACC15" fill-opacity="0.4" stroke="#142840" stroke-width="1.8"/><circle cx="0" cy="0" r="10" fill="#142840"/></g>
+      <g transform="translate(-318.2, -318.2)"><circle cx="0" cy="0" r="38" fill="#FBF9F4" stroke="#142840" stroke-width="3"/><circle cx="0" cy="0" r="24" fill="#FACC15" fill-opacity="0.4" stroke="#142840" stroke-width="1.8"/><circle cx="0" cy="0" r="10" fill="#142840"/></g>
+      <g transform="translate(-172.2, -415.7)"><circle cx="0" cy="0" r="38" fill="#FBF9F4" stroke="#142840" stroke-width="3"/><circle cx="0" cy="0" r="24" fill="#FACC15" fill-opacity="0.4" stroke="#142840" stroke-width="1.8"/><circle cx="0" cy="0" r="10" fill="#142840"/></g>
+    </g>
+  </g>
+</svg>

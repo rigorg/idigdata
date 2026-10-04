@@ -7,8 +7,7 @@ import { PRIMARY_NAV } from "@/lib/nav";
 
 const NAV = PRIMARY_NAV;
 
-function HeaderWordmark({ onFilm }: { onFilm: boolean }) {
-  const ink = onFilm ? "#F7F5EE" : "#142840";
+function HeaderWordmark({ isDark = false }: { isDark?: boolean }) {
   return (
     <svg
       viewBox="0 0 620 130"
@@ -21,7 +20,7 @@ function HeaderWordmark({ onFilm }: { onFilm: boolean }) {
       <text
         x="322"
         y="100"
-        fill={ink}
+        fill={isDark ? "#F7F5EE" : "#142840"}
         textAnchor="end"
         letterSpacing="-1"
         style={{
@@ -36,7 +35,7 @@ function HeaderWordmark({ onFilm }: { onFilm: boolean }) {
       <text
         x="346"
         y="100"
-        fill={ink}
+        fill={isDark ? "#F7F5EE" : "#142840"}
         textAnchor="start"
         letterSpacing="-1"
         style={{
@@ -54,30 +53,9 @@ function HeaderWordmark({ onFilm }: { onFilm: boolean }) {
 export default function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [onFilm, setOnFilm] = useState(false);
 
-  useEffect(() => {
-    // Desktop + mobile each render a film surface; only one is display:block
-    // per breakpoint. Observe all so the cream header never sits on navy.
-    const films = document.querySelectorAll("[data-film-active]");
-    if (films.length === 0) {
-      setOnFilm(false);
-      return;
-    }
-    const visible = new Set<Element>();
-    const io = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) visible.add(entry.target);
-          else visible.delete(entry.target);
-        }
-        setOnFilm(visible.size > 0);
-      },
-      { threshold: 0.05 }
-    );
-    films.forEach((el) => io.observe(el));
-    return () => io.disconnect();
-  }, [pathname]);
+  const path = (pathname ?? "/").replace(/\/+$/, "") || "/";
+  const isBlock = path.startsWith("/block");
 
   useEffect(() => {
     if (!open) return;
@@ -89,43 +67,44 @@ export default function SiteHeader() {
   }, [open]);
 
   useEffect(() => {
-    if (open) {
-      const prev = document.body.style.overflow;
-      document.body.style.overflow = "hidden";
-      return () => {
-        document.body.style.overflow = prev;
-      };
-    }
-  }, [open]);
-
-  useEffect(() => {
     setOpen(false);
   }, [pathname]);
 
-  const isActive = (href: string) =>
-    href === "/" ? pathname === "/" : pathname?.startsWith(href);
+  const isActive = (href: string) => {
+    const target = href.replace(/\/+$/, "") || "/";
+    return target === "/" ? path === "/" : path === target || path.startsWith(`${target}/`);
+  };
 
   return (
     <header
-      className={`sticky top-0 z-40 border-b backdrop-blur-md transition-colors duration-300 ${
-        onFilm
-          ? "header-on-film border-porcelain/15"
-          : "border-navy/10 bg-cream/85"
+      className={`sticky top-0 z-50 w-full border-b backdrop-blur-md transition-colors duration-200 ${
+        isBlock
+          ? "border-white/10 bg-[#070E17]/95 text-white"
+          : "border-navy/10 bg-[#FBF9F4]/95 text-navy"
       }`}
     >
-      <div className="mx-auto flex max-w-content items-center justify-between px-6 py-4 md:py-5">
-        <Link
-          href="/"
-          className="flex items-center"
-          aria-label="idigdata — home"
-        >
-          <HeaderWordmark onFilm={onFilm} />
-        </Link>
+      <div className="page-well flex items-center justify-between py-3.5 md:py-5">
+        <div className="flex items-center gap-3">
+          <Link
+            href="/"
+            className="flex items-center"
+            aria-label="idigdata - home"
+          >
+            <HeaderWordmark isDark={isBlock} />
+          </Link>
+          {isBlock && (
+            <div className="flex items-center gap-2 pl-3 border-l border-white/20">
+              <span className="font-mono text-xs font-bold uppercase tracking-wider text-[#E5B21D] bg-[#E5B21D]/10 px-2.5 py-1 rounded border border-[#E5B21D]/30 flex items-center gap-1.5 shadow-[0_0_12px_rgba(229,178,29,0.15)]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#E5B21D] animate-pulse" />
+                The Block
+              </span>
+            </div>
+          )}
+        </div>
 
-        {/* Desktop nav (md and up) */}
         <nav
-          className={`hidden items-center gap-8 font-body text-[14.5px] md:flex ${
-            onFilm ? "text-porcelain" : "text-navy"
+          className={`hidden items-center gap-8 font-vollkorn text-[15px] font-semibold md:flex ${
+            isBlock ? "text-slate-300" : "text-navy"
           }`}
           aria-label="Primary"
         >
@@ -135,14 +114,15 @@ export default function SiteHeader() {
               <Link
                 key={item.href}
                 href={item.href}
+                prefetch={false}
                 aria-current={active ? "page" : undefined}
                 className={`nav-underline transition-colors ${
-                  onFilm
-                    ? active
-                      ? "font-semibold text-porcelain"
-                      : "text-porcelain/75 hover:text-porcelain"
-                    : active
-                      ? "font-semibold text-navy"
+                  active
+                    ? isBlock
+                      ? "font-semibold text-[#E5B21D]"
+                      : "font-semibold text-navy"
+                    : isBlock
+                      ? "text-slate-300 hover:text-white"
                       : "text-navy/75 hover:text-navy"
                 }`}
               >
@@ -152,82 +132,94 @@ export default function SiteHeader() {
           })}
         </nav>
 
-        {/* Mobile hamburger toggle (below md) */}
-        <button
-          type="button"
-          className={`-mr-2 inline-flex h-11 w-11 items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 md:hidden ${
-            onFilm ? "text-porcelain" : "text-navy"
-          }`}
-          aria-expanded={open}
-          aria-controls="mobile-nav"
-          aria-label={open ? "Close menu" : "Open menu"}
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? (
-            <svg
-              width="22"
-              height="22"
-              viewBox="0 0 22 22"
-              fill="none"
-              aria-hidden="true"
-            >
-              <path
-                d="M4 4 L18 18 M18 4 L4 18"
-                stroke="currentColor"
-                strokeWidth="1.75"
-                strokeLinecap="round"
-              />
-            </svg>
-          ) : (
-            <svg
-              width="22"
-              height="18"
-              viewBox="0 0 22 18"
-              fill="none"
-              aria-hidden="true"
-            >
-              <path
-                d="M2 3 H20 M2 9 H20 M2 15 H20"
-                stroke="currentColor"
-                strokeWidth="1.75"
-                strokeLinecap="round"
-              />
-            </svg>
-          )}
-        </button>
+        {/* Mobile nav toggle */}
+        <div className="md:hidden">
+          <button
+            type="button"
+            onClick={() => setOpen((prev) => !prev)}
+            className={`-mr-2 inline-flex h-11 w-11 cursor-pointer items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-gold ${
+              isBlock ? "text-white hover:text-[#E5B21D]" : "text-navy hover:text-navy/80"
+            }`}
+            aria-expanded={open}
+            aria-controls="mobile-nav"
+            aria-label={open ? "Close menu" : "Open menu"}
+          >
+            {open ? (
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 22 22"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M4 4 L18 18 M18 4 L4 18"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              </svg>
+            ) : (
+              <svg
+                width="22"
+                height="18"
+                viewBox="0 0 22 18"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M2 3 H20 M2 9 H20 M2 15 H20"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              </svg>
+            )}
+          </button>
+        </div>
       </div>
 
-      {/* Mobile panel + backdrop */}
-      {open ? (
+      {/* Mobile nav dropdown attached directly to sticky header */}
+      {open && (
         <>
           <div
-            className="absolute inset-x-0 top-full z-20 h-screen bg-navy/50 md:hidden"
+            className="fixed inset-0 top-[60px] z-40 bg-black/60 backdrop-blur-sm md:hidden"
             aria-hidden="true"
             onClick={() => setOpen(false)}
           />
           <nav
             id="mobile-nav"
-            className="absolute left-0 right-0 top-full z-30 border-b border-navy/15 bg-cream shadow-lg md:hidden"
-            aria-label="Primary"
-            role="dialog"
-            aria-modal="true"
+            className={`absolute left-0 right-0 top-full z-50 border-b shadow-2xl md:hidden ${
+              isBlock
+                ? "border-white/10 bg-[#0B1624] text-white"
+                : "border-navy/15 bg-[#FBF9F4] text-navy"
+            }`}
+            aria-label="Primary Mobile"
           >
-            <ul className="mx-auto flex max-w-content flex-col px-6 py-4">
+            <ul className="page-well flex flex-col py-3">
               {NAV.map((item) => {
                 const active = isActive(item.href);
                 return (
                   <li key={item.href}>
                     <Link
                       href={item.href}
+                      prefetch={false}
+                      onClick={() => setOpen(false)}
                       aria-current={active ? "page" : undefined}
-                      className={`flex items-center gap-3 border-b border-navy/10 py-3.5 font-body text-[18px] text-navy transition-colors last:border-b-0 ${
-                        active ? "font-semibold" : "hover:text-navy/70"
+                      className={`flex items-center gap-3 border-b py-3.5 font-body text-[18px] transition-colors last:border-b-0 ${
+                        isBlock
+                          ? `border-white/10 ${
+                              active ? "font-bold text-[#E5B21D]" : "text-slate-200 hover:text-white"
+                            }`
+                          : `border-navy/10 ${
+                              active ? "font-bold text-navy" : "text-navy hover:text-navy/70"
+                            }`
                       }`}
                     >
                       {active && (
                         <span
                           aria-hidden="true"
-                          className="inline-block h-[9px] w-[9px] bg-gold"
+                          className="inline-block h-[8px] w-[8px] bg-gold"
                         />
                       )}
                       {item.label}
@@ -238,7 +230,7 @@ export default function SiteHeader() {
             </ul>
           </nav>
         </>
-      ) : null}
+      )}
     </header>
   );
 }

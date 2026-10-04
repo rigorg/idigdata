@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const STORAGE_KEY = "idig_site_notice";
@@ -16,6 +17,7 @@ export function isAnalyticsOptedOut(): boolean {
 }
 
 export default function SiteNotice() {
+  const pathname = usePathname();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -31,11 +33,31 @@ export default function SiteNotice() {
         setVisible(false);
         return;
       }
-      setVisible(true);
     } catch {
       setVisible(false);
+      return;
     }
-  }, []);
+
+    const onHome = pathname === "/";
+    if (!onHome) {
+      setVisible(true);
+      return;
+    }
+
+    function reveal() {
+      if (window.scrollY < 160) return;
+      setVisible(true);
+      window.removeEventListener("scroll", reveal);
+    }
+
+    if (window.scrollY >= 160) {
+      setVisible(true);
+      return;
+    }
+
+    window.addEventListener("scroll", reveal, { passive: true });
+    return () => window.removeEventListener("scroll", reveal);
+  }, [pathname]);
 
   if (!visible) return null;
 
@@ -62,22 +84,11 @@ export default function SiteNotice() {
     <div
       role="dialog"
       aria-label="Site measurement notice"
-      className="fixed bottom-4 left-4 right-4 z-[80] mx-auto max-w-xl rounded-lg border border-navy/10 bg-porcelain p-4 shadow-none md:left-6 md:right-auto"
+      className="fixed bottom-3 left-3 right-3 z-[80] mx-auto max-w-lg rounded-md border border-navy/10 bg-porcelain px-3 py-2.5 md:left-6 md:right-auto"
     >
-      <div className="flex items-start gap-3">
-        <div
-          aria-hidden="true"
-          className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gold/25 text-navy"
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
-            <circle cx="12" cy="12" r="9" />
-            <circle cx="9" cy="10" r="1" fill="currentColor" stroke="none" />
-            <circle cx="14.5" cy="9" r="1" fill="currentColor" stroke="none" />
-            <circle cx="12" cy="14.5" r="1" fill="currentColor" stroke="none" />
-          </svg>
-        </div>
+      <div className="flex items-start gap-2.5">
         <div className="min-w-0 flex-1">
-          <p className="font-body text-[14px] leading-snug text-ink">
+          <p className="font-body text-[13px] leading-snug text-ink">
             We use first-party measurement and Vercel Analytics to understand
             traffic and improve this site.{" "}
             <Link
@@ -88,11 +99,11 @@ export default function SiteNotice() {
             </Link>
             .
           </p>
-          <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
+          <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1.5">
             <button
               type="button"
               onClick={dismiss}
-              className="rounded-md bg-navy px-3.5 py-2 text-[13px] font-semibold text-porcelain hover:bg-navy-mid"
+              className="rounded-md bg-navy px-3 py-1.5 text-[12px] font-semibold text-porcelain hover:bg-navy-mid"
             >
               Got it
             </button>

@@ -230,20 +230,20 @@ export default function SpineFilm() {
     return (
       <section
         id="operating-map"
-        className="grain relative isolate overflow-hidden bg-[linear-gradient(168deg,#132C48_0%,#142840_34%,#0C1A2C_100%)] text-porcelain"
+        className="relative isolate overflow-hidden bg-navy text-porcelain"
       >
-        <div className="mx-auto max-w-[1200px] px-6 pb-16 pt-14">
-          <HeroCopy withRise={false} />
-          <div data-beat="6" className="film-fixed mx-auto mt-10 max-w-[760px]">
+        <div className="page-well pb-16 pt-14">
+          <HeroCopy />
+          <div data-beat="6" className="film-fixed mx-auto mt-10 w-full max-w-[720px]">
             <AssemblySvg frame={6} />
           </div>
-          <ol className="mx-auto mt-8 grid max-w-[760px] gap-4 sm:grid-cols-2">
+          <ol className="mt-10 grid w-full gap-x-16 gap-y-6 sm:grid-cols-2">
             {BEATS.map((b) => (
               <li
                 key={b.n}
                 className="text-[14.5px] leading-[1.5] text-porcelain/75"
               >
-                <span className="font-brand text-[11px] font-bold tracking-[0.18em] text-gold">
+                <span className="font-body text-[13px] text-gold">
                   {b.n} · {b.chip}
                 </span>
                 <span className="mt-1 block font-semibold text-porcelain">
@@ -263,18 +263,18 @@ export default function SpineFilm() {
       {/* Desktop pinned film — stage + bottom chrome (beats never clip) */}
       <div
         ref={trackRef}
-        className="relative hidden bg-[#0C1A2C] md:block"
+        className="relative hidden bg-navy md:block"
         style={{ height: "480svh" }}
       >
         <div
           ref={rootRef}
           data-beat="1"
           data-film-active="true"
-          className="film-root grain sticky top-[var(--site-header-h)] isolate flex h-[calc(100svh-var(--site-header-h))] flex-col overflow-hidden bg-[linear-gradient(168deg,#132C48_0%,#142840_34%,#0C1A2C_100%)] text-porcelain"
+          className="film-root sticky top-[var(--site-header-h)] isolate flex h-[calc(100svh-var(--site-header-h))] flex-col overflow-hidden bg-navy text-porcelain"
         >
-          <div className="mx-auto grid min-h-0 w-full max-w-[1320px] flex-1 grid-cols-[minmax(320px,40%)_1fr] items-start gap-6 overflow-hidden px-6 pb-2 pt-5 lg:gap-10 lg:pt-6">
+          <div className="page-well grid min-h-0 w-full flex-1 grid-cols-[minmax(320px,40%)_1fr] items-start gap-6 overflow-hidden pb-2 pt-5 lg:gap-10 lg:pt-6">
             <div className="film-story min-h-0 overflow-y-auto overscroll-contain pr-1">
-              <HeroCopy />
+              <HeroCopy onSeeMap={startFilmRun} />
               <BeatPanel beat={beat} />
             </div>
             <div className="film-stage h-full min-h-0 self-stretch">
@@ -286,22 +286,22 @@ export default function SpineFilm() {
 
           {/* Cinema chrome — controls only; story lives in BeatPanel */}
           <div
-            className="film-chrome shrink-0 border-t border-porcelain/15 bg-[#0C1A2C]/75"
+            className="film-chrome shrink-0 border-t border-porcelain/15 bg-navy"
             role="group"
             aria-label="Film beats"
           >
-            <div className="mx-auto flex max-w-[1320px] flex-wrap items-center gap-2 px-6 py-2.5">
+            <div className="page-well flex flex-wrap items-center gap-2 py-2.5">
               <button
                 type="button"
                 onClick={runFilm}
                 aria-pressed={running}
-                className={`film-run-btn rounded-[3px] px-3 py-1.5 font-brand text-[11px] font-bold tracking-[0.14em] transition-colors ${
+                className={`film-run-btn rounded-[3px] px-3 py-1.5 font-body text-[13px] font-semibold transition-colors ${
                   running
                     ? "bg-gold text-navy"
                     : "border border-gold/60 text-gold hover:border-gold hover:bg-gold/10"
                 }`}
               >
-                {running ? "■ STOP" : "▶ RUN"}
+                {running ? "Stop" : "Run"}
               </button>
               {BEATS.map((b, i) => {
                 const n = i + 1;
@@ -314,7 +314,7 @@ export default function SpineFilm() {
                     aria-pressed={active}
                     aria-label={`${b.n} ${b.label}`}
                     title={b.label}
-                    className={`rounded-[3px] px-2.5 py-1.5 font-brand text-[11px] font-bold tracking-[0.12em] transition-colors ${
+                    className={`rounded-[3px] px-2.5 py-1.5 font-body text-[13px] font-semibold transition-colors ${
                       active
                         ? "bg-gold text-navy"
                         : "border border-porcelain/25 text-porcelain/70 hover:border-gold hover:text-gold"
@@ -333,9 +333,10 @@ export default function SpineFilm() {
       {/* Mobile stacked — frames 01 / 03 / 05 / 06; caption leads each frame */}
       <section
         data-film-active="true"
-        className="grain relative isolate overflow-hidden bg-[linear-gradient(168deg,#132C48_0%,#142840_34%,#0C1A2C_100%)] text-porcelain md:hidden"
+        id="operating-map"
+        className="relative isolate overflow-hidden bg-navy text-porcelain md:hidden"
       >
-        <div className="mx-auto max-w-content px-6 pb-20 pt-8">
+        <div className="page-well pb-20 pt-8">
           <HeroCopy />
           <div className="mt-12 flex flex-col gap-14 border-t border-porcelain/15 pt-10">
             {MOBILE_BEATS.map((b) => (
@@ -345,7 +346,7 @@ export default function SpineFilm() {
                 className="m-0 scroll-mt-24 last:pb-2"
               >
                 <figcaption>
-                  <p className="font-brand text-[11px] font-bold uppercase tracking-[0.2em] text-gold">
+                  <p className="font-body text-[13px] text-gold">
                     {String(b.beat).padStart(2, "0")} / 06 · {b.label}
                   </p>
                   <p className="mt-1.5 text-[15px] leading-[1.55] text-porcelain/75">

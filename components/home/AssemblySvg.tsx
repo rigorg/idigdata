@@ -688,12 +688,12 @@ export function AssemblySvg({ frame = 0 }: { frame?: number }) {
         <g textAnchor="middle" style={{ fontFamily: "var(--font-brand)" }}>
           {(
             [
-              { cx: 360, cy: 110, code: "D2R", sub: "Data to Reporting" },
+              { cx: 360, cy: 110, code: "P2P", sub: "Procure to Pay" },
               { cx: 533.2, cy: 210, code: "O2C", sub: "Order to Cash" },
               { cx: 533.2, cy: 410, code: "P2M", sub: "Plan to Manufacture" },
-              { cx: 360, cy: 510, code: "MDM", sub: "Master Data" },
-              { cx: 186.8, cy: 410, code: "P2P", sub: "Procure to Pay" },
-              { cx: 186.8, cy: 210, code: "S2S", sub: "Systems to Support" },
+              { cx: 360, cy: 510, code: "S2S", sub: "Systems that Support" },
+              { cx: 186.8, cy: 410, code: "D2R", sub: "Data to Report" },
+              { cx: 186.8, cy: 210, code: "MDM", sub: "Master Data" },
             ] as const
           ).map((n) => (
             <g key={n.code}>

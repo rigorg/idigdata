@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg viewBox="0 0 810 940" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="six-title six-desc">
+<svg viewBox="50 12 710 848" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="six-title six-desc">
   <title id="six-title">AV-02 · The Process Constellations · brand-v2 · author-v2.4 · 2026-05-17</title>
-  <desc id="six-desc">A radial diagram with six labeled process constellation nodes (D2R, O2C, P2M, MDM, P2P, S2S) arranged hexagonally around a central data core. The six are categorical: every business process in any company maps to exactly one. S2S is the kitchen-sink-by-design constellation — IT operations + productivity software + apps that do not fit the P2P/O2C/P2M value chains. Subtitle refined 2026-05-17 per S2S doctrine sharpening (memo-010). All 6 constellation node text blocks support 2-line italic subtitles (author-v2.4 layout · S2S uses both lines now · other 5 use line-1 only · room reserved for future per-constellation substance expansion). Agentic apps are first-class peers in EVERY constellation, not categorically S2S. Each process constellation is ringed by a BPSc weight band built from the BOSS palette: charcoal anchors heavy bands, sun-gold appears in every band as the brand cohesion signal, pale-yellow appears only on the lightest bands, and a single deep-orange criticality accent marks the highest-weight constellation only. Per-constellation weight (criticality fused with size) reads via charcoal-anchoredness — heavy = charcoal-dominant, mid = gold-dominant, light = pale-dominant. Gradient stops along the arc carry within-constellation density variation across the constellation's clusters. The band gap on each constellation faces the data core and marks the constellation→cluster connector port. Hierarchy: Process Constellation → Cluster → BPSc → PEGS → Steps + Schema availability. Same six in every install; the weight pattern differs per operator. Canonical mid-market manufacturer baseline.</desc>
+  <desc id="six-desc">A radial diagram with six labeled process constellation nodes (P2P, O2C, P2M, S2S, D2R, MDM) arranged clockwise from 12 o'clock around a central data core. The colored band around each constellation is the workflow blocks that live in that constellation. The six are categorical: every business process in any company maps to exactly one. S2S is Systems that Support — the ERP side and the HR side, plus IT, cybersecurity, and productivity; these support and span the three primary chains (P2P, O2C, P2M). D2R is Data to Report (was Record to Report). MDM is required. Agentic apps are first-class peers in EVERY constellation, not categorically S2S. Each process constellation is ringed by a BPSc weight band built from the BOSS palette: charcoal anchors heavy bands, sun-gold appears in every band as the brand cohesion signal, pale-yellow appears only on the lightest bands, and a single deep-orange criticality accent marks the highest-weight constellation only. Per-constellation weight (criticality fused with size) reads via charcoal-anchoredness — heavy = charcoal-dominant, mid = gold-dominant, light = pale-dominant. Gradient stops along the arc carry within-constellation density variation across the constellation's clusters. The band gap on each constellation faces the data core and marks the constellation→cluster connector port. Hierarchy: Process Constellation → Cluster → BPSc → PEGS → Steps + Schema availability. Same six in every install; the weight pattern differs per operator. Canonical mid-market manufacturer baseline.</desc>
 
   <defs>
     <!-- BPSc weight gradients · BOSS palette (charcoal #1F2937 + sun-gold #FACC15 + pale-yellow #FDE68A) carries per-constellation weight signal. Sun-gold appears in every band for brand cohesion. Charcoal anchors heavy. Pale-yellow appears only on light. Deep-orange #C2410C is reserved for the highest-criticality constellation only. -->
 
-    <!-- D2R (Data to Reporting) — MID-LIGHT · sun-gold + pale-yellow -->
-    <linearGradient id="band-d2r" gradientUnits="userSpaceOnUse" x1="300" y1="110" x2="500" y2="310">
+    <!-- D2R (Data to Report) — MID-LIGHT · sun-gold + pale-yellow · 8 o'clock -->
+    <linearGradient id="band-d2r" gradientUnits="userSpaceOnUse" x1="60" y1="515" x2="265" y2="715">
       <stop offset="0%" stop-color="#FACC15" stop-opacity="0.78"/>
       <stop offset="25%" stop-color="#FDE68A" stop-opacity="0.62"/>
       <stop offset="50%" stop-color="#FACC15" stop-opacity="0.92"/>
@@ -33,16 +33,16 @@
       <stop offset="100%" stop-color="#1F2937" stop-opacity="0.85"/>
     </linearGradient>
 
-    <!-- MDM (Master Data Management) — MID · sun-gold dominant + charcoal anchor (foundational-criticality bias) -->
-    <linearGradient id="band-mdm" gradientUnits="userSpaceOnUse" x1="300" y1="650" x2="500" y2="850">
+    <!-- MDM (Master Data Management) — MID · sun-gold dominant + charcoal anchor · 10 o'clock -->
+    <linearGradient id="band-mdm" gradientUnits="userSpaceOnUse" x1="60" y1="245" x2="265" y2="445">
       <stop offset="0%" stop-color="#FACC15" stop-opacity="0.92"/>
       <stop offset="32%" stop-color="#1F2937" stop-opacity="0.55"/>
       <stop offset="62%" stop-color="#FACC15" stop-opacity="0.85"/>
       <stop offset="100%" stop-color="#1F2937" stop-opacity="0.45"/>
     </linearGradient>
 
-    <!-- P2P (Procure to Pay) — MID-HEAVY · charcoal + sun-gold alternation (inbound value chain, no warm accent) -->
-    <linearGradient id="band-p2p" gradientUnits="userSpaceOnUse" x1="60" y1="515" x2="265" y2="715">
+    <!-- P2P (Procure to Pay) — MID-HEAVY · charcoal + sun-gold alternation · 12 o'clock -->
+    <linearGradient id="band-p2p" gradientUnits="userSpaceOnUse" x1="300" y1="110" x2="500" y2="310">
       <stop offset="0%" stop-color="#1F2937" stop-opacity="0.85"/>
       <stop offset="25%" stop-color="#FACC15" stop-opacity="0.62"/>
       <stop offset="50%" stop-color="#1F2937" stop-opacity="0.78"/>
@@ -50,8 +50,8 @@
       <stop offset="100%" stop-color="#1F2937" stop-opacity="0.82"/>
     </linearGradient>
 
-    <!-- S2S (Systems to Support) — LIGHT · pale-yellow + sun-gold (routine IT ops, lighter load) -->
-    <linearGradient id="band-s2s" gradientUnits="userSpaceOnUse" x1="60" y1="245" x2="265" y2="445">
+    <!-- S2S (Systems that Support) — ERP + HR + IT + cyber + productivity · 6 o'clock -->
+    <linearGradient id="band-s2s" gradientUnits="userSpaceOnUse" x1="300" y1="650" x2="500" y2="850">
       <stop offset="0%" stop-color="#FDE68A" stop-opacity="0.62"/>
       <stop offset="35%" stop-color="#FACC15" stop-opacity="0.78"/>
       <stop offset="65%" stop-color="#FDE68A" stop-opacity="0.45"/>
@@ -63,8 +63,9 @@
   <rect width="810" height="940" fill="#FBF9F4"/>
 
   <!-- Title block · heavy geometric sans (Helvetica Black approximation pending Druk Wide Super) + Georgia italic subtitle -->
-  <text x="400" y="52" text-anchor="middle" font-weight="900" font-size="26" fill="#1F2937" letter-spacing="-0.3" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">THE SIX PROCESS CONSTELLATIONS</text>
-  <text x="400" y="78" text-anchor="middle" font-style="italic" font-size="13" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Six universal process constellations · one data core · every business process maps to exactly one</text>
+  <text x="400" y="48" text-anchor="middle" font-weight="900" font-size="28" fill="#1F2937" letter-spacing="-0.3" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">THE SIX PROCESS CONSTELLATIONS</text>
+  <text x="400" y="72" text-anchor="middle" font-style="italic" font-size="15" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Each ring is the workflow blocks in that constellation</text>
+  <text x="400" y="92" text-anchor="middle" font-style="italic" font-size="15" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Same six · one data core · the fill is yours</text>
 
   <!-- Spokes (drawn first; nodes overlay) — charcoal at v2 spoke opacity 0.22 -->
   <g stroke="#1F2937" stroke-width="2" stroke-opacity="0.22" fill="none">
@@ -80,73 +81,62 @@
   <circle cx="400" cy="480" r="95" fill="#FACC15" stroke="#1F2937" stroke-width="2.5"/>
   <text x="400" y="453" text-anchor="middle" font-weight="900" font-size="20" fill="#1F2937" letter-spacing="3" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">DATA CORE</text>
   <line x1="365" y1="467" x2="435" y2="467" stroke="#1F2937" stroke-width="1.5" opacity="0.5"/>
-  <text x="400" y="485" text-anchor="middle" font-size="12" font-weight="700" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Common Data Model</text>
+  <text x="400" y="485" text-anchor="middle" font-size="14" font-weight="700" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Common Data Model</text>
   <text x="400" y="503" text-anchor="middle" font-size="10.5" fill="#1F2937" opacity="0.85" font-family="system-ui, -apple-system, sans-serif">Integrations · Ingestion</text>
   <text x="400" y="519" text-anchor="middle" font-size="10.5" fill="#1F2937" opacity="0.85" font-family="system-ui, -apple-system, sans-serif">Transformations · DW</text>
 
-  <!-- D2R · 12 o'clock + BPSc weight band (gap at south, spoke angle 90°) -->
+  <!-- P2P · 12 o'clock + BPSc weight band (gap at south, spoke angle 90°) — cadence start -->
   <g>
-    <path d="M 374.1 306.6 A 100 100 0 1 1 425.9 306.6" fill="none" stroke="url(#band-d2r)" stroke-width="11" stroke-linecap="butt"/>
+    <path d="M 374.1 306.6 A 100 100 0 1 1 425.9 306.6" fill="none" stroke="url(#band-p2p)" stroke-width="11" stroke-linecap="butt"/>
     <circle cx="400" cy="210" r="88" fill="#FBF9F4" stroke="#1F2937" stroke-width="2"/>
-    <text x="400" y="188" text-anchor="middle" font-weight="900" font-size="22" fill="#1F2937" letter-spacing="2" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">D2R</text>
-    <text x="400" y="210" text-anchor="middle" font-size="12" font-weight="700" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Data to Reporting</text>
-    <text x="400" y="228" text-anchor="middle" font-style="italic" font-size="11" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Analytics + awareness</text>
+    <text x="400" y="188" text-anchor="middle" font-weight="900" font-size="24" fill="#1F2937" letter-spacing="2" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">P2P</text>
+    <text x="400" y="210" text-anchor="middle" font-size="14" font-weight="700" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Procure to Pay</text>
+    <text x="400" y="228" text-anchor="middle" font-style="italic" font-size="13" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Inbound value chain</text>
   </g>
 
   <!-- O2C · 2 o'clock + band (gap at lower-left, spoke angle 150°) -->
   <g>
     <path d="M 537.2 370.9 A 100 100 0 1 1 563.1 415.7" fill="none" stroke="url(#band-o2c)" stroke-width="11" stroke-linecap="butt"/>
     <circle cx="633.83" cy="345" r="88" fill="#FBF9F4" stroke="#1F2937" stroke-width="2"/>
-    <text x="633.83" y="323" text-anchor="middle" font-weight="900" font-size="22" fill="#1F2937" letter-spacing="2" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">O2C</text>
-    <text x="633.83" y="345" text-anchor="middle" font-size="12" font-weight="700" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Order to Cash</text>
-    <text x="633.83" y="363" text-anchor="middle" font-style="italic" font-size="11" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Outbound value chain</text>
+    <text x="633.83" y="323" text-anchor="middle" font-weight="900" font-size="24" fill="#1F2937" letter-spacing="2" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">O2C</text>
+    <text x="633.83" y="345" text-anchor="middle" font-size="14" font-weight="700" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Order to Cash</text>
+    <text x="633.83" y="363" text-anchor="middle" font-style="italic" font-size="13" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Outbound value chain</text>
   </g>
 
   <!-- P2M · 4 o'clock + band (gap at upper-left, spoke angle 210°) — heavy -->
   <g>
     <path d="M 563.1 544.3 A 100 100 0 1 1 537.2 589.1" fill="none" stroke="url(#band-p2m)" stroke-width="11" stroke-linecap="butt"/>
     <circle cx="633.83" cy="615" r="88" fill="#FBF9F4" stroke="#1F2937" stroke-width="2"/>
-    <text x="633.83" y="593" text-anchor="middle" font-weight="900" font-size="22" fill="#1F2937" letter-spacing="2" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">P2M</text>
-    <text x="633.83" y="615" text-anchor="middle" font-size="12" font-weight="700" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Plan to Manufacture</text>
-    <text x="633.83" y="633" text-anchor="middle" font-style="italic" font-size="11" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Transformation core</text>
+    <text x="633.83" y="593" text-anchor="middle" font-weight="900" font-size="24" fill="#1F2937" letter-spacing="2" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">P2M</text>
+    <text x="633.83" y="615" text-anchor="middle" font-size="14" font-weight="700" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Plan to Manufacture</text>
+    <text x="633.83" y="633" text-anchor="middle" font-style="italic" font-size="13" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Transformation core</text>
   </g>
 
-  <!-- MDM · 6 o'clock + band (gap at north, spoke angle 270°) -->
+  <!-- S2S · 6 o'clock + band (gap at north, spoke angle 270°) -->
   <g>
-    <path d="M 425.9 653.4 A 100 100 0 1 1 374.1 653.4" fill="none" stroke="url(#band-mdm)" stroke-width="11" stroke-linecap="butt"/>
+    <path d="M 425.9 653.4 A 100 100 0 1 1 374.1 653.4" fill="none" stroke="url(#band-s2s)" stroke-width="11" stroke-linecap="butt"/>
     <circle cx="400" cy="750" r="88" fill="#FBF9F4" stroke="#1F2937" stroke-width="2"/>
-    <text x="400" y="728" text-anchor="middle" font-weight="900" font-size="22" fill="#1F2937" letter-spacing="2" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">MDM</text>
-    <text x="400" y="750" text-anchor="middle" font-size="12" font-weight="700" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Master Data Management</text>
-    <text x="400" y="768" text-anchor="middle" font-style="italic" font-size="11" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Cross-cutting foundation</text>
+    <text x="400" y="728" text-anchor="middle" font-weight="900" font-size="24" fill="#1F2937" letter-spacing="2" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">S2S</text>
+    <text x="400" y="750" text-anchor="middle" font-size="14" font-weight="700" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Systems that Support</text>
+    <text x="400" y="766" text-anchor="middle" font-style="italic" font-size="13" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">ERP · HR · IT</text>
+    <text x="400" y="780" text-anchor="middle" font-style="italic" font-size="13" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">cyber · productivity</text>
   </g>
 
-  <!-- P2P · 8 o'clock + band (gap at upper-right, spoke angle 330°) — mid-heavy -->
+  <!-- D2R · 8 o'clock + band (gap at upper-right, spoke angle 330°) -->
   <g>
-    <path d="M 262.8 589.1 A 100 100 0 1 1 236.9 544.3" fill="none" stroke="url(#band-p2p)" stroke-width="11" stroke-linecap="butt"/>
+    <path d="M 262.8 589.1 A 100 100 0 1 1 236.9 544.3" fill="none" stroke="url(#band-d2r)" stroke-width="11" stroke-linecap="butt"/>
     <circle cx="166.17" cy="615" r="88" fill="#FBF9F4" stroke="#1F2937" stroke-width="2"/>
-    <text x="166.17" y="593" text-anchor="middle" font-weight="900" font-size="22" fill="#1F2937" letter-spacing="2" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">P2P</text>
-    <text x="166.17" y="615" text-anchor="middle" font-size="12" font-weight="700" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Procure to Pay</text>
-    <text x="166.17" y="633" text-anchor="middle" font-style="italic" font-size="11" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Inbound value chain</text>
+    <text x="166.17" y="593" text-anchor="middle" font-weight="900" font-size="24" fill="#1F2937" letter-spacing="2" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">D2R</text>
+    <text x="166.17" y="615" text-anchor="middle" font-size="14" font-weight="700" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Data to Report</text>
+    <text x="166.17" y="633" text-anchor="middle" font-style="italic" font-size="13" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Analytics + awareness</text>
   </g>
 
-  <!-- S2S · 10 o'clock + band (gap at lower-right, spoke angle 30°) — light -->
+  <!-- MDM · 10 o'clock + band (gap at lower-right, spoke angle 30°) -->
   <g>
-    <path d="M 236.9 415.7 A 100 100 0 1 1 262.8 370.9" fill="none" stroke="url(#band-s2s)" stroke-width="11" stroke-linecap="butt"/>
+    <path d="M 236.9 415.7 A 100 100 0 1 1 262.8 370.9" fill="none" stroke="url(#band-mdm)" stroke-width="11" stroke-linecap="butt"/>
     <circle cx="166.17" cy="345" r="88" fill="#FBF9F4" stroke="#1F2937" stroke-width="2"/>
-    <text x="166.17" y="323" text-anchor="middle" font-weight="900" font-size="22" fill="#1F2937" letter-spacing="2" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">S2S</text>
-    <text x="166.17" y="345" text-anchor="middle" font-size="12" font-weight="700" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Systems to Support</text>
-    <text x="166.17" y="363" text-anchor="middle" font-style="italic" font-size="11" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">IT ops · productivity ·</text>
-    <text x="166.17" y="377" text-anchor="middle" font-style="italic" font-size="11" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">non-value-chain apps</text>
+    <text x="166.17" y="323" text-anchor="middle" font-weight="900" font-size="24" fill="#1F2937" letter-spacing="2" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">MDM</text>
+    <text x="166.17" y="345" text-anchor="middle" font-size="14" font-weight="700" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Master Data Management</text>
+    <text x="166.17" y="363" text-anchor="middle" font-style="italic" font-size="13" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Cross-cutting foundation</text>
   </g>
-
-  <!-- Legend (top-right corner) — BPSc weight signal explainer -->
-  <g>
-    <text x="745" y="115" text-anchor="end" font-style="italic" font-size="10" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">BPSc weight band rings each constellation</text>
-    <text x="745" y="131" text-anchor="end" font-style="italic" font-size="10" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">charcoal-anchored = heavy · gold = mid · pale = light</text>
-    <text x="745" y="147" text-anchor="end" font-style="italic" font-size="10" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">gap = cluster connector · stops = density along arc</text>
-  </g>
-
-  <!-- Stone rule + caption -->
-  <line x1="200" y1="895" x2="600" y2="895" stroke="#7A756A" stroke-width="0.8"/>
-  <text x="400" y="915" text-anchor="middle" font-style="italic" font-size="12" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">All companies are uniquely standard. The mechanics is the how.</text>
 </svg>

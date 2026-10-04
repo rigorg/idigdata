@@ -8,62 +8,62 @@ export type Beat = {
 export const BEATS: Beat[] = [
   {
     n: "01",
-    chip: "Mess",
-    label: "The mess",
-    line: "Disparate systems, vendors that manage themselves, half-finished programs, and people as duct tape. No owned truth the business runs on.",
+    chip: "Gap",
+    label: "Nobody owns it",
+    line: "Parts get delivered. Platforms get licensed. Vendors manage their slice. The business still has no one accountable for the whole - people, workflows, data, systems, decisions, and adoption.",
   },
   {
     n: "02",
-    chip: "Data",
-    label: "Data core",
-    line: "One company-owned data and integration spine - every system reconciles to a truth the close and the audit can trust.",
+    chip: "Inside",
+    label: "Inside the company",
+    line: "I sit on the customer side - with the people who do the work - and take ownership of the operating result, not a vendor workstream.",
   },
   {
     n: "03",
-    chip: "People",
-    label: "People who run it",
-    line: "Workflows mapped to how work actually moves - warehouse floor to boardroom - not the vendor module chart.",
+    chip: "Whole",
+    label: "The whole system",
+    line: "ERP is usually the center of gravity, never the whole job. WMS, MES, CRM, EAM, data, APIs, integration, vendors, cutover, and stabilization have to work as one system the business can run.",
   },
   {
     n: "04",
     chip: "Control",
-    label: "Control above vendors",
-    line: "Program control the business owns - roadmap, delivery state, SI and vendor orchestration under one accountable rail.",
+    label: "Above the vendors",
+    line: "Program control the company owns - roadmap, delivery state, SI and vendor orchestration under one accountable seat. Trades stay trades.",
   },
   {
     n: "05",
-    chip: "Adopt",
+    chip: "Run",
     label: "Keep running",
-    line: "Transformation while the company still operates - adoption locks, training, continuous improvement - not go-live theater.",
+    line: "Transformation while the company still operates - adoption, training, continuous improvement - not go-live theater that hands the floor duct tape.",
   },
   {
     n: "06",
-    chip: "Asset",
-    label: "Owned production",
-    line: "A living operating asset the business keeps - and agents that run under boundaries, human validation, and named owners.",
+    chip: "Keep",
+    label: "What you keep",
+    line: "A living operating asset the business owns - and agents that run under boundaries, human validation, and named owners. Capability the company can run and extend.",
   },
 ];
 
 export const MOBILE_BEATS: Array<{ beat: number; label: string; line: string }> = [
   {
     beat: 1,
-    label: "The mess",
-    line: "Disparate systems, vendors that manage themselves, half-finished programs, and people as duct tape. No owned truth the business runs on.",
+    label: "Nobody owns it",
+    line: "Parts get delivered. Platforms get licensed. Vendors manage their slice. The business still has no one accountable for the whole - people, workflows, data, systems, decisions, and adoption.",
   },
   {
     beat: 3,
-    label: "Data core · People who run it",
-    line: "Company-owned data spine the close and audit can trust. Workflows mapped to how work actually moves - floor to boardroom.",
+    label: "Inside the company · The whole system",
+    line: "Customer-side ownership of the operating result. ERP is the center of gravity, never the whole job - WMS, MES, CRM, EAM, data, APIs, integration, vendors, cutover, and stabilization as one system.",
   },
   {
     beat: 5,
-    label: "Control above vendors · Keep running",
-    line: "Business-owned program control - then keep the company running while transforming. Continuous improvement, not go-live theater.",
+    label: "Above the vendors · Keep running",
+    line: "Program control the company owns - then transformation while the company still operates. Adoption, training, continuous improvement - not go-live theater.",
   },
   {
     beat: 6,
-    label: "Owned production",
-    line: "A living operating asset the business keeps - agents under boundaries, human validation, and named owners.",
+    label: "What you keep",
+    line: "A living operating asset the business owns - agents under boundaries, human validation, and named owners. Capability the company can run and extend.",
   },
 ];
 

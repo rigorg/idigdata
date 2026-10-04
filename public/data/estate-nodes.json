@@ -1,0 +1,234 @@
+{
+  "version": 1,
+  "updated": "2026-08-11",
+  "sot": "idigdata-site/public/data/estate-nodes.json — Home sphere runtime SoT; DigOps mirrors at operations/src/data/estate-nodes.json",
+  "captionKicker": "",
+  "caption": "What a transformation actually touches - with shared data at the core.",
+  "locks": [
+    "No DigOps / BOSS / Rig / FlowCraft on Home",
+    "No vendor brand names",
+    "OI on Home fold + sphere (Capo love language) — never EBIT",
+    "Floor = plant & warehouse floor",
+    "SI = system integrator",
+    "Handoff = capability the company can run and extend (not transfer orders)"
+  ],
+  "categories": [
+    {
+      "id": "systems",
+      "label": "Systems of record",
+      "blurb": "Gravity applications the business already runs on.",
+      "nodes": [
+        {
+          "id": "erp",
+          "label": "ERP",
+          "gloss": "Core system of record"
+        },
+        {
+          "id": "wms",
+          "label": "WMS",
+          "gloss": "Warehouse / fulfillment execution"
+        },
+        {
+          "id": "mes",
+          "label": "MES",
+          "gloss": "Manufacturing execution"
+        },
+        {
+          "id": "crm",
+          "label": "CRM",
+          "gloss": "Customer / commercial system"
+        },
+        {
+          "id": "eam",
+          "label": "EAM",
+          "gloss": "Asset / maintenance system"
+        },
+        {
+          "id": "plm",
+          "label": "PLM",
+          "gloss": "Product lifecycle system"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "label": "Data plane",
+      "blurb": "What sits around the gold data core.",
+      "nodes": [
+        {
+          "id": "data",
+          "label": "Data",
+          "gloss": "Shared operating data — the common denominator"
+        },
+        {
+          "id": "mdm",
+          "label": "MDM",
+          "gloss": "Master data management"
+        },
+        {
+          "id": "sql",
+          "label": "SQL",
+          "gloss": "Structured data / query layer"
+        },
+        {
+          "id": "api",
+          "label": "API",
+          "gloss": "Integration contracts between systems"
+        },
+        {
+          "id": "integration",
+          "label": "Integration",
+          "gloss": "Seams that move work across the estate"
+        }
+      ]
+    },
+    {
+      "id": "people",
+      "label": "People & ownership",
+      "blurb": "Who has to live in the change — floor to board.",
+      "nodes": [
+        {
+          "id": "stakeholders",
+          "label": "Stakeholders",
+          "gloss": "Sponsors and decision owners"
+        },
+        {
+          "id": "users",
+          "label": "Users",
+          "gloss": "People who run the work daily"
+        },
+        {
+          "id": "floor",
+          "label": "Floor",
+          "gloss": "Plant & warehouse floor"
+        },
+        {
+          "id": "board",
+          "label": "Board",
+          "gloss": "Board / executive oversight"
+        },
+        {
+          "id": "ownership",
+          "label": "Ownership",
+          "gloss": "Customer-side ownership of the outcome"
+        },
+        {
+          "id": "oi",
+          "label": "OI",
+          "gloss": "Operating Income — the scoreboard technology must protect"
+        }
+      ]
+    },
+    {
+      "id": "change",
+      "label": "Change delivery",
+      "blurb": "How the program lands and stays landed.",
+      "nodes": [
+        {
+          "id": "cutover",
+          "label": "Cutover",
+          "gloss": "Go-live transition"
+        },
+        {
+          "id": "adoption",
+          "label": "Adoption",
+          "gloss": "People actually using the new way"
+        },
+        {
+          "id": "training",
+          "label": "Training",
+          "gloss": "Enablement that sticks"
+        },
+        {
+          "id": "workflows",
+          "label": "Workflows",
+          "gloss": "How work moves end to end"
+        },
+        {
+          "id": "handoff",
+          "label": "Handoff",
+          "gloss": "Capability the company can run and extend"
+        }
+      ]
+    },
+    {
+      "id": "ecosystem",
+      "label": "Ecosystem & control",
+      "blurb": "Outside contributors and the controls that keep the estate honest.",
+      "nodes": [
+        {
+          "id": "vendors",
+          "label": "Vendors",
+          "gloss": "Software and services suppliers"
+        },
+        {
+          "id": "si",
+          "label": "SI",
+          "gloss": "System integrator"
+        },
+        {
+          "id": "governance",
+          "label": "Governance",
+          "gloss": "Decision rights and operating cadence"
+        },
+        {
+          "id": "controls",
+          "label": "Controls",
+          "gloss": "Process and risk controls"
+        },
+        {
+          "id": "security",
+          "label": "Security",
+          "gloss": "Access, identity, and protection"
+        },
+        {
+          "id": "observability",
+          "label": "Observability",
+          "gloss": "Seeing the estate run in production"
+        }
+      ]
+    },
+    {
+      "id": "agentics",
+      "label": "Applied Agentics",
+      "blurb": "Nested under transformation — production path, not demo theater.",
+      "nodes": [
+        {
+          "id": "agentics",
+          "label": "Agentics",
+          "gloss": "Applied agent systems in the operating model"
+        },
+        {
+          "id": "agents",
+          "label": "Agents",
+          "gloss": "Production agents doing real work"
+        },
+        {
+          "id": "rag",
+          "label": "RAG",
+          "gloss": "Retrieval-augmented generation over estate knowledge"
+        },
+        {
+          "id": "tools",
+          "label": "Tools",
+          "gloss": "Tool-use into systems of record and APIs"
+        },
+        {
+          "id": "memory",
+          "label": "Memory",
+          "gloss": "Durable context agents can rely on"
+        },
+        {
+          "id": "evals",
+          "label": "Evals",
+          "gloss": "Evaluation / quality gates before and in production"
+        },
+        {
+          "id": "orchestration",
+          "label": "Orchestration",
+          "gloss": "Multi-step agent workflows under control"
+        }
+      ]
+    }
+  ]
+}

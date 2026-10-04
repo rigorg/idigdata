@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Metatron Systemic Master · Logo Edition">
+  <defs>
+    <linearGradient id="meta-gold-beam" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#142840"/>
+      <stop offset="50%" stop-color="#FACC15"/>
+      <stop offset="100%" stop-color="#142840"/>
+    </linearGradient>
+    <linearGradient id="meta-p2m" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#142840"/>
+      <stop offset="40%" stop-color="#FACC15"/>
+      <stop offset="70%" stop-color="#C2410C"/>
+      <stop offset="100%" stop-color="#142840"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Clean Warm Cream Substrate -->
+  <rect width="1000" height="1000" fill="#FBF9F4"/>
+
+  <g transform="translate(500, 500)">
+    <!-- 1. Outer Orbital Guide Circles -->
+    <circle cx="0" cy="0" r="430" fill="none" stroke="#142840" stroke-width="3"/>
+    <circle cx="0" cy="0" r="390" fill="none" stroke="#142840" stroke-width="1.2" stroke-opacity="0.35"/>
+    <circle cx="0" cy="0" r="270" fill="none" stroke="#142840" stroke-width="1.8" stroke-dasharray="8,6" stroke-opacity="0.45"/>
+
+    <!-- 2. The 16 Direct Radial Spokes (Outer Systems -> Core) -->
+    <g stroke="#142840" stroke-width="1.5" stroke-opacity="0.45">
+      <line x1="0" y1="0" x2="0" y2="-430"/>
+      <line x1="0" y1="0" x2="164.6" y2="-397.3"/>
+      <line x1="0" y1="0" x2="304.1" y2="-304.1"/>
+      <line x1="0" y1="0" x2="397.3" y2="-164.6"/>
+      <line x1="0" y1="0" x2="430" y2="0"/>
+      <line x1="0" y1="0" x2="397.3" y2="164.6"/>
+      <line x1="0" y1="0" x2="304.1" y2="304.1"/>
+      <line x1="0" y1="0" x2="164.6" y2="397.3"/>
+      <line x1="0" y1="0" x2="0" y2="430"/>
+      <line x1="0" y1="0" x2="-164.6" y2="397.3"/>
+      <line x1="0" y1="0" x2="-304.1" y2="304.1"/>
+      <line x1="0" y1="0" x2="-397.3" y2="164.6"/>
+      <line x1="0" y1="0" x2="-430" y2="0"/>
+      <line x1="0" y1="0" x2="-397.3" y2="-164.6"/>
+      <line x1="0" y1="0" x2="-304.1" y2="-304.1"/>
+      <line x1="0" y1="0" x2="-164.6" y2="-397.3"/>
+    </g>
+
+    <!-- 3. Dimension 1: The Beehive (3D Isometric Honeycomb Frames) -->
+    <!-- Concentric Hexagon 1 (R=150) -->
+    <polygon points="0,-150 129.9,-75 129.9,75 0,150 -129.9,75 -129.9,-75" fill="none" stroke="#FACC15" stroke-width="2.5" stroke-opacity="0.85"/>
+    <!-- Concentric Hexagon 2 (R=210) -->
+    <polygon points="0,-210 181.9,-105 181.9,105 0,210 -181.9,105 -181.9,-105" fill="none" stroke="#142840" stroke-width="1.8" stroke-dasharray="6,6" stroke-opacity="0.5"/>
+
+    <!-- 4. Dimension 2: The Metatron Sacred Geometry Framework (Star Tetrahedron / Hexagram Beams) -->
+    <!-- Major Hexagon Perimeter (connecting 6 constellation centers) -->
+    <polygon points="0,-270 233.8,-135 233.8,135 0,270 -233.8,135 -233.8,-135" fill="#FACC15" fill-opacity="0.08" stroke="#142840" stroke-width="4"/>
+
+    <!-- Star Tetrahedron / Merkaba Beams: Upward & Downward Triangles -->
+    <!-- Upward Triangle -->
+    <polygon points="0,-270 233.8,135 -233.8,135" fill="none" stroke="#142840" stroke-width="3"/>
+    <!-- Downward Triangle -->
+    <polygon points="0,270 233.8,-135 -233.8,-135" fill="none" stroke="#142840" stroke-width="3"/>
+
+    <!-- Internal Metatron 3D Isometric Cube Diagonals -->
+    <g stroke="#142840" stroke-width="3.5">
+      <line x1="0" y1="-270" x2="0" y2="270"/>
+      <line x1="-233.8" y1="-135" x2="233.8" y2="135"/>
+      <line x1="-233.8" y1="135" x2="233.8" y2="-135"/>
+    </g>
+
+    <!-- Inner 3D Star Diamond Chords -->
+    <g stroke="#FACC15" stroke-width="2" stroke-opacity="0.9">
+      <line x1="0" y1="-150" x2="129.9,75"/>
+      <line x1="129.9,75" x2="-129.9,75"/>
+      <line x1="-129.9,75" x2="0" y2="-150"/>
+
+      <line x1="0" y1="150" x2="129.9,-75"/>
+      <line x1="129.9,-75" x2="-129.9,-75"/>
+      <line x1="-129.9,-75" x2="0" y2="150"/>
+    </g>
+
+    <!-- 5. Dimension 2: The Six Process Constellations (R=270, Hubs r=48, Weight Rings r=58) -->
+    <!-- 12h: P2P -->
+    <g transform="translate(0, -270)">
+      <circle cx="0" cy="0" r="58" fill="none" stroke="url(#meta-gold-beam)" stroke-width="10"/>
+      <circle cx="0" cy="0" r="48" fill="#FBF9F4" stroke="#142840" stroke-width="3"/>
+      <circle cx="0" cy="0" r="30" fill="#FACC15" stroke="#142840" stroke-width="2"/>
+      <circle cx="0" cy="0" r="10" fill="#142840"/>
+    </g>
+    <!-- 2h: O2C -->
+    <g transform="translate(233.8, -135)">
+      <circle cx="0" cy="0" r="58" fill="none" stroke="url(#meta-gold-beam)" stroke-width="10"/>
+      <circle cx="0" cy="0" r="48" fill="#FBF9F4" stroke="#142840" stroke-width="3"/>
+      <circle cx="0" cy="0" r="30" fill="#FACC15" stroke="#142840" stroke-width="2"/>
+      <circle cx="0" cy="0" r="10" fill="#142840"/>
+    </g>
+    <!-- 4h: P2M (Criticality Hub) -->
+    <g transform="translate(233.8, 135)">
+      <circle cx="0" cy="0" r="58" fill="none" stroke="url(#meta-p2m)" stroke-width="12"/>
+      <circle cx="0" cy="0" r="48" fill="#FBF9F4" stroke="#142840" stroke-width="3"/>
+      <circle cx="0" cy="0" r="30" fill="#C2410C" stroke="#142840" stroke-width="2"/>
+      <circle cx="0" cy="0" r="10" fill="#C2410C"/>
+    </g>
+    <!-- 6h: S2S -->
+    <g transform="translate(0, 270)">
+      <circle cx="0" cy="0" r="58" fill="none" stroke="url(#meta-gold-beam)" stroke-width="10"/>
+      <circle cx="0" cy="0" r="48" fill="#FBF9F4" stroke="#142840" stroke-width="3"/>
+      <circle cx="0" cy="0" r="30" fill="#FDE68A" stroke="#142840" stroke-width="2"/>
+      <circle cx="0" cy="0" r="10" fill="#142840"/>
+    </g>
+    <!-- 8h: D2R -->
+    <g transform="translate(-233.8, 135)">
+      <circle cx="0" cy="0" r="58" fill="none" stroke="url(#meta-gold-beam)" stroke-width="10"/>
+      <circle cx="0" cy="0" r="48" fill="#FBF9F4" stroke="#142840" stroke-width="3"/>
+      <circle cx="0" cy="0" r="30" fill="#FACC15" stroke="#142840" stroke-width="2"/>
+      <circle cx="0" cy="0" r="10" fill="#142840"/>
+    </g>
+    <!-- 10h: MDM -->
+    <g transform="translate(-233.8, -135)">
+      <circle cx="0" cy="0" r="58" fill="none" stroke="url(#meta-gold-beam)" stroke-width="10"/>
+      <circle cx="0" cy="0" r="48" fill="#FBF9F4" stroke="#142840" stroke-width="3"/>
+      <circle cx="0" cy="0" r="30" fill="#FACC15" stroke="#142840" stroke-width="2"/>
+      <circle cx="0" cy="0" r="10" fill="#142840"/>
+    </g>
+
+    <!-- 6. Central Solid DATA CORE with 3D Isometric Cube Matrix -->
+    <circle cx="0" cy="0" r="75" fill="#FACC15" stroke="#142840" stroke-width="4"/>
+    <!-- Inscribed 3D Isometric Cube -->
+    <polygon points="0,-48 41.6,-24 41.6,24 0,48 -41.6,24 -41.6,-24" fill="#142840" fill-opacity="0.15" stroke="#142840" stroke-width="2.5"/>
+    <line x1="0" y1="0" x2="0" y2="-48" stroke="#142840" stroke-width="2.5"/>
+    <line x1="0" y1="0" x2="41.6" y2="24" stroke="#142840" stroke-width="2.5"/>
+    <line x1="0" y1="0" x2="-41.6" y2="24" stroke="#142840" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="14" fill="#142840"/>
+
+    <!-- 7. Dimension 3: The Systemverse (16 Equally-Sized System Bubbles at R=430, radius r=34) -->
+    <g id="metatron-system-bubbles">
+      <g transform="translate(0, -430)"><circle cx="0" cy="0" r="34" fill="#FBF9F4" stroke="#142840" stroke-width="3"/><circle cx="0" cy="0" r="20" fill="#FACC15" fill-opacity="0.4" stroke="#142840" stroke-width="1.5"/><circle cx="0" cy="0" r="7" fill="#142840"/></g>
+      <g transform="translate(164.6, -397.3)"><circle cx="0" cy="0" r="34" fill="#FBF9F4" stroke="#142840" stroke-width="3"/><circle cx="0" cy="0" r="20" fill="#FACC15" fill-opacity="0.4" stroke="#142840" stroke-width="1.5"/><circle cx="0" cy="0" r="7" fill="#142840"/></g>
+      <g transform="translate(304.1, -304.1)"><circle cx="0" cy="0" r="34" fill="#FBF9F4" stroke="#142840" stroke-width="3"/><circle cx="0" cy="0" r="20" fill="#FACC15" fill-opacity="0.4" stroke="#142840" stroke-width="1.5"/><circle cx="0" cy="0" r="7" fill="#142840"/></g>
+      <g transform="translate(397.3, -164.6)"><circle cx="0" cy="0" r="34" fill="#FBF9F4" stroke="#142840" stroke-width="3"/><circle cx="0" cy="0" r="20" fill="#FACC15" fill-opacity="0.4" stroke="#142840" stroke-width="1.5"/><circle cx="0" cy="0" r="7" fill="#142840"/></g>
+      <g transform="translate(430, 0)"><circle cx="0" cy="0" r="34" fill="#FBF9F4" stroke="#142840" stroke-width="3"/><circle cx="0" cy="0" r="20" fill="#FACC15" fill-opacity="0.4" stroke="#142840" stroke-width="1.5"/><circle cx="0" cy="0" r="7" fill="#142840"/></g>
+      <g transform="translate(397.3, 164.6)"><circle cx="0" cy="0" r="34" fill="#FBF9F4" stroke="#142840" stroke-width="3"/><circle cx="0" cy="0" r="20" fill="#FACC15" fill-opacity="0.4" stroke="#142840" stroke-width="1.5"/><circle cx="0" cy="0" r="7" fill="#142840"/></g>
+      <g transform="translate(304.1, 304.1)"><circle cx="0" cy="0" r="34" fill="#FBF9F4" stroke="#142840" stroke-width="3"/><circle cx="0" cy="0" r="20" fill="#FACC15" fill-opacity="0.4" stroke="#142840" stroke-width="1.5"/><circle cx="0" cy="0" r="7" fill="#142840"/></g>
+      <g transform="translate(164.6, 397.3)"><circle cx="0" cy="0" r="34" fill="#FBF9F4" stroke="#142840" stroke-width="3"/><circle cx="0" cy="0" r="20" fill="#FACC15" fill-opacity="0.4" stroke="#142840" stroke-width="1.5"/><circle cx="0" cy="0" r="7" fill="#142840"/></g>
+      <g transform="translate(0, 430)"><circle cx="0" cy="0" r="34" fill="#FBF9F4" stroke="#142840" stroke-width="3"/><circle cx="0" cy="0" r="20" fill="#FACC15" fill-opacity="0.4" stroke="#142840" stroke-width="1.5"/><circle cx="0" cy="0" r="7" fill="#142840"/></g>
+      <g transform="translate(-164.6, 397.3)"><circle cx="0" cy="0" r="34" fill="#FBF9F4" stroke="#142840" stroke-width="3"/><circle cx="0" cy="0" r="20" fill="#FACC15" fill-opacity="0.4" stroke="#142840" stroke-width="1.5"/><circle cx="0" cy="0" r="7" fill="#142840"/></g>
+      <g transform="translate(-304.1, 304.1)"><circle cx="0" cy="0" r="34" fill="#FBF9F4" stroke="#142840" stroke-width="3"/><circle cx="0" cy="0" r="20" fill="#FACC15" fill-opacity="0.4" stroke="#142840" stroke-width="1.5"/><circle cx="0" cy="0" r="7" fill="#142840"/></g>
+      <g transform="translate(-397.3, 164.6)"><circle cx="0" cy="0" r="34" fill="#FBF9F4" stroke="#142840" stroke-width="3"/><circle cx="0" cy="0" r="20" fill="#FACC15" fill-opacity="0.4" stroke="#142840" stroke-width="1.5"/><circle cx="0" cy="0" r="7" fill="#142840"/></g>
+      <g transform="translate(-430, 0)"><circle cx="0" cy="0" r="34" fill="#FBF9F4" stroke="#142840" stroke-width="3"/><circle cx="0" cy="0" r="20" fill="#FACC15" fill-opacity="0.4" stroke="#142840" stroke-width="1.5"/><circle cx="0" cy="0" r="7" fill="#142840"/></g>
+      <g transform="translate(-397.3, -164.6)"><circle cx="0" cy="0" r="34" fill="#FBF9F4" stroke="#142840" stroke-width="3"/><circle cx="0" cy="0" r="20" fill="#FACC15" fill-opacity="0.4" stroke="#142840" stroke-width="1.5"/><circle cx="0" cy="0" r="7" fill="#142840"/></g>
+      <g transform="translate(-304.1, -304.1)"><circle cx="0" cy="0" r="34" fill="#FBF9F4" stroke="#142840" stroke-width="3"/><circle cx="0" cy="0" r="20" fill="#FACC15" fill-opacity="0.4" stroke="#142840" stroke-width="1.5"/><circle cx="0" cy="0" r="7" fill="#142840"/></g>
+      <g transform="translate(-164.6, -397.3)"><circle cx="0" cy="0" r="34" fill="#FBF9F4" stroke="#142840" stroke-width="3"/><circle cx="0" cy="0" r="20" fill="#FACC15" fill-opacity="0.4" stroke="#142840" stroke-width="1.5"/><circle cx="0" cy="0" r="7" fill="#142840"/></g>
+    </g>
+  </g>
+</svg>
