@@ -828,7 +828,7 @@ ${content.trim()}`;
               </div>
               <h3 className="text-xl font-serif font-semibold text-white">Proposal Request Received</h3>
               <p className="text-sm text-slate-300 mt-2 max-w-xl mx-auto">
-                Thank you. Your outcome selections and operating context have been received. Robert Paddock will review the dependencies and reply with a scoping proposal.
+                Thank you. Your outcome selections and operating context have been received. Our principal team will review the dependencies and reply with a scoping proposal.
               </p>
             </div>
           ) : (
@@ -877,7 +877,7 @@ ${content.trim()}`;
 
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
                 <p className="text-xs text-slate-400 font-mono">
-                  Reviewed directly by Robert Paddock · Response within 1 business day
+                  Direct review by our principal team · Response within 1 business day
                 </p>
 
                 <button
