@@ -3,7 +3,7 @@
 // Synthesized consensus across Grok, CX, CC, and AG:
 // 1. Leadership, Direction & Transformation (LD) · 10 outcomes
 // 2. Business Systems & Integration (BS) · 10 outcomes (ERP, WMS, MES, HRM, EAM, CRM)
-// 3. IT/OT Operations & Security (IT) · 10 outcomes (Modern IT, Cyber, Plant OT)
+// 3. IT Operations & Security (IT) · 10 outcomes (Modern IT, Cyber, Plant OT)
 // 4. Data & Knowledge (DK) · 9 outcomes (Records, Analytics, Institutional Memory)
 // 5. Financial Systems (FS) · 10 outcomes (Controls, EPM, ABC)
 // 6. Workflows & Automation (WA) · 10 outcomes (Handoffs, O2C, P2P, Resilience)
@@ -55,9 +55,9 @@ export const PUBLIC_OUTCOME_DOMAINS: CatalogDomain[] = [
   {
     "id": "it_ot_operations",
     "code": "IT",
-    "name": "IT/OT Operations & Security",
-    "subtitle": "Modernize the IT function to support reliable business operations, connected plants, and governed agentic capabilities.",
-    "essence": "Dependable infrastructure, operational resilience, qualified cyber coordination, and plant-floor OT."
+    "name": "IT Operations & Security",
+    "subtitle": "Maintain dependable enterprise infrastructure, cybersecurity, and operational continuity across business and plant systems.",
+    "essence": "Dependable infrastructure, cybersecurity, and operational continuity across business and plant systems; the plant floor's controllers are coordinated with their owners, not authored."
   },
   {
     "id": "data_knowledge",
