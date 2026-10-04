@@ -333,16 +333,23 @@ export default function TheBlockConfiguratorPage() {
       rotX: cubeRotation.x,
       rotY: cubeRotation.y,
     };
-    (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
+    try {
+      (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
+    } catch {}
   };
 
   const handlePointerMove = (e: React.PointerEvent) => {
     if (!isDragging) return;
     const dx = e.clientX - dragStartRef.current.x;
     const dy = e.clientY - dragStartRef.current.y;
-    if (Math.hypot(dx, dy) > 5) {
+    const distance = Math.hypot(dx, dy);
+
+    // BEH-2 fix: Any movement > 2px is treated as a deliberate drag rather than a click
+    if (distance > 2) {
       hasDraggedRef.current = true;
     }
+
+    if (!hasDraggedRef.current) return;
 
     const sensitivity = 0.45;
     const startX = dragStartRef.current.rotX;
@@ -611,7 +618,9 @@ ${content.trim()}`;
             onPointerDown={handlePointerDown}
             onPointerMove={handlePointerMove}
             onPointerUp={handlePointerUp}
+            onPointerCancel={handlePointerUp}
             className="relative w-[340px] h-[340px] flex items-center justify-center cursor-grab active:cursor-grabbing [perspective:1400px] select-none touch-none"
+            style={{ touchAction: "none" }}
             title="Click and drag to spin the 3D cube in any direction; on release it snaps right-side up to the closest face"
           >
             <div
@@ -628,7 +637,7 @@ ${content.trim()}`;
                   <div
                     key={domain.id}
                     onClick={() => handleFaceClick(domain.id)}
-                    className={`absolute inset-0 rounded-2xl border-2 flex flex-col justify-between p-5 transition-all duration-300 bg-slate-950/90 shadow-2xl backdrop-blur-md group ${
+                    className={`absolute inset-0 rounded-2xl border-2 flex flex-col justify-between p-5 transition-all duration-300 bg-slate-950/90 shadow-2xl backdrop-blur-md group touch-none ${
                       isFocused
                         ? "shadow-[0_0_35px_rgba(255,255,255,0.15)] ring-1 ring-white/40"
                         : "hover:border-white/50"
@@ -637,6 +646,7 @@ ${content.trim()}`;
                       transform: domain.faceTransform,
                       backfaceVisibility: "hidden",
                       borderColor: isFocused ? domain.accentHex : `${domain.accentHex}50`,
+                      touchAction: "none",
                     }}
                   >
                     {/* FACE TOP BAR */}
@@ -774,6 +784,19 @@ ${content.trim()}`;
             </div>
 
             <div className="flex items-center gap-3">
+              <button
+                type="button"
+                onClick={() => update({ outcomeIds: [] })}
+                disabled={selectedCount === 0}
+                className={`text-xs font-mono px-3 py-1.5 rounded-md border transition-all ${
+                  selectedCount > 0
+                    ? "text-slate-200 hover:text-white border-white/20 hover:border-amber-400/50 bg-white/5 hover:bg-white/10 cursor-pointer shadow-sm"
+                    : "text-slate-600 border-white/5 bg-transparent cursor-not-allowed opacity-50"
+                }`}
+                title={selectedCount > 0 ? "Clear all selected outcomes across all blocks" : "No outcomes currently selected"}
+              >
+                Clear selections
+              </button>
               <span className="font-mono text-sm px-3.5 py-1.5 rounded-md bg-white/5 border border-white/10 text-slate-200">
                 <strong className="text-amber-400 font-bold">{selectedCount}</strong> outcomes across{" "}
                 <strong className="text-white font-bold">{aggregatedByDomain.length}</strong> blocks
