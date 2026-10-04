@@ -73,8 +73,8 @@ const DOMAIN_CONFIGS: DomainConfig[] = [
   {
     id: "it_ot_operations",
     code: "IT",
-    name: "IT/OT Operations & Security",
-    shortName: "IT / OT & Cyber",
+    name: "IT Operations & Security",
+    shortName: "IT Operations",
     subtitle: "Modernize the IT function to support reliable business operations, connected plants, and governed agentic capabilities.",
     essence: "Dependable infrastructure, operational resilience, qualified cyber coordination, and plant-floor OT.",
     badge: "OPERATIONS & SEC",
