@@ -295,6 +295,8 @@ export default function TheBlockConfiguratorPage() {
   const [contactEmail, setContactEmail] = useState("");
   const [contactCompany, setContactCompany] = useState("");
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const aggregatorRef = useRef<HTMLDivElement>(null);
   const dragStartRef = useRef<{ x: number; y: number; rotX: number; rotY: number }>({ x: 0, y: 0, rotX: -12, rotY: 0 });
@@ -483,9 +485,55 @@ ${content.trim()}`;
     }, 100);
   };
 
-  const handleSubmitProposal = (e: React.FormEvent) => {
+  const handleSubmitProposal = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitSuccess(true);
+    if (selectedCount === 0 || isSubmitting) return;
+
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    const outcomesList = aggregatedByDomain
+      .map((entry) => {
+        const itemNames = entry.items.map((it) => `  - ${it.name}`).join("\n");
+        const contextText = entry.note.trim() ? `\n  Context: ${entry.note.trim()}` : "";
+        return `[${entry.domain.name}]\n${itemNames}${contextText}`;
+      })
+      .join("\n\n");
+
+    const fullMessage = [
+      `THE BLOCK PROPOSAL REQUEST (${selectedCount} outcomes selected)`,
+      outcomesList,
+      (draft?.contactMessage || "").trim() ? `General Context & Notes:\n${(draft?.contactMessage || "").trim()}` : "",
+    ]
+      .filter(Boolean)
+      .join("\n\n");
+
+    const payload = {
+      name: contactName.trim(),
+      email: contactEmail.trim(),
+      company: contactCompany.trim(),
+      role: "Block Outcome Buyer",
+      message: fullMessage,
+      interestType: "applied_agentics",
+    };
+
+    try {
+      const res = await fetch("/api/contact/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json().catch(() => null);
+      if (res.ok && data?.ok) {
+        setSubmitSuccess(true);
+      } else {
+        setSubmitError(data?.error || "Unable to transmit proposal request. Please retry.");
+      }
+    } catch {
+      setSubmitError("Network connection issue. Please retry.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -880,16 +928,21 @@ ${content.trim()}`;
                   Direct review by our principal team · Response within 1 business day
                 </p>
 
+                {submitError && (
+                  <div className="w-full text-center text-xs text-rose-400 font-mono py-1">
+                    {submitError}
+                  </div>
+                )}
                 <button
                   type="submit"
-                  disabled={selectedCount === 0}
+                  disabled={selectedCount === 0 || isSubmitting}
                   className={`inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold transition-all shadow-lg cursor-pointer ${
-                    selectedCount === 0
+                    selectedCount === 0 || isSubmitting
                       ? "bg-slate-800 text-slate-500 cursor-not-allowed border border-white/5"
                       : "bg-amber-400 text-slate-950 hover:bg-amber-300 shadow-amber-400/20 hover:scale-[1.01]"
                   }`}
                 >
-                  <span>Request Scoping Proposal</span>
+                  <span>{isSubmitting ? "Transmitting Request..." : "Request Scoping Proposal"}</span>
                   <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <line x1="5" y1="12" x2="19" y2="12" />
                     <polyline points="12 5 19 12 12 19" />
