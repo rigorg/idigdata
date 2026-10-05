@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import AgenticPositionView from "@/components/agentic/AgenticPositionView";
 
 export const metadata: Metadata = {
-  title: "Agentic AI in the enterprise | idigdata",
+  title: "Agentic AI: A personal weblog | Robert Paddock",
   description:
-    "Applied agentics in production, on company-owned data. Governance, security, and observability built in from the start.",
+    "Observations and questions from the intersection of enterprise work and agentic AI. Where I build, question, and write.",
   alternates: {
     canonical: "https://idigdata.com/agentic-ai/",
   },
