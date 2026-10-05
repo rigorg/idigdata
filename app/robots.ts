@@ -21,7 +21,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: "*",
-        allow: "/",
+        allow: ["/", "/feed.xml", "/llms.txt", "/llms-full.txt"],
         disallow: ["/hold/"],
       },
       ...AI_CRAWLERS.map((userAgent) => ({
