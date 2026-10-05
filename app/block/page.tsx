@@ -299,12 +299,20 @@ export default function TheBlockConfiguratorPage() {
   const dragStartRef = useRef<{ x: number; y: number; rotX: number; rotY: number }>({ x: 0, y: 0, rotX: -12, rotY: 0 });
   const hasDraggedRef = useRef(false);
 
-  // Outcomes explicitly selected by the buyer
-  const currentOutcomeIds = useMemo(() => {
-    return draft?.outcomeIds ?? [];
-  }, [draft?.outcomeIds]);
+  // Outcomes explicitly selected by the buyer (defaults to 0 on entry)
+  const [selectedOutcomeIds, setSelectedOutcomeIds] = useState<string[]>([]);
+  const hasInitializedRef = useRef(false);
 
-  const selectedCount = currentOutcomeIds.length;
+  // Fresh entry defaults to 0 configured outcomes (clears any stale test drafts)
+  useEffect(() => {
+    if (!hasInitializedRef.current) {
+      hasInitializedRef.current = true;
+      setSelectedOutcomeIds([]);
+      update({ outcomeIds: [] });
+    }
+  }, [update]);
+
+  const selectedCount = selectedOutcomeIds.length;
 
   const activeDomain = useMemo(() => {
     return DOMAIN_CONFIGS.find((d) => d.id === activeDomainId) || DOMAIN_CONFIGS[0];
@@ -326,21 +334,21 @@ export default function TheBlockConfiguratorPage() {
     const counts: Record<string, number> = {};
     DOMAIN_CONFIGS.forEach((d) => {
       const items = PUBLIC_CATALOG_ITEMS.filter((it) => it.domainId === d.id);
-      counts[d.id] = items.filter((it) => currentOutcomeIds.includes(it.id)).length;
+      counts[d.id] = items.filter((it) => selectedOutcomeIds.includes(it.id)).length;
     });
     return counts;
-  }, [currentOutcomeIds]);
+  }, [selectedOutcomeIds]);
 
   // Aggregated configured outcomes grouped by domain (for CPQ review)
   const aggregatedByDomain = useMemo(() => {
     return DOMAIN_CONFIGS.map((domain) => {
       const items = PUBLIC_CATALOG_ITEMS.filter(
-        (it) => it.domainId === domain.id && currentOutcomeIds.includes(it.id)
+        (it) => it.domainId === domain.id && selectedOutcomeIds.includes(it.id)
       );
       const note = domainNotes[domain.id] || "";
       return { domain, items, note };
     }).filter((group) => group.items.length > 0 || group.note.trim().length > 0);
-  }, [currentOutcomeIds, domainNotes]);
+  }, [selectedOutcomeIds, domainNotes]);
 
   // Drag-to-spin cube pointer handling
   const handlePointerDown = (e: React.PointerEvent) => {
@@ -421,11 +429,19 @@ export default function TheBlockConfiguratorPage() {
 
   // Toggle outcome selection (NO auto-select; explicit buyer choice)
   const handleToggleOutcome = (id: string) => {
-    const current = currentOutcomeIds;
-    const next = current.includes(id)
-      ? current.filter((item) => item !== id)
-      : [...current, id];
-    update({ outcomeIds: next });
+    setSelectedOutcomeIds((prev) => {
+      const next = prev.includes(id)
+        ? prev.filter((item) => item !== id)
+        : [...prev, id];
+      update({ outcomeIds: next });
+      return next;
+    });
+  };
+
+  // Clear all configured outcomes
+  const handleClearAll = () => {
+    setSelectedOutcomeIds([]);
+    update({ outcomeIds: [] });
   };
 
   // Save notes for a domain
@@ -545,10 +561,10 @@ export default function TheBlockConfiguratorPage() {
               }`}
             >
               <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
-              The Block Storefront
+              The Block
             </span>
-            <span className={isLight ? "text-slate-600 text-xs hidden sm:inline" : "text-slate-400 text-xs hidden sm:inline"}>
-              Spin the cube to select a face · Click Enter Configuration to choose outcomes
+            <span className={isLight ? "text-slate-600 text-xs font-mono hidden sm:inline" : "text-slate-400 text-xs font-mono hidden sm:inline"}>
+              Enterprise Outcome Storefront · Structured Mandates
             </span>
           </div>
 
@@ -586,6 +602,22 @@ export default function TheBlockConfiguratorPage() {
               <span>{selectedCount} configured</span>
               {selectedCount > 0 && <span className="text-[10px]">↓ Review Scope</span>}
             </button>
+
+            {/* CLEAR ALL BUTTON */}
+            {selectedCount > 0 && (
+              <button
+                type="button"
+                onClick={handleClearAll}
+                className={`inline-flex items-center gap-1 px-3 py-1 rounded-full border text-xs font-mono font-semibold transition-all cursor-pointer ${
+                  isLight
+                    ? "bg-rose-50 border-rose-300 text-rose-700 hover:bg-rose-100 shadow-xs"
+                    : "bg-rose-950/30 border-rose-800/40 text-rose-300 hover:bg-rose-950/50"
+                }`}
+                title="Clear all selected outcomes"
+              >
+                Clear all
+              </button>
+            )}
 
             {/* THEME TOGGLE CLICKER */}
             <button
@@ -626,7 +658,7 @@ export default function TheBlockConfiguratorPage() {
               isLight ? "text-amber-800" : "text-amber-400"
             }`}
           >
-            Outcome Configurator
+            Executive Mandates · Outcome Storefront
           </p>
           <h1
             className={`font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight ${
@@ -636,11 +668,18 @@ export default function TheBlockConfiguratorPage() {
             What do you want your business to be able to do?
           </h1>
           <p
-            className={`text-sm sm:text-base mt-2.5 max-w-2xl mx-auto ${
+            className={`text-sm sm:text-base mt-3 max-w-2xl mx-auto leading-relaxed ${
               isLight ? "text-slate-700" : "text-slate-300"
             }`}
           >
-            Spin the 3D block to explore the six transformation disciplines. Click any face or category below, then enter configuration to select your outcomes.
+            Decades of enterprise leadership distilled into six core disciplines. A new way for executives—CIOs, CFOs, and operating partners—to organize what their business needs, align on verified outcomes, and agree on a clear mandate of time.
+          </p>
+          <p
+            className={`text-xs font-mono mt-2 max-w-xl mx-auto ${
+              isLight ? "text-amber-900/80 font-medium" : "text-amber-300/80"
+            }`}
+          >
+            Explore the block below. Select outcomes across any discipline to assemble your delivery scope.
           </p>
         </div>
 
@@ -760,7 +799,7 @@ export default function TheBlockConfiguratorPage() {
           {/* ==================================================================== */}
           <div className="w-full max-w-4xl mt-5">
             <p className={`text-xs font-mono uppercase tracking-wider font-semibold text-center mb-2.5 ${isLight ? "text-slate-600" : "text-slate-400"}`}>
-              Select a category to spin block and review scope
+              Select an enterprise discipline to rotate the block and view outcomes
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
               {DOMAIN_CONFIGS.map((domain) => {
@@ -915,16 +954,32 @@ export default function TheBlockConfiguratorPage() {
                 <div className="flex flex-col gap-3">
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500">
-                      Configure Outcomes ({configFaceItems.filter((i) => currentOutcomeIds.includes(i.id)).length} selected)
+                      Configure Outcomes ({configFaceItems.filter((i) => selectedOutcomeIds.includes(i.id)).length} selected)
                     </span>
-                    <span className="text-[11px] font-mono text-slate-500">
-                      Checkboxes add outcomes to your proposal
-                    </span>
+                    <div className="flex items-center gap-3">
+                      {configFaceItems.some((i) => selectedOutcomeIds.includes(i.id)) && (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            const faceIds = new Set(configFaceItems.map((i) => i.id));
+                            const next = selectedOutcomeIds.filter((id) => !faceIds.has(id));
+                            setSelectedOutcomeIds(next);
+                            update({ outcomeIds: next });
+                          }}
+                          className="text-[11px] font-mono text-rose-600 dark:text-rose-400 hover:underline cursor-pointer"
+                        >
+                          Deselect face outcomes
+                        </button>
+                      )}
+                      <span className="text-[11px] font-mono text-slate-500 hidden sm:inline">
+                        Checkboxes add outcomes to your proposal
+                      </span>
+                    </div>
                   </div>
 
                   <div className="flex flex-col gap-2.5">
                     {configFaceItems.map((item, idx) => {
-                      const isSelected = currentOutcomeIds.includes(item.id);
+                      const isSelected = selectedOutcomeIds.includes(item.id);
                       const isExpanded = expandedItemId === item.id;
                       return (
                         <div
@@ -1020,7 +1075,7 @@ export default function TheBlockConfiguratorPage() {
                 }`}
               >
                 <div className="flex items-center gap-2 text-xs font-mono">
-                  <span className="font-bold">{configFaceItems.filter((i) => currentOutcomeIds.includes(i.id)).length}</span>
+                  <span className="font-bold">{configFaceItems.filter((i) => selectedOutcomeIds.includes(i.id)).length}</span>
                   <span className="text-slate-500">of {configFaceItems.length} selected for {configDomain.shortName}</span>
                 </div>
 
@@ -1070,7 +1125,7 @@ export default function TheBlockConfiguratorPage() {
                 </h2>
               </div>
               <p className={`text-xs sm:text-sm mt-1 ${isLight ? "text-slate-600" : "text-slate-400"}`}>
-                Your customized engagement bundle across the six block disciplines.
+                Your customized engagement bundle across the six core disciplines.
               </p>
             </div>
 
@@ -1092,8 +1147,8 @@ export default function TheBlockConfiguratorPage() {
               {selectedCount > 0 && (
                 <button
                   type="button"
-                  onClick={() => update({ outcomeIds: [] })}
-                  className="text-xs font-mono text-rose-600 dark:text-rose-400 hover:underline cursor-pointer"
+                  onClick={handleClearAll}
+                  className="text-xs font-mono font-semibold text-rose-600 dark:text-rose-400 hover:underline cursor-pointer"
                 >
                   Clear all
                 </button>
