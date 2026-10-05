@@ -58,7 +58,6 @@ export default function SiteHeader() {
   const { isLight } = useTheme();
 
   const path = (pathname ?? "/").replace(/\/+$/, "") || "/";
-  const isBlock = path.startsWith("/block");
   const isDarkHeader = !isLight;
 
   useEffect(() => {
@@ -96,24 +95,6 @@ export default function SiteHeader() {
           >
             <HeaderWordmark isDark={isDarkHeader} />
           </Link>
-          {isBlock && (
-            <div
-              className={`flex items-center gap-2 pl-3 border-l ${
-                isDarkHeader ? "border-white/20" : "border-navy/15"
-              }`}
-            >
-              <span
-                className={`font-mono text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded border flex items-center gap-1.5 ${
-                  isDarkHeader
-                    ? "text-[#E5B21D] bg-[#E5B21D]/10 border-[#E5B21D]/30 shadow-[0_0_12px_rgba(229,178,29,0.15)]"
-                    : "text-amber-900 bg-amber-500/10 border-amber-500/30 shadow-xs"
-                }`}
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
-                The Block
-              </span>
-            </div>
-          )}
         </div>
 
         {/* Desktop nav + Theme toggle */}

@@ -11,6 +11,7 @@ import {
   useEngagementDraft,
 } from "@/lib/engagement-draft";
 import { useTheme } from "@/lib/theme";
+import { TheBlockLogo } from "@/components/TheBlockLogo";
 
 // Strictly: 0 dollars ($), 0 phone numbers, ASCII hyphens only.
 // Delivery Standard: 1 Block = 2 to 4 Weeks. Client selects outcomes, we quote blocks.
@@ -552,20 +553,13 @@ export default function TheBlockConfiguratorPage() {
             isLight ? "border-[#E2DCD2]" : "border-white/10"
           }`}
         >
-          <div className="flex flex-wrap items-center gap-2.5">
-            <span
-              className={`font-mono text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded border flex items-center gap-1.5 ${
-                isLight
-                  ? "bg-amber-500/15 border-amber-600/30 text-amber-900 font-bold"
-                  : "bg-amber-400/10 border-amber-400/30 text-amber-400"
-              }`}
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
-              The Block
-            </span>
-            <span className={isLight ? "text-slate-600 text-xs font-mono hidden sm:inline" : "text-slate-400 text-xs font-mono hidden sm:inline"}>
-              Enterprise Outcome Storefront · Structured Mandates
-            </span>
+          <div className="flex items-center">
+            <TheBlockLogo
+              size="md"
+              variant="monochrome"
+              className={isLight ? "text-[#142840]" : "text-white"}
+              showWordmark={true}
+            />
           </div>
 
           <div className="flex flex-wrap items-center gap-2.5">
@@ -600,7 +594,7 @@ export default function TheBlockConfiguratorPage() {
                 }`}
               />
               <span>{selectedCount} configured</span>
-              {selectedCount > 0 && <span className="text-[10px]">↓ Review Scope</span>}
+              {selectedCount > 0 && <span className="text-[10px]">↓ Review Outcomes</span>}
             </button>
 
             {/* CLEAR ALL BUTTON */}
@@ -658,7 +652,7 @@ export default function TheBlockConfiguratorPage() {
               isLight ? "text-amber-800" : "text-amber-400"
             }`}
           >
-            Executive Mandates · Outcome Storefront
+            Outcome Storefront
           </p>
           <h1
             className={`font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight ${
@@ -672,14 +666,14 @@ export default function TheBlockConfiguratorPage() {
               isLight ? "text-slate-700" : "text-slate-300"
             }`}
           >
-            Decades of enterprise leadership distilled into six core disciplines. A new way for executives—CIOs, CFOs, and operating partners—to organize what their business needs, align on verified outcomes, and agree on a clear mandate of time.
+            Decades of enterprise leadership distilled into six core disciplines. A new way for any business that needs proven outcomes delivered: organize what you need, align on verified outcomes, and agree on a structured engagement with a clear flight of time.
           </p>
           <p
             className={`text-xs font-mono mt-2 max-w-xl mx-auto ${
               isLight ? "text-amber-900/80 font-medium" : "text-amber-300/80"
             }`}
           >
-            Explore the block below. Select outcomes across any discipline to assemble your delivery scope.
+            Explore the block below. Select outcomes across any discipline to assemble your engagement.
           </p>
         </div>
 
@@ -1121,7 +1115,7 @@ export default function TheBlockConfiguratorPage() {
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-amber-500" />
                 <h2 className={`font-serif text-2xl font-bold ${isLight ? "text-[#142840]" : "text-white"}`}>
-                  Configured Outcomes Scope
+                  Configured Outcomes
                 </h2>
               </div>
               <p className={`text-xs sm:text-sm mt-1 ${isLight ? "text-slate-600" : "text-slate-400"}`}>
