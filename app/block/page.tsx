@@ -10,18 +10,19 @@ import {
 import {
   useEngagementDraft,
 } from "@/lib/engagement-draft";
-
 import { useTheme } from "@/lib/theme";
 
 // Strictly: 0 dollars ($), 0 phone numbers, ASCII hyphens only.
 // Delivery Standard: 1 Block = 2 to 4 Weeks. Client selects outcomes, we quote blocks.
 // Client-facing voice: strictly collective sovereign voice ("We", "Our team", "Our principals"). NO individual names.
-// Storefront Architecture:
-// - Light Theme default with instant Dark Theme clicker toggle.
-// - Unified Side-by-Side Storefront Workspace (Desktop) & Stacked Flow (Mobile).
-// - Interactive 3D Spinning Cube with direct-manipulation physics and shortest-path snap.
-// - Inline Outcome Shelf directly alongside the cube: 1-click select, zero modal jumping, zero deep scrolling.
-// - Streamlined bottom Scope Review & Scoping Proposal request form.
+// Capo Architecture:
+// - Big, Centered 3D Spinning Cube Configurator in the center stage.
+// - Rich idigdata Light Theme (crisp cream #FBF9F4, deep navy #142840, gold #FACC15, zero greenish wash-out) + Dark Theme toggle.
+// - Six face categories underneath the cube to pick from.
+// - One primary button to "Enter Configuration Mode" (plus direct face clicks).
+// - Configuration Menu Modal/Drawer: 0 auto-selected outcomes, buyer explicitly configures scope.
+// - Condensed, well laid-out Configured Outcomes aggregation plate (CPQ preview).
+// - Request Scoping Proposal form wired into CPQ engine / "The Block Mine" intake.
 
 interface DomainConfig {
   id: string;
@@ -49,12 +50,12 @@ const DOMAIN_CONFIGS: DomainConfig[] = [
     subtitle: "Turn business priorities into an executable roadmap, accountable delivery, and measurable improvement.",
     essence: "Align priorities, investment, ownership, and sequencing across teams and executive partners.",
     badge: "EXECUTIVE",
-    accentHex: "#F59E0B",
-    borderClass: "border-amber-500/40 hover:border-amber-400",
+    accentHex: "#D97706",
+    borderClass: "border-amber-500/40 hover:border-amber-500",
     bgGlowClass: "from-amber-500/10 via-transparent to-transparent",
-    pillClass: "bg-amber-500/15 text-amber-300 border-amber-500/30",
+    pillClass: "bg-amber-500/15 text-amber-700 dark:text-amber-300 border-amber-500/30",
     cubeRotation: { x: -12, y: 0 },
-    faceTransform: "rotateY(0deg) translateZ(130px)",
+    faceTransform: "rotateY(0deg) translateZ(140px)",
   },
   {
     id: "business_systems",
@@ -64,13 +65,13 @@ const DOMAIN_CONFIGS: DomainConfig[] = [
     subtitle: "Get more value from enterprise applications and make them work together.",
     essence: "Connect ERP, WMS, MES, HRM/HCM, EAM, and CRM around shared operational truth.",
     badge: "APPLICATIONS",
-    accentHex: "#06B6D4",
-    borderClass: "border-cyan-500/40 hover:border-cyan-400",
-    bgGlowClass: "from-cyan-500/10 via-transparent to-transparent",
-    pillClass: "bg-cyan-500/15 text-cyan-300 border-cyan-500/30",
+    accentHex: "#0284C7",
+    borderClass: "border-sky-500/40 hover:border-sky-500",
+    bgGlowClass: "from-sky-500/10 via-transparent to-transparent",
+    pillClass: "bg-sky-500/15 text-sky-700 dark:text-sky-300 border-sky-500/30",
     cubeRotation: { x: -12, y: -90 },
-    faceTransform: "rotateY(90deg) translateZ(130px)",
-    appGroups: "ERP • WMS • MES • HRM/HCM • EAM • CRM",
+    faceTransform: "rotateY(90deg) translateZ(140px)",
+    appGroups: "ERP, WMS, MES, HRM/HCM, EAM, CRM",
   },
   {
     id: "it_ot_operations",
@@ -80,12 +81,12 @@ const DOMAIN_CONFIGS: DomainConfig[] = [
     subtitle: "Maintain dependable enterprise infrastructure, cybersecurity, and operational continuity across business and plant systems.",
     essence: "Dependable infrastructure, cybersecurity, and operational continuity across business and plant systems.",
     badge: "OPERATIONS & SEC",
-    accentHex: "#3B82F6",
-    borderClass: "border-blue-500/40 hover:border-blue-400",
+    accentHex: "#2563EB",
+    borderClass: "border-blue-500/40 hover:border-blue-500",
     bgGlowClass: "from-blue-500/10 via-transparent to-transparent",
-    pillClass: "bg-blue-500/15 text-blue-300 border-blue-500/30",
+    pillClass: "bg-blue-500/15 text-blue-700 dark:text-blue-300 border-blue-500/30",
     cubeRotation: { x: -12, y: -180 },
-    faceTransform: "rotateY(180deg) translateZ(130px)",
+    faceTransform: "rotateY(180deg) translateZ(140px)",
   },
   {
     id: "data_knowledge",
@@ -95,54 +96,46 @@ const DOMAIN_CONFIGS: DomainConfig[] = [
     subtitle: "Turn business records, operating history, and company knowledge into trusted information people and agents can use.",
     essence: "Master data integrity, repeatable analytics, institutional memory retention, and RAG.",
     badge: "TRUTH & RAG",
-    accentHex: "#8B5CF6",
-    borderClass: "border-violet-500/40 hover:border-violet-400",
-    bgGlowClass: "from-violet-500/10 via-transparent to-transparent",
-    pillClass: "bg-violet-500/15 text-violet-300 border-violet-500/30",
+    accentHex: "#7C3AED",
+    borderClass: "border-purple-500/40 hover:border-purple-500",
+    bgGlowClass: "from-purple-500/10 via-transparent to-transparent",
+    pillClass: "bg-purple-500/15 text-purple-700 dark:text-purple-300 border-purple-500/30",
     cubeRotation: { x: -12, y: 90 },
-    faceTransform: "rotateY(-90deg) translateZ(130px)",
+    faceTransform: "rotateY(-90deg) translateZ(140px)",
   },
   {
     id: "financial_systems",
     code: "FS",
     name: "Financial Systems",
-    shortName: "Financial Systems",
-    subtitle: "Protect financial integrity and give the CFO a unified view of performance, planning, and profitability.",
-    essence: "Reconciliation, accelerated close, auditable controls, unified EPM, and Activity-Based Costing.",
-    badge: "FINANCIAL INTEGRITY",
-    accentHex: "#10B981",
-    borderClass: "border-emerald-500/40 hover:border-emerald-400",
-    bgGlowClass: "from-emerald-500/10 via-transparent to-transparent",
-    pillClass: "bg-emerald-500/15 text-emerald-300 border-emerald-500/30",
-    cubeRotation: { x: -90, y: 0 },
-    faceTransform: "rotateX(90deg) translateZ(130px)",
+    shortName: "Finance & Cost",
+    subtitle: "Maintain financial controls, accelerate close, and reconcile operations to finance.",
+    essence: "Reconciliation, audit readiness, cost-to-serve, working capital visibility, and margin control.",
+    badge: "FINANCE & CONTROLS",
+    accentHex: "#0D9488",
+    borderClass: "border-teal-500/40 hover:border-teal-500",
+    bgGlowClass: "from-teal-500/10 via-transparent to-transparent",
+    pillClass: "bg-teal-500/15 text-teal-700 dark:text-teal-300 border-teal-500/30",
+    cubeRotation: { x: 78, y: 0 },
+    faceTransform: "rotateX(-90deg) translateZ(140px)",
   },
   {
     id: "workflows_automation",
     code: "WA",
     name: "Workflows & Automation",
     shortName: "Workflows",
-    subtitle: "Connect work across people and applications-and make improved ways of working stick.",
-    essence: "End-to-end handoff elimination, order-to-cash, procure-to-pay, shop-floor capture, and resilient automation.",
-    badge: "WORKFLOW RUNTIMES",
-    accentHex: "#14B8A6",
-    borderClass: "border-teal-500/40 hover:border-teal-400",
-    bgGlowClass: "from-teal-500/10 via-transparent to-transparent",
-    pillClass: "bg-teal-500/15 text-teal-300 border-teal-500/30",
-    cubeRotation: { x: 90, y: 0 },
-    faceTransform: "rotateX(-90deg) translateZ(130px)",
+    subtitle: "Eliminate friction between teams and automate operational handoffs.",
+    essence: "Order-to-cash, procure-to-pay, frontline mobile capture, and exception routing.",
+    badge: "AUTOMATION",
+    accentHex: "#DB2777",
+    borderClass: "border-pink-500/40 hover:border-pink-500",
+    bgGlowClass: "from-pink-500/10 via-transparent to-transparent",
+    pillClass: "bg-pink-500/15 text-pink-700 dark:text-pink-300 border-pink-500/30",
+    cubeRotation: { x: -102, y: 0 },
+    faceTransform: "rotateX(90deg) translateZ(140px)",
   },
 ];
 
-const FACE_NEIGHBORS: Record<
-  string,
-  {
-    UP: string;
-    DOWN: string;
-    LEFT: string;
-    RIGHT: string;
-  }
-> = {
+const FACE_NEIGHBORS: Record<string, { UP: string; DOWN: string; LEFT: string; RIGHT: string }> = {
   leadership_direction: {
     UP: "workflows_automation",
     DOWN: "financial_systems",
@@ -280,20 +273,21 @@ function DomainBlockIcon({
 
 export default function TheBlockConfiguratorPage() {
   const { draft, update } = useEngagementDraft();
-
-  // Capo Directives:
-  // 1. Default to Light Theme, with an instant Dark Theme toggle clicker.
-  // 2. 1 Block = 2 to 4 Weeks standard locked.
-  // 3. 58 canonical outcomes across 6 faces.
-  // 4. Side-by-side workspace: 3D interactive block on left, live outcome shelf on right (NO MODAL).
   const { theme, setTheme, isLight } = useTheme();
+
+  // Active domain currently focused on the 3D block
   const [activeDomainId, setActiveDomainId] = useState<string>("leadership_direction");
-  const [cubeRotation, setCubeRotation] = useState({ x: -12, y: 0 });
+  const [cubeRotation, setCubeRotation] = useState<{ x: number; y: number }>({ x: -12, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
+  
+  // Configuration Mode state (the pop-up / drawer where menus pop up per Capo's direct directive)
+  const [configModalDomainId, setConfigModalDomainId] = useState<string | null>(null);
+
+  // Context notes per face
   const [domainNotes, setDomainNotes] = useState<Record<string, string>>({});
   const [expandedItemId, setExpandedItemId] = useState<string | null>(null);
 
-  // Form contact inputs
+  // Proposal request contact form inputs
   const [contactName, setContactName] = useState("");
   const [contactEmail, setContactEmail] = useState("");
   const [contactCompany, setContactCompany] = useState("");
@@ -305,6 +299,7 @@ export default function TheBlockConfiguratorPage() {
   const dragStartRef = useRef<{ x: number; y: number; rotX: number; rotY: number }>({ x: 0, y: 0, rotX: -12, rotY: 0 });
   const hasDraggedRef = useRef(false);
 
+  // Outcomes explicitly selected by the buyer
   const currentOutcomeIds = useMemo(() => {
     return draft?.outcomeIds ?? [];
   }, [draft?.outcomeIds]);
@@ -315,61 +310,79 @@ export default function TheBlockConfiguratorPage() {
     return DOMAIN_CONFIGS.find((d) => d.id === activeDomainId) || DOMAIN_CONFIGS[0];
   }, [activeDomainId]);
 
-  // Handle snap-rotation when clicking quick buttons
-  const handleSnapToDomain = (domainId: string) => {
-    setActiveDomainId(domainId);
-    setCubeRotation((current) => getCanonicalRotationForDomain(domainId, current));
-  };
+  const configDomain = useMemo(() => {
+    if (!configModalDomainId) return null;
+    return DOMAIN_CONFIGS.find((d) => d.id === configModalDomainId) || null;
+  }, [configModalDomainId]);
 
-  // Drag physics for natural, responsive 3D cube spinning
+  // Outcomes for the active configuration face
+  const configFaceItems = useMemo(() => {
+    if (!configDomain) return [];
+    return PUBLIC_CATALOG_ITEMS.filter((item) => item.domainId === configDomain.id);
+  }, [configDomain]);
+
+  // Selection counts per domain
+  const domainSelectionStats = useMemo(() => {
+    const counts: Record<string, number> = {};
+    DOMAIN_CONFIGS.forEach((d) => {
+      const items = PUBLIC_CATALOG_ITEMS.filter((it) => it.domainId === d.id);
+      counts[d.id] = items.filter((it) => currentOutcomeIds.includes(it.id)).length;
+    });
+    return counts;
+  }, [currentOutcomeIds]);
+
+  // Aggregated configured outcomes grouped by domain (for CPQ review)
+  const aggregatedByDomain = useMemo(() => {
+    return DOMAIN_CONFIGS.map((domain) => {
+      const items = PUBLIC_CATALOG_ITEMS.filter(
+        (it) => it.domainId === domain.id && currentOutcomeIds.includes(it.id)
+      );
+      const note = domainNotes[domain.id] || "";
+      return { domain, items, note };
+    }).filter((group) => group.items.length > 0 || group.note.trim().length > 0);
+  }, [currentOutcomeIds, domainNotes]);
+
+  // Drag-to-spin cube pointer handling
   const handlePointerDown = (e: React.PointerEvent) => {
-    setIsDragging(true);
-    hasDraggedRef.current = false;
+    (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
     dragStartRef.current = {
       x: e.clientX,
       y: e.clientY,
       rotX: cubeRotation.x,
       rotY: cubeRotation.y,
     };
-    try {
-      (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
-    } catch {}
+    hasDraggedRef.current = false;
+    setIsDragging(true);
   };
 
   const handlePointerMove = (e: React.PointerEvent) => {
     if (!isDragging) return;
     const dx = e.clientX - dragStartRef.current.x;
     const dy = e.clientY - dragStartRef.current.y;
-    const distance = Math.hypot(dx, dy);
-
-    if (distance > 2) {
+    
+    if (Math.abs(dx) > 4 || Math.abs(dy) > 4) {
       hasDraggedRef.current = true;
     }
 
-    if (!hasDraggedRef.current) return;
-
-    const sensitivity = 0.45;
-    const startX = dragStartRef.current.rotX;
-    const startY = dragStartRef.current.rotY;
-
-    const tiltX = startX - dy * sensitivity;
-    const tiltY = startY + dx * sensitivity;
-    setCubeRotation({ x: tiltX, y: tiltY });
+    const sensitivity = 0.55;
+    const nextRotX = Math.max(-120, Math.min(90, dragStartRef.current.rotX - dy * sensitivity));
+    const nextRotY = dragStartRef.current.rotY + dx * sensitivity;
+    setCubeRotation({ x: nextRotX, y: nextRotY });
   };
 
-  // On release: snap right-side-up to closest adjacent face
   const handlePointerUp = (e: React.PointerEvent) => {
-    setIsDragging(false);
+    if (!isDragging) return;
     try {
       (e.currentTarget as HTMLElement).releasePointerCapture(e.pointerId);
     } catch {}
+    setIsDragging(false);
 
     if (hasDraggedRef.current) {
       const dx = e.clientX - dragStartRef.current.x;
       const dy = e.clientY - dragStartRef.current.y;
       const absDx = Math.abs(dx);
       const absDy = Math.abs(dy);
-      const swipeThreshold = 20;
+      const swipeThreshold = 18;
 
       let nextDomainId = activeDomainId;
 
@@ -392,13 +405,21 @@ export default function TheBlockConfiguratorPage() {
     }
   };
 
-  // Clicking a face on the cube rotates to that face and switches the active outcome shelf
+  // Click on a 3D face directly rotates the block and opens configuration
   const handleFaceClick = (domainId: string) => {
     if (hasDraggedRef.current) return;
-    handleSnapToDomain(domainId);
+    setActiveDomainId(domainId);
+    setCubeRotation((current) => getCanonicalRotationForDomain(domainId, current));
+    setConfigModalDomainId(domainId);
   };
 
-  // Toggle outcome selection with immediate state reflection
+  // Click on one of the six categories underneath the cube
+  const handleCategorySelect = (domainId: string) => {
+    setActiveDomainId(domainId);
+    setCubeRotation((current) => getCanonicalRotationForDomain(domainId, current));
+  };
+
+  // Toggle outcome selection (NO auto-select; explicit buyer choice)
   const handleToggleOutcome = (id: string) => {
     const current = currentOutcomeIds;
     const next = current.includes(id)
@@ -407,11 +428,11 @@ export default function TheBlockConfiguratorPage() {
     update({ outcomeIds: next });
   };
 
-  // Synchronize category notes into global draft notes
+  // Save notes for a domain
   const handleDomainNoteChange = (domainId: string, text: string) => {
     const updated = { ...domainNotes, [domainId]: text };
     setDomainNotes(updated);
-
+    
     const synthesized = Object.entries(updated)
       .filter(([_, content]) => content.trim().length > 0)
       .map(([id, content]) => {
@@ -419,65 +440,15 @@ export default function TheBlockConfiguratorPage() {
         return `[${dom?.name || id}]\n${content.trim()}`;
       })
       .join("\n\n");
-
+    
     update({ notes: synthesized });
   };
-
-  // Active domain catalog items
-  const activeItems = useMemo(() => {
-    return PUBLIC_CATALOG_ITEMS.filter((item) => item.domainId === activeDomain.id);
-  }, [activeDomain]);
-
-  // Grouped active items
-  const groupedActiveItems = useMemo(() => {
-    const groups: { name: string; items: CatalogItem[] }[] = [];
-    const ungrouped: CatalogItem[] = [];
-
-    activeItems.forEach((item) => {
-      if (item.group) {
-        let existing = groups.find((g) => g.name === item.group);
-        if (!existing) {
-          existing = { name: item.group, items: [] };
-          groups.push(existing);
-        }
-        existing.items.push(item);
-      } else {
-        ungrouped.push(item);
-      }
-    });
-
-    return { groups, ungrouped };
-  }, [activeItems]);
-
-  // Domain selection counts
-  const domainSelectionStats = useMemo(() => {
-    const counts: Record<string, number> = {};
-    DOMAIN_CONFIGS.forEach((d) => {
-      const items = PUBLIC_CATALOG_ITEMS.filter((it) => it.domainId === d.id);
-      counts[d.id] = items.filter((it) => currentOutcomeIds.includes(it.id)).length;
-    });
-    return counts;
-  }, [currentOutcomeIds]);
-
-  // Aggregated outcomes grouped by domain
-  const aggregatedByDomain = useMemo(() => {
-    return DOMAIN_CONFIGS.map((domain) => {
-      const items = PUBLIC_CATALOG_ITEMS.filter(
-        (it) => it.domainId === domain.id && currentOutcomeIds.includes(it.id)
-      );
-      const note = domainNotes[domain.id] || "";
-      return {
-        domain,
-        items,
-        note,
-      };
-    }).filter((entry) => entry.items.length > 0 || entry.note.trim().length > 0);
-  }, [currentOutcomeIds, domainNotes]);
 
   const handleScrollToAggregator = () => {
     aggregatorRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
+  // Submit Scoping Proposal to DigOps CPQ / The Block Mine
   const handleSubmitProposal = async (e: React.FormEvent) => {
     e.preventDefault();
     if (selectedCount === 0 || isSubmitting) return;
@@ -494,9 +465,12 @@ export default function TheBlockConfiguratorPage() {
       .join("\n\n");
 
     const fullMessage = [
-      `THE BLOCK PROPOSAL REQUEST (${selectedCount} outcomes selected)`,
+      `[THE BLOCK SCOPING PROPOSAL]`,
+      `Mine: the_block`,
+      `Standard: 1 Block = 2 to 4 Weeks`,
+      `Configured Outcomes (${selectedCount} selected across ${aggregatedByDomain.length} disciplines):`,
       outcomesList,
-      (draft?.contactMessage || "").trim() ? `General Context & Notes:\n${(draft?.contactMessage || "").trim()}` : "",
+      (draft?.contactMessage || "").trim() ? `Additional Context:\n${(draft?.contactMessage || "").trim()}` : "",
     ]
       .filter(Boolean)
       .join("\n\n");
@@ -520,7 +494,7 @@ export default function TheBlockConfiguratorPage() {
       if (res.ok && data?.ok) {
         setSubmitSuccess(true);
       } else {
-        setSubmitError(data?.error || "Unable to transmit proposal request. Please retry.");
+        setSubmitError(data?.error || "Unable to transmit scoping proposal. Please retry.");
       }
     } catch {
       setSubmitError("Network connection issue. Please retry.");
@@ -533,48 +507,48 @@ export default function TheBlockConfiguratorPage() {
     <main
       className={`min-h-screen transition-colors duration-300 antialiased flex flex-col justify-between ${
         isLight
-          ? "bg-[#FBF9F4] text-slate-900 selection:bg-amber-400 selection:text-slate-900"
+          ? "bg-[#FBF9F4] text-[#142840] selection:bg-amber-400 selection:text-slate-900"
           : "bg-[#060c16] text-slate-100 selection:bg-amber-400 selection:text-slate-950"
       }`}
     >
-      {/* Dynamic Ambient Background Glows */}
+      {/* Dynamic Warm Ambient Glow (Zero greenish or cyan tint) */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
         <div
-          className={`absolute -top-[15%] left-1/2 -translate-x-1/2 w-[850px] h-[500px] rounded-full blur-[140px] transition-all duration-700 ease-out ${
-            isLight ? "opacity-10" : "opacity-20"
+          className={`absolute -top-[12%] left-1/2 -translate-x-1/2 w-[850px] h-[500px] rounded-full blur-[140px] transition-all duration-700 ease-out ${
+            isLight ? "opacity-15 bg-amber-200/40" : "opacity-20 bg-amber-500/15"
           }`}
-          style={{ backgroundColor: activeDomain.accentHex }}
+          style={{ backgroundColor: isLight ? undefined : `${activeDomain.accentHex}25` }}
         />
         <div
-          className={`absolute top-[45%] -right-[15%] w-[600px] h-[600px] rounded-full blur-[160px] ${
-            isLight ? "bg-blue-100/40" : "bg-cyan-900/15"
+          className={`absolute bottom-[10%] -left-[10%] w-[550px] h-[550px] rounded-full blur-[160px] ${
+            isLight ? "bg-stone-200/50" : "bg-slate-900/40"
           }`}
         />
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-4 flex flex-col gap-4">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-5 flex flex-col gap-6">
         
         {/* ==================================================================== */}
-        {/* OPERATIONAL BAR: CONTROLS, DELIVERY STANDARD & THEME CLICKER         */}
+        {/* OPERATIONAL CONTROL BAR: STANDARD & THEME CLICKER                    */}
         {/* ==================================================================== */}
         <div
-          className={`flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b pb-3 pt-1 ${
-            isLight ? "border-slate-200/80" : "border-white/10"
+          className={`flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b pb-3.5 pt-1 ${
+            isLight ? "border-[#E2DCD2]" : "border-white/10"
           }`}
         >
           <div className="flex flex-wrap items-center gap-2.5">
             <span
               className={`font-mono text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded border flex items-center gap-1.5 ${
                 isLight
-                  ? "bg-amber-500/10 border-amber-500/30 text-amber-900"
+                  ? "bg-amber-500/15 border-amber-600/30 text-amber-900 font-bold"
                   : "bg-amber-400/10 border-amber-400/30 text-amber-400"
               }`}
             >
               <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
-              Outcome Configurator
+              The Block Storefront
             </span>
-            <span className={isLight ? "text-slate-500 text-xs hidden sm:inline" : "text-slate-400 text-xs hidden sm:inline"}>
-              Rotate cube or select face to configure scope
+            <span className={isLight ? "text-slate-600 text-xs hidden sm:inline" : "text-slate-400 text-xs hidden sm:inline"}>
+              Spin the cube to select a face · Click Enter Configuration to choose outcomes
             </span>
           </div>
 
@@ -583,7 +557,7 @@ export default function TheBlockConfiguratorPage() {
             <div
               className={`inline-flex items-center gap-2 px-3 py-1 rounded-full border text-xs font-mono font-semibold ${
                 isLight
-                  ? "bg-amber-50 border-amber-300 text-amber-900 shadow-xs"
+                  ? "bg-[#F3ECE0] border-amber-300 text-[#142840] shadow-xs"
                   : "bg-amber-400/10 border-amber-400/30 text-amber-300"
               }`}
             >
@@ -594,39 +568,39 @@ export default function TheBlockConfiguratorPage() {
             {/* SELECTION COUNTER PILL */}
             <button
               onClick={handleScrollToAggregator}
-              className={`inline-flex items-center gap-2 px-3.5 py-1 rounded-full border text-xs font-mono font-medium transition-all cursor-pointer ${
+              className={`inline-flex items-center gap-2 px-3.5 py-1 rounded-full border text-xs font-mono font-semibold transition-all cursor-pointer ${
                 selectedCount > 0
                   ? isLight
-                    ? "bg-emerald-50 border-emerald-300 text-emerald-800 shadow-xs hover:bg-emerald-100"
+                    ? "bg-emerald-50 border-emerald-400 text-emerald-900 shadow-xs hover:bg-emerald-100"
                     : "bg-emerald-500/15 border-emerald-500/40 text-emerald-300 hover:bg-emerald-500/25"
                   : isLight
-                  ? "bg-white border-slate-200 text-slate-500 hover:bg-slate-50"
+                  ? "bg-white border-slate-300 text-slate-700 hover:bg-slate-50"
                   : "bg-white/5 border-white/10 text-slate-400 hover:bg-white/10"
               }`}
             >
               <span
                 className={`w-2 h-2 rounded-full ${
-                  selectedCount > 0 ? "bg-emerald-500 animate-pulse" : isLight ? "bg-slate-300" : "bg-slate-600"
+                  selectedCount > 0 ? "bg-emerald-500 animate-pulse" : isLight ? "bg-slate-400" : "bg-slate-600"
                 }`}
               />
-              <span>{selectedCount} selected</span>
-              {selectedCount > 0 && <span className="text-[10px]">↓ Review</span>}
+              <span>{selectedCount} configured</span>
+              {selectedCount > 0 && <span className="text-[10px]">↓ Review Scope</span>}
             </button>
 
-            {/* THEME CLICKER (LIGHT / DARK TOGGLE) */}
+            {/* THEME TOGGLE CLICKER */}
             <button
               type="button"
               onClick={() => setTheme(isLight ? "dark" : "light")}
               className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full border text-xs font-mono font-semibold transition-all cursor-pointer ${
                 isLight
-                  ? "bg-white border-slate-300 text-slate-800 hover:bg-slate-100 shadow-xs"
+                  ? "bg-white border-slate-300 text-[#142840] hover:bg-slate-100 shadow-xs"
                   : "bg-white/10 border-white/20 text-slate-200 hover:bg-white/15"
               }`}
               title={`Switch to ${isLight ? "Dark" : "Light"} Mode`}
             >
               {isLight ? (
                 <>
-                  <svg className="w-3.5 h-3.5 text-amber-500" viewBox="0 0 24 24" fill="currentColor">
+                  <svg className="w-3.5 h-3.5 text-amber-600" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
                   </svg>
                   <span>Light</span>
@@ -644,305 +618,466 @@ export default function TheBlockConfiguratorPage() {
         </div>
 
         {/* ==================================================================== */}
-        {/* STOREFRONT HERO HEADER                                               */}
+        {/* CENTERED HERO STATEMENT                                              */}
         {/* ==================================================================== */}
-        <div className="text-center max-w-3xl mx-auto pt-1 pb-2">
+        <div className="text-center max-w-3xl mx-auto pt-1 pb-1">
           <p
-            className={`text-[11px] font-mono uppercase tracking-[0.25em] font-semibold mb-1 ${
-              isLight ? "text-amber-700" : "text-amber-400"
+            className={`text-[11px] font-mono uppercase tracking-[0.25em] font-bold mb-1.5 ${
+              isLight ? "text-amber-800" : "text-amber-400"
             }`}
           >
             Outcome Configurator
           </p>
           <h1
-            className={`font-serif text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight leading-tight ${
+            className={`font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight ${
               isLight ? "text-[#142840]" : "text-white"
             }`}
           >
             What do you want your business to be able to do?
           </h1>
           <p
-            className={`text-xs sm:text-sm mt-1.5 max-w-2xl mx-auto leading-relaxed ${
-              isLight ? "text-slate-600" : "text-slate-300"
+            className={`text-sm sm:text-base mt-2.5 max-w-2xl mx-auto ${
+              isLight ? "text-slate-700" : "text-slate-300"
             }`}
           >
-            Spin the 3D block or tap any face to explore the six transformation disciplines. Select the capabilities you need-we scope the blocks and delivery sequence.
+            Spin the 3D block to explore the six transformation disciplines. Click any face or category below, then enter configuration to select your outcomes.
           </p>
         </div>
 
         {/* ==================================================================== */}
-        {/* MASTER STOREFRONT WORKSPACE (SIDE-BY-SIDE ON DESKTOP, STACKED MOBILE)*/}
+        {/* GRANDDADDY 3D SPINNING BLOCK (CENTER STAGE)                          */}
         {/* ==================================================================== */}
-        <section className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <section className="relative flex flex-col items-center justify-center pt-2 pb-6">
           
-          {/* ------------------------------------------------------------------ */}
-          {/* LEFT WING: THE 3D INTERACTIVE BLOCK STATION (lg:col-span-5)        */}
-          {/* ------------------------------------------------------------------ */}
-          <div className="lg:col-span-5 flex flex-col items-center gap-4">
-            
-            {/* 3D DRAG-TO-SPIN CUBE CONTAINER */}
+          {/* DRAG-TO-SPIN 3D CUBE CONTAINER */}
+          <div
+            onPointerDown={handlePointerDown}
+            onPointerMove={handlePointerMove}
+            onPointerUp={handlePointerUp}
+            onPointerCancel={handlePointerUp}
+            className="relative w-[340px] h-[340px] flex items-center justify-center cursor-grab active:cursor-grabbing [perspective:1400px] select-none touch-none"
+            style={{ touchAction: "none" }}
+            title="Drag to spin the 3D block. Snaps to closest face on release. Click to configure."
+          >
             <div
-              onPointerDown={handlePointerDown}
-              onPointerMove={handlePointerMove}
-              onPointerUp={handlePointerUp}
-              onPointerCancel={handlePointerUp}
-              className="relative w-[300px] h-[300px] sm:w-[320px] sm:h-[320px] flex items-center justify-center cursor-grab active:cursor-grabbing [perspective:1200px] select-none touch-none"
-              style={{ touchAction: "none" }}
-              title="Drag to spin the 3D block; on release it snaps right-side up to the closest face"
+              className={`relative w-[280px] h-[280px] ${
+                isDragging ? "" : "transition-transform duration-700 cubic-bezier(0.16, 1, 0.3, 1)"
+              }`}
+              style={{
+                transformStyle: "preserve-3d",
+                transform: `rotateX(${cubeRotation.x}deg) rotateY(${cubeRotation.y}deg)`,
+              }}
             >
-              <div
-                className={`relative w-[260px] h-[260px] ${
-                  isDragging ? "" : "transition-transform duration-700 cubic-bezier(0.16, 1, 0.3, 1)"
-                }`}
-                style={{
-                  transformStyle: "preserve-3d",
-                  transform: `rotateX(${cubeRotation.x}deg) rotateY(${cubeRotation.y}deg)`,
-                }}
-              >
-                {DOMAIN_CONFIGS.map((domain, index) => {
-                  const count = domainSelectionStats[domain.id] || 0;
-                  const isFocused = activeDomainId === domain.id;
-                  return (
-                    <div
-                      key={domain.id}
-                      onClick={() => handleFaceClick(domain.id)}
-                      className={`absolute inset-0 rounded-2xl border-2 flex flex-col justify-between p-4 transition-all duration-300 group touch-none cursor-pointer ${
-                        isLight
-                          ? "bg-white/95 text-slate-900 shadow-xl shadow-slate-200/60 backdrop-blur-sm"
-                          : "bg-slate-950/90 text-white shadow-2xl backdrop-blur-md"
-                      } ${
-                        isFocused
-                          ? isLight
-                            ? "ring-2 ring-slate-800 shadow-2xl"
-                            : "shadow-[0_0_35px_rgba(255,255,255,0.15)] ring-1 ring-white/40"
-                          : isLight
-                          ? "hover:border-slate-400"
-                          : "hover:border-white/50"
-                      }`}
-                      style={{
-                        transform: domain.faceTransform,
-                        backfaceVisibility: "hidden",
-                        borderColor: isFocused ? domain.accentHex : isLight ? `${domain.accentHex}80` : `${domain.accentHex}50`,
-                        touchAction: "none",
-                      }}
-                    >
-                      {/* FACE TOP BAR */}
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-1.5">
-                          <span
-                            className="font-mono text-xs font-bold px-2 py-0.5 rounded border"
-                            style={{
-                              backgroundColor: `${domain.accentHex}20`,
-                              color: domain.accentHex,
-                              borderColor: `${domain.accentHex}40`,
-                            }}
-                          >
-                            {domain.code}
-                          </span>
-                          <span
-                            className={`text-[10px] font-mono ${
-                              isLight ? "text-slate-500" : "text-slate-400"
-                            }`}
-                          >
-                            Face {index + 1}
-                          </span>
-                        </div>
-
-                        {count > 0 ? (
-                          <span
-                            className={`text-[10px] font-mono font-bold px-2 py-0.5 rounded-full border flex items-center gap-1 shadow-xs ${
-                              isLight
-                                ? "bg-emerald-50 text-emerald-800 border-emerald-300"
-                                : "bg-emerald-500/20 text-emerald-300 border-emerald-500/40"
-                            }`}
-                          >
-                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                            {count} selected
-                          </span>
-                        ) : (
-                          <span className={`text-[10px] font-mono ${isLight ? "text-slate-400" : "text-slate-500"}`}>
-                            0 selected
-                          </span>
-                        )}
+              {DOMAIN_CONFIGS.map((domain) => {
+                const count = domainSelectionStats[domain.id] || 0;
+                const isFocused = activeDomainId === domain.id;
+                return (
+                  <div
+                    key={domain.id}
+                    onClick={() => handleFaceClick(domain.id)}
+                    className={`absolute inset-0 rounded-2xl border-2 flex flex-col justify-between p-5 transition-all duration-300 shadow-2xl backdrop-blur-md group touch-none cursor-pointer ${
+                      isLight
+                        ? isFocused
+                          ? "bg-white shadow-[0_12px_40px_rgba(20,40,64,0.18)] ring-2 ring-amber-500/40"
+                          : "bg-white/95 hover:bg-white shadow-md hover:shadow-lg"
+                        : isFocused
+                          ? "bg-slate-950/95 shadow-[0_0_35px_rgba(255,255,255,0.15)] ring-1 ring-white/40"
+                          : "bg-slate-950/85 hover:bg-slate-950 hover:border-white/50"
+                    }`}
+                    style={{
+                      transform: domain.faceTransform,
+                      backfaceVisibility: "hidden",
+                      borderColor: isFocused ? domain.accentHex : isLight ? "#E2DCD2" : `${domain.accentHex}50`,
+                      touchAction: "none",
+                    }}
+                  >
+                    {/* FACE TOP BAR */}
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <span
+                          className="font-mono text-xs font-bold px-2 py-0.5 rounded border"
+                          style={{
+                            backgroundColor: `${domain.accentHex}18`,
+                            color: domain.accentHex,
+                            borderColor: `${domain.accentHex}40`,
+                          }}
+                        >
+                          {domain.code}
+                        </span>
+                        <span className={`text-[10px] font-mono tracking-wider font-semibold ${isLight ? "text-slate-500" : "text-slate-400"}`}>
+                          {domain.badge}
+                        </span>
                       </div>
 
-                      {/* FACE CENTER ICON & TITLE */}
-                      <div className="flex flex-col items-center text-center my-auto py-1">
-                        <div
-                          className={`p-2.5 rounded-xl border group-hover:scale-105 transition-transform duration-300 mb-1.5 ${
-                            isLight ? "bg-slate-50 border-slate-200/80" : "bg-white/[0.03] border-white/5"
-                          }`}
-                        >
-                          <DomainBlockIcon code={domain.code} color={domain.accentHex} className="w-10 h-10" />
-                        </div>
+                      {/* SELECTION COUNT PILL */}
+                      <span
+                        className={`text-[11px] font-mono px-2 py-0.5 rounded-full font-bold transition-all ${
+                          count > 0
+                            ? "bg-emerald-500 text-white shadow-xs"
+                            : isLight
+                            ? "bg-slate-100 text-slate-600 border border-slate-200"
+                            : "bg-white/10 text-slate-400"
+                        }`}
+                      >
+                        {count > 0 ? `${count} configured` : "0 selected"}
+                      </span>
+                    </div>
+
+                    {/* FACE CENTER CONTENT */}
+                    <div className="my-auto flex flex-col gap-1.5 text-left">
+                      <div className="flex items-center gap-2.5">
+                        <DomainBlockIcon code={domain.code} color={domain.accentHex} className="w-6 h-6 flex-shrink-0" />
                         <h3
-                          className={`font-serif text-sm font-semibold leading-snug px-1 ${
+                          className={`font-serif text-lg font-bold leading-snug line-clamp-2 ${
                             isLight ? "text-[#142840]" : "text-white"
                           }`}
                         >
                           {domain.name}
                         </h3>
-                        <p
-                          className={`text-[11px] mt-1 line-clamp-2 px-1 leading-relaxed ${
-                            isLight ? "text-slate-600" : "text-slate-300"
-                          }`}
-                        >
-                          {domain.subtitle}
-                        </p>
                       </div>
-
-                      {/* FACE BOTTOM ACTION HINT */}
-                      <div
-                        className={`pt-1.5 border-t flex items-center justify-between text-[11px] ${
-                          isLight ? "border-slate-200/80" : "border-white/10"
-                        }`}
-                      >
-                        <span className={`font-mono text-[10px] ${isLight ? "text-slate-500" : "text-slate-400"}`}>
-                          {PUBLIC_CATALOG_ITEMS.filter((it) => it.domainId === domain.id).length} outcomes
-                        </span>
-                        <span
-                          className="font-medium flex items-center gap-1 group-hover:translate-x-0.5 transition-transform"
-                          style={{ color: domain.accentHex }}
-                        >
-                          Select Face →
-                        </span>
-                      </div>
+                      <p className={`text-xs leading-relaxed line-clamp-2 mt-0.5 ${isLight ? "text-slate-600" : "text-slate-300"}`}>
+                        {domain.essence}
+                      </p>
                     </div>
-                  );
-                })}
-              </div>
-            </div>
 
-            {/* QUICK-SNAP TABS (ALL 6 FACES, DOOR LINK REMOVED) */}
-            <div className="flex flex-wrap items-center justify-center gap-1.5 max-w-sm">
+                    {/* FACE BOTTOM CTA */}
+                    <div className="flex items-center justify-between pt-2 border-t border-slate-200/60 dark:border-white/10">
+                      <span className="text-[11px] font-mono font-medium text-amber-600 dark:text-amber-400 group-hover:underline">
+                        Click to configure face →
+                      </span>
+                      <span className="text-xs text-slate-400">
+                        {PUBLIC_CATALOG_ITEMS.filter((i) => i.domainId === domain.id).length} outcomes
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* ==================================================================== */}
+          {/* SIX CATEGORIES UNDERNEATH THE BLOCK                                  */}
+          {/* ==================================================================== */}
+          <div className="w-full max-w-4xl mt-5">
+            <p className={`text-xs font-mono uppercase tracking-wider font-semibold text-center mb-2.5 ${isLight ? "text-slate-600" : "text-slate-400"}`}>
+              Select a category to spin block and review scope
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
               {DOMAIN_CONFIGS.map((domain) => {
                 const count = domainSelectionStats[domain.id] || 0;
-                const isFocused = activeDomainId === domain.id;
+                const isSelected = activeDomainId === domain.id;
                 return (
                   <button
                     key={domain.id}
-                    onClick={() => handleSnapToDomain(domain.id)}
-                    className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md border text-xs transition-all cursor-pointer ${
-                      isFocused
+                    onClick={() => handleCategorySelect(domain.id)}
+                    className={`flex flex-col items-start justify-between p-2.5 rounded-xl border text-left transition-all cursor-pointer ${
+                      isSelected
                         ? isLight
-                          ? "border-slate-900 bg-slate-900 text-white font-semibold shadow-xs"
-                          : "border-white/50 bg-white/15 text-white font-medium shadow-md scale-105"
+                          ? "bg-white border-amber-500 shadow-md ring-2 ring-amber-500/20"
+                          : "bg-white/15 border-white/40 shadow-lg ring-1 ring-white/30"
                         : isLight
-                        ? "border-slate-200 bg-white text-slate-700 hover:border-slate-400 hover:bg-slate-50 shadow-xs"
-                        : "border-white/10 bg-white/[0.03] text-slate-300 hover:border-white/25 hover:text-white"
+                        ? "bg-white/80 hover:bg-white border-[#E2DCD2] hover:border-slate-400 text-slate-700"
+                        : "bg-white/5 hover:bg-white/10 border-white/10 text-slate-300"
                     }`}
                   >
-                    <span
-                      className="w-2 h-2 rounded-full shrink-0"
-                      style={{ backgroundColor: domain.accentHex }}
-                    />
-                    <span>{domain.shortName}</span>
-                    {count > 0 && (
+                    <div className="flex items-center justify-between w-full">
                       <span
-                        className={`font-mono text-[10px] px-1 rounded-full font-bold ${
-                          isLight
-                            ? "bg-emerald-100 text-emerald-800"
-                            : "bg-emerald-500/20 text-emerald-300 border border-emerald-500/40"
-                        }`}
+                        className="font-mono text-xs font-bold px-1.5 py-0.5 rounded border"
+                        style={{
+                          backgroundColor: `${domain.accentHex}18`,
+                          color: domain.accentHex,
+                          borderColor: `${domain.accentHex}40`,
+                        }}
                       >
-                        {count}
+                        {domain.code}
                       </span>
-                    )}
+                      {count > 0 && (
+                        <span className="w-2 h-2 rounded-full bg-emerald-500" title={`${count} configured`} />
+                      )}
+                    </div>
+                    <span className={`font-serif text-xs font-bold mt-2 line-clamp-1 ${isLight ? "text-[#142840]" : "text-white"}`}>
+                      {domain.shortName}
+                    </span>
+                    <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 mt-0.5">
+                      {count > 0 ? `${count} configured` : `${PUBLIC_CATALOG_ITEMS.filter((i) => i.domainId === domain.id).length} outcomes`}
+                    </span>
                   </button>
                 );
               })}
             </div>
-
-            {/* ACTIVE BLOCK BRIEFING & OPERATING CONTEXT CARD */}
-            <div
-              className={`w-full rounded-xl border p-4 transition-all ${
-                isLight ? "bg-white border-slate-200/90 shadow-sm" : "bg-slate-950/60 border-white/10"
-              }`}
-            >
-              <div className="flex items-center justify-between border-b pb-2 mb-2.5 border-inherit">
-                <div className="flex items-center gap-2">
-                  <span
-                    className="w-2.5 h-2.5 rounded-full"
-                    style={{ backgroundColor: activeDomain.accentHex }}
-                  />
-                  <h2 className={`font-serif text-sm font-semibold ${isLight ? "text-[#142840]" : "text-white"}`}>
-                    {activeDomain.name}
-                  </h2>
-                </div>
-                <span
-                  className="font-mono text-[10px] uppercase font-bold px-2 py-0.5 rounded border"
-                  style={{
-                    backgroundColor: `${activeDomain.accentHex}15`,
-                    color: activeDomain.accentHex,
-                    borderColor: `${activeDomain.accentHex}30`,
-                  }}
-                >
-                  {activeDomain.code}
-                </span>
-              </div>
-
-              <p className={`text-xs leading-relaxed ${isLight ? "text-slate-600" : "text-slate-300"}`}>
-                {activeDomain.essence}
-              </p>
-
-              {/* DEDICATED CONTEXT WINDOW FOR THIS BLOCK */}
-              <div className="mt-3 pt-3 border-t border-inherit">
-                <label
-                  htmlFor={`context-${activeDomain.id}`}
-                  className={`text-[11px] font-semibold flex items-center justify-between mb-1.5 ${
-                    isLight ? "text-slate-700" : "text-slate-300"
-                  }`}
-                >
-                  <span>Operating context for {activeDomain.shortName}</span>
-                  <span className="text-[10px] font-normal text-slate-400 font-mono">Optional</span>
-                </label>
-                <textarea
-                  id={`context-${activeDomain.id}`}
-                  rows={2}
-                  spellCheck={true}
-                  value={domainNotes[activeDomain.id] || ""}
-                  onChange={(e) => handleDomainNoteChange(activeDomain.id, e.target.value)}
-                  placeholder={`Add specific operating context for ${activeDomain.shortName} (e.g. current systems, plant shift schedules, pain points)...`}
-                  className={`w-full rounded-lg border px-3 py-2 text-xs transition-colors font-sans ${
-                    isLight
-                      ? "bg-slate-50 border-slate-200 text-slate-900 placeholder-slate-400 focus:border-amber-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-amber-500/20"
-                      : "bg-[#070e18] border-white/10 text-slate-100 placeholder-slate-500 focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400/30"
-                  }`}
-                />
-              </div>
-            </div>
-
           </div>
 
-          {/* ------------------------------------------------------------------ */}
-          {/* RIGHT WING: LIVE OUTCOME STOREFRONT SHELF (INLINE, ZERO MODAL JUMP) */}
-          {/* ------------------------------------------------------------------ */}
-          <div className="lg:col-span-7 flex flex-col gap-3">
-            
-            {/* SHELF HEADER STRIP */}
+          {/* ==================================================================== */}
+          {/* PRIMARY BUTTON TO ENTER CONFIGURATION MODE                           */}
+          {/* ==================================================================== */}
+          <div className="mt-6 flex flex-col items-center gap-2">
+            <button
+              onClick={() => setConfigModalDomainId(activeDomainId)}
+              className="inline-flex items-center gap-3 px-8 py-3.5 rounded-xl font-serif text-base font-bold text-white transition-all shadow-lg hover:shadow-xl hover:scale-[1.02] cursor-pointer"
+              style={{
+                backgroundColor: activeDomain.accentHex,
+              }}
+            >
+              <span>Enter Configuration Mode: {activeDomain.name}</span>
+              <span className="font-mono text-xs bg-black/20 px-2.5 py-1 rounded-full">
+                {domainSelectionStats[activeDomain.id] || 0} / {PUBLIC_CATALOG_ITEMS.filter((i) => i.domainId === activeDomain.id).length} Selected →
+              </span>
+            </button>
+            <p className={`text-xs font-mono ${isLight ? "text-slate-500" : "text-slate-400"}`}>
+              Opens outcome selection drawer · Checkboxes to add or remove outcomes
+            </p>
+          </div>
+        </section>
+
+        {/* ==================================================================== */}
+        {/* CONFIGURATION MODE POP-UP / DRAWER (WHERE MENUS POP UP)              */}
+        {/* ==================================================================== */}
+        {configDomain && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/70 backdrop-blur-md animate-fadeIn">
             <div
-              className={`rounded-xl border p-3.5 flex items-center justify-between transition-colors ${
-                isLight ? "bg-white border-slate-200/90 shadow-sm" : "bg-slate-950/70 border-white/10"
+              className={`relative w-full max-w-4xl max-h-[90vh] flex flex-col rounded-2xl border shadow-2xl overflow-hidden ${
+                isLight ? "bg-[#FCFAF6] border-[#E2DCD2] text-[#142840]" : "bg-[#0B1420] border-white/15 text-slate-100"
               }`}
             >
-              <div className="flex items-center gap-2">
-                <span
-                  className="w-3 h-3 rounded-full"
-                  style={{ backgroundColor: activeDomain.accentHex }}
-                />
-                <div>
-                  <h3 className={`font-serif text-base font-semibold ${isLight ? "text-[#142840]" : "text-white"}`}>
-                    {activeDomain.name} Capabilities
-                  </h3>
-                  <p className={`text-xs ${isLight ? "text-slate-500" : "text-slate-400"}`}>
-                    Click any outcome to add it to your Block scope
-                  </p>
+              {/* MODAL HEADER */}
+              <div
+                className={`flex items-start justify-between p-5 sm:p-6 border-b ${
+                  isLight ? "bg-white border-[#E2DCD2]" : "bg-white/5 border-white/10"
+                }`}
+              >
+                <div className="flex items-start gap-3.5">
+                  <div
+                    className="w-10 h-10 rounded-xl flex items-center justify-center font-mono font-bold text-base shadow-sm border mt-0.5"
+                    style={{
+                      backgroundColor: `${configDomain.accentHex}20`,
+                      color: configDomain.accentHex,
+                      borderColor: `${configDomain.accentHex}40`,
+                    }}
+                  >
+                    {configDomain.code}
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[11px] font-mono uppercase tracking-wider font-semibold text-amber-600 dark:text-amber-400">
+                        {configDomain.badge}
+                      </span>
+                      <span className="text-slate-400">·</span>
+                      <span className="text-xs font-mono text-slate-500">
+                        {configFaceItems.length} outcomes available
+                      </span>
+                    </div>
+                    <h2 className="font-serif text-xl sm:text-2xl font-bold leading-snug mt-0.5">
+                      {configDomain.name}
+                    </h2>
+                    <p className={`text-xs sm:text-sm mt-1 max-w-2xl ${isLight ? "text-slate-600" : "text-slate-300"}`}>
+                      {configDomain.subtitle}
+                    </p>
+                  </div>
+                </div>
+
+                <button
+                  onClick={() => setConfigModalDomainId(null)}
+                  className={`w-9 h-9 rounded-full flex items-center justify-center transition-colors cursor-pointer ${
+                    isLight ? "bg-slate-100 hover:bg-slate-200 text-slate-700" : "bg-white/10 hover:bg-white/20 text-slate-200"
+                  }`}
+                  aria-label="Close configuration"
+                >
+                  ✕
+                </button>
+              </div>
+
+              {/* MODAL BODY (SCROLLABLE OUTCOMES LIST + NOTES) */}
+              <div className="flex-1 overflow-y-auto p-5 sm:p-6 flex flex-col gap-5">
+                
+                {/* ACTIVE FACE CONTEXT NOTE INPUT */}
+                <div
+                  className={`p-4 rounded-xl border ${
+                    isLight ? "bg-white border-[#E2DCD2]" : "bg-white/5 border-white/10"
+                  }`}
+                >
+                  <label className="block text-xs font-mono font-semibold uppercase tracking-wider mb-1.5 text-amber-700 dark:text-amber-300">
+                    Specific context or notes for {configDomain.shortName} (Optional)
+                  </label>
+                  <textarea
+                    rows={2}
+                    value={domainNotes[configDomain.id] || ""}
+                    onChange={(e) => handleDomainNoteChange(configDomain.id, e.target.value)}
+                    placeholder={`e.g. Current enterprise situation, specific application versions, or constraints for ${configDomain.shortName}...`}
+                    className={`w-full rounded-lg border px-3 py-2 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 resize-none ${
+                      isLight
+                        ? "bg-slate-50 border-slate-300 text-slate-900 placeholder:text-slate-400"
+                        : "bg-slate-900/80 border-white/15 text-white placeholder:text-slate-500"
+                    }`}
+                  />
+                </div>
+
+                {/* OUTCOME SELECTION CHECKLIST */}
+                <div className="flex flex-col gap-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500">
+                      Configure Outcomes ({configFaceItems.filter((i) => currentOutcomeIds.includes(i.id)).length} selected)
+                    </span>
+                    <span className="text-[11px] font-mono text-slate-500">
+                      Checkboxes add outcomes to your proposal
+                    </span>
+                  </div>
+
+                  <div className="flex flex-col gap-2.5">
+                    {configFaceItems.map((item, idx) => {
+                      const isSelected = currentOutcomeIds.includes(item.id);
+                      const isExpanded = expandedItemId === item.id;
+                      return (
+                        <div
+                          key={item.id}
+                          className={`rounded-xl border transition-all p-3.5 sm:p-4 ${
+                            isSelected
+                              ? isLight
+                                ? "bg-white border-amber-500 shadow-sm ring-1 ring-amber-500/20"
+                                : "bg-white/10 border-amber-400/60 shadow-md"
+                              : isLight
+                              ? "bg-white border-[#E2DCD2] hover:border-slate-400"
+                              : "bg-white/5 border-white/10 hover:border-white/25"
+                          }`}
+                        >
+                          <div className="flex items-start gap-3">
+                            {/* CHECKBOX */}
+                            <input
+                              type="checkbox"
+                              id={`outcome-${item.id}`}
+                              checked={isSelected}
+                              onChange={() => handleToggleOutcome(item.id)}
+                              className="w-4 h-4 mt-1 rounded border-slate-300 text-amber-600 focus:ring-amber-500 cursor-pointer"
+                            />
+                            <div className="flex-1">
+                              <label
+                                htmlFor={`outcome-${item.id}`}
+                                className="font-serif text-sm sm:text-base font-bold leading-snug cursor-pointer block"
+                              >
+                                <span className="font-mono text-xs text-amber-600 dark:text-amber-400 font-semibold mr-1.5">
+                                  #{idx + 1}
+                                </span>
+                                {item.name}
+                              </label>
+                              <p className={`text-xs mt-1 leading-relaxed ${isLight ? "text-slate-600" : "text-slate-300"}`}>
+                                {item.tagline}
+                              </p>
+
+                              {/* SITUATION & DELIVERABLES TOGGLE */}
+                              <div className="mt-2.5">
+                                <button
+                                  type="button"
+                                  onClick={() => setExpandedItemId(isExpanded ? null : item.id)}
+                                  className={`text-[11px] font-mono font-semibold transition-colors cursor-pointer ${
+                                    isLight ? "text-amber-800 hover:text-amber-950" : "text-amber-300 hover:text-amber-200"
+                                  }`}
+                                >
+                                  {isExpanded ? "▲ Hide Deliverables & Situation" : "▼ View Deliverables & Situation"}
+                                </button>
+
+                                {isExpanded && (
+                                  <div
+                                    className={`mt-2.5 p-3 rounded-lg border text-xs flex flex-col gap-2 ${
+                                      isLight ? "bg-slate-50 border-slate-200 text-slate-800" : "bg-slate-900/90 border-white/10 text-slate-200"
+                                    }`}
+                                  >
+                                    <div>
+                                      <strong className="font-mono text-[10px] uppercase tracking-wider text-slate-500 block mb-0.5">
+                                        Operating Situation:
+                                      </strong>
+                                      <p className="leading-relaxed">{item.situation}</p>
+                                    </div>
+
+                                    {item.deliverables && item.deliverables.length > 0 && (
+                                      <div>
+                                        <strong className="font-mono text-[10px] uppercase tracking-wider text-slate-500 block mb-1">
+                                          Target Deliverables:
+                                        </strong>
+                                        <ul className="list-disc pl-4 space-y-0.5">
+                                          {item.deliverables.map((deliv, dIdx) => (
+                                            <li key={dIdx} className="leading-relaxed">
+                                              {deliv}
+                                            </li>
+                                          ))}
+                                        </ul>
+                                      </div>
+                                    )}
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
 
+              {/* MODAL FOOTER */}
+              <div
+                className={`flex items-center justify-between p-4 sm:p-5 border-t ${
+                  isLight ? "bg-white border-[#E2DCD2]" : "bg-white/5 border-white/10"
+                }`}
+              >
+                <div className="flex items-center gap-2 text-xs font-mono">
+                  <span className="font-bold">{configFaceItems.filter((i) => currentOutcomeIds.includes(i.id)).length}</span>
+                  <span className="text-slate-500">of {configFaceItems.length} selected for {configDomain.shortName}</span>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <button
+                    onClick={() => {
+                      const currentIndex = DOMAIN_CONFIGS.findIndex((d) => d.id === configDomain.id);
+                      const nextIndex = (currentIndex + 1) % DOMAIN_CONFIGS.length;
+                      const nextDomain = DOMAIN_CONFIGS[nextIndex];
+                      handleCategorySelect(nextDomain.id);
+                      setConfigModalDomainId(nextDomain.id);
+                    }}
+                    className={`px-4 py-2 rounded-xl text-xs font-mono font-semibold border transition-colors cursor-pointer ${
+                      isLight ? "border-slate-300 hover:bg-slate-100 text-slate-800" : "border-white/20 hover:bg-white/10 text-white"
+                    }`}
+                  >
+                    Next Face →
+                  </button>
+
+                  <button
+                    onClick={() => setConfigModalDomainId(null)}
+                    className="px-6 py-2 rounded-xl text-xs font-mono font-bold bg-[#142840] text-white hover:bg-slate-800 transition-colors cursor-pointer shadow-md"
+                  >
+                    Done & Return to Block
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ==================================================================== */}
+        {/* CONFIGURED OUTCOMES AGGREGATION PLATE (CONDENSED & WELL LAID OUT)    */}
+        {/* ==================================================================== */}
+        <section
+          ref={aggregatorRef}
+          className={`rounded-2xl border p-6 sm:p-8 transition-colors ${
+            isLight ? "bg-white border-[#E2DCD2] shadow-sm" : "bg-white/5 border-white/10 shadow-xl"
+          }`}
+        >
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b pb-5 border-slate-200/80 dark:border-white/10">
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-500" />
+                <h2 className={`font-serif text-2xl font-bold ${isLight ? "text-[#142840]" : "text-white"}`}>
+                  Configured Outcomes Scope
+                </h2>
+              </div>
+              <p className={`text-xs sm:text-sm mt-1 ${isLight ? "text-slate-600" : "text-slate-400"}`}>
+                Your customized engagement bundle across the six block disciplines.
+              </p>
+            </div>
+
+            <div className="flex items-center gap-3">
               <span
-                className={`font-mono text-xs font-bold px-2.5 py-1 rounded-full border ${
-                  (domainSelectionStats[activeDomain.id] || 0) > 0
+                className={`font-mono text-xs font-semibold px-3 py-1 rounded-full border ${
+                  selectedCount > 0
                     ? isLight
                       ? "bg-emerald-50 border-emerald-300 text-emerald-800"
                       : "bg-emerald-500/20 border-emerald-500/40 text-emerald-300"
@@ -951,455 +1086,226 @@ export default function TheBlockConfiguratorPage() {
                     : "bg-white/5 border-white/10 text-slate-400"
                 }`}
               >
-                {domainSelectionStats[activeDomain.id] || 0} / {activeItems.length} selected
+                {selectedCount} Outcomes Selected
               </span>
-            </div>
 
-            {/* OUTCOMES LIST (COMPACT, 1-CLICK TOGGLE, EXPANDABLE DETAILS) */}
-            <div className="flex flex-col gap-2">
-              
-              {/* UNGROUPED OUTCOMES */}
-              {groupedActiveItems.ungrouped.map((item) => {
-                const isSelected = currentOutcomeIds.includes(item.id);
-                const isExpanded = expandedItemId === item.id;
-                return (
+              {selectedCount > 0 && (
+                <button
+                  type="button"
+                  onClick={() => update({ outcomeIds: [] })}
+                  className="text-xs font-mono text-rose-600 dark:text-rose-400 hover:underline cursor-pointer"
+                >
+                  Clear all
+                </button>
+              )}
+            </div>
+          </div>
+
+          {/* CONDENSED OUTCOMES DISPLAY */}
+          <div className="py-6">
+            {aggregatedByDomain.length === 0 ? (
+              <div className="text-center py-10 px-4 rounded-xl border border-dashed border-slate-300 dark:border-white/15">
+                <p className={`font-serif text-base font-semibold ${isLight ? "text-slate-700" : "text-slate-300"}`}>
+                  No outcomes configured yet.
+                </p>
+                <p className="text-xs font-mono text-slate-500 mt-1 max-w-md mx-auto">
+                  Click &quot;Enter Configuration Mode&quot; on the block above to select the capabilities your business needs.
+                </p>
+                <button
+                  onClick={() => setConfigModalDomainId(activeDomainId)}
+                  className="mt-4 px-5 py-2 rounded-xl text-xs font-mono font-bold bg-amber-500 text-slate-950 hover:bg-amber-400 transition-all cursor-pointer shadow-xs"
+                >
+                  Configure {activeDomain.shortName} Outcomes →
+                </button>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {aggregatedByDomain.map(({ domain, items, note }) => (
                   <div
-                    key={item.id}
-                    className={`rounded-xl border transition-all duration-150 overflow-hidden ${
-                      isSelected
-                        ? isLight
-                          ? "border-amber-500 bg-amber-50/70 shadow-xs ring-1 ring-amber-500/30"
-                          : "border-amber-400/60 bg-amber-400/[0.08] shadow-[0_0_15px_rgba(245,158,11,0.12)]"
-                        : isLight
-                        ? "border-slate-200/80 bg-white hover:border-slate-300 hover:bg-slate-50/50 shadow-xs"
-                        : "border-white/10 bg-white/[0.02] hover:border-white/20 hover:bg-white/[0.04]"
+                    key={domain.id}
+                    className={`rounded-xl border p-4 flex flex-col justify-between ${
+                      isLight ? "bg-slate-50 border-slate-200" : "bg-white/5 border-white/10"
                     }`}
                   >
-                    <div
-                      onClick={() => handleToggleOutcome(item.id)}
-                      className="flex items-start gap-3 p-3 cursor-pointer select-none"
-                    >
-                      {/* CUSTOM CHECKBOX */}
-                      <div
-                        className={`mt-0.5 w-5 h-5 rounded flex items-center justify-center shrink-0 border transition-all ${
-                          isSelected
-                            ? "bg-amber-500 border-amber-500 text-white shadow-xs"
-                            : isLight
-                            ? "border-slate-300 bg-slate-100 hover:border-slate-400"
-                            : "border-white/20 bg-slate-900 hover:border-white/40"
-                        }`}
-                      >
-                        {isSelected && (
-                          <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                            <polyline points="20 6 9 17 4 12" />
-                          </svg>
-                        )}
-                      </div>
-
-                      <div className="flex-1 min-w-0">
-                        <p className={`text-sm font-semibold leading-snug ${isLight ? "text-slate-900" : "text-white"}`}>
-                          {item.name}
-                        </p>
-                        <p className={`mt-0.5 text-xs leading-relaxed line-clamp-2 ${isLight ? "text-slate-600" : "text-slate-300"}`}>
-                          {item.tagline}
-                        </p>
-                      </div>
-
-                      <button
-                        type="button"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setExpandedItemId(isExpanded ? null : item.id);
-                        }}
-                        className={`text-[11px] font-medium px-2 py-1 rounded shrink-0 transition-colors cursor-pointer ${
-                          isLight
-                            ? "bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900"
-                            : "bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white"
-                        }`}
-                      >
-                        {isExpanded ? "Less" : "Details"}
-                      </button>
-                    </div>
-
-                    {isExpanded && (
-                      <div
-                        className={`px-3.5 pb-3 pt-1 border-t text-xs space-y-1.5 ${
-                          isLight
-                            ? "bg-slate-50/80 border-slate-100 text-slate-700"
-                            : "bg-slate-950/40 border-white/5 text-slate-300"
-                        }`}
-                      >
-                        <p><strong className="font-semibold">Operating Situation:</strong> {item.situation}</p>
-                        <p><strong className="font-semibold">Deliverables:</strong> {item.deliverables.join(" • ")}</p>
-                        {item.inclusions && item.inclusions.length > 0 && (
-                          <p className={isLight ? "text-slate-500" : "text-slate-400"}>
-                            <strong>Inclusions:</strong> {item.inclusions.join(", ")}
-                          </p>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-
-              {/* GROUPED OUTCOMES */}
-              {groupedActiveItems.groups.map((group) => (
-                <div key={group.name} className="flex flex-col gap-2 pt-1">
-                  <div className={`flex items-center gap-2 border-b pb-1 ${isLight ? "border-slate-200" : "border-white/10"}`}>
-                    <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
-                    <h4 className={`text-xs font-mono uppercase tracking-wider font-semibold ${isLight ? "text-amber-800" : "text-amber-300/90"}`}>
-                      {group.name}
-                    </h4>
-                  </div>
-
-                  <div className="flex flex-col gap-2">
-                    {group.items.map((item) => {
-                      const isSelected = currentOutcomeIds.includes(item.id);
-                      const isExpanded = expandedItemId === item.id;
-                      return (
-                        <div
-                          key={item.id}
-                          className={`rounded-xl border transition-all duration-150 overflow-hidden ${
-                            isSelected
-                              ? isLight
-                                ? "border-amber-500 bg-amber-50/70 shadow-xs ring-1 ring-amber-500/30"
-                                : "border-amber-400/60 bg-amber-400/[0.08] shadow-[0_0_15px_rgba(245,158,11,0.12)]"
-                              : isLight
-                              ? "border-slate-200/80 bg-white hover:border-slate-300 hover:bg-slate-50/50 shadow-xs"
-                              : "border-white/10 bg-white/[0.02] hover:border-white/20 hover:bg-white/[0.04]"
-                          }`}
-                        >
-                          <div
-                            onClick={() => handleToggleOutcome(item.id)}
-                            className="flex items-start gap-3 p-3 cursor-pointer select-none"
+                    <div>
+                      <div className="flex items-center justify-between border-b pb-2 mb-3 border-slate-200 dark:border-white/10">
+                        <div className="flex items-center gap-2">
+                          <span
+                            className="font-mono text-[10px] font-bold px-1.5 py-0.5 rounded border"
+                            style={{
+                              backgroundColor: `${domain.accentHex}18`,
+                              color: domain.accentHex,
+                              borderColor: `${domain.accentHex}40`,
+                            }}
                           >
-                            <div
-                              className={`mt-0.5 w-5 h-5 rounded flex items-center justify-center shrink-0 border transition-all ${
-                                isSelected
-                                  ? "bg-amber-500 border-amber-500 text-white shadow-xs"
-                                  : isLight
-                                  ? "border-slate-300 bg-slate-100 hover:border-slate-400"
-                                  : "border-white/20 bg-slate-900 hover:border-white/40"
-                              }`}
-                            >
-                              {isSelected && (
-                                <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                                  <polyline points="20 6 9 17 4 12" />
-                                </svg>
-                              )}
-                            </div>
-
-                            <div className="flex-1 min-w-0">
-                              <p className={`text-sm font-semibold leading-snug ${isLight ? "text-slate-900" : "text-white"}`}>
-                                {item.name}
-                              </p>
-                              <p className={`mt-0.5 text-xs leading-relaxed line-clamp-2 ${isLight ? "text-slate-600" : "text-slate-300"}`}>
-                                {item.tagline}
-                              </p>
-                            </div>
-
-                            <button
-                              type="button"
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                setExpandedItemId(isExpanded ? null : item.id);
-                              }}
-                              className={`text-[11px] font-medium px-2 py-1 rounded shrink-0 transition-colors cursor-pointer ${
-                                isLight
-                                  ? "bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900"
-                                  : "bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white"
-                              }`}
-                            >
-                              {isExpanded ? "Less" : "Details"}
-                            </button>
-                          </div>
-
-                          {isExpanded && (
-                            <div
-                              className={`px-3.5 pb-3 pt-1 border-t text-xs space-y-1.5 ${
-                                isLight
-                                  ? "bg-slate-50/80 border-slate-100 text-slate-700"
-                                  : "bg-slate-950/40 border-white/5 text-slate-300"
-                              }`}
-                            >
-                              <p><strong className="font-semibold">Operating Situation:</strong> {item.situation}</p>
-                              <p><strong className="font-semibold">Deliverables:</strong> {item.deliverables.join(" • ")}</p>
-                              {item.inclusions && item.inclusions.length > 0 && (
-                                <p className={isLight ? "text-slate-500" : "text-slate-400"}>
-                                  <strong>Inclusions:</strong> {item.inclusions.join(", ")}
-                                </p>
-                              )}
-                            </div>
-                          )}
+                            {domain.code}
+                          </span>
+                          <span className={`font-serif text-sm font-bold ${isLight ? "text-[#142840]" : "text-white"}`}>
+                            {domain.name}
+                          </span>
                         </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-          </div>
-
-        </section>
-
-        {/* ==================================================================== */}
-        {/* SCOPE SUMMARY & PROPOSAL REQUEST SECTION                            */}
-        {/* ==================================================================== */}
-        <section
-          ref={aggregatorRef}
-          id="aggregator"
-          className={`mt-4 rounded-2xl border p-5 sm:p-7 backdrop-blur-md transition-colors ${
-            isLight ? "bg-white/95 border-slate-200 text-slate-900 shadow-xl" : "bg-[#0a1220]/95 border-white/10 shadow-2xl"
-          }`}
-        >
-          <div className={`flex flex-col md:flex-row md:items-center justify-between gap-4 border-b pb-4 ${isLight ? "border-slate-200" : "border-white/10"}`}>
-            <div>
-              <p className={`text-xs font-mono uppercase tracking-[0.2em] font-semibold ${isLight ? "text-amber-700" : "text-amber-400"}`}>
-                Storefront Scope Summary
-              </p>
-              <h2 className={`font-serif text-xl sm:text-2xl font-semibold mt-0.5 ${isLight ? "text-[#142840]" : "text-white"}`}>
-                Your Configured Outcomes
-              </h2>
-              <p className={`text-xs sm:text-sm mt-0.5 ${isLight ? "text-slate-600" : "text-slate-300"}`}>
-                Review your selections across all blocks. When ready, transmit your request for a scoped proposal.
-              </p>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <button
-                type="button"
-                onClick={() => update({ outcomeIds: [] })}
-                disabled={selectedCount === 0}
-                className={`text-xs font-mono px-3 py-1.5 rounded-md border transition-all ${
-                  selectedCount > 0
-                    ? isLight
-                      ? "text-slate-700 hover:text-slate-950 border-slate-300 hover:border-slate-400 bg-slate-50 hover:bg-slate-100 cursor-pointer shadow-xs"
-                      : "text-slate-200 hover:text-white border-white/20 hover:border-amber-400/50 bg-white/5 hover:bg-white/10 cursor-pointer shadow-sm"
-                    : "text-slate-400 border-transparent bg-transparent cursor-not-allowed opacity-50"
-                }`}
-                title={selectedCount > 0 ? "Clear all selected outcomes" : "No outcomes currently selected"}
-              >
-                Clear all
-              </button>
-
-              <span
-                className={`font-mono text-xs px-3.5 py-1.5 rounded-md border ${
-                  isLight
-                    ? "bg-slate-50 border-slate-200 text-slate-800"
-                    : "bg-white/5 border-white/10 text-slate-200"
-                }`}
-              >
-                <strong className={isLight ? "text-amber-700 font-bold" : "text-amber-400 font-bold"}>{selectedCount}</strong> outcomes in{" "}
-                <strong className={isLight ? "text-[#142840] font-bold" : "text-white font-bold"}>{aggregatedByDomain.length}</strong> blocks
-              </span>
-            </div>
-          </div>
-
-          {/* BREAKDOWN OF SELECTED OUTCOMES BY BLOCK */}
-          {aggregatedByDomain.length === 0 ? (
-            <div
-              className={`rounded-xl border border-dashed p-6 text-center my-4 ${
-                isLight ? "border-slate-300 bg-slate-50/50" : "border-white/15 bg-white/[0.02]"
-              }`}
-            >
-              <p className={`text-xs sm:text-sm ${isLight ? "text-slate-500" : "text-slate-400"}`}>
-                No outcomes selected yet. Spin the 3D block above and click any outcome to add capabilities to your scope.
-              </p>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 my-4">
-              {aggregatedByDomain.map(({ domain, items, note }) => (
-                <div
-                  key={domain.id}
-                  className={`rounded-xl border p-3.5 flex flex-col justify-between ${
-                    isLight ? "border-slate-200 bg-slate-50/70" : "border-white/10 bg-slate-950/70"
-                  }`}
-                >
-                  <div>
-                    <div className={`flex items-center justify-between border-b pb-2 mb-2 ${isLight ? "border-slate-200" : "border-white/10"}`}>
-                      <div className="flex items-center gap-2">
-                        <span
-                          className="w-2.5 h-2.5 rounded-full"
-                          style={{ backgroundColor: domain.accentHex }}
-                        />
-                        <h4 className={`text-xs font-semibold ${isLight ? "text-[#142840]" : "text-white"}`}>{domain.name}</h4>
+                        <button
+                          onClick={() => {
+                            handleCategorySelect(domain.id);
+                            setConfigModalDomainId(domain.id);
+                          }}
+                          className="text-[10px] font-mono text-amber-600 dark:text-amber-400 hover:underline cursor-pointer"
+                        >
+                          Edit Face ✎
+                        </button>
                       </div>
-                      <button
-                        onClick={() => handleSnapToDomain(domain.id)}
-                        className={`text-[11px] font-mono hover:underline cursor-pointer ${
-                          isLight ? "text-amber-700" : "text-amber-400"
-                        }`}
-                      >
-                        Edit ({items.length}) →
-                      </button>
-                    </div>
 
-                    {items.length > 0 && (
-                      <ul className={`space-y-1 text-xs mb-2 ${isLight ? "text-slate-700" : "text-slate-300"}`}>
-                        {items.map((it) => (
-                          <li key={it.id} className="flex items-start gap-1.5">
-                            <span className={isLight ? "text-amber-600 mt-0.5" : "text-amber-400 mt-0.5"}>✓</span>
-                            <span>{it.name}</span>
+                      {/* OUTCOMES LIST (CONDENSED) */}
+                      <ul className="space-y-1.5 mb-3">
+                        {items.map((item) => (
+                          <li
+                            key={item.id}
+                            className="flex items-start justify-between gap-2 text-xs leading-snug group"
+                          >
+                            <span className="flex items-start gap-1.5">
+                              <span className="text-emerald-600 font-bold">✓</span>
+                              <span className={isLight ? "text-slate-800" : "text-slate-200"}>{item.name}</span>
+                            </span>
+                            <button
+                              onClick={() => handleToggleOutcome(item.id)}
+                              className="text-slate-400 hover:text-rose-500 opacity-60 group-hover:opacity-100 transition-opacity cursor-pointer ml-1"
+                              title="Remove outcome"
+                            >
+                              ✕
+                            </button>
                           </li>
                         ))}
                       </ul>
-                    )}
+                    </div>
 
                     {note.trim() && (
-                      <div
-                        className={`rounded-lg border p-2 text-xs ${
-                          isLight ? "border-slate-200 bg-white text-slate-600" : "border-white/5 bg-white/[0.02] text-slate-400"
-                        }`}
-                      >
-                        <strong className={`block text-[10px] font-mono uppercase tracking-wider mb-0.5 ${isLight ? "text-slate-700" : "text-slate-300"}`}>
-                          Block Context:
-                        </strong>
-                        <p className="italic">{note}</p>
+                      <div className={`mt-2 pt-2 border-t text-[11px] font-mono ${isLight ? "border-slate-200 text-slate-600" : "border-white/10 text-slate-400"}`}>
+                        <strong>Context:</strong> {note.trim()}
                       </div>
                     )}
                   </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* ==================================================================== */}
+          {/* REQUEST SCOPING PROPOSAL FORM (CPQ ENGINE / THE BLOCK MINE)          */}
+          {/* ==================================================================== */}
+          <div className={`mt-6 pt-6 border-t ${isLight ? "border-slate-200" : "border-white/10"}`}>
+            <div className="max-w-2xl mx-auto">
+              <div className="text-center mb-6">
+                <span className="font-mono text-xs uppercase tracking-wider font-bold text-amber-600 dark:text-amber-400">
+                  CPQ Scoping Proposal Engine
+                </span>
+                <h3 className={`font-serif text-2xl font-bold mt-1 ${isLight ? "text-[#142840]" : "text-white"}`}>
+                  Request Your Scoping Proposal
+                </h3>
+                <p className={`text-xs mt-1.5 ${isLight ? "text-slate-600" : "text-slate-400"}`}>
+                  1 Block = 2 to 4 Weeks. Scope, sequencing, and number of Blocks are settled in your proposal.
+                </p>
+              </div>
+
+              {submitSuccess ? (
+                <div
+                  className={`p-6 rounded-2xl border text-center flex flex-col items-center gap-3 ${
+                    isLight ? "bg-emerald-50 border-emerald-300 text-emerald-950" : "bg-emerald-950/40 border-emerald-500/40 text-emerald-200"
+                  }`}
+                >
+                  <div className="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-600 flex items-center justify-center font-bold text-xl">
+                    ✓
+                  </div>
+                  <h4 className="font-serif text-xl font-bold">Scoping Proposal Request Transmitted</h4>
+                  <p className="text-xs sm:text-sm max-w-md leading-relaxed">
+                    Our principals will review your {selectedCount} configured outcomes across {aggregatedByDomain.length} disciplines and assemble your engagement scope proposal.
+                  </p>
+                  <span className="font-mono text-[11px] text-emerald-700 dark:text-emerald-300">
+                    Logged to DigOps pipeline via The Block storefront.
+                  </span>
                 </div>
-              ))}
+              ) : (
+                <form onSubmit={handleSubmitProposal} className="flex flex-col gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-mono font-semibold uppercase tracking-wider mb-1 text-slate-700 dark:text-slate-300">
+                        Full Name *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={contactName}
+                        onChange={(e) => setContactName(e.target.value)}
+                        placeholder="Your Name"
+                        className={`w-full rounded-xl border px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 ${
+                          isLight ? "bg-white border-slate-300 text-slate-900" : "bg-slate-900 border-white/15 text-white"
+                        }`}
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-mono font-semibold uppercase tracking-wider mb-1 text-slate-700 dark:text-slate-300">
+                        Corporate Email *
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        value={contactEmail}
+                        onChange={(e) => setContactEmail(e.target.value)}
+                        placeholder="you@company.com"
+                        className={`w-full rounded-xl border px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 ${
+                          isLight ? "bg-white border-slate-300 text-slate-900" : "bg-slate-900 border-white/15 text-white"
+                        }`}
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-mono font-semibold uppercase tracking-wider mb-1 text-slate-700 dark:text-slate-300">
+                      Company / Organization Name *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={contactCompany}
+                      onChange={(e) => setContactCompany(e.target.value)}
+                      placeholder="Company Name"
+                      className={`w-full rounded-xl border px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 ${
+                        isLight ? "bg-white border-slate-300 text-slate-900" : "bg-slate-900 border-white/15 text-white"
+                      }`}
+                    />
+                  </div>
+
+                  {submitError && (
+                    <div className="p-3 rounded-lg bg-rose-500/10 border border-rose-500/30 text-rose-600 dark:text-rose-400 text-xs font-mono">
+                      {submitError}
+                    </div>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting || selectedCount === 0}
+                    className={`w-full py-3.5 rounded-xl font-serif text-base font-bold transition-all shadow-md cursor-pointer ${
+                      selectedCount === 0
+                        ? isLight
+                          ? "bg-slate-200 text-slate-400 cursor-not-allowed"
+                          : "bg-white/10 text-slate-500 cursor-not-allowed"
+                        : "bg-[#142840] hover:bg-slate-800 text-white hover:shadow-lg"
+                    }`}
+                  >
+                    {isSubmitting
+                      ? "Transmitting Proposal Request..."
+                      : selectedCount === 0
+                      ? "Select Outcomes Above to Request Proposal"
+                      : `Request Scoping Proposal (${selectedCount} outcomes configured) →`}
+                  </button>
+                  <p className="text-center text-[11px] font-mono text-slate-500">
+                    Sovereign collective review · Configure, Price, Quote · Strictly 0 dollars committed until scope is agreed
+                  </p>
+                </form>
+              )}
             </div>
-          )}
-
-          {/* GENERAL NOTES */}
-          <div
-            className={`rounded-xl border p-4 mb-4 ${
-              isLight ? "border-slate-200 bg-slate-50/50" : "border-white/10 bg-slate-950/50"
-            }`}
-          >
-            <label htmlFor="general-message" className={`text-xs font-semibold block mb-1 ${isLight ? "text-slate-800" : "text-white"}`}>
-              General Notes & Scoping Preferences (Optional)
-            </label>
-            <textarea
-              id="general-message"
-              rows={2}
-              spellCheck={true}
-              value={draft?.contactMessage || ""}
-              onChange={(e) => update({ contactMessage: e.target.value })}
-              placeholder="Add any overarching timeline preferences, key executive sponsors, or integration priorities..."
-              className={`w-full rounded-lg border px-3 py-2 text-xs font-sans transition-colors ${
-                isLight
-                  ? "bg-white border-slate-200 text-slate-900 placeholder-slate-400 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500/20"
-                  : "bg-[#070e18] border-white/10 text-slate-100 placeholder-slate-500 focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400/30"
-              }`}
-            />
           </div>
-
-          {/* STANDARD DELIVERY COMMITMENT BANNER */}
-          <div
-            className={`rounded-xl border p-3.5 text-xs leading-relaxed mb-4 ${
-              isLight
-                ? "border-amber-300 bg-amber-50/80 text-amber-950"
-                : "border-amber-400/30 bg-amber-400/10 text-amber-200"
-            }`}
-          >
-            <p className="font-semibold mb-0.5">Standard Delivery Commitment:</p>
-            <p>
-              A Block represents two to four weeks of time and effort. Scope, outcomes, dependencies, and the number of Blocks are agreed in your proposal. Selecting outcomes does not calculate or commit you to an engagement.
-            </p>
-          </div>
-
-          {/* PROPOSAL REQUEST FORM */}
-          <form onSubmit={handleSubmitProposal} className="flex flex-col gap-3">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              <div>
-                <label className={`block text-xs font-mono uppercase tracking-wider mb-1 ${isLight ? "text-slate-600" : "text-slate-400"}`}>
-                  Your Name
-                </label>
-                <input
-                  type="text"
-                  required
-                  value={contactName}
-                  onChange={(e) => setContactName(e.target.value)}
-                  placeholder="Jane Doe"
-                  className={`w-full rounded-lg border px-3 py-2 text-xs font-sans transition-colors ${
-                    isLight
-                      ? "bg-white border-slate-200 text-slate-900 placeholder-slate-400 focus:border-amber-500 focus:outline-none"
-                      : "bg-slate-950 border-white/10 text-slate-100 placeholder-slate-500 focus:border-amber-400 focus:outline-none"
-                  }`}
-                />
-              </div>
-
-              <div>
-                <label className={`block text-xs font-mono uppercase tracking-wider mb-1 ${isLight ? "text-slate-600" : "text-slate-400"}`}>
-                  Corporate Email
-                </label>
-                <input
-                  type="email"
-                  required
-                  value={contactEmail}
-                  onChange={(e) => setContactEmail(e.target.value)}
-                  placeholder="jane@company.com"
-                  className={`w-full rounded-lg border px-3 py-2 text-xs font-sans transition-colors ${
-                    isLight
-                      ? "bg-white border-slate-200 text-slate-900 placeholder-slate-400 focus:border-amber-500 focus:outline-none"
-                      : "bg-slate-950 border-white/10 text-slate-100 placeholder-slate-500 focus:border-amber-400 focus:outline-none"
-                  }`}
-                />
-              </div>
-
-              <div>
-                <label className={`block text-xs font-mono uppercase tracking-wider mb-1 ${isLight ? "text-slate-600" : "text-slate-400"}`}>
-                  Company Name
-                </label>
-                <input
-                  type="text"
-                  required
-                  value={contactCompany}
-                  onChange={(e) => setContactCompany(e.target.value)}
-                  placeholder="Acme Operating Co."
-                  className={`w-full rounded-lg border px-3 py-2 text-xs font-sans transition-colors ${
-                    isLight
-                      ? "bg-white border-slate-200 text-slate-900 placeholder-slate-400 focus:border-amber-500 focus:outline-none"
-                      : "bg-slate-950 border-white/10 text-slate-100 placeholder-slate-500 focus:border-amber-400 focus:outline-none"
-                  }`}
-                />
-              </div>
-            </div>
-
-            {submitError && (
-              <p className="text-xs text-rose-500 font-mono mt-1">
-                {submitError}
-              </p>
-            )}
-
-            {submitSuccess ? (
-              <div
-                className={`rounded-xl border p-4 text-center ${
-                  isLight ? "border-emerald-300 bg-emerald-50 text-emerald-900" : "border-emerald-500/40 bg-emerald-500/10 text-emerald-300"
-                }`}
-              >
-                <p className="font-serif text-base font-semibold">
-                  Proposal Request Transmitted
-                </p>
-                <p className="text-xs mt-1">
-                  Our principals will review your {selectedCount} configured outcomes and assemble your scoping proposal.
-                </p>
-              </div>
-            ) : (
-              <button
-                type="submit"
-                disabled={selectedCount === 0 || isSubmitting}
-                className={`w-full py-2.5 rounded-xl font-semibold text-xs transition-all cursor-pointer ${
-                  selectedCount > 0
-                    ? isLight
-                      ? "bg-[#142840] hover:bg-[#1B3A5C] text-white shadow-md hover:scale-[1.005]"
-                      : "bg-amber-400 hover:bg-amber-300 text-slate-950 shadow-lg shadow-amber-400/15 hover:scale-[1.005]"
-                    : "bg-slate-200 text-slate-400 dark:bg-white/5 dark:text-slate-600 cursor-not-allowed opacity-50"
-                }`}
-              >
-                {isSubmitting
-                  ? "Transmitting Scope Request..."
-                  : `Request Scoping Proposal (${selectedCount} outcomes selected)`}
-              </button>
-            )}
-          </form>
-
         </section>
-
       </div>
     </main>
   );
