@@ -1,4 +1,5 @@
 import Link from "next/link";
+import styles from "./clients.module.css";
 import type { Metadata } from "next";
 import PresenceShell from "@/components/presence/PresenceShell";
 import HaloFilm from "@/components/presence/HaloFilm";
@@ -153,6 +154,50 @@ export default function ExperiencePage() {
 </div>
 </div>
 </header>
+<section className={`p-section ${styles.section}`} id="selected-clients" aria-labelledby="selected-clients-title">
+<div className="page-well">
+<h2 className={`p-h2 ${styles.title}`} id="selected-clients-title">Selected clients</h2>
+<dl className={styles.rows}>
+<div className={styles.row}>
+<dt>Food &amp; beverage</dt>
+<dd><ul className={styles.names}>
+<li>Sierra Nevada Brewing</li>
+<li>Duckhorn</li>
+<li>Foley Family Wine &amp; Spirits</li>
+<li>Everytable</li>
+<li>H.W. Greenham &amp; Sons</li>
+<li>Valley Fine Foods</li>
+<li>Scheid Vineyards</li>
+<li>Rodney Strong Vineyards</li>
+</ul></dd>
+</div>
+<div className={styles.row}>
+<dt>Architecture &amp; construction</dt>
+<dd><ul className={styles.names}>
+<li>SOM</li>
+<li>HOK</li>
+<li>Turner Construction</li>
+<li>PCL Construction</li>
+</ul></dd>
+</div>
+<div className={styles.row}>
+<dt>Hospitality &amp; sports</dt>
+<dd><ul className={styles.names}>
+<li>Wynn Resorts</li>
+<li>MGM Resorts</li>
+<li>San Jose Sharks</li>
+</ul></dd>
+</div>
+<div className={styles.row}>
+<dt>Healthcare</dt>
+<dd><ul className={styles.names}>
+<li>HCA Healthcare</li>
+</ul></dd>
+</div>
+</dl>
+</div>
+</section>
+
 <section className="p-section">
 <div className="page-well">
 <h2 className="p-h2">{"Selected transformation work"}</h2>
@@ -199,7 +244,6 @@ export default function ExperiencePage() {
 <p className="p-prose mt-4">{"All businesses are uniquely standard. The fundamentals are familiar; the people, constraints, and consequential exceptions shape the solution."}</p>
 <p className="p-prose mt-4">{"I work with the CFO and compliance officer, the functional leads, the developers and delivery partners, and the warehouse team using the scanners. The architecture has to support the work across those groups."}</p>
 <p className="p-prose mt-4">{"My enterprise application experience also includes electronic medical records (EMR/EHR)."}</p>
-<p className="p-prose mt-4">{"IT operations and security. The manufacturing execution system is part of IT. The lines, panels, and sensors run on programmable logic controllers: that is operational technology (OT), and it is not my wheelhouse. Ignition sits on the IT side and runs those lines. The work is breaking the wall between the two."}</p>
 </div>
 </section>      <section className="p-section p-section--job">
         <div className="page-well">
