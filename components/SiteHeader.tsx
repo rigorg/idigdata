@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { PRIMARY_NAV } from "@/lib/nav";
 
+import { useTheme, ThemeToggle } from "@/lib/theme";
+
 const NAV = PRIMARY_NAV;
 
 function HeaderWordmark({ isDark = false }: { isDark?: boolean }) {
@@ -53,9 +55,11 @@ function HeaderWordmark({ isDark = false }: { isDark?: boolean }) {
 export default function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const { isLight } = useTheme();
 
   const path = (pathname ?? "/").replace(/\/+$/, "") || "/";
   const isBlock = path.startsWith("/block");
+  const isDarkHeader = !isLight;
 
   useEffect(() => {
     if (!open) return;
@@ -78,7 +82,7 @@ export default function SiteHeader() {
   return (
     <header
       className={`sticky top-0 z-50 w-full border-b backdrop-blur-md transition-colors duration-200 ${
-        isBlock
+        isDarkHeader
           ? "border-white/10 bg-[#070E17]/95 text-white"
           : "border-navy/10 bg-[#FBF9F4]/95 text-navy"
       }`}
@@ -90,55 +94,72 @@ export default function SiteHeader() {
             className="flex items-center"
             aria-label="idigdata - home"
           >
-            <HeaderWordmark isDark={isBlock} />
+            <HeaderWordmark isDark={isDarkHeader} />
           </Link>
           {isBlock && (
-            <div className="flex items-center gap-2 pl-3 border-l border-white/20">
-              <span className="font-mono text-xs font-bold uppercase tracking-wider text-[#E5B21D] bg-[#E5B21D]/10 px-2.5 py-1 rounded border border-[#E5B21D]/30 flex items-center gap-1.5 shadow-[0_0_12px_rgba(229,178,29,0.15)]">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#E5B21D] animate-pulse" />
+            <div
+              className={`flex items-center gap-2 pl-3 border-l ${
+                isDarkHeader ? "border-white/20" : "border-navy/15"
+              }`}
+            >
+              <span
+                className={`font-mono text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded border flex items-center gap-1.5 ${
+                  isDarkHeader
+                    ? "text-[#E5B21D] bg-[#E5B21D]/10 border-[#E5B21D]/30 shadow-[0_0_12px_rgba(229,178,29,0.15)]"
+                    : "text-amber-900 bg-amber-500/10 border-amber-500/30 shadow-xs"
+                }`}
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
                 The Block
               </span>
             </div>
           )}
         </div>
 
-        <nav
-          className={`hidden items-center gap-8 font-vollkorn text-[15px] font-semibold md:flex ${
-            isBlock ? "text-slate-300" : "text-navy"
-          }`}
-          aria-label="Primary"
-        >
-          {NAV.map((item) => {
-            const active = isActive(item.href);
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                prefetch={false}
-                aria-current={active ? "page" : undefined}
-                className={`nav-underline transition-colors ${
-                  active
-                    ? isBlock
-                      ? "font-semibold text-[#E5B21D]"
-                      : "font-semibold text-navy"
-                    : isBlock
-                      ? "text-slate-300 hover:text-white"
-                      : "text-navy/75 hover:text-navy"
-                }`}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
-        </nav>
+        {/* Desktop nav + Theme toggle */}
+        <div className="hidden md:flex items-center gap-6">
+          <nav
+            className={`flex items-center gap-7 font-vollkorn text-[15px] font-semibold ${
+              isDarkHeader ? "text-slate-300" : "text-navy"
+            }`}
+            aria-label="Primary"
+          >
+            {NAV.map((item) => {
+              const active = isActive(item.href);
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  prefetch={false}
+                  aria-current={active ? "page" : undefined}
+                  className={`nav-underline transition-colors ${
+                    active
+                      ? isDarkHeader
+                        ? "font-semibold text-[#E5B21D]"
+                        : "font-semibold text-navy"
+                      : isDarkHeader
+                        ? "text-slate-300 hover:text-white"
+                        : "text-navy/75 hover:text-navy"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+          </nav>
+          <div className={`pl-4 border-l ${isDarkHeader ? "border-white/15" : "border-navy/15"}`}>
+            <ThemeToggle />
+          </div>
+        </div>
 
-        {/* Mobile nav toggle */}
-        <div className="md:hidden">
+        {/* Mobile controls */}
+        <div className="flex md:hidden items-center gap-2">
+          <ThemeToggle />
           <button
             type="button"
             onClick={() => setOpen((prev) => !prev)}
-            className={`-mr-2 inline-flex h-11 w-11 cursor-pointer items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-gold ${
-              isBlock ? "text-white hover:text-[#E5B21D]" : "text-navy hover:text-navy/80"
+            className={`inline-flex h-11 w-11 cursor-pointer items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-gold ${
+              isDarkHeader ? "text-white hover:text-[#E5B21D]" : "text-navy hover:text-navy/80"
             }`}
             aria-expanded={open}
             aria-controls="mobile-nav"
@@ -190,7 +211,7 @@ export default function SiteHeader() {
           <nav
             id="mobile-nav"
             className={`absolute left-0 right-0 top-full z-50 border-b shadow-2xl md:hidden ${
-              isBlock
+              isDarkHeader
                 ? "border-white/10 bg-[#0B1624] text-white"
                 : "border-navy/15 bg-[#FBF9F4] text-navy"
             }`}
@@ -207,7 +228,7 @@ export default function SiteHeader() {
                       onClick={() => setOpen(false)}
                       aria-current={active ? "page" : undefined}
                       className={`flex items-center gap-3 border-b py-3.5 font-body text-[18px] transition-colors last:border-b-0 ${
-                        isBlock
+                        isDarkHeader
                           ? `border-white/10 ${
                               active ? "font-bold text-[#E5B21D]" : "text-slate-200 hover:text-white"
                             }`
