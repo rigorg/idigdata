@@ -292,6 +292,7 @@ export default function TheBlockConfiguratorPage() {
   const [contactName, setContactName] = useState("");
   const [contactEmail, setContactEmail] = useState("");
   const [contactCompany, setContactCompany] = useState("");
+  const [contactNote, setContactNote] = useState("");
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
@@ -468,7 +469,7 @@ export default function TheBlockConfiguratorPage() {
   // Submit Scoping Proposal to DigOps CPQ / The Block Mine
   const handleSubmitProposal = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (selectedCount === 0 || isSubmitting) return;
+    if (isSubmitting) return;
 
     setIsSubmitting(true);
     setSubmitError(null);
@@ -485,8 +486,10 @@ export default function TheBlockConfiguratorPage() {
       `[THE BLOCK SCOPING PROPOSAL]`,
       `Mine: the_block`,
       `Standard: 1 Block = 2 to 4 Weeks`,
-      `Configured Outcomes (${selectedCount} selected across ${aggregatedByDomain.length} disciplines):`,
-      outcomesList,
+      selectedCount > 0
+        ? `Configured Outcomes (${selectedCount} selected across ${aggregatedByDomain.length} disciplines):\n${outcomesList}`
+        : `No outcomes pre-selected from catalog (direct inquiry).`,
+      contactNote.trim() ? `Client Note / Situation:\n${contactNote.trim()}` : "",
       (draft?.contactMessage || "").trim() ? `Additional Context:\n${(draft?.contactMessage || "").trim()}` : "",
     ]
       .filter(Boolean)
@@ -1102,156 +1105,145 @@ export default function TheBlockConfiguratorPage() {
         )}
 
         {/* ==================================================================== */}
-        {/* CONFIGURED OUTCOMES AGGREGATION PLATE (CONDENSED & WELL LAID OUT)    */}
+        {/* CONFIGURED OUTCOMES & PROPOSAL HUB (COMPACT 2-COLUMN LAYOUT)         */}
         {/* ==================================================================== */}
         <section
           ref={aggregatorRef}
-          className={`rounded-2xl border p-6 sm:p-8 transition-colors ${
+          className={`rounded-2xl border p-5 sm:p-7 transition-colors ${
             isLight ? "bg-white border-[#E2DCD2] shadow-sm" : "bg-white/5 border-white/10 shadow-xl"
           }`}
         >
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b pb-5 border-slate-200/80 dark:border-white/10">
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-amber-500" />
-                <h2 className={`font-serif text-2xl font-bold ${isLight ? "text-[#142840]" : "text-white"}`}>
-                  Configured Outcomes
-                </h2>
-              </div>
-              <p className={`text-xs sm:text-sm mt-1 ${isLight ? "text-slate-600" : "text-slate-400"}`}>
-                Your customized engagement bundle across the six core disciplines.
-              </p>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <span
-                className={`font-mono text-xs font-semibold px-3 py-1 rounded-full border ${
-                  selectedCount > 0
-                    ? isLight
-                      ? "bg-emerald-50 border-emerald-300 text-emerald-800"
-                      : "bg-emerald-500/20 border-emerald-500/40 text-emerald-300"
-                    : isLight
-                    ? "bg-slate-100 border-slate-200 text-slate-500"
-                    : "bg-white/5 border-white/10 text-slate-400"
-                }`}
-              >
-                {selectedCount} Outcomes Selected
-              </span>
-
-              {selectedCount > 0 && (
-                <button
-                  type="button"
-                  onClick={handleClearAll}
-                  className="text-xs font-mono font-semibold text-rose-600 dark:text-rose-400 hover:underline cursor-pointer"
-                >
-                  Clear all
-                </button>
-              )}
-            </div>
-          </div>
-
-          {/* CONDENSED OUTCOMES DISPLAY */}
-          <div className="py-6">
-            {aggregatedByDomain.length === 0 ? (
-              <div className="text-center py-10 px-4 rounded-xl border border-dashed border-slate-300 dark:border-white/15">
-                <p className={`font-serif text-base font-semibold ${isLight ? "text-slate-700" : "text-slate-300"}`}>
-                  No outcomes configured yet.
-                </p>
-                <p className="text-xs font-mono text-slate-500 mt-1 max-w-md mx-auto">
-                  Click &quot;Enter Configuration Mode&quot; on the block above to select the capabilities your business needs.
-                </p>
-                <button
-                  onClick={() => setConfigModalDomainId(activeDomainId)}
-                  className="mt-4 px-5 py-2 rounded-xl text-xs font-mono font-bold bg-amber-500 text-slate-950 hover:bg-amber-400 transition-all cursor-pointer shadow-xs"
-                >
-                  Configure {activeDomain.shortName} Outcomes →
-                </button>
-              </div>
-            ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {aggregatedByDomain.map(({ domain, items, note }) => (
-                  <div
-                    key={domain.id}
-                    className={`rounded-xl border p-4 flex flex-col justify-between ${
-                      isLight ? "bg-slate-50 border-slate-200" : "bg-white/5 border-white/10"
-                    }`}
-                  >
-                    <div>
-                      <div className="flex items-center justify-between border-b pb-2 mb-3 border-slate-200 dark:border-white/10">
-                        <div className="flex items-center gap-2">
-                          <span
-                            className="font-mono text-[10px] font-bold px-1.5 py-0.5 rounded border"
-                            style={{
-                              backgroundColor: `${domain.accentHex}18`,
-                              color: domain.accentHex,
-                              borderColor: `${domain.accentHex}40`,
-                            }}
-                          >
-                            {domain.code}
-                          </span>
-                          <span className={`font-serif text-sm font-bold ${isLight ? "text-[#142840]" : "text-white"}`}>
-                            {domain.name}
-                          </span>
-                        </div>
-                        <button
-                          onClick={() => {
-                            handleCategorySelect(domain.id);
-                            setConfigModalDomainId(domain.id);
-                          }}
-                          className="text-[10px] font-mono text-amber-600 dark:text-amber-400 hover:underline cursor-pointer"
-                        >
-                          Edit Face ✎
-                        </button>
-                      </div>
-
-                      {/* OUTCOMES LIST (CONDENSED) */}
-                      <ul className="space-y-1.5 mb-3">
-                        {items.map((item) => (
-                          <li
-                            key={item.id}
-                            className="flex items-start justify-between gap-2 text-xs leading-snug group"
-                          >
-                            <span className="flex items-start gap-1.5">
-                              <span className="text-emerald-600 font-bold">✓</span>
-                              <span className={isLight ? "text-slate-800" : "text-slate-200"}>{item.name}</span>
-                            </span>
-                            <button
-                              onClick={() => handleToggleOutcome(item.id)}
-                              className="text-slate-400 hover:text-rose-500 opacity-60 group-hover:opacity-100 transition-opacity cursor-pointer ml-1"
-                              title="Remove outcome"
-                            >
-                              ✕
-                            </button>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {note.trim() && (
-                      <div className={`mt-2 pt-2 border-t text-[11px] font-mono ${isLight ? "border-slate-200 text-slate-600" : "border-white/10 text-slate-400"}`}>
-                        <strong>Context:</strong> {note.trim()}
-                      </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+            
+            {/* LEFT COLUMN: CONFIGURED OUTCOMES / PRIORITIES */}
+            <div className="lg:col-span-5 flex flex-col justify-between border-b lg:border-b-0 lg:border-r pb-6 lg:pb-0 lg:pr-6 border-slate-200/80 dark:border-white/10">
+              <div>
+                <div className="flex items-center justify-between gap-3 mb-3">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-amber-500" />
+                    <h3 className={`font-serif text-lg font-bold ${isLight ? "text-[#142840]" : "text-white"}`}>
+                      Configured Outcomes
+                    </h3>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span
+                      className={`font-mono text-[11px] font-semibold px-2.5 py-0.5 rounded-full border ${
+                        selectedCount > 0
+                          ? isLight
+                            ? "bg-emerald-50 border-emerald-300 text-emerald-800"
+                            : "bg-emerald-500/20 border-emerald-500/40 text-emerald-300"
+                          : isLight
+                          ? "bg-slate-100 border-slate-200 text-slate-500"
+                          : "bg-white/5 border-white/10 text-slate-400"
+                      }`}
+                    >
+                      {selectedCount} Selected
+                    </span>
+                    {selectedCount > 0 && (
+                      <button
+                        type="button"
+                        onClick={handleClearAll}
+                        className="text-[11px] font-mono font-semibold text-rose-600 dark:text-rose-400 hover:underline cursor-pointer"
+                      >
+                        Clear
+                      </button>
                     )}
                   </div>
-                ))}
-              </div>
-            )}
-          </div>
+                </div>
 
-          {/* ==================================================================== */}
-          {/* REQUEST SCOPING PROPOSAL FORM (CPQ ENGINE / THE BLOCK MINE)          */}
-          {/* ==================================================================== */}
-          <div className={`mt-6 pt-6 border-t ${isLight ? "border-slate-200" : "border-white/10"}`}>
-            <div className="max-w-2xl mx-auto">
-              <div className="text-center mb-6">
-                <span className="font-mono text-xs uppercase tracking-wider font-bold text-amber-600 dark:text-amber-400">
-                  CPQ Scoping Proposal Engine
-                </span>
-                <h3 className={`font-serif text-2xl font-bold mt-1 ${isLight ? "text-[#142840]" : "text-white"}`}>
+                {aggregatedByDomain.length === 0 ? (
+                  <div className={`p-4 rounded-xl border border-dashed text-left ${isLight ? "bg-slate-50/70 border-slate-200" : "bg-white/5 border-white/10"}`}>
+                    <p className={`font-serif text-sm font-semibold ${isLight ? "text-slate-800" : "text-slate-200"}`}>
+                      No outcomes selected yet
+                    </p>
+                    <p className="text-xs text-slate-500 mt-1 leading-relaxed">
+                      Select outcomes on the block above to calculate a delivery flight, or write your situation in the proposal form.
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => setConfigModalDomainId(activeDomainId)}
+                      className="mt-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-bold bg-amber-500 hover:bg-amber-400 text-slate-950 transition-all cursor-pointer shadow-xs"
+                    >
+                      Configure {activeDomain.shortName} Outcomes →
+                    </button>
+                  </div>
+                ) : (
+                  <div className="space-y-3 max-h-[380px] overflow-y-auto pr-1">
+                    {aggregatedByDomain.map(({ domain, items, note }) => (
+                      <div
+                        key={domain.id}
+                        className={`rounded-xl border p-3 ${
+                          isLight ? "bg-slate-50/80 border-slate-200" : "bg-white/5 border-white/10"
+                        }`}
+                      >
+                        <div className="flex items-center justify-between border-b pb-1.5 mb-2 border-slate-200/80 dark:border-white/10">
+                          <div className="flex items-center gap-1.5">
+                            <span
+                              className="font-mono text-[10px] font-bold px-1.5 py-0.5 rounded border"
+                              style={{
+                                backgroundColor: `${domain.accentHex}18`,
+                                color: domain.accentHex,
+                                borderColor: `${domain.accentHex}40`,
+                              }}
+                            >
+                              {domain.code}
+                            </span>
+                            <span className={`font-serif text-xs font-bold ${isLight ? "text-[#142840]" : "text-white"}`}>
+                              {domain.shortName}
+                            </span>
+                          </div>
+                          <button
+                            type="button"
+                            onClick={() => {
+                              handleCategorySelect(domain.id);
+                              setConfigModalDomainId(domain.id);
+                            }}
+                            className="text-[10px] font-mono text-amber-600 dark:text-amber-400 hover:underline cursor-pointer"
+                          >
+                            Edit
+                          </button>
+                        </div>
+                        <ul className="space-y-1">
+                          {items.map((item) => (
+                            <li
+                              key={item.id}
+                              className="flex items-start justify-between gap-2 text-xs leading-snug group"
+                            >
+                              <span className="flex items-start gap-1.5">
+                                <span className="text-emerald-600 font-bold text-[11px]">✓</span>
+                                <span className={isLight ? "text-slate-800" : "text-slate-200"}>{item.name}</span>
+                              </span>
+                              <button
+                                type="button"
+                                onClick={() => handleToggleOutcome(item.id)}
+                                className="text-slate-400 hover:text-rose-500 opacity-50 group-hover:opacity-100 transition-opacity cursor-pointer text-[11px]"
+                                title="Remove outcome"
+                              >
+                                ✕
+                              </button>
+                            </li>
+                          ))}
+                        </ul>
+                        {note.trim() && (
+                          <div className={`mt-2 pt-1.5 border-t text-[11px] font-mono ${isLight ? "border-slate-200 text-slate-600" : "border-white/10 text-slate-400"}`}>
+                            <strong>Context:</strong> {note.trim()}
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* RIGHT COLUMN: PROPOSAL REQUEST / DIRECT NOTE FORM */}
+            <div className="lg:col-span-7">
+              <div className="mb-4">
+                <h3 className={`font-serif text-xl sm:text-2xl font-bold ${isLight ? "text-[#142840]" : "text-white"}`}>
                   Request Your Scoping Proposal
                 </h3>
-                <p className={`text-xs mt-1.5 ${isLight ? "text-slate-600" : "text-slate-400"}`}>
-                  1 Block = 2 to 4 Weeks. Scope, sequencing, and number of Blocks are settled in your proposal.
+                <p className={`text-xs mt-1 ${isLight ? "text-slate-600" : "text-slate-400"}`}>
+                  1 Block = 2 to 4 Weeks. Scope and delivery flight timing are agreed in your proposal.
                 </p>
               </div>
 
@@ -1264,17 +1256,19 @@ export default function TheBlockConfiguratorPage() {
                   <div className="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-600 flex items-center justify-center font-bold text-xl">
                     ✓
                   </div>
-                  <h4 className="font-serif text-xl font-bold">Scoping Proposal Request Transmitted</h4>
+                  <h4 className="font-serif text-xl font-bold">Proposal Request Transmitted</h4>
                   <p className="text-xs sm:text-sm max-w-md leading-relaxed">
-                    Our principals will review your {selectedCount} configured outcomes across {aggregatedByDomain.length} disciplines and assemble your engagement scope proposal.
+                    {selectedCount > 0
+                      ? `Our principals will review your ${selectedCount} configured outcomes across ${aggregatedByDomain.length} disciplines and assemble your engagement proposal.`
+                      : `Our principals will review your message and reach out to discuss your scoping needs.`}
                   </p>
                   <span className="font-mono text-[11px] text-emerald-700 dark:text-emerald-300">
                     Logged to DigOps pipeline via The Block storefront.
                   </span>
                 </div>
               ) : (
-                <form onSubmit={handleSubmitProposal} className="flex flex-col gap-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <form onSubmit={handleSubmitProposal} className="flex flex-col gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
                       <label className="block text-xs font-mono font-semibold uppercase tracking-wider mb-1 text-slate-700 dark:text-slate-300">
                         Full Name *
@@ -1285,7 +1279,7 @@ export default function TheBlockConfiguratorPage() {
                         value={contactName}
                         onChange={(e) => setContactName(e.target.value)}
                         placeholder="Your Name"
-                        className={`w-full rounded-xl border px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 ${
+                        className={`w-full rounded-xl border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 ${
                           isLight ? "bg-white border-slate-300 text-slate-900" : "bg-slate-900 border-white/15 text-white"
                         }`}
                       />
@@ -1301,7 +1295,7 @@ export default function TheBlockConfiguratorPage() {
                         value={contactEmail}
                         onChange={(e) => setContactEmail(e.target.value)}
                         placeholder="you@company.com"
-                        className={`w-full rounded-xl border px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 ${
+                        className={`w-full rounded-xl border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 ${
                           isLight ? "bg-white border-slate-300 text-slate-900" : "bg-slate-900 border-white/15 text-white"
                         }`}
                       />
@@ -1310,7 +1304,7 @@ export default function TheBlockConfiguratorPage() {
 
                   <div>
                     <label className="block text-xs font-mono font-semibold uppercase tracking-wider mb-1 text-slate-700 dark:text-slate-300">
-                      Company / Organization Name *
+                      Company / Organization *
                     </label>
                     <input
                       type="text"
@@ -1318,41 +1312,54 @@ export default function TheBlockConfiguratorPage() {
                       value={contactCompany}
                       onChange={(e) => setContactCompany(e.target.value)}
                       placeholder="Company Name"
-                      className={`w-full rounded-xl border px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 ${
+                      className={`w-full rounded-xl border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 ${
                         isLight ? "bg-white border-slate-300 text-slate-900" : "bg-slate-900 border-white/15 text-white"
                       }`}
                     />
                   </div>
 
+                  <div>
+                    <label className="block text-xs font-mono font-semibold uppercase tracking-wider mb-1 text-slate-700 dark:text-slate-300">
+                      Your Situation or Notes (Optional)
+                    </label>
+                    <textarea
+                      rows={2}
+                      value={contactNote}
+                      onChange={(e) => setContactNote(e.target.value)}
+                      placeholder="Describe your operational priorities, systems involved, or questions..."
+                      className={`w-full rounded-xl border px-3 py-2 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 resize-none ${
+                        isLight
+                          ? "bg-white border-slate-300 text-slate-900 placeholder:text-slate-400"
+                          : "bg-slate-900 border-white/15 text-white placeholder:text-slate-500"
+                      }`}
+                    />
+                  </div>
+
                   {submitError && (
-                    <div className="p-3 rounded-lg bg-rose-500/10 border border-rose-500/30 text-rose-600 dark:text-rose-400 text-xs font-mono">
+                    <div className="p-2.5 rounded-lg bg-rose-500/10 border border-rose-500/30 text-rose-600 dark:text-rose-400 text-xs font-mono">
                       {submitError}
                     </div>
                   )}
 
                   <button
                     type="submit"
-                    disabled={isSubmitting || selectedCount === 0}
-                    className={`w-full py-3.5 rounded-xl font-serif text-base font-bold transition-all shadow-md cursor-pointer ${
-                      selectedCount === 0
-                        ? isLight
-                          ? "bg-slate-200 text-slate-400 cursor-not-allowed"
-                          : "bg-white/10 text-slate-500 cursor-not-allowed"
-                        : "bg-[#142840] hover:bg-slate-800 text-white hover:shadow-lg"
-                    }`}
+                    disabled={isSubmitting}
+                    className="w-full py-3 rounded-xl font-serif text-base font-bold bg-[#142840] hover:bg-slate-800 text-white transition-all shadow-md hover:shadow-lg cursor-pointer disabled:opacity-50"
                   >
                     {isSubmitting
                       ? "Transmitting Proposal Request..."
-                      : selectedCount === 0
-                      ? "Select Outcomes Above to Request Proposal"
-                      : `Request Scoping Proposal (${selectedCount} outcomes configured) →`}
+                      : selectedCount > 0
+                      ? `Request Scoping Proposal (${selectedCount} outcomes configured) →`
+                      : "Request Scoping Proposal →"}
                   </button>
+
                   <p className="text-center text-[11px] font-mono text-slate-500">
-                    Sovereign collective review · Configure, Price, Quote · Strictly 0 dollars committed until scope is agreed
+                    Direct principal review · Scope agreed before engagement begins
                   </p>
                 </form>
               )}
             </div>
+
           </div>
         </section>
       </div>
