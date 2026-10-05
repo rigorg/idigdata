@@ -52,7 +52,7 @@ export default function AgenticPositionView() {
 
     <section id="in-practice" className={s.section}>
       <div className={s.practice}>
-        <div><p className={s.eyebrow}>03 / Applied agentics</p><h2>I have taken this<br/>into the enterprise.</h2><p>As CIO at Sierra Nevada Brewing, I put agentic applications into production on the company-owned data core, with training, controls, and business ownership.</p><p className={s.quiet}>A production example is evidence within its scope. The next workflow still has to earn its place.</p><Link className={s.textLink} href="/experience/#applied-agentics">The experience behind this position ↗</Link></div>
+        <div><p className={s.eyebrow}>03 / Applied agentics</p><h2>I have taken this<br/>into the enterprise.</h2><p>In a CIO role, I put agentic applications into production on the company-owned data core, with training, controls, and business ownership.</p><p className={s.quiet}>A production example is evidence within its scope. The next workflow still has to earn its place.</p><Link className={s.textLink} href="/experience/#applied-agentics">The experience behind this position ↗</Link></div>
         <div className={s.practiceList}>
           <div><span>01</span><h3>Enterprise transformation management</h3><p>Planning, milestones, cutover dependencies, and delivery evidence through go-live.</p></div>
           <div><span>02</span><h3>Governed software delivery</h3><p>Traceable decisions, testing and delivery evidence, and human authorization.</p></div>
