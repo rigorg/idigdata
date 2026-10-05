@@ -1,4 +1,5 @@
 import Link from "next/link";
+import styles from "./clients.module.css";
 import type { Metadata } from "next";
 import PresenceShell from "@/components/presence/PresenceShell";
 import HaloFilm from "@/components/presence/HaloFilm";
@@ -153,6 +154,50 @@ export default function ExperiencePage() {
 </div>
 </div>
 </header>
+<section className={`p-section ${styles.section}`} id="selected-clients" aria-labelledby="selected-clients-title">
+<div className="page-well">
+<h2 className={`p-h2 ${styles.title}`} id="selected-clients-title">Selected clients</h2>
+<dl className={styles.rows}>
+<div className={styles.row}>
+<dt>Food &amp; beverage</dt>
+<dd><ul className={styles.names}>
+<li>Sierra Nevada Brewing</li>
+<li>Duckhorn</li>
+<li>Foley Family Wine &amp; Spirits</li>
+<li>Everytable</li>
+<li>H.W. Greenham &amp; Sons</li>
+<li>Valley Fine Foods</li>
+<li>Scheid Vineyards</li>
+<li>Rodney Strong Vineyards</li>
+</ul></dd>
+</div>
+<div className={styles.row}>
+<dt>Architecture &amp; construction</dt>
+<dd><ul className={styles.names}>
+<li>SOM</li>
+<li>HOK</li>
+<li>Turner Construction</li>
+<li>PCL Construction</li>
+</ul></dd>
+</div>
+<div className={styles.row}>
+<dt>Hospitality &amp; sports</dt>
+<dd><ul className={styles.names}>
+<li>Wynn Resorts</li>
+<li>MGM Resorts</li>
+<li>San Jose Sharks</li>
+</ul></dd>
+</div>
+<div className={styles.row}>
+<dt>Healthcare</dt>
+<dd><ul className={styles.names}>
+<li>HCA Healthcare</li>
+</ul></dd>
+</div>
+</dl>
+</div>
+</section>
+
 <section className="p-section">
 <div className="page-well">
 <h2 className="p-h2">{"Selected transformation work"}</h2>
