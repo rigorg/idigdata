@@ -747,18 +747,6 @@ ${content.trim()}`;
                 </button>
               );
             })}
-
-            <span className="text-white/20 self-center hidden sm:inline">|</span>
-
-            <Link
-              href="/owned-software"
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-purple-500/40 bg-purple-500/10 hover:bg-purple-500/20 text-purple-200 hover:text-white text-xs font-medium transition-all shadow-sm cursor-pointer group"
-              title="The Door: Owned software"
-            >
-              <span className="w-2 h-2 rounded-full bg-purple-400 shrink-0 group-hover:scale-125 transition-transform" />
-              <span>Door: Owned software</span>
-              <span className="text-purple-400 group-hover:translate-x-0.5 transition-transform font-mono">↗</span>
-            </Link>
           </div>
 
           {/* QUICK-OPEN BUTTON FOR CURRENT FOCUSED FACE */}
@@ -1251,3 +1239,4 @@ ${content.trim()}`;
     </main>
   );
 }
+
