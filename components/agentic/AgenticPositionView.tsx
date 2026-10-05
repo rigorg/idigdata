@@ -32,7 +32,7 @@ export default function AgenticPositionView() {
   const [topic, setTopic] = useState("General thoughts on agentic workflows");
   const [message, setMessage] = useState("");
   const [hp, setHp] = useState("");
-  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "recorded" | "error">("idle");
   const [errors, setErrors] = useState<{ name?: string; email?: string; message?: string }>({});
 
   function handleSelectQuestion(qTopic: string) {
@@ -85,8 +85,8 @@ export default function AgenticPositionView() {
       });
 
       const data = await res.json();
-      if (res.ok && data.ok) {
-        setStatus("success");
+      if ((res.ok || res.status === 202) && data.ok) {
+        setStatus(data.notification === "sent" ? "success" : "recorded");
       } else {
         setStatus("error");
       }
@@ -330,11 +330,15 @@ export default function AgenticPositionView() {
           </div>
 
           <div className={s.formCard}>
-            {status === "success" ? (
+            {status === "success" || status === "recorded" ? (
               <div className={s.successAlert}>
-                <h3 className={s.successTitle}>Thank you for your note.</h3>
+                <h3 className={s.successTitle}>
+                  {status === "success" ? "Thank you for your note." : "Your note has been recorded."}
+                </h3>
                 <p className={s.successText}>
-                  Your message has been sent directly to Rob. He reads every reader note personally and will reply to your email.
+                  {status === "success"
+                    ? "Your message has been sent directly to Rob. He reads every reader note personally and will reply to your email."
+                    : "Your note was safely recorded. Direct email notification is unconfirmed on this environment — write robert@idigdata.com directly if you need a same-day response."}
                 </p>
                 <button
                   type="button"
