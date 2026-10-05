@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import PresenceShell from "@/components/presence/PresenceShell";
-import AgenticLayerView from "@/components/agentic/AgenticLayerView";
+import AgenticPositionView from "@/components/agentic/AgenticPositionView";
 
 export const metadata: Metadata = {
   title: "Agentic AI in the enterprise | idigdata",
@@ -16,9 +15,6 @@ export const metadata: Metadata = {
 };
 
 export default function AgenticAiPage() {
-  return (
-    <PresenceShell>
-      <AgenticLayerView />
-    </PresenceShell>
-  );
+  return <AgenticPositionView />;
 }
+
