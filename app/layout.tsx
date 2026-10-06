@@ -94,21 +94,43 @@ export const viewport: Viewport = {
   colorScheme: "light",
 };
 
+import { ThemeProvider } from "@/lib/theme";
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`scroll-smooth ${display.variable} ${body.variable} ${vollkorn.variable}`}>
+    <html lang="en" className={`scroll-smooth ${display.variable} ${body.variable} ${vollkorn.variable}`} suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                var t = localStorage.getItem('idigdata-theme');
+                if (t === 'dark') {
+                  document.documentElement.classList.add('dark');
+                  document.documentElement.setAttribute('data-theme', 'dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
+                  document.documentElement.setAttribute('data-theme', 'light');
+                }
+              } catch(e) {}
+            `,
+          }}
+        />
+      </head>
       <body className="font-body text-ink bg-cream">
-        <JsonLd />
-        <SiteHeader />
-        <main>{children}</main>
-        <SiteFooter />
-        <SiteNotice />
-        <VercelAnalytics />
-        <PageviewBeacon />
+        <ThemeProvider>
+          <JsonLd />
+          <SiteHeader />
+          <main>{children}</main>
+          <SiteFooter />
+          <SiteNotice />
+          <VercelAnalytics />
+          <PageviewBeacon />
+        </ThemeProvider>
       </body>
     </html>
   );

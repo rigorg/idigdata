@@ -247,54 +247,61 @@ export default function ExperiencePage() {
 </div>
 </section>      <section className="p-section p-section--job">
         <div className="page-well">
-          <p className="p-kicker">The systems</p>
-          <h2 className="p-h2">The Systemverse, and the systems beside it.</h2>
-          <p className="p-prose">
-            Best practice where you are standard. Your sauce where you are not.
-            The work is knowing which is which, then anchoring the systems to a
-            company-owned data core.
-          </p>
-
-          <div className="command-plate mt-8">
-            <div className="mb-3 text-left">
-              <p className="font-vollkorn text-[17px] font-bold text-navy">
-                The Systemverse
-              </p>
-              <p className="text-[13px] text-[#5A6978]">
-                Company-owned data core at the center. Systems around it.
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-start">
+            <div className="md:col-span-5">
+              <p className="p-kicker">The systems</p>
+              <h2 className="p-h2">The Systemverse, and the systems beside it.</h2>
+              <p className="p-prose mt-4">
+                Best practice where you are standard. Your sauce where you are not.
+                The work is knowing which is which, then anchoring the systems to a
+                company-owned data core.
               </p>
             </div>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/diagrams/system-verse.svg"
-              alt="The Systemverse: company-owned data core at the center, systems around it"
-            />
-            <p className="mt-3 text-left">
-              <a className="p-link" href="/diagrams/system-verse.svg" target="_blank" rel="noopener noreferrer">
-                Open the diagram
-              </a>
-            </p>
-            <div className="telemetry-badge">
-              <HaloFilm
-                src="/media/systemverse-loop.mp4?c=2"
-                poster="/media/systemverse-poster.png?c=2"
-                label="Systemverse, in motion"
-                size={72}
-              />
-              <div>
-                <p className="font-vollkorn text-[13.5px] font-bold text-navy">
-                  The estate picture, in motion
+
+            <div className="md:col-span-7">
+              <div className="command-plate !mt-0 !p-4">
+                <div className="mb-2 text-left">
+                  <p className="font-vollkorn text-[16px] font-bold text-navy">
+                    The Systemverse
+                  </p>
+                  <p className="text-[12.5px] text-[#5A6978]">
+                    Company-owned data core at the center. Systems around it.
+                  </p>
+                </div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/diagrams/system-verse.svg"
+                  alt="The Systemverse: company-owned data core at the center, systems around it"
+                  className="max-h-[250px] w-auto mx-auto object-contain"
+                />
+                <p className="mt-2 text-left">
+                  <a className="p-link text-xs" href="/diagrams/system-verse.svg" target="_blank" rel="noopener noreferrer">
+                    Open the diagram
+                  </a>
                 </p>
-                <p className="mt-0.5 text-[13px] text-[#243345]">
-                  Gold routes from the data core to the systems that run the
-                  work.
-                </p>
+                <div className="telemetry-badge !mt-3">
+                  <HaloFilm
+                    src="/media/systemverse-loop.mp4?c=2"
+                    poster="/media/systemverse-poster.png?c=2"
+                    label="Systemverse, in motion"
+                    size={56}
+                  />
+                  <div>
+                    <p className="font-vollkorn text-[13px] font-bold text-navy">
+                      The estate picture, in motion
+                    </p>
+                    <p className="mt-0.5 text-[12px] text-[#243345]">
+                      Gold routes from the data core to the systems that run the
+                      work.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
           <h3 className="mt-12 font-vollkorn text-[26px] font-extrabold text-navy">
-            Significant systems I have run.
+            Systems I have run.
           </h3>
           <p className="portfolio-sub">
             Contracts negotiated. Vendors run. Customer-side command.

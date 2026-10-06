@@ -10,6 +10,7 @@ export type NavItem = {
 export const PRIMARY_NAV: readonly NavItem[] = [
   { href: "/", label: "Home" },
   { href: "/experience/", label: "Experience" },
+  { href: "/agentic-ai/", label: "Agentic AI" },
   { href: "/block/", label: "The Block" },
   { href: "/contact/", label: "Contact" },
 ];
