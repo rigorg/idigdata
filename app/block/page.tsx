@@ -15,7 +15,7 @@ import { TheBlockLogo } from "@/components/TheBlockLogo";
 
 // Strictly: 0 dollars ($), 0 phone numbers, ASCII hyphens only.
 // Delivery Standard: 1 Block = 2 to 4 Weeks. Client selects outcomes, we quote blocks.
-// Client-facing voice: strictly collective sovereign voice ("We", "Our team", "Our principals"). NO individual names.
+// Client-facing voice: the firm ("We", "Our team"); Robert Paddock is named as the lead who reviews every proposal.
 // Capo Architecture:
 // - Big, Centered 3D Spinning Cube Configurator in the center stage.
 // - Rich idigdata Light Theme (crisp cream #FBF9F4, deep navy #142840, gold #FACC15, zero greenish wash-out) + Dark Theme toggle.
@@ -502,6 +502,7 @@ export default function TheBlockConfiguratorPage() {
       role: "Block Outcome Buyer",
       message: fullMessage,
       interestType: "applied_agentics",
+      source: "website-block",
     };
 
     try {
@@ -1304,8 +1305,8 @@ export default function TheBlockConfiguratorPage() {
                   <h4 className="font-serif text-xl font-bold">Proposal Request Transmitted</h4>
                   <p className="text-xs sm:text-sm max-w-md leading-relaxed">
                     {selectedCount > 0
-                      ? `Our principals will review your ${selectedCount} configured outcomes across ${aggregatedByDomain.length} disciplines and assemble your engagement proposal.`
-                      : `Our principals will review your message and reach out to discuss your scoping needs.`}
+                      ? `Robert Paddock will review your ${selectedCount} configured outcomes across ${aggregatedByDomain.length} disciplines and assemble your engagement proposal.`
+                      : `Robert Paddock will review your message and reach out to discuss your scoping needs.`}
                   </p>
                   <span className="font-mono text-[11px] text-emerald-700 dark:text-emerald-300">
                     Logged to DigOps pipeline via The Block storefront.

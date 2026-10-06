@@ -26,6 +26,14 @@ const QUESTIONS = [
   },
 ];
 
+/** URL-safe slug for a topic label, e.g. "When an agent acts vs. person decides" -> "when-an-agent-acts-vs-person-decides". */
+function topicSlug(label: string): string {
+  return label
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 export default function AgenticPositionView() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -37,6 +45,14 @@ export default function AgenticPositionView() {
 
   function handleSelectQuestion(qTopic: string) {
     setTopic(qTopic);
+    // Carry the chosen topic in the URL fragment so the referer the note form
+    // sends names the page context. replaceState avoids a second jump; the
+    // existing smooth scroll below is the only movement.
+    try {
+      window.history.replaceState(null, "", `#topic-${topicSlug(qTopic)}`);
+    } catch {
+      // Fragment is a convenience only; the note still carries its topic line.
+    }
     const el = document.getElementById("conversation");
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
@@ -80,6 +96,7 @@ export default function AgenticPositionView() {
           company: "",
           message: formattedMessage,
           interestType: "applied_agentics",
+          source: "website-reader",
           _hp: hp,
         }),
       });

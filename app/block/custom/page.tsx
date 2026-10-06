@@ -6,7 +6,7 @@ import { TheBlockLogo } from "@/components/TheBlockLogo";
 import { useTheme, ThemeToggle } from "@/lib/theme";
 
 // Delivery Standard: 1 Block = 2 to 4 Weeks. Time for deliverable.
-// Voice: Collective sovereign engineering firm ("We", "Our team", "Our principals").
+// Voice: engineering firm ("We", "Our team"); Robert Paddock is named as the lead under "Who does the work."
 // Zero dollars ($), zero phone numbers, ASCII hyphens only.
 // NO external brand names (no Upwork, no RFP labels).
 
@@ -122,7 +122,23 @@ const ENABLEMENT_OPTIONS = [
     id: "hypercare",
     label: "Post-Launch Hypercare & Monitoring",
     badge: "FULL ENABLEMENT",
-    desc: "Active post-go-live observation, exception triage, query tuning, and SLA-backed operational support.",
+    desc: "Active post-go-live observation, exception triage, query tuning, and operational support.",
+  },
+];
+
+// Accepted door copy, carried verbatim from the former /owned-software/ door.
+const WHERE_IT_HELPS: { heading: string; text: string }[] = [
+  {
+    heading: "Enterprise transformation management",
+    text: "Planning, milestones, cutover dependencies, and delivery evidence through go-live.",
+  },
+  {
+    heading: "Governed software delivery",
+    text: "Traceable decisions, testing and delivery evidence, and human authorization.",
+  },
+  {
+    heading: "Workflows across people and systems",
+    text: "Company-owned data, defined permissions, and human judgment at consequential steps.",
   },
 ];
 
@@ -305,6 +321,7 @@ export default function CustomAgenticScopingPage() {
         generatedBrief,
       ].join("\n"),
       interestType: "applied_agentics" as const,
+      source: "website-block-custom" as const,
     };
 
     try {
@@ -423,6 +440,50 @@ export default function CustomAgenticScopingPage() {
             integration, and production agentics. Configure your technical brief below to structure your time blocks
             and receive an executable proposal.
           </p>
+        </section>
+
+        {/* ==================================================================== */}
+        {/* WHERE AGENTIC SOFTWARE CAN HELP + WHO DOES THE WORK                  */}
+        {/* ==================================================================== */}
+        <section
+          className={`p-4 rounded-xl border flex flex-col gap-3 ${
+            isLight ? "bg-white/80 border-[#E2DCD2]" : "bg-slate-900/30 border-white/10"
+          }`}
+        >
+          <div className="flex flex-col gap-1 border-b pb-2 border-slate-200/60 dark:border-slate-800">
+            <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">
+              Where agentic software can help
+            </h2>
+            <p className={`text-xs sm:text-sm leading-relaxed ${isLight ? "text-slate-700" : "text-slate-300"}`}>
+              Build agentic software that uses your company knowledge to carry out work within the permissions you set.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+            {WHERE_IT_HELPS.map((row) => (
+              <div
+                key={row.heading}
+                className={`p-3 rounded-lg border flex flex-col gap-1 ${
+                  isLight ? "bg-stone-50/60 border-slate-200" : "bg-slate-950/40 border-slate-800"
+                }`}
+              >
+                <h3 className="text-xs font-serif font-bold">{row.heading}</h3>
+                <p className={`text-[11px] leading-relaxed ${isLight ? "text-slate-600" : "text-slate-400"}`}>
+                  {row.text}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex flex-col gap-1 pt-2 border-t border-slate-200/60 dark:border-slate-800">
+            <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">
+              Who does the work.
+            </h2>
+            <p className={`text-xs sm:text-sm leading-relaxed ${isLight ? "text-slate-700" : "text-slate-300"}`}>
+              Robert Paddock leads every block. He brings in named specialists for the agreed scope, and the work is
+              carried by people and agents under his command.
+            </p>
+          </div>
         </section>
 
         {/* ==================================================================== */}
@@ -879,7 +940,7 @@ export default function CustomAgenticScopingPage() {
                     <span className="font-bold">Brief Transmitted ✓</span>
                     <p className="text-[11px] leading-relaxed">
                       {submitStatus === "success"
-                        ? "Your scoping brief lands directly in our principals' inbox. We will review your architecture and return a scoped delivery proposal."
+                        ? "Your scoping brief lands directly with Robert Paddock. We will review your architecture and return a scoped delivery proposal."
                         : "Your scoping brief was securely recorded. We will review your architecture and follow up directly."}
                     </p>
                   </div>
