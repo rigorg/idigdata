@@ -4,6 +4,7 @@ import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import JsonLd from "@/components/analytics/JsonLd";
+import RouteJsonLd from "@/components/analytics/RouteJsonLd";
 import PageviewBeacon from "@/components/analytics/PageviewBeacon";
 import SiteNotice from "@/components/analytics/SiteNotice";
 import VercelAnalytics from "@/components/analytics/VercelAnalytics";
@@ -43,6 +44,9 @@ export const metadata: Metadata = {
     canonical: "/",
     types: {
       "text/plain": "https://idigdata.com/llms.txt",
+      "application/rss+xml": [
+        { url: "https://idigdata.com/feed.xml", title: "Agentic AI, by Robert Paddock" },
+      ],
     },
   },
   icons: {
@@ -120,10 +124,25 @@ export default function RootLayout({
             `,
           }}
         />
+        {/*
+          Feed and llms.txt discovery. These are also declared in
+          metadata.alternates.types above, but every page sets
+          alternates.canonical, and Next replaces the whole `alternates`
+          object at the deepest segment, so the layout-level types never
+          render on those pages. Keep both until pages stop overriding.
+        */}
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Agentic AI, by Robert Paddock"
+          href="https://idigdata.com/feed.xml"
+        />
+        <link rel="alternate" type="text/plain" href="https://idigdata.com/llms.txt" />
       </head>
       <body className="font-body text-ink bg-cream">
         <ThemeProvider>
           <JsonLd />
+          <RouteJsonLd />
           <SiteHeader />
           <main>{children}</main>
           <SiteFooter />

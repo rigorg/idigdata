@@ -1,0 +1,59 @@
+# idigdata: full text for language models
+
+> The primary pages of idigdata.com, each with the title and description the page itself publishes in its metadata. Compiled by hand from the page sources; no claims appear here that the pages do not make. See https://idigdata.com/llms.txt for the short index.
+
+Canonical citation: Robert Paddock, Enterprise Technology Leader, idigdata (Data Integration Group).
+
+## Home
+
+- URL: https://idigdata.com/
+- Title: Robert Paddock · Enterprise Technology Leader | idigdata
+- Description: Enterprise technology leadership grounded in 50+ implementations and 15 enterprise transformations at scale.
+
+## Experience
+
+- URL: https://idigdata.com/experience/
+- Title: Experience | idigdata
+- Description: Executive leadership and enterprise transformation across 50+ implementations and 15 enterprise transformations at scale.
+
+## The Block
+
+- URL: https://idigdata.com/block/
+- Title: The Block · Scoping & Outcome Configurator | idigdata
+- Description: The Block is idigdata's productized capability configurator. Explore outcomes across leadership, business systems, data, financial integrity, workflows, and bespoke agentic engineering. Configure your scope and structure your delivery blocks.
+- Disciplines: Leadership, Direction & Transformation; Business Systems & Integration; IT Operations & Security; Data & Knowledge; Financial Systems; Workflows & Automation.
+- Delivery standard: one Block is two to four weeks.
+
+## Agentic AI
+
+- URL: https://idigdata.com/agentic-ai/
+- Title: Agentic AI in the enterprise | idigdata
+- Description: Robert Paddock's public notebook on enterprise and agentic workflows. Private reader notes; no public comments.
+- Feed: https://idigdata.com/feed.xml (RSS 2.0, "Agentic AI, by Robert Paddock")
+
+## Contact
+
+- URL: https://idigdata.com/contact/
+- Title: Contact | idigdata
+- Description: Executive roles, focused transformation work, and fractional leadership.
+- Email: robert@idigdata.com
+
+## FAQ
+
+- URL: https://idigdata.com/faq/
+- Title: FAQ | idigdata
+- Description: Fit, non-fit, what you hire, and what the company keeps - Robert Paddock / idigdata.
+
+## Privacy
+
+- URL: https://idigdata.com/privacy/
+- Title: Privacy | idigdata
+- Description: How idigdata handles site telemetry, contact notes, cookies, and requests about your data.
+
+## Accepted public claims
+
+- Robert Paddock, Enterprise Technology Leader; founder of Data Integration Group (DIG LLC); public practice idigdata, founded 2016.
+- 30 years. 50+ implementations. 15 enterprise transformations at scale.
+- Financial close from 18 days to four (Data Integration Group work).
+- 200+ systems consolidated to 25.
+- $8M ERP program recovered.

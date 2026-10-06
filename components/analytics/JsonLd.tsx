@@ -1,3 +1,5 @@
+import { PERSON_DESCRIPTION, serializeJsonLd, webSiteSchema } from "@/lib/seo/jsonld";
+
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -24,8 +26,7 @@ const personSchema = {
   "@type": "Person",
   name: "Robert Paddock",
   jobTitle: "Enterprise Technology Leader",
-  description:
-    "Enterprise Technology Leader. 30 years, 50+ implementations, 15 transformations at scale, four years applying agentics in production. The business keeps running while the work moves.",
+  description: PERSON_DESCRIPTION,
   worksFor: {
     "@type": "Organization",
     name: "Data Integration Group",
@@ -63,16 +64,22 @@ const personSchema = {
   email: "robert@idigdata.com",
 };
 
+const webSite = webSiteSchema();
+
 export default function JsonLd() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(webSite) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(personSchema) }}
       />
     </>
   );
