@@ -157,7 +157,7 @@ export default function CustomAgenticScopingPage() {
   const [authority, setAuthority] = useState<"advisory" | "supervised" | "bounded">("supervised");
   const [scale, setScale] = useState<"solo" | "team" | "dept" | "enterprise">("team");
   const [velocity, setVelocity] = useState<"ondemand" | "batch" | "realtime">("batch");
-  const [deployment, setDeployment] = useState<"client_vpc" | "on_prem" | "managed">("client_vpc");
+  const [deployment, setDeployment] = useState<"client_vpc" | "on_prem">("client_vpc");
   const [enablement, setEnablement] = useState<"turnkey" | "training" | "hypercare">("training");
   const [situationText, setSituationText] = useState("");
 
@@ -248,9 +248,7 @@ export default function CustomAgenticScopingPage() {
     const deploymentLabel =
       deployment === "client_vpc"
         ? "Customer Cloud VPC (AWS / GCP / Azure)"
-        : deployment === "on_prem"
-        ? "On-Premises / Private Cloud"
-        : "idigdata Managed Isolated VPC";
+        : "On-Premises / Private Cloud";
 
     const enablementLabel =
       enablement === "turnkey"
@@ -749,7 +747,6 @@ export default function CustomAgenticScopingPage() {
                   >
                     <option value="client_vpc">Client Cloud VPC</option>
                     <option value="on_prem">On-Premises / Air-Gapped</option>
-                    <option value="managed">idigdata Managed VPC</option>
                   </select>
                 </div>
               </div>
