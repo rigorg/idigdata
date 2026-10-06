@@ -578,6 +578,19 @@ export default function TheBlockConfiguratorPage() {
               <span>1 Block = 2 to 4 Weeks</span>
             </div>
 
+            {/* CUSTOM AGENTIC SCOPING LINK */}
+            <Link
+              href="/block/custom/"
+              className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full border text-xs font-mono font-semibold transition-all ${
+                isLight
+                  ? "bg-amber-100/70 border-amber-300 text-amber-900 hover:bg-amber-200/80 shadow-xs"
+                  : "bg-amber-500/15 border-amber-500/40 text-amber-300 hover:bg-amber-500/25"
+              }`}
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+              <span>Custom Agentic Scoping →</span>
+            </Link>
+
             {/* SELECTION COUNTER PILL */}
             <button
               onClick={handleScrollToAggregator}
@@ -678,6 +691,36 @@ export default function TheBlockConfiguratorPage() {
           >
             Explore the block below. Select outcomes across any discipline to assemble your engagement.
           </p>
+
+          {/* CUSTOM AGENTIC DEVELOPMENT CALLOUT BANNER */}
+          <div
+            className={`mt-4 p-3.5 sm:p-4 rounded-xl border flex flex-col sm:flex-row items-center justify-between gap-3 text-left transition-all ${
+              isLight
+                ? "bg-amber-50/70 border-amber-300 text-slate-900 shadow-2xs"
+                : "bg-amber-950/20 border-amber-500/30 text-slate-100"
+            }`}
+          >
+            <div className="flex flex-col gap-0.5">
+              <div className="flex items-center gap-2">
+                <span className="text-[10px] font-mono uppercase tracking-wider font-bold text-amber-600 dark:text-amber-400">
+                  Custom Agentic Development
+                </span>
+                <span className="text-slate-400">·</span>
+                <span className="text-xs font-mono font-semibold text-slate-500">
+                  1 Block = 2 to 4 Weeks
+                </span>
+              </div>
+              <p className="text-xs sm:text-sm font-serif">
+                Looking for a bespoke agentic system connecting your exact databases, ERP, and human-in-the-loop workflows?
+              </p>
+            </div>
+            <Link
+              href="/block/custom/"
+              className="whitespace-nowrap px-4 py-2 rounded-lg text-xs font-mono font-bold bg-amber-500 hover:bg-amber-600 text-slate-950 transition-all shadow-xs flex items-center gap-1.5 cursor-pointer"
+            >
+              <span>Launch Custom Scoping Brief →</span>
+            </Link>
+          </div>
         </div>
 
         {/* ==================================================================== */}
