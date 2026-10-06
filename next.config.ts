@@ -22,6 +22,16 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/owned-software",
+        destination: "/block/custom/",
+        permanent: true,
+      },
+      {
+        source: "/owned-software/",
+        destination: "/block/custom/",
+        permanent: true,
+      },
+      {
         source: "/agentic-layer",
         destination: "/agentic-ai/",
         permanent: true,
