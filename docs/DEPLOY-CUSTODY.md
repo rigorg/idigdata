@@ -37,7 +37,7 @@ The deployment linkage is persisted in `.vercel/project.json` inside `C:\flowcra
 
 ## 5. Authorized Production Release Workflow
 
-Production publishing is an Operator act executed by Capo:
+Production publishing is executed by the cc chief (superintendent) on Capo's word, from the canonical linked checkout; Capo's word per release is the authorization, the run is agentic (Capo, 2026-10-06). The steps are unchanged:
 
 1. **Build & Verify Locally:**
    ```powershell
@@ -58,3 +58,13 @@ Production publishing is an Operator act executed by Capo:
 
 4. **Live Read-Back:**  
    Verify HTTP 200 and expected copy live at `https://idigdata.com/` and `https://www.idigdata.com/`.
+
+5. **Record and Ping:**
+   cc reads the live pages back into the brand-content record (`triad/TRIAD.md`), then runs `npm run indexnow` from this checkout so Bing and the IndexNow engines learn the sitemap URLs (expect `202 Accepted`). Google Search Console and Bing Webmaster remain Capo's console checks.
+
+### Release log
+
+| Date | Deployment | Working tip | Run by |
+|---|---|---|---|
+| 2026-10-04 | nhr8jkta8 (custody proof) | fc3e895 | Capo |
+| 2026-10-06 | idigdata-1jya8zijr-loop-smith.vercel.app | 5ec9462 | cc, on Capo's word (Capo's own run hit the first-token `Not authorized`; cc's run succeeded first try) |
