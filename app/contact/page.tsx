@@ -9,6 +9,14 @@ export const metadata: Metadata = {
   description:
     "Executive roles, focused transformation work, and fractional leadership.",
   alternates: { canonical: "/contact/" },
+  openGraph: {
+    type: "website",
+    url: "https://idigdata.com/contact/",
+    title: "Contact | idigdata",
+    description:
+      "Executive roles, focused transformation work, and fractional leadership.",
+    images: [{ url: "/og-image.png?v=20260828", width: 1200, height: 630, alt: "Contact Robert Paddock, idigdata" }],
+  },
 };
 
 const breadcrumbJsonLd = {

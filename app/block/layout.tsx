@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: "The Block · Scoping & Outcome Configurator | idigdata",
     description:
       "Explore outcomes across leadership, business systems, data, financial integrity, and workflows. Grounded in 50+ implementations and 15 enterprise transformations at scale.",
+    images: [{ url: "/og-image.png?v=20260828", width: 1200, height: 630, alt: "The Block: a scoping and outcome configurator by idigdata" }],
   },
 };
 
