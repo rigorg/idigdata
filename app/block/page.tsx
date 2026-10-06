@@ -502,6 +502,7 @@ export default function TheBlockConfiguratorPage() {
       role: "Block Outcome Buyer",
       message: fullMessage,
       interestType: "applied_agentics",
+      source: "website-block",
     };
 
     try {

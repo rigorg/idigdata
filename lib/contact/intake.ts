@@ -55,7 +55,7 @@ export function contactIntakeRow(data: ContactPayload, headers: Pick<Headers, "g
     role: data.role.trim() || "(not supplied)",
     company: data.company.trim() || null,
     message: data.message.trim() || "(no message supplied)",
-    source: `website-${data.interestType}`,
+    source: data.source ?? `website-${data.interestType}`,
     source_url: contactSourceUrl(headers.get("referer"), attribution.attributionCookie),
     user_agent: headers.get("user-agent"),
     anon_session_id: attribution.doorSessionId && UUID.test(attribution.doorSessionId)

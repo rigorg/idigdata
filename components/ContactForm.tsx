@@ -84,6 +84,7 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
         role,
         message: composed.message,
         interestType: interest,
+        source: "website-contact" as const,
         anon_session_id: getAnonSessionId(),
         _hp: hp,
       };
