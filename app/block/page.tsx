@@ -691,12 +691,14 @@ export default function TheBlockConfiguratorPage() {
           >
             Explore the block below. Select outcomes across any discipline to assemble your engagement.
           </p>
+        </div>
 
-          {/* CUSTOM AGENTIC DEVELOPMENT CALLOUT BANNER */}
+        {/* CUSTOM AGENTIC DEVELOPMENT CALLOUT BANNER (STABLE CONTAINER) */}
+        <div className="w-full max-w-4xl mx-auto px-1 z-10 relative">
           <div
-            className={`mt-4 p-3.5 sm:p-4 rounded-xl border flex flex-col sm:flex-row items-center justify-between gap-3 text-left transition-all ${
+            className={`p-3.5 sm:p-4 rounded-xl border flex flex-col sm:flex-row items-center justify-between gap-3 text-left transition-all ${
               isLight
-                ? "bg-amber-50/70 border-amber-300 text-slate-900 shadow-2xs"
+                ? "bg-amber-50/80 border-amber-300 text-slate-900 shadow-xs"
                 : "bg-amber-950/20 border-amber-500/30 text-slate-100"
             }`}
           >
@@ -716,7 +718,7 @@ export default function TheBlockConfiguratorPage() {
             </div>
             <Link
               href="/block/custom/"
-              className="whitespace-nowrap px-4 py-2 rounded-lg text-xs font-mono font-bold bg-amber-500 hover:bg-amber-600 text-slate-950 transition-all shadow-xs flex items-center gap-1.5 cursor-pointer"
+              className="whitespace-nowrap px-4 py-2 rounded-lg text-xs font-mono font-bold bg-amber-500 hover:bg-amber-600 text-slate-950 transition-all shadow-xs flex items-center gap-1.5 cursor-pointer shrink-0"
             >
               <span>Launch Custom Scoping Brief →</span>
             </Link>
