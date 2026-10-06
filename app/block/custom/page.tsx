@@ -8,6 +8,7 @@ import { useTheme, ThemeToggle } from "@/lib/theme";
 // Delivery Standard: 1 Block = 2 to 4 Weeks. Time for deliverable.
 // Voice: Collective sovereign engineering firm ("We", "Our team", "Our principals").
 // Zero dollars ($), zero phone numbers, ASCII hyphens only.
+// NO external brand names (no Upwork, no RFP labels).
 
 type Archetype = {
   id: string;
@@ -18,91 +19,72 @@ type Archetype = {
   systems: string[];
   authority: "advisory" | "supervised" | "bounded";
   velocity: "ondemand" | "batch" | "realtime";
+  enablement: "turnkey" | "training" | "hypercare";
 };
 
 const ARCHETYPES: Archetype[] = [
   {
     id: "billing_recon",
-    title: "Billing & Reconciliation Engine",
+    title: "Billing & Reconciliation",
     badge: "FINANCIAL INTEGRITY",
     summary:
-      "Ingests bank transactions, vendor invoices, and ERP records to detect discrepancies, draft matching journal entries, and present clean batches for controller approval.",
+      "Ingests bank transactions, invoices, and ERP records; detects discrepancies; drafts journal entries for controller sign-off.",
     domains: ["financial_billing"],
     systems: ["PostgreSQL", "QuickBooks", "NetSuite", "Email / Inbound Webhooks"],
     authority: "supervised",
     velocity: "batch",
+    enablement: "training",
   },
   {
     id: "ops_dispatcher",
-    title: "Multi-System Operations Dispatcher",
+    title: "Operations Dispatcher",
     badge: "WORKFLOW ORCHESTRATION",
     summary:
-      "Triage inbound customer or vendor communications, interrogates CRM and SQL data, drafts context-aware responses, and queues system updates for human sign-off.",
+      "Triages customer/vendor communications, interrogates CRM & SQL records, drafts contextual replies, and stages approved updates.",
     domains: ["customer_vendor_ops"],
     systems: ["Salesforce", "PostgreSQL", "Slack", "Zendesk"],
     authority: "supervised",
     velocity: "realtime",
+    enablement: "training",
   },
   {
     id: "knowledge_pipeline",
-    title: "Enterprise Knowledge & Contract Pipeline",
+    title: "Knowledge & Contract Ops",
     badge: "DOCUMENT INTELLIGENCE",
     summary:
-      "Extracts structured terms from messy contracts, PDFs, and internal SOPs. Answers operational questions with verified source citations and triggers audit webhooks.",
+      "Extracts structured terms from messy contracts and SOPs; delivers cited answers; triggers audit webhooks.",
     domains: ["knowledge_docs"],
     systems: ["PostgreSQL", "Document Stores / S3", "Slack", "REST API"],
     authority: "advisory",
     velocity: "ondemand",
+    enablement: "turnkey",
   },
   {
     id: "data_drift_agent",
-    title: "Autonomous Data Sync & Drift Agent",
+    title: "Data Sync & Drift Agent",
     badge: "DATA PIPELINE",
     summary:
-      "Monitors cross-database synchronization, identifies data schema drift or orphaned records, and executes remediation within strictly bounded parameter caps.",
+      "Monitors cross-database sync, detects schema drift, and executes remediation within strictly bounded parameter caps.",
     domains: ["data_sync"],
     systems: ["PostgreSQL", "Snowflake", "Custom REST API"],
     authority: "bounded",
     velocity: "batch",
+    enablement: "hypercare",
   },
 ];
 
 const DOMAIN_OPTIONS = [
-  {
-    id: "financial_billing",
-    label: "Financial, Billing & Reconciliation",
-    desc: "Invoicing, automated match/exceptions, accounts payable, ledger integrity",
-  },
-  {
-    id: "customer_vendor_ops",
-    label: "Customer & Vendor Operations",
-    desc: "Inbound triage, ticket synthesis, multi-system status verification, routing",
-  },
-  {
-    id: "knowledge_docs",
-    label: "Knowledge, Policies & Contract Extraction",
-    desc: "Unstructured PDF/doc ingestion, cited Q&A, clause comparison, compliance audit",
-  },
-  {
-    id: "data_sync",
-    label: "Data Pipelines & Cross-System Sync",
-    desc: "ETL validation, database reconciliation, entity resolution, drift monitoring",
-  },
-  {
-    id: "devops_engineering",
-    label: "Engineering & Internal Tooling",
-    desc: "Codebase exploration, release verification, operational runbooks, MCP gateways",
-  },
-  {
-    id: "bespoke_workflow",
-    label: "Custom Operational Workflows",
-    desc: "Bespoke business processes unique to your company-owned data core",
-  },
+  { id: "financial_billing", label: "Financial & Billing Reconciliation" },
+  { id: "customer_vendor_ops", label: "Customer & Vendor Operations" },
+  { id: "knowledge_docs", label: "Knowledge, Policies & Contracts" },
+  { id: "data_sync", label: "Data Pipelines & Cross-System Sync" },
+  { id: "devops_engineering", label: "Engineering & Internal Tooling" },
+  { id: "bespoke_workflow", label: "Custom Operational Workflows" },
 ];
 
 const SYSTEM_CATEGORIES = [
   {
-    category: "Databases & Warehouses",
+    category: "Databases",
     items: ["PostgreSQL", "MySQL", "SQL Server", "Snowflake", "BigQuery", "Supabase", "MongoDB"],
   },
   {
@@ -114,12 +96,33 @@ const SYSTEM_CATEGORIES = [
     items: ["Salesforce", "HubSpot", "Zendesk", "Jira", "Freshdesk"],
   },
   {
-    category: "Interfaces & Communication",
+    category: "Comms & Interfaces",
     items: ["Slack", "Microsoft Teams", "Email / Inbound Webhooks", "Custom Web Portal", "Headless API"],
   },
   {
     category: "Protocols & Gateways",
     items: ["Model Context Protocol (MCP)", "REST / OpenAPI", "GraphQL", "Event Streams / Kafka"],
+  },
+];
+
+const ENABLEMENT_OPTIONS = [
+  {
+    id: "turnkey",
+    label: "Turnkey System Delivery Only",
+    badge: "SOFTWARE ONLY",
+    desc: "Working system delivered with automated tests and architecture runbook. Internal team operates and maintains.",
+  },
+  {
+    id: "training",
+    label: "Team Training & Operator Handover",
+    badge: "RECOMMENDED",
+    desc: "Dedicated operator walkthroughs, edge-case training, and live administrative handover sessions.",
+  },
+  {
+    id: "hypercare",
+    label: "Post-Launch Hypercare & Monitoring",
+    badge: "FULL ENABLEMENT",
+    desc: "Active post-go-live observation, exception triage, query tuning, and SLA-backed operational support.",
   },
 ];
 
@@ -139,6 +142,7 @@ export default function CustomAgenticScopingPage() {
   const [scale, setScale] = useState<"solo" | "team" | "dept" | "enterprise">("team");
   const [velocity, setVelocity] = useState<"ondemand" | "batch" | "realtime">("batch");
   const [deployment, setDeployment] = useState<"client_vpc" | "on_prem" | "managed">("client_vpc");
+  const [enablement, setEnablement] = useState<"turnkey" | "training" | "hypercare">("training");
   const [situationText, setSituationText] = useState("");
 
   // Contact / Submission state
@@ -157,6 +161,7 @@ export default function CustomAgenticScopingPage() {
     setSelectedSystems(arch.systems);
     setAuthority(arch.authority);
     setVelocity(arch.velocity);
+    setEnablement(arch.enablement);
   };
 
   const toggleDomain = (id: string) => {
@@ -186,12 +191,13 @@ export default function CustomAgenticScopingPage() {
   const readiness = useMemo(() => {
     let score = 0;
     if (selectedDomains.length > 0) score += 20;
-    if (selectedSystems.length > 0) score += Math.min(30, selectedSystems.length * 10);
+    if (selectedSystems.length > 0) score += Math.min(25, selectedSystems.length * 8);
     if (authority) score += 20;
     if (scale && velocity && deployment) score += 15;
-    if (situationText.trim().length > 30) score += 15;
+    if (enablement) score += 10;
+    if (situationText.trim().length > 20) score += 10;
     return Math.min(100, score);
-  }, [selectedDomains, selectedSystems, authority, scale, velocity, deployment, situationText]);
+  }, [selectedDomains, selectedSystems, authority, scale, velocity, deployment, enablement, situationText]);
 
   // Structured Markdown Brief Generator
   const generatedBrief = useMemo(() => {
@@ -209,10 +215,10 @@ export default function CustomAgenticScopingPage() {
 
     const velocityLabel =
       velocity === "ondemand"
-        ? "On-Demand (Manual Trigger)"
+        ? "On-Demand Queries"
         : velocity === "batch"
         ? "Scheduled Batch (Daily / Periodic)"
-        : "Real-time Event-Driven (Webhooks / Continuous)";
+        : "Real-time Event-Driven (Streaming / Webhooks)";
 
     const scaleLabel =
       scale === "solo"
@@ -227,13 +233,20 @@ export default function CustomAgenticScopingPage() {
       deployment === "client_vpc"
         ? "Customer Cloud VPC (AWS / GCP / Azure)"
         : deployment === "on_prem"
-        ? "On-Premises / Air-Gapped Private Cloud"
+        ? "On-Premises / Private Cloud"
         : "idigdata Managed Isolated VPC";
+
+    const enablementLabel =
+      enablement === "turnkey"
+        ? "Turnkey System Delivery Only (No training needed)"
+        : enablement === "training"
+        ? "Team Training & Operator Handover"
+        : "Post-Launch Hypercare & Operational Monitoring";
 
     return [
       `# CUSTOM AGENTIC DEVELOPMENT SCOPE BRIEF`,
-      `Standard: 1 Block (2 to 4 Weeks) · Time for Deliverable`,
-      `Firm Posture: Senior Engineering Team · Production Architecture (Not Vibe Coded)`,
+      `Delivery Standard: Scoped in Time Blocks (2 to 4 Weeks per deliverable)`,
+      `Engineering Posture: Professional Software Firm (Production Architecture, Not Vibe Coded)`,
       ``,
       `## 1. Operating Domains & Objectives`,
       domainLabels || "Custom Domain Not Specified",
@@ -249,12 +262,15 @@ export default function CustomAgenticScopingPage() {
       `- User Scale: ${scaleLabel}`,
       `- Deployment Target: ${deploymentLabel}`,
       ``,
-      `## 5. Operating Reality & Context Notes`,
+      `## 5. Enablement & Post-Launch Operations`,
+      `- Handover Posture: ${enablementLabel}`,
+      ``,
+      `## 6. Operating Context & Problem Statement`,
       situationText.trim() ? situationText.trim() : "(No specific situation notes supplied)",
     ].join("\n");
-  }, [selectedDomains, selectedSystems, authority, velocity, scale, deployment, situationText]);
+  }, [selectedDomains, selectedSystems, authority, velocity, scale, deployment, enablement, situationText]);
 
-  // Copy to clipboard
+  // Copy to clipboard (Clean button without third-party names)
   const handleCopyBrief = async () => {
     try {
       await navigator.clipboard.writeText(generatedBrief);
@@ -324,30 +340,25 @@ export default function CustomAgenticScopingPage() {
       {/* Background Ambience */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
         <div
-          className={`absolute -top-[10%] left-1/2 -translate-x-1/2 w-[900px] h-[520px] rounded-full blur-[140px] transition-all duration-700 ease-out ${
+          className={`absolute -top-[10%] left-1/2 -translate-x-1/2 w-[850px] h-[450px] rounded-full blur-[140px] transition-all duration-700 ease-out ${
             isLight ? "opacity-15 bg-amber-300/40" : "opacity-20 bg-amber-500/15"
-          }`}
-        />
-        <div
-          className={`absolute bottom-[10%] -left-[10%] w-[550px] h-[550px] rounded-full blur-[160px] ${
-            isLight ? "bg-stone-200/50" : "bg-slate-900/40"
           }`}
         />
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-5 flex flex-col gap-8">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-4 flex flex-col gap-5">
         {/* ==================================================================== */}
         {/* TOP CONTROL BAR: LOGO, BREADCRUMB, DELIVERY STANDARD & THEME        */}
         {/* ==================================================================== */}
         <header
-          className={`flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b pb-3.5 pt-1 ${
+          className={`flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 border-b pb-2.5 pt-1 ${
             isLight ? "border-[#E2DCD2]" : "border-white/10"
           }`}
         >
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <Link href="/block/" className="hover:opacity-85 transition-opacity" title="Return to The Block">
               <TheBlockLogo
-                size="md"
+                size="sm"
                 variant="monochrome"
                 className={isLight ? "text-[#142840]" : "text-white"}
                 showWordmark={true}
@@ -366,15 +377,15 @@ export default function CustomAgenticScopingPage() {
             </Link>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2.5">
+          <div className="flex flex-wrap items-center gap-2">
             <div
-              className={`inline-flex items-center gap-2 px-3 py-1 rounded-full border text-xs font-mono font-semibold ${
+              className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border text-[11px] font-mono font-semibold ${
                 isLight
-                  ? "bg-[#F3ECE0] border-amber-300 text-[#142840] shadow-xs"
+                  ? "bg-[#F3ECE0] border-amber-300 text-[#142840] shadow-2xs"
                   : "bg-amber-400/10 border-amber-400/30 text-amber-300"
               }`}
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
               <span>1 Block = 2 to 4 Weeks</span>
             </div>
 
@@ -383,10 +394,10 @@ export default function CustomAgenticScopingPage() {
         </header>
 
         {/* ==================================================================== */}
-        {/* HERO: POSITIONING (WE ARE NOT VIBE CODERS)                           */}
+        {/* HERO: TIGHT & HIGH-IMPACT (WE ARE NOT VIBE CODERS)                  */}
         {/* ==================================================================== */}
-        <section className="flex flex-col gap-3">
-          <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-amber-600 dark:text-amber-400 font-bold">
+        <section className="flex flex-col gap-1.5">
+          <div className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-amber-600 dark:text-amber-400 font-bold">
             <span>THE BLOCK</span>
             <span>·</span>
             <span>CUSTOM AGENTIC DEVELOPMENT</span>
@@ -394,103 +405,101 @@ export default function CustomAgenticScopingPage() {
             <span>SCOPING BRIEF</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-medium tracking-tight leading-[1.12]">
-            Professional Agentic Systems. <br className="hidden sm:inline" />
-            <span className="text-amber-600 dark:text-amber-400">Scoped &amp; Built in 2 to 4 Week Blocks.</span>
-          </h1>
+          <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-medium tracking-tight leading-tight">
+              Professional Agentic Systems. <span className="text-amber-600 dark:text-amber-400">Scoped in Time Blocks.</span>
+            </h1>
+            <span className="text-xs font-mono text-slate-500 shrink-0">
+              2 to 4 Weeks per deliverable module
+            </span>
+          </div>
 
           <p
-            className={`max-w-3xl text-base sm:text-lg leading-relaxed ${
+            className={`max-w-3xl text-xs sm:text-sm leading-relaxed ${
               isLight ? "text-slate-700" : "text-slate-300"
             }`}
           >
             We are not vibe coders. We are an engineering firm with decades in enterprise software, systems
-            integration, and production agentics. Configure your custom system brief below, define your connected
-            data core, and receive an executable delivery proposal.
+            integration, and production agentics. Configure your technical brief below to structure your time blocks
+            and receive an executable proposal.
           </p>
         </section>
 
         {/* ==================================================================== */}
-        {/* GAMIFIED ARCHETYPE QUICK-STARTS                                      */}
+        {/* COMPACT ARCHETYPE PRESET STRIP (HORIZONTAL QUICK-LOAD)               */}
         {/* ==================================================================== */}
-        <section className="flex flex-col gap-3">
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-mono uppercase tracking-wider text-slate-500 font-semibold">
-              Step 0 / Or start with a proven system archetype
+        <div
+          className={`p-2.5 sm:p-3 rounded-xl border flex flex-col sm:flex-row sm:items-center justify-between gap-2 ${
+            isLight ? "bg-amber-50/50 border-amber-200/80" : "bg-slate-900/30 border-white/10"
+          }`}
+        >
+          <div className="flex items-center gap-2">
+            <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-amber-700 dark:text-amber-300">
+              Archetypes:
             </span>
-            {selectedArchetype && (
+            <div className="flex flex-wrap gap-1.5">
+              {ARCHETYPES.map((arch) => {
+                const isSelected = selectedArchetype === arch.id;
+                return (
+                  <button
+                    key={arch.id}
+                    type="button"
+                    onClick={() => handleApplyArchetype(arch)}
+                    className={`px-2.5 py-1 rounded-lg text-xs font-mono transition-all cursor-pointer ${
+                      isSelected
+                        ? "bg-amber-500 text-slate-950 font-bold shadow-xs"
+                        : isLight
+                        ? "bg-white border border-slate-200 text-slate-700 hover:border-amber-400"
+                        : "bg-slate-800 border border-slate-700 text-slate-200 hover:border-amber-400"
+                    }`}
+                  >
+                    {arch.title}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {selectedArchetype && (
+            <div className="flex items-center gap-2 text-xs font-mono">
+              <span className="text-slate-500 italic hidden md:inline">
+                {ARCHETYPES.find((a) => a.id === selectedArchetype)?.summary}
+              </span>
               <button
                 type="button"
                 onClick={() => setSelectedArchetype(null)}
-                className="text-xs font-mono text-amber-600 dark:text-amber-400 hover:underline"
+                className="text-amber-600 dark:text-amber-400 hover:underline shrink-0"
               >
-                Clear archetype preset
+                Reset
               </button>
-            )}
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3.5">
-            {ARCHETYPES.map((arch) => {
-              const isSelected = selectedArchetype === arch.id;
-              return (
-                <button
-                  key={arch.id}
-                  type="button"
-                  onClick={() => handleApplyArchetype(arch)}
-                  className={`text-left p-4 rounded-xl border transition-all relative flex flex-col justify-between cursor-pointer ${
-                    isSelected
-                      ? isLight
-                        ? "bg-amber-50/80 border-amber-500 ring-2 ring-amber-500/20 shadow-sm"
-                        : "bg-amber-950/20 border-amber-400 ring-2 ring-amber-400/20"
-                      : isLight
-                      ? "bg-white/80 border-slate-200 hover:border-amber-400/70 hover:bg-white shadow-xs"
-                      : "bg-slate-900/40 border-slate-800 hover:border-amber-400/50 hover:bg-slate-900/70"
-                  }`}
-                >
-                  <div className="flex flex-col gap-1.5">
-                    <span className="text-[10px] font-mono tracking-wider font-bold text-amber-600 dark:text-amber-400">
-                      {arch.badge}
-                    </span>
-                    <h2 className="text-sm font-bold font-serif leading-snug">{arch.title}</h2>
-                    <p className={`text-xs leading-relaxed line-clamp-3 ${isLight ? "text-slate-600" : "text-slate-400"}`}>
-                      {arch.summary}
-                    </p>
-                  </div>
-
-                  <div className="mt-3 pt-2.5 border-t border-slate-200/60 dark:border-slate-800 flex items-center justify-between text-[11px] font-mono font-semibold">
-                    <span className="text-slate-500">{arch.systems.length} systems</span>
-                    <span className={isSelected ? "text-amber-600 dark:text-amber-400 font-bold" : "text-slate-400"}>
-                      {isSelected ? "Active Preset ✓" : "Load Preset →"}
-                    </span>
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-        </section>
+            </div>
+          )}
+        </div>
 
         {/* ==================================================================== */}
-        {/* MAIN 2-COLUMN WORKSPACE: THE SCOPING INSTRUMENT + LIVE LEDGER        */}
+        {/* MAIN 2-COLUMN WORKSPACE: SCOPING INSTRUMENT + SUMMARY               */}
         {/* ==================================================================== */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* LEFT COLUMN: THE 5-STEP SCOPING INSTRUMENT (7 COLS) */}
-          <div className="lg:col-span-7 flex flex-col gap-8">
-            {/* STEP 1: OPERATING DOMAINS */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+          {/* LEFT COLUMN: COMPACT SCOPING MODULES (7 COLS) */}
+          <div className="lg:col-span-7 flex flex-col gap-4">
+            
+            {/* MODULE 1: PROBLEM DOMAIN & INTEGRATION SURFACE */}
             <div
-              className={`p-6 rounded-2xl border flex flex-col gap-4 ${
-                isLight ? "bg-white/70 border-[#E2DCD2]" : "bg-slate-900/30 border-white/10"
+              className={`p-4 rounded-xl border flex flex-col gap-3 ${
+                isLight ? "bg-white/80 border-[#E2DCD2]" : "bg-slate-900/30 border-white/10"
               }`}
             >
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between border-b pb-2 border-slate-200/60 dark:border-slate-800">
                 <span className="text-xs font-mono font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">
-                  01 / Operating Problem Space
+                  01 / Problem Domain &amp; Systems Core
                 </span>
-                <span className="text-xs font-mono text-slate-500">
-                  {selectedDomains.length} selected
+                <span className="text-[11px] font-mono text-slate-500">
+                  {selectedDomains.length} domains · {selectedSystems.length} systems
                 </span>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              {/* Domains Grid */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-1.5">
                 {DOMAIN_OPTIONS.map((opt) => {
                   const active = selectedDomains.includes(opt.id);
                   return (
@@ -498,66 +507,31 @@ export default function CustomAgenticScopingPage() {
                       key={opt.id}
                       type="button"
                       onClick={() => toggleDomain(opt.id)}
-                      className={`text-left p-3 rounded-lg border text-xs transition-all cursor-pointer ${
+                      className={`text-left px-2.5 py-1.5 rounded-lg border text-[11px] font-mono transition-all cursor-pointer flex items-center justify-between ${
                         active
                           ? isLight
-                            ? "bg-amber-100/60 border-amber-500 text-slate-900 font-semibold shadow-2xs"
-                            : "bg-amber-500/20 border-amber-400 text-amber-200 font-semibold"
+                            ? "bg-amber-100/70 border-amber-500 text-slate-950 font-bold"
+                            : "bg-amber-500/20 border-amber-400 text-amber-200 font-bold"
                           : isLight
                           ? "bg-stone-50/60 border-slate-200 text-slate-700 hover:border-slate-300"
                           : "bg-slate-950/40 border-slate-800 text-slate-300 hover:border-slate-700"
                       }`}
                     >
-                      <div className="flex items-center justify-between mb-1">
-                        <span className="font-bold text-xs">{opt.label}</span>
-                        <span
-                          className={`w-3.5 h-3.5 rounded flex items-center justify-center text-[10px] ${
-                            active
-                              ? "bg-amber-500 text-white"
-                              : isLight
-                              ? "border border-slate-300"
-                              : "border border-slate-700"
-                          }`}
-                        >
-                          {active && "✓"}
-                        </span>
-                      </div>
-                      <p className={`text-[11px] leading-tight ${isLight ? "text-slate-500" : "text-slate-400"}`}>
-                        {opt.desc}
-                      </p>
+                      <span className="truncate">{opt.label}</span>
+                      <span className="ml-1 text-[10px] text-amber-600">{active ? "✓" : "+"}</span>
                     </button>
                   );
                 })}
               </div>
-            </div>
 
-            {/* STEP 2: INTEGRATION SURFACE */}
-            <div
-              className={`p-6 rounded-2xl border flex flex-col gap-4 ${
-                isLight ? "bg-white/70 border-[#E2DCD2]" : "bg-slate-900/30 border-white/10"
-              }`}
-            >
-              <div className="flex items-center justify-between">
-                <div>
-                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">
-                    02 / Integration Surface &amp; Data Core
-                  </span>
-                  <p className={`text-xs mt-0.5 ${isLight ? "text-slate-600" : "text-slate-400"}`}>
-                    Which systems, databases, and interfaces must the agentic workflow touch?
-                  </p>
-                </div>
-                <span className="text-xs font-mono font-bold text-amber-600 dark:text-amber-400">
-                  {selectedSystems.length} Connected
-                </span>
-              </div>
-
-              <div className="flex flex-col gap-3.5">
+              {/* Systems Category Chips */}
+              <div className="flex flex-col gap-2 pt-1 border-t border-slate-200/60 dark:border-slate-800">
                 {SYSTEM_CATEGORIES.map((cat) => (
-                  <div key={cat.category} className="flex flex-col gap-1.5">
-                    <span className="text-[11px] font-mono font-semibold text-slate-500 uppercase">
-                      {cat.category}
+                  <div key={cat.category} className="flex flex-wrap items-center gap-1.5">
+                    <span className="text-[10px] font-mono font-semibold text-slate-500 uppercase w-28 shrink-0">
+                      {cat.category}:
                     </span>
-                    <div className="flex flex-wrap gap-1.5">
+                    <div className="flex flex-wrap gap-1 flex-1">
                       {cat.items.map((sys) => {
                         const active = selectedSystems.includes(sys);
                         return (
@@ -565,17 +539,17 @@ export default function CustomAgenticScopingPage() {
                             key={sys}
                             type="button"
                             onClick={() => toggleSystem(sys)}
-                            className={`px-2.5 py-1 rounded-md text-xs font-mono transition-all cursor-pointer ${
+                            className={`px-2 py-0.5 rounded text-[11px] font-mono transition-all cursor-pointer ${
                               active
                                 ? isLight
-                                  ? "bg-slate-900 text-white font-bold shadow-xs ring-1 ring-slate-900"
-                                  : "bg-amber-400 text-slate-950 font-bold shadow-xs ring-1 ring-amber-400"
+                                  ? "bg-slate-900 text-white font-bold"
+                                  : "bg-amber-400 text-slate-950 font-bold"
                                 : isLight
-                                ? "bg-slate-100 border border-slate-200 text-slate-700 hover:bg-slate-200"
-                                : "bg-slate-800/60 border border-slate-700 text-slate-300 hover:bg-slate-800"
+                                ? "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                                : "bg-slate-800/60 text-slate-300 hover:bg-slate-800"
                             }`}
                           >
-                            {active ? `✓ ${sys}` : `+ ${sys}`}
+                            {active ? `✓ ${sys}` : sys}
                           </button>
                         );
                       })}
@@ -584,13 +558,13 @@ export default function CustomAgenticScopingPage() {
                 ))}
 
                 {/* Custom System Write-in */}
-                <form onSubmit={handleAddCustomSystem} className="flex gap-2 mt-2 pt-2 border-t border-slate-200 dark:border-slate-800">
+                <form onSubmit={handleAddCustomSystem} className="flex gap-2 pt-1">
                   <input
                     type="text"
-                    placeholder="Add custom system or legacy database..."
+                    placeholder="Add custom database or internal API..."
                     value={customSystemInput}
                     onChange={(e) => setCustomSystemInput(e.target.value)}
-                    className={`flex-1 px-3 py-1.5 rounded-lg text-xs font-mono border focus:outline-hidden focus:ring-1 focus:ring-amber-500 ${
+                    className={`flex-1 px-2.5 py-1 rounded-md text-xs font-mono border focus:outline-hidden ${
                       isLight
                         ? "bg-white border-slate-300 text-slate-800"
                         : "bg-slate-950 border-slate-800 text-slate-200"
@@ -598,48 +572,46 @@ export default function CustomAgenticScopingPage() {
                   />
                   <button
                     type="submit"
-                    className="px-3 py-1.5 rounded-lg text-xs font-mono font-bold bg-amber-500 hover:bg-amber-600 text-slate-950 cursor-pointer"
+                    className="px-2.5 py-1 rounded-md text-xs font-mono font-bold bg-amber-500 hover:bg-amber-600 text-slate-950 cursor-pointer"
                   >
-                    Add
+                    + Add
                   </button>
                 </form>
               </div>
             </div>
 
-            {/* STEP 3: AUTHORITY MODEL & HUMAN-IN-THE-LOOP */}
+            {/* MODULE 2: AUTHORITY MANDATE & SCALE PARAMETERS */}
             <div
-              className={`p-6 rounded-2xl border flex flex-col gap-4 ${
-                isLight ? "bg-white/70 border-[#E2DCD2]" : "bg-slate-900/30 border-white/10"
+              className={`p-4 rounded-xl border flex flex-col gap-3 ${
+                isLight ? "bg-white/80 border-[#E2DCD2]" : "bg-slate-900/30 border-white/10"
               }`}
             >
-              <div>
+              <div className="flex items-center justify-between border-b pb-2 border-slate-200/60 dark:border-slate-800">
                 <span className="text-xs font-mono font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">
-                  03 / Authority Model &amp; Human Mandate
+                  02 / Human Authority &amp; System Scale
                 </span>
-                <p className={`text-xs mt-0.5 ${isLight ? "text-slate-600" : "text-slate-400"}`}>
-                  Where does human authority stand in the execution loop?
-                </p>
+                <span className="text-[11px] font-mono text-slate-500 capitalize">
+                  {authority} execution
+                </span>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {/* 3-Tier Authority Selector */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                 {[
                   {
                     id: "advisory",
                     title: "Tier 1: Read-Only Copilot",
-                    badge: "ZERO WRITE RISK",
-                    desc: "Agent reads, queries, and synthesizes recommendations. Humans carry out every system write action.",
+                    desc: "Agent analyzes & drafts recommendations. Zero write risk; human carries out actions.",
                   },
                   {
                     id: "supervised",
                     title: "Tier 2: Supervised Execution",
-                    badge: "RECOMMENDED",
-                    desc: "Agent drafts the exact transaction, update, or email. Human clicks 'Approve' or 'Reject' in Slack or web portal.",
+                    desc: "Agent stages transactions/edits; human reviews and approves in Slack or portal.",
                   },
                   {
                     id: "bounded",
                     title: "Tier 3: Bounded Autonomy",
-                    badge: "CAPPED BOUNDARIES",
-                    desc: "Agent executes standard happy paths within pre-set financial/record thresholds. Automatically escalates exceptions.",
+                    desc: "Agent runs permitted happy-path actions within hard caps; escalates exceptions to human.",
                   },
                 ].map((tier) => {
                   const active = authority === tier.id;
@@ -648,148 +620,172 @@ export default function CustomAgenticScopingPage() {
                       key={tier.id}
                       type="button"
                       onClick={() => setAuthority(tier.id as any)}
-                      className={`text-left p-3.5 rounded-xl border text-xs flex flex-col justify-between gap-2 transition-all cursor-pointer ${
+                      className={`text-left p-2.5 rounded-lg border text-xs transition-all cursor-pointer flex flex-col justify-between ${
                         active
                           ? isLight
-                            ? "bg-amber-100/70 border-amber-500 shadow-sm ring-1 ring-amber-500"
-                            : "bg-amber-500/20 border-amber-400 ring-1 ring-amber-400"
+                            ? "bg-amber-100/70 border-amber-500 shadow-2xs font-semibold"
+                            : "bg-amber-500/20 border-amber-400 text-amber-200 font-semibold"
                           : isLight
-                          ? "bg-white border-slate-200 hover:border-slate-300"
-                          : "bg-slate-950/40 border-slate-800 hover:border-slate-700"
+                          ? "bg-white border-slate-200 text-slate-700 hover:border-slate-300"
+                          : "bg-slate-950/40 border-slate-800 text-slate-300 hover:border-slate-700"
                       }`}
                     >
-                      <div className="flex flex-col gap-1">
-                        <span className="text-[10px] font-mono font-bold text-amber-600 dark:text-amber-400">
-                          {tier.badge}
-                        </span>
-                        <span className="font-bold font-serif text-sm">{tier.title}</span>
-                        <p className={`text-[11px] leading-relaxed ${isLight ? "text-slate-600" : "text-slate-400"}`}>
+                      <div>
+                        <span className="font-bold font-serif block text-xs mb-0.5">{tier.title}</span>
+                        <p className={`text-[10px] leading-tight ${isLight ? "text-slate-600" : "text-slate-400"}`}>
                           {tier.desc}
                         </p>
                       </div>
-                      <span className={`text-[10px] font-mono font-bold ${active ? "text-amber-600 dark:text-amber-400" : "text-slate-400"}`}>
-                        {active ? "Selected Mandate ✓" : "Select Mandate"}
+                      <span className="text-[10px] font-mono font-bold text-amber-600 mt-1.5">
+                        {active ? "Active ✓" : "Select"}
                       </span>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Scale, Velocity, Deployment Selectors */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1 border-t border-slate-200/60 dark:border-slate-800 text-xs font-mono">
+                <div className="flex flex-col gap-1">
+                  <label className="text-[10px] font-semibold text-slate-500 uppercase">Frequency</label>
+                  <select
+                    value={velocity}
+                    onChange={(e) => setVelocity(e.target.value as any)}
+                    className={`px-2 py-1 rounded border text-xs ${
+                      isLight ? "bg-white border-slate-300 text-slate-800" : "bg-slate-950 border-slate-800 text-slate-200"
+                    }`}
+                  >
+                    <option value="ondemand">On-Demand Queries</option>
+                    <option value="batch">Daily / Hourly Batch Run</option>
+                    <option value="realtime">Continuous Event-Driven</option>
+                  </select>
+                </div>
+
+                <div className="flex flex-col gap-1">
+                  <label className="text-[10px] font-semibold text-slate-500 uppercase">User Footprint</label>
+                  <select
+                    value={scale}
+                    onChange={(e) => setScale(e.target.value as any)}
+                    className={`px-2 py-1 rounded border text-xs ${
+                      isLight ? "bg-white border-slate-300 text-slate-800" : "bg-slate-950 border-slate-800 text-slate-200"
+                    }`}
+                  >
+                    <option value="solo">Solo Operator</option>
+                    <option value="team">Core Team (2–10 Seats)</option>
+                    <option value="dept">Department (10–50 Seats)</option>
+                    <option value="enterprise">Enterprise-wide (50+ Seats)</option>
+                  </select>
+                </div>
+
+                <div className="flex flex-col gap-1">
+                  <label className="text-[10px] font-semibold text-slate-500 uppercase">Deployment</label>
+                  <select
+                    value={deployment}
+                    onChange={(e) => setDeployment(e.target.value as any)}
+                    className={`px-2 py-1 rounded border text-xs ${
+                      isLight ? "bg-white border-slate-300 text-slate-800" : "bg-slate-950 border-slate-800 text-slate-200"
+                    }`}
+                  >
+                    <option value="client_vpc">Client Cloud VPC</option>
+                    <option value="on_prem">On-Premises / Air-Gapped</option>
+                    <option value="managed">idigdata Managed VPC</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            {/* MODULE 3: ENABLEMENT & POST-LAUNCH OPERATIONS */}
+            <div
+              className={`p-4 rounded-xl border flex flex-col gap-2.5 ${
+                isLight ? "bg-white/80 border-[#E2DCD2]" : "bg-slate-900/30 border-white/10"
+              }`}
+            >
+              <div className="flex items-center justify-between border-b pb-2 border-slate-200/60 dark:border-slate-800">
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">
+                  03 / Enablement, Training &amp; Operational Handover
+                </span>
+                <span className="text-[11px] font-mono text-slate-500">
+                  Time &amp; People Investment
+                </span>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                {ENABLEMENT_OPTIONS.map((opt) => {
+                  const active = enablement === opt.id;
+                  return (
+                    <button
+                      key={opt.id}
+                      type="button"
+                      onClick={() => setEnablement(opt.id as any)}
+                      className={`text-left p-2.5 rounded-lg border text-xs transition-all cursor-pointer flex flex-col justify-between ${
+                        active
+                          ? isLight
+                            ? "bg-amber-100/70 border-amber-500 shadow-2xs font-semibold"
+                            : "bg-amber-500/20 border-amber-400 text-amber-200 font-semibold"
+                          : isLight
+                          ? "bg-white border-slate-200 text-slate-700 hover:border-slate-300"
+                          : "bg-slate-950/40 border-slate-800 text-slate-300 hover:border-slate-700"
+                      }`}
+                    >
+                      <div>
+                        <div className="flex items-center justify-between mb-1">
+                          <span className="text-[9px] font-mono font-bold text-amber-600">{opt.badge}</span>
+                          {active && <span className="text-[10px] text-amber-600">✓</span>}
+                        </div>
+                        <span className="font-bold font-serif block text-xs leading-tight mb-1">{opt.label}</span>
+                        <p className={`text-[10px] leading-tight ${isLight ? "text-slate-600" : "text-slate-400"}`}>
+                          {opt.desc}
+                        </p>
+                      </div>
                     </button>
                   );
                 })}
               </div>
             </div>
 
-            {/* STEP 4: SCALE, VELOCITY & DEPLOYMENT */}
+            {/* MODULE 4: OPERATING CONTEXT CANVAS */}
             <div
-              className={`p-6 rounded-2xl border flex flex-col gap-4 ${
-                isLight ? "bg-white/70 border-[#E2DCD2]" : "bg-slate-900/30 border-white/10"
-              }`}
-            >
-              <span className="text-xs font-mono font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">
-                04 / Scale, Velocity &amp; Infrastructure
-              </span>
-
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                {/* Velocity */}
-                <div className="flex flex-col gap-1.5">
-                  <label className="text-xs font-mono font-semibold text-slate-500 uppercase">
-                    Execution Frequency
-                  </label>
-                  <select
-                    value={velocity}
-                    onChange={(e) => setVelocity(e.target.value as any)}
-                    className={`px-3 py-2 rounded-lg text-xs font-mono border focus:outline-hidden ${
-                      isLight ? "bg-white border-slate-300 text-slate-800" : "bg-slate-950 border-slate-800 text-slate-200"
-                    }`}
-                  >
-                    <option value="ondemand">On-Demand Queries</option>
-                    <option value="batch">Daily / Hourly Batch Run</option>
-                    <option value="realtime">Continuous Real-time Stream</option>
-                  </select>
-                </div>
-
-                {/* User Scale */}
-                <div className="flex flex-col gap-1.5">
-                  <label className="text-xs font-mono font-semibold text-slate-500 uppercase">
-                    Operator Footprint
-                  </label>
-                  <select
-                    value={scale}
-                    onChange={(e) => setScale(e.target.value as any)}
-                    className={`px-3 py-2 rounded-lg text-xs font-mono border focus:outline-hidden ${
-                      isLight ? "bg-white border-slate-300 text-slate-800" : "bg-slate-950 border-slate-800 text-slate-200"
-                    }`}
-                  >
-                    <option value="solo">Solo Operator</option>
-                    <option value="team">Core Team (2 to 10 Seats)</option>
-                    <option value="dept">Department (10 to 50 Seats)</option>
-                    <option value="enterprise">Enterprise-wide (50+ Seats)</option>
-                  </select>
-                </div>
-
-                {/* Deployment */}
-                <div className="flex flex-col gap-1.5">
-                  <label className="text-xs font-mono font-semibold text-slate-500 uppercase">
-                    Deployment Target
-                  </label>
-                  <select
-                    value={deployment}
-                    onChange={(e) => setDeployment(e.target.value as any)}
-                    className={`px-3 py-2 rounded-lg text-xs font-mono border focus:outline-hidden ${
-                      isLight ? "bg-white border-slate-300 text-slate-800" : "bg-slate-950 border-slate-800 text-slate-200"
-                    }`}
-                  >
-                    <option value="client_vpc">Client Cloud VPC (AWS / GCP / Azure)</option>
-                    <option value="on_prem">On-Premises / Air-Gapped Private</option>
-                    <option value="managed">idigdata Managed Isolated VPC</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-
-            {/* STEP 5: THE CONTEXT CANVAS (OPERATING REALITY) */}
-            <div
-              className={`p-6 rounded-2xl border flex flex-col gap-3 ${
-                isLight ? "bg-white/70 border-[#E2DCD2]" : "bg-slate-900/30 border-white/10"
+              className={`p-4 rounded-xl border flex flex-col gap-2 ${
+                isLight ? "bg-white/80 border-[#E2DCD2]" : "bg-slate-900/30 border-white/10"
               }`}
             >
               <div className="flex items-center justify-between">
-                <div>
-                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">
-                    05 / Operating Context Canvas
-                  </span>
-                  <p className={`text-xs mt-0.5 ${isLight ? "text-slate-600" : "text-slate-400"}`}>
-                    Describe your workflow bottleneck, edge cases, and what a successful 2 to 4 week deliverable looks like.
-                  </p>
-                </div>
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">
+                  04 / Operating Reality &amp; Bottlenecks
+                </span>
+                <span className="text-[11px] font-mono text-slate-500">
+                  Tell us what needs to work
+                </span>
               </div>
 
               {/* Quick prompt injection chips */}
-              <div className="flex flex-wrap gap-1.5 pt-1">
+              <div className="flex flex-wrap gap-1">
                 {[
                   "+ Current Manual Bottleneck:",
                   "+ Where Previous Scripts Failed:",
-                  "+ Key Human Approval Step:",
-                  "+ Target Finish Line / Success:",
-                ].map((promptChip) => (
+                  "+ Required Human Sign-off Step:",
+                ].map((chip) => (
                   <button
-                    key={promptChip}
+                    key={chip}
                     type="button"
-                    onClick={() => setSituationText((prev) => `${prev ? `${prev}\n\n` : ""}${promptChip} `)}
-                    className={`px-2 py-0.5 rounded text-[11px] font-mono transition-colors cursor-pointer ${
+                    onClick={() => setSituationText((prev) => `${prev ? `${prev}\n\n` : ""}${chip} `)}
+                    className={`px-2 py-0.5 rounded text-[10px] font-mono transition-colors cursor-pointer ${
                       isLight
                         ? "bg-amber-100/80 text-amber-900 hover:bg-amber-200"
                         : "bg-amber-400/10 text-amber-300 hover:bg-amber-400/20"
                     }`}
                   >
-                    {promptChip}
+                    {chip}
                   </button>
                 ))}
               </div>
 
               <textarea
-                rows={5}
+                rows={3}
                 value={situationText}
                 onChange={(e) => setSituationText(e.target.value)}
-                placeholder="Example: We reconcile thousands of vendor invoices against our NetSuite POs. Today, 3 people spend 20 hours a week resolving price and item-number mismatches. We need an agent that matches 90% of invoices, drafts journal entries in NetSuite, and sends high-dollar discrepancies to Slack for controller one-click approval..."
-                className={`w-full p-3.5 rounded-xl text-xs font-mono leading-relaxed border resize-y focus:outline-hidden focus:ring-1 focus:ring-amber-500 ${
+                placeholder="Describe where the manual friction lives, the records involved, and what the agentic system must deliver in a 2 to 4 week block..."
+                className={`w-full p-2.5 rounded-lg text-xs font-mono leading-relaxed border resize-y focus:outline-hidden ${
                   isLight
                     ? "bg-white border-slate-300 text-slate-800 placeholder-slate-400"
                     : "bg-slate-950 border-slate-800 text-slate-200 placeholder-slate-600"
@@ -798,36 +794,35 @@ export default function CustomAgenticScopingPage() {
             </div>
           </div>
 
-          {/* RIGHT COLUMN: LIVE DELIVERY LEDGER & PROPOSAL SUBMISSION (5 COLS) */}
-          <div className="lg:col-span-5 flex flex-col gap-6 sticky top-6">
-            {/* LIVE SCOPING LEDGER CARD */}
+          {/* RIGHT COLUMN: SCOPING SUMMARY & PROPOSAL INTAKE (5 COLS) */}
+          <div className="lg:col-span-5 flex flex-col gap-4 sticky top-4">
             <div
-              className={`p-6 rounded-2xl border flex flex-col gap-5 shadow-lg ${
+              className={`p-5 rounded-xl border flex flex-col gap-4 shadow-md ${
                 isLight
                   ? "bg-gradient-to-b from-[#FDFBF7] to-[#F5ECE0] border-amber-300/80 text-slate-900"
                   : "bg-gradient-to-b from-slate-900 to-slate-950 border-amber-500/30 text-white"
               }`}
             >
-              {/* LEDGER HEADER */}
-              <div className="flex items-center justify-between border-b pb-3 border-amber-500/20">
+              {/* SUMMARY HEADER (NO LEDGER JARGON) */}
+              <div className="flex items-center justify-between border-b pb-2.5 border-amber-500/20">
                 <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse" />
+                  <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
                   <span className="text-xs font-mono font-bold tracking-wider uppercase">
-                    Delivery Block Ledger
+                    Scoping Summary
                   </span>
                 </div>
-                <span className="text-xs font-mono font-bold text-amber-600 dark:text-amber-400">
+                <span className="text-[11px] font-mono font-bold text-amber-600 dark:text-amber-400">
                   Target: 1 Block (2–4 Wks)
                 </span>
               </div>
 
               {/* READINESS METER */}
-              <div className="flex flex-col gap-1.5">
+              <div className="flex flex-col gap-1">
                 <div className="flex items-center justify-between text-xs font-mono">
-                  <span className="text-slate-500">Architecture Definition</span>
+                  <span className="text-slate-500 text-[11px]">Architecture Readiness</span>
                   <span className="font-bold text-amber-600 dark:text-amber-400">{readiness}% Complete</span>
                 </div>
-                <div className="w-full h-2 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                <div className="w-full h-1.5 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
                   <div
                     className="h-full bg-gradient-to-r from-amber-500 to-amber-400 transition-all duration-300"
                     style={{ width: `${readiness}%` }}
@@ -835,54 +830,31 @@ export default function CustomAgenticScopingPage() {
                 </div>
               </div>
 
-              {/* LIVE SCOPE SUMMARY STATS */}
-              <div className="grid grid-cols-2 gap-2.5 text-xs font-mono">
-                <div className={`p-2.5 rounded-lg border ${isLight ? "bg-white/80 border-amber-200" : "bg-black/30 border-white/10"}`}>
-                  <span className="text-[10px] text-slate-400 block uppercase">Domains</span>
-                  <span className="font-bold">{selectedDomains.length} Selected</span>
+              {/* COMPACT SNAPSHOT STATS */}
+              <div className="grid grid-cols-2 gap-2 text-xs font-mono">
+                <div className={`p-2 rounded border ${isLight ? "bg-white/80 border-amber-200" : "bg-black/30 border-white/10"}`}>
+                  <span className="text-[9px] text-slate-400 block uppercase">Systems</span>
+                  <span className="font-bold truncate">{selectedSystems.length} Connected</span>
                 </div>
-                <div className={`p-2.5 rounded-lg border ${isLight ? "bg-white/80 border-amber-200" : "bg-black/30 border-white/10"}`}>
-                  <span className="text-[10px] text-slate-400 block uppercase">Systems</span>
-                  <span className="font-bold">{selectedSystems.length} Connected</span>
+                <div className={`p-2 rounded border ${isLight ? "bg-white/80 border-amber-200" : "bg-black/30 border-white/10"}`}>
+                  <span className="text-[9px] text-slate-400 block uppercase">Mandate</span>
+                  <span className="font-bold capitalize truncate">{authority}</span>
                 </div>
-                <div className={`p-2.5 rounded-lg border ${isLight ? "bg-white/80 border-amber-200" : "bg-black/30 border-white/10"}`}>
-                  <span className="text-[10px] text-slate-400 block uppercase">Mandate</span>
-                  <span className="font-bold capitalize">{authority}</span>
+                <div className={`p-2 rounded border ${isLight ? "bg-white/80 border-amber-200" : "bg-black/30 border-white/10"}`}>
+                  <span className="text-[9px] text-slate-400 block uppercase">Velocity</span>
+                  <span className="font-bold capitalize truncate">{velocity}</span>
                 </div>
-                <div className={`p-2.5 rounded-lg border ${isLight ? "bg-white/80 border-amber-200" : "bg-black/30 border-white/10"}`}>
-                  <span className="text-[10px] text-slate-400 block uppercase">Velocity</span>
-                  <span className="font-bold capitalize">{velocity}</span>
+                <div className={`p-2 rounded border ${isLight ? "bg-white/80 border-amber-200" : "bg-black/30 border-white/10"}`}>
+                  <span className="text-[9px] text-slate-400 block uppercase">Enablement</span>
+                  <span className="font-bold capitalize truncate">{enablement}</span>
                 </div>
               </div>
 
-              {/* SYSTEM TAGS PREVIEW */}
-              {selectedSystems.length > 0 && (
-                <div className="flex flex-col gap-1.5">
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400">
-                    Integration Footprint
-                  </span>
-                  <div className="flex flex-wrap gap-1 max-h-24 overflow-y-auto pr-1">
-                    {selectedSystems.map((s) => (
-                      <span
-                        key={s}
-                        className={`text-[10px] font-mono px-2 py-0.5 rounded border ${
-                          isLight
-                            ? "bg-white border-slate-300 text-slate-800"
-                            : "bg-slate-800 border-slate-700 text-slate-200"
-                        }`}
-                      >
-                        {s}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* EXPORT ACTION: ONE-CLICK COPY RFP / MARKDOWN */}
+              {/* ONE-CLICK COPY (NO THIRD-PARTY BRAND NAMES) */}
               <button
                 type="button"
                 onClick={handleCopyBrief}
-                className={`w-full py-2.5 px-3 rounded-lg border text-xs font-mono font-bold flex items-center justify-center gap-2 transition-all cursor-pointer ${
+                className={`w-full py-2 px-3 rounded-lg border text-xs font-mono font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
                   copiedBrief
                     ? "bg-emerald-600 text-white border-emerald-600"
                     : isLight
@@ -890,31 +862,31 @@ export default function CustomAgenticScopingPage() {
                     : "bg-slate-800/80 border-slate-700 hover:bg-slate-800 text-white"
                 }`}
               >
-                <span>{copiedBrief ? "Brief Copied to Clipboard ✓" : "📋 Copy Scoping Brief for Upwork / RFP"}</span>
+                <span>{copiedBrief ? "Scoping Brief Copied to Clipboard ✓" : "📋 Copy Scoping Brief"}</span>
               </button>
 
               {/* PROPOSAL INTAKE FORM */}
-              <div className="border-t pt-4 border-amber-500/20 flex flex-col gap-3">
+              <div className="border-t pt-3 border-amber-500/20 flex flex-col gap-2.5">
                 <div className="flex flex-col">
                   <span className="text-xs font-serif font-bold">Request Scoping Proposal</span>
                   <span className="text-[11px] text-slate-500">
-                    Our principals review your architecture and return a deliverable block statement.
+                    We scope in blocks: time modules to engineer and deliver the outcome.
                   </span>
                 </div>
 
                 {submitStatus === "success" || submitStatus === "recorded" ? (
-                  <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-800 dark:text-emerald-300 text-xs font-mono flex flex-col gap-1.5">
-                    <span className="font-bold text-sm">Brief Transmitted ✓</span>
+                  <div className="p-3.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-800 dark:text-emerald-300 text-xs font-mono flex flex-col gap-1">
+                    <span className="font-bold">Brief Transmitted ✓</span>
                     <p className="text-[11px] leading-relaxed">
                       {submitStatus === "success"
-                        ? "Your scoping brief lands directly in our principals' inbox. We will review your architecture and respond with a scoped delivery proposal."
-                        : "Your scoping brief was securely recorded. We will review your architecture and follow up shortly."}
+                        ? "Your scoping brief lands directly in our principals' inbox. We will review your architecture and return a scoped delivery proposal."
+                        : "Your scoping brief was securely recorded. We will review your architecture and follow up directly."}
                     </p>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmitBrief} className="flex flex-col gap-2.5">
+                  <form onSubmit={handleSubmitBrief} className="flex flex-col gap-2">
                     {submitStatus === "error" && (
-                      <div className="p-2.5 rounded bg-rose-500/10 border border-rose-500/30 text-rose-700 dark:text-rose-300 text-xs font-mono">
+                      <div className="p-2 rounded bg-rose-500/10 border border-rose-500/30 text-rose-700 dark:text-rose-300 text-xs font-mono">
                         {submitMessage}
                       </div>
                     )}
@@ -925,7 +897,7 @@ export default function CustomAgenticScopingPage() {
                       placeholder="Your Name *"
                       value={contactName}
                       onChange={(e) => setContactName(e.target.value)}
-                      className={`px-3 py-2 rounded-lg text-xs font-mono border focus:outline-hidden ${
+                      className={`px-2.5 py-1.5 rounded-lg text-xs font-mono border focus:outline-hidden ${
                         isLight ? "bg-white border-slate-300 text-slate-800" : "bg-slate-950 border-slate-800 text-slate-200"
                       }`}
                     />
@@ -936,7 +908,7 @@ export default function CustomAgenticScopingPage() {
                       placeholder="Work Email *"
                       value={contactEmail}
                       onChange={(e) => setContactEmail(e.target.value)}
-                      className={`px-3 py-2 rounded-lg text-xs font-mono border focus:outline-hidden ${
+                      className={`px-2.5 py-1.5 rounded-lg text-xs font-mono border focus:outline-hidden ${
                         isLight ? "bg-white border-slate-300 text-slate-800" : "bg-slate-950 border-slate-800 text-slate-200"
                       }`}
                     />
@@ -946,7 +918,7 @@ export default function CustomAgenticScopingPage() {
                       placeholder="Company Name (Optional)"
                       value={contactCompany}
                       onChange={(e) => setContactCompany(e.target.value)}
-                      className={`px-3 py-2 rounded-lg text-xs font-mono border focus:outline-hidden ${
+                      className={`px-2.5 py-1.5 rounded-lg text-xs font-mono border focus:outline-hidden ${
                         isLight ? "bg-white border-slate-300 text-slate-800" : "bg-slate-950 border-slate-800 text-slate-200"
                       }`}
                     />
@@ -954,13 +926,13 @@ export default function CustomAgenticScopingPage() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full py-3 px-4 rounded-lg bg-amber-500 hover:bg-amber-600 disabled:opacity-50 text-slate-950 font-serif font-bold text-sm tracking-wide transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer"
+                      className="w-full py-2.5 px-3 rounded-lg bg-amber-500 hover:bg-amber-600 disabled:opacity-50 text-slate-950 font-serif font-bold text-xs tracking-wide transition-all shadow-sm flex items-center justify-center gap-1.5 cursor-pointer"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-slate-950" />
                       <span>{isSubmitting ? "Transmitting Brief…" : "Submit Scoping Brief"}</span>
                     </button>
 
-                    <p className="text-[10px] text-center text-slate-500 font-mono mt-1">
+                    <p className="text-[10px] text-center text-slate-500 font-mono">
                       Direct principal review · Scope agreed before engagement begins
                     </p>
                   </form>
@@ -971,14 +943,14 @@ export default function CustomAgenticScopingPage() {
         </div>
 
         {/* ==================================================================== */}
-        {/* FOOTER REASSURANCE STRIP                                             */}
+        {/* COMPACT FOOTER STRIP                                                 */}
         {/* ==================================================================== */}
         <footer
-          className={`border-t pt-6 pb-12 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono ${
+          className={`border-t pt-4 pb-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono ${
             isLight ? "border-slate-300/60 text-slate-600" : "border-white/10 text-slate-400"
           }`}
         >
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <span className="font-bold text-[#142840] dark:text-white">THE BLOCK</span>
             <span>·</span>
             <span>Custom Agentic Systems</span>
@@ -986,7 +958,7 @@ export default function CustomAgenticScopingPage() {
             <span>1 Block = 2 to 4 Weeks</span>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <Link href="/block/" className="hover:underline">
               Outcomes Storefront ↗
             </Link>
