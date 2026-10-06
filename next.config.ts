@@ -23,12 +23,12 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/agentic-layer",
-        destination: "/experience/",
+        destination: "/agentic-ai/",
         permanent: true,
       },
       {
         source: "/agentic-layer/",
-        destination: "/experience/",
+        destination: "/agentic-ai/",
         permanent: true,
       },
       {
@@ -43,12 +43,12 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/agentics",
-        destination: "/experience/",
+        destination: "/agentic-ai/",
         permanent: true,
       },
       {
         source: "/agentics/",
-        destination: "/experience/",
+        destination: "/agentic-ai/",
         permanent: true,
       },
       {
@@ -113,17 +113,17 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/applied-agentics",
-        destination: "/experience/",
+        destination: "/agentic-ai/",
         permanent: true,
       },
       {
         source: "/applied-agentics/",
-        destination: "/experience/",
+        destination: "/agentic-ai/",
         permanent: true,
       },
       {
         source: "/applied-agentics/:path*",
-        destination: "/experience/",
+        destination: "/agentic-ai/",
         permanent: true,
       },
       {

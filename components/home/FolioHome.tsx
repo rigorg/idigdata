@@ -55,7 +55,7 @@ export default function FolioHome() {
 <p className="p-prose mt-4">{"Years of operating knowledge live across your people, your data, and your systems. I connect that knowledge to the decisions and the work it should support."}</p>
 <p className="p-prose mt-4">{"I start with how your people work, follow the data across applications, and address the handoffs and exceptions that keep the business from working as a whole. Applied agentics extends that capability on the business you already run."}</p>
 <p className="home-more">
-<Link className="p-link" href="/experience/#applied-agentics">{"Enterprise agentics"}</Link>
+<Link className="p-link" href="/agentic-ai/">{"Agentic AI"}</Link>
 </p>
 </div>
 </section>
