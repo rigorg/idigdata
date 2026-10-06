@@ -11,6 +11,14 @@ export const metadata: Metadata = {
   description:
     "Executive leadership and enterprise transformation across 50+ implementations and 15 enterprise transformations at scale.",
   alternates: { canonical: "/experience/" },
+  openGraph: {
+    type: "website",
+    url: "https://idigdata.com/experience/",
+    title: "Experience | idigdata",
+    description:
+      "Executive leadership and enterprise transformation across 50+ implementations and 15 enterprise transformations at scale.",
+    images: [{ url: "/og-image.png?v=20260828", width: 1200, height: 630, alt: "Robert Paddock, Enterprise Technology Leader: experience" }],
+  },
 };
 
 
