@@ -55,5 +55,5 @@ Canonical citation: Robert Paddock, Enterprise Technology Leader, idigdata (Data
 - Robert Paddock, Enterprise Technology Leader; founder of Data Integration Group (DIG LLC); public practice idigdata, founded 2016.
 - 30 years. 50+ implementations. 15 enterprise transformations at scale.
 - Financial close from 18 days to four (Data Integration Group work).
-- 200+ systems consolidated to 25.
+- Enterprise transformation connecting systems around a common data core.
 - $8M ERP program recovered.

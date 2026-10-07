@@ -27,8 +27,8 @@ export default function FolioHome() {
 <p className="p-prose mt-4">{"These separate engagements show how I connect delivery decisions to financial and operating results."}</p>
 <div className="home-story">
 <article>
-<h3>{"200+ systems to 25"}</h3>
-<p className="p-prose mt-4">{"Led a $15M modernization for a $420M multi-site brewer as Chief Information Officer, consolidating 200+ systems into 25 connected enterprise systems around a company-owned data core."}</p>
+<h3>{"Connected enterprise systems"}</h3>
+<p className="p-prose mt-4">{"Designed and led modernization for a multi-site brewer as Chief Information Officer, connecting enterprise systems around a company-owned data core."}</p>
 </article>
 <article>
 <h3>{"18 days to four"}</h3>
