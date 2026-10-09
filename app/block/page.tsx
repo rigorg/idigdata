@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState, useMemo, useRef } from "react";
+import { Suspense, useEffect, useState, useMemo, useRef } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import {
   PUBLIC_OUTCOME_DOMAINS,
@@ -12,6 +13,7 @@ import {
 } from "@/lib/engagement-draft";
 import { useTheme } from "@/lib/theme";
 import { TheBlockLogo } from "@/components/TheBlockLogo";
+import { outcomeLinkTarget } from "@/lib/outcome-links";
 
 // Strictly: 0 dollars ($), 0 phone numbers, ASCII hyphens only.
 // Delivery Standard: 1 Block = 2 to 4 Weeks. Client selects outcomes, we quote blocks.
@@ -272,7 +274,8 @@ function DomainBlockIcon({
   }
 }
 
-export default function TheBlockConfiguratorPage() {
+function TheBlockConfiguratorPage() {
+  const searchParams = useSearchParams();
   const { draft, update } = useEngagementDraft();
   const { theme, setTheme, isLight } = useTheme();
 
@@ -283,6 +286,26 @@ export default function TheBlockConfiguratorPage() {
   
   // Configuration Mode state (the pop-up / drawer where menus pop up per Capo's direct directive)
   const [configModalDomainId, setConfigModalDomainId] = useState<string | null>(null);
+  const [linkedOutcomeId, setLinkedOutcomeId] = useState<string | null>(null);
+  const [unknownOutcome, setUnknownOutcome] = useState(false);
+
+  useEffect(() => {
+      const target = outcomeLinkTarget(searchParams.toString());
+      setUnknownOutcome(target.kind === "unknown");
+      setLinkedOutcomeId(target.kind === "found" ? target.item.id : null);
+      if (target.kind === "found") {
+        setActiveDomainId(target.item.domainId);
+        setCubeRotation(current => getCanonicalRotationForDomain(target.item.domainId, current));
+        setConfigModalDomainId(target.item.domainId);
+      }
+  }, [searchParams]);
+
+  useEffect(() => {
+    if (!linkedOutcomeId || !configModalDomainId) return;
+    const checkbox = document.getElementById(`outcome-${linkedOutcomeId}`);
+    checkbox?.focus({ preventScroll: true });
+    checkbox?.scrollIntoView({ block: "center", behavior: "instant" });
+  }, [linkedOutcomeId, configModalDomainId]);
 
   // Context notes per face
   const [domainNotes, setDomainNotes] = useState<Record<string, string>>({});
@@ -305,14 +328,13 @@ export default function TheBlockConfiguratorPage() {
   const [selectedOutcomeIds, setSelectedOutcomeIds] = useState<string[]>([]);
   const hasInitializedRef = useRef(false);
 
-  // Fresh entry defaults to 0 configured outcomes (clears any stale test drafts)
+  // Hydrate saved selections; a new draft already starts empty.
   useEffect(() => {
-    if (!hasInitializedRef.current) {
+    if (draft && !hasInitializedRef.current) {
       hasInitializedRef.current = true;
-      setSelectedOutcomeIds([]);
-      update({ outcomeIds: [] });
+      setSelectedOutcomeIds(draft.outcomeIds);
     }
-  }, [update]);
+  }, [draft]);
 
   const selectedCount = selectedOutcomeIds.length;
 
@@ -678,6 +700,7 @@ export default function TheBlockConfiguratorPage() {
           >
             What do you want your business to be able to do?
           </h1>
+          {unknownOutcome && <p role="status" className="mt-4 rounded-lg border border-amber-500 p-3 text-sm">That outcome is unavailable. Browse the six categories below; your saved selections are unchanged.</p>}
           <p
             className={`text-sm sm:text-base mt-3 max-w-2xl mx-auto leading-relaxed ${
               isLight ? "text-slate-700" : "text-slate-300"
@@ -1061,7 +1084,7 @@ export default function TheBlockConfiguratorPage() {
                               </p>
 
                               {/* SITUATION & DELIVERABLES TOGGLE */}
-                              <div className="mt-2.5">
+                              {(item.situation || item.deliverables.length > 0) && <div className="mt-2.5">
                                 <button
                                   type="button"
                                   onClick={() => setExpandedItemId(isExpanded ? null : item.id)}
@@ -1069,7 +1092,7 @@ export default function TheBlockConfiguratorPage() {
                                     isLight ? "text-amber-800 hover:text-amber-950" : "text-amber-300 hover:text-amber-200"
                                   }`}
                                 >
-                                  {isExpanded ? "▲ Hide Deliverables & Situation" : "▼ View Deliverables & Situation"}
+                                  {isExpanded ? "▲ Hide details" : "▼ View details"}
                                 </button>
 
                                 {isExpanded && (
@@ -1101,7 +1124,7 @@ export default function TheBlockConfiguratorPage() {
                                     )}
                                   </div>
                                 )}
-                              </div>
+                              </div>}
                             </div>
                           </div>
                         </div>
@@ -1411,4 +1434,8 @@ export default function TheBlockConfiguratorPage() {
       </div>
     </main>
   );
+}
+
+export default function BlockPage() {
+  return <Suspense fallback={<main className="p-8">Loading outcomes…</main>}><TheBlockConfiguratorPage /></Suspense>;
 }

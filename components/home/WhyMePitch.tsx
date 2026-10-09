@@ -23,7 +23,7 @@ const beats = [
   {
     kicker: "An owner",
     h2: "Your transformation gets an owner. I have done both layers, and I come inside to own delivery under the right mandate. The application layer is earned ground: more than 50 implementations and 15 full transformations taken through production. The agentic layer is live work right now: Enterprise-Agentics in production, with guardrails and an operating path the company owns. This is not shadow work on a laptop. The insurance is earned judgment on the first layer and live practice on the second.",
-    body: "CIO, Sierra Nevada Brewing (~$420M). $15M transformation on a company-owned data core, agentic AI in production. Earlier, CEO/CTO at Timberline. $250K to $130M. Systems that had to hold in the field.",
+    body: "CIO, Sierra Nevada Brewing. Transformation on a company-owned data core, agentic AI in production. Earlier, CEO/CTO at Timberline. $250K to $130M. Systems that had to hold in the field.",
     gold: true,
   },
 ] as const;

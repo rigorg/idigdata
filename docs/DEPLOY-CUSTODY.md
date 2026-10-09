@@ -69,3 +69,5 @@ Production publishing is executed by the cc chief (superintendent) on Capo's wor
 | 2026-10-04 | nhr8jkta8 (custody proof) | fc3e895 | Capo |
 | 2026-10-06 | idigdata-1jya8zijr-loop-smith.vercel.app | 5ec9462 | cc, on Capo's word (Capo's own run hit the first-token `Not authorized`; cc's run succeeded first try) |
 | 2026-10-06 (2) | idigdata-j4z91qp9u-loop-smith.vercel.app | 0d1756a | cc, on Capo's word ("go"): Open Graph cards per page |
+
+| 2026-10-07 | idigdata-8x9779wxr-loop-smith.vercel.app | c2987c1 | CX on Capo's explicit release-specific reassignment: narrow Sierra disclosure correction; both domains aliased and read back HTTP 200; nine routes match local 3100; typecheck and 65 tests pass; IndexNow 200 OK. Standing custody policy unchanged. |
