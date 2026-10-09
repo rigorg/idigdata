@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { PUBLIC_CATALOG_ITEMS } from "./catalog";
 import { ContactSchema } from "./contact/schema";
+import { resolveOutcomeId } from "./outcome-links";
 
 export const ENGAGEMENT_DRAFT_KEY = "idigdata.engagement-draft.v2";
 export const LEGACY_DRAFT_KEYS = [
@@ -38,9 +39,10 @@ export function parseEngagementDraft(raw: string): EngagementDraft | null {
     if (!record(value) || value.version !== 2 || !text(value.id) || !value.id ||
       (value.stage !== "editing" && value.stage !== "handoff") ||
       !strings(value.outcomeIds) || !text(value.notes) || !text(value.contactMessage)) return null;
-    if (value.outcomeIds.some((id) => !ids.has(id))) return null;
+    const resolved = value.outcomeIds.map(id => resolveOutcomeId(id));
+    if (resolved.some(id => id === null)) return null;
     return { version: 2, id: value.id, stage: value.stage,
-      outcomeIds: [...new Set(value.outcomeIds)], notes: value.notes, contactMessage: value.contactMessage };
+      outcomeIds: [...new Set(resolved as string[])], notes: value.notes, contactMessage: value.contactMessage };
   } catch { return null; }
 }
 
@@ -62,10 +64,10 @@ function migrateLegacy(raw: string): EngagementDraft | null {
     const oldIds = hasIds ? value.outcomeIds as string[] : [];
     const knownNames = new Map(PUBLIC_CATALOG_ITEMS.map((item) => [item.name, item.id]));
     const previousNames = (names as string[] | undefined) ?? [];
-    draft.outcomeIds = [...new Set([...oldIds.filter((id) => ids.has(id)),
+    draft.outcomeIds = [...new Set([...oldIds.flatMap(id => { const resolved = resolveOutcomeId(id); return resolved ? [resolved] : []; }),
       ...previousNames.flatMap((name) => knownNames.has(name) ? [knownNames.get(name)!] : [])])];
     const notes = [value.customNotes ?? value.notes ?? ""] as string[];
-    const unmapped = hasIds ? oldIds.filter((id) => !ids.has(id)) : previousNames.filter((name) => !knownNames.has(name));
+    const unmapped = hasIds ? oldIds.filter(id => !resolveOutcomeId(id)) : previousNames.filter((name) => !knownNames.has(name));
     if (unmapped.length) notes.push(`Earlier selections to review:\n${unmapped.join("\n")}`);
     if (value.activeToolNames) notes.push(`Earlier build notes:\n${(value.activeToolNames as string[]).join("\n")}`);
     if (record(value.domainNotes)) notes.push(...Object.entries(value.domainNotes).map(([key, note]) => `${key.replaceAll("_", " ")}: ${note}`));
