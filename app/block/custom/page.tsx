@@ -4,6 +4,7 @@ import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import { TheBlockLogo } from "@/components/TheBlockLogo";
 import { useTheme, ThemeToggle } from "@/lib/theme";
+import { FACTORY_CATALOG_ITEMS } from "@/lib/factory-outcome-catalog";
 
 // Delivery Standard: 1 Block = 2 to 4 Weeks. Time for deliverable.
 // Voice: engineering firm ("We", "Our team"); Robert Paddock is named as the lead under "Who does the work."
@@ -147,6 +148,8 @@ export default function CustomAgenticScopingPage() {
 
   // Scoping state
   const [selectedArchetype, setSelectedArchetype] = useState<string | null>(null);
+  const [selectedOutcomes, setSelectedOutcomes] = useState<string[]>([]);
+  const [expandedOutcome, setExpandedOutcome] = useState<string | null>(null);
   const [selectedDomains, setSelectedDomains] = useState<string[]>(["financial_billing"]);
   const [selectedSystems, setSelectedSystems] = useState<string[]>([
     "PostgreSQL",
@@ -191,6 +194,12 @@ export default function CustomAgenticScopingPage() {
     setSelectedArchetype(null);
     setSelectedSystems((prev) =>
       prev.includes(sys) ? prev.filter((s) => s !== sys) : [...prev, sys]
+    );
+  };
+
+  const toggleOutcome = (id: string) => {
+    setSelectedOutcomes((prev) =>
+      prev.includes(id) ? prev.filter((o) => o !== id) : [...prev, id]
     );
   };
 
@@ -258,7 +267,7 @@ export default function CustomAgenticScopingPage() {
         : "Post-Launch Hypercare & Operational Monitoring";
 
     return [
-      `# CUSTOM AGENTIC DEVELOPMENT SCOPE BRIEF`,
+      `# ENTERPRISE AGENTIC SOFTWARE SCOPE BRIEF`,
       `Delivery Standard: Scoped in Time Blocks (2 to 4 Weeks per deliverable)`,
       `Engineering Posture: Professional Software Firm (Production Architecture, Not Vibe Coded)`,
       ``,
@@ -422,7 +431,7 @@ export default function CustomAgenticScopingPage() {
 
           <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-medium tracking-tight leading-tight">
-              Professional Agentic Systems. <span className="text-amber-600 dark:text-amber-400">Scoped in Time Blocks.</span>
+              Enterprise Agentic Software. <span className="text-amber-600 dark:text-amber-400">Scoped in Time Blocks.</span>
             </h1>
             <span className="text-xs font-mono text-slate-500 shrink-0">
               2 to 4 Weeks per deliverable module
@@ -542,7 +551,95 @@ export default function CustomAgenticScopingPage() {
           {/* LEFT COLUMN: COMPACT SCOPING MODULES (7 COLS) */}
           <div className="lg:col-span-7 flex flex-col gap-4">
             
-            {/* MODULE 1: PROBLEM DOMAIN & INTEGRATION SURFACE */}
+            {/* CATEGORY 07: ENTERPRISE AGENTIC SOFTWARE OUTCOMES */}
+              <div
+                className={`p-4 rounded-xl border flex flex-col gap-3.5 ${
+                  isLight ? "bg-white/80 border-[#E2DCD2]" : "bg-slate-900/30 border-white/10"
+                }`}
+              >
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 border-b pb-2.5 border-slate-200/60 dark:border-slate-800">
+                  <div className="flex items-center gap-2">
+                    <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-mono uppercase tracking-wider font-semibold bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30">
+                      Category 07
+                    </span>
+                    <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+                      Enterprise Agentic Software Outcomes
+                    </h2>
+                  </div>
+                  <span className="text-[11px] font-mono text-slate-500">
+                    {selectedOutcomes.length} of 10 selected
+                  </span>
+                </div>
+
+                <p className={`text-xs leading-relaxed ${isLight ? "text-slate-600" : "text-slate-400"}`}>
+                  Ten verified delivery scopes for production enterprise agentics. Select outcomes to include in your scoped time block:
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {FACTORY_CATALOG_ITEMS.map((item) => {
+                    const isSelected = selectedOutcomes.includes(item.id);
+                    const isExpanded = expandedOutcome === item.id;
+                    return (
+                      <div
+                        key={item.id}
+                        className={`p-3 rounded-lg border transition-all flex flex-col gap-2 ${
+                          isSelected
+                            ? isLight
+                              ? "bg-emerald-50/80 border-emerald-500 shadow-xs"
+                              : "bg-emerald-950/30 border-emerald-500 shadow-xs"
+                            : isLight
+                            ? "bg-stone-50/60 border-slate-200 hover:border-emerald-400"
+                            : "bg-slate-950/40 border-slate-800 hover:border-emerald-500/50"
+                        }`}
+                      >
+                        <div className="flex items-start justify-between gap-2">
+                          <button
+                            type="button"
+                            onClick={() => toggleOutcome(item.id)}
+                            className="text-left flex-1 cursor-pointer group"
+                          >
+                            <div className="flex items-center gap-1.5">
+                              <span
+                                className={`w-3.5 h-3.5 rounded flex items-center justify-center text-[10px] font-mono border ${
+                                  isSelected
+                                    ? "bg-emerald-600 text-white border-emerald-600 font-bold"
+                                    : "border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900"
+                                }`}
+                              >
+                                {isSelected ? "✓" : ""}
+                              </span>
+                              <h3 className="text-xs font-serif font-bold group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                                {item.name}
+                              </h3>
+                            </div>
+                            <p className={`text-[11px] leading-snug mt-1 ${isLight ? "text-slate-600" : "text-slate-400"}`}>
+                              {item.tagline}
+                            </p>
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => setExpandedOutcome(isExpanded ? null : item.id)}
+                            className="text-[10px] font-mono text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 p-1 cursor-pointer shrink-0"
+                            title={isExpanded ? "Collapse delivery scope" : "Expand delivery scope"}
+                          >
+                            {isExpanded ? "▲" : "▼"}
+                          </button>
+                        </div>
+
+                        {isExpanded && item.situation && (
+                          <div className={`mt-2 pt-2 border-t text-[11px] leading-relaxed whitespace-pre-line ${
+                            isLight ? "border-slate-200 text-slate-700" : "border-slate-800 text-slate-300"
+                          }`}>
+                            {item.situation}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* MODULE 1: PROBLEM DOMAIN & INTEGRATION SURFACE */}
             <div
               className={`p-4 rounded-xl border flex flex-col gap-3 ${
                 isLight ? "bg-white/80 border-[#E2DCD2]" : "bg-slate-900/30 border-white/10"
