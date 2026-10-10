@@ -316,99 +316,7 @@ export default function ExperiencePage() {
         </div>
       </section>
 
-      <section className="p-section" id="seven-blocks" aria-labelledby="seven-blocks-title">
-        <div className="page-well">
-          <p className="p-kicker">The Seven Value Propositions</p>
-          <h2 className="p-h2" id="seven-blocks-title">{"Six core disciplines at the seam—and the autonomous factory."}</h2>
-          <p className="p-dek mt-3">
-            {"My 20+ years systems arc across 50 enterprise implementations and 15 scale transformations maps into six operational disciplines. While frontier software factories generate code, these six areas represent the 20% operational seam where transformations actually succeed or fail. The seventh block is our sovereign agentic software factory—the engine that builds and operates them."}
-          </p>
-
-          <div className="home-cards mt-8">
-            <article className="home-card">
-              <p className="home-card-cat">{"Leadership, Direction & Transformation"}</p>
-              <h3>{"Roadmaps & capital governance."}</h3>
-              <p className="p-prose mt-4">
-                {"Align executive priorities, vendor accountability, and technology investment into an executable flight of time."}
-              </p>
-              <Link className="p-link capability-link" href="/block/">{"Explore outcomes in The Block"}</Link>
-            </article>
-
-            <article className="home-card">
-              <p className="home-card-cat">{"Business Systems & Integration"}</p>
-              <h3>{"Core ERP, WMS & MES cutovers."}</h3>
-              <p className="p-prose mt-4">
-                {"Connect mission-critical business platforms with zero operational downtime and company-owned API bridges."}
-              </p>
-              <Link className="p-link capability-link" href="/block/">{"Explore outcomes in The Block"}</Link>
-            </article>
-
-            <article className="home-card">
-              <p className="home-card-cat">{"IT Operations & Security"}</p>
-              <h3>{"Plant continuity & infrastructure."}</h3>
-              <p className="p-prose mt-4">
-                {"Dependable enterprise networks, cybersecurity, OT plant floor execution, and scanner hardware across physical facilities."}
-              </p>
-              <Link className="p-link capability-link" href="/block/">{"Explore outcomes in The Block"}</Link>
-            </article>
-
-            <article className="home-card">
-              <p className="home-card-cat">{"Data & Knowledge"}</p>
-              <h3>{"Master data & Polanyi's paradox."}</h3>
-              <p className="p-prose mt-4">
-                {"Translate tribal shop-floor heuristics and Mary's 15-year unwritten spreadsheets into trusted enterprise data."}
-              </p>
-              <Link className="p-link capability-link" href="/block/">{"Explore outcomes in The Block"}</Link>
-            </article>
-
-            <article className="home-card">
-              <p className="home-card-cat">{"Financial Systems"}</p>
-              <h3>{"Ledger integrity & accelerated close."}</h3>
-              <p className="p-prose mt-4">
-                {"Reconciliation, margin visibility, and month-end close acceleration from 18 days to four across multiple entities."}
-              </p>
-              <Link className="p-link capability-link" href="/block/">{"Explore outcomes in The Block"}</Link>
-            </article>
-
-            <article className="home-card">
-              <p className="home-card-cat">{"Workflows & Automation"}</p>
-              <h3>{"Frontline handoffs & exception routing."}</h3>
-              <p className="p-prose mt-4">
-                {"Eliminate friction across order-to-cash and procure-to-pay with human authorization and resilient fallback."}
-              </p>
-              <Link className="p-link capability-link" href="/block/">{"Explore outcomes in The Block"}</Link>
-            </article>
-          </div>
-
-          <div className="mt-8 p-6 rounded-xl border border-[#142840]/20 bg-[#142840]/[0.03] flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-            <div className="max-w-3xl">
-              <div className="flex items-center gap-2">
-                <span className="font-mono text-xs font-bold uppercase tracking-wider text-amber-700">
-                  The Seventh Block // Applied Agentics
-                </span>
-                <span className="text-slate-400">·</span>
-                <span className="font-mono text-xs text-slate-500">The Sovereign Software Factory</span>
-              </div>
-              <h3 className="font-serif text-2xl font-bold text-[#142840] mt-1">
-                The Rig, The B.O.S.S. &amp; FlowCraft
-              </h3>
-              <p className="p-prose mt-2">
-                {"The Rig is our autonomous software factory—engineering, validating, and running multi-agent workflows with AST validation gates, deterministic caller contracts, and human authorization. While frontier software factories generate raw code mass, enterprise success depends on the operating leadership that connects autonomous code generation to physical shop-floor realities, brownfield cutovers, and human accountability. This exact apparatus stands up inside an operating enterprise—from multi-facility consumer goods to regulated process manufacturing—as a full operational seat running custom software."}
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0">
-              <Link className="p-btn whitespace-nowrap" href="/block/custom/">
-                {"Explore Custom Agentics"}
-              </Link>
-              <Link className="p-link whitespace-nowrap" href="/agentic-ai/">
-                {"Read Field Dispatches →"}
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="p-section">
+<section className="p-section">
         <div className="page-well">
           <h2 className="p-h2">{"Executive leadership, grounded in operating experience"}</h2>
           <h3 className="executive-role">{"Sierra Nevada Brewing Co. | Chief Information Officer (Contract)"}</h3>
@@ -508,33 +416,34 @@ export default function ExperiencePage() {
             </div>
           </div>
 
-          <h3 className="mt-12 font-vollkorn text-[26px] font-extrabold text-navy">
-            Systems I have run.
-          </h3>
-          <p className="portfolio-sub">
-            Contracts negotiated. Vendors run. Customer-side command.
-          </p>
-          <div className="estate-grid">
-            {estate.map((card) => (
-              <article key={card.title} className="estate-card">
-                <div className="estate-head">
-                  <span>{card.title}</span>
-                  <span className="estate-tag">{card.tag}</span>
-                </div>
-                {card.rows.map((row) => (
-                  <p key={row} className="estate-sys">
-                    {row}
-                  </p>
-                ))}
-              </article>
-            ))}
-          </div>
-          <p className="p-prose mt-6">
-            I have run the systems named above. SAP, Oracle financials,
-            NetSuite, and JD Edwards are estates I can work across when the
-            mandate sits on them. Oracle Primavera is scheduling and controls
-            I have run.
-          </p>
+          <details className="mt-10 rounded-lg border border-[#142840]/20 bg-[#142840]/[0.02] p-6 group">
+            <summary className="cursor-pointer font-vollkorn text-[19px] font-bold text-navy flex items-center justify-between">
+              <span>View core systems &amp; platforms directory ({estate.length} functional domains)</span>
+              <span className="text-xs font-mono uppercase bg-[#142840]/10 px-2.5 py-1 rounded text-[#142840] group-open:hidden">Expand Directory +</span>
+              <span className="text-xs font-mono uppercase bg-[#142840]/10 px-2.5 py-1 rounded text-[#142840] hidden group-open:inline">Close Directory -</span>
+            </summary>
+            <div className="estate-grid mt-6">
+              {estate.map((card) => (
+                <article key={card.title} className="estate-card">
+                  <div className="estate-head">
+                    <span>{card.title}</span>
+                    <span className="estate-tag">{card.tag}</span>
+                  </div>
+                  {card.rows.map((row) => (
+                    <p key={row} className="estate-sys">
+                      {row}
+                    </p>
+                  ))}
+                </article>
+              ))}
+            </div>
+            <p className="p-prose mt-6 text-sm text-[#142840]/75">
+              I have run the systems named above. SAP, Oracle financials,
+              NetSuite, and JD Edwards are estates I can work across when the
+              mandate sits on them. Oracle Primavera is scheduling and controls
+              I have run.
+            </p>
+          </details>
         </div>
       </section>
 
@@ -655,29 +564,22 @@ export default function ExperiencePage() {
 
       <section className="p-section" id="applied-agentics">
         <div className="page-well">
-          <h2 className="p-h2">{"Applied agentics on the enterprise already running"}</h2>
-          <p className="p-prose mt-4">
-            {"I architect, develop, and deploy autonomous workflows on company-owned data foundations. Enterprise agentics requires more than a model and an API key—it requires deterministic caller boundaries, maintained company records, and human authority at consequential steps."}
-          </p>
-          <div className="home-scales">
-            <article>
-              <h3>{"Deterministic caller gates"}</h3>
+          <div className="p-8 rounded-xl border border-[#142840]/20 bg-[#142840]/[0.02] flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+            <div className="max-w-3xl">
+              <p className="p-kicker">Frontier Production Runtimes</p>
+              <h2 className="p-h2 mt-1">Applied agentics on the enterprise already running.</h2>
               <p className="p-prose mt-4">
-                {"Eliminating runaway token burn and endless rework loops. Workflows operate inside explicit schema contracts, read-only data sandboxes, and idempotent actions that execute deterministically against ERP, WMS, and operational APIs."}
+                Enterprise agentics requires more than a model and an API key—it requires deterministic caller boundaries, maintained company records, and human authority at consequential operational steps. I architect, build, and deploy multi-agent runtimes with AST validation gates and schema contracts that bridge the delivery seam between autonomous code generation and physical floor execution.
               </p>
-            </article>
-            <article>
-              <h3>{"Company-owned data cores"}</h3>
-              <p className="p-prose mt-4">
-                {"Grounding models on the enterprise's actual operating records—historical orders, contracts, batch traceability, and depletions. Connecting software to the unwritten operating judgment experienced people carry, rather than generic web training data."}
-              </p>
-            </article>
-            <article>
-              <h3>{"Human authorization in production"}</h3>
-              <p className="p-prose mt-4">
-                {"Agents synthesize context, audit thousands of transactions, and stage recommendations; accountable business leaders retain final authorization. Deployed logistics audit agents analyze carrier invoices against negotiated contracts, discovering significant annual billing discrepancies with complete human approval trails."}
-              </p>
-            </article>
+            </div>
+            <div className="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0">
+              <Link className="p-btn whitespace-nowrap" href="/agentic-ai/">
+                Read Field Dispatches &rarr;
+              </Link>
+              <Link className="p-link whitespace-nowrap" href="/contact/">
+                Start an Executive Conversation &rarr;
+              </Link>
+            </div>
           </div>
         </div>
       </section>
