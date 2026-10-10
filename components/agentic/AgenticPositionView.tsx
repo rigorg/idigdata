@@ -128,7 +128,7 @@ function FloorMatrixSpot() {
       {/* Background drafting frame */}
       <rect x="10" y="10" width="100" height="100" fill="#FAF6EE" stroke="#DDD7C8" strokeWidth="0.8" />
 
-      {/* Top Box: Theoretical "20 People" Roster */}
+      {/* Top Box: Theoretical '20 People' Roster */}
       <rect x="18" y="18" width="84" height="28" fill="#FFFFFF" stroke="#68645C" strokeWidth="0.8" strokeDasharray="2 2" />
       <text x="60" y="26" fontSize="5.2" fill="#68645C" textAnchor="middle" fontFamily="monospace" letterSpacing="0.05em">THE &quot;20 CHAMPIONS&quot; LIST</text>
       {/* 4x5 tidy dots */}
@@ -148,41 +148,44 @@ function FloorMatrixSpot() {
       <rect x="18" y="62" width="84" height="42" fill="#F4EFE5" stroke="#1E2024" strokeWidth="1.2" />
       <text x="60" y="70" fontSize="5.2" fill="#1E2024" textAnchor="middle" fontWeight="bold" fontFamily="monospace">150 PEOPLE // 25 TASK FORCES</text>
       {/* Irregular connected task force nodes */}
-      <g stroke="#9E7D3B" strokeWidth="0.6" fill="#1E2024">
-        <line x1="26" y1="80" x2="40" y2="76" />
-        <line x1="40" y1="76" x2="52" y2="88" />
-        <line x1="52" y1="88" x2="68" y2="78" />
-        <line x1="68" y1="78" x2="80" y2="86" />
-        <line x1="80" y1="86" x2="94" y2="78" />
-        <line x1="40" y1="76" x2="68" y2="78" />
-        <line x1="34" y1="90" x2="52" y2="88" />
-        <line x1="68" y1="78" x2="74" y2="92" />
-        <line x1="74" y1="92" x2="88" y2="90" />
+      <g stroke="#68645C" strokeWidth="0.6" fill="#9E7D3B">
+        <line x1="28" y1="78" x2="44" y2="84" />
+        <line x1="44" y1="84" x2="60" y2="76" />
+        <line x1="60" y1="76" x2="76" y2="84" />
+        <line x1="76" y1="84" x2="92" y2="78" />
+        <line x1="34" y1="94" x2="48" y2="90" />
+        <line x1="48" y1="90" x2="72" y2="92" />
+        <line x1="72" y1="92" x2="86" y2="96" />
+        <line x1="44" y1="84" x2="48" y2="90" />
+        <line x1="60" y1="76" x2="72" y2="92" />
 
-        <circle cx="26" cy="80" r="2.2" fill="#8F4A38" />
-        <circle cx="40" cy="76" r="2.5" fill="#9E7D3B" />
-        <circle cx="52" cy="88" r="2" fill="#1E2024" />
-        <circle cx="68" cy="78" r="2.8" fill="#9E7D3B" />
-        <circle cx="80" cy="86" r="2.2" fill="#8F4A38" />
-        <circle cx="94" cy="78" r="2.5" fill="#1E2024" />
-        <circle cx="34" cy="90" r="1.8" fill="#68645C" />
-        <circle cx="74" cy="92" r="2" fill="#8F4A38" />
-        <circle cx="88" cy="90" r="2.2" fill="#9E7D3B" />
+        <circle cx="28" cy="78" r="2.2" fill="#8F4A38" />
+        <circle cx="44" cy="84" r="2.2" />
+        <circle cx="60" cy="76" r="2.8" fill="#1E2024" />
+        <circle cx="76" cy="84" r="2.2" />
+        <circle cx="92" cy="78" r="2.2" fill="#8F4A38" />
+        <circle cx="34" cy="94" r="2.2" />
+        <circle cx="48" cy="90" r="2.2" />
+        <circle cx="72" cy="92" r="2.2" />
+        <circle cx="86" cy="96" r="2.2" />
       </g>
-      <text x="60" y="99" fontSize="4.6" fill="#68645C" textAnchor="middle" fontFamily="monospace">MARY&apos;S SHEET &bull; TACIT TRUTH</text>
     </svg>
   );
 }
 
-const DISPATCHES = [
+// ============================================================================
+// EDITORIAL DATA SETS
+// ============================================================================
+
+const PILLAR_ESSAYS = [
   {
     num: "01",
-    slug: "marys-sheet-and-polanyis-paradox",
+    slug: "marys-sheet",
     postHref: "/agentic-ai/marys-sheet/",
     category: "DOMAIN REALITY",
     readTime: "6 MIN READ",
     title: "Mary's Sheet & Polanyi's Paradox",
-    subtitle: "Why automated AI code generators fail without the unwritten floor truth.",
+    subtitle: "Why 80% automated code generation crashes into the unwritten 20% enterprise floor.",
     spot: "polanyi",
     summary:
       "Enterprise procedures capture the happy path. The real operating logic lives in the minds and desktop spreadsheets of experienced people who handle exceptions, weigh conflicting priorities, and know when standard software falls short. Polanyi noted: 'We know more than we can tell.' You cannot prompt an AI agent with what was never written down.",
@@ -191,34 +194,37 @@ const DISPATCHES = [
   },
   {
     num: "02",
-    slug: "chamaths-beehiiv-vs-the-beehive",
+    slug: "the-application-layer",
     postHref: "/agentic-ai/the-application-layer/",
-    category: "RUNTIME ARCHITECTURE",
+    category: "ARCHITECTURE & SYSTEMS",
     readTime: "8 MIN READ",
     title: "Chamath's beehiiv vs. The Beehive",
     subtitle: "Macro venture theory vs. the reality of running a 13-cell multi-agent engine in production.",
     spot: "beehive",
     summary:
-      "Chamath Palihapitiya publishes high-level macroeconomic theses on beehiiv. In the arena, I built and operate The Beehive: a living 13-cell multi-agent architecture in production. In a sandbox, agents feel magical; in production, they require deterministic caller gates, auditable state synchronization, token governance, and strict human authorization.",
+      "Chamath Palihapitiya publishes high-level macroeconomic theses on beehiiv. In the arena, I built and operate The Beehive: a living 13-cell multi-agent architecture in production. In a sandbox, agents feel magical; in production, they require deterministic caller gates, auditable state synchronization, token governance, and strict human authorization across brownfield systems.",
     takeaway: "The distance between a demo and an enterprise asset is telemetry, boundaries, and governance.",
     topicKey: "The Beehive multi-agent runtime in production",
   },
   {
     num: "03",
-    slug: "the-80-90-collaboration-filling-the-seam",
+    slug: "the-delivery-seam",
     postHref: "/agentic-ai/the-delivery-seam/",
-    category: "COLLABORATIVE SEAM",
+    category: "ENTERPRISE DELIVERY",
     readTime: "7 MIN READ",
     title: "The Two Software Factories: 8090 vs. Factory.ai",
     subtitle: "External generation vs. internal droids—why both motions crash into the operational seam.",
     spot: "seam",
     summary:
-      "The frontier market has split into two software factory paradigms: 8090 Inc. builds and hosts custom applications externally for the business, while Factory.ai ($5B valuation) installs autonomous Droids into internal engineering teams to automate ticket-to-deploy. Both promise automated velocity. But software never touches the ground cleanly on its own. Whether generated from the outside or prompted from the inside, code always fails at the 20% seam—where software meets unwritten dock procedures, messy data cutovers, and organizational resistance. The factory writes the code; the delivery partner operationalizes the outcome.",
+      "The frontier market has split into two software factory paradigms: 8090 Inc. builds and hosts custom applications externally for the business, while Factory.ai installs autonomous Droids into internal engineering teams to automate ticket-to-deploy. Both promise automated velocity. But software never touches the ground cleanly on its own. Code always fails at the 20% seam—where software meets unwritten dock procedures, messy data cutovers, and organizational resistance. The factory writes the code; the delivery partner operationalizes the outcome.",
     takeaway: "80% automated generation × 20% physical floor delivery = complete enterprise outcome.",
     topicKey: "The 80/90 collaborative delivery seam",
   },
+];
+
+const FIELD_NOTES = [
   {
-    num: "04",
+    num: "01",
     slug: "the-boss-protocol-mapping-stated-vs-actual",
     category: "GOVERNANCE & AUDIT",
     readTime: "9 MIN READ",
@@ -231,7 +237,7 @@ const DISPATCHES = [
     topicKey: "The B.O.S.S. protocol and stated vs actual reality",
   },
   {
-    num: "05",
+    num: "02",
     slug: "the-20-people-fallacy-partner-theory-vs-the-floor",
     category: "OPERATIONAL REALITY",
     readTime: "7 MIN READ",
@@ -413,105 +419,43 @@ export default function AgenticPositionView() {
 
         {/* Section Navigation */}
         <nav aria-label="Dispatch navigation" className={s.chapterNav}>
-          <a href="#operator-brief">01 / The Operator Behind the Notebook</a>
-          <a href="#dispatches">02 / The Dispatches</a>
-          <a href="#the-collaborative-seam">03 / The 80/90 Seam</a>
-          <a href="#the-position">04 / The Working Position</a>
+          <a href="#essays">01 / The Pillar Essays</a>
+          <a href="#field-notes">02 / Operational Field Notes</a>
+          <a href="#the-collaborative-seam">03 / The Delivery Seam &amp; The Block</a>
+          <a href="#operator-brief">04 / The Operator Behind the Notebook</a>
           <a href="#conversation">05 / Direct Correspondence</a>
         </nav>
       </header>
 
       {/* ====================================================================
-          SECTION 01: THE OPERATOR BEHIND THE NOTEBOOK
-          Answering "Who is Rob?" with authentic systems architecture authority
+          SECTION 01: THE PILLAR ESSAYS (Weblog Triad)
+          Leading immediately under the hero: Mary's Sheet, The Application Layer, The Delivery Seam
           ==================================================================== */}
-      <section id="operator-brief" className={s.briefSection}>
-        <div className={s.briefInner}>
-          <div className={s.briefHead}>
-            <p className={s.eyebrow}>01 / Identity &amp; Authority</p>
-            <h2>The Operator Behind the Notebook<span>.</span></h2>
-            <p className={s.briefDek}>
-              Nobody knows me; everybody knows Chamath. That is the point. Macro thinkers invest in market waves; operators make them survive when they hit the physical shop floor.
-            </p>
-          </div>
-
-          <div className={s.briefGrid}>
-            <div className={s.briefCard}>
-              <div className={s.cardHeader}>
-                <span className={s.cardNum}>01 / PROOF IN THE ARENA</span>
-                <h3>20+ Years in Enterprise Systems</h3>
-              </div>
-              <p>
-                50 enterprise implementations, 15 at massive scale, from warehouse docks to executive boardrooms. Nobody understands enterprise systems at the customer level better. 15+ cutovers without a single rollback, recovering an at-risk $8M program to save $2M, and consolidating 200 software silos down to 25 core operating platforms.
-              </p>
-              <div className={s.cardFootnote}>
-                <span>Track Record</span>
-                <strong>15+ Cutovers · $2M Saved</strong>
-              </div>
-            </div>
-
-            <div className={s.briefCard}>
-              <div className={s.cardHeader}>
-                <span className={s.cardNum}>02 / RUNTIME DEPTH</span>
-                <h3>A Proven Agentic Contraption</h3>
-              </div>
-              <p>
-                While the market talks about AI agents in slide decks, I built a real, working agentic runtime right here: <strong>The Rig</strong>. It is a no-fooling something on the same frontier trajectory as 8090, Factory.ai, and Gas City—operating with deterministic caller gates, verifiable audit trails, and an intimate daily relationship with production code.
-              </p>
-              <div className={s.cardFootnote}>
-                <span>Agentic Engine</span>
-                <strong>13 Cells · Production Governed</strong>
-              </div>
-            </div>
-
-            <div className={s.briefCard}>
-              <div className={s.cardHeader}>
-                <span className={s.cardNum}>03 / OPERATING TRUTH</span>
-                <h3>Mary's Sheet &amp; Polanyi's Paradox</h3>
-              </div>
-              <p>
-                <em>&ldquo;We know more than we can tell.&rdquo;</em> Slabs of enterprise software get bought, but the factory runs on Mary's 15-year-old desktop spreadsheet. Frontier AI code factories generate software fast, but only an operator who knows the dock can translate that tacit reality into working code.
-              </p>
-              <div className={s.cardFootnote}>
-                <span>Domain Reality</span>
-                <strong>Tacit Knowledge Discovery</strong>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ====================================================================
-          SECTION 02: THE DISPATCHES
-          Clean editorial cards with authentic architectural spot graphics
-          ==================================================================== */}
-      <section id="dispatches" className={s.dispatchesSection}>
+      <section id="essays" className={s.dispatchesSection}>
         <div className={s.dispatchesInner}>
           <div className={s.dispatchesHead}>
-            <p className={s.eyebrow}>02 / Dispatches from the Seam</p>
-            <h2>Mental Models &amp; Field Notes<span>.</span></h2>
+            <p className={s.eyebrow}>01 / The Weblog Triad</p>
+            <h2>The Pillar Essays<span>.</span></h2>
             <p className={s.dispatchesDek}>
-              Rigorous observations, runtime telemetry, and architectural principles drawn directly from building and operating agentic systems in production.
+              Foundational architectural essays exploring domain reality, multi-agent runtime design, and the physical delivery seam where automated code meets industrial operations.
             </p>
           </div>
 
           <div className={s.dispatchList}>
-            {DISPATCHES.map((d) => (
+            {PILLAR_ESSAYS.map((d) => (
               <article key={d.num} className={s.dispatchCard} id={`dispatch-${d.slug}`}>
                 <div className={s.dispatchSpotCol}>
                   <div className={s.spotFrame}>
                     {d.spot === "beehive" && <BeehiveSpot />}
                     {d.spot === "seam" && <SeamJointSpot />}
                     {d.spot === "polanyi" && <PolanyiSheetSpot />}
-                    {d.spot === "boss" && <BossAuditSpot />}
-                    {d.spot === "floor" && <FloorMatrixSpot />}
                   </div>
                   <span className={s.spotLabel}>{d.category}</span>
                 </div>
 
                 <div className={s.dispatchBodyCol}>
                   <div className={s.dispatchMeta}>
-                    <span className={s.dispatchNum}>{d.num} / DISPATCH</span>
+                    <span className={s.dispatchNum}>{d.num} / ESSAY</span>
                     <span className={s.dispatchDot}>·</span>
                     <span className={s.dispatchTime}>{d.readTime}</span>
                   </div>
@@ -525,14 +469,12 @@ export default function AgenticPositionView() {
                   </div>
 
                   <div className={s.dispatchActions}>
-                    {d.postHref && (
-                      <Link href={d.postHref} className={s.dispatchReadBtn}>
-                        <span>Read Full Essay</span>
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                          <path d="M3 7H11M11 7L7.5 3.5M11 7L7.5 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      </Link>
-                    )}
+                    <Link href={d.postHref} className={s.dispatchReadBtn}>
+                      <span>Read Full Essay</span>
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                        <path d="M3 7H11M11 7L7.5 3.5M11 7L7.5 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </Link>
                     <button
                       type="button"
                       onClick={() => handleSelectTopic(d.topicKey)}
@@ -552,13 +494,73 @@ export default function AgenticPositionView() {
       </section>
 
       {/* ====================================================================
-          SECTION 03: THE COLLABORATIVE SEAM (8090 SYNTHESIS)
+          SECTION 02: OPERATIONAL DOCTRINE & FIELD NOTES
+          Field audits, B.O.S.S. protocol, and '20 People' fallacy from production
+          ==================================================================== */}
+      <section id="field-notes" className={s.dispatchesSection} style={{ borderTop: "1px solid var(--line)" }}>
+        <div className={s.dispatchesInner}>
+          <div className={s.dispatchesHead}>
+            <p className={s.eyebrow}>02 / Operational Doctrine &amp; Field Notes</p>
+            <h2>Field Notes from the Arena<span>.</span></h2>
+            <p className={s.dispatchesDek}>
+              Runtime audits, governance frameworks, and operational reality checks drawn directly from enterprise cutovers and physical floor execution.
+            </p>
+          </div>
+
+          <div className={s.dispatchList}>
+            {FIELD_NOTES.map((d) => (
+              <article key={d.num} className={s.dispatchCard} id={`dispatch-${d.slug}`}>
+                <div className={s.dispatchSpotCol}>
+                  <div className={s.spotFrame}>
+                    {d.spot === "boss" && <BossAuditSpot />}
+                    {d.spot === "floor" && <FloorMatrixSpot />}
+                  </div>
+                  <span className={s.spotLabel}>{d.category}</span>
+                </div>
+
+                <div className={s.dispatchBodyCol}>
+                  <div className={s.dispatchMeta}>
+                    <span className={s.dispatchNum}>{d.num} / NOTE</span>
+                    <span className={s.dispatchDot}>·</span>
+                    <span className={s.dispatchTime}>{d.readTime}</span>
+                  </div>
+                  <h3 className={s.dispatchTitle}>{d.title}</h3>
+                  <p className={s.dispatchSubtitle}>{d.subtitle}</p>
+                  <p className={s.dispatchText}>{d.summary}</p>
+                  
+                  <div className={s.dispatchCallout}>
+                    <span className={s.calloutLabel}>OPERATIONAL TAKEAWAY</span>
+                    <p className={s.calloutText}>{d.takeaway}</p>
+                  </div>
+
+                  <div className={s.dispatchActions}>
+                    <button
+                      type="button"
+                      onClick={() => handleSelectTopic(d.topicKey)}
+                      className={s.dispatchDiscussBtn}
+                    >
+                      <span>Share your perspective on this</span>
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                        <path d="M3 7H11M11 7L7.5 3.5M11 7L7.5 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ====================================================================
+          SECTION 03: THE COLLABORATIVE SEAM & THE BLOCK
           Synthesizing 8090 Inc. Frontier AI Factory with Capo's Delivery Seam
+          and direct architectural connection to The Block (60 Outcomes)
           ==================================================================== */}
       <section id="the-collaborative-seam" className={s.seamSection}>
         <div className={s.seamInner}>
           <div className={s.seamHead}>
-            <p className={s.eyebrow}>03 / The Collaboration</p>
+            <p className={s.eyebrow}>03 / The Collaboration &amp; Delivery Architecture</p>
             <h2>Filling the 20% Seam<span>.</span></h2>
             <p className={s.seamDek}>
               Whether an enterprise generates software externally (8090 Inc.) or deploys autonomous developer droids internally (Factory.ai), automated software always crashes into the same physical reality: the 20% operational seam.
@@ -625,7 +627,7 @@ export default function AgenticPositionView() {
             </div>
           </div>
 
-                    <div className={s.realityCallout}>
+          <div className={s.realityCallout}>
             <div className={s.realityCalloutContent}>
               <p className={s.realityCalloutHead}>THE REALITY GAP // BEYOND ECOSYSTEM THEORIES</p>
               <h3 className={s.realityCalloutTitle}>
@@ -661,17 +663,99 @@ export default function AgenticPositionView() {
             <span className={s.mandateLead}>THE OPERATIONAL MANDATE</span>
             <p className={s.mandateText}>Sell. Deliver. Run the teams to execute.</p>
           </div>
+
+          {/* Connection to The Block Card */}
+          <div className={s.blockConnectionCard}>
+            <div className={s.blockConnectionBody}>
+              <p className={s.eyebrow} style={{ margin: 0 }}>FLOWCRAFT &amp; DIGOPS · SOVEREIGN ASSETS</p>
+              <h3>The Block: 60 Proven Leadership &amp; Enterprise Outcomes</h3>
+              <p>
+                Every architectural dispatch in this publication is backed by operational catalog outcomes—from custom enterprise agentic systems (Category 07) to full-scale digital transformation investments. Explore the read-only catalog projected directly from Operations (:3300).
+              </p>
+            </div>
+            <div className={s.blockConnectionActions}>
+              <Link href="/block/" className={s.blockCtaPrimary}>
+                <span>Explore The Block (60 Outcomes)</span>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M3 7H11M11 7L7.5 3.5M11 7L7.5 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </Link>
+              <Link href="/block/custom/" className={s.blockCtaSecondary}>
+                <span>Custom Agentic Software (Category 07) &rarr;</span>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* ====================================================================
-          SECTION 04: THE WORKING POSITION
-          The foundational principles: Company Knowledge, Human Authority, Useful Work
+          SECTION 04: THE OPERATOR BEHIND THE NOTEBOOK
+          Answering 'Who is Rob?' with authentic systems architecture authority
+          ==================================================================== */}
+      <section id="operator-brief" className={s.briefSection}>
+        <div className={s.briefInner}>
+          <div className={s.briefHead}>
+            <p className={s.eyebrow}>04 / Identity &amp; Authority</p>
+            <h2>The Operator Behind the Notebook<span>.</span></h2>
+            <p className={s.briefDek}>
+              Nobody knows me; everybody knows Chamath. That is the point. Macro thinkers invest in market waves; operators make them survive when they hit the physical shop floor.
+            </p>
+          </div>
+
+          <div className={s.briefGrid}>
+            <div className={s.briefCard}>
+              <div className={s.cardHeader}>
+                <span className={s.cardNum}>01 / PROOF IN THE ARENA</span>
+                <h3>20+ Years in Enterprise Systems</h3>
+              </div>
+              <p>
+                50 enterprise implementations, 15 at massive scale, from warehouse docks to executive boardrooms. Nobody understands enterprise systems at the customer level better. 15+ cutovers without a single rollback, recovering an at-risk $8M program to save $2M, and consolidating 200 software silos down to 25 core operating platforms.
+              </p>
+              <div className={s.cardFootnote}>
+                <span>Track Record</span>
+                <strong>15+ Cutovers · $2M Saved</strong>
+              </div>
+            </div>
+
+            <div className={s.briefCard}>
+              <div className={s.cardHeader}>
+                <span className={s.cardNum}>02 / RUNTIME DEPTH</span>
+                <h3>A Proven Agentic Contraption</h3>
+              </div>
+              <p>
+                While the market talks about AI agents in slide decks, I built a real, working agentic runtime right here: <strong>The Rig</strong>. It is a no-fooling something on the same frontier trajectory as 8090, Factory.ai, and Gas City—operating with deterministic caller gates, verifiable audit trails, and an intimate daily relationship with production code.
+              </p>
+              <div className={s.cardFootnote}>
+                <span>Agentic Engine</span>
+                <strong>13 Cells · Production Governed</strong>
+              </div>
+            </div>
+
+            <div className={s.briefCard}>
+              <div className={s.cardHeader}>
+                <span className={s.cardNum}>03 / OPERATING TRUTH</span>
+                <h3>Mary's Sheet &amp; Polanyi's Paradox</h3>
+              </div>
+              <p>
+                <em>&ldquo;We know more than we can tell.&rdquo;</em> Slabs of enterprise software get bought, but the factory runs on Mary's 15-year-old desktop spreadsheet. Frontier AI code factories generate software fast, but only an operator who knows the dock can translate that tacit reality into working code.
+              </p>
+              <div className={s.cardFootnote}>
+                <span>Domain Reality</span>
+                <strong>Tacit Knowledge Discovery</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ====================================================================
+          THE WORKING POSITION & INQUIRIES
+          Foundational principles: Company Knowledge, Human Authority, Useful Work
           ==================================================================== */}
       <section id="the-position" className={s.positionSection}>
         <div className={s.positionInner}>
           <div className={s.positionHead}>
-            <p className={s.eyebrow}>04 / The Working Position</p>
+            <p className={s.eyebrow}>Operating Principles</p>
             <h2>Company Knowledge. Human Authority. <em>Useful Work.</em></h2>
             <p className={s.positionDek}>
               Why durable applied agentics begins with maintained enterprise records, explicit human authority, and verifiable results that the business can run.
@@ -877,16 +961,19 @@ export default function AgenticPositionView() {
                       General thoughts on agentic workflows
                     </option>
                     <option value="Mary's Sheet and tacit domain reality">
-                      Dispatch 01: Mary's Sheet &amp; Polanyi's Paradox
+                      Essay 01: Mary's Sheet &amp; Polanyi's Paradox
                     </option>
                     <option value="The Beehive multi-agent runtime in production">
-                      Dispatch 02: Chamath's beehiiv vs. The Beehive
+                      Essay 02: Chamath's beehiiv vs. The Beehive
                     </option>
                     <option value="The 80/90 collaborative delivery seam">
-                      Dispatch 03: The 80/90 Collaborative Delivery Seam
+                      Essay 03: The Two Software Factories (8090 vs. Factory.ai)
                     </option>
                     <option value="The B.O.S.S. protocol and stated vs actual reality">
-                      Dispatch 04: The B.O.S.S. Protocol
+                      Field Note 01: The B.O.S.S. Protocol
+                    </option>
+                    <option value="The 20 people fallacy and the true operational seam">
+                      Field Note 02: The '20 People' Fallacy
                     </option>
                     <option value="What the experienced person knows">
                       Inquiry 01: What the experienced person knows
