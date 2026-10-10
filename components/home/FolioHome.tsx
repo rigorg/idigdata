@@ -60,7 +60,7 @@ export default function FolioHome() {
               <p className="home-card-cat">Business Systems &amp; Integration</p>
               <h3>Enterprise applications that work together.</h3>
               <p className="p-prose mt-3">
-                Connect core ERP, supply chain, and shop-floor applications around actual physical workflows with zero operational rollback.
+                Connect core ERP, supply chain, and shop-floor applications around actual physical workflows ensuring uninterrupted plant operations.
               </p>
             </article>
 
@@ -84,7 +84,7 @@ export default function FolioHome() {
               <p className="home-card-cat">Financial Systems</p>
               <h3>Financial integrity through change.</h3>
               <p className="p-prose mt-3">
-                Unified financial governance and controls that roll disparate plant and business systems into single-source reporting—enabling the CFO to close true, report with confidence, and see unit performance across complex operations.
+                Unified financial governance and controls that roll disparate plant and business systems into single-source reporting—enabling the CFO to close true, report with clarity, and see unit performance across complex operations.
               </p>
             </article>
 
