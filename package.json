@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "catalog:import": "tsx scripts/import-outcome-catalog.ts",
+    "catalog:import-factory": "tsx scripts/import-factory-outcome-catalog.ts",
     "dev": "next dev -p 3100",
     "build": "next build",
     "start": "next start",

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { PUBLIC_CATALOG_ITEMS } from "./catalog";
+import { PUBLIC_CATALOG_ITEMS, RETIRED_OUTCOME_IDS } from "./catalog";
 import { ContactSchema } from "./contact/schema";
 import { resolveOutcomeId } from "./outcome-links";
 
@@ -17,6 +17,7 @@ export type EngagementDraft = {
   id: string;
   stage: "editing" | "handoff";
   outcomeIds: string[];
+  retiredOutcomeIds?: string[];
   notes: string;
   contactMessage: string;
 };
@@ -33,16 +34,25 @@ export function newEngagementDraft(): EngagementDraft {
   return { version: 2, id: crypto.randomUUID(), stage: "editing", outcomeIds: [], notes: "", contactMessage: "" };
 }
 
-export function parseEngagementDraft(raw: string): EngagementDraft | null {
+export function parseEngagementDraft(raw: string, retiredIds: readonly string[] = RETIRED_OUTCOME_IDS): EngagementDraft | null {
   try {
     const value: unknown = JSON.parse(raw);
     if (!record(value) || value.version !== 2 || !text(value.id) || !value.id ||
       (value.stage !== "editing" && value.stage !== "handoff") ||
       !strings(value.outcomeIds) || !text(value.notes) || !text(value.contactMessage)) return null;
-    const resolved = value.outcomeIds.map(id => resolveOutcomeId(id));
-    if (resolved.some(id => id === null)) return null;
+    if (value.retiredOutcomeIds !== undefined && !strings(value.retiredOutcomeIds)) return null;
+    const retired = new Set(retiredIds);
+    const oldIds = value.outcomeIds;
+    const resolved = oldIds.map(id => resolveOutcomeId(id));
+    if (resolved.some((id, index) => id === null && !retired.has(oldIds[index]))) return null;
+    const retiredOutcomeIds = [...new Set([
+      ...value.outcomeIds.filter((id, index) => resolved[index] === null && retired.has(id)),
+      ...((value.retiredOutcomeIds as string[] | undefined) ?? []),
+    ])];
+    if (retiredOutcomeIds.some(id => !retired.has(id))) return null;
     return { version: 2, id: value.id, stage: value.stage,
-      outcomeIds: [...new Set(resolved as string[])], notes: value.notes, contactMessage: value.contactMessage };
+      outcomeIds: [...new Set(resolved.filter((id): id is string => id !== null))],
+      ...(retiredOutcomeIds.length ? { retiredOutcomeIds } : {}), notes: value.notes, contactMessage: value.contactMessage };
   } catch { return null; }
 }
 
@@ -83,9 +93,15 @@ export function selectedOutcomeNames(draft: EngagementDraft): string[] {
   });
 }
 
+export function retiredOutcomeLabel(id: string): string {
+  if (id === "wa_procure_to_pay") return "Procure-to-Pay";
+  return id.replace(/^[a-z]{2}_/, "").split("_").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
+}
+
 export function engagementSummary(draft: EngagementDraft): string {
-  if (!draft.outcomeIds.length && !draft.notes.trim()) return "";
+  if (!draft.outcomeIds.length && !draft.retiredOutcomeIds?.length && !draft.notes.trim()) return "";
   const lines = ["Selected priorities", ...selectedOutcomeNames(draft).map((name) => `- ${name}`)];
+  if (draft.retiredOutcomeIds?.length) lines.push("Earlier selections requiring scope review (not substituted):", ...draft.retiredOutcomeIds.map(id => `${retiredOutcomeLabel(id)} (${id})`));
   if (draft.notes.trim()) lines.push("Situation and notes:", draft.notes);
   lines.push("Delivery timing: To agree");
   return lines.join("\n");

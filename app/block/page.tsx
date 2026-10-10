@@ -9,7 +9,7 @@ import {
   CatalogItem,
 } from "@/lib/catalog";
 import {
-  useEngagementDraft,
+  useEngagementDraft, retiredOutcomeLabel,
 } from "@/lib/engagement-draft";
 import { useTheme } from "@/lib/theme";
 import { TheBlockLogo } from "@/components/TheBlockLogo";
@@ -512,6 +512,7 @@ function TheBlockConfiguratorPage() {
         ? `Configured Outcomes (${selectedCount} selected across ${aggregatedByDomain.length} disciplines):\n${outcomesList}`
         : `No outcomes pre-selected from catalog (direct inquiry).`,
       contactNote.trim() ? `Client Note / Situation:\n${contactNote.trim()}` : "",
+      draft?.retiredOutcomeIds?.length ? `Earlier selections requiring scope review (not substituted):\n${draft.retiredOutcomeIds.join("\n")}` : "",
       (draft?.contactMessage || "").trim() ? `Additional Context:\n${(draft?.contactMessage || "").trim()}` : "",
     ]
       .filter(Boolean)
@@ -701,6 +702,7 @@ function TheBlockConfiguratorPage() {
             What do you want your business to be able to do?
           </h1>
           {unknownOutcome && <p role="status" className="mt-4 rounded-lg border border-amber-500 p-3 text-sm">That outcome is unavailable. Browse the six categories below; your saved selections are unchanged.</p>}
+          {!!draft?.retiredOutcomeIds?.length && <p role="status" className="mt-4 rounded-lg border border-amber-500 p-3 text-sm">An earlier selection has changed scope and needs review: {draft.retiredOutcomeIds.map(retiredOutcomeLabel).join(", ")}. We kept it with your request without selecting a replacement.</p>}
           <p
             className={`text-sm sm:text-base mt-3 max-w-2xl mx-auto leading-relaxed ${
               isLight ? "text-slate-700" : "text-slate-300"
@@ -1103,9 +1105,9 @@ function TheBlockConfiguratorPage() {
                                   >
                                     <div>
                                       <strong className="font-mono text-[10px] uppercase tracking-wider text-slate-500 block mb-0.5">
-                                        Operating Situation:
+                                        Delivery scope:
                                       </strong>
-                                      <p className="leading-relaxed">{item.situation}</p>
+                                      <p className="leading-relaxed whitespace-pre-line">{item.situation}</p>
                                     </div>
 
                                     {item.deliverables && item.deliverables.length > 0 && (

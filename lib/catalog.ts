@@ -576,3 +576,5 @@ export const LEGACY_OUTCOME_ALIASES: Record<string, string> = {
 };
 
 export const PUBLIC_CATALOG_REVISION = {"version":"outcome-catalog-2026-10-09","public_hash":"1d813b300cda3467b4203e0c9159f91b10fc01c98fd998f033c67258084f887a","count":60};
+
+export const RETIRED_OUTCOME_IDS: string[] = [];
