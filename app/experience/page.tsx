@@ -170,36 +170,45 @@ export default function ExperiencePage() {
         </div>
       </header>
 
-      {/* PROVEN EXECUTIVE ENGAGEMENTS */}
-      <section className="p-section" id="proven-engagements" aria-labelledby="proven-engagements-title">
+      {/* FOUR PILLARS OF ENTERPRISE LEADERSHIP */}
+      <section className="p-section" id="executive-pillars" aria-labelledby="executive-pillars-title">
         <div className="page-well">
-          <h2 className="p-h2" id="proven-engagements-title">Transformation in practice</h2>
+          <p className="p-kicker">Core Career Arc</p>
+          <h2 className="p-h2" id="executive-pillars-title">Four pillars of enterprise leadership.</h2>
           <p className="p-prose mt-4">
-            Executive accountability for business change and the systems that make it work. These engagements bring together boardroom leadership, software architecture, and hands-on delivery.
+            Executive accountability for business change and the systems that make it run. These four pillars combine boardroom governance, founder grit, deep enterprise application architecture, and hands-on agentic software development.
           </p>
           <div className="home-story mt-8">
             <article>
-              <h3>Built the business. Built its operating software.</h3>
+              <p className="font-mono text-xs font-bold uppercase tracking-wider text-amber-700">01 // Scale &amp; Transformation</p>
+              <h3 className="mt-2">Executive Transformation Leadership</h3>
+              <p className="font-medium text-sm text-[#142840]/75 mt-1">Sierra Nevada Brewing Co. · Interim CIO</p>
               <p className="p-prose mt-4">
-                As founder, CEO, and CTO, grew an architectural openings business from $250K in first-year revenue to $130M by year ten. Led 100+ employees and engineered proprietary software connecting estimating, project delivery, purchasing, inventory, and finance.
+                Led 26 months of architecture and implementation for an approximately $420M multi-site brewer. Rebuilt IS/IT and led 150 project participants across 25 task forces, consolidating 200+ fragmented systems into 25 connected platforms around a company-owned data core while plant and commercial operations continued without interruption.
               </p>
             </article>
             <article>
-              <h3>Led enterprise change while the business kept running.</h3>
+              <p className="font-mono text-xs font-bold uppercase tracking-wider text-amber-700">02 // Founder &amp; Builder</p>
+              <h3 className="mt-2">Business Ownership &amp; Operating Software</h3>
+              <p className="font-medium text-sm text-[#142840]/75 mt-1">Timberline Architectural Openings · Founder, CEO &amp; CTO</p>
               <p className="p-prose mt-4">
-                As CIO of a multi-site brewer, led 26 months of architecture and implementation across business and plant systems. Rebuilt IS/IT and led 150 project participants across 25 task forces, with responsibility for vendors, budgets, decisions, and adoption.
+                Founded and scaled an enterprise from $250K in first-year revenue to $130M by year ten, with full P&amp;L responsibility and 100+ employees. Personally engineered the proprietary enterprise software that powered estimating, engineering sales, purchasing, production, inventory, distribution, and finance.
               </p>
             </article>
             <article>
-              <h3>Recovered an at-risk $8M ERP program.</h3>
+              <p className="font-mono text-xs font-bold uppercase tracking-wider text-amber-700">03 // The 20% Seam</p>
+              <h3 className="mt-2">Core Systems Architecture &amp; Delivery</h3>
+              <p className="font-medium text-sm text-[#142840]/75 mt-1">Data Integration Group · Principal &amp; Solution Architect</p>
               <p className="p-prose mt-4">
-                Led an executive mandate to turn around an at-risk $8M enterprise ERP program. Reset partner governance, restored delivery accountability, and brought business leadership and implementation partners back around clear ownership—recovering the program and saving $2M.
+                Across 50+ implementations and 15 scale transformations, bridging the critical operational seam where software meets physical work. Proven cutover leadership across Microsoft Dynamics 365, SAP S/4HANA, NetSuite, and OneStream—compressing post-acquisition close from 18 days to four and turning around troubled multi-million-dollar programs.
               </p>
             </article>
             <article>
-              <h3>Put enterprise agentics into production.</h3>
+              <p className="font-mono text-xs font-bold uppercase tracking-wider text-amber-700">04 // Frontier Runtime</p>
+              <h3 className="mt-2">Applied Enterprise Agentics &amp; Software Factories</h3>
+              <p className="font-medium text-sm text-[#142840]/75 mt-1">The Rig &amp; FlowCraft · Autonomous Systems Architecture</p>
               <p className="p-prose mt-4">
-                Engineered and deployed production agentic workflows that audited thousands of freight invoices. Enforced deterministic caller gates, verifiable audit trails, and human authorization—proving how autonomous workflows operate safely inside regulated enterprise environments.
+                Architecting, building, and operating production multi-agent runtimes with AST validation gates, deterministic caller contracts, and human authorization. Grounding autonomous workflows in company-owned data to turn tacit operational knowledge into executable, verifiable enterprise capacity.
               </p>
             </article>
           </div>

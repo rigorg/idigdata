@@ -19,7 +19,7 @@ export default function FolioHome() {
                 Your business runs on more than its systems. It runs on what your people know, the decisions they make, and how work actually gets done.
               </p>
               <p className="p-prose mt-3">
-                I bring that understanding together with hands-on agentic engineering—and lead the work from intent to outcome.
+                I connect business leadership, operating knowledge, and hands-on software building to turn enterprise change into working results—from the boardroom decision through implementation and floor adoption.
               </p>
               <p className="executive-proof">
                 20+ years in enterprise systems &middot; 50+ implementations &middot; 15 enterprise transformations at scale
