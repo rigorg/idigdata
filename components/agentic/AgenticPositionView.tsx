@@ -88,7 +88,7 @@ function PolanyiSheetSpot() {
 }
 
 // ============================================================================
-// THE THREE ETHOS PILLARS (THE ENTERPRISE · THE WORKFLOW · THE FACTORY)
+// THE THREE FLAVORS OF THE COLLECTIVE (THE ENTERPRISE · THE WORKFLOW · THE FACTORY)
 // ============================================================================
 
 interface EthosPillar {
@@ -121,7 +121,7 @@ const PILLARS: EthosPillar[] = [
     ],
     fieldNoteHref: "/agentic-ai/marys-sheet/",
     fieldNoteLabel: "Read Field Note: Mary's Sheet & Polanyi",
-    topicKey: "The Enterprise: Domain Truth & Mary's Sheet",
+    topicKey: "01 / The Enterprise & B.O.S.S. (Domain Truth & Schemas)",
   },
   {
     num: "02",
@@ -138,7 +138,7 @@ const PILLARS: EthosPillar[] = [
     ],
     fieldNoteHref: "/agentic-ai/the-application-layer/",
     fieldNoteLabel: "Read Field Note: The Application Layer & ERP",
-    topicKey: "The Workflow: SaaS vs Agentics & Human Synthesis",
+    topicKey: "02 / The Workflow & FlowCraft (Human-Agent Runtime & MDM)",
   },
   {
     num: "03",
@@ -155,7 +155,7 @@ const PILLARS: EthosPillar[] = [
     ],
     fieldNoteHref: "/agentic-ai/the-delivery-seam/",
     fieldNoteLabel: "Read Field Note: The Delivery Seam & Factories",
-    topicKey: "The Factory: Software That Builds Software & Rig-in-a-Box",
+    topicKey: "03 / The Factory & The Rig (Software Factory & Rig-in-a-Box)",
   },
 ];
 
@@ -175,7 +175,7 @@ type FormErrors = {
 export default function AgenticPositionView() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [topic, setTopic] = useState("The Enterprise: Domain Truth & Mary's Sheet");
+  const [topic, setTopic] = useState("01 / The Enterprise & B.O.S.S. (Domain Truth & Schemas)");
   const [message, setMessage] = useState("");
   const [hp, setHp] = useState("");
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "recorded" | "error">("idle");
@@ -263,7 +263,7 @@ export default function AgenticPositionView() {
               Where a 20-year enterprise systems arc meets two years inside the agentic runtime.
             </p>
             <p className={s.heroLead}>
-              Macro venture capital views enterprise transformation from financial altitude; the physical floor runs on unwritten reality. Between executive slide decks and automated software factories, every enterprise deployment succeeds or fails in the operational seam between code and the physical dock. This is where I build, question, and learn through the work.
+              Macro venture capital views enterprise transformation from financial altitude; the physical floor runs on unwritten reality. Between executive slide decks and automated software factories, every enterprise deployment succeeds or fails in the operational seam between software and the physical dock. This is where I build, question, and learn through the work.
             </p>
             <div className={s.byline}>
               <span className={s.square} />
@@ -280,22 +280,22 @@ export default function AgenticPositionView() {
               <div className={s.plateCornerBL} />
               <div className={s.plateCornerBR} />
               <div className={s.plateInner}>
-                <span className={s.plateTag}>RUNTIME SPECIFICATION · ARCHITECTURAL SET</span>
+                <span className={s.plateTag}>OPEN ARCHITECTURAL COLLECTIVE · THREE OPEN SYSTEMS</span>
                 <BeehiveSpot />
                 <div className={s.plateMetrics}>
                   <div>
-                    <strong>20+ YRS</strong>
-                    <span>Systems Arc</span>
+                    <strong>B.O.S.S.</strong>
+                    <span>Open Specification</span>
                   </div>
                   <div className={s.metricDivider} />
                   <div>
-                    <strong>13 CELLS</strong>
-                    <span>The Beehive OS</span>
+                    <strong>FLOWCRAFT</strong>
+                    <span>Operating Runtime</span>
                   </div>
                   <div className={s.metricDivider} />
                   <div>
-                    <strong>20% SEAM</strong>
-                    <span>Delivery Seam</span>
+                    <strong>THE RIG</strong>
+                    <span>Software Factory</span>
                   </div>
                 </div>
               </div>
@@ -306,27 +306,27 @@ export default function AgenticPositionView() {
         {/* Section Navigation */}
         <nav aria-label="Dispatch navigation" className={s.chapterNav}>
           <a href="#systems-arc">01 / The Systems Arc</a>
-          <a href="#three-pillars">02 / The Three Pillars</a>
-          <a href="#the-block">03 / The Block Connection</a>
+          <a href="#the-collective">02 / The Collective</a>
+          <a href="#open-systems">03 / Shared Architecture</a>
           <a href="#conversation">04 / Direct Correspondence</a>
         </nav>
       </header>
 
       {/* ====================================================================
           SECTION 01: THE SYSTEMS ARC (THE FOUR WAVES)
-          Pride of place directly under hero
+          Pride of place, compact and sleek
           ==================================================================== */}
-      <section id="systems-arc" className={s.fourWavesSection}>
-        <div className={s.fourWavesInner}>
-          <div className={s.fourWavesHead}>
+      <section id="systems-arc" className={s.fourWavesCompactSection}>
+        <div className={s.fourWavesCompactInner}>
+          <div className={s.fourWavesCompactHead}>
             <p className={s.eyebrow}>01 / Historical Foundation</p>
             <h2>The Four Waves of Enterprise Technology<span>.</span></h2>
-            <p className={s.fourWavesDek}>
+            <p className={s.fourWavesCompactDek}>
               I have lived through every one of these waves across 50 enterprise implementations. Agentics is not an overnight replacement for company memory—it is the fourth wave operating directly across the foundation of the first three.
             </p>
           </div>
 
-          <div className={s.fourWavesBay}>
+          <div className={s.fourWavesCompactBay}>
             <div className={s.figureBar}>
               <span>THE FOUR WAVES OF ENTERPRISE TECHNOLOGY</span>
               <span className={s.here}><i /> WE ARE HERE</span>
@@ -340,10 +340,10 @@ export default function AgenticPositionView() {
               <Image
                 src="/diagrams/four-waves.svg"
                 alt="Four waves of enterprise technology, showing applied agentics operating across existing enterprise assets."
-                width={1200}
-                height={520}
+                width={980}
+                height={420}
                 unoptimized
-                className={s.diagram}
+                className={s.diagramCompact}
               />
             </a>
             <p className={s.figureCaption}>
@@ -354,16 +354,16 @@ export default function AgenticPositionView() {
       </section>
 
       {/* ====================================================================
-          SECTION 02: THE THREE PILLARS (1 · 2 · 3 ACROSS THE SCREEN)
+          SECTION 02: THE COLLECTIVE (THREE FLAVORS: LEARN AND BUILD)
           The Enterprise · The Workflow · The Factory
           ==================================================================== */}
-      <section id="three-pillars" className={s.triadSection}>
+      <section id="the-collective" className={s.triadSection}>
         <div className={s.triadInner}>
           <div className={s.triadHead}>
-            <p className={s.eyebrow}>02 / Ethos &amp; Practice</p>
+            <p className={s.eyebrow}>02 / Learn and Build</p>
             <h2>The Enterprise. The Workflow. The Factory<span>.</span></h2>
             <p className={s.triadDek}>
-              Three interdependent layers where enterprise technology actually succeeds or fails. Not software being sold—an authentic expression of domain experience, lived inquiries from the floor, and working runtimes.
+              A collective communication and knowledge portal in three flavors. Built for builders, peers, and curious practitioners who want to explore beyond toy demonstrations into live enterprise reality.
             </p>
           </div>
 
@@ -421,47 +421,100 @@ export default function AgenticPositionView() {
       </section>
 
       {/* ====================================================================
-          SECTION 03: THE BLOCK CONNECTION
-          Direct sovereign bridge to the 60 catalog outcomes
+          SECTION 03: OPEN SYSTEMS & SHARED ARCHITECTURE (LIMELIGHT)
+          B.O.S.S. · FlowCraft · The Rig in the Limelight
           ==================================================================== */}
-      <section id="the-block" className={s.seamSection}>
-        <div className={s.seamInner}>
-          <div className={s.blockConnectionCard}>
-            <div className={s.blockConnectionBody}>
-              <p className={s.eyebrow} style={{ margin: 0 }}>FLOWCRAFT &amp; DIGOPS · SOVEREIGN ASSETS</p>
-              <h3>The Block: 60 Proven Leadership &amp; Enterprise Outcomes</h3>
+      <section id="open-systems" className={s.limelightSection}>
+        <div className={s.limelightInner}>
+          <div className={s.limelightHead}>
+            <p className={s.eyebrow}>03 / Shared Architecture</p>
+            <h2>Three Open Systems. Built to Collaborate<span>.</span></h2>
+            <p className={s.limelightDek}>
+              From the genesis of The Rig, B.O.S.S., and FlowCraft, the goal was never to hoard a proprietary silo. It was to build a complete, verifiable operating contraption—and open it up for peers, builders, and curious people who want to build something incredible together.
+            </p>
+          </div>
+
+          <div className={s.limelightGrid}>
+            <div className={s.limelightCard}>
+              <div>
+                <span className={s.limelightBadge}>OPEN SPECIFICATION · DOMAIN TRUTH</span>
+                <h3 className={s.limelightCardTitle}>B.O.S.S.</h3>
+                <div className={s.limelightCardSubtitle}>Business Operating System Specification</div>
+                <p className={s.limelightCardBody}>
+                  Slabs of enterprise software get bought at the executive level, but the company runs on Mary's unwritten desktop spreadsheet. B.O.S.S. models the delta between stated executive happy paths and actual physical dock reality so agents execute on truth, not fiction.
+                </p>
+              </div>
+              <div className={s.limelightCollaborationBox}>
+                <span className={s.limelightCollabLabel}>OPEN TO BUILD TOGETHER</span>
+                <p className={s.limelightCollabText}>
+                  Standardized operational schemas, exception audit harnesses, and tacit knowledge discovery templates.
+                </p>
+              </div>
+            </div>
+
+            <div className={s.limelightCard}>
+              <div>
+                <span className={s.limelightBadge}>OPERATIONAL RUNTIME · HUMAN + AGENT</span>
+                <h3 className={s.limelightCardTitle}>FlowCraft</h3>
+                <div className={s.limelightCardSubtitle}>Instance-Level Operating System</div>
+                <p className={s.limelightCardBody}>
+                  Bridging the divide between static SaaS tools and living agentic operations. FlowCraft provides the instance-level operating runtime where humans and autonomous agents execute tasks together with shared Master Data (MDM), boundary governance, and live permissions.
+                </p>
+              </div>
+              <div className={s.limelightCollaborationBox}>
+                <span className={s.limelightCollabLabel}>OPEN TO BUILD TOGETHER</span>
+                <p className={s.limelightCollabText}>
+                  Workflow connectors, permission policies, and Master Data state machine runtimes.
+                </p>
+              </div>
+            </div>
+
+            <div className={s.limelightCard}>
+              <div>
+                <span className={s.limelightBadge}>SOFTWARE FACTORY · RIG-IN-A-BOX</span>
+                <h3 className={s.limelightCardTitle}>The Rig</h3>
+                <div className={s.limelightCardSubtitle}>Autonomous Software Factory</div>
+                <p className={s.limelightCardBody}>
+                  Moving beyond chat prompts and fragile sandboxes. The Rig puts the power of a 13-cell autonomous build pipeline directly on the operator's PC—running deterministic test harnesses, caller gates, and verified telemetry that feeds into a collective.
+                </p>
+              </div>
+              <div className={s.limelightCollaborationBox}>
+                <span className={s.limelightCollabLabel}>OPEN TO BUILD TOGETHER</span>
+                <p className={s.limelightCollabText}>
+                  Local developer harnesses, multi-agent skills, and sovereign pipeline toolchains.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className={s.limelightBanner}>
+            <div className={s.limelightBannerContent}>
+              <p className={s.eyebrow} style={{ margin: 0 }}>THE COLLECTIVE CALL</p>
+              <h3>I've got a whole system here that I'm willing to share.</h3>
               <p>
-                Every architectural principle in this publication is backed by operational catalog outcomes—from custom enterprise agentic software (Category 07) to digital transformation cutovers. Explore the live, read-only catalog projected directly from Operations (:3300).
+                Open source. Open architecture. Open to collaborate. If you're a builder, a technical peer, or an operator curious about what happens when agentics hits physical reality—let's build together.
               </p>
             </div>
-            <div className={s.blockConnectionActions}>
-              <Link href="/block/" className={s.blockCtaPrimary}>
-                <span>Explore The Block (60 Outcomes)</span>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                  <path d="M3 7H11M11 7L7.5 3.5M11 7L7.5 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </Link>
-              <Link href="/block/custom/" className={s.blockCtaSecondary}>
-                <span>Custom Agentic Software (Category 07) &rarr;</span>
-              </Link>
-            </div>
+            <a href="#conversation" className={s.limelightBannerCta}>
+              <span>Join the Collective &rarr;</span>
+            </a>
           </div>
         </div>
       </section>
 
       {/* ====================================================================
           SECTION 04: DIRECT CORRESPONDENCE
-          Private reader exchange straight to Rob's desk
+          Private reader & builder exchange straight to Rob's desk
           ==================================================================== */}
       <section id="conversation" className={s.conversationSection}>
         <div className={s.conversationInner}>
           <div className={s.conversationHead}>
             <p className={s.eyebrow}>04 / Direct Correspondence</p>
-            <h2>Continue the conversation<span>.</span></h2>
+            <h2>Join the conversation<span>.</span></h2>
             <p className={s.conversationDek}>
-              Have a thought, an operational challenge from your own floor, or a perspective on The Enterprise, The Workflow, or The Factory? Send me a note. It comes directly to my desk, and I will reply personally.
+              For builders, peers, and curious people. Have a thought, an operational challenge from your own floor, or an idea to build together? Send me a note. It comes directly to my desk, and I will reply personally.
             </p>
-            <span className={s.privacyBadge}>Private reader correspondence · No public comments · Straight to Rob</span>
+            <span className={s.privacyBadge}>Private builder &amp; peer correspondence · No public comments · Straight to Rob</span>
           </div>
 
           <div className={s.formCard}>
@@ -472,7 +525,7 @@ export default function AgenticPositionView() {
                 </h3>
                 <p className={s.successText}>
                   {status === "success"
-                    ? "Your message has been sent directly to Rob. He reads every reader note personally and will reply to your email."
+                    ? "Your message has been sent directly to Rob. He reads every peer and builder note personally and will reply to your email."
                     : "Your note was safely recorded. Direct email notification is unconfirmed on this environment — write robert@idigdata.com directly if you need a same-day response."}
                 </p>
                 <button
@@ -559,7 +612,7 @@ export default function AgenticPositionView() {
 
                 <div className={s.formGroup}>
                   <label htmlFor="reader-topic" className={s.label}>
-                    Focal Domain / Topic
+                    Focal Domain / Area of Collaboration
                   </label>
                   <select
                     id="reader-topic"
@@ -568,17 +621,20 @@ export default function AgenticPositionView() {
                     className={s.select}
                     disabled={status === "submitting"}
                   >
-                    <option value="The Enterprise: Domain Truth & Mary's Sheet">
-                      01 / The Enterprise: Domain Truth &amp; Mary's Sheet
+                    <option value="01 / The Enterprise & B.O.S.S. (Domain Truth & Schemas)">
+                      01 / The Enterprise &amp; B.O.S.S. (Domain Truth &amp; Schemas)
                     </option>
-                    <option value="The Workflow: SaaS vs Agentics & Human Synthesis">
-                      02 / The Workflow: SaaS vs Agentics &amp; Human Synthesis
+                    <option value="02 / The Workflow & FlowCraft (Human-Agent Runtime & MDM)">
+                      02 / The Workflow &amp; FlowCraft (Human-Agent Runtime &amp; MDM)
                     </option>
-                    <option value="The Factory: Software That Builds Software & Rig-in-a-Box">
-                      03 / The Factory: Software That Builds Software &amp; Rig-in-a-Box
+                    <option value="03 / The Factory & The Rig (Software Factory & Rig-in-a-Box)">
+                      03 / The Factory &amp; The Rig (Software Factory &amp; Rig-in-a-Box)
                     </option>
-                    <option value="General inquiry on applied agentics">
-                      General inquiry on applied agentics &amp; systems
+                    <option value="Open Source Collaboration & Code Sharing">
+                      Open Source Collaboration &amp; Shared Systems
+                    </option>
+                    <option value="General Builder / Peer Connection">
+                      General Builder / Peer Connection
                     </option>
                   </select>
                 </div>
@@ -591,7 +647,7 @@ export default function AgenticPositionView() {
                     id="reader-message"
                     required
                     rows={5}
-                    placeholder="Share what you are navigating in your enterprise, a question on where agentics breaks on the physical floor, or thoughts on The Enterprise, The Workflow, or The Factory..."
+                    placeholder="Share what you are navigating in your enterprise, a question on where agentics breaks on the physical floor, or an idea to build together..."
                     value={message}
                     onChange={(e) => {
                       setMessage(e.target.value);
@@ -614,7 +670,7 @@ export default function AgenticPositionView() {
                     {status === "submitting" ? "Sending note..." : "Send note to Rob"}
                   </button>
                   <span className={s.privacyFooter}>
-                    Direct correspondence · No public comments · Respects your privacy
+                    Direct correspondence · For builders, peers &amp; curious practitioners
                   </span>
                 </div>
               </form>
@@ -638,8 +694,8 @@ export default function AgenticPositionView() {
               That is why I keep coming back to <em>We Are Here.</em>
             </p>
             <div className={s.links}>
-              <Link href="/experience/">Explore the experience &rarr;</Link>
-              <Link href="/block/">Explore outcomes in The Block &rarr;</Link>
+              <Link href="/experience/">Explore the systems arc &rarr;</Link>
+              <a href="#open-systems">Explore the open systems &rarr;</a>
             </div>
           </div>
         </div>

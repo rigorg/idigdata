@@ -1717,3 +1717,217 @@
   background: #333842;
   border-color: #333842;
 }
+
+/* ==========================================================================
+   Compact Four Waves Hero Section
+   ========================================================================== */
+.fourWavesCompactSection {
+  padding: 48px 32px;
+  background-color: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.fourWavesCompactInner {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.fourWavesCompactHead {
+  max-width: 760px;
+  margin-bottom: 24px;
+}
+
+.fourWavesCompactHead h2 {
+  font-family: var(--next-font-display), Vollkorn, Lora, Georgia, serif;
+  font-size: clamp(24px, 3vw, 32px);
+  line-height: 1.2;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+
+.fourWavesCompactDek {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.fourWavesCompactBay {
+  border: 1px solid var(--line);
+  background: var(--parchment);
+  padding: 20px 24px;
+  border-radius: 4px;
+}
+
+.diagramCompact {
+  max-height: 340px;
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+  border: 1px solid var(--line);
+}
+
+/* ==========================================================================
+   Limelight Section (B.O.S.S. · FlowCraft · The Rig in the Limelight)
+   ========================================================================== */
+.limelightSection {
+  padding: 80px 32px;
+  background-color: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.limelightInner {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.limelightHead {
+  max-width: 860px;
+  margin-bottom: 48px;
+}
+
+.limelightHead h2 {
+  font-family: var(--next-font-display), Vollkorn, Lora, Georgia, serif;
+  font-size: clamp(30px, 3.8vw, 42px);
+  line-height: 1.15;
+  margin-bottom: 12px;
+  color: var(--ink);
+}
+
+.limelightDek {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.limelightGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 1024px) {
+  .limelightGrid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+.limelightCard {
+  background: var(--parchment);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--brass);
+  border-radius: 4px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.limelightBadge {
+  font-family: var(--next-font-mono), monospace;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--brass-dark);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.limelightCardTitle {
+  font-family: var(--next-font-display), Vollkorn, Lora, Georgia, serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 4px;
+}
+
+.limelightCardSubtitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.limelightCardBody {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+.limelightCollaborationBox {
+  background: var(--surface);
+  border: 1px solid var(--line-dark);
+  border-radius: 4px;
+  padding: 12px 14px;
+  margin-top: auto;
+}
+
+.limelightCollabLabel {
+  display: block;
+  font-family: var(--next-font-mono), monospace;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--brass-dark);
+  margin-bottom: 4px;
+}
+
+.limelightCollabText {
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--muted);
+  margin: 0;
+}
+
+.limelightBanner {
+  background: var(--panel-bg);
+  border: 1px solid var(--brass);
+  border-radius: 6px;
+  padding: 32px 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.limelightBannerContent {
+  max-width: 780px;
+}
+
+.limelightBannerContent h3 {
+  font-family: var(--next-font-display), Vollkorn, Lora, Georgia, serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 4px 0 8px;
+}
+
+.limelightBannerContent p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0;
+}
+
+.limelightBannerCta {
+  background: var(--ink);
+  color: #FAF6EE;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+
+.limelightBannerCta:hover {
+  background: #333842;
+}
