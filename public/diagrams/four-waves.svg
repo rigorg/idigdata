@@ -163,9 +163,9 @@
     <text x="190" y="382" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#142840">Monolithic Batch Processing</text>
     <g transform="translate(190, 466)" text-anchor="middle">
       <rect x="-65" y="0" width="130" height="26" rx="4" fill="#FFFDF8" stroke="#142840" stroke-width="1.2"/>
-      <text y="17.5" font-family="system-ui, sans-serif" font-size="12.5" font-weight="800" fill="#142840">1960s - 1970s</text>
-      <text y="42" font-family="Georgia, serif" font-size="12" font-style="italic" font-weight="600" fill="#475569">10-year platform cycle</text>
-      <text y="60" font-family="system-ui, sans-serif" font-size="11.5" font-weight="800" fill="#142840">Rip-and-replace barrier</text>
+      <text y="17.5" font-family="system-ui, sans-serif" font-size="13" font-weight="800" fill="#142840">1960s - 1970s</text>
+      <text y="43" font-family="Georgia, serif" font-size="12.5" font-style="italic" font-weight="600" fill="#334155">10-year platform cycle</text>
+      <text y="62" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#142840">Rip-and-replace barrier</text>
     </g>
   </g>
   <!-- ============================================================= -->
@@ -182,9 +182,9 @@
     <text x="430" y="307" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#142840">Relational DB &amp; Department Silos</text>
     <g transform="translate(430, 466)" text-anchor="middle">
       <rect x="-65" y="0" width="130" height="26" rx="4" fill="#FFFDF8" stroke="#142840" stroke-width="1.2"/>
-      <text y="17.5" font-family="system-ui, sans-serif" font-size="12.5" font-weight="800" fill="#142840">1980s - 1990s</text>
-      <text y="42" font-family="Georgia, serif" font-size="12" font-style="italic" font-weight="600" fill="#475569">10-year platform cycle</text>
-      <text y="60" font-family="system-ui, sans-serif" font-size="11.5" font-weight="800" fill="#142840">Multi-year rollout fatigue</text>
+      <text y="17.5" font-family="system-ui, sans-serif" font-size="13" font-weight="800" fill="#142840">1980s - 1990s</text>
+      <text y="43" font-family="Georgia, serif" font-size="12.5" font-style="italic" font-weight="600" fill="#334155">10-year platform cycle</text>
+      <text y="62" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#142840">Multi-year rollout fatigue</text>
     </g>
   </g>
   <!-- ============================================================= -->
@@ -201,9 +201,9 @@
     <text x="670" y="237" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#142840">Subscription Sprawl &amp; API Silos</text>
     <g transform="translate(670, 466)" text-anchor="middle">
       <rect x="-65" y="0" width="130" height="26" rx="4" fill="#FFFDF8" stroke="#142840" stroke-width="1.2"/>
-      <text y="17.5" font-family="system-ui, sans-serif" font-size="12.5" font-weight="800" fill="#142840">2000s - 2010s</text>
-      <text y="42" font-family="Georgia, serif" font-size="12" font-style="italic" font-weight="600" fill="#475569">10-year platform cycle</text>
-      <text y="60" font-family="system-ui, sans-serif" font-size="11.5" font-weight="800" fill="#142840">Vendor lock-in &amp; rented stack</text>
+      <text y="17.5" font-family="system-ui, sans-serif" font-size="13" font-weight="800" fill="#142840">2000s - 2010s</text>
+      <text y="43" font-family="Georgia, serif" font-size="12.5" font-style="italic" font-weight="600" fill="#334155">10-year platform cycle</text>
+      <text y="62" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#142840">Vendor lock-in &amp; rented stack</text>
     </g>
   </g>
   <!-- ============================================================= -->
@@ -258,19 +258,19 @@
     </g>
     <g transform="translate(970, 466)" text-anchor="middle">
       <rect x="-75" y="0" width="150" height="28" rx="4" fill="#FFFDF8" stroke="#CA8A04" stroke-width="1.5" filter="url(#soft-shadow)"/>
-      <text y="18.5" font-family="system-ui, sans-serif" font-size="13" font-weight="900" fill="#92400E">2020s+ // NOW</text>
+      <text y="18.5" font-family="system-ui, sans-serif" font-size="13.5" font-weight="900" fill="#92400E">2020s+ // NOW</text>
       <text y="43" font-family="Georgia, serif" font-size="12" font-style="italic" fill="#142840" font-weight="700">Zero-year wait · On your stack</text>
-      <text y="61" font-family="system-ui, sans-serif" font-size="11.5" font-weight="800" fill="#166534">Immediate operating leverage</text>
+      <text y="62" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#166534">Immediate operating leverage</text>
     </g>
   </g>
 
   <!-- ============================================================= -->
   <!-- FOOTER TECHNICAL DRAWING METADATA STRIP                      -->
   <!-- ============================================================= -->
-  <g transform="translate(0, 620)">
+  <g transform="translate(0, 614)">
     <line x1="30" y1="0" x2="1170" y2="0" stroke="#142840" stroke-width="0.8" stroke-opacity="0.25"/>
-    <text x="36" y="14" font-family="system-ui, sans-serif" font-size="8.5" font-weight="800" fill="#142840" letter-spacing="1">IDIGDATA ARCHITECTURAL ANALYSIS // SPEC W-04</text>
-    <text x="600" y="14" text-anchor="middle" font-family="Georgia, serif" font-size="10" font-style="italic" fill="#142840">“The first three waves replaced the foundation. The fourth wave activates what you already built.”</text>
-    <text x="1164" y="14" text-anchor="end" font-family="system-ui, sans-serif" font-size="8.5" font-weight="800" fill="#142840" letter-spacing="0.8">DECADE PARADIGM SHIFT // LEVEL-4 GOVERNANCE</text>
+    <text x="36" y="15" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#142840" letter-spacing="1">IDIGDATA ARCHITECTURAL ANALYSIS // SPEC W-04</text>
+    <text x="1164" y="15" text-anchor="end" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#142840" letter-spacing="0.8">DECADE PARADIGM SHIFT // LEVEL-4 GOVERNANCE</text>
+    <text x="600" y="32" text-anchor="middle" font-family="Georgia, serif" font-size="12" font-style="italic" fill="#142840">“The first three waves replaced the foundation. The fourth wave activates what you already built.”</text>
   </g>
 </svg>

@@ -438,7 +438,7 @@ export default function AgenticPositionView() {
 
           <div className={s.fourWavesCompactBay}>
             <div className={s.figureBar}>
-              <span>THE FOUR WAVES OF ENTERPRISE TECHNOLOGY</span>
+              <span className={s.figureSpecTag}>ARCHITECTURAL INFLECTION ANALYSIS // SPEC W-04</span>
               <span className={s.here}><i /> WE ARE HERE</span>
             </div>
             <a
@@ -446,19 +446,18 @@ export default function AgenticPositionView() {
               target="_blank"
               rel="noreferrer"
               aria-label="Open the four waves diagram at full size in a new tab"
+              className={s.diagramLink}
             >
               <Image
                 src="/diagrams/four-waves.svg"
                 alt="Four waves of enterprise technology, showing applied agentics operating across existing enterprise assets."
-                width={980}
-                height={420}
+                width={1200}
+                height={660}
                 unoptimized
+                priority
                 className={s.diagramCompact}
               />
             </a>
-            <p className={s.figureCaption}>
-              A 20-year arc: from mainframes and client-server, to relational ERPs, to SaaS silos, to sovereign applied agentics.
-            </p>
           </div>
         </div>
       </section>
