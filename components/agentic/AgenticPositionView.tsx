@@ -207,12 +207,14 @@ interface CollectivePillar {
   fieldNoteHref: string;
   fieldNoteLabel: string;
   topicKey: string;
+  actionLabel: string;
 }
 
 const COLLECTIVES: CollectivePillar[] = [
   {
     num: "01",
-    tag: "COLLECTIVE 01 / THE ENTERPRISE",
+    tag: "DOMAIN 01 / THE ENTERPRISE",
+    actionLabel: "Collaborate on B.O.S.S.",
     title: "The Enterprise",
     subtitle: "Domain Truth & Process Constellations",
     systemName: "B.O.S.S.",
@@ -231,7 +233,8 @@ const COLLECTIVES: CollectivePillar[] = [
   },
   {
     num: "02",
-    tag: "COLLECTIVE 02 / THE WORKFLOW",
+    tag: "DOMAIN 02 / THE WORKFLOW",
+    actionLabel: "Collaborate on FlowCraft",
     title: "The Workflow",
     subtitle: "Human-Agent Synthesis at the Instance Level",
     systemName: "FlowCraft",
@@ -250,7 +253,8 @@ const COLLECTIVES: CollectivePillar[] = [
   },
   {
     num: "03",
-    tag: "COLLECTIVE 03 / THE FACTORY",
+    tag: "DOMAIN 03 / THE FACTORY",
+    actionLabel: "Collaborate on The Rig",
     title: "The Factory",
     subtitle: "Software That Builds Software & Rig-in-a-Box",
     systemName: "The Rig",
@@ -285,7 +289,7 @@ type FormErrors = {
 export default function AgenticPositionView() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [topic, setTopic] = useState("01 / The Enterprise & B.O.S.S. (Domain Truth & Schemas)");
+  const [topic, setTopic] = useState("All Three Systems (Full Stack: B.O.S.S. + FlowCraft + The Rig)");
   const [message, setMessage] = useState("");
   const [hp, setHp] = useState("");
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "recorded" | "error">("idle");
@@ -390,7 +394,7 @@ export default function AgenticPositionView() {
               <div className={s.plateCornerBL} />
               <div className={s.plateCornerBR} />
               <div className={s.plateInner}>
-                <span className={s.plateTag}>THE THREE COLLECTIVES · OPEN ARCHITECTURAL SYSTEMS</span>
+                <span className={s.plateTag}>THE COLLECTIVE • THREE INTERLOCKING SYSTEMS</span>
                 <EnterpriseHiveSpot />
                 <div className={s.plateMetrics}>
                   <div>
@@ -416,7 +420,7 @@ export default function AgenticPositionView() {
         {/* Section Navigation */}
         <nav aria-label="Dispatch navigation" className={s.chapterNav}>
           <a href="#systems-arc">01 / The Systems Arc</a>
-          <a href="#the-collectives">02 / The Three Collectives</a>
+          <a href="#the-collectives">02 / The Collective</a>
           <a href="#open-systems">03 / Shared Architecture</a>
           <a href="#conversation">04 / Direct Correspondence</a>
         </nav>
@@ -470,9 +474,9 @@ export default function AgenticPositionView() {
         <div className={s.triadInner}>
           <div className={s.triadHead}>
             <p className={s.eyebrow}>02 / Learn and Build</p>
-            <h2>The Three Collectives<span>.</span></h2>
+            <h2>The Collective<span>.</span></h2>
             <p className={s.triadDek}>
-              A collective communication and knowledge portal in three flavors: The Enterprise, The Workflow, and The Factory. Built for builders, peers, and curious practitioners who want to explore beyond toy demonstrations into live enterprise reality.
+              One collective for builders, peers, and curious practitioners exploring live enterprise reality. Three interlocking systems—B.O.S.S., FlowCraft, and The Rig—operating as one happy family. Specialize in one system, or collaborate across all three.
             </p>
           </div>
 
@@ -517,7 +521,7 @@ export default function AgenticPositionView() {
                     onClick={() => handleSelectTopic(c.topicKey)}
                     className={s.triadDiscussBtn}
                   >
-                    <span>Join {c.title} Collective</span>
+                    <span>{c.actionLabel}</span>
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                       <path d="M3 7H11M11 7L7.5 3.5M11 7L7.5 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
@@ -598,10 +602,10 @@ export default function AgenticPositionView() {
 
           <div className={s.limelightBanner}>
             <div className={s.limelightBannerContent}>
-              <p className={s.eyebrow} style={{ margin: 0 }}>THE COLLECTIVE CALL</p>
-              <h3>I've got a whole system here that I'm willing to share.</h3>
+              <p className={s.eyebrow} style={{ margin: 0 }}>THE COLLECTIVE CALL // PEER COLLABORATION</p>
+              <h3>Twenty years on the enterprise floor. Two years inside the runtime. Built to share and build together.</h3>
               <p>
-                Open source. Open architecture. Open to collaborate. If you're a builder, a technical peer, or an operator curious about what happens when agentics hits physical reality—let's build together.
+                Not a proprietary silo, and not a sales pitch. B.O.S.S., FlowCraft, and The Rig exist because applied agentics requires real architecture, tested against live dock reality. Whether you want to specialize in one system or collaborate across the entire stack—the schemas, runtimes, and local developer harnesses are open to explore, test, and build together.
               </p>
             </div>
             <a href="#conversation" className={s.limelightBannerCta}>
@@ -730,6 +734,9 @@ export default function AgenticPositionView() {
                     className={s.select}
                     disabled={status === "submitting"}
                   >
+                    <option value="All Three Systems (Full Stack: B.O.S.S. + FlowCraft + The Rig)">
+                      All Three Systems (Full Stack: B.O.S.S. + FlowCraft + The Rig)
+                    </option>
                     <option value="01 / The Enterprise & B.O.S.S. (Domain Truth & Schemas)">
                       01 / The Enterprise &amp; B.O.S.S. (Domain Truth &amp; Schemas)
                     </option>
