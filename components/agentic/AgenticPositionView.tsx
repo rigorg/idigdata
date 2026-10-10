@@ -6,24 +6,173 @@ import { useState, type FormEvent } from "react";
 import s from "./AgenticPositionView.module.css";
 
 // ============================================================================
-// RIG ESTATE SPOT GRAPHICS (INLINE SVGs — BRASS / SLATE / PARCHMENT)
-// Clean, understated architectural glyphs modeled on construction trailer drafts
+// THE THREE GEOMETRIC SYMBOLS (ARCHITECTURAL DRAFTING SVGs)
+// B.O.S.S. (Constellation) · FlowCraft (Workflow Blocks) · The Rig (Gantry Harness)
 // ============================================================================
 
-function BeehiveSpot() {
+/**
+ * 01 / B.O.S.S. — The Process Constellation
+ * 6-radial process vectors (P2P, O2C, P2M, S2S, D2R, MDM) radiating from central core.
+ */
+function ProcessConstellationSpot() {
   return (
     <svg viewBox="0 0 120 120" className={s.spotSvg} aria-hidden="true">
       <defs>
-        <pattern id="dotGrid" width="12" height="12" patternUnits="userSpaceOnUse">
+        <pattern id="constellationDots" width="12" height="12" patternUnits="userSpaceOnUse">
+          <circle cx="6" cy="6" r="0.7" fill="#DDD7C8" />
+        </pattern>
+      </defs>
+      <rect width="120" height="120" fill="url(#constellationDots)" />
+      
+      {/* Outer concentric orbital rings */}
+      <circle cx="60" cy="60" r="46" fill="none" stroke="#DDD7C8" strokeWidth="0.8" strokeDasharray="2 3" />
+      <circle cx="60" cy="60" r="32" fill="none" stroke="#9E7D3B" strokeWidth="0.8" opacity="0.6" />
+      <circle cx="60" cy="60" r="16" fill="#FAF6EE" stroke="#9E7D3B" strokeWidth="1.2" />
+
+      {/* Six 60-degree radial vectors radiating from central data core */}
+      {/* 0 deg (12 o'clock: P2P) */}
+      <line x1="60" y1="60" x2="60" y2="16" stroke="#9E7D3B" strokeWidth="1.2" />
+      {/* 60 deg (2 o'clock: O2C) */}
+      <line x1="60" y1="60" x2="98" y2="38" stroke="#9E7D3B" strokeWidth="1.2" />
+      {/* 120 deg (4 o'clock: P2M) */}
+      <line x1="60" y1="60" x2="98" y2="82" stroke="#9E7D3B" strokeWidth="1.2" />
+      {/* 180 deg (6 o'clock: S2S) */}
+      <line x1="60" y1="60" x2="60" y2="104" stroke="#9E7D3B" strokeWidth="1.2" />
+      {/* 240 deg (8 o'clock: D2R) */}
+      <line x1="60" y1="60" x2="22" y2="82" stroke="#9E7D3B" strokeWidth="1.2" />
+      {/* 300 deg (10 o'clock: MDM) */}
+      <line x1="60" y1="60" x2="22" y2="38" stroke="#9E7D3B" strokeWidth="1.2" />
+
+      {/* Six Constellation Nodes */}
+      <circle cx="60" cy="16" r="3.5" fill="#FAF6EE" stroke="#1E2024" strokeWidth="1.5" />
+      <circle cx="98" cy="38" r="3.5" fill="#FAF6EE" stroke="#1E2024" strokeWidth="1.5" />
+      <circle cx="98" cy="82" r="3.5" fill="#FAF6EE" stroke="#1E2024" strokeWidth="1.5" />
+      <circle cx="60" cy="104" r="3.5" fill="#FAF6EE" stroke="#1E2024" strokeWidth="1.5" />
+      <circle cx="22" cy="82" r="3.5" fill="#FAF6EE" stroke="#1E2024" strokeWidth="1.5" />
+      <circle cx="22" cy="38" r="3.5" fill="#FAF6EE" stroke="#1E2024" strokeWidth="1.5" />
+
+      {/* Central Core (MDM / Company Truth) */}
+      <circle cx="60" cy="60" r="5" fill="#9E7D3B" />
+      <circle cx="60" cy="60" r="1.5" fill="#FAF6EE" />
+
+      {/* Dimension ticks */}
+      <line x1="10" y1="10" x2="16" y2="10" stroke="#9E7D3B" strokeWidth="0.8" />
+      <line x1="10" y1="10" x2="10" y2="16" stroke="#9E7D3B" strokeWidth="0.8" />
+      <line x1="110" y1="110" x2="104" y2="110" stroke="#9E7D3B" strokeWidth="0.8" />
+      <line x1="110" y1="110" x2="110" y2="104" stroke="#9E7D3B" strokeWidth="0.8" />
+    </svg>
+  );
+}
+
+/**
+ * 02 / FlowCraft — The Interlocking Workflow Blocks
+ * Modular, stepped instance blocks where the shop floor hits: human + agent synthesis.
+ */
+function WorkflowBlocksSpot() {
+  return (
+    <svg viewBox="0 0 120 120" className={s.spotSvg} aria-hidden="true">
+      <defs>
+        <pattern id="blockGrid" width="10" height="10" patternUnits="userSpaceOnUse">
+          <circle cx="5" cy="5" r="0.7" fill="#DDD7C8" />
+        </pattern>
+      </defs>
+      <rect width="120" height="120" fill="url(#blockGrid)" />
+
+      {/* Drafting frame */}
+      <rect x="12" y="12" width="96" height="96" fill="#FAF6EE" stroke="#DDD7C8" strokeWidth="0.8" />
+
+      {/* Instance Level Block 1: Human Operating Cell (Upper Left) */}
+      <rect x="20" y="22" width="38" height="32" fill="#F4EFE5" stroke="#1E2024" strokeWidth="1.4" />
+      <line x1="26" y1="32" x2="52" y2="32" stroke="#9E7D3B" strokeWidth="1" />
+      <line x1="26" y1="40" x2="46" y2="40" stroke="#DDD7C8" strokeWidth="1" />
+      <circle cx="28" cy="46" r="2" fill="#9E7D3B" />
+      <text x="39" y="29" fontSize="5.5" fill="#68645C" fontFamily="monospace" fontWeight="bold">HUMAN</text>
+
+      {/* Instance Level Block 2: Agent Runtime Cell (Lower Right) */}
+      <rect x="58" y="54" width="42" height="38" fill="#FFFFFF" stroke="#1E2024" strokeWidth="1.4" />
+      <line x1="64" y1="68" x2="94" y2="68" stroke="#9E7D3B" strokeWidth="1" />
+      <line x1="64" y1="76" x2="90" y2="76" stroke="#DDD7C8" strokeWidth="1" />
+      <line x1="64" y1="84" x2="82" y2="84" stroke="#DDD7C8" strokeWidth="1" />
+      <circle cx="92" cy="62" r="2" fill="#1E2024" />
+      <text x="79" y="62" fontSize="5.5" fill="#68645C" fontFamily="monospace" fontWeight="bold">AGENT</text>
+
+      {/* The Interlocking Seam Block (Center Conductor) */}
+      <rect x="44" y="42" width="30" height="24" fill="#FAF6EE" stroke="#9E7D3B" strokeWidth="1.8" strokeDasharray="2 1" />
+      <circle cx="59" cy="54" r="3.5" fill="#9E7D3B" />
+      <circle cx="59" cy="54" r="1.5" fill="#FAF6EE" />
+      <text x="59" y="49" fontSize="4.8" fill="#1E2024" textAnchor="middle" fontFamily="monospace" fontWeight="bold">MDM SEAM</text>
+
+      {/* Registration Alignment Ticks */}
+      <line x1="58" y1="18" x2="58" y2="24" stroke="#9E7D3B" strokeWidth="1" />
+      <line x1="58" y1="94" x2="58" y2="100" stroke="#9E7D3B" strokeWidth="1" />
+      <line x1="16" y1="54" x2="22" y2="54" stroke="#9E7D3B" strokeWidth="1" />
+      <line x1="98" y1="54" x2="104" y2="54" stroke="#9E7D3B" strokeWidth="1" />
+    </svg>
+  );
+}
+
+/**
+ * 03 / The Rig — The Structural Gantry & Test Harness
+ * Heavy industrial truss with continuous build loop and deterministic verification calipers.
+ */
+function GantryHarnessSpot() {
+  return (
+    <svg viewBox="0 0 120 120" className={s.spotSvg} aria-hidden="true">
+      <defs>
+        <pattern id="rigDots" width="12" height="12" patternUnits="userSpaceOnUse">
+          <circle cx="6" cy="6" r="0.7" fill="#DDD7C8" />
+        </pattern>
+      </defs>
+      <rect width="120" height="120" fill="url(#rigDots)" />
+
+      {/* Structural Gantry Legs / Truss Base */}
+      <line x1="20" y1="98" x2="100" y2="98" stroke="#1E2024" strokeWidth="2" />
+      <line x1="20" y1="98" x2="60" y2="24" stroke="#1E2024" strokeWidth="1.8" />
+      <line x1="100" y1="98" x2="60" y2="24" stroke="#1E2024" strokeWidth="1.8" />
+
+      {/* Internal Structural Cross-Truss */}
+      <line x1="36" y1="68" x2="84" y2="68" stroke="#9E7D3B" strokeWidth="1.2" />
+      <line x1="36" y1="68" x2="60" y2="98" stroke="#9E7D3B" strokeWidth="0.8" />
+      <line x1="84" y1="68" x2="60" y2="98" stroke="#9E7D3B" strokeWidth="0.8" />
+      <line x1="48" y1="46" x2="72" y2="46" stroke="#9E7D3B" strokeWidth="1" />
+
+      {/* The Central Continuous Build Loop (Software Factory Engine) */}
+      <circle cx="60" cy="64" r="16" fill="#FAF6EE" stroke="#9E7D3B" strokeWidth="1.5" strokeDasharray="3 2" />
+      {/* 3 Telemetry Gate Pins */}
+      <circle cx="60" cy="48" r="2.5" fill="#1E2024" />
+      <circle cx="74" cy="72" r="2.5" fill="#9E7D3B" />
+      <circle cx="46" cy="72" r="2.5" fill="#9E7D3B" />
+
+      {/* Operator PC Pipeline Crown (Rig-in-a-Box Hub) */}
+      <polygon points="60,18 66,26 54,26" fill="#9E7D3B" stroke="#1E2024" strokeWidth="1" />
+      <circle cx="60" cy="24" r="1.5" fill="#FAF6EE" />
+
+      {/* Caliper Verification Base Rule with Tolerance Ticks */}
+      <line x1="28" y1="102" x2="92" y2="102" stroke="#9E7D3B" strokeWidth="0.8" />
+      <line x1="34" y1="100" x2="34" y2="104" stroke="#9E7D3B" strokeWidth="0.8" />
+      <line x1="47" y1="100" x2="47" y2="104" stroke="#9E7D3B" strokeWidth="0.8" />
+      <line x1="60" y1="99" x2="60" y2="105" stroke="#1E2024" strokeWidth="1.2" />
+      <line x1="73" y1="100" x2="73" y2="104" stroke="#9E7D3B" strokeWidth="0.8" />
+      <line x1="86" y1="100" x2="86" y2="104" stroke="#9E7D3B" strokeWidth="0.8" />
+      <text x="60" y="112" fontSize="5.2" fill="#68645C" textAnchor="middle" fontFamily="monospace" fontWeight="bold">RIG-IN-A-BOX</text>
+    </svg>
+  );
+}
+
+/**
+ * Unified Enterprise Constellation Symbol (Hero Plate)
+ */
+function EnterpriseHiveSpot() {
+  return (
+    <svg viewBox="0 0 120 120" className={s.spotSvg} aria-hidden="true">
+      <defs>
+        <pattern id="plateDotGrid" width="12" height="12" patternUnits="userSpaceOnUse">
           <circle cx="6" cy="6" r="0.8" fill="#DDD7C8" />
         </pattern>
       </defs>
-      <rect width="120" height="120" fill="url(#dotGrid)" />
-      {/* 13-cell honeycomb cluster */}
+      <rect width="120" height="120" fill="url(#plateDotGrid)" />
       <g stroke="#9E7D3B" strokeWidth="1.2" fill="#FAF6EE" strokeLinejoin="round">
-        {/* Center cell */}
         <polygon points="60,48 70,54 70,66 60,72 50,66 50,54" fill="#F4EFE5" stroke="#1E2024" strokeWidth="1.5" />
-        {/* Ring 1 surrounding cells */}
         <polygon points="60,26 70,32 70,44 60,50 50,44 50,32" />
         <polygon points="79,37 89,43 89,55 79,61 69,55 69,43" />
         <polygon points="79,59 89,65 89,77 79,83 69,77 69,65" />
@@ -40,63 +189,18 @@ function BeehiveSpot() {
   );
 }
 
-function SeamJointSpot() {
-  return (
-    <svg viewBox="0 0 120 120" className={s.spotSvg} aria-hidden="true">
-      <rect x="10" y="10" width="100" height="100" fill="#FAF6EE" stroke="#DDD7C8" strokeWidth="0.8" />
-      <rect x="20" y="24" width="46" height="72" fill="#F4EFE5" stroke="#1E2024" strokeWidth="1.2" />
-      <line x1="24" y1="36" x2="62" y2="36" stroke="#DDD7C8" strokeWidth="1" />
-      <line x1="24" y1="46" x2="62" y2="46" stroke="#DDD7C8" strokeWidth="1" />
-      <line x1="24" y1="56" x2="62" y2="56" stroke="#DDD7C8" strokeWidth="1" />
-      <line x1="24" y1="66" x2="62" y2="66" stroke="#DDD7C8" strokeWidth="1" />
-      <line x1="24" y1="76" x2="62" y2="76" stroke="#DDD7C8" strokeWidth="1" />
-      <line x1="24" y1="86" x2="62" y2="86" stroke="#DDD7C8" strokeWidth="1" />
-      <text x="43" y="32" fontSize="7" fill="#68645C" textAnchor="middle" fontFamily="monospace">80% CODE</text>
-      
-      <rect x="66" y="24" width="34" height="72" fill="#FFFFFF" stroke="#1E2024" strokeWidth="1.2" />
-      <text x="83" y="32" fontSize="7" fill="#68645C" textAnchor="middle" fontFamily="monospace">20% FLOOR</text>
-
-      <line x1="66" y1="20" x2="66" y2="100" stroke="#9E7D3B" strokeWidth="2.5" strokeDasharray="3 2" />
-      <circle cx="66" cy="60" r="5" fill="#FAF6EE" stroke="#9E7D3B" strokeWidth="1.5" />
-      <circle cx="66" cy="60" r="2" fill="#9E7D3B" />
-      <line x1="20" y1="104" x2="100" y2="104" stroke="#9E7D3B" strokeWidth="0.8" />
-      <line x1="20" y1="101" x2="20" y2="107" stroke="#9E7D3B" strokeWidth="0.8" />
-      <line x1="66" y1="101" x2="66" y2="107" stroke="#9E7D3B" strokeWidth="1" />
-      <line x1="100" y1="101" x2="100" y2="107" stroke="#9E7D3B" strokeWidth="0.8" />
-    </svg>
-  );
-}
-
-function PolanyiSheetSpot() {
-  return (
-    <svg viewBox="0 0 120 120" className={s.spotSvg} aria-hidden="true">
-      <rect x="12" y="14" width="96" height="92" fill="#FAF6EE" stroke="#DDD7C8" strokeWidth="0.8" />
-      <rect x="22" y="24" width="76" height="52" fill="#FFFFFF" stroke="#1E2024" strokeWidth="1.2" />
-      <line x1="22" y1="36" x2="98" y2="36" stroke="#9E7D3B" strokeWidth="1" />
-      <line x1="22" y1="48" x2="98" y2="48" stroke="#DDD7C8" strokeWidth="0.8" />
-      <line x1="22" y1="60" x2="98" y2="60" stroke="#DDD7C8" strokeWidth="0.8" />
-      <line x1="42" y1="24" x2="42" y2="76" stroke="#DDD7C8" strokeWidth="0.8" />
-      <line x1="64" y1="24" x2="64" y2="76" stroke="#DDD7C8" strokeWidth="0.8" />
-      <line x1="82" y1="24" x2="82" y2="76" stroke="#DDD7C8" strokeWidth="0.8" />
-      <rect x="44" y="38" width="18" height="8" fill="#F4EFE5" stroke="#9E7D3B" strokeWidth="0.8" />
-      <path d="M 60 76 L 60 94 M 56 90 L 60 94 L 64 90" stroke="#9E7D3B" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-      <circle cx="60" cy="98" r="4" fill="#1E2024" />
-      <circle cx="60" cy="98" r="1.5" fill="#FAF6EE" />
-      <text x="60" y="20" fontSize="7" fill="#68645C" textAnchor="middle" fontFamily="monospace">TACIT KNOWLEDGE</text>
-    </svg>
-  );
-}
-
 // ============================================================================
-// THE THREE FLAVORS OF THE COLLECTIVE (THE ENTERPRISE · THE WORKFLOW · THE FACTORY)
+// THE THREE COLLECTIVES DATA SPECIFICATION
 // ============================================================================
 
-interface EthosPillar {
+interface CollectivePillar {
   num: string;
   tag: string;
   title: string;
   subtitle: string;
-  spot: "polanyi" | "beehive" | "seam";
+  systemName: string;
+  systemRole: string;
+  spot: "constellation" | "blocks" | "gantry";
   body: string;
   provocation: string;
   bullets: string[];
@@ -105,56 +209,62 @@ interface EthosPillar {
   topicKey: string;
 }
 
-const PILLARS: EthosPillar[] = [
+const COLLECTIVES: CollectivePillar[] = [
   {
     num: "01",
-    tag: "01 / DOMAIN TRUTH",
+    tag: "COLLECTIVE 01 / THE ENTERPRISE",
     title: "The Enterprise",
-    subtitle: "People · Data · Systems · Ground Reality",
-    spot: "polanyi",
+    subtitle: "Domain Truth & Process Constellations",
+    systemName: "B.O.S.S.",
+    systemRole: "Business Operating System Specification",
+    spot: "constellation",
     body: "Enterprise procedures capture the happy path, but the real operating logic lives in Mary's desktop spreadsheet and unwritten dock exceptions. Slabs of software get bought at the executive level; the company runs on tacit judgment that was never codified. You cannot prompt an AI agent with what was never written down.",
     provocation: "Never automate a stated process until you have audited the actual operational truth.",
     bullets: [
-      "Slabs of software vs. Mary's loading dock spreadsheet",
-      "The 20-year transformation arc: People, Data, Systems",
-      "Cleverly backed by B.O.S.S. (stated vs. actual delta audits)",
+      "The 6-radial process constellation (P2P, O2C, P2M, S2S, D2R, MDM)",
+      "Mary's loading dock spreadsheet vs. executive slide decks",
+      "Cleverly tethered to B.O.S.S. (stated vs. actual delta audits)",
     ],
     fieldNoteHref: "/agentic-ai/marys-sheet/",
-    fieldNoteLabel: "Read Field Note: Mary's Sheet & Polanyi",
+    fieldNoteLabel: "Read Field Brief: Mary's Sheet & Polanyi",
     topicKey: "01 / The Enterprise & B.O.S.S. (Domain Truth & Schemas)",
   },
   {
     num: "02",
-    tag: "02 / OPERATIONAL SEAM",
+    tag: "COLLECTIVE 02 / THE WORKFLOW",
     title: "The Workflow",
-    subtitle: "Human-Agent Synthesis · SaaS vs. ERP",
-    spot: "beehive",
+    subtitle: "Human-Agent Synthesis at the Instance Level",
+    systemName: "FlowCraft",
+    systemRole: "Instance Operational Runtime",
+    spot: "blocks",
     body: "Where does SaaS end and genuine agentic operations begin? Can a legacy ERP like SAP or Oracle ever truly be an agentic system, or are businesses trapped in monolithic upgrade cycles? Real enterprise agentics requires an instance-level operating system where humans and agents share master data (MDM), permissions, and memory.",
     provocation: "Most enterprises don't need another chatbot in a tab; they need human-agent synthesis running across their brownfield records.",
     bullets: [
-      "The divide between static SaaS and dynamic agentic instances",
+      "Modular workflow blocks at the concrete shop-floor instance level",
       "Master Data Management (MDM) and operational memory",
-      "Cleverly backed by FlowCraft (instance operational runtime)",
+      "Cleverly tethered to FlowCraft (instance operational runtime)",
     ],
     fieldNoteHref: "/agentic-ai/the-application-layer/",
-    fieldNoteLabel: "Read Field Note: The Application Layer & ERP",
+    fieldNoteLabel: "Read Field Brief: The SaaS/ERP Divide & Runtime",
     topicKey: "02 / The Workflow & FlowCraft (Human-Agent Runtime & MDM)",
   },
   {
     num: "03",
-    tag: "03 / THE BUILD LOOP",
+    tag: "COLLECTIVE 03 / THE FACTORY",
     title: "The Factory",
-    subtitle: "Software That Builds Software · Rig-in-a-Box",
-    spot: "seam",
+    subtitle: "Software That Builds Software & Rig-in-a-Box",
+    systemName: "The Rig",
+    systemRole: "Autonomous Software Factory",
+    spot: "gantry",
     body: "The frontier is splitting: external software factories generate code from the outside, while internal droids automate tickets. But true velocity requires putting the power of the pipeline directly on the operator's PC—Rig-in-a-box—feeding a collective without leaking data or losing auditability.",
     provocation: "A prompt demo is fragile; an enterprise software factory requires deterministic caller gates, test harnesses, and verifiable telemetry.",
     bullets: [
-      "Putting the build pipeline directly on the operator's PC",
-      "Deterministic test harnesses over chat prompt hallucinations",
-      "Cleverly backed by The Rig (13-cell autonomous software factory)",
+      "Structural gantry test harness and deterministic build loop",
+      "Rig-in-a-box: power of the pipeline directly on the operator's PC",
+      "Cleverly tethered to The Rig (13-cell autonomous software factory)",
     ],
     fieldNoteHref: "/agentic-ai/the-delivery-seam/",
-    fieldNoteLabel: "Read Field Note: The Delivery Seam & Factories",
+    fieldNoteLabel: "Read Field Brief: The Software Factory & The Seam",
     topicKey: "03 / The Factory & The Rig (Software Factory & Rig-in-a-Box)",
   },
 ];
@@ -280,22 +390,22 @@ export default function AgenticPositionView() {
               <div className={s.plateCornerBL} />
               <div className={s.plateCornerBR} />
               <div className={s.plateInner}>
-                <span className={s.plateTag}>OPEN ARCHITECTURAL COLLECTIVE · THREE OPEN SYSTEMS</span>
-                <BeehiveSpot />
+                <span className={s.plateTag}>THE THREE COLLECTIVES · OPEN ARCHITECTURAL SYSTEMS</span>
+                <EnterpriseHiveSpot />
                 <div className={s.plateMetrics}>
                   <div>
                     <strong>B.O.S.S.</strong>
-                    <span>Open Specification</span>
+                    <span>The Enterprise</span>
                   </div>
                   <div className={s.metricDivider} />
                   <div>
                     <strong>FLOWCRAFT</strong>
-                    <span>Operating Runtime</span>
+                    <span>The Workflow</span>
                   </div>
                   <div className={s.metricDivider} />
                   <div>
                     <strong>THE RIG</strong>
-                    <span>Software Factory</span>
+                    <span>The Factory</span>
                   </div>
                 </div>
               </div>
@@ -306,7 +416,7 @@ export default function AgenticPositionView() {
         {/* Section Navigation */}
         <nav aria-label="Dispatch navigation" className={s.chapterNav}>
           <a href="#systems-arc">01 / The Systems Arc</a>
-          <a href="#the-collective">02 / The Collective</a>
+          <a href="#the-collectives">02 / The Three Collectives</a>
           <a href="#open-systems">03 / Shared Architecture</a>
           <a href="#conversation">04 / Direct Correspondence</a>
         </nav>
@@ -354,61 +464,61 @@ export default function AgenticPositionView() {
       </section>
 
       {/* ====================================================================
-          SECTION 02: THE COLLECTIVE (THREE FLAVORS: LEARN AND BUILD)
-          The Enterprise · The Workflow · The Factory
+          SECTION 02: THE THREE COLLECTIVES (LEARN AND BUILD)
+          The Enterprise (B.O.S.S.) · The Workflow (FlowCraft) · The Factory (The Rig)
           ==================================================================== */}
-      <section id="the-collective" className={s.triadSection}>
+      <section id="the-collectives" className={s.triadSection}>
         <div className={s.triadInner}>
           <div className={s.triadHead}>
             <p className={s.eyebrow}>02 / Learn and Build</p>
-            <h2>The Enterprise. The Workflow. The Factory<span>.</span></h2>
+            <h2>The Three Collectives<span>.</span></h2>
             <p className={s.triadDek}>
-              A collective communication and knowledge portal in three flavors. Built for builders, peers, and curious practitioners who want to explore beyond toy demonstrations into live enterprise reality.
+              A collective communication and knowledge portal in three flavors: The Enterprise, The Workflow, and The Factory. Built for builders, peers, and curious practitioners who want to explore beyond toy demonstrations into live enterprise reality.
             </p>
           </div>
 
           <div className={s.triadGrid}>
-            {PILLARS.map((p) => (
-              <article key={p.num} className={s.triadCard} id={`pillar-${topicSlug(p.title)}`}>
+            {COLLECTIVES.map((c) => (
+              <article key={c.num} className={s.triadCard} id={`collective-${topicSlug(c.title)}`}>
                 <div>
                   <div className={s.triadCardSpot}>
                     <div className={s.triadSpotFrame}>
-                      {p.spot === "polanyi" && <PolanyiSheetSpot />}
-                      {p.spot === "beehive" && <BeehiveSpot />}
-                      {p.spot === "seam" && <SeamJointSpot />}
+                      {c.spot === "constellation" && <ProcessConstellationSpot />}
+                      {c.spot === "blocks" && <WorkflowBlocksSpot />}
+                      {c.spot === "gantry" && <GantryHarnessSpot />}
                     </div>
-                    <span className={s.triadNumTag}>{p.tag}</span>
+                    <span className={s.triadNumTag}>{c.tag}</span>
                   </div>
 
-                  <h3 className={s.triadCardTitle}>{p.title}</h3>
-                  <div className={s.triadCardSubtitle}>{p.subtitle}</div>
-                  <p className={s.triadCardBody}>{p.body}</p>
+                  <h3 className={s.triadCardTitle}>{c.title}</h3>
+                  <div className={s.triadCardSubtitle}>{c.subtitle}</div>
+                  <p className={s.triadCardBody}>{c.body}</p>
 
                   <div className={s.triadProvocation}>
                     <span className={s.triadProvocationLabel}>OPERATIONAL PROVOCATION</span>
-                    <p className={s.triadProvocationText}>&ldquo;{p.provocation}&rdquo;</p>
+                    <p className={s.triadProvocationText}>&ldquo;{c.provocation}&rdquo;</p>
                   </div>
 
                   <ul className={s.triadPointsList}>
-                    {p.bullets.map((b, idx) => (
+                    {c.bullets.map((b, idx) => (
                       <li key={idx}>{b}</li>
                     ))}
                   </ul>
                 </div>
 
                 <div className={s.triadActions}>
-                  <Link href={p.fieldNoteHref} className={s.triadReadBtn}>
-                    <span>{p.fieldNoteLabel}</span>
+                  <Link href={c.fieldNoteHref} className={s.triadReadBtn}>
+                    <span>{c.fieldNoteLabel}</span>
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                       <path d="M3 7H11M11 7L7.5 3.5M11 7L7.5 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </Link>
                   <button
                     type="button"
-                    onClick={() => handleSelectTopic(p.topicKey)}
+                    onClick={() => handleSelectTopic(c.topicKey)}
                     className={s.triadDiscussBtn}
                   >
-                    <span>Discuss {p.title}</span>
+                    <span>Join {c.title} Collective</span>
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                       <path d="M3 7H11M11 7L7.5 3.5M11 7L7.5 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
