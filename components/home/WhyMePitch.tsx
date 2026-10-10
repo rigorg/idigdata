@@ -5,7 +5,7 @@ const beats = [
   {
     kicker: "The application layer",
     h2: "Enterprises keep buying technology and stacking it on what already runs. The failures show up between people, vendors, SI teams, and siloed data.",
-    body: "Everyone owns their piece. Vendors own the product map. SIs own the delivery map for their mandate. The company rarely owns the operating map above them. I have spent 30 years doing exactly that: keeping the business running while the stack moves.",
+    body: "Everyone owns their piece. Vendors own the product map. SIs own the delivery map for their mandate. The company rarely owns the operating map above them. I have spent 20+ years doing exactly that: keeping the business running while the stack moves.",
     gold: false,
   },
   {

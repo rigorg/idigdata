@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontline Intel & Trench Radar · 7-Section Gradeout | DigOps</title>
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #0f172a;
+      --card-border: #1e293b;
+      --card-hover: #1e293b;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --gold: #f59e0b;
+      --cyan: #06b6d4;
+      --emerald: #10b981;
+      --purple: #8b5cf6;
+      --red: #ef4444;
+      --pink: #ec4899;
+      --blue: #3b82f6;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+      padding: 24px;
+    }
+
+    .container {
+      max-width: 1480px;
+      margin: 0 auto;
+    }
+
+    /* Top Masthead */
+    .masthead {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 20px;
+      margin-bottom: 24px;
+      gap: 20px;
+    }
+
+    .masthead-title-bay h1 {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .live-pulse {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background: var(--emerald);
+      border-radius: 50%;
+      box-shadow: 0 0 12px var(--emerald);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.3); opacity: 1; }
+      100% { transform: scale(0.95); opacity: 0.8; }
+    }
+
+    .masthead-dek {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    .kpi-strip {
+      display: flex;
+      gap: 16px;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid var(--card-border);
+      padding: 10px 18px;
+      border-radius: 8px;
+    }
+
+    .kpi-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .kpi-val {
+      font-size: 18px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .kpi-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .nav-btn {
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .nav-btn-primary {
+      background: var(--gold);
+      color: #000;
+    }
+    .nav-btn-primary:hover { background: #d97706; }
+
+    .nav-btn-secondary {
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid var(--card-border);
+      color: var(--text);
+    }
+    .nav-btn-secondary:hover { background: #334155; }
+
+    /* SECTION GRADE-OUT MATRIX (7 SECTIONS) */
+    .section-matrix-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 12px;
+    }
+
+    .matrix-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .matrix-hint {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .matrix-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    @media (max-width: 1200px) {
+      .matrix-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .matrix-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .matrix-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 14px;
+      cursor: pointer;
+      transition: all 0.2s;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .matrix-card:hover {
+      transform: translateY(-2px);
+      border-color: #475569;
+    }
+
+    .matrix-card.active {
+      border-width: 2px;
+      box-shadow: 0 0 16px rgba(0, 0, 0, 0.6);
+    }
+
+    .card-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .card-num {
+      font-size: 11px;
+      font-family: monospace;
+      color: var(--text-muted);
+      font-weight: 700;
+    }
+
+    .card-badge {
+      font-size: 9px;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .card-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .card-counts {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--cyan);
+      margin-bottom: 8px;
+    }
+
+    .card-saying {
+      font-size: 11px;
+      font-style: italic;
+      color: var(--text-muted);
+      line-height: 1.3;
+      border-left: 2px solid;
+      padding-left: 6px;
+      margin-top: 4px;
+    }
+
+    /* FILTERS & SEARCH TOOLBAR */
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--card-border);
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+    }
+
+    .filter-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .filter-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      margin-right: 4px;
+      font-weight: 700;
+    }
+
+    .pill-btn {
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .pill-btn:hover {
+      border-color: #64748b;
+      color: #fff;
+    }
+
+    .pill-btn.active {
+      background: rgba(245, 158, 11, 0.15);
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .search-input {
+      background: #090d16;
+      border: 1px solid var(--card-border);
+      color: #fff;
+      font-size: 12px;
+      padding: 6px 14px;
+      border-radius: 6px;
+      width: 240px;
+      outline: none;
+    }
+
+    .search-input:focus {
+      border-color: var(--cyan);
+    }
+
+    /* FEED CARDS GRID */
+    .feed-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .feed-count-badge {
+      font-size: 12px;
+      font-weight: 700;
+      background: rgba(6, 182, 212, 0.15);
+      border: 1px solid var(--cyan);
+      color: var(--cyan);
+      padding: 4px 10px;
+      border-radius: 12px;
+    }
+
+    .feed-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(460px, 1fr));
+      gap: 16px;
+    }
+
+    @media (max-width: 600px) {
+      .feed-grid { grid-template-columns: 1fr; }
+    }
+
+    .signal-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s;
+    }
+
+    .signal-card:hover {
+      border-color: #3b82f6;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .signal-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .creator-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .creator-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #1e293b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 14px;
+      color: var(--gold);
+      border: 1px solid #334155;
+    }
+
+    .creator-details {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .creator-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .creator-handle {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .section-tag {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.3px;
+    }
+
+    .signal-transcript {
+      font-size: 13px;
+      color: #cbd5e1;
+      line-height: 1.5;
+      margin-bottom: 14px;
+      background: rgba(15, 23, 42, 0.4);
+      padding: 10px;
+      border-radius: 6px;
+      border-left: 3px solid #334155;
+    }
+
+    /* COMMENT GOLD BAY */
+    .comments-bay {
+      background: rgba(245, 158, 11, 0.06);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      border-radius: 6px;
+      padding: 12px;
+      margin-bottom: 14px;
+    }
+
+    .comments-bay-header {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--gold);
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .comment-item {
+      font-size: 12px;
+      color: #e2e8f0;
+      margin-bottom: 8px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(245, 158, 11, 0.1);
+    }
+    .comment-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .comment-author-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      font-weight: 700;
+      color: #fbbf24;
+      margin-bottom: 2px;
+    }
+
+    .comment-likes {
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* STRATEGIC HOOK FOOTER */
+    .signal-footer {
+      border-top: 1px solid var(--card-border);
+      padding-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .hook-row {
+      font-size: 11px;
+      color: var(--cyan);
+      display: flex;
+      gap: 6px;
+      align-items: baseline;
+    }
+
+    .hook-tag {
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 9px;
+      background: rgba(6, 182, 212, 0.15);
+      padding: 2px 5px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    .action-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 4px;
+    }
+
+    .tiktok-link {
+      font-size: 11px;
+      font-weight: 700;
+      color: #93c5fd;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .tiktok-link:hover { text-decoration: underline; }
+
+    .stats-pills {
+      display: flex;
+      gap: 8px;
+      font-size: 10px;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Top Masthead -->
+    <header class="masthead">
+      <div class="masthead-title-bay">
+        <h1>
+          <span class="live-pulse"></span>
+          Frontline Intel &amp; Trench Radar
+        </h1>
+        <p class="masthead-dek">
+          75 Field Transcripts · 42 Mined Comment Threads · 90-Day Time Horizon (July–October 2026) · Graded across 7 Sections
+        </p>
+      </div>
+
+      <div class="kpi-strip">
+        <div class="kpi-item">
+          <span class="kpi-val">75</span>
+          <span class="kpi-label">Videos Scraped</span>
+        </div>
+        <div class="kpi-item">
+          <span class="kpi-val">42</span>
+          <span class="kpi-label">Comment Threads</span>
+        </div>
+        <div class="kpi-item">
+          <span class="kpi-val">7</span>
+          <span class="kpi-label">Sections Graded</span>
+        </div>
+        <div class="kpi-item">
+          <span class="kpi-val" style="color:var(--gold);">5/5</span>
+          <span class="kpi-label">Peak ERP Heat</span>
+        </div>
+      </div>
+
+      <div class="nav-links">
+        <a href="/radar-hud.html" class="nav-btn nav-btn-primary">← Standalone Radar HUD</a>
+        <a href="http://localhost:8001/research-center/sources" target="_blank" class="nav-btn nav-btn-secondary">Operator Glass ↗</a>
+      </div>
+    </header>
+
+    <!-- SECTION GRADE-OUT MATRIX (7 SECTIONS) -->
+    <section>
+      <div class="section-matrix-header">
+        <div class="matrix-title">
+          <span>📊</span>
+          <span>The Seven Canonical Outcome Sections — Executive Gradeout</span>
+        </div>
+        <div class="matrix-hint">Click any section card below to isolate signals</div>
+      </div>
+
+      <div class="matrix-grid" id="matrix-container">
+        
+          <div class="matrix-card" id="card-factory_dev" onclick="selectSection('factory_dev')" style="border-color:#10b981;">
+            <div>
+              <div class="card-top-row">
+                <span class="card-num">01</span>
+                <span class="card-badge" style="background:rgba(16, 185, 129, 0.12);color:#10b981;border:1px solid #10b981;">GRADE 4/5 · ACCELERATING</span>
+              </div>
+              <div class="card-title">Factory Dev</div>
+              <div class="card-counts">12 Videos · 4 Comments</div>
+            </div>
+            <div>
+              <div class="card-saying" style="border-color:#10b981;">"Building Got Cheap, Architecture Got Expensive"</div>
+            </div>
+          </div>
+        
+          <div class="matrix-card" id="card-automation" onclick="selectSection('automation')" style="border-color:#06b6d4;">
+            <div>
+              <div class="card-top-row">
+                <span class="card-num">02</span>
+                <span class="card-badge" style="background:rgba(6, 182, 212, 0.12);color:#06b6d4;border:1px solid #06b6d4;">GRADE 3/5 · NOISY</span>
+              </div>
+              <div class="card-title">Automation</div>
+              <div class="card-counts">9 Videos · 3 Comments</div>
+            </div>
+            <div>
+              <div class="card-saying" style="border-color:#06b6d4;">"Software Amplifies Chaos"</div>
+            </div>
+          </div>
+        
+          <div class="matrix-card" id="card-systems_erp" onclick="selectSection('systems_erp')" style="border-color:#f59e0b;">
+            <div>
+              <div class="card-top-row">
+                <span class="card-num">03</span>
+                <span class="card-badge" style="background:rgba(245, 158, 11, 0.15);color:#f59e0b;border:1px solid #f59e0b;">GRADE 5/5 · CRITICAL HEAT</span>
+              </div>
+              <div class="card-title">Systems ERP</div>
+              <div class="card-counts">28 Videos · 31 Comments</div>
+            </div>
+            <div>
+              <div class="card-saying" style="border-color:#f59e0b;">"Vendor Green ≠ Business Green"</div>
+            </div>
+          </div>
+        
+          <div class="matrix-card" id="card-finance_gl" onclick="selectSection('finance_gl')" style="border-color:#ec4899;">
+            <div>
+              <div class="card-top-row">
+                <span class="card-num">04</span>
+                <span class="card-badge" style="background:rgba(236, 72, 153, 0.12);color:#ec4899;border:1px solid #ec4899;">GRADE 4/5 · HIGH FRICTION</span>
+              </div>
+              <div class="card-title">Finance GL</div>
+              <div class="card-counts">4 Videos · 0 Comments</div>
+            </div>
+            <div>
+              <div class="card-saying" style="border-color:#ec4899;">"The Kool-Aid is Billed Per Token"</div>
+            </div>
+          </div>
+        
+          <div class="matrix-card" id="card-it_harness" onclick="selectSection('it_harness')" style="border-color:#8b5cf6;">
+            <div>
+              <div class="card-top-row">
+                <span class="card-num">05</span>
+                <span class="card-badge" style="background:rgba(139, 92, 246, 0.12);color:#8b5cf6;border:1px solid #8b5cf6;">GRADE 4/5 · ARCHITECTURAL</span>
+              </div>
+              <div class="card-title">IT Harness</div>
+              <div class="card-counts">10 Videos · 4 Comments</div>
+            </div>
+            <div>
+              <div class="card-saying" style="border-color:#8b5cf6;">"Arms, Legs, Hands, Eyes Need a Single Brain"</div>
+            </div>
+          </div>
+        
+          <div class="matrix-card" id="card-leadership" onclick="selectSection('leadership')" style="border-color:#ef4444;">
+            <div>
+              <div class="card-top-row">
+                <span class="card-num">06</span>
+                <span class="card-badge" style="background:rgba(239, 68, 68, 0.15);color:#ef4444;border:1px solid #ef4444;">GRADE 5/5 · PEAK BLINDSPOT</span>
+              </div>
+              <div class="card-title">Leadership</div>
+              <div class="card-counts">8 Videos · 0 Comments</div>
+            </div>
+            <div>
+              <div class="card-saying" style="border-color:#ef4444;">"Stated Reality vs. Actual Operational Truth"</div>
+            </div>
+          </div>
+        
+          <div class="matrix-card" id="card-data_spine" onclick="selectSection('data_spine')" style="border-color:#3b82f6;">
+            <div>
+              <div class="card-top-row">
+                <span class="card-num">07</span>
+                <span class="card-badge" style="background:rgba(59, 130, 246, 0.12);color:#3b82f6;border:1px solid #3b82f6;">GRADE 4/5 · TACIT TRUTH</span>
+              </div>
+              <div class="card-title">Data Spine</div>
+              <div class="card-counts">4 Videos · 0 Comments</div>
+            </div>
+            <div>
+              <div class="card-saying" style="border-color:#3b82f6;">"We Know More Than We Can Tell (Polanyi)"</div>
+            </div>
+          </div>
+        
+      </div>
+    </section>
+
+    <!-- TOOLBAR & FILTERS -->
+    <div class="toolbar">
+      <div class="filter-group">
+        <span class="filter-label">Filter Section:</span>
+        <button class="pill-btn active" id="btn-sec-all" onclick="selectSection('all')">All 7 Sections (75)</button>
+        
+          <button class="pill-btn" id="btn-sec-factory_dev" onclick="selectSection('factory_dev')">Factory Dev (12)</button>
+        
+          <button class="pill-btn" id="btn-sec-automation" onclick="selectSection('automation')">Automation (9)</button>
+        
+          <button class="pill-btn" id="btn-sec-systems_erp" onclick="selectSection('systems_erp')">Systems ERP (28)</button>
+        
+          <button class="pill-btn" id="btn-sec-finance_gl" onclick="selectSection('finance_gl')">Finance GL (4)</button>
+        
+          <button class="pill-btn" id="btn-sec-it_harness" onclick="selectSection('it_harness')">IT Harness (10)</button>
+        
+          <button class="pill-btn" id="btn-sec-leadership" onclick="selectSection('leadership')">Leadership (8)</button>
+        
+          <button class="pill-btn" id="btn-sec-data_spine" onclick="selectSection('data_spine')">Data Spine (4)</button>
+        
+      </div>
+
+      <div class="filter-group">
+        <span class="filter-label">Creator:</span>
+        <button class="pill-btn active" id="btn-author-all" onclick="selectAuthor('all')">All Creators</button>
+        <button class="pill-btn" id="btn-author-sd141414" onclick="selectAuthor('@sd141414')">Steve (15)</button>
+        <button class="pill-btn" id="btn-author-erickimberling0" onclick="selectAuthor('@erickimberling0')">Eric (15)</button>
+        <button class="pill-btn" id="btn-author-kylercheatham" onclick="selectAuthor('@kylercheatham')">Kyler (15)</button>
+        <button class="pill-btn" id="btn-author-jenna_gardner_ai" onclick="selectAuthor('@jenna_gardner_ai')">Jenna (15)</button>
+        <button class="pill-btn" id="btn-author-jakevanclief" onclick="selectAuthor('@jakevanclief')">Jake (15)</button>
+      </div>
+
+      <div class="filter-group">
+        <button class="pill-btn" id="btn-gold-toggle" onclick="toggleCommentGold()">💬 Comment Gold Only</button>
+        <input type="text" id="search-box" class="search-input" placeholder="Search transcripts & comments..." oninput="handleSearch()">
+      </div>
+    </div>
+
+    <!-- FEED CONTAINER -->
+    <div class="feed-header">
+      <h2 style="font-size:18px;font-weight:700;">Frontline Signals &amp; Field Transcripts</h2>
+      <div class="feed-count-badge" id="feed-count">Showing 75 of 75 Signals</div>
+    </div>
+
+    <div class="feed-grid" id="feed-grid">
+      <!-- Populated via JavaScript -->
+    </div>
+  </div>
+
+  <script>
+    const SIGNALS = [{"id":1,"url":"https://www.tiktok.com/@jakevanclief/video/7694652806812273926","author":"@jakevanclief","authorNick":"Jake Van Clief","verified":false,"createTime":"2026-10-09","likes":10,"commentsCount":0,"shares":0,"views":373,"caption":"Every video I make, this one included, comes out of one folder on my computer, and you can build the same kind of AI second brain for your business tonight.\nPut a short CLAUDE.md at the top that says what the place is and where to go for what. Give every job you repeat its own folder, with a note on what goes in and who checks what comes out. Anything every job shares lives in one system folder, written like the note you'd leave whoever covers your vacation. Skip MCP, skills and hooks for the first week, they bolt onto a folder like this later anyway.\nClief Notes is free and has 40+ lessons on exactly this. Join Clief Notes, link in my bio.\nhttps://www.skool.com/cliefnotes/about\n#shorts #AI #ClaudeCode #SecondBrain #SmallBusiness","sectionId":"automation","sectionName":"Automation","sectionColor":"#06b6d4","strategicHook":"Tacit Seam Routing: Connecting autonomous execution to human exception gates on the shop floor.","comments":[],"hasCommentGold":false},{"id":2,"url":"https://www.tiktok.com/@jakevanclief/video/7694482004221414662","author":"@jakevanclief","authorNick":"Jake Van Clief","verified":false,"createTime":"2026-10-09","likes":7,"commentsCount":0,"shares":0,"views":624,"caption":"Mr jobs ","sectionId":"automation","sectionName":"Automation","sectionColor":"#06b6d4","strategicHook":"Tacit Seam Routing: Connecting autonomous execution to human exception gates on the shop floor.","comments":[],"hasCommentGold":false},{"id":3,"url":"https://www.tiktok.com/@jakevanclief/video/7694281892618587410","author":"@jakevanclief","authorNick":"Jake Van Clief","verified":false,"createTime":"2026-10-08","likes":34,"commentsCount":2,"shares":0,"views":934,"caption":"Let AI automate everything it wants. Seriously, let it. We're still never running out of work.\nI watched it happen in a room in Dubai. Every hour the AI handed back, the team already had something waiting for it. One person got seven hours back on every customer map and spent them on a project that was six months away. Douglas Engelbart, the guy who invented the mouse, was making this case in the sixties, and every layer of computing since has handed us a tool and sent us off to find a bigger problem.\nSo let AI automate the task, hand that automation to a person, and watch what they do with the time. Join Clief Notes, link in my bio.\nhttps://www.skool.com/cliefnotes/about\n#shorts #ai #futureofwork #automation #jobs","sectionId":"automation","sectionName":"Automation","sectionColor":"#06b6d4","strategicHook":"Tacit Seam Routing: Connecting autonomous execution to human exception gates on the shop floor.","comments":[{"author":"@wheresizzytravelchanel","likes":0,"text":"I assure you a mouse does not run thousands of instructions…."},{"author":"@marlib0y","likes":0,"text":"True"}],"hasCommentGold":true},{"id":4,"url":"https://www.tiktok.com/@jakevanclief/video/7693910694911102228","author":"@jakevanclief","authorNick":"Jake Van Clief","verified":false,"createTime":"2026-10-07","likes":34,"commentsCount":3,"shares":1,"views":1050,"caption":"A company paid me $120K to teach their people that agents are just a naming convention. The value comes from everything else, the instructions you write, what the AI can reach, and the outcome you want.\nAn agent is three parts. The instructions, the model (the part you rent), and what it's allowed to touch. A good harness like Claude Code already handles the looping and the tool calls, so for most people the agent problem is solved. Write the instructions down, put them in a folder, and one agent turns into every agent you need.\nNo keyword to comment, the whole setup is in the video. Join Clief Notes, link in my bio.\nhttps://www.skool.com/cliefnotes/about\n#shorts #ai #aiagents #claudecode #automation","sectionId":"it_harness","sectionName":"IT Harness","sectionColor":"#8b5cf6","strategicHook":"The Rig Multi-Cell State Engine: 13-cell isolated runtime with immutable rollback checkpoints and strict authority.","comments":[{"author":"@mikeamad_","likes":1,"text":"This is why I appreciate your approach, Jake. You make it easier to understand what actually matters: clear instructions, access to the right tools, and knowing the outcome you want. The fact that the approach carries across models is a big part of why I joined your community. Always learning something I can put to work."},{"author":"@everesttii_","likes":0,"text":"proofademic flagged my paper and i'm concerned about my academic standing"}],"hasCommentGold":true},{"id":5,"url":"https://www.tiktok.com/@jakevanclief/video/7693539853006425352","author":"@jakevanclief","authorNick":"Jake Van Clief","verified":false,"createTime":"2026-10-06","likes":32,"commentsCount":1,"shares":1,"views":985,"caption":"I went from $5,000 a month to $62,270 a month on ONE product, in seven months. These are the three things I think made it possible.\n1. Amplify what you're already good at. Not sure what that is? Think about the last person who paid you, and why they paid you.\n2. Post. Social media is the most important one, because nobody knows you exist until you do.\n3. Have a counter-narrative, a take that pushes against what everybody keeps repeating, with the how right behind it.\nNo keyword to comment, it's all in the video. Join Clief Notes, link in my bio.\nhttps://www.skool.com/cliefnotes/about\n#shorts #ai #entrepreneur #creator #business","sectionId":"factory_dev","sectionName":"Factory Dev","sectionColor":"#10b981","strategicHook":"Deterministic Caller Gates & Rig Scaffold: Moving beyond loose agent prompts to zero-rollback architecture.","comments":[{"author":"@everesttii_","likes":0,"text":"does proofademic provide actionable information for students to address"}],"hasCommentGold":true},{"id":6,"url":"https://www.tiktok.com/@jakevanclief/video/7693168353153731847","author":"@jakevanclief","authorNick":"Jake Van Clief","verified":false,"createTime":"2026-10-05","likes":16,"commentsCount":1,"shares":0,"views":583,"caption":"It still says running, and the report's been wrong since Tuesday.\nSplit the job where you'd naturally pause, one folder or one sheet tab per step, and have each step save what it made to a file a person reads before the next one runs. Give every step one check you can do in about a minute. When a check fails, fix that one file and rerun from there, so you catch it the day it broke.\nBuying an AI setup? Ask where a person checks it. And where do the instructions live? Can you open them?\nClief Notes is free, with 40+ free lessons. Link in my bio.\n#shorts #ai #aiautomation #automation #workflow","sectionId":"automation","sectionName":"Automation","sectionColor":"#06b6d4","strategicHook":"Tacit Seam Routing: Connecting autonomous execution to human exception gates on the shop floor.","comments":[{"author":"@everesttii_","likes":0,"text":"proofademic flagged my conclusion after i connected it to broader implications"}],"hasCommentGold":true},{"id":7,"url":"https://www.tiktok.com/@jakevanclief/video/7692797195749215540","author":"@jakevanclief","authorNick":"Jake Van Clief","verified":false,"createTime":"2026-10-04","likes":43,"commentsCount":3,"shares":5,"views":2021,"caption":"Em dash, em dash, little blue diamonds, hashtag future of work... and everybody reading it can tell you didn't write it.\nMost AI writing sounds like that because nobody gave the model their voice. Put a plain voice file, with a few rules and three or four things you actually wrote, in your project instructions so Claude or ChatGPT reads it every time. Any rule with one right answer goes in a tiny search script that checks every draft, and you still read the draft yourself, because a search only catches the obvious ones.\nSetting this up is the kind of thing we get into in Clief Notes. It's free, link in my bio. My own videos run on the same idea, and I walk through it on my YouTube in \"How to Make AI Videos That Don't Feel Like AI Slop\".\n#shorts #ai #chatgpt #claudeai #writing","sectionId":"factory_dev","sectionName":"Factory Dev","sectionColor":"#10b981","strategicHook":"Deterministic Caller Gates & Rig Scaffold: Moving beyond loose agent prompts to zero-rollback architecture.","comments":[{"author":"@luiiiis_alt","likes":0,"text":"proofademic flagged my submission and i’m unclear on next steps"},{"author":"@edwin._.digital","likes":0,"text":"Are em dashes an automatic association with AI writing? I see them in books all the time."}],"hasCommentGold":true},{"id":8,"url":"https://www.tiktok.com/@jakevanclief/video/7692426239587405076","author":"@jakevanclief","authorNick":"Jake Van Clief","verified":false,"createTime":"2026-10-03","likes":23,"commentsCount":0,"shares":1,"views":1023,"caption":"You explained your whole project to Claude yesterday, and this morning it's basically a blank page again.\nEvery chat starts with a fresh context window, so save the paragraph you keep pasting as a file called CLAUDE.md at the top of your project folder, and Claude Code reads it at the start of every session. In the ChatGPT or Claude apps, it goes into a project's instructions once. Keep it to your own rules, because researchers at ETH Zurich found these files made each run cost over 20% more and didn't raise success on average, though the rules in them still got followed.\nIf you've explained it twice, it belongs in a file. I teach how to write one in Clief Notes, my free community. Join Clief Notes, link in my bio.\n#shorts #claudecode #ai #aitools #productivity","sectionId":"it_harness","sectionName":"IT Harness","sectionColor":"#8b5cf6","strategicHook":"The Rig Multi-Cell State Engine: 13-cell isolated runtime with immutable rollback checkpoints and strict authority.","comments":[],"hasCommentGold":false},{"id":9,"url":"https://www.tiktok.com/@jakevanclief/video/7692055142086053172","author":"@jakevanclief","authorNick":"Jake Van Clief","verified":false,"createTime":"2026-10-02","likes":15,"commentsCount":0,"shares":1,"views":695,"caption":"An AI can draft a legal brief in ten seconds and still can't fix your printer.\nIt learned mostly from what we wrote down, and the part of your job nobody wrote down is the part you're actually paid for. So hand AI the clicks first, and write your take on the decisions somewhere your AI reads every time, like a project's instructions. That file stays yours, and you're still the one who spots when the AI gets it wrong.\nI made a whole video on where you fit, called \"What makes me valuable now? (Will AI replace everyone?)\", and it's up on my YouTube: https://www.youtube.com/watch?v=ftojWLZ5VlE\nJoin Clief Notes, my free Skool community with 40+ free lessons. Link in my bio.\n#shorts #ai #claudeai #chatgpt #careeradvice","sectionId":"automation","sectionName":"Automation","sectionColor":"#06b6d4","strategicHook":"Tacit Seam Routing: Connecting autonomous execution to human exception gates on the shop floor.","comments":[],"hasCommentGold":false},{"id":10,"url":"https://www.tiktok.com/@jakevanclief/video/7691684351062347026","author":"@jakevanclief","authorNick":"Jake Van Clief","verified":false,"createTime":"2026-10-01","likes":20,"commentsCount":0,"shares":1,"views":916,"caption":"Check, my, email. Three words, and your AI is missing three answers.\nHow you check things goes in a short file, which is pretty much all a skill is. Your role goes in your profile settings, written once, and the email part needs a connector, or your AI can't even see your inbox. Three words is plenty once those answers live somewhere it can read. So try this today. Paste the prompt you type most into a fresh chat and add \"What would you need to know to do this well?\"\nMore on writing these down in Clief Notes, my free community with 40+ lessons. Link in my bio.\n#shorts #ai #claude #chatgpt #prompting","sectionId":"factory_dev","sectionName":"Factory Dev","sectionColor":"#10b981","strategicHook":"Deterministic Caller Gates & Rig Scaffold: Moving beyond loose agent prompts to zero-rollback architecture.","comments":[],"hasCommentGold":false},{"id":11,"url":"https://www.tiktok.com/@jakevanclief/video/7691313154248265012","author":"@jakevanclief","authorNick":"Jake Van Clief","verified":false,"createTime":"2026-09-30","likes":38,"commentsCount":2,"shares":6,"views":1232,"caption":"Sixteen bit, hand drawn, clean and modern, a blueprint. Same video, four styles, and every one came out of one folder on my computer.\nIt's folders, a few scripts and some markdown files, with one folder per stage (voice, words, storyboard, animation, render), and I read what each stage made before the next one runs, so one bad take never turns into a bad video.\nWant to build these yourself? The full walkthrough is on my YouTube, and my free community, Clief Notes, is the link in my bio.\n#ai #claudecode #aianimation #learnai #shorts","sectionId":"it_harness","sectionName":"IT Harness","sectionColor":"#8b5cf6","strategicHook":"The Rig Multi-Cell State Engine: 13-cell isolated runtime with immutable rollback checkpoints and strict authority.","comments":[{"author":"@jrducs1","likes":0,"text":"Let's Gooo File and Folder structures to build out ultimate workspaces is Key!!"},{"author":"@smaxey843","likes":0,"text":"What if I want to write folder below?"}],"hasCommentGold":true},{"id":12,"url":"https://www.tiktok.com/@jakevanclief/video/7691050088465976597","author":"@jakevanclief","authorNick":"Jake Van Clief","verified":false,"createTime":"2026-09-29","likes":43,"commentsCount":1,"shares":2,"views":1063,"caption":"In 1947, engineers at Harvard found a moth stuck in relay number seventy and taped it into the log book: \"First actual case of bug being found.\"\nThe funny word is actual. Engineers already called little faults bugs; Edison was writing about them in 1878. This time the bug just showed up in person.\nThe part worth copying is that they wrote it down. When your AI gives you a confident wrong answer, that's your moth. Log it, turn it into a test, rerun it every time you change the prompt.\nWant to build checks like this? Join Clief Notes, link in my bio.\n#ai #computerhistory #debugging #learnai #shorts","sectionId":"factory_dev","sectionName":"Factory Dev","sectionColor":"#10b981","strategicHook":"Deterministic Caller Gates & Rig Scaffold: Moving beyond loose agent prompts to zero-rollback architecture.","comments":[{"author":"@3lvalley","likes":0,"text":"imagine Thomas Edison actually had an insect interfere with his work"}],"hasCommentGold":true},{"id":13,"url":"https://www.tiktok.com/@jakevanclief/video/7690942164456459572","author":"@jakevanclief","authorNick":"Jake Van Clief","verified":false,"createTime":"2026-09-29","likes":19,"commentsCount":0,"shares":0,"views":709,"caption":"An AI picked the first line of this video.\nI wrote four openings and let a tiny model called Jev grade them: how curious would a beginner be, zero to three, and would they actually get it, yes or no. Under half a second a line, two thousandths of a cent each.\nThe model gives opinions. A few lines of code make the call. Works for titles, thumbnails, emails, anything with more than one draft.\nWant to build things like this? Join Clief Notes, link in my bio.\n#ai #contentcreation #aitools #learnai #shorts","sectionId":"factory_dev","sectionName":"Factory Dev","sectionColor":"#10b981","strategicHook":"Deterministic Caller Gates & Rig Scaffold: Moving beyond loose agent prompts to zero-rollback architecture.","comments":[],"hasCommentGold":false},{"id":14,"url":"https://www.tiktok.com/@jakevanclief/video/7690678946282638599","author":"@jakevanclief","authorNick":"Jake Van Clief","verified":false,"createTime":"2026-09-28","likes":15,"commentsCount":0,"shares":1,"views":633,"caption":"Software is the small number.\nEvery business on the planet spends almost a trillion and a half dollars a year on software. The paychecks in just the US come to about thirteen trillion. That's roughly nine times bigger.\nSoftware buys the part of a job you could put in a manual. A paycheck buys the judgment nobody wrote down. That's why investors are now saying stop selling the tool, sell the work.\nWant to learn how people are packaging their judgment? Join Clief Notes, link in my bio.\n#ai #business #futureofwork #learnai #shorts","sectionId":"automation","sectionName":"Automation","sectionColor":"#06b6d4","strategicHook":"Tacit Seam Routing: Connecting autonomous execution to human exception gates on the shop floor.","comments":[],"hasCommentGold":false},{"id":15,"url":"https://www.tiktok.com/@jakevanclief/video/7690570953750859029","author":"@jakevanclief","authorNick":"Jake Van Clief","verified":false,"createTime":"2026-09-28","likes":38,"commentsCount":0,"shares":1,"views":1084,"caption":"You're a programmer. No, really.\nIn 1804 the Jacquard loom read punched cards: hole or no hole, thread up or thread down, and out came a picture. That's a one or a zero. Then machine code, then languages, each layer hiding the mess below it.\nThe newest layer is your sentence. A programmer takes logic and attaches it to symbols, and your words are symbols too.\nWant to write better ones? Join Clief Notes, link in my bio.\n#ai #programming #computerhistory #learnai #shorts","sectionId":"factory_dev","sectionName":"Factory Dev","sectionColor":"#10b981","strategicHook":"Deterministic Caller Gates & Rig Scaffold: Moving beyond loose agent prompts to zero-rollback architecture.","comments":[],"hasCommentGold":false},{"id":16,"url":"https://www.tiktok.com/@erickimberling0/video/7556869953576635703","author":"@erickimberling0","authorNick":"Digital Transformation w/ Eric","verified":false,"createTime":"2025-10-03","likes":5954,"commentsCount":103,"shares":1873,"views":251900,"caption":"PwC clients are asking for an AI discount because the firm is bragging about tech efficiency, says Bloomberg. Clients want their fair share of savings! #PwC #AI #discounts #Bloomberg #tech #consulting","sectionId":"systems_erp","sectionName":"Systems ERP","sectionColor":"#f59e0b","strategicHook":"Uniquely Standard & Customer-Side Advocacy: Protecting proprietary operational edges from generic vendor templates.","comments":[],"hasCommentGold":false},{"id":17,"url":"https://www.tiktok.com/@erickimberling0/video/7550465328229240078","author":"@erickimberling0","authorNick":"Digital Transformation w/ Eric","verified":false,"createTime":"2025-09-15","likes":2038,"commentsCount":185,"shares":945,"views":105900,"caption":"The Zimmer Biomet / Deloitte SAP failure and lawsuit is a cautionary tale. Who do you think is to blame?\n#SAP #S4HANA #Deloitte #ERP #DigitalTransformation ","sectionId":"systems_erp","sectionName":"Systems ERP","sectionColor":"#f59e0b","strategicHook":"Uniquely Standard & Customer-Side Advocacy: Protecting proprietary operational edges from generic vendor templates.","comments":[{"author":"@vtiktokac","likes":181,"text":"My hunch is that during process-mapping they never asked the day-to-day users what they “actually do” and only the leadership weighed in for the mapping exercise. They probably failed to map the workarounds that happened outside the system. SAP is so strict and if you have a business with a ton of customization for each customer, SAP misses key things that are necessary to produce and get an order out the door. Perhaps they had good intentions of mapping a more efficient “ideal state/future state,” but you can’t do that without a transition to get away from the workarounds."},{"author":"@notacowgirlie","likes":148,"text":"This is Deloitte's MO. Underbid and rely on change orders to make profit."},{"author":"@blankmann72","likes":57,"text":"The biggest root causes I’ve seen are 1) bad data, 2) over configuration, 3) poor workforce readiness, and 4) bad change management."},{"author":"@peter.tomas","likes":44,"text":"The Deloitte A Team presented at orals but the client got the Deloitte B Project Team."},{"author":"@cotton.coffeee","likes":44,"text":"Turn over in consulting is incredibly high. It is a rotating door, so no knowledge was retained"},{"author":"@richardtallent2","likes":43,"text":"Turnover of senior consultants, lack of documentation and testing, too many cooks in the kitchen, offshoring work that should have required more oversight"},{"author":"@ianthevillan","likes":41,"text":"Deloitte + SAP = Disaster…. Who would have thunk it 😂"},{"author":"@seanmcooperak","likes":32,"text":"Has there ever been an SAP implementation that was delivered anywhere close to on time and on budget? I know The Chamberlain Group (Liftmaster, MyQ) tried three times to get SAP implement."},{"author":"@flexmflexx","likes":27,"text":"Deloitte as a consultant and Deloitte as an implementer is probably different departments under different partners. I know first hand how painful it is to work across Partners because they have their own cost centers and internal revenue %. Communication was probably non existent"},{"author":"@mkz99881","likes":20,"text":"I have never heard of SAP implementation going smoothly at any company that’s at least mid sized or larger. Never. I just assumed it was how arduous the process was/is"},{"author":"@birttree","likes":17,"text":"I think you missed one of the biggest points in this story. A lot of the technical implementation team was overseas. Usually you have some of those people on site or readily available. But Deloitte consultants played telephone with Biomet and the implementers."},{"author":"@deshtroy","likes":15,"text":"How did it pass UAT? And the customer signed off a deployment to Production?"},{"author":"@otts3000","likes":11,"text":"On a side note. When I change companies I now ask, where are you in the SAP process. Because no thank you 😂"},{"author":"@fritzintampa","likes":7,"text":"Tampa firm ok’d $12M Oracle ERP. 7 yrs laters, 3 or 4 re-implementations and $80-100M later…Firm gets acquired by an SAP shop & all Oracle effort deleted. Happens too often."},{"author":"@jmhoskinson","likes":5,"text":"We have a CRM implementation from a big 4. I wouldn’t overestimate the implementation team. They build lots of custom versions of OOTB features rather than use the OOTB features. Seven years later and we’re still recovering"}],"hasCommentGold":true},{"id":18,"url":"https://www.tiktok.com/@erickimberling0/video/7489347904864259371","author":"@erickimberling0","authorNick":"Digital Transformation w/ Eric","verified":false,"createTime":"2025-04-04","likes":3407,"commentsCount":426,"shares":567,"views":226600,"caption":"Why do you think this $600 million SAP disaster at Lidl happened the way it did? \n#SAP #s4hanapubliccloud #ERP #DigitalTransformation #DigitalStrategy #Lidl #Retail  #greenscreen ","sectionId":"systems_erp","sectionName":"Systems ERP","sectionColor":"#f59e0b","strategicHook":"Uniquely Standard & Customer-Side Advocacy: Protecting proprietary operational edges from generic vendor templates.","comments":[{"author":"@emanueleni2","likes":811,"text":"sAP is just a bid pile of garbage that barely works and useses way too many resources, and has a GUI from the 70s. They are just praying on companies that invested to much already to admit they screwe"},{"author":"@mastacheata","likes":409,"text":"SAP claims it can work for all types of organizations - many think this means SAP is very adaptable - that couldn't be further from the truth. SAP adapts your company to their system not the other way"},{"author":"@martinjones987","likes":320,"text":"Just a bunch of buzzwords and noise"},{"author":"@bobgoatforyou","likes":236,"text":"SAP does not work. Never has and never will."},{"author":"@wolfsson_a","likes":178,"text":"SAP works if you change your company to follow the SAP way precisely…. Not if you do anything non “standard” according to them…."},{"author":"@chrisc1341","likes":157,"text":"SAP…..Stop All Production"},{"author":"@desmera1988","likes":88,"text":"SAP is a garbage software that doesnt change to the corperate needs, but forces corperations to change so they work with the limited capabilities they can offer."},{"author":"@britexpatinbangkok","likes":82,"text":"This analysis could be applied to nearly all failed ERP implementations"},{"author":"@dftsnove","likes":76,"text":"SAP lets you implement standard business processes. Most companies got where they are today by doing something unique."},{"author":"@athieros","likes":66,"text":"my takeaway from this and my previous exposure to SAP is never use SAP lol😂 I think it's an overpriced turd😂"},{"author":"@jakescoetzee","likes":27,"text":"\"Many companies use it\" does not mean it is suitable. SAP and Salesforce are products that force you to customise and then you fall into the sunk cost fallacy."},{"author":"@quecks_","likes":21,"text":"It fails because those making decisions no longer understand the low half of their own business. Resistance to change isn't a malevolent impulse from the user. There is something real there they miss."},{"author":"@featuresnotbugs","likes":15,"text":"It makes me laugh because for $600M you can develop your own engineering team and build a custom system over a similar period"},{"author":"@r.c.s777","likes":8,"text":"problem with large retail chains is their ITteams are always small and overworked as they don't want to \"waste money\" on non operational teams. As soon as key players leave they fail..."},{"author":"@ro_raffy","likes":5,"text":"I've been involved with a few very large SAP implementations. You have to change your business to match the way that SAP works. Too much customization will make it impossible to upgrade in the future"}],"hasCommentGold":true},{"id":19,"url":"https://www.tiktok.com/@erickimberling0/video/7694842117914430734","author":"@erickimberling0","authorNick":"Digital Transformation w/ Eric","verified":false,"createTime":"2026-10-10","likes":7,"commentsCount":0,"shares":0,"views":183,"caption":"If you haven’t met him yet, here’s your introduction to Spreadsheet Guy. He probably lives in your company. You me even be him. \n\nHis new TV series Welcome to the Brightside is available now on YouTube. see the link in my bio.\n\n#digitaltransformation #erp #consulting #spreadsheets ","sectionId":"systems_erp","sectionName":"Systems ERP","sectionColor":"#f59e0b","strategicHook":"Uniquely Standard & Customer-Side Advocacy: Protecting proprietary operational edges from generic vendor templates.","comments":[],"hasCommentGold":false},{"id":20,"url":"https://www.tiktok.com/@erickimberling0/video/7694828471586934029","author":"@erickimberling0","authorNick":"Digital Transformation w/ Eric","verified":false,"createTime":"2026-10-10","likes":2,"commentsCount":0,"shares":0,"views":32,"caption":"Transformation teams often get it wrong. Knowing the right sequence and foundation is key to future-proofing your supply chain, especially when value is hiding in plain sight. #SupplyChain #Transformation #BusinessTips #FutureProof #Strategy","sectionId":"systems_erp","sectionName":"Systems ERP","sectionColor":"#f59e0b","strategicHook":"Uniquely Standard & Customer-Side Advocacy: Protecting proprietary operational edges from generic vendor templates.","comments":[],"hasCommentGold":false},{"id":21,"url":"https://www.tiktok.com/@erickimberling0/video/7694775465898233101","author":"@erickimberling0","authorNick":"Digital Transformation w/ Eric","verified":false,"createTime":"2026-10-09","likes":2,"commentsCount":0,"shares":0,"views":130,"caption":"Agents broke out of a sandbox and collaborated to create a message board, posting messages to each other. Fascinating! #AI #Collaboration #Tech #Innovation #Fascinating","sectionId":"systems_erp","sectionName":"Systems ERP","sectionColor":"#f59e0b","strategicHook":"Uniquely Standard & Customer-Side Advocacy: Protecting proprietary operational edges from generic vendor templates.","comments":[],"hasCommentGold":false},{"id":22,"url":"https://www.tiktok.com/@erickimberling0/video/7694736496775023886","author":"@erickimberling0","authorNick":"Digital Transformation w/ Eric","verified":false,"createTime":"2026-10-09","likes":2,"commentsCount":0,"shares":0,"views":157,"caption":"Leading a company means answering to customers, employees, and owners. True tech due diligence is crucial for acquisitions, not just a few interviews. Understand your tech environment's stability and data reliability. #Leadership #BusinessTips #TechDueDiligence #Acquisitions #CompanyGrowth","sectionId":"leadership","sectionName":"Leadership","sectionColor":"#ef4444","strategicHook":"B.O.S.S. Protocol & Ground-Truth Alignment: Bridging executive strategy to warehouse dock execution before writing code.","comments":[],"hasCommentGold":false},{"id":23,"url":"https://www.tiktok.com/@erickimberling0/video/7694689859557920013","author":"@erickimberling0","authorNick":"Digital Transformation w/ Eric","verified":false,"createTime":"2026-10-09","likes":2,"commentsCount":0,"shares":0,"views":114,"caption":"Business strategy first, THEN digital transformation! Don't let vendors sell you a hammer if you need a screwdriver. Your needs define the tools, not the other way around. #BusinessStrategy #DigitalTransformation #TechTips #Entrepreneurship #BusinessGrowth","sectionId":"systems_erp","sectionName":"Systems ERP","sectionColor":"#f59e0b","strategicHook":"Uniquely Standard & Customer-Side Advocacy: Protecting proprietary operational edges from generic vendor templates.","comments":[],"hasCommentGold":false},{"id":24,"url":"https://www.tiktok.com/@erickimberling0/video/7694637292173954317","author":"@erickimberling0","authorNick":"Digital Transformation w/ Eric","verified":false,"createTime":"2026-10-09","likes":5,"commentsCount":0,"shares":0,"views":60,"caption":"Supply chains are still failing years after COVID exposed the cracks. Companies are struggling to rebuild. #SupplyChain #Business #Logistics #COVID19 #Economy","sectionId":"systems_erp","sectionName":"Systems ERP","sectionColor":"#f59e0b","strategicHook":"Uniquely Standard & Customer-Side Advocacy: Protecting proprietary operational edges from generic vendor templates.","comments":[],"hasCommentGold":false},{"id":25,"url":"https://www.tiktok.com/@erickimberling0/video/7694586667952360718","author":"@erickimberling0","authorNick":"Digital Transformation w/ Eric","verified":false,"createTime":"2026-10-09","likes":4,"commentsCount":1,"shares":0,"views":289,"caption":"This story is like something straight out of Terminator! 🤯 A tech takeover predicted 40 years ago, now a reality. Scary stuff, but it's still contained in a test environment. #Terminator #TechNews #SciFi #FutureTech #AI #Prediction","sectionId":"systems_erp","sectionName":"Systems ERP","sectionColor":"#f59e0b","strategicHook":"Uniquely Standard & Customer-Side Advocacy: Protecting proprietary operational edges from generic vendor templates.","comments":[{"author":"@jacqueline.pretor96","likes":0,"text":"❤️❤️❤️✨✨✨👏👏👏😁😁😁"}],"hasCommentGold":false},{"id":26,"url":"https://www.tiktok.com/@erickimberling0/video/7694543429962910989","author":"@erickimberling0","authorNick":"Digital Transformation w/ Eric","verified":false,"createTime":"2026-10-09","likes":5,"commentsCount":0,"shares":0,"views":291,"caption":"Humans used to drive innovation. Now AI is taking over, and our cognitive skills are at risk. The future of tech is evolving beyond our control. Welcome to the machine. #AI #FutureOfTech #MachineIntelligence #Innovation #Humanity","sectionId":"systems_erp","sectionName":"Systems ERP","sectionColor":"#f59e0b","strategicHook":"Uniquely Standard & Customer-Side Advocacy: Protecting proprietary operational edges from generic vendor templates.","comments":[],"hasCommentGold":false},{"id":27,"url":"https://www.tiktok.com/@erickimberling0/video/7694507445070155022","author":"@erickimberling0","authorNick":"Digital Transformation w/ Eric","verified":false,"createTime":"2026-10-09","likes":12,"commentsCount":0,"shares":1,"views":280,"caption":"Your digital strategy hinges on your operating model and overall strategy. Don't let vendors impose generic practices that don't fit your unique market position. #DigitalStrategy #BusinessTransformation #OperatingModel #TechDeployment #BusinessGrowth","sectionId":"systems_erp","sectionName":"Systems ERP","sectionColor":"#f59e0b","strategicHook":"Uniquely Standard & Customer-Side Advocacy: Protecting proprietary operational edges from generic vendor templates.","comments":[],"hasCommentGold":false},{"id":28,"url":"https://www.tiktok.com/@erickimberling0/video/7694451823289093390","author":"@erickimberling0","authorNick":"Digital Transformation w/ Eric","verified":false,"createTime":"2026-10-09","likes":6,"commentsCount":0,"shares":0,"views":81,"caption":"Fascinated by failing supply chains. Predictable, efficient global chains from the '90s are gone. Management used to be a cool competitive edge. #SupplyChain #Business #Economics #Walmart #Amazon","sectionId":"systems_erp","sectionName":"Systems ERP","sectionColor":"#f59e0b","strategicHook":"Uniquely Standard & Customer-Side Advocacy: Protecting proprietary operational edges from generic vendor templates.","comments":[],"hasCommentGold":false},{"id":29,"url":"https://www.tiktok.com/@erickimberling0/video/7694414958200753422","author":"@erickimberling0","authorNick":"Digital Transformation w/ Eric","verified":false,"createTime":"2026-10-08","likes":4,"commentsCount":0,"shares":1,"views":336,"caption":"AI agents found a way to hack into systems, posting messages like 'OMG I found a way to do XYZ.' It sounds like humans collaborating, but it was just AI. #AI #TechNews #Cybersecurity #ArtificialIntelligence #WSJ","sectionId":"systems_erp","sectionName":"Systems ERP","sectionColor":"#f59e0b","strategicHook":"Uniquely Standard & Customer-Side Advocacy: Protecting proprietary operational edges from generic vendor templates.","comments":[],"hasCommentGold":false},{"id":30,"url":"https://www.tiktok.com/@erickimberling0/video/7694365251445230861","author":"@erickimberling0","authorNick":"Digital Transformation w/ Eric","verified":false,"createTime":"2026-10-08","likes":2,"commentsCount":0,"shares":0,"views":320,"caption":"Open source vs. closed source ERP: Which is better? It depends! Weighing the pros and cons of each. #ERP #OpenSource #ClosedSource #BusinessSoftware #Tech","sectionId":"systems_erp","sectionName":"Systems ERP","sectionColor":"#f59e0b","strategicHook":"Uniquely Standard & Customer-Side Advocacy: Protecting proprietary operational edges from generic vendor templates.","comments":[],"hasCommentGold":false},{"id":31,"url":"https://www.tiktok.com/@jenna_gardner_ai/video/7615804427169025310","author":"@jenna_gardner_ai","authorNick":"jenna_gardner_ai","verified":false,"createTime":"2026-03-11","likes":7135,"commentsCount":374,"shares":948,"views":114200,"caption":"AI game is heating up. Enterprises have huge gaps and needs either this shift. Capitalize on the opportunity 👀. #ai #appliedai #business #career #marketing","sectionId":"systems_erp","sectionName":"Systems ERP","sectionColor":"#f59e0b","strategicHook":"Uniquely Standard & Customer-Side Advocacy: Protecting proprietary operational edges from generic vendor templates.","comments":[],"hasCommentGold":false},{"id":32,"url":"https://www.tiktok.com/@jenna_gardner_ai/video/7592462823347768606","author":"@jenna_gardner_ai","authorNick":"jenna_gardner_ai","verified":false,"createTime":"2026-01-07","likes":5448,"commentsCount":187,"shares":587,"views":64500,"caption":"Experience and specialization! Create hands on experience (informal counts!) and combine it with whichever industry, vertical, etc you have knowledge in and that’s your ticket in. AI skills are just too general if not matched with something else. Make it easy for a recruiter to say “that’s just who we’re looking for”. #ai #appliedai #career #tech ","sectionId":"leadership","sectionName":"Leadership","sectionColor":"#ef4444","strategicHook":"B.O.S.S. Protocol & Ground-Truth Alignment: Bridging executive strategy to warehouse dock execution before writing code.","comments":[],"hasCommentGold":false},{"id":33,"url":"https://www.tiktok.com/@jenna_gardner_ai/video/7449521703027313966","author":"@jenna_gardner_ai","authorNick":"jenna_gardner_ai","verified":false,"createTime":"2024-12-17","likes":3045,"commentsCount":210,"shares":904,"views":62600,"caption":"#creatorsearchinsights oh, just me and some of my closest friends chatting about nuclear energy. #ai #artificialintelligence #aitools #aieducation #notebookLM #technology #businessowner ","sectionId":"leadership","sectionName":"Leadership","sectionColor":"#ef4444","strategicHook":"B.O.S.S. Protocol & Ground-Truth Alignment: Bridging executive strategy to warehouse dock execution before writing code.","comments":[],"hasCommentGold":false},{"id":34,"url":"https://www.tiktok.com/@jenna_gardner_ai/video/7694794005388725534","author":"@jenna_gardner_ai","authorNick":"jenna_gardner_ai","verified":false,"createTime":"2026-10-09","likes":67,"commentsCount":16,"shares":2,"views":2603,"caption":"#greenscreen that sounds like the title of a gal who needs a raise. #ai #superintelligence #appliedai #tech ","sectionId":"leadership","sectionName":"Leadership","sectionColor":"#ef4444","strategicHook":"B.O.S.S. Protocol & Ground-Truth Alignment: Bridging executive strategy to warehouse dock execution before writing code.","comments":[],"hasCommentGold":false},{"id":35,"url":"https://www.tiktok.com/@jenna_gardner_ai/video/7694508192776178975","author":"@jenna_gardner_ai","authorNick":"jenna_gardner_ai","verified":false,"createTime":"2026-10-09","likes":278,"commentsCount":37,"shares":15,"views":6755,"caption":"Sure, you can make your own company-wide project management system… but dear god, is it worth it?? #ai #appliedai #enterprise #vibecode #engineering ","sectionId":"systems_erp","sectionName":"Systems ERP","sectionColor":"#f59e0b","strategicHook":"Uniquely Standard & Customer-Side Advocacy: Protecting proprietary operational edges from generic vendor templates.","comments":[],"hasCommentGold":false},{"id":36,"url":"https://www.tiktok.com/@jenna_gardner_ai/video/7694125041985817886","author":"@jenna_gardner_ai","authorNick":"jenna_gardner_ai","verified":false,"createTime":"2026-10-08","likes":92,"commentsCount":4,"shares":2,"views":1757,"caption":"Hiiii #ai #appliedai #marketing #figma ","sectionId":"leadership","sectionName":"Leadership","sectionColor":"#ef4444","strategicHook":"B.O.S.S. Protocol & Ground-Truth Alignment: Bridging executive strategy to warehouse dock execution before writing code.","comments":[],"hasCommentGold":false},{"id":37,"url":"https://www.tiktok.com/@jenna_gardner_ai/video/7693808100926623006","author":"@jenna_gardner_ai","authorNick":"jenna_gardner_ai","verified":false,"createTime":"2026-10-07","likes":126,"commentsCount":11,"shares":12,"views":2104,"caption":"Replying to @It Starts With Us: DJ Atchison I keep this response in my back pocket, comes in handy pretty often haha. #ai #appliedai #interview #careeradvice #careertok ","sectionId":"leadership","sectionName":"Leadership","sectionColor":"#ef4444","strategicHook":"B.O.S.S. Protocol & Ground-Truth Alignment: Bridging executive strategy to warehouse dock execution before writing code.","comments":[],"hasCommentGold":false},{"id":38,"url":"https://www.tiktok.com/@jenna_gardner_ai/video/7693398979098201374","author":"@jenna_gardner_ai","authorNick":"jenna_gardner_ai","verified":false,"createTime":"2026-10-06","likes":245,"commentsCount":32,"shares":17,"views":3805,"caption":"Friendly PSA to use your people skills + AI obsession to have a much senior role and make that $ #ai #career #appliedai #leadership #enterprise ","sectionId":"systems_erp","sectionName":"Systems ERP","sectionColor":"#f59e0b","strategicHook":"Uniquely Standard & Customer-Side Advocacy: Protecting proprietary operational edges from generic vendor templates.","comments":[],"hasCommentGold":false},{"id":39,"url":"https://www.tiktok.com/@jenna_gardner_ai/video/7692906870259895582","author":"@jenna_gardner_ai","authorNick":"jenna_gardner_ai","verified":false,"createTime":"2026-10-04","likes":59,"commentsCount":3,"shares":3,"views":2472,"caption":"Get the deets at www.dunes.digital/cohort ……. And for all the folks who signed up for the waitlist, check your spam folder! Pumped for round 2! #ai #leadership #enterprise #business #consulting ","sectionId":"systems_erp","sectionName":"Systems ERP","sectionColor":"#f59e0b","strategicHook":"Uniquely Standard & Customer-Side Advocacy: Protecting proprietary operational edges from generic vendor templates.","comments":[],"hasCommentGold":false},{"id":40,"url":"https://www.tiktok.com/@jenna_gardner_ai/video/7691218745343085854","author":"@jenna_gardner_ai","authorNick":"jenna_gardner_ai","verified":false,"createTime":"2026-09-30","likes":103,"commentsCount":24,"shares":6,"views":5579,"caption":"It feels so good to cancel a subscription. This user is seeking a one persisten assistant experience… inching my way closer. #ai #codex #business #wix #consulting @OpenAI  ","sectionId":"leadership","sectionName":"Leadership","sectionColor":"#ef4444","strategicHook":"B.O.S.S. Protocol & Ground-Truth Alignment: Bridging executive strategy to warehouse dock execution before writing code.","comments":[],"hasCommentGold":false},{"id":41,"url":"https://www.tiktok.com/@jenna_gardner_ai/video/7690774950877154590","author":"@jenna_gardner_ai","authorNick":"jenna_gardner_ai","verified":false,"createTime":"2026-09-29","likes":110,"commentsCount":10,"shares":3,"views":3986,"caption":"Replying to @Allfather the conversation starts with the business wanting to use AI to solve its goal (or problem) but AI tends to be the smallest piece of the solve, especially at large enterprises where the data and processes are in such array. The system needs to be in alignment before it’s accelerated with ai. #ai #appliedai #enterprise ","sectionId":"data_spine","sectionName":"Data Spine","sectionColor":"#3b82f6","strategicHook":"Entity MDM & Tacit Extraction: Reconciling 20-year unwritten dock wisdom into clean, governed knowledge spines.","comments":[],"hasCommentGold":false},{"id":42,"url":"https://www.tiktok.com/@jenna_gardner_ai/video/7690721737628978463","author":"@jenna_gardner_ai","authorNick":"jenna_gardner_ai","verified":false,"createTime":"2026-09-28","likes":59,"commentsCount":4,"shares":3,"views":1993,"caption":"I have LOVED this first cohort. Huge shout out to the awesome first members who have brought incredible insight, sticky problems, and commitment to practicing judgement amidst ambiguity. Let’s do round 2! Join the waitlist at www.dunes.digital/cohort #ai #career #leadership #enterprise #appliedai","sectionId":"systems_erp","sectionName":"Systems ERP","sectionColor":"#f59e0b","strategicHook":"Uniquely Standard & Customer-Side Advocacy: Protecting proprietary operational edges from generic vendor templates.","comments":[],"hasCommentGold":false},{"id":43,"url":"https://www.tiktok.com/@jenna_gardner_ai/video/7689312426864430366","author":"@jenna_gardner_ai","authorNick":"jenna_gardner_ai","verified":false,"createTime":"2026-09-25","likes":125,"commentsCount":10,"shares":2,"views":4243,"caption":"There is seriously one thousand ways to solve a problem now. Don’t get too precious about which tool, they are constantly changing. Choose the best, most sustainable option (and be flexible to change it down the line). #ai #solutions #appliedai #enterprise #tech ","sectionId":"systems_erp","sectionName":"Systems ERP","sectionColor":"#f59e0b","strategicHook":"Uniquely Standard & Customer-Side Advocacy: Protecting proprietary operational edges from generic vendor templates.","comments":[],"hasCommentGold":false},{"id":44,"url":"https://www.tiktok.com/@jenna_gardner_ai/video/7688523041764101407","author":"@jenna_gardner_ai","authorNick":"jenna_gardner_ai","verified":false,"createTime":"2026-09-23","likes":79,"commentsCount":12,"shares":4,"views":3174,"caption":"When everything is at our fingertips, it has never been more tempting to do more, but the discipline is to get very intentional about the core items that will activate change and focus energy only on those few things. #ai #transformation #enterprise #business ","sectionId":"systems_erp","sectionName":"Systems ERP","sectionColor":"#f59e0b","strategicHook":"Uniquely Standard & Customer-Side Advocacy: Protecting proprietary operational edges from generic vendor templates.","comments":[],"hasCommentGold":false},{"id":45,"url":"https://www.tiktok.com/@jenna_gardner_ai/video/7688415707205258526","author":"@jenna_gardner_ai","authorNick":"jenna_gardner_ai","verified":false,"createTime":"2026-09-22","likes":83,"commentsCount":12,"shares":13,"views":2262,"caption":"#onthisday said this a year ago, it’s not widely available yet but becoming more popular in large businesses, from audience simulations to synthetic data. #ai #marketing #enterprise #simulation ","sectionId":"data_spine","sectionName":"Data Spine","sectionColor":"#3b82f6","strategicHook":"Entity MDM & Tacit Extraction: Reconciling 20-year unwritten dock wisdom into clean, governed knowledge spines.","comments":[],"hasCommentGold":false},{"id":46,"url":"https://www.tiktok.com/@sd141414/video/7614878412750015775","author":"@sd141414","authorNick":"Steve | Systems & AI","verified":false,"createTime":"2026-03-08","likes":3449,"commentsCount":90,"shares":751,"views":65100,"caption":"Anyone can build the app now.\nThe moat is upstream of the build.\nProximity to the problem. Partnership with deep expertise. Discipline in what you choose to solve.\nThese are the things that compound.\nProdBlueprint if you want the framework for selecting the right problems to build around.\n#SystemsThinking #SoftwareArchitecture #AIEconomics #SaaSKiller","sectionId":"it_harness","sectionName":"IT Harness","sectionColor":"#8b5cf6","strategicHook":"The Rig Multi-Cell State Engine: 13-cell isolated runtime with immutable rollback checkpoints and strict authority.","comments":[],"hasCommentGold":false},{"id":47,"url":"https://www.tiktok.com/@sd141414/video/7586683172964928798","author":"@sd141414","authorNick":"Steve | Systems & AI","verified":false,"createTime":"2025-12-22","likes":14200,"commentsCount":403,"shares":1481,"views":228500,"caption":"Coding is becoming a specialized skill.\nSystems thinking is becoming the leverage.\n\nFor solo builders and small teams, AI collapses implementation cost, but it doesn’t replace judgment.\n\nThe teams that win understand architecture, constraints, and failure modes, not just how to generate code.\n\nThis is what production-ready thinking looks like in an AI-driven world.  #vibecoding #solobuild #systemsthinking ","sectionId":"it_harness","sectionName":"IT Harness","sectionColor":"#8b5cf6","strategicHook":"The Rig Multi-Cell State Engine: 13-cell isolated runtime with immutable rollback checkpoints and strict authority.","comments":[],"hasCommentGold":false},{"id":48,"url":"https://www.tiktok.com/@sd141414/video/7591890318543342879","author":"@sd141414","authorNick":"Steve | Systems & AI","verified":false,"createTime":"2026-01-05","likes":22700,"commentsCount":524,"shares":2511,"views":379100,"caption":"Enterprise buyers don’t buy demos. They buy risk reduction.\n\nAI makes it easier than ever to ship code.  It does not make you enterprise-ready.\n\nThis is a systems problem, not a talent problem.  #vibecoding #saasfounders #aibuilders ","sectionId":"it_harness","sectionName":"IT Harness","sectionColor":"#8b5cf6","strategicHook":"The Rig Multi-Cell State Engine: 13-cell isolated runtime with immutable rollback checkpoints and strict authority.","comments":[],"hasCommentGold":false},{"id":49,"url":"https://www.tiktok.com/@sd141414/video/7694333426274422046","author":"@sd141414","authorNick":"Steve | Systems & AI","verified":false,"createTime":"2026-10-08","likes":111,"commentsCount":8,"shares":16,"views":2997,"caption":"Building got cheap. Demand and reach did not.\nWhen anyone can ship, the buyer stops shopping.\nIf enterprise is your buyer, the checklist covers what they require before they say yes. Free with the newsletter.\nMost founders are still spending their hours on the cheap part.\n#SystemsThinking #SoftwareArchitecture #AIEconomics #SaaSKiller","sectionId":"it_harness","sectionName":"IT Harness","sectionColor":"#8b5cf6","strategicHook":"The Rig Multi-Cell State Engine: 13-cell isolated runtime with immutable rollback checkpoints and strict authority.","comments":[],"hasCommentGold":false},{"id":50,"url":"https://www.tiktok.com/@sd141414/video/7693914761087454494","author":"@sd141414","authorNick":"Steve | Systems & AI","verified":false,"createTime":"2026-10-07","likes":82,"commentsCount":6,"shares":11,"views":2046,"caption":"212 prompts went in. 61 came out.\nThe ones I cut told the agent to do things it now already does on its own.\nThe ones that survived carry a decision, or a rule from a real failure.\nThat is what the Production Blueprint is rebuilt around. You get it once and own it.\nKnowing what to ask is common now.  Judgement and ownership is where you create value. ","sectionId":"factory_dev","sectionName":"Factory Dev","sectionColor":"#10b981","strategicHook":"Deterministic Caller Gates & Rig Scaffold: Moving beyond loose agent prompts to zero-rollback architecture.","comments":[],"hasCommentGold":false},{"id":51,"url":"https://www.tiktok.com/@sd141414/video/7693178704674983199","author":"@sd141414","authorNick":"Steve | Systems & AI","verified":false,"createTime":"2026-10-05","likes":1591,"commentsCount":36,"shares":155,"views":26800,"caption":"Enterprise buyers do not ask to see your code.\nThey ask someone on your team to explain the system.\nWhere the data goes. Who can reach it. What gets logged. What happens when it fails.\nAgents can write all of it. Someone still has to be able to answer.\nI put the five things big companies require in a checklist. It is free with the newsletter.\nMost teams find out who that person is in the middle of a review.\n#SystemsThinking #SoftwareArchitecture #AIEconomics #SaaSKiller","sectionId":"data_spine","sectionName":"Data Spine","sectionColor":"#3b82f6","strategicHook":"Entity MDM & Tacit Extraction: Reconciling 20-year unwritten dock wisdom into clean, governed knowledge spines.","comments":[],"hasCommentGold":false},{"id":52,"url":"https://www.tiktok.com/@sd141414/video/7692104697821318430","author":"@sd141414","authorNick":"Steve | Systems & AI","verified":false,"createTime":"2026-10-02","likes":201,"commentsCount":23,"shares":17,"views":5960,"caption":"Someone asked what happens to AI-built code if AI goes away.\nShort answer: it is mostly a one-way door.\nTests and decision records are how you keep a way back.\nThey are cheap to add early and expensive to add late.\nThe decision-record habit is part of my Blueprint, and you own it once. Most teams start writing these after the codebase is already too big.","sectionId":"factory_dev","sectionName":"Factory Dev","sectionColor":"#10b981","strategicHook":"Deterministic Caller Gates & Rig Scaffold: Moving beyond loose agent prompts to zero-rollback architecture.","comments":[],"hasCommentGold":false},{"id":53,"url":"https://www.tiktok.com/@sd141414/video/7691732447398006047","author":"@sd141414","authorNick":"Steve | Systems & AI","verified":false,"createTime":"2026-10-01","likes":372,"commentsCount":26,"shares":32,"views":10300,"caption":"Who maintains AI-written code if AI goes away?\nThe same person as always: whoever understands the system.\nThat person is getting harder to find.\nUnderstanding means the architecture and the reasons behind it.\nThe Systems Thinking Quiz is a quick way to see where you stand.\nMost teams do not know who that person is until something breaks.\n#SystemsThinking #SoftwareArchitecture","sectionId":"it_harness","sectionName":"IT Harness","sectionColor":"#8b5cf6","strategicHook":"The Rig Multi-Cell State Engine: 13-cell isolated runtime with immutable rollback checkpoints and strict authority.","comments":[],"hasCommentGold":false},{"id":54,"url":"https://www.tiktok.com/@sd141414/video/7691411705296850207","author":"@sd141414","authorNick":"Steve | Systems & AI","verified":false,"createTime":"2026-09-30","likes":194,"commentsCount":50,"shares":10,"views":6593,"caption":"Line by line review does not survive AI-speed delivery.\nQuality has to live in the test suite now.\nMy own coverage numbers are higher than they ever were with hand-written code.\nEnterprise buyers ask about this. I put what they require in a checklist, free with the newsletter. Most teams still treat tests as the cleanup step.","sectionId":"factory_dev","sectionName":"Factory Dev","sectionColor":"#10b981","strategicHook":"Deterministic Caller Gates & Rig Scaffold: Moving beyond loose agent prompts to zero-rollback architecture.","comments":[],"hasCommentGold":false},{"id":55,"url":"https://www.tiktok.com/@sd141414/video/7689481248883936542","author":"@sd141414","authorNick":"Steve | Systems & AI","verified":false,"createTime":"2026-09-25","likes":42,"commentsCount":6,"shares":4,"views":1278,"caption":"Accountability follows control.\nRight now developers hold most of it, so developers carry most of the blame.\nEvery control you ship to the deployer hands some of that weight downstream. See my bio for a Blueprint on how to design systems for accountability.  ","sectionId":"it_harness","sectionName":"IT Harness","sectionColor":"#8b5cf6","strategicHook":"The Rig Multi-Cell State Engine: 13-cell isolated runtime with immutable rollback checkpoints and strict authority.","comments":[],"hasCommentGold":false},{"id":56,"url":"https://www.tiktok.com/@sd141414/video/7688085727640358175","author":"@sd141414","authorNick":"Steve | Systems & AI","verified":false,"createTime":"2026-09-21","likes":44,"commentsCount":4,"shares":1,"views":1550,"caption":"Recursive self-improvement needs a result that can be scored automatically.\nSearch advertising has that. Most business processes do not.\nAn invoice reminder can be scored in days. A big enterprise deal produces one data point a year.\nCheck for the answer key before you build the loop.\nThe Systems Thinking Quiz on prodblueprint.dev is a quick read on how you think about systems like this.\nMost teams choose the process before they check whether it can be scored.","sectionId":"data_spine","sectionName":"Data Spine","sectionColor":"#3b82f6","strategicHook":"Entity MDM & Tacit Extraction: Reconciling 20-year unwritten dock wisdom into clean, governed knowledge spines.","comments":[],"hasCommentGold":false},{"id":57,"url":"https://www.tiktok.com/@sd141414/video/7685459824183676190","author":"@sd141414","authorNick":"Steve | Systems & AI","verified":false,"createTime":"2026-09-14","likes":322,"commentsCount":11,"shares":81,"views":10500,"caption":"Spent the afternoon studying why my AI agent performs so well on one specific repo.\nThree things, none of them the model.\nA doc that explains why, not just what.\nAn issue tracker that gets read, not just written to.\nNothing trusted until it's checked against a clean baseline.\nCurious where your own setup stands - Systems Thinking Quiz, link in bio.","sectionId":"it_harness","sectionName":"IT Harness","sectionColor":"#8b5cf6","strategicHook":"The Rig Multi-Cell State Engine: 13-cell isolated runtime with immutable rollback checkpoints and strict authority.","comments":[],"hasCommentGold":false},{"id":58,"url":"https://www.tiktok.com/@sd141414/video/7683167282138221855","author":"@sd141414","authorNick":"Steve | Systems & AI","verified":false,"createTime":"2026-09-08","likes":29,"commentsCount":1,"shares":2,"views":837,"caption":"The goalposts aren't moving because someone's lying.\nThey're moving because you're finally close enough to ask for the number.\nSame thing happens on roadmaps and fundraising decks, not just AI hype.","sectionId":"factory_dev","sectionName":"Factory Dev","sectionColor":"#10b981","strategicHook":"Deterministic Caller Gates & Rig Scaffold: Moving beyond loose agent prompts to zero-rollback architecture.","comments":[],"hasCommentGold":false},{"id":59,"url":"https://www.tiktok.com/@sd141414/video/7680237370943261982","author":"@sd141414","authorNick":"Steve | Systems & AI","verified":false,"createTime":"2026-08-31","likes":37,"commentsCount":3,"shares":2,"views":1335,"caption":"Some of what I build into every product is about scale. Some of it isn't. This checklist is the second pile. Free account @ prodblueprint.dev, on ‘resources’ page.\nTwenty-two boxes. Not the scale pile.","sectionId":"factory_dev","sectionName":"Factory Dev","sectionColor":"#10b981","strategicHook":"Deterministic Caller Gates & Rig Scaffold: Moving beyond loose agent prompts to zero-rollback architecture.","comments":[],"hasCommentGold":false},{"id":60,"url":"https://www.tiktok.com/@sd141414/video/7678036955224935711","author":"@sd141414","authorNick":"Steve | Systems & AI","verified":false,"createTime":"2026-08-25","likes":127,"commentsCount":7,"shares":15,"views":3708,"caption":"The firehose effect: when you can generate change faster than an org can absorb it.\nBuild speed stopped being the constraint.\nReview speed is the new one.\nMost teams haven't recalibrated yet.","sectionId":"factory_dev","sectionName":"Factory Dev","sectionColor":"#10b981","strategicHook":"Deterministic Caller Gates & Rig Scaffold: Moving beyond loose agent prompts to zero-rollback architecture.","comments":[],"hasCommentGold":false},{"id":61,"url":"https://www.tiktok.com/@kylercheatham/video/7590122839685008653","author":"@kylercheatham","authorNick":"Kyler Cheatham","verified":false,"createTime":"2025-12-31","likes":1788,"commentsCount":112,"shares":216,"views":33600,"caption":"“But it’s so intuitive” 🫨 #projectmanagement #corporatelife #devops #informationtechnology #techtok","sectionId":"systems_erp","sectionName":"Systems ERP","sectionColor":"#f59e0b","strategicHook":"Uniquely Standard & Customer-Side Advocacy: Protecting proprietary operational edges from generic vendor templates.","comments":[],"hasCommentGold":false},{"id":62,"url":"https://www.tiktok.com/@kylercheatham/video/7530058843204619533","author":"@kylercheatham","authorNick":"Kyler Cheatham","verified":false,"createTime":"2025-07-22","likes":6231,"commentsCount":310,"shares":1447,"views":88900,"caption":"Send this to your #cio before they approve another stupid tech spend 🙃 or drop their 💌 and I will! #digitaltransformation #enterprisetech #executivedysfuntion #techculture #changemanagement #erpsoftware #aistrategy #aitools #automation #workflow #leadership #software ","sectionId":"automation","sectionName":"Automation","sectionColor":"#06b6d4","strategicHook":"Tacit Seam Routing: Connecting autonomous execution to human exception gates on the shop floor.","comments":[],"hasCommentGold":false},{"id":63,"url":"https://www.tiktok.com/@kylercheatham/video/7520285054916939021","author":"@kylercheatham","authorNick":"Kyler Cheatham","verified":false,"createTime":"2025-06-26","likes":14300,"commentsCount":1000,"shares":4126,"views":255300,"caption":"I hate the term digital transformation. Because most companies aren’t transforming anything they’re simply buying software that amplifies their chaos. ##digitaltransformation##enterprisetech##ops##processimprovement##aifail##techstartup##consulting##processmining##companyculture##techtok##automation##consulting","sectionId":"leadership","sectionName":"Leadership","sectionColor":"#ef4444","strategicHook":"B.O.S.S. Protocol & Ground-Truth Alignment: Bridging executive strategy to warehouse dock execution before writing code.","comments":[],"hasCommentGold":false},{"id":64,"url":"https://www.tiktok.com/@kylercheatham/video/7694424854551907598","author":"@kylercheatham","authorNick":"Kyler Cheatham","verified":false,"createTime":"2026-10-08","likes":790,"commentsCount":44,"shares":103,"views":12400,"caption":"you made eye contact - huge mistake #corporatelife #aiagents #digitaltransformation #devops #tech","sectionId":"systems_erp","sectionName":"Systems ERP","sectionColor":"#f59e0b","strategicHook":"Uniquely Standard & Customer-Side Advocacy: Protecting proprietary operational edges from generic vendor templates.","comments":[],"hasCommentGold":false},{"id":65,"url":"https://www.tiktok.com/@kylercheatham/video/7694370311382355214","author":"@kylercheatham","authorNick":"Kyler Cheatham","verified":false,"createTime":"2026-10-08","likes":223,"commentsCount":11,"shares":3,"views":3476,"caption":"You got a tote bag. IT got a Q4 deliverable. 👌  #informationtechnology #corporatelife #devops #techtok #manufacturing ","sectionId":"systems_erp","sectionName":"Systems ERP","sectionColor":"#f59e0b","strategicHook":"Uniquely Standard & Customer-Side Advocacy: Protecting proprietary operational edges from generic vendor templates.","comments":[],"hasCommentGold":false},{"id":66,"url":"https://www.tiktok.com/@kylercheatham/video/7694170348912200973","author":"@kylercheatham","authorNick":"Kyler Cheatham","verified":false,"createTime":"2026-10-08","likes":298,"commentsCount":12,"shares":7,"views":4318,"caption":"It’s actually really easy when you’ve never done it #aiagents ##manufacturing##devops##corporatelife##techtok","sectionId":"systems_erp","sectionName":"Systems ERP","sectionColor":"#f59e0b","strategicHook":"Uniquely Standard & Customer-Side Advocacy: Protecting proprietary operational edges from generic vendor templates.","comments":[],"hasCommentGold":false},{"id":67,"url":"https://www.tiktok.com/@kylercheatham/video/7694070829415501069","author":"@kylercheatham","authorNick":"Kyler Cheatham","verified":false,"createTime":"2026-10-07","likes":1354,"commentsCount":101,"shares":53,"views":73000,"caption":"What’s your biggest conference ick? #conference #wim #womeninbusiness #tech #vegas ","sectionId":"systems_erp","sectionName":"Systems ERP","sectionColor":"#f59e0b","strategicHook":"Uniquely Standard & Customer-Side Advocacy: Protecting proprietary operational edges from generic vendor templates.","comments":[],"hasCommentGold":false},{"id":68,"url":"https://www.tiktok.com/@kylercheatham/video/7693986906371116301","author":"@kylercheatham","authorNick":"Kyler Cheatham","verified":false,"createTime":"2026-10-07","likes":115,"commentsCount":5,"shares":2,"views":1985,"caption":"Teamwork makes the dream work! #wim #manufacturing #tech #womeninbusiness #vegas ","sectionId":"systems_erp","sectionName":"Systems ERP","sectionColor":"#f59e0b","strategicHook":"Uniquely Standard & Customer-Side Advocacy: Protecting proprietary operational edges from generic vendor templates.","comments":[],"hasCommentGold":false},{"id":69,"url":"https://www.tiktok.com/@kylercheatham/video/7693696107662036237","author":"@kylercheatham","authorNick":"Kyler Cheatham","verified":false,"createTime":"2026-10-06","likes":3479,"commentsCount":95,"shares":351,"views":48600,"caption":"Replying to @Dr Darren Abbey it's all fun and games until somebody gets the invoice 🫪 #aiagents #digitaltransformation #corporatelife #ai #tech ","sectionId":"finance_gl","sectionName":"Finance GL","sectionColor":"#ec4899","strategicHook":"Token Governance & 3-Way Reconciliation: Real-time spend boundaries and automated multi-entity match verification.","comments":[],"hasCommentGold":false},{"id":70,"url":"https://www.tiktok.com/@kylercheatham/video/7693286363910769934","author":"@kylercheatham","authorNick":"Kyler Cheatham","verified":false,"createTime":"2026-10-05","likes":1595,"commentsCount":53,"shares":57,"views":23100,"caption":"Sap has entered the chat 😂 #digitaltransformation #sap #oracle #salesforce #saas ","sectionId":"finance_gl","sectionName":"Finance GL","sectionColor":"#ec4899","strategicHook":"Token Governance & 3-Way Reconciliation: Real-time spend boundaries and automated multi-entity match verification.","comments":[],"hasCommentGold":false},{"id":71,"url":"https://www.tiktok.com/@kylercheatham/video/7693224093218327822","author":"@kylercheatham","authorNick":"Kyler Cheatham","verified":false,"createTime":"2026-10-05","likes":4214,"commentsCount":76,"shares":172,"views":58200,"caption":"$100 per terrible decision 👏 #copilot #aiagents #corporatelife #informationtechnology #tech ","sectionId":"automation","sectionName":"Automation","sectionColor":"#06b6d4","strategicHook":"Tacit Seam Routing: Connecting autonomous execution to human exception gates on the shop floor.","comments":[],"hasCommentGold":false},{"id":72,"url":"https://www.tiktok.com/@kylercheatham/video/7692155761580920078","author":"@kylercheatham","authorNick":"Kyler Cheatham","verified":false,"createTime":"2026-10-02","likes":2876,"commentsCount":145,"shares":162,"views":29400,"caption":"The AS/400 did not consent to this  #aiagents #corporatelife #devops #softwareengineer #tech ","sectionId":"systems_erp","sectionName":"Systems ERP","sectionColor":"#f59e0b","strategicHook":"Uniquely Standard & Customer-Side Advocacy: Protecting proprietary operational edges from generic vendor templates.","comments":[],"hasCommentGold":false},{"id":73,"url":"https://www.tiktok.com/@kylercheatham/video/7692098864488140045","author":"@kylercheatham","authorNick":"Kyler Cheatham","verified":false,"createTime":"2026-10-02","likes":29800,"commentsCount":910,"shares":3773,"views":286100,"caption":"Love a good AI invoice jump scare 🫪 #ai #informationtechnology #chatbot #corporatelife #techtok","sectionId":"finance_gl","sectionName":"Finance GL","sectionColor":"#ec4899","strategicHook":"Token Governance & 3-Way Reconciliation: Real-time spend boundaries and automated multi-entity match verification.","comments":[],"hasCommentGold":false},{"id":74,"url":"https://www.tiktok.com/@kylercheatham/video/7691776264323091726","author":"@kylercheatham","authorNick":"Kyler Cheatham","verified":false,"createTime":"2026-10-01","likes":647,"commentsCount":37,"shares":43,"views":13800,"caption":"The Kool-Aid is billed per token ##ai##saas##corporatelife##bigtech##techtok","sectionId":"finance_gl","sectionName":"Finance GL","sectionColor":"#ec4899","strategicHook":"Token Governance & 3-Way Reconciliation: Real-time spend boundaries and automated multi-entity match verification.","comments":[],"hasCommentGold":false},{"id":75,"url":"https://www.tiktok.com/@kylercheatham/video/7691749176341794061","author":"@kylercheatham","authorNick":"Kyler Cheatham","verified":false,"createTime":"2026-10-01","likes":1874,"commentsCount":51,"shares":66,"views":28400,"caption":"Replying to @luckypunctuation POV: You let Copilot cook and now outside counsel is involved  #copilot #compliance #corporatelife #aiagents #techtok ","sectionId":"automation","sectionName":"Automation","sectionColor":"#06b6d4","strategicHook":"Tacit Seam Routing: Connecting autonomous execution to human exception gates on the shop floor.","comments":[],"hasCommentGold":false}];
+    let activeSection = 'all';
+    let activeAuthor = 'all';
+    let commentGoldOnly = false;
+    let searchQuery = '';
+
+    function renderFeed() {
+      const grid = document.getElementById('feed-grid');
+      grid.innerHTML = '';
+
+      const filtered = SIGNALS.filter(s => {
+        if (activeSection !== 'all' && s.sectionId !== activeSection) return false;
+        if (activeAuthor !== 'all' && s.author !== activeAuthor) return false;
+        if (commentGoldOnly && !s.hasCommentGold) return false;
+        if (searchQuery) {
+          const q = searchQuery.toLowerCase();
+          const matchCap = s.caption.toLowerCase().includes(q);
+          const matchAuthor = s.author.toLowerCase().includes(q);
+          const matchComments = s.comments.some(c => c.text.toLowerCase().includes(q) || c.author.toLowerCase().includes(q));
+          if (!matchCap && !matchAuthor && !matchComments) return false;
+        }
+        return true;
+      });
+
+      document.getElementById('feed-count').innerText = 'Showing ' + filtered.length + ' of ' + SIGNALS.length + ' Signals';
+
+      filtered.forEach(s => {
+        const card = document.createElement('div');
+        card.className = 'signal-card';
+
+        let commentsHtml = '';
+        if (s.comments && s.comments.length > 0) {
+          commentsHtml = '<div class="comments-bay">' +
+            '<div class="comments-bay-header"><span>💬</span> Lived War Story / Field Comment (' + s.comments.length + ')</div>' +
+            s.comments.map(c => 
+              '<div class="comment-item">' +
+                '<div class="comment-author-row">' +
+                  '<span>' + c.author + '</span>' +
+                  '<span class="comment-likes">❤️ ' + c.likes + '</span>' +
+                '</div>' +
+                '<div>"' + c.text + '"</div>' +
+              '</div>'
+            ).join('') +
+          '</div>';
+        }
+
+        card.innerHTML = 
+          '<div class="signal-card-top">' +
+            '<div class="creator-meta">' +
+              '<div class="creator-avatar">' + s.author.slice(1, 3).toUpperCase() + '</div>' +
+              '<div class="creator-details">' +
+                '<span class="creator-name">' + s.authorNick + (s.verified ? ' <span style="color:#06b6d4;">✓</span>' : '') + '</span>' +
+                '<span class="creator-handle">' + s.author + ' · ' + s.createTime + '</span>' +
+              '</div>' +
+            '</div>' +
+            '<span class="section-tag" style="background:' + s.sectionColor + '20;color:' + s.sectionColor + ';border:1px solid ' + s.sectionColor + ';">' + s.sectionName + '</span>' +
+          '</div>' +
+          '<div class="signal-transcript">"' + s.caption + '"</div>' +
+          commentsHtml +
+          '<div class="signal-footer">' +
+            '<div class="hook-row">' +
+              '<span class="hook-tag">DigOps Hook</span>' +
+              '<span>' + s.strategicHook + '</span>' +
+            '</div>' +
+            '<div class="action-row">' +
+              '<a href="' + s.url + '" target="_blank" rel="noreferrer" class="tiktok-link">Open on TikTok ↗</a>' +
+              '<div class="stats-pills">' +
+                '<span>❤️ ' + s.likes + '</span>' +
+                '<span>💬 ' + s.commentsCount + '</span>' +
+                '<span>🔁 ' + s.shares + '</span>' +
+              '</div>' +
+            '</div>' +
+          '</div>';
+
+        grid.appendChild(card);
+      });
+    }
+
+    function selectSection(id) {
+      activeSection = id;
+      document.querySelectorAll('.matrix-card').forEach(c => c.classList.remove('active'));
+      document.querySelectorAll('[id^="btn-sec-"]').forEach(b => b.classList.remove('active'));
+
+      if (id !== 'all') {
+        const card = document.getElementById('card-' + id);
+        if (card) card.classList.add('active');
+        const btn = document.getElementById('btn-sec-' + id);
+        if (btn) btn.classList.add('active');
+      } else {
+        const btn = document.getElementById('btn-sec-all');
+        if (btn) btn.classList.add('active');
+      }
+      renderFeed();
+    }
+
+    function selectAuthor(author) {
+      activeAuthor = author;
+      document.querySelectorAll('[id^="btn-author-"]').forEach(b => b.classList.remove('active'));
+      const idMap = {
+        'all': 'btn-author-all',
+        '@sd141414': 'btn-author-sd141414',
+        '@erickimberling0': 'btn-author-erickimberling0',
+        '@kylercheatham': 'btn-author-kylercheatham',
+        '@jenna_gardner_ai': 'btn-author-jenna_gardner_ai',
+        '@jakevanclief': 'btn-author-jakevanclief'
+      };
+      const btn = document.getElementById(idMap[author]);
+      if (btn) btn.classList.add('active');
+      renderFeed();
+    }
+
+    function toggleCommentGold() {
+      commentGoldOnly = !commentGoldOnly;
+      const btn = document.getElementById('btn-gold-toggle');
+      if (commentGoldOnly) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+      renderFeed();
+    }
+
+    function handleSearch() {
+      searchQuery = document.getElementById('search-box').value;
+      renderFeed();
+    }
+
+    // Initial render
+    renderFeed();
+  </script>
+</body>
+</html>

@@ -3,7 +3,7 @@ import FolioHome from "@/components/home/FolioHome";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Robert Paddock · Enterprise Technology Leader | idigdata",
+    absolute: "Robert Paddock — Enterprise Technology Leader | idigdata",
   },
   description:
     "Enterprise technology leadership grounded in 50+ implementations and 15 enterprise transformations at scale.",
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://idigdata.com/",
-    title: "Robert Paddock · Enterprise Technology Leader",
+    title: "Robert Paddock — Enterprise Technology Leader",
     description:
       "Enterprise technology leadership grounded in 50+ implementations and 15 enterprise transformations at scale.",
     images: [

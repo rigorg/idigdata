@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import PresenceShell from "@/components/presence/PresenceShell";
 
 export const dynamic = "force-dynamic";
-export const robots = { index: false, follow: false };
 
 export const metadata: Metadata = {
   title: "How this site is held",
