@@ -155,40 +155,40 @@ function getNextDomainOnGesture(
     "data_knowledge",       // 3: Left
   ];
 
-  const currentIndex = horizontalRing.indexOf(currentDomainId);
+  // Vertical ring cycles smoothly between Front, Bottom, and Top
+  // Pulling UP: Leadership (Front) -> Financial Systems (Bottom) -> Workflows (Top) -> Leadership (Front)...
+  // Pulling DOWN: Leadership (Front) -> Workflows (Top) -> Financial Systems (Bottom) -> Leadership (Front)...
+  const verticalRing = [
+    "leadership_direction", // 0: Front
+    "financial_systems",    // 1: Bottom
+    "workflows_automation", // 2: Top
+  ];
+
+  const hIndex = horizontalRing.indexOf(currentDomainId);
+  const vIndex = verticalRing.indexOf(currentDomainId);
 
   switch (direction) {
     case "PULL_UP":
-      // "You pull up, then it's going to spin to the bottom of the block, and whatever's on the bottom of the block takes into fruition."
-      if (currentDomainId === "financial_systems") {
-        return "it_ot_operations";
-      }
-      if (currentDomainId === "workflows_automation") {
-        return "leadership_direction";
+      if (vIndex !== -1) {
+        return verticalRing[(vIndex + 1) % verticalRing.length];
       }
       return "financial_systems";
 
     case "PULL_DOWN":
-      // Pulling down reveals the top face (Workflows & Automation)
-      if (currentDomainId === "workflows_automation") {
-        return "it_ot_operations";
-      }
-      if (currentDomainId === "financial_systems") {
-        return "leadership_direction";
+      if (vIndex !== -1) {
+        return verticalRing[(vIndex - 1 + verticalRing.length) % verticalRing.length];
       }
       return "workflows_automation";
 
     case "PULL_LEFT":
-      // Pulling left pulls the next face from the right into center
-      if (currentIndex !== -1) {
-        return horizontalRing[(currentIndex + 1) % horizontalRing.length];
+      if (hIndex !== -1) {
+        return horizontalRing[(hIndex + 1) % horizontalRing.length];
       }
       return "business_systems";
 
     case "PULL_RIGHT":
-      // Pulling right pulls the previous face from the left into center
-      if (currentIndex !== -1) {
-        return horizontalRing[(currentIndex - 1 + horizontalRing.length) % horizontalRing.length];
+      if (hIndex !== -1) {
+        return horizontalRing[(hIndex - 1 + horizontalRing.length) % horizontalRing.length];
       }
       return "data_knowledge";
   }
@@ -196,15 +196,18 @@ function getNextDomainOnGesture(
 
 // 3D Angle-based fallback to find the face facing the camera
 function getClosestDomainFromRotation(rotX: number, rotY: number): string {
-  if (rotX > 35) {
-    return "financial_systems";
-  }
-  if (rotX < -45) {
-    return "workflows_automation";
-  }
+  let normX = ((rotX % 360) + 360) % 360;
+  if (normX > 180) normX -= 360;
 
   let normY = ((rotY % 360) + 360) % 360;
   if (normY > 180) normY -= 360;
+
+  if (normX > 35 && normX <= 135) {
+    return "financial_systems";
+  }
+  if (normX < -45 && normX >= -135) {
+    return "workflows_automation";
+  }
 
   if (normY >= -45 && normY <= 45) {
     return "leadership_direction";
@@ -219,21 +222,58 @@ function getClosestDomainFromRotation(rotX: number, rotY: number): string {
 
 function getCanonicalRotationForDomain(
   targetDomainId: string,
-  currentRotation: { x: number; y: number }
+  currentRotation: { x: number; y: number },
+  direction?: "PULL_UP" | "PULL_DOWN" | "PULL_LEFT" | "PULL_RIGHT"
 ): { x: number; y: number } {
   const config = DOMAIN_CONFIGS.find((d) => d.id === targetDomainId) || DOMAIN_CONFIGS[0];
-  const targetX = config.cubeRotation.x;
 
-  if (targetDomainId === "financial_systems" || targetDomainId === "workflows_automation") {
-    const nearest360 = Math.round(currentRotation.y / 360) * 360;
-    return { x: targetX, y: nearest360 };
+  if (targetDomainId === "financial_systems") {
+    let diff = (78 - currentRotation.x) % 360;
+    if (diff > 180) diff -= 360;
+    if (diff < -180) diff += 360;
+    if (Math.abs(diff) === 180) {
+      if (direction === "PULL_UP") diff = 180;
+      if (direction === "PULL_DOWN") diff = -180;
+    }
+    const targetX = currentRotation.x + diff;
+    const nearest360Y = Math.round(currentRotation.y / 360) * 360;
+    return { x: targetX, y: nearest360Y };
   }
 
+  if (targetDomainId === "workflows_automation") {
+    let diff = (-102 - currentRotation.x) % 360;
+    if (diff > 180) diff -= 360;
+    if (diff < -180) diff += 360;
+    if (Math.abs(diff) === 180) {
+      if (direction === "PULL_UP") diff = 180;
+      if (direction === "PULL_DOWN") diff = -180;
+    }
+    const targetX = currentRotation.x + diff;
+    const nearest360Y = Math.round(currentRotation.y / 360) * 360;
+    return { x: targetX, y: nearest360Y };
+  }
+
+  // Horizontal faces (target base X = -12)
+  let diffX = (-12 - currentRotation.x) % 360;
+  if (diffX > 180) diffX -= 360;
+  if (diffX < -180) diffX += 360;
+  if (Math.abs(diffX) === 180) {
+    if (direction === "PULL_UP") diffX = 180;
+    if (direction === "PULL_DOWN") diffX = -180;
+  }
+  const targetX = currentRotation.x + diffX;
+
   const baseTargetY = config.cubeRotation.y;
-  let diff = (baseTargetY - currentRotation.y) % 360;
-  if (diff > 180) diff -= 360;
-  if (diff < -180) diff += 360;
-  return { x: targetX, y: currentRotation.y + diff };
+  let diffY = (baseTargetY - currentRotation.y) % 360;
+  if (diffY > 180) diffY -= 360;
+  if (diffY < -180) diffY += 360;
+  if (Math.abs(diffY) === 180) {
+    if (direction === "PULL_LEFT") diffY = -180;
+    if (direction === "PULL_RIGHT") diffY = 180;
+  }
+  const targetY = currentRotation.y + diffY;
+
+  return { x: targetX, y: targetY };
 }
 
 function DomainBlockIcon({
@@ -437,7 +477,7 @@ function TheBlockConfiguratorPage() {
     }
 
     const sensitivity = 0.55;
-    const nextRotX = Math.max(-120, Math.min(100, dragStartRef.current.rotX - dy * sensitivity));
+    const nextRotX = dragStartRef.current.rotX - dy * sensitivity;
     const nextRotY = dragStartRef.current.rotY + dx * sensitivity;
     setCubeRotation({ x: nextRotX, y: nextRotY });
   };
@@ -457,36 +497,26 @@ function TheBlockConfiguratorPage() {
       const swipeThreshold = 18;
 
       let nextDomainId = activeDomainId;
+      let dir: "PULL_UP" | "PULL_DOWN" | "PULL_LEFT" | "PULL_RIGHT" | undefined;
 
       if (absDy > absDx && absDy >= swipeThreshold) {
         // Vertical swipe gesture
-        if (dy < 0) {
-          // Pulling UP: rolls front face up, bringing BOTTOM face (Financial Systems) into center
-          nextDomainId = getNextDomainOnGesture(activeDomainId, "PULL_UP");
-        } else {
-          // Pulling DOWN: rolls front face down, bringing TOP face (Workflows & Automation) into center
-          nextDomainId = getNextDomainOnGesture(activeDomainId, "PULL_DOWN");
-        }
+        dir = dy < 0 ? "PULL_UP" : "PULL_DOWN";
+        nextDomainId = getNextDomainOnGesture(activeDomainId, dir);
       } else if (absDx >= absDy && absDx >= swipeThreshold) {
         // Horizontal swipe gesture
-        if (dx < 0) {
-          // Pulling LEFT: pulls next face from the right into center
-          nextDomainId = getNextDomainOnGesture(activeDomainId, "PULL_LEFT");
-        } else {
-          // Pulling RIGHT: pulls previous face from the left into center
-          nextDomainId = getNextDomainOnGesture(activeDomainId, "PULL_RIGHT");
-        }
+        dir = dx < 0 ? "PULL_LEFT" : "PULL_RIGHT";
+        nextDomainId = getNextDomainOnGesture(activeDomainId, dir);
       } else {
         // Fallback to angle-based closest face calculation
         nextDomainId = getClosestDomainFromRotation(cubeRotation.x, cubeRotation.y);
       }
 
       setActiveDomainId(nextDomainId);
-      setCubeRotation((current) => getCanonicalRotationForDomain(nextDomainId, current));
+      setCubeRotation((current) => getCanonicalRotationForDomain(nextDomainId, current, dir));
     }
   };
 
-  // Mouse wheel gesture handling over the cube
   const handleWheel = (e: React.WheelEvent) => {
     if (configModalDomainId) return;
     const absDeltaY = Math.abs(e.deltaY);
@@ -494,29 +524,20 @@ function TheBlockConfiguratorPage() {
 
     if (absDeltaY > 15 || absDeltaX > 15) {
       let nextDomainId = activeDomainId;
+      let dir: "PULL_UP" | "PULL_DOWN" | "PULL_LEFT" | "PULL_RIGHT";
 
       if (absDeltaY >= absDeltaX) {
-        if (e.deltaY < 0) {
-          // Scrolled UP: spin to bottom face (Financial Systems)
-          nextDomainId = getNextDomainOnGesture(activeDomainId, "PULL_UP");
-        } else {
-          // Scrolled DOWN: spin to top face (Workflows & Automation)
-          nextDomainId = getNextDomainOnGesture(activeDomainId, "PULL_DOWN");
-        }
+        dir = e.deltaY < 0 ? "PULL_UP" : "PULL_DOWN";
       } else {
-        if (e.deltaX > 0) {
-          nextDomainId = getNextDomainOnGesture(activeDomainId, "PULL_LEFT");
-        } else {
-          nextDomainId = getNextDomainOnGesture(activeDomainId, "PULL_RIGHT");
-        }
+        dir = e.deltaX > 0 ? "PULL_LEFT" : "PULL_RIGHT";
       }
 
+      nextDomainId = getNextDomainOnGesture(activeDomainId, dir);
       setActiveDomainId(nextDomainId);
-      setCubeRotation((current) => getCanonicalRotationForDomain(nextDomainId, current));
+      setCubeRotation((current) => getCanonicalRotationForDomain(nextDomainId, current, dir));
     }
   };
 
-  // Click on a 3D face directly rotates the block and opens configuration
   const handleFaceClick = (domainId: string) => {
     if (hasDraggedRef.current) return;
     setActiveDomainId(domainId);
