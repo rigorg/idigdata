@@ -109,9 +109,9 @@ const DOMAIN_CONFIGS: DomainConfig[] = [
   {
     id: "financial_systems",
     code: "FS",
-    name: "Financial Systems",
+    name: "Financial Systems & Management",
     shortName: "Financial Systems",
-    subtitle: "Maintain financial controls, accelerate close, and reconcile operations to finance.",
+    subtitle: "Maintain financial management & controls, accelerate close, and reconcile operations to finance.",
     essence: "Reconciliation, audit readiness, cost-to-serve, working capital visibility, and margin control.",
     badge: "FINANCIAL SYSTEMS",
     accentHex: "#0D9488",
@@ -138,44 +138,84 @@ const DOMAIN_CONFIGS: DomainConfig[] = [
   },
 ];
 
-const FACE_NEIGHBORS: Record<string, { UP: string; DOWN: string; LEFT: string; RIGHT: string }> = {
-  leadership_direction: {
-    UP: "workflows_automation",
-    DOWN: "financial_systems",
-    LEFT: "business_systems",
-    RIGHT: "data_knowledge",
-  },
-  business_systems: {
-    UP: "workflows_automation",
-    DOWN: "financial_systems",
-    LEFT: "it_ot_operations",
-    RIGHT: "leadership_direction",
-  },
-  it_ot_operations: {
-    UP: "workflows_automation",
-    DOWN: "financial_systems",
-    LEFT: "data_knowledge",
-    RIGHT: "business_systems",
-  },
-  data_knowledge: {
-    UP: "workflows_automation",
-    DOWN: "financial_systems",
-    LEFT: "leadership_direction",
-    RIGHT: "it_ot_operations",
-  },
-  financial_systems: {
-    UP: "leadership_direction",
-    DOWN: "it_ot_operations",
-    LEFT: "business_systems",
-    RIGHT: "data_knowledge",
-  },
-  workflows_automation: {
-    UP: "it_ot_operations",
-    DOWN: "leadership_direction",
-    LEFT: "business_systems",
-    RIGHT: "data_knowledge",
-  },
-};
+// Calibrated 3D Cube Navigation & Snapping
+// Physical model:
+// PULL_UP: Cursor moves UP. Front face tilts UP, revealing the BOTTOM face (Financial Systems & Management).
+// PULL_DOWN: Cursor moves DOWN. Front face tilts DOWN, revealing the TOP face (Workflows & Automation).
+// PULL_LEFT: Cursor moves LEFT. Front face moves LEFT, pulling the RIGHT face into center (Business Systems).
+// PULL_RIGHT: Cursor moves RIGHT. Front face moves RIGHT, pulling the LEFT face into center (Data & Knowledge).
+function getNextDomainOnGesture(
+  currentDomainId: string,
+  direction: "PULL_UP" | "PULL_DOWN" | "PULL_LEFT" | "PULL_RIGHT"
+): string {
+  const horizontalRing = [
+    "leadership_direction", // 0: Front
+    "business_systems",     // 1: Right
+    "it_ot_operations",     // 2: Back
+    "data_knowledge",       // 3: Left
+  ];
+
+  const currentIndex = horizontalRing.indexOf(currentDomainId);
+
+  switch (direction) {
+    case "PULL_UP":
+      // "You pull up, then it's going to spin to the bottom of the block, and whatever's on the bottom of the block takes into fruition."
+      if (currentDomainId === "financial_systems") {
+        return "it_ot_operations";
+      }
+      if (currentDomainId === "workflows_automation") {
+        return "leadership_direction";
+      }
+      return "financial_systems";
+
+    case "PULL_DOWN":
+      // Pulling down reveals the top face (Workflows & Automation)
+      if (currentDomainId === "workflows_automation") {
+        return "it_ot_operations";
+      }
+      if (currentDomainId === "financial_systems") {
+        return "leadership_direction";
+      }
+      return "workflows_automation";
+
+    case "PULL_LEFT":
+      // Pulling left pulls the next face from the right into center
+      if (currentIndex !== -1) {
+        return horizontalRing[(currentIndex + 1) % horizontalRing.length];
+      }
+      return "business_systems";
+
+    case "PULL_RIGHT":
+      // Pulling right pulls the previous face from the left into center
+      if (currentIndex !== -1) {
+        return horizontalRing[(currentIndex - 1 + horizontalRing.length) % horizontalRing.length];
+      }
+      return "data_knowledge";
+  }
+}
+
+// 3D Angle-based fallback to find the face facing the camera
+function getClosestDomainFromRotation(rotX: number, rotY: number): string {
+  if (rotX > 35) {
+    return "financial_systems";
+  }
+  if (rotX < -45) {
+    return "workflows_automation";
+  }
+
+  let normY = ((rotY % 360) + 360) % 360;
+  if (normY > 180) normY -= 360;
+
+  if (normY >= -45 && normY <= 45) {
+    return "leadership_direction";
+  } else if (normY < -45 && normY >= -135) {
+    return "business_systems";
+  } else if (normY > 45 && normY <= 135) {
+    return "data_knowledge";
+  } else {
+    return "it_ot_operations";
+  }
+}
 
 function getCanonicalRotationForDomain(
   targetDomainId: string,
@@ -397,7 +437,7 @@ function TheBlockConfiguratorPage() {
     }
 
     const sensitivity = 0.55;
-    const nextRotX = Math.max(-120, Math.min(90, dragStartRef.current.rotX - dy * sensitivity));
+    const nextRotX = Math.max(-120, Math.min(100, dragStartRef.current.rotX - dy * sensitivity));
     const nextRotY = dragStartRef.current.rotY + dx * sensitivity;
     setCubeRotation({ x: nextRotX, y: nextRotY });
   };
@@ -418,17 +458,56 @@ function TheBlockConfiguratorPage() {
 
       let nextDomainId = activeDomainId;
 
-      if (absDx > absDy) {
-        if (dx < -swipeThreshold) {
-          nextDomainId = FACE_NEIGHBORS[activeDomainId]?.LEFT ?? activeDomainId;
-        } else if (dx > swipeThreshold) {
-          nextDomainId = FACE_NEIGHBORS[activeDomainId]?.RIGHT ?? activeDomainId;
+      if (absDy > absDx && absDy >= swipeThreshold) {
+        // Vertical swipe gesture
+        if (dy < 0) {
+          // Pulling UP: rolls front face up, bringing BOTTOM face (Financial Systems) into center
+          nextDomainId = getNextDomainOnGesture(activeDomainId, "PULL_UP");
+        } else {
+          // Pulling DOWN: rolls front face down, bringing TOP face (Workflows & Automation) into center
+          nextDomainId = getNextDomainOnGesture(activeDomainId, "PULL_DOWN");
+        }
+      } else if (absDx >= absDy && absDx >= swipeThreshold) {
+        // Horizontal swipe gesture
+        if (dx < 0) {
+          // Pulling LEFT: pulls next face from the right into center
+          nextDomainId = getNextDomainOnGesture(activeDomainId, "PULL_LEFT");
+        } else {
+          // Pulling RIGHT: pulls previous face from the left into center
+          nextDomainId = getNextDomainOnGesture(activeDomainId, "PULL_RIGHT");
         }
       } else {
-        if (dy < -swipeThreshold) {
-          nextDomainId = FACE_NEIGHBORS[activeDomainId]?.UP ?? activeDomainId;
-        } else if (dy > swipeThreshold) {
-          nextDomainId = FACE_NEIGHBORS[activeDomainId]?.DOWN ?? activeDomainId;
+        // Fallback to angle-based closest face calculation
+        nextDomainId = getClosestDomainFromRotation(cubeRotation.x, cubeRotation.y);
+      }
+
+      setActiveDomainId(nextDomainId);
+      setCubeRotation((current) => getCanonicalRotationForDomain(nextDomainId, current));
+    }
+  };
+
+  // Mouse wheel gesture handling over the cube
+  const handleWheel = (e: React.WheelEvent) => {
+    if (configModalDomainId) return;
+    const absDeltaY = Math.abs(e.deltaY);
+    const absDeltaX = Math.abs(e.deltaX);
+
+    if (absDeltaY > 15 || absDeltaX > 15) {
+      let nextDomainId = activeDomainId;
+
+      if (absDeltaY >= absDeltaX) {
+        if (e.deltaY < 0) {
+          // Scrolled UP: spin to bottom face (Financial Systems)
+          nextDomainId = getNextDomainOnGesture(activeDomainId, "PULL_UP");
+        } else {
+          // Scrolled DOWN: spin to top face (Workflows & Automation)
+          nextDomainId = getNextDomainOnGesture(activeDomainId, "PULL_DOWN");
+        }
+      } else {
+        if (e.deltaX > 0) {
+          nextDomainId = getNextDomainOnGesture(activeDomainId, "PULL_LEFT");
+        } else {
+          nextDomainId = getNextDomainOnGesture(activeDomainId, "PULL_RIGHT");
         }
       }
 
@@ -762,9 +841,10 @@ function TheBlockConfiguratorPage() {
             onPointerMove={handlePointerMove}
             onPointerUp={handlePointerUp}
             onPointerCancel={handlePointerUp}
+            onWheel={handleWheel}
             className="relative w-[340px] h-[340px] flex items-center justify-center cursor-grab active:cursor-grabbing [perspective:1400px] select-none touch-none"
             style={{ touchAction: "none" }}
-            title="Drag to spin the 3D block. Snaps to closest face on release. Click to configure."
+            title="Drag or swipe to spin the 3D block. Snaps and locks to face on release. Click to configure."
           >
             <div
               className={`relative w-[280px] h-[280px] ${
