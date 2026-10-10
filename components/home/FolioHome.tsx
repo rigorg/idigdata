@@ -84,7 +84,7 @@ export default function FolioHome() {
               <p className="home-card-cat">Financial Systems</p>
               <h3>Financial integrity through change.</h3>
               <p className="p-prose mt-3">
-                Unified financial governance and controls that roll disparate plant and business systems into single-source reporting—enabling the CFO to close true, report with clarity, and see unit performance across complex operations.
+                Consolidated financial governance and controls that roll disparate plant and business systems into single-source reporting—enabling the CFO to close true, report with clarity, and see unit performance across complex operations.
               </p>
             </article>
 
