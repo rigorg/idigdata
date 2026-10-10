@@ -127,7 +127,7 @@ const DOMAIN_CONFIGS: DomainConfig[] = [
     name: "Workflows & Automation",
     shortName: "Workflows",
     subtitle: "Eliminate friction between teams and automate operational handoffs.",
-    essence: "Order-to-cash, procure-to-pay, frontline mobile capture, and exception routing.",
+    essence: "Order-to-cash, three-way invoice matching, frontline mobile capture, and exception routing.",
     badge: "AUTOMATION",
     accentHex: "#DB2777",
     borderClass: "border-pink-500/40 hover:border-pink-500",
