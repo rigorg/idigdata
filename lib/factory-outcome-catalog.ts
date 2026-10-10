@@ -15,7 +15,7 @@ export const FACTORY_CATALOG_ITEMS: CatalogItem[] = [
     "id": "fa_build_specification",
     "domainId": "factory_agentic_software",
     "name": "Business Intent to Build Specification",
-    "tagline": "Translate the business need into executable work with clear requirements, boundaries, dependencies, and acceptance criteria.",
+    "tagline": "Turn the business problem into buildable work with clear rules, system boundaries, and tests that define success.",
     "situation": "Scope: Clarify the operating result, constraints, interfaces, and acceptance scenarios. Break the change into executable work with dependencies and explicit exclusions.\n\nWhat you receive: An implementation-ready specification and work breakdown. Acceptance scenarios and unresolved decision records.\n\nCompletion: Builders and business owners can explain what is in scope, how it will be verified, and which decisions remain open.\n\nBoundaries: Specification quality depends on access to domain owners; unresolved business policy is not invented by the agent or silently turned into code.",
     "deliverables": []
   },
@@ -23,7 +23,7 @@ export const FACTORY_CATALOG_ITEMS: CatalogItem[] = [
     "id": "fa_engineering_context",
     "domainId": "factory_agentic_software",
     "name": "Agent Context & Engineering Memory",
-    "tagline": "Give agents maintained business rules, architecture, and delivery history so work can continue without repeated rediscovery.",
+    "tagline": "Preserve business rules, architecture decisions, and delivery history so agents and people can continue work without repeated rediscovery.",
     "situation": "Scope: Design maintainable context sources, ownership, relevance boundaries, and update practices. Connect the agreed context to development workflows and review its use.\n\nWhat you receive: An engineering context and decision record structure. A maintained context pack with provenance and update procedures.\n\nCompletion: A representative task finds the required rules and architecture, identifies stale information, and records new decisions for subsequent work.\n\nBoundaries: Context supports engineering judgment; sensitive information remains permissioned and stored material is not automatically treated as authority.",
     "deliverables": []
   },
@@ -47,7 +47,7 @@ export const FACTORY_CATALOG_ITEMS: CatalogItem[] = [
     "id": "fa_execution_control",
     "domainId": "factory_agentic_software",
     "name": "Agent Cost & Execution Control",
-    "tagline": "Make agent progress and cost visible, contain unproductive retries, and direct effort toward accepted results.",
+    "tagline": "Keep agent work within agreed budgets, stop unproductive retries, and make progress toward accepted results visible.",
     "situation": "Scope: Instrument run status, work evidence, usage, retry behavior, and stop conditions. Implement practical controls for escalation and resource allocation.\n\nWhat you receive: An execution and usage view. Retry limits, escalation rules, and reviewable run records.\n\nCompletion: A representative run exposes progress and resource use, stops or escalates unproductive loops, and links effort to an accepted result.\n\nBoundaries: Provider pricing and model behavior vary; controls improve visibility and containment rather than guaranteeing a specific cost or throughput.",
     "deliverables": []
   },
@@ -55,7 +55,7 @@ export const FACTORY_CATALOG_ITEMS: CatalogItem[] = [
     "id": "fa_software_verification",
     "domainId": "factory_agentic_software",
     "name": "Agent-Built Software Verification",
-    "tagline": "Verify generated changes against business requirements, system integrations, and failure conditions before release.",
+    "tagline": "Verify that generated software works across real business scenarios, integrations, and failure conditions before release.",
     "situation": "Scope: Translate requirements into risk-based checks for behavior, interfaces, data handling, and failures. Run review and testing separately from code generation where practical.\n\nWhat you receive: A verification plan and automated or repeatable checks. A release assessment with findings and unresolved risks.\n\nCompletion: The change passes agreed acceptance and regression checks; residual risks are visible to the release owner.\n\nBoundaries: Passing tests covers the tested behavior; it is not proof of defect-free software, universal security, or regulatory certification.",
     "deliverables": []
   },
@@ -79,12 +79,12 @@ export const FACTORY_CATALOG_ITEMS: CatalogItem[] = [
     "id": "fa_custom_delivery",
     "domainId": "factory_agentic_software",
     "name": "Custom Software Delivery & Handover",
-    "tagline": "Build software around the operation and deliver it with maintainable code, usable documentation, and clear ownership.",
+    "tagline": "Deliver software your team can understand, operate, maintain, and change, with clear ownership and the reasoning behind key decisions.",
     "situation": "Scope: Build a bounded solution against agreed requirements and operating scenarios. Deliver reviewable code, tests, deployment guidance, and knowledge transfer.\n\nWhat you receive: Working custom software and its maintainable source. Practical documentation, test evidence, and an ownership handover.\n\nCompletion: Business owners accept agreed scenarios and the receiving team can deploy, support, and change the delivered software.\n\nBoundaries: Maintenance scope, hosting, access, and ongoing support are agreed explicitly; handover does not imply an unlimited support commitment.",
     "deliverables": []
   }
 ];
 
-export const FACTORY_CATALOG_REVISION = {"version":"factory-outcome-catalog-2026-10-10","public_hash":"4fffdec02c4fee85a25983e45930fa42690f90ce7aff384db9b6c1d16aa226e9","count":10};
+export const FACTORY_CATALOG_REVISION = {"version":"factory-outcome-catalog-2026-10-10","public_hash":"dcd416ea49ed53409f36de8b7370724fb76cbf9bf299ed75cd3cd3272fe77446","count":10};
 
 export const FACTORY_OUTCOME_ALIASES: Record<string, string> = {};

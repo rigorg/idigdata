@@ -1,5 +1,5 @@
 // Generated from approved Operations public export. Do not edit outcome copy here.
-// Revision: outcome-catalog-2026-10-10; SHA256: 93edfc7c334a17109267f5277603a1d2ef9bd198c2df873a3ef76b69e30565a3; 60 outcomes, ten per category.
+// Revision: outcome-catalog-2026-10-10; SHA256: 6d4e76159e40bf18bb8b8b7f5ab58a8183a07cdea42867aaee74ef9633e493ad; 60 outcomes, ten per category.
 
 export interface CatalogDomain {
   id: string;
@@ -85,7 +85,7 @@ export const PUBLIC_CATALOG_ITEMS: CatalogItem[] = [
     "id": "bs_selection_partners",
     "domainId": "business_systems",
     "name": "Software & Partner Selection",
-    "tagline": "Lead a selection process that tests software and delivery partners against your business requirements and implementation needs.",
+    "tagline": "Select software and implementation partners that can handle your real workflows, exceptions, and delivery requirements.",
     "situation": "Scope: Translate operating requirements into representative selection scenarios. Assess product gaps, delivery approach, lifecycle cost, and partner responsibilities.\n\nWhat you receive: A requirements and evaluation pack. A recommendation with scenario evidence, gaps, and delivery assumptions.\n\nCompletion: Decision-makers can compare candidates against the same business scenarios and understand the consequences of the selected option.\n\nBoundaries: Selection does not certify every module or guarantee implementation success; vendor claims remain subject to demonstration and contract terms.",
     "deliverables": []
   },
@@ -93,7 +93,7 @@ export const PUBLIC_CATALOG_ITEMS: CatalogItem[] = [
     "id": "bs_modernize_erp",
     "domainId": "business_systems",
     "name": "ERP Implementation & Modernization",
-    "tagline": "Deliver ERP change from operating requirements and design through migration, go-live, and stabilization.",
+    "tagline": "Lead ERP change from real operating requirements through migration, go-live, and stable daily operation.",
     "situation": "Scope: Lead operating requirements, design decisions, migration, integrations, testing, and rollout. Coordinate cutover and stabilization with business and specialist implementation owners.\n\nWhat you receive: An implementation plan with design and configuration decisions. Reconciled migration, business acceptance, and stabilization records.\n\nCompletion: Business owners accept agreed end-to-end ERP scenarios and the live service has clear support and exception ownership.\n\nBoundaries: Hands-on product configuration and specialist modules are assigned explicitly; broad ERP leadership is not a claim to every vendor certification.",
     "deliverables": []
   },
@@ -133,7 +133,7 @@ export const PUBLIC_CATALOG_ITEMS: CatalogItem[] = [
     "id": "bs_cutover_readiness",
     "domainId": "business_systems",
     "name": "Cutover & Go-Live Leadership",
-    "tagline": "Coordinate the transition into live operation with clear readiness decisions, recovery plans, and post-launch support.",
+    "tagline": "Lead the move to the new system with people, data, integrations, support, and recovery plans ready for real operations.",
     "situation": "Scope: Integrate data, interfaces, access, user readiness, support, and timed cutover tasks. Rehearse go/no-go decisions, recovery triggers, and post-launch stabilization.\n\nWhat you receive: A cutover runbook and readiness evidence pack. Recovery decision criteria and a stabilization ownership roster.\n\nCompletion: The rehearsal meets agreed critical scenarios; authorized owners make the launch decision with visible risks and recovery options.\n\nBoundaries: No cutover is represented as incapable of failure; outage tolerance, rollback feasibility, and launch authority are agreed explicitly.",
     "deliverables": []
   },
@@ -197,7 +197,7 @@ export const PUBLIC_CATALOG_ITEMS: CatalogItem[] = [
     "id": "dk_preserve_memory",
     "domainId": "data_knowledge",
     "name": "Operational Knowledge Capture",
-    "tagline": "Preserve the experience, decisions, and exceptions the business could lose when people or systems change.",
+    "tagline": "Capture the judgment, decisions, and exceptions your business depends on so that knowledge survives changes in people and systems.",
     "situation": "Scope: Elicit decisions, exceptions, and reasoning from experienced staff and historical sources. Package knowledge for the people inheriting the work.\n\nWhat you receive: An operating knowledge and exception record. Transition walkthroughs and successor validation evidence.\n\nCompletion: Successors can perform or explain agreed critical scenarios without depending on the departing person or retired system.\n\nBoundaries: Capture is limited by access to knowledgeable people and reliable records; uncertainty and conflicting accounts are recorded rather than invented away.",
     "deliverables": []
   },
@@ -213,7 +213,7 @@ export const PUBLIC_CATALOG_ITEMS: CatalogItem[] = [
     "id": "dk_ai_data_readiness",
     "domainId": "data_knowledge",
     "name": "AI Data & Context Readiness",
-    "tagline": "Prepare the information, definitions, access, and context an AI use case needs to perform useful work.",
+    "tagline": "Give AI the current information, business definitions, and permitted access it needs to work reliably in your operation.",
     "situation": "Scope: Assess required sources, definitions, access, quality, freshness, and decision context. Prepare agreed datasets and resolve or explicitly assign readiness gaps.\n\nWhat you receive: A use-case readiness assessment. Prepared information, context definitions, and an owned gap plan.\n\nCompletion: The intended use case passes agreed information and access checks, with unresolved limitations visible before deployment.\n\nBoundaries: Readiness is specific to the use case; a prepared dataset does not establish general AI capability or unlimited reuse rights.",
     "deliverables": []
   },
@@ -221,7 +221,7 @@ export const PUBLIC_CATALOG_ITEMS: CatalogItem[] = [
     "id": "dk_operating_rules",
     "domainId": "data_knowledge",
     "name": "Business Rules & Requirements Discovery",
-    "tagline": "Translate the real operation, including unwritten rules and spreadsheet logic, into requirements software can use.",
+    "tagline": "Turn spreadsheet logic, unwritten rules, and operating exceptions into requirements the delivery team can implement and test.",
     "situation": "Scope: Work with frontline and business owners to expose decision rules, normal cases, and exceptions. Translate them into testable requirements and acceptance examples.\n\nWhat you receive: A business-rule and exception model. An implementation-ready requirements and acceptance pack.\n\nCompletion: Business owners validate representative normal and exception cases and agree how ambiguous decisions will be resolved.\n\nBoundaries: Discovery does not replace policy authority; unresolved rules and disagreements are assigned to named decision-makers before implementation.",
     "deliverables": []
   },
@@ -261,15 +261,15 @@ export const PUBLIC_CATALOG_ITEMS: CatalogItem[] = [
     "id": "fs_spend_payment_controls",
     "domainId": "financial_systems",
     "name": "Spend Approval & Payment Controls",
-    "tagline": "Implement clear spending authority and payment controls so commitments and approvals remain visible and traceable.",
-    "situation": "Scope: Define spending thresholds, approval ownership, segregation, and payment-release controls. Implement the agreed authorization workflow with Finance and procurement owners.\n\nWhat you receive: A spending and payment authority matrix. Configured approval paths, exception handling, and reviewable records.\n\nCompletion: Representative normal, exceptional, and restricted commitments follow the correct approval route before authorized payment release.\n\nBoundaries: This does not execute payments or confer bank authority; commercial terms, financial policy, and release permissions remain with authorized owners.",
+    "tagline": "Put clear authority, spending limits, and exception review around commitments and payments so unexpected costs surface early.",
+    "situation": "Scope: Define spending thresholds, approval ownership, segregation, and payment-release controls. Implement the agreed authorization workflow with Finance and procurement owners.\n\nWhat you receive: A spending and payment authority matrix. Configured approval paths, exception handling, and reviewable records.\n\nCompletion: Representative normal, exceptional, and restricted commitments follow the correct approval route before authorized payment release.\n\nBoundaries: This does not execute payments or confer bank authority; commercial terms, financial policy, and release permissions remain with authorized owners.\n\nInclude AI consumption commitments in spending authority, budget limits, and exception review; day-to-day runtime cost management belongs to AI Runtime Operations, and agent development costs to Agent Cost & Execution Control.",
     "deliverables": []
   },
   {
     "id": "fs_preserve_controls",
     "domainId": "financial_systems",
     "name": "Financial Controls Through Change",
-    "tagline": "Preserve approvals, separation of duties, and audit evidence as systems, workflows, and AI capabilities change.",
+    "tagline": "Keep approvals, separation of duties, and transaction evidence intact as systems and automation change.",
     "situation": "Scope: Map critical controls to new applications, integrations, workflows, and agent actions. Test authorization, separation of duties, and evidence retention through the transition.\n\nWhat you receive: A control-to-change mapping and responsibility record. Control test results and an owned remediation list.\n\nCompletion: Finance and control owners validate agreed scenarios and can trace approvals and changes across the new process.\n\nBoundaries: Control design supports oversight; it is not an independent audit opinion or a blanket compliance certification.",
     "deliverables": []
   },
@@ -317,7 +317,7 @@ export const PUBLIC_CATALOG_ITEMS: CatalogItem[] = [
     "id": "it_modern_dept",
     "domainId": "it_ot_operations",
     "name": "IT Operating Model & Leadership",
-    "tagline": "Organize IT people, services, and partners to support the business you run today and the capabilities you need next.",
+    "tagline": "Establish clear ownership across IT teams and partners so the business knows who keeps services working and resolves problems.",
     "situation": "Scope: Define service ownership, internal capability, partner coverage, and investment priorities. Establish practical governance and performance review with the business.\n\nWhat you receive: An IT operating model and responsibility map. A capability, sourcing, and service improvement plan.\n\nCompletion: Critical services have accountable owners, support coverage, escalation, and a funded plan for material capability gaps.\n\nBoundaries: Organizational design informs hiring and supplier decisions; employment, budgets, and contracting remain with authorized leaders.",
     "deliverables": []
   },
@@ -341,7 +341,7 @@ export const PUBLIC_CATALOG_ITEMS: CatalogItem[] = [
     "id": "it_agentic_runtime",
     "domainId": "it_ot_operations",
     "name": "AI Runtime Operations",
-    "tagline": "Put business AI into a supported environment with monitoring, cost visibility, controlled deployment, and recovery.",
+    "tagline": "Keep business AI supported and accountable, with visible costs, monitored performance, controlled access, and tested recovery.",
     "situation": "Scope: Establish deployment, monitoring, access, usage and cost visibility, intervention, and recovery. Assign support ownership for the agreed agentic workloads.\n\nWhat you receive: A configured runtime operating model. Dashboards, runbooks, and tested stop, restore, and release procedures.\n\nCompletion: The agreed workload can be deployed, observed, interrupted, recovered, and handed to a named service owner.\n\nBoundaries: Runtime reliability and cost targets depend on workload, providers, and infrastructure; no unlimited autonomous execution or guaranteed provider availability is implied.",
     "deliverables": []
   },
@@ -405,7 +405,7 @@ export const PUBLIC_CATALOG_ITEMS: CatalogItem[] = [
     "id": "ld_business_case",
     "domainId": "leadership_direction",
     "name": "Technology & AI Investment Planning",
-    "tagline": "Build an investment plan around business value, delivery cost, and the organization's ability to make it work.",
+    "tagline": "Focus technology investment on the business problems worth solving, with a clear view of cost, readiness, and expected value.",
     "situation": "Scope: Compare practical options, total operating cost, delivery risk, and organizational readiness. Define value assumptions, decision criteria, and staged funding choices.\n\nWhat you receive: A decision-ready investment case and option comparison. A staged investment plan with assumptions and review points.\n\nCompletion: The sponsor can explain the chosen option, cost assumptions, expected operating result, and conditions for continuing or stopping.\n\nBoundaries: This is investment planning and delivery advice, not a guaranteed financial return or independent financial valuation.",
     "deliverables": []
   },
@@ -445,7 +445,7 @@ export const PUBLIC_CATALOG_ITEMS: CatalogItem[] = [
     "id": "ld_stakeholder_alignment",
     "domainId": "leadership_direction",
     "name": "Executive & Operational Alignment",
-    "tagline": "Turn competing priorities into clear decisions shared by executives, delivery teams, and the people running the business.",
+    "tagline": "Align executive priorities with operating reality so leaders, delivery teams, and frontline staff work toward the same result.",
     "situation": "Scope: Surface conflicting priorities and translate technical choices into business consequences. Establish decisions, accountable ownership, and useful executive and board reporting.\n\nWhat you receive: A decision and stakeholder map. A reporting cadence showing progress, value assumptions, risks, and required decisions.\n\nCompletion: Priority conflicts have recorded decisions; operating owners and executives can explain the agreed next steps and escalation path.\n\nBoundaries: Alignment does not replace executive authority or board oversight; unresolved disagreements remain visible for the accountable decision-maker.",
     "deliverables": []
   },
@@ -469,7 +469,7 @@ export const PUBLIC_CATALOG_ITEMS: CatalogItem[] = [
     "id": "ld_benefits_realization",
     "domainId": "leadership_direction",
     "name": "Business Value Realization",
-    "tagline": "Carry transformation beyond go-live by measuring adoption, resolving gaps, and delivering the intended business improvements.",
+    "tagline": "Carry change beyond go-live until people use it effectively and the business can see the improvement.",
     "situation": "Scope: Connect intended benefits to an agreed baseline, adoption measures, and business owners. Investigate shortfalls and lead corrective delivery after launch.\n\nWhat you receive: A benefits measurement and ownership plan. An adoption review and prioritized corrective backlog.\n\nCompletion: Business owners can compare actual use and operating measures to the baseline and verify the result of agreed corrective work.\n\nBoundaries: Attribution and improvement targets are agreed with owners; claimed gains must be supported by actual measures rather than assumed from go-live.",
     "deliverables": []
   },
@@ -509,7 +509,7 @@ export const PUBLIC_CATALOG_ITEMS: CatalogItem[] = [
     "id": "wa_exception_routing",
     "domainId": "workflows_automation",
     "name": "Exception Management",
-    "tagline": "Route blocked work to the right person with the context, authority, and escalation needed to resolve it.",
+    "tagline": "Get blocked work to someone who can resolve it, with the context, authority, and escalation needed to keep operations moving.",
     "situation": "Scope: Define exception types, accountable owners, escalation, and permitted resolution actions. Implement routing and visible resolution history.\n\nWhat you receive: An exception workflow and responsibility map. Escalation rules and a resolution audit trail.\n\nCompletion: Representative exceptions reach the correct owner with supporting context and escalate when the agreed conditions are met.\n\nBoundaries: Routing does not grant decision authority; financial, policy, or operational exceptions remain with designated approvers.",
     "deliverables": []
   },
@@ -533,7 +533,7 @@ export const PUBLIC_CATALOG_ITEMS: CatalogItem[] = [
     "id": "wa_process_adoption",
     "domainId": "workflows_automation",
     "name": "Implementation Adoption & Stabilization",
-    "tagline": "Help teams adopt the new workflow, resolve launch issues, and establish dependable daily operation.",
+    "tagline": "Get teams working confidently in the new process, resolve launch problems, and establish dependable daily operation.",
     "situation": "Scope: Identify adoption barriers with users and operating owners. Coordinate practical training, launch support, issue resolution, and stabilization measures.\n\nWhat you receive: Role-based work guidance and enablement sessions. An adoption and stabilization backlog with support handover.\n\nCompletion: Users perform agreed scenarios under normal conditions and remaining adoption gaps have named owners and support paths.\n\nBoundaries: Adoption requires business participation and management decisions; attendance at training alone is not represented as successful adoption.",
     "deliverables": []
   },
@@ -549,7 +549,7 @@ export const PUBLIC_CATALOG_ITEMS: CatalogItem[] = [
     "id": "wa_recoverable_automation",
     "domainId": "workflows_automation",
     "name": "Automation Recovery & Human Handoffs",
-    "tagline": "Build workflows that make failures visible, preserve completed work, and allow people to intervene and restart safely.",
+    "tagline": "Make failures visible, preserve completed work, and let people take over or restart without rebuilding the whole process.",
     "situation": "Scope: Design state tracking, validation, human intervention, reconciliation, and safe retries. Implement and exercise the recovery paths for agreed failure modes.\n\nWhat you receive: A recoverable workflow with explicit handoff points. Failure drills and restart instructions.\n\nCompletion: An agreed failure drill preserves completed work, exposes unresolved state, and demonstrates controlled restart without duplicate business effects.\n\nBoundaries: Recoverability depends on source-system capabilities and defined failure modes; the design does not promise recovery from every possible outage.",
     "deliverables": []
   }
@@ -575,6 +575,6 @@ export const LEGACY_OUTCOME_ALIASES: Record<string, string> = {
   "wa_tms_freight_audit_bridge": "wa_supplier_cost_pricing"
 };
 
-export const PUBLIC_CATALOG_REVISION = {"version":"outcome-catalog-2026-10-10","public_hash":"93edfc7c334a17109267f5277603a1d2ef9bd198c2df873a3ef76b69e30565a3","count":60};
+export const PUBLIC_CATALOG_REVISION = {"version":"outcome-catalog-2026-10-10","public_hash":"6d4e76159e40bf18bb8b8b7f5ab58a8183a07cdea42867aaee74ef9633e493ad","count":60};
 
 export const RETIRED_OUTCOME_IDS: string[] = ["dk_self_service_bi","ld_board_visibility","wa_procure_to_pay"];
