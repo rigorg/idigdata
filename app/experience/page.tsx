@@ -176,15 +176,15 @@ export default function ExperiencePage() {
           <p className="p-kicker">Core Career Arc</p>
           <h2 className="p-h2" id="executive-pillars-title">Four pillars of enterprise leadership.</h2>
           <p className="p-prose mt-4">
-            Executive accountability for business change and the systems that make it run. These four pillars combine boardroom governance, founder grit, deep enterprise application architecture, and hands-on agentic software development.
+            Executive accountability for business change and the systems that make it run. These four pillars combine boardroom governance, founder grit, deep enterprise application architecture, and hands-on applied agentics.
           </p>
           <div className="home-story mt-8">
             <article>
               <p className="font-mono text-xs font-bold uppercase tracking-wider text-amber-700">01 // Scale &amp; Transformation</p>
               <h3 className="mt-2">Executive Transformation Leadership</h3>
-              <p className="font-medium text-sm text-[#142840]/75 mt-1">Sierra Nevada Brewing Co. · Interim CIO</p>
+              <p className="font-medium text-sm text-[#142840]/75 mt-1">Sierra Nevada Brewing Co. · Chief Information Officer (Contract)</p>
               <p className="p-prose mt-4">
-                Led 26 months of architecture and implementation for an approximately $420M multi-site brewer. Rebuilt IS/IT and led 150 project participants across 25 task forces, consolidating 200+ fragmented systems into 25 connected platforms around a company-owned data core while plant and commercial operations continued without interruption.
+                As CIO of a multi-site brewer, led 26 months of enterprise architecture and implementation across business and plant systems around a company-owned data core. Rebuilt IS/IT and led 150 project participants across 25 task forces, establishing governance, delivery accountability, and floor adoption while brewery and commercial operations continued without interruption.
               </p>
             </article>
             <article>
@@ -192,7 +192,7 @@ export default function ExperiencePage() {
               <h3 className="mt-2">Business Ownership &amp; Operating Software</h3>
               <p className="font-medium text-sm text-[#142840]/75 mt-1">Timberline Architectural Openings · Founder, CEO &amp; CTO</p>
               <p className="p-prose mt-4">
-                Founded and scaled an enterprise from $250K in first-year revenue to $130M by year ten, with full P&amp;L responsibility and 100+ employees. Personally engineered the proprietary enterprise software that powered estimating, engineering sales, purchasing, production, inventory, distribution, and finance.
+                Founded and scaled an enterprise from $250K in first-year revenue to $130M by year ten, with full P&amp;L responsibility and 100+ employees. Personally engineered the proprietary enterprise software connecting estimating, engineering sales, purchasing, production, inventory, distribution, and finance.
               </p>
             </article>
             <article>
@@ -200,15 +200,15 @@ export default function ExperiencePage() {
               <h3 className="mt-2">Core Systems Architecture &amp; Delivery</h3>
               <p className="font-medium text-sm text-[#142840]/75 mt-1">Data Integration Group · Principal &amp; Solution Architect</p>
               <p className="p-prose mt-4">
-                Across 50+ implementations and 15 scale transformations, bridging the critical operational seam where software meets physical work. Proven cutover leadership across Microsoft Dynamics 365, SAP S/4HANA, NetSuite, and OneStream—compressing post-acquisition close from 18 days to four and turning around troubled multi-million-dollar programs.
+                Across 50+ implementations and 15 scale transformations, bridging the critical operational seam where enterprise software meets physical work. Proven cutover leadership across Microsoft Dynamics 365, SAP S/4HANA, NetSuite, and OneStream—compressing post-acquisition close from 18 days to four and rescuing troubled multi-million-dollar programs.
               </p>
             </article>
             <article>
               <p className="font-mono text-xs font-bold uppercase tracking-wider text-amber-700">04 // Frontier Runtime</p>
               <h3 className="mt-2">Applied Enterprise Agentics &amp; Software Factories</h3>
-              <p className="font-medium text-sm text-[#142840]/75 mt-1">The Rig &amp; FlowCraft · Autonomous Systems Architecture</p>
+              <p className="font-medium text-sm text-[#142840]/75 mt-1">Data Integration Group · Autonomous Systems Architecture</p>
               <p className="p-prose mt-4">
-                Architecting, building, and operating production multi-agent runtimes with AST validation gates, deterministic caller contracts, and human authorization. Grounding autonomous workflows in company-owned data to turn tacit operational knowledge into executable, verifiable enterprise capacity.
+                Architecting, engineering, and operating production multi-agent runtimes that bridge the delivery seam between autonomous code generation and physical enterprise workflows. Enforcing deterministic AST validation gates, verifiable audit trails, schema contracts, and human authorization—turning tacit operating knowledge into reliable, production-grade enterprise capacity.
               </p>
             </article>
           </div>
