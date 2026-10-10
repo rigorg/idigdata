@@ -16,10 +16,10 @@ export default function FolioHome() {
                 </span>
               </h1>
               <p className="p-prose mt-5">
-                Your business runs on more than its systems. It runs on what your people know, the decisions they make, and how work actually gets done.
+                Autonomous software factories can now build 80% of the systems an enterprise needs. But enterprise value is won or lost in the remaining 20%—where code meets messy brownfield reality, unwritten shop-floor workflows, and live financial ledgers.
               </p>
               <p className="p-prose mt-3">
-                I connect business leadership, operating knowledge, and hands-on software building to turn enterprise change into working results—from the boardroom decision through implementation and floor adoption.
+                I bridge that 20% seam. Combining 20 years of business ownership, interim CIO leadership, and hands-on agentic engineering, I lead enterprise change from the boardroom mandate through legacy cutover to floor adoption.
               </p>
               <p className="executive-proof">
                 20+ years in enterprise systems &middot; 50+ implementations &middot; 15 enterprise transformations at scale
