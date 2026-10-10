@@ -19,7 +19,7 @@ export default function FolioHome() {
                 Autonomous software factories can now build 80% of the systems an enterprise needs. But enterprise value is won or lost in the remaining 20%—where code meets messy brownfield reality, unwritten shop-floor workflows, and live financial ledgers.
               </p>
               <p className="p-prose mt-3">
-                I bridge that 20% seam. Combining 20 years of business ownership, interim CIO leadership, and hands-on agentic engineering, I lead enterprise change from the boardroom mandate through legacy cutover to floor adoption.
+                I bridge that 20% seam. Combining 20 years of business ownership, executive leadership, and hands-on software building, I lead enterprise change from the boardroom mandate through legacy cutover to floor adoption.
               </p>
               <p className="executive-proof">
                 20+ years in enterprise systems &middot; 50+ implementations &middot; 15 enterprise transformations at scale
@@ -84,7 +84,7 @@ export default function FolioHome() {
               <p className="home-card-cat">Financial Systems</p>
               <h3>Financial integrity through change.</h3>
               <p className="p-prose mt-3">
-                Automated 3-way matching, multi-entity consolidation, and full transaction traceability—with finance retaining total control of accounting authority.
+                Unified financial governance and controls that roll disparate plant and business systems into single-source reporting—enabling the CFO to close true, report with confidence, and see unit performance across complex operations.
               </p>
             </article>
 
@@ -92,7 +92,7 @@ export default function FolioHome() {
               <p className="home-card-cat">Workflows &amp; Automation</p>
               <h3>Better handoffs. Less repeated work.</h3>
               <p className="p-prose mt-3">
-                Production agentic workflows with deterministic caller gates, verifiable audit trails, and human authorization at critical operational seams.
+                Build custom agentic workflows around the tribal knowledge of the people doing the work—transforming unwritten operating heuristics into dependable, human-authorized capacity.
               </p>
             </article>
           </div>
