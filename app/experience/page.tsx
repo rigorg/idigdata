@@ -384,7 +384,7 @@ export default function ExperiencePage() {
                 The Rig, The B.O.S.S. &amp; FlowCraft
               </h3>
               <p className="p-prose mt-2">
-                {"The Rig is our autonomous software factory—engineering, validating, and running multi-agent workflows with AST validation gates, deterministic caller contracts, and human authorization. Like 8090, Factory.ai, and Gas City, we build software factories. Once at MVP, this exact apparatus can be stood up inside an operating enterprise—from consumer goods to regulated manufacturers (like Tilray)—as a full operational seat running custom software."}
+                {"The Rig is our autonomous software factory—engineering, validating, and running multi-agent workflows with AST validation gates, deterministic caller contracts, and human authorization. While frontier software factories generate raw code mass, enterprise success depends on the operating leadership that connects autonomous code generation to physical shop-floor realities, brownfield cutovers, and human accountability. This exact apparatus stands up inside an operating enterprise—from multi-facility consumer goods to regulated process manufacturing—as a full operational seat running custom software."}
               </p>
             </div>
             <div className="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0">
