@@ -503,6 +503,27 @@
 .dispatchActions {
   display: flex;
   align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.dispatchReadBtn {
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  color: #FAF6EE;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 18px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.15s ease;
+}
+
+.dispatchReadBtn:hover {
+  background: #333842;
+  border-color: #333842;
 }
 
 .dispatchDiscussBtn {

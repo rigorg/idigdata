@@ -178,6 +178,7 @@ const DISPATCHES = [
   {
     num: "01",
     slug: "marys-sheet-and-polanyis-paradox",
+    postHref: "/agentic-ai/marys-sheet/",
     category: "DOMAIN REALITY",
     readTime: "6 MIN READ",
     title: "Mary's Sheet & Polanyi's Paradox",
@@ -191,6 +192,7 @@ const DISPATCHES = [
   {
     num: "02",
     slug: "chamaths-beehiiv-vs-the-beehive",
+    postHref: "/agentic-ai/the-application-layer/",
     category: "RUNTIME ARCHITECTURE",
     readTime: "8 MIN READ",
     title: "Chamath's beehiiv vs. The Beehive",
@@ -204,6 +206,7 @@ const DISPATCHES = [
   {
     num: "03",
     slug: "the-80-90-collaboration-filling-the-seam",
+    postHref: "/agentic-ai/the-delivery-seam/",
     category: "COLLABORATIVE SEAM",
     readTime: "7 MIN READ",
     title: "The Two Software Factories: 8090 vs. Factory.ai",
@@ -522,6 +525,14 @@ export default function AgenticPositionView() {
                   </div>
 
                   <div className={s.dispatchActions}>
+                    {d.postHref && (
+                      <Link href={d.postHref} className={s.dispatchReadBtn}>
+                        <span>Read Full Essay</span>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                          <path d="M3 7H11M11 7L7.5 3.5M11 7L7.5 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </Link>
+                    )}
                     <button
                       type="button"
                       onClick={() => handleSelectTopic(d.topicKey)}
