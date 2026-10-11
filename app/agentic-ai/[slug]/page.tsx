@@ -244,9 +244,9 @@ export default async function PostPage({
     <article className={s.postArticle} id="top">
       <div className={s.container}>
         <nav aria-label="Breadcrumb" className={s.topNav}>
-          <Link href="/agentic-ai/" className={s.backLink}>
+          <Link href="/agentic-ai/#the-collectives" className={s.backLink}>
             <span aria-hidden="true">&larr;</span>
-            <span>All Dispatches from the Seam</span>
+            <span>Return to The Collective</span>
           </Link>
           <span className={s.navDivider} aria-hidden="true">/</span>
           <span className={s.navCurrent}>{fm.title}</span>
@@ -292,9 +292,9 @@ export default async function PostPage({
           </div>
 
           <div className={s.bottomReturnAction}>
-            <Link href="/agentic-ai/" className={s.returnToDispatchesBtn}>
+            <Link href="/agentic-ai/#the-collectives" className={s.returnToDispatchesBtn}>
               <span aria-hidden="true">&larr;</span>
-              <span>Return to Dispatches &amp; Collective Inquiries</span>
+              <span>Return to The Collective</span>
             </Link>
           </div>
         </nav>
@@ -319,9 +319,9 @@ export default async function PostPage({
 
       {/* Floating Quick Return Bar - Accessible anywhere during long scroll */}
       <aside className={s.floatingReturnBar} role="navigation" aria-label="Quick navigation">
-        <Link href="/agentic-ai/" className={s.floatingReturnLink} title="Return to Dispatches">
+        <Link href="/agentic-ai/#the-collectives" className={s.floatingReturnLink} title="Return to The Collective">
           <span aria-hidden="true">&larr;</span>
-          <span>Dispatches</span>
+          <span>The Collective</span>
         </Link>
         <span className={s.floatingDivider} aria-hidden="true">&bull;</span>
         <a href="#top" className={s.floatingTopLink} title="Jump to top of article">

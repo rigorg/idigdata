@@ -1507,6 +1507,7 @@
    The Three Pillars (Panoramic 3-Column Grid)
    ========================================================================== */
 .triadSection {
+  scroll-margin-top: 40px;
   padding: 80px 32px;
   background-color: var(--panel-bg);
   border-bottom: 1px solid var(--line);
