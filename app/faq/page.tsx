@@ -8,26 +8,30 @@ export const dynamic = "force-static";
 export const metadata: Metadata = {
   title: { absolute: "FAQ | idigdata" },
   description:
-    "Fit, non-fit, what you hire, and what the company keeps - Robert Paddock / idigdata.",
+    "Fit, non-fit, mandates, exit criteria, and sovereign capability - Robert Paddock / idigdata.",
   alternates: { canonical: "/faq/" },
 };
 
 const FAQ = [
   {
     q: "Who is the fit?",
-    a: "Enterprise operators across AEC, manufacturing, food and beverage, distribution, logistics, and construction, where people, data, systems, and workflows have to move as one. I take the path above the vendors.",
+    a: "Mid-market and enterprise operators ($50M to $1B+) across manufacturing, industrial distribution, food & beverage, gaming & hospitality, AEC, and infrastructure. Businesses with complex physical operations, regulated inventories, and multi-system friction where leadership wants to own their operational architecture.",
   },
   {
     q: "What is a non-fit?",
-    a: "Hospitals, urgent care, and medical clinics. If the operating problem is not a real transformation the company will own, I will say so.",
+    a: "Inpatient clinical healthcare (hospital staffing, shift scheduling, urgent care billing), commodity IT helpdesk, or software reseller implementations. Engagements without direct executive sponsorship, or where an organization is seeking staff augmentation rather than accountable operational transformation.",
   },
   {
-    q: "What do you hire?",
-    a: "The full mandate, or a defined part of it. Executive roles, fractional leadership, and focused engagements. Agentic work rides the same ground. It is not a pilot beside a broken estate.",
+    q: "What mandates do you take?",
+    a: "The full mandate or a defined phase: Interim or Contract CIO, Chief Transformation Officer, or Lead Enterprise Systems Architect. Work can also be structured through The Block—focused, two-to-four-week productized capability blocks across six enterprise disciplines. I work above software vendors and systems integrators, reporting directly to the CEO, CFO, or Board.",
   },
   {
-    q: "What does the company keep?",
-    a: "The asset, and the ability to keep running it. Mapped workflows, governed data, and people who can run the next cycle. Agents stay inside boundaries a named person can halt.",
+    q: "What does the company own when you leave?",
+    a: "The permanent asset. A company-owned data core, documented workflows, unified master data, and an internal team that can run and evolve the systems without continuous consulting dependency. Handover criteria and operational verification are established before cutover, not negotiated afterward.",
+  },
+  {
+    q: "How does applied agentics and AI connect to this?",
+    a: "As deterministic operational capacity, not speculative chatbots. Through The Collective, we test multi-agent runtimes with strict validation gates and human authorization checkpoints that connect to existing ledgers while keeping company data and IP private on company iron.",
   },
 ] as const;
 
@@ -98,7 +102,7 @@ export default function FaqPage() {
                   >
                     contact form
                   </Link>
-                  . Come with the real operating problem. Shape, stakes,
+                  . Come with the real operating problem: shape, stakes,
                   constraints.
                 </dd>
               </div>

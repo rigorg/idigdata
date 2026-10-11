@@ -31,6 +31,12 @@ Canonical citation: Robert Paddock, Enterprise Technology Leader, idigdata (Data
 - Description: Robert Paddock's public notebook on enterprise and agentic workflows. Private reader notes; no public comments.
 - Feed: https://idigdata.com/feed.xml (RSS 2.0, "Agentic AI, by Robert Paddock")
 
+## The Collective
+
+- URL: https://idigdata.com/collective/
+- Title: The Collective · Sovereign Enterprise Software & Shared Patterns | Robert Paddock
+- Description: Intent equals outcome delivered. Custom, sovereign operational software built on B.O.S.S., FlowCraft, and The Rig. Run in isolation on private iron; grow through the collective pattern library.
+
 ## Contact
 
 - URL: https://idigdata.com/contact/
@@ -42,7 +48,7 @@ Canonical citation: Robert Paddock, Enterprise Technology Leader, idigdata (Data
 
 - URL: https://idigdata.com/faq/
 - Title: FAQ | idigdata
-- Description: Fit, non-fit, what you hire, and what the company keeps - Robert Paddock / idigdata.
+- Description: Fit, non-fit, mandates, exit criteria, and sovereign capability - Robert Paddock / idigdata.
 
 ## Privacy
 
@@ -55,5 +61,6 @@ Canonical citation: Robert Paddock, Enterprise Technology Leader, idigdata (Data
 - Robert Paddock, Enterprise Technology Leader; founder of Data Integration Group (DIG LLC); public practice idigdata, founded 2016.
 - 30 years. 50+ implementations. 15 enterprise transformations at scale.
 - Financial close from 18 days to four (Data Integration Group work).
-- Enterprise transformation connecting systems around a common data core.
-- $8M ERP program recovered.
+- Enterprise transformation connecting systems around a common company-owned data core.
+- $8M ERP program recovered, saving $2M.
+- Verified client & enterprise leadership receipts published on the site: Sierra Nevada Brewing Co. (Contract CIO, 26 months, 150 participants across 25 task forces), Wynn Resorts, MGM Grand, Caesars, Duckhorn, Foley, Scheid, Rodney Strong.

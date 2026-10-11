@@ -50,8 +50,8 @@ const SECTIONS: { title: string; body: React.ReactNode }[] = [
           entrance (the door-knock) for operating this practice: path, time,
           referrer, basic device/browser signals, optional UTM / click-id
           parameters (also kept in a short first-party attribution cookie), and
-          coarse host location (country / region / city). Application Layer and
-          Agentic Layer are live pages, same as Home and Contact. We store a
+          coarse host location (country / region / city). Home, Experience,
+          The Block, Agentic AI, The Collective, and Contact are live pages. We store a
           keyed HMAC of the visitor IP - not the raw address - plus a small
           allowlisted set of request metadata (for example accept-language and
           fetch-site). We do not keep precise latitude/longitude or full proxy
@@ -98,11 +98,15 @@ const SECTIONS: { title: string; body: React.ReactNode }[] = [
     title: "Contact form",
     body: (
       <>
-        If you write through{" "}
+        If you write through our contact or inquiry forms (including{" "}
         <Link href="/contact/" className="font-semibold text-navy border-b border-navy/30 hover:border-navy">
           /contact
+        </Link>{" "}
+        and{" "}
+        <Link href="/collective/" className="font-semibold text-navy border-b border-navy/30 hover:border-navy">
+          /collective
         </Link>
-        , we store the fields you send (name, email, optional role/company/message)
+        ), we store the fields you send (name, email, company, topic/interest, message)
         in our operating records and send a notification email so Robert can reply.
         We do not sell form submissions.
       </>
@@ -188,7 +192,7 @@ export default function PrivacyPage() {
           </div>
 
           <p className="font-body text-[13px] text-warm-gray/80">
-            Last updated August 13, 2026.
+            Last updated October 11, 2026.
           </p>
         </div>
       </section>

@@ -178,7 +178,7 @@ Data can be organized. It can be served up, correlated, and displayed on beautif
 
 **But it is in between the seams that data cannot pick up. And every company has in between the seams.**
 
-The future of enterprise software does not belong to external coding factories generating disposable software from slides. It belongs to sovereign runtimes that honor the craft of the people who do the work—capturing their tribal wisdom, elevating their roles, and leaving them with the more important things to do.
+The future of enterprise software does not come from generating code in a vacuum from slide decks. It comes from sovereign runtimes that honor the craft of the people who do the work—capturing their tribal wisdom, elevating their roles, and leaving them with the more important things to do.
 
 Before you prompt your next agent or approve your next enterprise software overhaul, step away from the slide deck. Walk down to the plant floor. 
 

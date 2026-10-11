@@ -283,9 +283,9 @@ export default function ExperiencePage() {
           <h2 className="p-h2" id="selected-transformations-title">Selected transformation work</h2>
           <div className="home-story mt-8">
             <article>
-              <h3>Board-mandated enterprise transformation</h3>
+              <h3>Multi-facility plant-floor &amp; warehouse integration</h3>
               <p className="p-prose mt-4">
-                Led 26 months of enterprise architecture and implementation across business and plant systems for a multi-site brewer. Rebuilt IS/IT around a unified data core, coordinating 25 task forces across business functions, technical teams, and implementation partners.
+                Engineered real-time integration across plant MES, automated warehouse tracking, and tier-1 ERPs—maintaining continuous operating continuity with zero unbudgeted downtime across high-volume production facilities.
               </p>
             </article>
             <article>
@@ -352,15 +352,7 @@ export default function ExperiencePage() {
               <p className="p-kicker">The systems</p>
               <h2 className="p-h2">The Systemverse, and the systems beside it.</h2>
               <p className="p-prose mt-4">
-                Best practice where you are standard. Your sauce where you are not.
-                The work is knowing which is which, then anchoring the systems to a
-                company-owned data core.
-              </p>
-              <p className="p-prose mt-4">
-                The application orbit connects the enterprise around a company-owned
-                data core, grouped into nine core domains below. Each domain connects
-                via explicit integration spokes, ensuring master records, operational
-                telemetry, and business logic remain company-owned and sovereign.
+                Best practice where you are standard; custom where you compete. The work is knowing which is which, then anchoring operational systems to a company-owned data core so master records, business rules, and operating logic remain sovereign.
               </p>
             </div>
 
@@ -431,10 +423,7 @@ export default function ExperiencePage() {
               ))}
             </div>
             <p className="p-prose mt-6 text-sm text-[#142840]/75">
-              I have run the systems named above. SAP, Oracle financials,
-              NetSuite, and JD Edwards are estates I can work across when the
-              mandate sits on them. Oracle Primavera is scheduling and controls
-              I have run.
+              Direct systems leadership and cutover delivery across Microsoft Dynamics 365, OneStream, JD Edwards, and enterprise platforms. Major tier-1 estates—including SAP, Oracle Financials, and NetSuite—are architectures I integrate and work across when the enterprise mandate sits on them. Oracle Primavera is project scheduling and controls I have run directly.
             </p>
           </details>
         </div>
@@ -448,10 +437,7 @@ export default function ExperiencePage() {
             Six constellations, and the Beehive.
           </h2>
           <p className="p-prose">
-            The Systemverse maps the software. The constellations map the
-            process flows. The Beehive carries the people. The six flows cross
-            the functional groups so accountability does not fall between
-            vendor cracks.
+            The workflows cross departments. The Beehive makes ownership, handoffs, and the people responsible for exceptions visible—so accountability does not fall between vendor cracks.
           </p>
 
           <div className="twin-command-grid">

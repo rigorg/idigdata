@@ -32,27 +32,27 @@ To understand where we are standing, it helps to step back and look at the broad
 +-------------------------------------------------------------------------+
 |                       THE FOUR WAVES OF COMPUTING                       |
 |                                                                         |
-|  [ Wave 1: The Monolith ]       Centralized servers, relational tables, |
-|  Mainframes & Early ERPs         recording transactions in batch.        |
+|  [ Wave 1: Mainframe ]          Centralized records, early batch data,  |
+|  Mainframes & Central Ledgers   foundational systems of record.         |
 |            |                                                            |
 |            v                                                            |
-|  [ Wave 2: The Cloud ]          Elastic compute, multi-tenant SaaS,     |
-|  Salesforce, AWS, NetSuite       API economies, browser interfaces.     |
+|  [ Wave 2: Client-Server & ERP] Department workflows, relational tables,|
+|  SAP, Oracle, JD Edwards        integrated enterprise suites.           |
 |            |                                                            |
 |            v                                                            |
-|  [ Wave 3: Conversational ]     LLM chat sidebars, prompt engineering,  |
-|  Chatbots, Copilots, Demos       speculative text generation.           |
+|  [ Wave 3: Cloud & SaaS ]       Elastic compute, multi-tenant SaaS,     |
+|  Salesforce, AWS, NetSuite       API economies & conversational copilots.|
 |            |                                                            |
 |            v                                                            |
-|  [ Wave 4: Agentic Fabrication]  Code building code, autonomous pipelines|
-|  Autonomous Systems & Runtime   grounded in physical operational seams. |
+|  [ Wave 4: Applied Agentics ]   Autonomous fabrication, code building   |
+|  Autonomous Systems & Runtime   code, and deterministic runtime gates.  |
 +-------------------------------------------------------------------------+
 ```
 
-- **The First Wave** was about *recording*: centralizing records on mainframes and early relational ERPs.
-- **The Second Wave** was about *distribution*: moving compute into the cloud, enabling elastic scaling and SaaS subscription models.
-- **The Third Wave** was about *conversation*: the initial generative AI boom, where large language models were wrapped in chat interfaces to answer questions and draft documents.
-- **The Fourth Wave**—the wave we have just entered—is about **autonomous fabrication**: machine intelligence that doesn't just chat, but actively constructs, tests, and refactors living software assets.
+- **The First Wave (Mainframe)** was about *recording*: centralizing enterprise records on mainframes and early corporate ledgers.
+- **The Second Wave (Client-Server & ERP)** was about *integration*: distributing compute across business departments and uniting supply chains on relational ERPs.
+- **The Third Wave (Cloud & SaaS)** was about *distribution & accessibility*: elastic cloud infrastructure, multi-tenant subscriptions, and initial conversational AI copilots.
+- **The Fourth Wave (Applied Agentics)**—the wave we have entered—is about **autonomous fabrication**: machine intelligence that doesn't just chat, but actively constructs, verifies, and operates living enterprise software across the first three waves.
 
 This Fourth Wave represents a qualitative break from everything that came before. 
 

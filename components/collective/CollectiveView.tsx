@@ -139,7 +139,7 @@ export default function CollectiveView() {
                 <rect x="440" y="34" width="280" height="24" rx="2" fill="#FFFFFF" stroke="#DDD7C8" />
                 <circle cx="454" cy="46" r="4" fill="#16A34A" />
                 <text x="466" y="50" fill="#1E2024" fontSize="9.5" fontFamily="monospace" fontWeight="600">
-                  100% Private &bull; Air-Gapped From Public AI
+                  Private Enterprise Iron &bull; Isolated Execution
                 </text>
 
                 <text x="1144" y="50" textAnchor="end" fill="#9E7D3B" fontSize="9.5" fontFamily="monospace" fontWeight="700" letterSpacing="0.08em">
@@ -319,7 +319,7 @@ export default function CollectiveView() {
                     Deterministic Proof
                   </text>
                   <text x="0" y="34" textAnchor="middle" fill="#6C552F" fontSize="7.5" fontFamily="monospace" fontWeight="600" letterSpacing="0.08em">
-                    100% OPERATIONAL
+                    VERIFIED RUNTIME
                   </text>
 
                   {/* Cardinal Crosshair Pointers (outside the rim connecting to conduit lines) */}
@@ -512,17 +512,17 @@ export default function CollectiveView() {
       <section className={s.blueprintsSection}>
         <div className={s.sectionInner}>
           <div className={s.sectionHead}>
-            <p className={s.eyebrow}>REAL-WORLD PROOF // INTENT = OUTCOME</p>
-            <h2>Proven in production. Not a theoretical concept<span>.</span></h2>
+            <p className={s.eyebrow}>OPERATIONAL BLUEPRINTS // INTENT = OUTCOME</p>
+            <h2>Tested on operational patterns. Practical proof<span>.</span></h2>
             <p>
-              The Collective is about open exploration, but it produces concrete, working results today. When you combine domain mapping (B.O.S.S.), code fabrication (The Rig), and live runtime execution (FlowCraft), real systems get built in weeks:
+              The Collective is an applied operational lab. When you combine domain mapping (B.O.S.S.), code fabrication (The Rig), and runtime execution (FlowCraft), working sovereign systems take shape:
             </p>
           </div>
 
           <div className={s.blueprintsGrid}>
             {/* Practical Example 1 */}
             <div className={s.blueprintCard}>
-              <span className={s.blueprintTag}>PRACTICAL USE CASE // FRONTLINE OPERATIONS</span>
+              <span className={s.blueprintTag}>REFERENCE ARCHETYPE // FRONTLINE OPERATIONS</span>
               <h3 className={s.blueprintTitle}>Frontline Billing &amp; Work-Order State Machine</h3>
               <p className={s.blueprintText}>
                 An automotive shop or specialty service business runs accounting on QuickBooks, but job tracking, mechanic schedules, parts ordering, and customer sign-offs live on whiteboards and text messages.
@@ -531,13 +531,13 @@ export default function CollectiveView() {
                 <li><strong>B.O.S.S.</strong> maps the shop&rsquo;s pricing tiers, labor rules, and bay scheduling invariants in days.</li>
                 <li><strong>The Rig</strong> fabricates and verifies custom QuickBooks connectors and mobile work-order state machines.</li>
                 <li><strong>FlowCraft</strong> executes the runtime—tracking bay throughput, notifying technicians, and updating QuickBooks.</li>
-                <li><strong>Outcome:</strong> A sovereign system Dave owns completely. Zero per-seat rent.</li>
+                <li><strong>Outcome:</strong> A working operational blueprint Dave's shop can own and evolve. Zero per-seat rent.</li>
               </ul>
             </div>
 
             {/* Practical Example 2 */}
             <div className={s.blueprintCard}>
-              <span className={s.blueprintTag}>PRACTICAL USE CASE // MANUFACTURING &amp; SUPPLY</span>
+              <span className={s.blueprintTag}>REFERENCE ARCHETYPE // MANUFACTURING &amp; SUPPLY</span>
               <h3 className={s.blueprintTitle}>Sovereign Purchasing &amp; Receiving System</h3>
               <p className={s.blueprintText}>
                 A multi-facility producer struggles with purchase order exception loops, invoice variances, and slow dock handoffs, facing multi-million-dollar ERP consulting quotes to fix it.
@@ -546,7 +546,7 @@ export default function CollectiveView() {
                 <li><strong>B.O.S.S.</strong> codifies the unwritten receiving rules, freight variance tolerances, and 3-way match logic.</li>
                 <li><strong>The Rig</strong> tests automated reconciliation agents against historical edge-case ledger records.</li>
                 <li><strong>FlowCraft</strong> orchestrates human approvals and autonomous PO matching across warehouse and finance.</li>
-                <li><strong>Outcome:</strong> A company-owned purchasing contraption delivered in weeks with full audit trails.</li>
+                <li><strong>Outcome:</strong> A sovereign purchasing architecture with full audit trails, owned by the enterprise.</li>
               </ul>
             </div>
           </div>
@@ -697,7 +697,7 @@ export default function CollectiveView() {
                 disabled={submitting}
                 className={s.submitBtn}
               >
-                {submitting ? "Sending to Rob's Desk..." : "Send Note Directly to Rob &rarr;"}
+                {submitting ? "Sending to Rob's Desk..." : "Send Note Directly to Rob →"}
               </button>
             </form>
           )}

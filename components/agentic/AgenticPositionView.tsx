@@ -482,7 +482,7 @@ export default function AgenticPositionView() {
         {/* Section Navigation */}
         <nav aria-label="Dispatch navigation" className={s.chapterNav}>
           <a href="#systems-arc">01 / The Systems Arc</a>
-          <a href="#the-collectives">02 / The Collective</a>
+          <a href="#field-briefs">02 / Field Briefs</a>
           <a href="#open-systems">03 / The Patterns &amp; Software</a>
           <a href="#conversation">04 / Direct Correspondence</a>
         </nav>
@@ -532,14 +532,15 @@ export default function AgenticPositionView() {
           SECTION 02: THE THREE COLLECTIVES (LEARN AND BUILD)
           The Enterprise (B.O.S.S.) · The Workflow (FlowCraft) · The Factory (The Rig)
           ==================================================================== */}
-      <section id="the-collectives" className={s.triadSection}>
+      <section id="field-briefs" className={s.triadSection}>
+        <span id="the-collectives" style={{ display: "block", position: "relative", top: "-80px", visibility: "hidden" }} />
         <span id="dispatches" style={{ display: "block", position: "relative", top: "-80px", visibility: "hidden" }} />
         <div className={s.triadInner}>
           <div className={s.triadHead}>
-            <p className={s.eyebrow}>02 / A Shared Inquiry</p>
-            <h2>The Collective<span>.</span></h2>
+            <p className={s.eyebrow}>02 / Field Dispatches</p>
+            <h2>Field Briefs<span>.</span></h2>
             <p className={s.triadDek}>
-              Three foundational conversations on enterprise agentics. Not a sales pitch or product showcase, but working theses formed from 20+ years on the enterprise floor and over three years inside the agentic runtime—matched against where industry leaders are pointing. A space for peers to question, challenge, and explore together.
+              Three foundational dispatches on enterprise agentics. Working theses formed from 20+ years on the enterprise floor and over three years inside the agentic runtime—grounded in the operational seam where code generation meets physical execution.
             </p>
           </div>
 
