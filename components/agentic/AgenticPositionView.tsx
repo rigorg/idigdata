@@ -483,7 +483,7 @@ export default function AgenticPositionView() {
         <nav aria-label="Dispatch navigation" className={s.chapterNav}>
           <a href="#systems-arc">01 / The Systems Arc</a>
           <a href="#the-collectives">02 / The Collective</a>
-          <a href="#open-systems">03 / Shared Architecture</a>
+          <a href="#open-systems">03 / The Patterns &amp; Software</a>
           <a href="#conversation">04 / Direct Correspondence</a>
         </nav>
       </header>
@@ -616,83 +616,30 @@ export default function AgenticPositionView() {
       </section>
 
       {/* ====================================================================
-          SECTION 03: OPEN SYSTEMS & SHARED ARCHITECTURE (LIMELIGHT)
-          B.O.S.S. · FlowCraft · The Rig in the Limelight
+          SECTION 03: THE PATTERNS & THE COLLECTIVE GATEWAY
+          A concise, poignant bridge from the essays into the living software
           ==================================================================== */}
       <section id="open-systems" className={s.limelightSection}>
         <div className={s.limelightInner}>
           <div className={s.limelightHead}>
-            <p className={s.eyebrow}>03 / Shared Architecture</p>
-            <h2>Three Open Systems. Built to Collaborate<span>.</span></h2>
+            <p className={s.eyebrow}>03 / The Patterns at the Seam</p>
+            <h2>Where The Work Turns Into Code<span>.</span></h2>
             <p className={s.limelightDek}>
-              From the genesis of The Rig, B.O.S.S., and FlowCraft, the goal was never to hoard a proprietary silo. It was to build a complete, verifiable operating contraption—and share the patterns openly. Each enterprise runs on sovereign iron with absolute data privacy, while the collective pattern library grows as practitioners use the systems to solve real-world problems.
+              The field briefs above explore why enterprise systems break down at the human seam. The Collective is the actual software—B.O.S.S., FlowCraft, and The Rig—built to solve it. Each enterprise runs in sovereign isolation on its own iron, while the collective pattern library grows as practitioners use the systems to solve real-world problems.
             </p>
           </div>
 
-          <div className={s.limelightGrid}>
-            <div className={s.limelightCard}>
-              <div>
-                <span className={s.limelightBadge}>OPEN SPECIFICATION · DOMAIN TRUTH</span>
-                <h3 className={s.limelightCardTitle}>B.O.S.S.</h3>
-                <div className={s.limelightCardSubtitle}>Business Operating System Specification</div>
-                <p className={s.limelightCardBody}>
-                  Slabs of enterprise software get bought at the executive level, but the company runs on Mary's unwritten scheduling spreadsheet and thirty years of plant-floor judgment. B.O.S.S. models the delta between stated executive happy paths and actual operational reality so agents execute on truth, not fiction.
-                </p>
-              </div>
-              <div className={s.limelightCollaborationBox}>
-                <span className={s.limelightCollabLabel}>OPEN TO BUILD TOGETHER</span>
-                <p className={s.limelightCollabText}>
-                  Standardized operational schemas, exception audit harnesses, and tacit knowledge discovery templates.
-                </p>
-              </div>
-            </div>
-
-            <div className={s.limelightCard}>
-              <div>
-                <span className={s.limelightBadge}>OPERATIONAL RUNTIME · HUMAN + AGENT</span>
-                <h3 className={s.limelightCardTitle}>FlowCraft</h3>
-                <div className={s.limelightCardSubtitle}>Instance-Level Operating System</div>
-                <p className={s.limelightCardBody}>
-                  Bridging the divide between static SaaS tools and living agentic operations. FlowCraft provides the instance-level operating runtime where humans and autonomous agents execute tasks together with shared Master Data (MDM), boundary governance, and live permissions.
-                </p>
-              </div>
-              <div className={s.limelightCollaborationBox}>
-                <span className={s.limelightCollabLabel}>OPEN TO BUILD TOGETHER</span>
-                <p className={s.limelightCollabText}>
-                  Workflow connectors, permission policies, and Master Data state machine runtimes.
-                </p>
-              </div>
-            </div>
-
-            <div className={s.limelightCard}>
-              <div>
-                <span className={s.limelightBadge}>SOFTWARE FACTORY · RIG-IN-A-BOX</span>
-                <h3 className={s.limelightCardTitle}>The Rig</h3>
-                <div className={s.limelightCardSubtitle}>Autonomous Software Factory</div>
-                <p className={s.limelightCardBody}>
-                  Moving beyond chat prompts and fragile sandboxes. The Rig puts the power of a 13-cell autonomous build pipeline directly on the operator's PC—running deterministic test harnesses, caller gates, and verified telemetry that feeds into a collective.
-                </p>
-              </div>
-              <div className={s.limelightCollaborationBox}>
-                <span className={s.limelightCollabLabel}>OPEN TO BUILD TOGETHER</span>
-                <p className={s.limelightCollabText}>
-                  Local developer harnesses, multi-agent skills, and sovereign pipeline toolchains.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className={s.limelightBanner}>
+          <div className={s.limelightBanner} style={{ marginTop: 0 }}>
             <div className={s.limelightBannerContent}>
-              <p className={s.eyebrow} style={{ margin: 0 }}>THE COLLECTIVE CALL // PEER COLLABORATION</p>
-              <h3>Twenty years on the enterprise floor. Over three years inside the runtime. Built to share and build together.</h3>
+              <p className={s.eyebrow} style={{ margin: 0 }}>THE SOFTWARE CONTRAPTION // SPEC-COL-01</p>
+              <h3>Three Interlocking Open Systems. Intent Equals Outcome Delivered.</h3>
               <p>
-                Not a proprietary silo, and not a sales pitch. B.O.S.S., FlowCraft, and The Rig exist because applied agentics requires real architecture, tested against live plant floor reality. Run in isolation on your own iron; learn and grow through the collective. Whether you want to specialize in one system or collaborate across the entire stack—the schemas, runtimes, and local developer harnesses are open to explore, test, and build together.
+                From specialized operators running QuickBooks to multi-site manufacturers needing sovereign purchasing and receiving engines. Mapped by <strong>B.O.S.S.</strong>, fabricated by <strong>The Rig</strong>, and executed on <strong>FlowCraft</strong>. Explore the architecture, commission an enterprise build, or join peer builders in the collective.
               </p>
             </div>
-            <a href="#conversation" className={s.limelightBannerCta}>
-              <span>Join the Collective &rarr;</span>
-            </a>
+            <Link href="/collective/" className={s.limelightBannerCta}>
+              <span>Enter The Collective &rarr;</span>
+            </Link>
           </div>
         </div>
       </section>
