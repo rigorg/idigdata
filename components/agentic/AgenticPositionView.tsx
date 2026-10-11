@@ -374,7 +374,7 @@ export default function AgenticPositionView() {
               Learn through the work<span>.</span>
             </h1>
             <p className={s.dek}>
-              Where a 20-year enterprise systems arc meets two years inside the agentic runtime.
+              Where a 20-year enterprise systems arc meets over three years inside the agentic runtime.
             </p>
             <p className={s.heroLead}>
               Macro venture capital views enterprise transformation from financial altitude; the physical floor runs on unwritten reality. Between executive slide decks and automated software factories, every enterprise deployment succeeds or fails in the operational seam between software and the physical dock. This is where I build, question, and learn through the work.
@@ -604,7 +604,7 @@ export default function AgenticPositionView() {
           <div className={s.limelightBanner}>
             <div className={s.limelightBannerContent}>
               <p className={s.eyebrow} style={{ margin: 0 }}>THE COLLECTIVE CALL // PEER COLLABORATION</p>
-              <h3>Twenty years on the enterprise floor. Two years inside the runtime. Built to share and build together.</h3>
+              <h3>Twenty years on the enterprise floor. Over three years inside the runtime. Built to share and build together.</h3>
               <p>
                 Not a proprietary silo, and not a sales pitch. B.O.S.S., FlowCraft, and The Rig exist because applied agentics requires real architecture, tested against live dock reality. Whether you want to specialize in one system or collaborate across the entire stack—the schemas, runtimes, and local developer harnesses are open to explore, test, and build together.
               </p>
