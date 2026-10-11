@@ -550,10 +550,10 @@ export default function AgenticPositionView() {
         <span id="dispatches" style={{ display: "block", position: "relative", top: "-80px", visibility: "hidden" }} />
         <div className={s.triadInner}>
           <div className={s.triadHead}>
-            <p className={s.eyebrow}>02 / Learn and Build</p>
+            <p className={s.eyebrow}>02 / A Shared Inquiry</p>
             <h2>The Collective<span>.</span></h2>
             <p className={s.triadDek}>
-              I connect people, data, and systems to build what&apos;s next—and make it work in the business you have. Isolating any one layer causes enterprise transformation to fail. Three interlocking systems—B.O.S.S., FlowCraft, and The Rig—unifying enterprise domain truth, deterministic workflow runtime, and autonomous software fabrication.
+              This is an open collective—not a pitch. I am a passionate builder exploring the hard questions where agentics meets enterprise reality. We track what the industry is saying: Chamath on the space between tasks, Benioff on workflow metadata, and Grinberg on the software factory. Alongside those perspectives, I share open collections based on real, working software—B.O.S.S., FlowCraft, and The Rig. I am a fellow traveler on this journey with others, building a collective where curious practitioners can question, explore, and build what&apos;s next together.
             </p>
           </div>
 
@@ -573,7 +573,10 @@ export default function AgenticPositionView() {
                   <h3 className={s.triadCardTitle}>{c.title}</h3>
                   <div className={s.triadCardSubtitle}>{c.subtitle}</div>
 
-                  {/* Titan Industry Foil / Context Quote */}
+                  {/* What the industry is saying */}
+                  <div style={{ marginTop: "16px", marginBottom: "6px" }}>
+                    <span className={s.triadSectionTag}>WHAT THE INDUSTRY IS SAYING</span>
+                  </div>
                   <div className={s.triadQuoteBlock}>
                     <div className={s.triadQuoteMeta}>
                       <span className={s.triadQuoteSpeaker}>{c.titanQuote.speaker}</span>
@@ -585,7 +588,10 @@ export default function AgenticPositionView() {
                     <div className={s.triadQuoteRole}>{c.titanQuote.role}</div>
                   </div>
 
-                  {/* Ground Truth / Ethos */}
+                  {/* Working software collection */}
+                  <div style={{ marginTop: "18px", marginBottom: "6px" }}>
+                    <span className={s.triadSectionTag}>WORKING SOFTWARE COLLECTION • {c.systemName}</span>
+                  </div>
                   <p className={s.triadCardBody}>{c.body}</p>
 
                   <div className={s.triadProvocation}>

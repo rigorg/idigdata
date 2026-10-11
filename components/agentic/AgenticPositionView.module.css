@@ -1620,6 +1620,18 @@
 }
 
 
+
+.triadSectionTag {
+  display: block;
+  font-family: var(--next-font-mono), monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--brass-dark);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
 .triadQuoteBlock {
   background: var(--panel-bg);
   border: 1px solid var(--line);
