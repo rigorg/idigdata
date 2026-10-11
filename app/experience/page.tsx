@@ -181,7 +181,7 @@ export default function ExperiencePage() {
           </p>
           <div className="home-story mt-8">
             <article>
-              <p className="font-mono text-xs font-bold uppercase tracking-wider text-amber-700">01 // Scale &amp; Transformation</p>
+              <p className="font-mono text-xs font-bold uppercase tracking-wider text-[#9E7D3B]">01 // Scale &amp; Transformation</p>
               <h3 className="mt-2">Executive Transformation Leadership</h3>
               <p className="font-medium text-sm text-[#142840]/75 mt-1">Sierra Nevada Brewing Co. · Chief Information Officer (Contract)</p>
               <p className="p-prose mt-4">
@@ -189,7 +189,7 @@ export default function ExperiencePage() {
               </p>
             </article>
             <article>
-              <p className="font-mono text-xs font-bold uppercase tracking-wider text-amber-700">02 // Founder &amp; Builder</p>
+              <p className="font-mono text-xs font-bold uppercase tracking-wider text-[#9E7D3B]">02 // Founder &amp; Builder</p>
               <h3 className="mt-2">Business Ownership &amp; Operating Software</h3>
               <p className="font-medium text-sm text-[#142840]/75 mt-1">Timberline Architectural Openings · Founder, CEO &amp; CTO</p>
               <p className="p-prose mt-4">
@@ -197,7 +197,7 @@ export default function ExperiencePage() {
               </p>
             </article>
             <article>
-              <p className="font-mono text-xs font-bold uppercase tracking-wider text-amber-700">03 // Systems &amp; Delivery</p>
+              <p className="font-mono text-xs font-bold uppercase tracking-wider text-[#9E7D3B]">03 // Systems &amp; Delivery</p>
               <h3 className="mt-2">Core Systems Architecture &amp; Delivery</h3>
               <p className="font-medium text-sm text-[#142840]/75 mt-1">Data Integration Group · Principal &amp; Solution Architect</p>
               <p className="p-prose mt-4">
@@ -205,7 +205,7 @@ export default function ExperiencePage() {
               </p>
             </article>
             <article>
-              <p className="font-mono text-xs font-bold uppercase tracking-wider text-amber-700">04 // Frontier Runtime</p>
+              <p className="font-mono text-xs font-bold uppercase tracking-wider text-[#9E7D3B]">04 // Frontier Runtime</p>
               <h3 className="mt-2">Applied Enterprise Agentics &amp; Software Factories</h3>
               <p className="font-medium text-sm text-[#142840]/75 mt-1">Data Integration Group · Autonomous Systems Architecture</p>
               <p className="p-prose mt-4">
@@ -216,65 +216,70 @@ export default function ExperiencePage() {
         </div>
       </section>
 
-      {/* SELECTED CLIENTS */}
+      {/* ENTERPRISE BREADTH · OPERATING DEPTH */}
       <section className={"p-section " + styles.section} id="selected-clients" aria-labelledby="selected-clients-title">
         <div className="page-well">
-          <h2 className={"p-h2 " + styles.title} id="selected-clients-title">Organizations &amp; operating experience</h2>
-          <dl className={styles.rows}>
-            <div className={styles.row}>
-              <dt>Food &amp; beverage</dt>
-              <dd>
-                <ul className={styles.names}>
-                  <li>Sierra Nevada Brewing</li>
-                  <li>Duckhorn</li>
-                  <li>Foley Family Wine &amp; Spirits</li>
-                  <li>Everytable</li>
-                  <li>H.W. Greenham &amp; Sons</li>
-                  <li>Valley Fine Foods</li>
-                  <li>Scheid Vineyards</li>
-                  <li>Rodney Strong Vineyards</li>
-                </ul>
-              </dd>
+          <p className="p-kicker">Operating Foundations</p>
+          <h2 className={"p-h2 " + styles.title} id="selected-clients-title">Enterprise breadth. Operating depth.</h2>
+          <p className="p-prose mt-4 text-base lg:text-[17px] leading-relaxed text-[#142840]/90 max-w-[72ch]">
+            Every enterprise is uniquely standard. The books need to balance. The business needs to run. Across industries, financial control, regulatory obligations, and operating accountability form a common foundation. The work is knowing which patterns to standardize, where the business is different, and how to connect its people, systems, and data.
+          </p>
+
+          <div className={styles.domainsGrid}>
+            <article className={styles.domainItem}>
+              <h3 className={styles.domainHeading}>Enterprise Software &amp; Technology</h3>
+              <p className={styles.domainText}>
+                Applications and platforms move from product roadmap through deployment, customer adoption, and multi-tenant scale. The nuance lives in integration architecture, data boundaries, and API stability—balancing release velocity with the governance, uptime, and security enterprise buyers demand.
+              </p>
+            </article>
+
+            <article className={styles.domainItem}>
+              <h3 className={styles.domainHeading}>Manufacturing &amp; Industrial Distribution</h3>
+              <p className={styles.domainText}>
+                Items move from purchasing through production, inventory, and delivery. The nuance lives in how each business plans, makes, costs, and tracks what it sells—with quality, traceability, and compliance built into the operation.
+              </p>
+            </article>
+
+            <article className={styles.domainItem}>
+              <h3 className={styles.domainHeading}>Financial, Insurance &amp; Legal Services</h3>
+              <p className={styles.domainText}>
+                Transactions, policies, cases, and obligations move through decisions and approvals. The nuance lives in how each firm applies expertise, manages risk, protects information, and documents compliance while maintaining financial and professional accountability.
+              </p>
+            </article>
+
+            <article className={styles.domainItem}>
+              <h3 className={styles.domainHeading}>Healthcare &amp; Life Sciences</h3>
+              <p className={styles.domainText}>
+                Patient care, research, and product development depend on specialized knowledge and tightly connected workflows. Clinical and scientific requirements, quality, privacy, and regulatory controls must work together—with traceable decisions and reliable information supporting both the mission and the business.
+              </p>
+            </article>
+
+            <article className={styles.domainItem + " " + styles.domainItemWide}>
+              <h3 className={styles.domainHeading}>Energy, Utilities &amp; Infrastructure</h3>
+              <p className={styles.domainText}>
+                Assets and projects move through planning, construction, operation, and maintenance. The nuance lives in engineering requirements, field conditions, safety, and regulatory obligations—with project costs, asset performance, and continuity of service connected throughout.
+              </p>
+            </article>
+          </div>
+
+          <div className={styles.orgsBlock}>
+            <p className={styles.orgsKicker}>Selected organizations and contributions</p>
+            <div className={styles.orgsGrid}>
+              <article className={styles.orgCard}>
+                <h3 className={styles.orgTitle}>Wynn Resorts — Las Vegas &amp; Macau</h3>
+                <p className={styles.orgText}>
+                  Coordinated complex project delivery across two major international resort locations, using data and technology to connect sales engineering, design, distribution, and labor. Integrated sequencing, scheduling, and project management to align commercial commitments with field execution.
+                </p>
+              </article>
+
+              <article className={styles.orgCard}>
+                <h3 className={styles.orgTitle}>Wine industry — Duckhorn · Foley · Scheid · Rodney Strong</h3>
+                <p className={styles.orgText}>
+                  Enterprise systems and transformation work across complex, regulated wine operations. Experience spanning specialized winemaking software, bottling, inventory, distribution, and financial operations—with compliance, traceability, and reporting requirements woven into the workflows. Connected the patterns these businesses share with the production methods, business rules, and operating exceptions that make each winery unique.
+                </p>
+              </article>
             </div>
-            <div className={styles.row}>
-              <dt>Architecture &amp; construction</dt>
-              <dd>
-                <ul className={styles.names}>
-                  <li>Timberline Architectural Openings (Founder &amp; CEO)</li>
-                  <li>EPI Materials</li>
-                  <li>Crown Doors</li>
-                </ul>
-              </dd>
-            </div>
-            <div className={styles.row}>
-              <dt>Public sector &amp; infrastructure</dt>
-              <dd>
-                <ul className={styles.names}>
-                  <li>Port of Long Beach</li>
-                  <li>San Francisco Municipal Transportation Agency</li>
-                  <li>California High-Speed Rail Authority</li>
-                </ul>
-              </dd>
-            </div>
-            <div className={styles.row}>
-              <dt>Agtech &amp; distribution</dt>
-              <dd>
-                <ul className={styles.names}>
-                  <li>Ag-Wise Enterprises</li>
-                  <li>Bakersfield Ag Chemistry</li>
-                </ul>
-              </dd>
-            </div>
-            <div className={styles.row}>
-              <dt>Non-profit &amp; education</dt>
-              <dd>
-                <ul className={styles.names}>
-                  <li>Save the Redwoods League</li>
-                  <li>San Francisco Botanical Garden</li>
-                </ul>
-              </dd>
-            </div>
-          </dl>
+          </div>
         </div>
       </section>
 
