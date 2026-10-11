@@ -131,18 +131,18 @@ export default function CollectiveView() {
                 </g>
 
                 {/* Perimeter Header Badges */}
-                <rect x="56" y="34" width="370" height="24" rx="2" fill="#1E2024" />
-                <text x="68" y="50" fill="#FAF6EE" fontSize="10" fontFamily="monospace" fontWeight="700" letterSpacing="0.1em">
-                  SOVEREIGN ENTERPRISE PERIMETER // PRIVATE IRON
+                <rect x="56" y="32" width="340" height="24" rx="2" fill="#1E2024" />
+                <text x="68" y="48" fill="#FAF6EE" fontSize="9.5" fontFamily="monospace" fontWeight="700" letterSpacing="0.08em">
+                  SOVEREIGN ENTERPRISE PERIMETER
                 </text>
                 
-                <rect x="440" y="34" width="280" height="24" rx="2" fill="#FFFFFF" stroke="#DDD7C8" />
-                <circle cx="454" cy="46" r="4" fill="#16A34A" />
-                <text x="466" y="50" fill="#1E2024" fontSize="9.5" fontFamily="monospace" fontWeight="600">
-                  Private Enterprise Iron &bull; Isolated Execution
+                <rect x="800" y="32" width="220" height="24" rx="2" fill="#FFFFFF" stroke="#DDD7C8" />
+                <circle cx="814" cy="44" r="4" fill="#16A34A" />
+                <text x="826" y="47.5" fill="#1E2024" fontSize="9" fontFamily="monospace" fontWeight="600">
+                  Private Iron &bull; Isolated Execution
                 </text>
 
-                <text x="1144" y="50" textAnchor="end" fill="#9E7D3B" fontSize="9.5" fontFamily="monospace" fontWeight="700" letterSpacing="0.08em">
+                <text x="1144" y="48" textAnchor="end" fill="#9E7D3B" fontSize="9.5" fontFamily="monospace" fontWeight="700" letterSpacing="0.08em">
                   SPEC // SPEC-COL-01
                 </text>
 
@@ -150,7 +150,7 @@ export default function CollectiveView() {
                     VECTOR CONDUITS BETWEEN NODES
                     ======================================================== */}
                 {/* Top to Southwest Factory */}
-                <path d="M 480 134 L 290 258" stroke="#B8B0A0" strokeWidth="1.5" strokeDasharray="4 4" markerEnd="url(#flowArrow)" />
+                <path d="M 480 140 L 290 258" stroke="#B8B0A0" strokeWidth="1.5" strokeDasharray="4 4" markerEnd="url(#flowArrow)" />
                 <g transform="translate(315, 185)">
                   <rect width="120" height="20" rx="2" fill="#FAF6EE" stroke="#DDD7C8" />
                   <text x="60" y="14" textAnchor="middle" fill="#9E7D3B" fontSize="8.5" fontFamily="monospace" fontWeight="700">
@@ -159,8 +159,8 @@ export default function CollectiveView() {
                 </g>
 
                 {/* Top to Center Rosette (Intent Conduit) */}
-                <path d="M 600 134 L 600 164" stroke="#9E7D3B" strokeWidth="1.5" strokeDasharray="4 4" markerEnd="url(#flowArrow)" />
-                <g transform="translate(565, 142)">
+                <path d="M 600 140 L 600 166" stroke="#9E7D3B" strokeWidth="1.5" strokeDasharray="4 4" markerEnd="url(#flowArrow)" />
+                <g transform="translate(565, 145)">
                   <rect width="70" height="18" rx="2" fill="#FAF6EE" stroke="#9E7D3B" strokeWidth="0.8" />
                   <text x="35" y="13" textAnchor="middle" fill="#9E7D3B" fontSize="8" fontFamily="monospace" fontWeight="700">
                     INTENT &darr;
@@ -186,7 +186,7 @@ export default function CollectiveView() {
                 </g>
 
                 {/* Southeast Runtime Feedback to Top Node */}
-                <path d="M 910 258 L 720 134" stroke="#B8B0A0" strokeWidth="1.5" strokeDasharray="4 4" markerEnd="url(#flowArrow)" />
+                <path d="M 910 258 L 720 140" stroke="#B8B0A0" strokeWidth="1.5" strokeDasharray="4 4" markerEnd="url(#flowArrow)" />
                 <g transform="translate(765, 185)">
                   <rect width="120" height="20" rx="2" fill="#FAF6EE" stroke="#DDD7C8" />
                   <text x="60" y="14" textAnchor="middle" fill="#9E7D3B" fontSize="8.5" fontFamily="monospace" fontWeight="700">
@@ -197,7 +197,7 @@ export default function CollectiveView() {
                 {/* ========================================================
                     NODE 1: NORTH - DOMAIN TRUTH & SPECIFICATION (B.O.S.S.)
                     ======================================================== */}
-                <g transform="translate(420, 54)">
+                <g transform="translate(420, 60)">
                   <rect width="360" height="80" rx="4" fill="#FFFFFF" stroke="#1E2024" strokeWidth="1.5" />
                   <rect x="0" y="0" width="360" height="4" fill="#9E7D3B" />
                   
