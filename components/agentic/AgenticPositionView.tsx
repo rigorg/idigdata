@@ -275,9 +275,9 @@ const COLLECTIVES: CollectivePillar[] = [
     body:
       "Enterprise software only captures the happy path. The real operating logic lives in the unwritten space—the daily production schedules, certified workforce matrices, and tacit floor judgment that keep a plant moving when systems change. In every organization, there is a Mary whose personal spreadsheets and floor relationships have outlasted multi-million-dollar ERP implementations. You cannot prompt an AI agent with what was never codified. True enterprise agentics starts by surfacing what lives in between the seams before generating a line of code.",
     inquiries: [
-      "What thirty years of plant-floor craft knows that standard software never codified",
+      "The human connection fabric: why cross-department trust sees what databases miss",
       "The 'bus or lotto' risk: why operational continuity lives in human heads, not databases",
-      "In between the seams: why standard data grabs miss the human judgment running the plant",
+      "In between the seams: why standard data grabs fail without frontline presence",
     ],
     fieldNoteHref: "/agentic-ai/marys-sheet/",
     fieldNoteLabel: "Read Field Brief: Mary's Sheet & Polanyi",
