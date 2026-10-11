@@ -9,14 +9,14 @@ export default function CollectiveView() {
     name: "",
     email: "",
     company: "",
-    interest: "build",
+    interest: "collaborate",
     message: "",
   });
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
 
-  const handleInterestSelect = (type: "build" | "collaborate") => {
+  const handleInterestSelect = (type: "collaborate" | "build") => {
     setFormState((prev) => ({ ...prev, interest: type }));
     const el = document.getElementById("correspondence");
     if (el) {
@@ -37,10 +37,10 @@ export default function CollectiveView() {
           name: formState.name,
           email: formState.email,
           company: formState.company,
-          source: "The Collective Storefront",
-          topic: formState.interest === "build" 
-            ? "Commission an Enterprise Agentic Build (Intent = Outcome)"
-            : "Join The Collective // Peer Collaboration & Shared Patterns",
+          source: "The Collective",
+          topic: formState.interest === "collaborate"
+            ? "The Collective // Peer Collaboration & Shared Patterns"
+            : "Enterprise Build Inquiry // Custom Sovereign System",
           message: formState.message,
         }),
       });
@@ -60,21 +60,25 @@ export default function CollectiveView() {
 
   return (
     <div className={s.page}>
-      
-
       {/* Hero Section */}
       <section className={s.hero}>
         <div className={s.heroInner}>
-          <p className={s.eyebrow}>SPEC-COL-01 // THE APPLIED AGENTIC COMMONS</p>
+          <p className={s.eyebrow}>THE OPERATIONAL SEAM // A LIVING EXPERIMENT</p>
           <h1 className={s.heroTitle}>
             The Collective<span>.</span>
           </h1>
           <p className={s.heroDek}>
-            Sovereign enterprise software. Built around how you actually work.
-            Monolithic SaaS forces your business into someone else’s mold and taxes every seat.
-            We build custom, company-owned operational software around your business—mapped in days,
-            proven by test harnesses, and running on private iron. Run in isolation; grow through shared patterns.
+            We are at a unique juncture in technology. Agentics is arriving, and we have picked our lane: the enterprise.
           </p>
+          <div style={{ maxWidth: "860px", color: "var(--ink)", fontSize: "16px", lineHeight: "1.7", marginBottom: "36px" }}>
+            <p style={{ marginBottom: "14px" }}>
+              Not to build another closed silo, rent another software seat, or push generic chatbots into meetings. 
+              We are here to figure out something much more interesting: <strong>how people and autonomous systems actually work together in the business you have.</strong>
+            </p>
+            <p style={{ marginBottom: "14px" }}>
+              It is about the sharing, the sovereignty, and the patterns. Running in complete isolation on your own iron—where your data, your ledgers, and your customer relationships remain 100% private—while connecting to a larger collective that feeds each other. The &ldquo;what if?&rdquo; The joy of building. Being part of something that helps define how work gets done at a truly historic moment in computing.
+            </p>
+          </div>
 
           {/* Architectural Diagram Bay */}
           <div className={s.specPlate}>
@@ -226,24 +230,24 @@ export default function CollectiveView() {
 
             <div className={s.specCaption}>
               <div>
-                <strong>Sovereign Execution on Private Iron:</strong> Your operational ledgers, transactions, customer records, and physical telemetry stay 100% inside your perimeter. No cloud extraction, no vendor lock-in.
+                <strong>Sovereign Execution on Private Iron:</strong> Your operational ledgers, transactions, customer records, and physical telemetry stay 100% inside your perimeter. Run in isolation with complete data privacy.
               </div>
               <div>
-                <strong>The Pattern Commons:</strong> What is shared across the collective is patterns, not data. Proven domain schemas, composable workflow blocks, and deterministic test harnesses refined on real operating floors.
+                <strong>The Pattern Commons:</strong> What connects us is patterns, not data. Proven domain schemas, composable workflow blocks, and deterministic test harnesses refined through real-world work.
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section: The Three Systems (The Zeros & Ones) */}
+      {/* Section: The Three Systems */}
       <section className={s.systemsSection}>
         <div className={s.sectionInner}>
           <div className={s.sectionHead}>
-            <p className={s.eyebrow}>THE SOFTWARE CONTRAPTION // THREE INTERLOCKING SYSTEMS</p>
-            <h2>The actual software. The zeros and ones<span>.</span></h2>
+            <p className={s.eyebrow}>THE WORKING CONTRAPTION // THREE INTERLOCKING SYSTEMS</p>
+            <h2>How the systems work together<span>.</span></h2>
             <p>
-              The Collective is not a theoretical whitepaper. It is living software built from over 20 years on enterprise plant floors and three years inside the autonomous runtime.
+              To make a collective work in practice, you need a deterministic stack. Three open systems, tested on live enterprise floors, designed to fit together seamlessly.
             </p>
           </div>
 
@@ -255,13 +259,13 @@ export default function CollectiveView() {
                 <h3 className={s.systemTitle}>B.O.S.S.</h3>
                 <div className={s.systemSub}>Business Operating System Specification</div>
                 <p className={s.systemBody}>
-                  SaaS products sell happy-path illusions. Real companies run on tribal knowledge, edge-case spreadsheets, and thirty years of frontline experience. B.O.S.S. rapidly maps that domain truth—capturing business rules, exception boundaries, and operational invariants into machine-actionable schemas.
+                  Every business runs on unwritten plant-floor judgment, Mary&rsquo;s edge-case scheduling spreadsheet, and thirty years of experience that never made it into the software manual. B.O.S.S. maps that domain truth—capturing business rules, exception boundaries, and operational invariants into clear, machine-actionable schemas.
                 </p>
               </div>
               <div className={s.systemUseCaseBox}>
-                <span className={s.systemUseCaseLabel}>CORE USE CASE</span>
+                <span className={s.systemUseCaseLabel}>HOW IT IS USED</span>
                 <p className={s.systemUseCaseText}>
-                  Rapid domain onboarding. Translates unwritten shop-floor heuristics into unambiguous data contracts and decision boundaries.
+                  Rapid domain onboarding. Turns tacit human heuristics into unambiguous schemas so agents understand real constraints before touching anything.
                 </p>
               </div>
             </div>
@@ -273,13 +277,13 @@ export default function CollectiveView() {
                 <h3 className={s.systemTitle}>FlowCraft</h3>
                 <div className={s.systemSub}>Instance-Level Operating System</div>
                 <p className={s.systemBody}>
-                  The live operational runtime. FlowCraft bridges static databases, legacy ledgers, and autonomous agent swarms. It coordinates human operators and software agents side-by-side with shared Master Data (MDM), live permissions, boundary governance, and audit trails.
+                  The live operational runtime. FlowCraft bridges existing systems, databases, and autonomous agent swarms. It orchestrates humans and agents side-by-side with shared Master Data (MDM), live permissions, state machines, and complete audit trails.
                 </p>
               </div>
               <div className={s.systemUseCaseBox}>
-                <span className={s.systemUseCaseLabel}>CORE USE CASE</span>
+                <span className={s.systemUseCaseLabel}>HOW IT IS USED</span>
                 <p className={s.systemUseCaseText}>
-                  State machine execution. Runs custom workflows around tools like QuickBooks, ERPs, or WMS without renting per-seat SaaS tools.
+                  Live execution. Coordinates daily tasks, runs custom workflows around ledgers like QuickBooks or ERPs, and keeps humans in authorization command.
                 </p>
               </div>
             </div>
@@ -291,13 +295,13 @@ export default function CollectiveView() {
                 <h3 className={s.systemTitle}>The Rig</h3>
                 <div className={s.systemSub}>Autonomous Software Factory</div>
                 <p className={s.systemBody}>
-                  Eliminates fragile prompt-and-pray development. The Rig puts a 13-cell autonomous build pipeline on the operator’s PC—running multi-agent synthesis, deterministic caller gates, and verified test harnesses that prove code behaves correctly before release.
+                  Moving beyond fragile prompt-and-pray development. The Rig puts a 13-cell autonomous build pipeline on the operator’s PC—running multi-agent synthesis, deterministic caller gates, and verified test harnesses that prove code behaves correctly before release.
                 </p>
               </div>
               <div className={s.systemUseCaseBox}>
-                <span className={s.systemUseCaseLabel}>CORE USE CASE</span>
+                <span className={s.systemUseCaseLabel}>HOW IT IS USED</span>
                 <p className={s.systemUseCaseText}>
-                  Code fabrication and proof. Builds, tests, and verifies custom operational blocks on local developer iron.
+                  Code fabrication and proof. Builds, tests, and verifies custom operational blocks on local developer iron before plant-floor release.
                 </p>
               </div>
             </div>
@@ -305,96 +309,96 @@ export default function CollectiveView() {
         </div>
       </section>
 
-      {/* Section: What We Build (Intent = Outcome) */}
+      {/* Section: Grounded Results / Practical Proof (Sprinkled in naturally) */}
       <section className={s.blueprintsSection}>
         <div className={s.sectionInner}>
           <div className={s.sectionHead}>
-            <p className={s.eyebrow}>PROVEN BLUEPRINTS // INTENT = OUTCOME DELIVERED</p>
-            <h2>Enterprise agentic contraptions built for you<span>.</span></h2>
+            <p className={s.eyebrow}>REAL-WORLD PROOF // INTENT = OUTCOME</p>
+            <h2>Proven in production. Not a theoretical concept<span>.</span></h2>
             <p>
-              Whether you are a specialized operator running on QuickBooks or a mid-market manufacturer running complex enterprise ledgers, we build sovereign software around the business you actually have.
+              The Collective is about open exploration, but it produces concrete, working results today. When you combine domain mapping (B.O.S.S.), code fabrication (The Rig), and live runtime execution (FlowCraft), real systems get built in weeks:
             </p>
           </div>
 
           <div className={s.blueprintsGrid}>
-            {/* Blueprint 1 */}
+            {/* Practical Example 1 */}
             <div className={s.blueprintCard}>
-              <span className={s.blueprintTag}>OPERATIONAL BLUEPRINT // SPECIALIZED OPERATOR</span>
-              <h3 className={s.blueprintTitle}>The Frontline Operations &amp; Billing Engine</h3>
+              <span className={s.blueprintTag}>PRACTICAL USE CASE // FRONTLINE OPERATIONS</span>
+              <h3 className={s.blueprintTitle}>Frontline Billing &amp; Work-Order State Machine</h3>
               <p className={s.blueprintText}>
-                <strong>The Situation:</strong> An automotive repair shop or specialized service provider runs accounting on QuickBooks, but actual work orders, mechanic bay schedules, supplier parts quotes, and customer sign-offs live on whiteboards and text messages. Generic industry SaaS charges hundreds a month and doesn't match their reality.
+                An automotive shop or specialty service business runs accounting on QuickBooks, but job tracking, mechanic schedules, parts ordering, and customer sign-offs live on whiteboards and text messages.
               </p>
               <ul className={s.blueprintList}>
-                <li><strong>B.O.S.S. Domain Mapping:</strong> Rapidly codifies markup logic, labor scheduling invariants, and estimate thresholds.</li>
-                <li><strong>The Rig Code Fabrication:</strong> Fabricates custom QuickBooks connectors, work-order state machines, and mobile authorization links.</li>
-                <li><strong>FlowCraft Live Runtime:</strong> Runs the shop autonomously—tracking bay throughput, syncing invoices, and alerting mechanics.</li>
-                <li><strong>Result:</strong> A sovereign, company-owned operating contraption delivered in a single flight. Zero per-seat rent.</li>
+                <li><strong>B.O.S.S.</strong> maps the shop&rsquo;s pricing tiers, labor rules, and bay scheduling invariants in days.</li>
+                <li><strong>The Rig</strong> fabricates and verifies custom QuickBooks connectors and mobile work-order state machines.</li>
+                <li><strong>FlowCraft</strong> executes the runtime—tracking bay throughput, notifying technicians, and updating QuickBooks.</li>
+                <li><strong>Outcome:</strong> A sovereign system Dave owns completely. Zero per-seat rent.</li>
               </ul>
             </div>
 
-            {/* Blueprint 2 */}
+            {/* Practical Example 2 */}
             <div className={s.blueprintCard}>
-              <span className={s.blueprintTag}>ENTERPRISE BLUEPRINT // MANUFACTURING &amp; SUPPLY</span>
-              <h3 className={s.blueprintTitle}>The Sovereign Enterprise Purchasing System</h3>
+              <span className={s.blueprintTag}>PRACTICAL USE CASE // MANUFACTURING &amp; SUPPLY</span>
+              <h3 className={s.blueprintTitle}>Sovereign Purchasing &amp; Receiving System</h3>
               <p className={s.blueprintText}>
-                <strong>The Situation:</strong> A multi-facility manufacturer struggles with purchase order exception loops, invoice discrepancies, and slow receiving handoffs. Enterprise ERP consultants quote millions and two years of disruption to fix it.
+                A multi-facility producer struggles with purchase order exception loops, invoice variances, and slow dock handoffs, facing multi-million-dollar ERP consulting quotes to fix it.
               </p>
               <ul className={s.blueprintList}>
-                <li><strong>B.O.S.S. Rules Extraction:</strong> Codifies real-world 3-way matching tolerances, freight variances, and receiving handoffs.</li>
-                <li><strong>The Rig Verification Gates:</strong> Tests and proves autonomous audit agents against historical ledger discrepancies.</li>
-                <li><strong>FlowCraft Instance Execution:</strong> Orchestrates human approvals and autonomous PO reconciliations across warehouse and finance.</li>
-                <li><strong>Result:</strong> Closes the operational seam in weeks, not years, with complete financial audibility and zero vendor lock-in.</li>
+                <li><strong>B.O.S.S.</strong> codifies the unwritten receiving rules, freight variance tolerances, and 3-way match logic.</li>
+                <li><strong>The Rig</strong> tests automated reconciliation agents against historical edge-case ledger records.</li>
+                <li><strong>FlowCraft</strong> orchestrates human approvals and autonomous PO matching across warehouse and finance.</li>
+                <li><strong>Outcome:</strong> A company-owned purchasing contraption delivered in weeks with full audit trails.</li>
               </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section: The Two Doors of Interaction */}
+      {/* Section: Two Ways to Engage */}
       <section className={s.doorsSection}>
         <div className={s.sectionInner}>
           <div className={s.sectionHead}>
-            <p className={s.eyebrow}>ENGAGEMENT DOORS // TWO WAYS TO INTERACT</p>
-            <h2>How to engage with The Collective<span>.</span></h2>
+            <p className={s.eyebrow}>TWO DOORS // ENTERING THE SEAM</p>
+            <h2>How to take part<span>.</span></h2>
             <p>
-              You can commission a custom sovereign build for your organization, or you can join peer practitioners building and sharing patterns together.
+              Whether you want to build and explore together as part of the collective, or need a working sovereign system built for your enterprise.
             </p>
           </div>
 
           <div className={s.doorsGrid}>
-            {/* Door 1: Commission a Build */}
+            {/* Door 1: Build Together */}
             <div className={`${s.doorCard} ${s.doorCardPrimary}`}>
               <div>
-                <p className={s.doorEyebrow}>DOOR 01 // COMMISSION AN ENTERPRISE BUILD</p>
-                <h3 className={s.doorTitle}>Have something built for your enterprise.</h3>
-                <p className={s.doorBody}>
-                  Bring me your operational bottleneck, your legacy ledger, or your manual spreadsheet seam. We use B.O.S.S. to map domain truth, The Rig to fabricate and verify the code, and FlowCraft to deploy a sovereign, working system in a defined delivery flight.
-                </p>
-              </div>
-              <button
-                type="button"
-                onClick={() => handleInterestSelect("build")}
-                className={s.doorBtn}
-              >
-                <span>Commission an Enterprise Build &rarr;</span>
-              </button>
-            </div>
-
-            {/* Door 2: Join the Collective */}
-            <div className={s.doorCard}>
-              <div>
-                <p className={s.doorEyebrow}>DOOR 02 // PEER COLLABORATION</p>
+                <p className={s.doorEyebrow}>PATH 01 // PEER COLLABORATION</p>
                 <h3 className={s.doorTitle}>Build and learn together in The Collective.</h3>
                 <p className={s.doorBody}>
-                  For software builders, systems architects, and technical operators. Explore open schemas, run FlowCraft runtimes on your own iron, test local developer harnesses, and contribute verified workflow blocks to the collective pattern library.
+                  For software builders, systems architects, and technical operators who want to define what enterprise agentics can be. Explore open schemas, run runtimes on your own iron, test local developer harnesses, and contribute verified workflow blocks to the collective library.
                 </p>
               </div>
               <button
                 type="button"
                 onClick={() => handleInterestSelect("collaborate")}
-                className={`${s.doorBtn} ${s.doorBtnSecondary}`}
+                className={s.doorBtn}
               >
                 <span>Join the Collective &rarr;</span>
+              </button>
+            </div>
+
+            {/* Door 2: Custom Build */}
+            <div className={s.doorCard}>
+              <div>
+                <p className={s.doorEyebrow}>PATH 02 // SOVEREIGN ENTERPRISE BUILD</p>
+                <h3 className={s.doorTitle}>Have a system built for your enterprise.</h3>
+                <p className={s.doorBody}>
+                  Have an operational bottleneck, a legacy ledger, or a broken manual workflow? We use B.O.S.S. to map domain truth, The Rig to fabricate and verify the code, and FlowCraft to deploy a living, sovereign system around how your team actually works.
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => handleInterestSelect("build")}
+                className={`${s.doorBtn} ${s.doorBtnSecondary}`}
+              >
+                <span>Explore a Custom Build &rarr;</span>
               </button>
             </div>
           </div>
@@ -408,7 +412,7 @@ export default function CollectiveView() {
             <p className={s.eyebrow}>DIRECT CORRESPONDENCE // ROB PADDOCK</p>
             <h3>Start the conversation.</h3>
             <p>
-              Direct to my desk. Tell me about your operational challenge or your interest in the collective, and I will reply personally.
+              Direct to my desk. Tell me what you are working on, an operational seam you are trying to solve, or how you would like to collaborate.
             </p>
           </div>
 
@@ -464,20 +468,20 @@ export default function CollectiveView() {
               </div>
 
               <div className={s.formField}>
-                <label className={s.fieldLabel} htmlFor="interest">Primary Interest</label>
+                <label className={s.fieldLabel} htmlFor="interest">What brings you here?</label>
                 <select
                   id="interest"
                   className={s.fieldSelect}
                   value={formState.interest}
-                  onChange={(e) => setFormState({ ...formState, interest: e.target.value })}
+                  onChange={(e) => setFormState({ ...formState, interest: e.target.value as "collaborate" | "build" })}
                 >
-                  <option value="build">Commission a Custom Sovereign Build (Intent = Outcome)</option>
                   <option value="collaborate">Join The Collective // Peer Collaboration &amp; Shared Patterns</option>
+                  <option value="build">Commission a Custom Sovereign Build (Intent = Outcome)</option>
                 </select>
               </div>
 
               <div className={s.formField}>
-                <label className={s.fieldLabel} htmlFor="message">Your Situation or Project Scope *</label>
+                <label className={s.fieldLabel} htmlFor="message">Your Note or Situation *</label>
                 <textarea
                   id="message"
                   required
@@ -485,11 +489,8 @@ export default function CollectiveView() {
                   className={s.fieldTextarea}
                   value={formState.message}
                   onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                  placeholder="Tell me about the workflow you want built, the systems involved, or how you would like to collaborate..."
+                  placeholder="Tell me what you are building, the systems involved, or where you want to collaborate..."
                 />
-                <p className={s.fieldHelp}>
-                  Mention any specific systems in the loop (e.g., QuickBooks, NetSuite, PostgreSQL, plant-floor telemetry).
-                </p>
               </div>
 
               <button
@@ -497,14 +498,12 @@ export default function CollectiveView() {
                 disabled={submitting}
                 className={s.submitBtn}
               >
-                {submitting ? "Sending to Rob's Desk..." : "Send Dispatch Directly to Rob &rarr;"}
+                {submitting ? "Sending to Rob's Desk..." : "Send Note Directly to Rob &rarr;"}
               </button>
             </form>
           )}
         </div>
       </section>
-
-      
     </div>
   );
 }
