@@ -291,9 +291,6 @@ export default function CollectiveView() {
                   <circle cx="0" cy="0" r="88" fill="#FDFCFA" stroke="#DDD7C8" strokeWidth="1.2" />
                   <circle cx="0" cy="0" r="68" fill="none" stroke="#DDD7C8" strokeWidth="1" strokeDasharray="4 3" />
 
-                  {/* Inner Core Disc (r=56) */}
-                  <circle cx="0" cy="0" r="56" fill="#FFFFFF" stroke="#9E7D3B" strokeWidth="1.8" />
-
                   {/* TOP CROWN PLAQUE: INTENT = OUTCOME */}
                   <g transform="translate(0, -114)">
                     <rect x="-85" y="-13" width="170" height="26" rx="13" fill="#FFFFFF" stroke="#9E7D3B" strokeWidth="1.5" />
@@ -302,14 +299,27 @@ export default function CollectiveView() {
                     </text>
                   </g>
 
-                  {/* CENTER CORE: DELIVERED / DETERMINISTIC EXECUTION */}
-                  <circle cx="-30" cy="-2" r="2.5" fill="#16A34A" />
-                  <text x="0" y="2" textAnchor="middle" fill="#16A34A" fontSize="9.5" fontFamily="monospace" fontWeight="700" letterSpacing="0.14em">
-                    DELIVERED
-                  </text>
-                  <circle cx="30" cy="-2" r="2.5" fill="#16A34A" />
-                  <text x="0" y="18" textAnchor="middle" fill="#68645C" fontSize="9" fontFamily="sans-serif">
+                  {/* Inner Core Disc (r=56) */}
+                  <circle cx="0" cy="0" r="56" fill="#FFFFFF" stroke="#9E7D3B" strokeWidth="1.8" />
+                  <circle cx="0" cy="0" r="48" fill="none" stroke="#EFECE4" strokeWidth="1" strokeDasharray="2 2" />
+
+                  {/* CENTER ANNUNCIATOR: SHIPPED */}
+                  <g transform="translate(0, -6)">
+                    <rect x="-44" y="-11" width="88" height="22" rx="3" fill="#0D542B" stroke="#16A34A" strokeWidth="1" />
+                    {/* Glowing status radar ping */}
+                    <circle cx="-28" cy="0" r="5" fill="none" stroke="#4ADE80" strokeWidth="0.6" strokeOpacity="0.5" />
+                    <circle cx="-28" cy="0" r="2.5" fill="#4ADE80" />
+                    <text x="6" y="3.5" textAnchor="middle" fill="#FAF6EE" fontSize="10" fontFamily="monospace" fontWeight="800" letterSpacing="0.18em">
+                      SHIPPED
+                    </text>
+                  </g>
+
+                  {/* VERIFICATION AXIOM */}
+                  <text x="0" y="21" textAnchor="middle" fill="#1E2024" fontSize="10.5" fontFamily="serif" fontWeight="700">
                     Deterministic Proof
+                  </text>
+                  <text x="0" y="34" textAnchor="middle" fill="#6C552F" fontSize="7.5" fontFamily="monospace" fontWeight="600" letterSpacing="0.08em">
+                    100% OPERATIONAL
                   </text>
 
                   {/* Cardinal Crosshair Pointers (outside the rim connecting to conduit lines) */}
