@@ -324,7 +324,7 @@ export default function ExperiencePage() {
               Explore related outcomes in The Block &rarr;
             </Link>
             <Link className="p-link text-slate-600" href="/agentic-ai/">
-              Read field dispatches from the operational seam &rarr;
+              Read field briefs from the operational seam &rarr;
             </Link>
           </div>
         </div>
@@ -551,7 +551,7 @@ export default function ExperiencePage() {
             </div>
             <div className="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0">
               <Link className="p-btn whitespace-nowrap" href="/agentic-ai/">
-                Read Field Dispatches &rarr;
+                Read Field Briefs &rarr;
               </Link>
               <Link className="p-link whitespace-nowrap" href="/contact/">
                 Start an Executive Conversation &rarr;

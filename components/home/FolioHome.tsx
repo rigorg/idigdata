@@ -120,7 +120,7 @@ export default function FolioHome() {
             </div>
             <div className="shrink-0">
               <Link className="p-btn whitespace-nowrap" href="/agentic-ai/">
-                Read Field Dispatches &rarr;
+                Read Field Briefs &rarr;
               </Link>
             </div>
           </div>

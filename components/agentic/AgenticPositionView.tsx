@@ -537,10 +537,10 @@ export default function AgenticPositionView() {
         <span id="dispatches" style={{ display: "block", position: "relative", top: "-80px", visibility: "hidden" }} />
         <div className={s.triadInner}>
           <div className={s.triadHead}>
-            <p className={s.eyebrow}>02 / Field Dispatches</p>
+            <p className={s.eyebrow}>02 / Field Briefs</p>
             <h2>Field Briefs<span>.</span></h2>
             <p className={s.triadDek}>
-              Three foundational dispatches on enterprise agentics. Working theses formed from 20+ years on the enterprise floor and over three years inside the agentic runtime—grounded in the operational seam where code generation meets physical execution.
+              Three foundational field briefs on enterprise agentics. Working theses formed from 20+ years on the enterprise floor and over three years inside the agentic runtime—grounded in the operational seam where code generation meets physical execution.
             </p>
           </div>
 
