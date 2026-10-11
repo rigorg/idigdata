@@ -201,7 +201,7 @@ export default function ExperiencePage() {
               <h3 className="mt-2">Core Systems Architecture &amp; Delivery</h3>
               <p className="font-medium text-sm text-[#142840]/75 mt-1">Data Integration Group · Principal &amp; Solution Architect</p>
               <p className="p-prose mt-4">
-                Across 50+ implementations and 15 transformations at scale, bridging the critical operational gap where enterprise software meets physical work. Extensive systems architecture and cutover delivery across Microsoft Dynamics 365, OneStream, and integrated enterprise platforms—compressing post-acquisition close from 18 days to four and recovering troubled multi-million-dollar programs. Earlier partner-side delivery at Access IT provides insider mastery of how systems integrators scope, bill, and staff.
+                Bridging the critical operational gap where enterprise software meets physical work. Extensive systems architecture and cutover delivery across Microsoft Dynamics 365, OneStream, and integrated enterprise platforms—compressing post-acquisition close from 18 days to four and recovering troubled multi-million-dollar programs. Earlier partner-side delivery at Access IT provides insider mastery of how systems integrators scope, bill, and staff.
               </p>
             </article>
             <article>
@@ -209,7 +209,7 @@ export default function ExperiencePage() {
               <h3 className="mt-2">Applied Enterprise Agentics &amp; Software Factories</h3>
               <p className="font-medium text-sm text-[#142840]/75 mt-1">Data Integration Group · Autonomous Systems Architecture</p>
               <p className="p-prose mt-4">
-                Architecting and operating production multi-agent runtimes that connecting autonomous software generation to live enterprise operations. Grounded in the tribal heuristics of frontline operators, enforcing schema contracts, deterministic validation gates, and human authorization at consequential operational steps—turning unwritten company knowledge into dependable enterprise capacity.
+                Architecting and operating production multi-agent runtimes that connect autonomous software generation to live enterprise operations. Grounded in the tribal heuristics of frontline operators, enforcing schema contracts, deterministic validation gates, and human authorization at consequential operational steps—turning unwritten company knowledge into dependable enterprise capacity.
               </p>
             </article>
           </div>
@@ -226,13 +226,6 @@ export default function ExperiencePage() {
           </p>
 
           <div className={styles.domainsGrid}>
-            <article className={styles.domainItem}>
-              <h3 className={styles.domainHeading}>Enterprise Software &amp; Technology</h3>
-              <p className={styles.domainText}>
-                Applications and platforms move from product roadmap through deployment, customer adoption, and multi-tenant scale. The nuance lives in integration architecture, data boundaries, and API stability—balancing release velocity with the governance, uptime, and security enterprise buyers demand.
-              </p>
-            </article>
-
             <article className={styles.domainItem}>
               <h3 className={styles.domainHeading}>Manufacturing &amp; Industrial Distribution</h3>
               <p className={styles.domainText}>
@@ -254,7 +247,7 @@ export default function ExperiencePage() {
               </p>
             </article>
 
-            <article className={styles.domainItem + " " + styles.domainItemWide}>
+            <article className={styles.domainItem}>
               <h3 className={styles.domainHeading}>Energy, Utilities &amp; Infrastructure</h3>
               <p className={styles.domainText}>
                 Assets and projects move through planning, construction, operation, and maintenance. The nuance lives in engineering requirements, field conditions, safety, and regulatory obligations—with project costs, asset performance, and continuity of service connected throughout.
@@ -276,13 +269,6 @@ export default function ExperiencePage() {
                 <h3 className={styles.orgTitle}>Wine industry — Duckhorn · Foley · Scheid · Rodney Strong</h3>
                 <p className={styles.orgText}>
                   Enterprise systems and transformation work across complex, regulated wine operations. Experience spanning specialized winemaking software, bottling, inventory, distribution, and financial operations—with compliance, traceability, and reporting requirements woven into the workflows. Connected the patterns these businesses share with the production methods, business rules, and operating exceptions that make each winery unique.
-                </p>
-              </article>
-
-              <article className={styles.orgCard}>
-                <h3 className={styles.orgTitle}>Executive transformation &amp; architecture — Sierra Nevada Brewing Co.</h3>
-                <p className={styles.orgText}>
-                  Served as contract CIO leading 26 months of enterprise modernization, translating board intent into operational architecture. Built the cross-functional teams, coordinating 150 project participants across 25 task forces spanning executive governance, finance, warehousing, plant MES, and compliance. Rebuilt IS/IT around a company-owned data core—preserving continuous operating continuity across multi-site brewery and commercial operations.
                 </p>
               </article>
             </div>
@@ -344,18 +330,16 @@ export default function ExperiencePage() {
         </div>
       </section>
 
-      {/* SYSTEMS, WORKFLOWS, AND THE PEOPLE */}
+      {/* THREE VIEWS OF HOW AN ENTERPRISE WORKS */}
       <section className="p-section">
         <div className="page-well">
-          <h2 className="p-h2">Systems, workflows, and the people doing the work</h2>
-          <p className="p-prose mt-4">
-            All businesses are uniquely standard. The fundamentals are familiar; the people, constraints, and consequential exceptions shape the solution.
+          <p className="p-kicker">Operating Architecture</p>
+          <h2 className="p-h2">Three views of how an enterprise works</h2>
+          <p className="p-prose mt-4 text-base lg:text-[17px] leading-relaxed text-[#142840]/90 max-w-[72ch]">
+            The Systemverse maps the applications and their connection to a company-owned data core. The six constellations map the recurring workflows. The Beehive maps the people, teams, and responsibilities that carry those workflows across the business.
           </p>
-          <p className="p-prose mt-4">
-            I work with the CFO and compliance officer, the functional leads, the developers and delivery partners, and the warehouse team using the scanners. The architecture has to support the work across those groups.
-          </p>
-          <p className="p-prose mt-4">
-            My enterprise application experience also includes electronic medical records (EMR/EHR).
+          <p className="p-prose mt-4 text-base lg:text-[17px] leading-relaxed text-[#142840]/90 max-w-[72ch]">
+            I work across those views—from the CFO and functional leads to delivery partners and the warehouse team using the scanners—to turn operating knowledge into clear requirements, SOPs, and accountable delivery. Before delivery, we agree what success means and how to verify it, keeping financial integrity, compliance, and operational continuity in view.
           </p>
         </div>
       </section>
@@ -565,19 +549,6 @@ export default function ExperiencePage() {
               </article>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* METHOD & PROOF */}
-      <section className="p-section">
-        <div className="page-well">
-          <h2 className="p-h2">Find the cause. Own the change. Check the result.</h2>
-          <p className="p-prose mt-4">
-            I assess how people, data, and technology connect, identify the causes behind the friction, and agree priorities with the people responsible for the business. I align internal teams, vendors, and systems integrators around shared workflows and clear accountability.
-          </p>
-          <p className="p-prose mt-4">
-            Before delivery, we agree what success means and how to verify it. Through implementation and adoption, I keep financial integrity, compliance, and operational continuity in view.
-          </p>
         </div>
       </section>
 
