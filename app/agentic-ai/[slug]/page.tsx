@@ -222,14 +222,35 @@ export default async function PostPage({
       })
     : "October 2026";
 
+  // Canonical order matching the three Collective Inquiries / Theses
+  const canonicalSlugs = [
+    "marys-sheet",
+    "the-application-layer",
+    "the-delivery-seam",
+  ];
+
+  const allPosts = readPosts();
+  const currentIdx = canonicalSlugs.indexOf(slug);
+  const prevSlug = currentIdx > 0 ? canonicalSlugs[currentIdx - 1] : null;
+  const nextSlug =
+    currentIdx !== -1 && currentIdx < canonicalSlugs.length - 1
+      ? canonicalSlugs[currentIdx + 1]
+      : null;
+
+  const prevPost = prevSlug ? allPosts.find((p) => p.slug === prevSlug) : null;
+  const nextPost = nextSlug ? allPosts.find((p) => p.slug === nextSlug) : null;
+
   return (
-    <article className={s.postArticle}>
+    <article className={s.postArticle} id="top">
       <div className={s.container}>
-        <div className={s.backNav}>
+        <nav aria-label="Breadcrumb" className={s.topNav}>
           <Link href="/agentic-ai/" className={s.backLink}>
-            ← All Dispatches from the Seam
+            <span aria-hidden="true">&larr;</span>
+            <span>All Dispatches from the Seam</span>
           </Link>
-        </div>
+          <span className={s.navDivider} aria-hidden="true">/</span>
+          <span className={s.navCurrent}>{fm.title}</span>
+        </nav>
 
         <header className={s.header}>
           <div className={s.metaTop}>
@@ -248,6 +269,36 @@ export default async function PostPage({
           {renderMarkdown(raw)}
         </div>
 
+        {/* Bottom Field Brief Navigation */}
+        <nav aria-label="Field Brief Navigation" className={s.bottomNav}>
+          <div className={s.briefPagination}>
+            {prevPost ? (
+              <Link href={`/agentic-ai/${prevPost.slug}/`} className={`${s.briefNavCard} ${s.prevCard}`}>
+                <span className={s.navCardDirection}>&larr; Previous Field Brief</span>
+                <span className={s.navCardTitle}>{prevPost.title}</span>
+              </Link>
+            ) : (
+              <div className={s.navCardPlaceholder} />
+            )}
+
+            {nextPost ? (
+              <Link href={`/agentic-ai/${nextPost.slug}/`} className={`${s.briefNavCard} ${s.nextCard}`}>
+                <span className={s.navCardDirection}>Next Field Brief &rarr;</span>
+                <span className={s.navCardTitle}>{nextPost.title}</span>
+              </Link>
+            ) : (
+              <div className={s.navCardPlaceholder} />
+            )}
+          </div>
+
+          <div className={s.bottomReturnAction}>
+            <Link href="/agentic-ai/" className={s.returnToDispatchesBtn}>
+              <span aria-hidden="true">&larr;</span>
+              <span>Return to Dispatches &amp; Collective Inquiries</span>
+            </Link>
+          </div>
+        </nav>
+
         <footer className={s.footer}>
           <div className={s.footerCard}>
             <h3>Continue the Conversation</h3>
@@ -256,7 +307,7 @@ export default async function PostPage({
             </p>
             <div className={s.footerActions}>
               <Link href="/agentic-ai/#conversation" className={s.ctaBtn}>
-                Send a Dispatch Note →
+                Send a Dispatch Note  
               </Link>
               <Link href="/block/" className={s.secondaryBtn}>
                 Explore The Outcome Block
@@ -265,6 +316,18 @@ export default async function PostPage({
           </div>
         </footer>
       </div>
+
+      {/* Floating Quick Return Bar - Accessible anywhere during long scroll */}
+      <aside className={s.floatingReturnBar} role="navigation" aria-label="Quick navigation">
+        <Link href="/agentic-ai/" className={s.floatingReturnLink} title="Return to Dispatches">
+          <span aria-hidden="true">&larr;</span>
+          <span>Dispatches</span>
+        </Link>
+        <span className={s.floatingDivider} aria-hidden="true">&bull;</span>
+        <a href="#top" className={s.floatingTopLink} title="Jump to top of article">
+          <span>Top &uarr;</span>
+        </a>
+      </aside>
     </article>
   );
 }

@@ -314,3 +314,174 @@
   margin-bottom: 10px;
   line-height: 1.6;
 }
+
+
+/* Top Navigation Breadcrumbs */
+.topNav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.navDivider {
+  color: var(--line-dark);
+  font-size: 13px;
+}
+
+.navCurrent {
+  font-size: 13px;
+  color: var(--muted);
+  max-width: 480px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Bottom Field Brief Navigation */
+.bottomNav {
+  margin-top: 56px;
+  padding-top: 36px;
+  border-top: 1px solid var(--line);
+}
+
+.briefPagination {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+@media (max-width: 640px) {
+  .briefPagination {
+    grid-template-columns: 1fr;
+  }
+}
+
+.briefNavCard {
+  display: flex;
+  flex-direction: column;
+  padding: 18px 20px;
+  background: var(--panel-bg);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.briefNavCard:hover {
+  border-color: var(--brass);
+  background: var(--surface);
+  transform: translateY(-1px);
+}
+
+.navCardDirection {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--brass-dark);
+  margin-bottom: 6px;
+}
+
+.navCardTitle {
+  font-family: var(--next-font-display), Vollkorn, Lora, Georgia, serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+.navCardPlaceholder {
+  /* empty space when no prev/next */
+}
+
+.bottomReturnAction {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.returnToDispatchesBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.returnToDispatchesBtn:hover {
+  background: var(--surface-alt);
+  border-color: var(--brass);
+  color: var(--brass-dark);
+}
+
+/* Floating Return Bar */
+.floatingReturnBar {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(250, 246, 238, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--line-dark);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  padding: 8px 16px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.floatingReturnLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.floatingReturnLink:hover {
+  color: var(--brass-dark);
+}
+
+.floatingDivider {
+  color: var(--line-dark);
+  font-size: 10px;
+}
+
+.floatingTopLink {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.floatingTopLink:hover {
+  color: var(--ink);
+}
+
+@media (max-width: 640px) {
+  .floatingReturnBar {
+    bottom: 16px;
+    right: 16px;
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+}

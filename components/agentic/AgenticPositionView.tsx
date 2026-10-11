@@ -288,7 +288,7 @@ const COLLECTIVES: CollectivePillar[] = [
     tag: "THESIS 02 // DETERMINISTIC EXECUTION",
     actionLabel: "Join the Discussion",
     title: "Workflows Over Chatbots",
-    subtitle: "The Divide Between Conversational AI and Consequential Action",
+    subtitle: "Agentic Champions, Enterprise Frameworks, and the Sovereign ERP",
     spot: "blocks",
     titanQuote: {
       speaker: "Marc Benioff",
@@ -298,15 +298,15 @@ const COLLECTIVES: CollectivePillar[] = [
         "Copilot is really the new Microsoft Clippy... DIY AI is a science project. What matters isn't the model—it’s the metadata and the workflows.",
     },
     body:
-      "Conversational chat windows and 'vibe coding' fail the moment they touch master data, inventory commitments, and financial transactions. Enterprise work is not an LLM answering questions in a browser tab—it requires deterministic execution pipelines running directly across brownfield systems of record. Real agentic leverage happens when autonomous agents execute within explicit permission boundaries, shared operational memory, and unambiguous human authority on consequential decisions.",
+      "Enterprise computing is crossing an architectural threshold: conversational chat and 'vibe coding' fail the moment they touch master data, regulatory compliance, and general ledgers. Salesforce is right: enterprise value lives in metadata and workflows, not chatbots. But while industry rags celebrate 'agentic champions,' internal builders remain handcuffed without a deterministic enterprise framework. The controversial reality: when talented enterprise teams are equipped with open patterns and runtime harnesses, legacy ERP monopolies fall away. The enterprise will build and own its core operational systems.",
     inquiries: [
-      "The boundary between exploratory chat and auditable enterprise execution",
-      "Maintaining shared master data and operational memory across agent workflows",
-      "Designing strict human-in-the-loop authorization on consequential commitments",
+      "Where Salesforce gets it right: why metadata and consequential workflows beat chatbots",
+      "The agentic champion dilemma: why internal builders need a deterministic enterprise framework",
+      "The controversial shift: can a talented enterprise team build their own operational ERP?",
     ],
     fieldNoteHref: "/agentic-ai/the-application-layer/",
-    fieldNoteLabel: "Read Field Brief: The SaaS/ERP Divide & Runtime",
-    topicKey: "02 / Workflows Over Chatbots & Deterministic Runtime",
+    fieldNoteLabel: "Read Field Brief: Workflows, Champions & Sovereign ERPs",
+    topicKey: "02 / Workflows, Agentic Champions & Sovereign ERPs",
   },
   {
     num: "03",
