@@ -92,7 +92,7 @@ export default function CollectiveView() {
 
             <div className={s.diagramContainer}>
               <svg
-                viewBox="0 0 1200 660"
+                viewBox="0 0 1200 724"
                 className={s.diagramSvg}
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -115,34 +115,34 @@ export default function CollectiveView() {
                   </marker>
                 </defs>
 
-                <rect width="1200" height="660" fill="url(#archGrid)" />
+                <rect width="1200" height="724" fill="url(#archGrid)" />
 
                 {/* ========================================================
                     UPPER ENVELOPE: SOVEREIGN ENTERPRISE IRON PERIMETER
                     ======================================================== */}
-                <rect x="40" y="24" width="1120" height="380" rx="6" fill="#FAF6EE" stroke="#B8B0A0" strokeWidth="1.5" strokeDasharray="6 4" />
+                <rect x="40" y="20" width="1120" height="434" rx="6" fill="#FAF6EE" stroke="#B8B0A0" strokeWidth="1.5" strokeDasharray="6 4" />
                 
                 {/* Engineering Corner Crosshairs */}
                 <g stroke="#9E7D3B" strokeWidth="1.2">
-                  <path d="M 32 24 L 48 24 M 40 16 L 40 32" />
-                  <path d="M 1152 24 L 1168 24 M 1160 16 L 1160 32" />
-                  <path d="M 32 404 L 48 404 M 40 396 L 40 412" />
-                  <path d="M 1152 404 L 1168 404 M 1160 396 L 1160 412" />
+                  <path d="M 32 20 L 48 20 M 40 12 L 40 28" />
+                  <path d="M 1152 20 L 1168 20 M 1160 12 L 1160 28" />
+                  <path d="M 32 454 L 48 454 M 40 446 L 40 462" />
+                  <path d="M 1152 454 L 1168 454 M 1160 446 L 1160 462" />
                 </g>
 
                 {/* Perimeter Header Badges */}
-                <rect x="56" y="38" width="370" height="24" rx="2" fill="#1E2024" />
-                <text x="68" y="54" fill="#FAF6EE" fontSize="10" fontFamily="monospace" fontWeight="700" letterSpacing="0.1em">
+                <rect x="56" y="34" width="370" height="24" rx="2" fill="#1E2024" />
+                <text x="68" y="50" fill="#FAF6EE" fontSize="10" fontFamily="monospace" fontWeight="700" letterSpacing="0.1em">
                   SOVEREIGN ENTERPRISE PERIMETER // PRIVATE IRON
                 </text>
                 
-                <rect x="440" y="38" width="280" height="24" rx="2" fill="#FFFFFF" stroke="#DDD7C8" />
-                <circle cx="454" cy="50" r="4" fill="#16A34A" />
-                <text x="466" y="54" fill="#1E2024" fontSize="9.5" fontFamily="monospace" fontWeight="600">
+                <rect x="440" y="34" width="280" height="24" rx="2" fill="#FFFFFF" stroke="#DDD7C8" />
+                <circle cx="454" cy="46" r="4" fill="#16A34A" />
+                <text x="466" y="50" fill="#1E2024" fontSize="9.5" fontFamily="monospace" fontWeight="600">
                   100% Private &bull; Air-Gapped From Public AI
                 </text>
 
-                <text x="1144" y="54" textAnchor="end" fill="#9E7D3B" fontSize="9.5" fontFamily="monospace" fontWeight="700" letterSpacing="0.08em">
+                <text x="1144" y="50" textAnchor="end" fill="#9E7D3B" fontSize="9.5" fontFamily="monospace" fontWeight="700" letterSpacing="0.08em">
                   SPEC // SPEC-COL-01
                 </text>
 
@@ -150,17 +150,17 @@ export default function CollectiveView() {
                     VECTOR CONDUITS BETWEEN NODES
                     ======================================================== */}
                 {/* Top to Southwest Factory */}
-                <path d="M 490 160 L 300 235" stroke="#B8B0A0" strokeWidth="1.5" strokeDasharray="4 4" markerEnd="url(#flowArrow)" />
-                <g transform="translate(325, 185)">
+                <path d="M 480 134 L 290 258" stroke="#B8B0A0" strokeWidth="1.5" strokeDasharray="4 4" markerEnd="url(#flowArrow)" />
+                <g transform="translate(315, 185)">
                   <rect width="120" height="20" rx="2" fill="#FAF6EE" stroke="#DDD7C8" />
                   <text x="60" y="14" textAnchor="middle" fill="#9E7D3B" fontSize="8.5" fontFamily="monospace" fontWeight="700">
                     SCHEMAS &#8601;
                   </text>
                 </g>
 
-                {/* Top to Rosette (Intent) */}
-                <path d="M 600 160 L 600 220" stroke="#9E7D3B" strokeWidth="1.5" strokeDasharray="4 4" markerEnd="url(#flowArrow)" />
-                <g transform="translate(565, 178)">
+                {/* Top to Center Rosette (Intent Conduit) */}
+                <path d="M 600 134 L 600 164" stroke="#9E7D3B" strokeWidth="1.5" strokeDasharray="4 4" markerEnd="url(#flowArrow)" />
+                <g transform="translate(565, 142)">
                   <rect width="70" height="18" rx="2" fill="#FAF6EE" stroke="#9E7D3B" strokeWidth="0.8" />
                   <text x="35" y="13" textAnchor="middle" fill="#9E7D3B" fontSize="8" fontFamily="monospace" fontWeight="700">
                     INTENT &darr;
@@ -168,26 +168,26 @@ export default function CollectiveView() {
                 </g>
 
                 {/* Southwest Factory to Center Rosette */}
-                <path d="M 390 277 L 542 277" stroke="#6C552F" strokeWidth="1.8" markerEnd="url(#flowArrow)" />
-                <g transform="translate(415, 267)">
-                  <rect width="105" height="20" rx="2" fill="#FAF6EE" stroke="#DDD7C8" />
-                  <text x="52.5" y="14" textAnchor="middle" fill="#6C552F" fontSize="8" fontFamily="monospace" fontWeight="700">
-                    VERIFIED CODE &rarr;
+                <path d="M 380 300 L 470 300" stroke="#6C552F" strokeWidth="1.8" markerEnd="url(#flowArrow)" />
+                <g transform="translate(388, 289)">
+                  <rect width="80" height="22" rx="2" fill="#FAF6EE" stroke="#DDD7C8" />
+                  <text x="40" y="15" textAnchor="middle" fill="#6C552F" fontSize="8" fontFamily="monospace" fontWeight="700">
+                    VERIFIED &rarr;
                   </text>
                 </g>
 
                 {/* Center Rosette to Southeast Runtime */}
-                <path d="M 658 277 L 806 277" stroke="#9E7D3B" strokeWidth="1.8" markerEnd="url(#flowArrow)" />
-                <g transform="translate(680, 267)">
-                  <rect width="105" height="20" rx="2" fill="#FAF6EE" stroke="#DDD7C8" />
-                  <text x="52.5" y="14" textAnchor="middle" fill="#9E7D3B" fontSize="8" fontFamily="monospace" fontWeight="700">
+                <path d="M 730 300 L 814 300" stroke="#9E7D3B" strokeWidth="1.8" markerEnd="url(#flowArrow)" />
+                <g transform="translate(734, 289)">
+                  <rect width="78" height="22" rx="2" fill="#FAF6EE" stroke="#DDD7C8" />
+                  <text x="39" y="15" textAnchor="middle" fill="#9E7D3B" fontSize="8" fontFamily="monospace" fontWeight="700">
                     &rarr; RUNTIME
                   </text>
                 </g>
 
                 {/* Southeast Runtime Feedback to Top Node */}
-                <path d="M 910 235 L 710 160" stroke="#B8B0A0" strokeWidth="1.5" strokeDasharray="4 4" markerEnd="url(#flowArrow)" />
-                <g transform="translate(755, 185)">
+                <path d="M 910 258 L 720 134" stroke="#B8B0A0" strokeWidth="1.5" strokeDasharray="4 4" markerEnd="url(#flowArrow)" />
+                <g transform="translate(765, 185)">
                   <rect width="120" height="20" rx="2" fill="#FAF6EE" stroke="#DDD7C8" />
                   <text x="60" y="14" textAnchor="middle" fill="#9E7D3B" fontSize="8.5" fontFamily="monospace" fontWeight="700">
                     &#8598; FEEDBACK
@@ -197,21 +197,21 @@ export default function CollectiveView() {
                 {/* ========================================================
                     NODE 1: NORTH - DOMAIN TRUTH & SPECIFICATION (B.O.S.S.)
                     ======================================================== */}
-                <g transform="translate(430, 76)">
-                  <rect width="340" height="84" rx="4" fill="#FFFFFF" stroke="#1E2024" strokeWidth="1.5" />
-                  <rect x="0" y="0" width="340" height="4" fill="#9E7D3B" />
+                <g transform="translate(420, 54)">
+                  <rect width="360" height="80" rx="4" fill="#FFFFFF" stroke="#1E2024" strokeWidth="1.5" />
+                  <rect x="0" y="0" width="360" height="4" fill="#9E7D3B" />
                   
                   {/* Badge */}
-                  <rect x="236" y="10" width="94" height="18" rx="2" fill="#FAF6EE" stroke="#DDD7C8" strokeWidth="0.8" />
-                  <text x="283" y="23" textAnchor="middle" fill="#6C552F" fontSize="9" fontFamily="monospace" fontWeight="700">B.O.S.S.</text>
+                  <rect x="254" y="10" width="94" height="18" rx="2" fill="#FAF6EE" stroke="#DDD7C8" strokeWidth="0.8" />
+                  <text x="301" y="23" textAnchor="middle" fill="#6C552F" fontSize="9" fontFamily="monospace" fontWeight="700">B.O.S.S.</text>
                   
                   <text x="16" y="23" fill="#9E7D3B" fontSize="9.5" fontFamily="monospace" fontWeight="700" letterSpacing="0.08em">
                     01 // DOMAIN TRUTH
                   </text>
-                  <text x="16" y="48" fill="#1E2024" fontSize="18" fontFamily="serif" fontWeight="700">
+                  <text x="16" y="47" fill="#1E2024" fontSize="17" fontFamily="serif" fontWeight="700">
                     Unwritten Operating Reality
                   </text>
-                  <text x="16" y="68" fill="#68645C" fontSize="11" fontFamily="sans-serif">
+                  <text x="16" y="66" fill="#68645C" fontSize="11" fontFamily="sans-serif">
                     Frontline heuristics codified into deterministic schemas
                   </text>
                 </g>
@@ -219,7 +219,7 @@ export default function CollectiveView() {
                 {/* ========================================================
                     NODE 2: SOUTHWEST - AUTONOMOUS SOFTWARE FACTORY (THE RIG)
                     ======================================================== */}
-                <g transform="translate(70, 235)">
+                <g transform="translate(60, 258)">
                   <rect width="320" height="84" rx="4" fill="#FFFFFF" stroke="#1E2024" strokeWidth="1.5" />
                   <rect x="0" y="0" width="320" height="4" fill="#1E2024" />
 
@@ -241,7 +241,7 @@ export default function CollectiveView() {
                 {/* ========================================================
                     NODE 3: SOUTHEAST - OPERATIONAL RUNTIME (FLOWCRAFT)
                     ======================================================== */}
-                <g transform="translate(810, 235)">
+                <g transform="translate(820, 258)">
                   <rect width="320" height="84" rx="4" fill="#FFFFFF" stroke="#1E2024" strokeWidth="1.5" />
                   <rect x="0" y="0" width="320" height="4" fill="#9E7D3B" />
 
@@ -261,58 +261,97 @@ export default function CollectiveView() {
                 </g>
 
                 {/* ========================================================
-                    CENTER ROSETTE: THE FLASH SPOT // INTENT = OUTCOME
+                    COMMANDING CONCENTRIC INSTRUMENT DIAL (DIAMETER = 250px)
+                    THREE CONCENTRIC TIERS & SEPARATED LABELS:
+                    - TIER 1 (OUTER BEZEL, 12 O'CLOCK): THE FLASH SPOT
+                    - TIER 2 (MIDDLE ANNULAR TRACK, 6 O'CLOCK): THE LIVING SEAM
+                    - TIER 3 (INNER CORE DISC, CENTER): Intent = Outcome
                     ======================================================== */}
-                <g transform="translate(600, 277)">
-                  {/* Outer sight ring */}
-                  <circle cx="0" cy="0" r="54" fill="#FFFFFF" stroke="#9E7D3B" strokeWidth="2" />
-                  <circle cx="0" cy="0" r="44" fill="#FDFCFA" stroke="#DDD7C8" strokeWidth="1" strokeDasharray="3 3" />
-                  <circle cx="0" cy="0" r="32" fill="#F4EFE5" stroke="#9E7D3B" strokeWidth="1" />
+                <g transform="translate(600, 300)">
+                  {/* Outer Bezel (r=125) */}
+                  <circle cx="0" cy="0" r="125" fill="#FAF6EE" stroke="#9E7D3B" strokeWidth="2" />
                   
-                  {/* Crosshair ticks */}
-                  <line x1="-60" y1="0" x2="-54" y2="0" stroke="#9E7D3B" strokeWidth="1.5" />
-                  <line x1="54" y1="0" x2="60" y2="0" stroke="#9E7D3B" strokeWidth="1.5" />
-                  <line x1="0" y1="-60" x2="0" y2="-54" stroke="#9E7D3B" strokeWidth="1.5" />
-                  <line x1="0" y1="54" x2="0" y2="60" stroke="#9E7D3B" strokeWidth="1.5" />
+                  {/* Outer Chapter Track (r=113) */}
+                  <circle cx="0" cy="0" r="113" fill="none" stroke="#DDD7C8" strokeWidth="1" strokeDasharray="3 3" />
                   
+                  {/* Calibrated Radial Dial Ticks */}
+                  <g stroke="#9E7D3B" strokeWidth="1.2">
+                    {/* Cardinal Major Marks */}
+                    <line x1="0" y1="-125" x2="0" y2="-115" />
+                    <line x1="0" y1="115" x2="0" y2="125" />
+                    <line x1="-125" y1="0" x2="-115" y2="0" />
+                    <line x1="115" y1="0" x2="125" y2="0" />
+                    {/* Diagonal Minor Marks */}
+                    <line x1="-88" y1="-88" x2="-81" y2="-81" />
+                    <line x1="81" y1="-81" x2="88" y2="-88" />
+                    <line x1="-88" y1="88" x2="-81" y2="81" />
+                    <line x1="81" y1="81" x2="88" y2="88" />
+                  </g>
 
-                  {/* Centered label block */}
-                  <text x="0" y="-10" textAnchor="middle" fill="#9E7D3B" fontSize="8.5" fontFamily="monospace" fontWeight="800" letterSpacing="0.14em">
-                    THE FLASH SPOT
-                  </text>
-                  <text x="0" y="7" textAnchor="middle" fill="#1E2024" fontSize="13" fontFamily="serif" fontWeight="700">
+                  {/* Middle Annular Track: The Operational Seam (r=92) */}
+                  <circle cx="0" cy="0" r="92" fill="#FDFCFA" stroke="#DDD7C8" strokeWidth="1.2" />
+                  <circle cx="0" cy="0" r="70" fill="none" stroke="#DDD7C8" strokeWidth="1" strokeDasharray="4 3" />
+
+                  {/* Inner Core Disc: The Outcome Engine (r=60) */}
+                  <circle cx="0" cy="0" r="60" fill="#FFFFFF" stroke="#9E7D3B" strokeWidth="2" />
+
+                  {/* 1. TIER 1 / OUTER RING: THE FLASH SPOT (12 O'Clock Crown Plaque) */}
+                  <g transform="translate(0, -114)">
+                    <rect x="-80" y="-13" width="160" height="26" rx="13" fill="#FFFFFF" stroke="#9E7D3B" strokeWidth="1.5" />
+                    <text x="0" y="5" textAnchor="middle" fill="#9E7D3B" fontSize="10" fontFamily="monospace" fontWeight="800" letterSpacing="0.16em">
+                      THE FLASH SPOT
+                    </text>
+                  </g>
+
+                  {/* 2. TIER 3 / INNER CORE: INTENT = OUTCOME (Center Stage Axiom) */}
+                  <text x="0" y="-4" textAnchor="middle" fill="#1E2024" fontSize="17" fontFamily="serif" fontWeight="700">
                     Intent = Outcome
                   </text>
-                  <text x="0" y="20" textAnchor="middle" fill="#16A34A" fontSize="7.5" fontFamily="monospace" fontWeight="700" letterSpacing="0.08em">
-                    THE LIVING SEAM
+                  <line x1="-36" y1="10" x2="36" y2="10" stroke="#DDD7C8" strokeWidth="0.8" />
+                  <circle cx="-32" cy="18" r="2.5" fill="#16A34A" />
+                  <text x="0" y="21" textAnchor="middle" fill="#16A34A" fontSize="8.5" fontFamily="monospace" fontWeight="700" letterSpacing="0.12em">
+                    DELIVERED
                   </text>
+                  <circle cx="32" cy="18" r="2.5" fill="#16A34A" />
+
+                  {/* 3. TIER 2 / MIDDLE RING: THE LIVING SEAM (6 O'Clock Operational Seam Plaque) */}
+                  <g transform="translate(0, 92)">
+                    <rect x="-75" y="-12" width="150" height="24" rx="12" fill="#1E2024" stroke="#9E7D3B" strokeWidth="1" />
+                    <text x="0" y="4" textAnchor="middle" fill="#FAF6EE" fontSize="9" fontFamily="monospace" fontWeight="700" letterSpacing="0.14em">
+                      THE LIVING SEAM
+                    </text>
+                  </g>
+
+                  {/* Cardinal Crosshair Pointers (outside the rim connecting to conduit lines) */}
+                  <line x1="-135" y1="0" x2="-125" y2="0" stroke="#9E7D3B" strokeWidth="1.5" />
+                  <line x1="125" y1="0" x2="135" y2="0" stroke="#9E7D3B" strokeWidth="1.5" />
                 </g>
 
                 {/* ========================================================
                     MID-PLANE: VERTICAL PATTERN CONDUITS (SOVEREIGN <-> COMMONS)
                     ======================================================== */}
                 <g stroke="#9E7D3B" strokeWidth="1.5">
-                  <line x1="510" y1="404" x2="510" y2="470" strokeDasharray="3 3" markerEnd="url(#arrowDown)" />
+                  <line x1="510" y1="454" x2="510" y2="520" strokeDasharray="3 3" markerEnd="url(#arrowDown)" />
                 </g>
-                <g transform="translate(320, 424)">
+                <g transform="translate(320, 474)">
                   <rect width="170" height="22" rx="2" fill="#FFFFFF" stroke="#9E7D3B" strokeWidth="1" />
                   <text x="85" y="15" textAnchor="middle" fill="#6C552F" fontSize="9" fontFamily="monospace" fontWeight="700">
                     SHARE PATTERNS &darr;
                   </text>
-                  <text x="85" y="32" textAnchor="middle" fill="#68645C" fontSize="8" fontFamily="sans-serif">
+                  <text x="85" y="32" textAnchor="middle" fill="#68645C" fontSize="8.5" fontFamily="sans-serif">
                     Zero Private Data
                   </text>
                 </g>
 
                 <g stroke="#1E2024" strokeWidth="1.5">
-                  <line x1="690" y1="470" x2="690" y2="404" strokeDasharray="3 3" markerEnd="url(#arrowUp)" />
+                  <line x1="690" y1="520" x2="690" y2="454" strokeDasharray="3 3" markerEnd="url(#arrowUp)" />
                 </g>
-                <g transform="translate(710, 424)">
+                <g transform="translate(710, 474)">
                   <rect width="170" height="22" rx="2" fill="#1E2024" />
                   <text x="85" y="15" textAnchor="middle" fill="#FAF6EE" fontSize="9" fontFamily="monospace" fontWeight="700">
                     &uarr; PULL PATTERNS
                   </text>
-                  <text x="85" y="32" textAnchor="middle" fill="#68645C" fontSize="8" fontFamily="sans-serif">
+                  <text x="85" y="32" textAnchor="middle" fill="#68645C" fontSize="8.5" fontFamily="sans-serif">
                     Pre-Verified Blocks &amp; Harnesses
                   </text>
                 </g>
@@ -320,67 +359,67 @@ export default function CollectiveView() {
                 {/* ========================================================
                     LOWER BASE: THE COLLECTIVE PATTERN COMMONS
                     ======================================================== */}
-                <rect x="40" y="474" width="1120" height="156" rx="6" fill="#FFFFFF" stroke="#1E2024" strokeWidth="1.5" />
-                <rect x="40" y="474" width="1120" height="28" fill="#1E2024" />
+                <rect x="40" y="524" width="1120" height="160" rx="6" fill="#FFFFFF" stroke="#1E2024" strokeWidth="1.5" />
+                <rect x="40" y="524" width="1120" height="28" fill="#1E2024" />
                 
-                <text x="56" y="492" fill="#FAF6EE" fontSize="10.5" fontFamily="monospace" fontWeight="700" letterSpacing="0.1em">
+                <text x="56" y="542" fill="#FAF6EE" fontSize="10.5" fontFamily="monospace" fontWeight="700" letterSpacing="0.1em">
                   THE COLLECTIVE PATTERN COMMONS // PEER BUILDER EXCHANGE
                 </text>
-                <text x="1144" y="492" textAnchor="end" fill="#D4C29A" fontSize="9.5" fontFamily="monospace" fontWeight="600">
+                <text x="1144" y="542" textAnchor="end" fill="#D4C29A" fontSize="9.5" fontFamily="monospace" fontWeight="600">
                   PUBLIC COMMONS &bull; ANONYMIZED PATTERNS ONLY
                 </text>
 
-                <g transform="translate(56, 514)">
+                <g transform="translate(56, 564)">
                   {/* Pattern Card 1 */}
                   <g transform="translate(0, 0)">
-                    <rect width="344" height="100" rx="3" fill="#FAF6EE" stroke="#DDD7C8" strokeWidth="1" />
-                    <rect width="4" height="100" fill="#9E7D3B" />
+                    <rect width="344" height="104" rx="3" fill="#FAF6EE" stroke="#DDD7C8" strokeWidth="1" />
+                    <rect width="4" height="104" fill="#9E7D3B" />
                     <text x="16" y="20" fill="#9E7D3B" fontSize="9" fontFamily="monospace" fontWeight="700">
                       01 // DOMAIN SCHEMAS
                     </text>
                     <text x="16" y="42" fill="#1E2024" fontSize="15" fontFamily="serif" fontWeight="700">
                       Operational Invariants
                     </text>
-                    <text x="16" y="62" fill="#68645C" fontSize="11" fontFamily="sans-serif">
+                    <text x="16" y="63" fill="#68645C" fontSize="11" fontFamily="sans-serif">
                       Tolerances, price limits &amp; inventory balance rules
                     </text>
-                    <text x="16" y="84" fill="#6C552F" fontSize="8.5" fontFamily="monospace" fontWeight="700">
+                    <text x="16" y="86" fill="#6C552F" fontSize="8.5" fontFamily="monospace" fontWeight="700">
                       SPEC // B.O.S.S.
                     </text>
                   </g>
 
                   {/* Pattern Card 2 */}
                   <g transform="translate(372, 0)">
-                    <rect width="344" height="100" rx="3" fill="#FAF6EE" stroke="#DDD7C8" strokeWidth="1" />
-                    <rect width="4" height="100" fill="#9E7D3B" />
+                    <rect width="344" height="104" rx="3" fill="#FAF6EE" stroke="#DDD7C8" strokeWidth="1" />
+                    <rect width="4" height="104" fill="#9E7D3B" />
                     <text x="16" y="20" fill="#9E7D3B" fontSize="9" fontFamily="monospace" fontWeight="700">
                       02 // WORKFLOW BLOCKS
                     </text>
                     <text x="16" y="42" fill="#1E2024" fontSize="15" fontFamily="serif" fontWeight="700">
                       Composable WFBs
                     </text>
-                    <text x="16" y="62" fill="#68645C" fontSize="11" fontFamily="sans-serif">
+                    <text x="16" y="63" fill="#68645C" fontSize="11" fontFamily="sans-serif">
                       QuickBooks, ERP connectors &amp; dispatch state machines
                     </text>
-                    <text x="16" y="84" fill="#6C552F" fontSize="8.5" fontFamily="monospace" fontWeight="700">
+                    <text x="16" y="86" fill="#6C552F" fontSize="8.5" fontFamily="monospace" fontWeight="700">
                       RUNTIME // FLOWCRAFT
                     </text>
                   </g>
 
                   {/* Pattern Card 3 */}
                   <g transform="translate(744, 0)">
-                    <rect width="344" height="100" rx="3" fill="#FAF6EE" stroke="#DDD7C8" strokeWidth="1" />
-                    <rect width="4" height="100" fill="#1E2024" />
+                    <rect width="344" height="104" rx="3" fill="#FAF6EE" stroke="#DDD7C8" strokeWidth="1" />
+                    <rect width="4" height="104" fill="#1E2024" />
                     <text x="16" y="20" fill="#68645C" fontSize="9" fontFamily="monospace" fontWeight="700">
                       03 // TEST HARNESSES
                     </text>
                     <text x="16" y="42" fill="#1E2024" fontSize="15" fontFamily="serif" fontWeight="700">
                       Caller Fixtures
                     </text>
-                    <text x="16" y="62" fill="#68645C" fontSize="11" fontFamily="sans-serif">
+                    <text x="16" y="63" fill="#68645C" fontSize="11" fontFamily="sans-serif">
                       Multi-agent verification suites &amp; edge-case test gates
                     </text>
-                    <text x="16" y="84" fill="#1E2024" fontSize="8.5" fontFamily="monospace" fontWeight="700">
+                    <text x="16" y="86" fill="#1E2024" fontSize="8.5" fontFamily="monospace" fontWeight="700">
                       FACTORY // THE RIG
                     </text>
                   </g>
