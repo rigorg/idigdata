@@ -67,7 +67,7 @@ function ProcessConstellationSpot() {
 /**
  * 02 / FlowCraft — The Interlocking Workflow Blocks
  * Modular, stepped instance blocks: input contract, workflow execution lane,
- * amber human-in-the-loop authorization gate, and durable state ledger.
+ * Human-in-the-loop authorization gate, and durable state ledger.
  */
 function WorkflowBlocksSpot() {
   return (
@@ -283,7 +283,7 @@ const COLLECTIVES: CollectivePillar[] = [
     bullets: [
       "The 6-radial process constellation (P2P, O2C, P2M, S2S, D2R, MDM)",
       "Mary's 15-year spreadsheet vs. $8M failed monolithic ERP overhauls",
-      "B.O.S.S. delta audit: mapping actual floor truth before writing code",
+      "Open discovery patterns: audit in isolation, contribute schemas to the collective",
     ],
     fieldNoteHref: "/agentic-ai/marys-sheet/",
     fieldNoteLabel: "Read Field Brief: Mary's Sheet & Polanyi",
@@ -312,7 +312,7 @@ const COLLECTIVES: CollectivePillar[] = [
     bullets: [
       "Modular workflow blocks running at the concrete shop-floor instance level",
       "Instance-level Master Data Management (MDM) and durable operational memory",
-      "Mandatory human-in-the-loop authorization gates on consequential actions",
+      "Open block patterns: execute in isolation on private data, share hardened topologies",
     ],
     fieldNoteHref: "/agentic-ai/the-application-layer/",
     fieldNoteLabel: "Read Field Brief: The SaaS/ERP Divide & Runtime",
@@ -341,7 +341,7 @@ const COLLECTIVES: CollectivePillar[] = [
     bullets: [
       "The machine that builds the machines that builds the living assets of value",
       "Rig-in-a-box: sovereign industrial software factory on the operator's PC",
-      "AST verification calipers, deterministic test gates & git-grounded ledgers",
+      "Open fabrication patterns: local iron execution, shared collaborative skills",
     ],
     fieldNoteHref: "/agentic-ai/the-delivery-seam/",
     fieldNoteLabel: "Read Field Brief: The Collaborative Seam",
@@ -553,7 +553,7 @@ export default function AgenticPositionView() {
             <p className={s.eyebrow}>02 / A Shared Inquiry</p>
             <h2>The Collective<span>.</span></h2>
             <p className={s.triadDek}>
-              This is an open collective—not a pitch. I am a passionate builder exploring the hard questions where agentics meets enterprise reality. We track what the industry is saying: Chamath on the space between tasks, Benioff on workflow metadata, and Grinberg on the software factory. Alongside those perspectives, I share open collections based on real, working software—B.O.S.S., FlowCraft, and The Rig. I am a fellow traveler on this journey with others, building a collective where curious practitioners can question, explore, and build what&apos;s next together.
+              This is an open collective—not a pitch. I am a passionate builder exploring the hard questions where agentics meets enterprise reality. We track what the industry is saying: Chamath on the space between tasks, Benioff on workflow metadata, and Grinberg on the software factory. Alongside those perspectives, I share open collections based on real, working software—B.O.S.S., FlowCraft, and The Rig. Every enterprise runs in complete isolation and security on its own iron, but the underlying patterns grow through the collective. As people use these systems to solve live floor problems, the topologies, schemas, and skills enrich the shared commons. I am a fellow traveler on this journey with others, building an open collective where curious practitioners can question, explore, and build what&apos;s next together.
             </p>
           </div>
 
@@ -640,7 +640,7 @@ export default function AgenticPositionView() {
             <p className={s.eyebrow}>03 / Shared Architecture</p>
             <h2>Three Open Systems. Built to Collaborate<span>.</span></h2>
             <p className={s.limelightDek}>
-              From the genesis of The Rig, B.O.S.S., and FlowCraft, the goal was never to hoard a proprietary silo. It was to build a complete, verifiable operating contraption—and open it up for peers, builders, and curious people who want to build something incredible together.
+              From the genesis of The Rig, B.O.S.S., and FlowCraft, the goal was never to hoard a proprietary silo. It was to build a complete, verifiable operating contraption—and share the patterns openly. Each enterprise runs on sovereign iron with absolute data privacy, while the collective pattern library grows as practitioners use the systems to solve real-world problems.
             </p>
           </div>
 
@@ -702,7 +702,7 @@ export default function AgenticPositionView() {
               <p className={s.eyebrow} style={{ margin: 0 }}>THE COLLECTIVE CALL // PEER COLLABORATION</p>
               <h3>Twenty years on the enterprise floor. Over three years inside the runtime. Built to share and build together.</h3>
               <p>
-                Not a proprietary silo, and not a sales pitch. B.O.S.S., FlowCraft, and The Rig exist because applied agentics requires real architecture, tested against live dock reality. Whether you want to specialize in one system or collaborate across the entire stack—the schemas, runtimes, and local developer harnesses are open to explore, test, and build together.
+                Not a proprietary silo, and not a sales pitch. B.O.S.S., FlowCraft, and The Rig exist because applied agentics requires real architecture, tested against live dock reality. Run in isolation on your own iron; learn and grow through the collective. Whether you want to specialize in one system or collaborate across the entire stack—the schemas, runtimes, and local developer harnesses are open to explore, test, and build together.
               </p>
             </div>
             <a href="#conversation" className={s.limelightBannerCta}>
