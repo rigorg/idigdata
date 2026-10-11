@@ -259,7 +259,7 @@
     <g transform="translate(970, 466)" text-anchor="middle">
       <rect x="-75" y="0" width="150" height="28" rx="4" fill="#FFFDF8" stroke="#CA8A04" stroke-width="1.5" filter="url(#soft-shadow)"/>
       <text y="18.5" font-family="system-ui, sans-serif" font-size="13.5" font-weight="900" fill="#92400E">2020s+ // NOW</text>
-      <text y="43" font-family="Georgia, serif" font-size="12" font-style="italic" fill="#142840" font-weight="700">Zero-year wait · On your stack</text>
+      <text y="43" font-family="Georgia, serif" font-size="12" font-style="italic" fill="#142840" font-weight="700">Zero-year wait &#183; On your stack</text>
       <text y="62" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#166534">Immediate operating leverage</text>
     </g>
   </g>
@@ -267,10 +267,10 @@
   <!-- ============================================================= -->
   <!-- FOOTER TECHNICAL DRAWING METADATA STRIP                      -->
   <!-- ============================================================= -->
-  <g transform="translate(0, 614)">
+  <g transform="translate(0, 555)">
     <line x1="30" y1="0" x2="1170" y2="0" stroke="#142840" stroke-width="0.8" stroke-opacity="0.25"/>
-    <text x="36" y="15" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#142840" letter-spacing="1">IDIGDATA ARCHITECTURAL ANALYSIS // SPEC W-04</text>
-    <text x="1164" y="15" text-anchor="end" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#142840" letter-spacing="0.8">DECADE PARADIGM SHIFT // LEVEL-4 GOVERNANCE</text>
-    <text x="600" y="32" text-anchor="middle" font-family="Georgia, serif" font-size="12" font-style="italic" fill="#142840">“The first three waves replaced the foundation. The fourth wave activates what you already built.”</text>
+    <text x="36" y="18" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#142840" letter-spacing="1">IDIGDATA ARCHITECTURAL ANALYSIS // SPEC W-04</text>
+    <text x="1164" y="18" text-anchor="end" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#142840" letter-spacing="0.8">DECADE PARADIGM SHIFT // LEVEL-4 GOVERNANCE</text>
+    <text x="600" y="46" text-anchor="middle" font-family="Georgia, serif" font-size="12.5" font-style="italic" fill="#142840">&#8220;The first three waves replaced the foundation. The fourth wave activates what you already built.&#8221;</text>
   </g>
 </svg>

@@ -247,13 +247,10 @@ interface CollectivePillar {
   tag: string;
   title: string;
   subtitle: string;
-  systemName: string;
-  systemRole: string;
   spot: "constellation" | "blocks" | "factory";
   titanQuote: TitanQuote;
   body: string;
-  provocation: string;
-  bullets: string[];
+  inquiries: string[];
   fieldNoteHref: string;
   fieldNoteLabel: string;
   topicKey: string;
@@ -263,12 +260,10 @@ interface CollectivePillar {
 const COLLECTIVES: CollectivePillar[] = [
   {
     num: "01",
-    tag: "DOMAIN 01 / THE ENTERPRISE",
-    actionLabel: "Collaborate on B.O.S.S.",
-    title: "The Enterprise",
-    subtitle: "Domain Truth, Tacit Reality & Process Constellations",
-    systemName: "B.O.S.S.",
-    systemRole: "Business Operating System Specification",
+    tag: "THESIS 01 // TACIT REALITY",
+    actionLabel: "Join the Discussion",
+    title: "The Space Between Tasks",
+    subtitle: "Why Enterprise Work Lives Outside the Software",
     spot: "constellation",
     titanQuote: {
       speaker: "Chamath Palihapitiya",
@@ -278,25 +273,22 @@ const COLLECTIVES: CollectivePillar[] = [
         "A job is more than the sum of its tasks. What’s more intangible is the part between them: deciding which task matters, in what order, and when to stop; coordinating with people on other teams; and being the one accountable when it goes wrong.",
     },
     body:
-      "Enterprise procedures only describe the happy path. The real operating logic lives in Mary's loading dock spreadsheet—an informal tool that outlasted five failed ERP implementations because it handles the uncodified exceptions, conflicting priorities, and physical reality of the floor. Kimberling's research shows over 70% of ERP overhauls fail because monolithic software paves over this space between tasks. You cannot prompt an AI agent with what was never written down. B.O.S.S. audits the delta between executive slide decks and actual dock truth, turning tribal judgment into an auditable operational graph.",
-    provocation: "Never automate a stated process until you have audited the actual operational truth.",
-    bullets: [
-      "The 6-radial process constellation (P2P, O2C, P2M, S2S, D2R, MDM)",
-      "Mary's 15-year spreadsheet vs. $8M failed monolithic ERP overhauls",
-      "Open discovery patterns: audit in isolation, contribute schemas to the collective",
+      "Enterprise software only captures the happy path. The real operating logic lives in the unwritten space—the desktop spreadsheets, informal workarounds, and tacit judgment that handle exceptions when standard software falls short. In every organization, there is a loading dock spreadsheet that has outlasted multiple multi-million-dollar ERP implementations. You cannot prompt an AI agent with what was never codified. True enterprise agentics starts by surfacing this space between tasks before generating a line of code.",
+    inquiries: [
+      "What the experienced operator knows that standard procedures never codified",
+      "Why monolithic platform overhauls fail when they pave over tacit judgment",
+      "Auditing the delta between executive slide decks and actual dock reality",
     ],
     fieldNoteHref: "/agentic-ai/marys-sheet/",
     fieldNoteLabel: "Read Field Brief: Mary's Sheet & Polanyi",
-    topicKey: "01 / The Enterprise & B.O.S.S. (Domain Truth & Schemas)",
+    topicKey: "01 / The Space Between Tasks & Tacit Domain Truth",
   },
   {
     num: "02",
-    tag: "DOMAIN 02 / THE WORKFLOW",
-    actionLabel: "Collaborate on FlowCraft",
-    title: "The Workflow",
-    subtitle: "Deterministic Execution & Human-Agent Synthesis",
-    systemName: "FlowCraft",
-    systemRole: "Instance Operational Runtime",
+    tag: "THESIS 02 // DETERMINISTIC EXECUTION",
+    actionLabel: "Join the Discussion",
+    title: "Workflows Over Chatbots",
+    subtitle: "The Divide Between Conversational AI and Consequential Action",
     spot: "blocks",
     titanQuote: {
       speaker: "Marc Benioff",
@@ -306,26 +298,22 @@ const COLLECTIVES: CollectivePillar[] = [
         "Copilot is really the new Microsoft Clippy... DIY AI is a science project. What matters isn't the model—it’s the metadata and the workflows.",
     },
     body:
-      "Chat windows, copilots, and conversational 'vibe coding' hallucinate the moment they touch master data and financial commitments. Enterprise agentics is not an off-the-shelf LLM answering questions in a browser tab; it is deterministic workflow blocks executing inside the company's private perimeter. FlowCraft provides the instance-level operating system where agents and human operators share master data management (MDM), auditable state ledgers, and mandatory human authorization gates before any real-world action occurs.",
-    provocation:
-      "Enterprises don't need another chatbot in a tab; they need deterministic workflow blocks running on their private data core.",
-    bullets: [
-      "Modular workflow blocks running at the concrete shop-floor instance level",
-      "Instance-level Master Data Management (MDM) and durable operational memory",
-      "Open block patterns: execute in isolation on private data, share hardened topologies",
+      "Conversational chat windows and 'vibe coding' fail the moment they touch master data, inventory commitments, and financial transactions. Enterprise work is not an LLM answering questions in a browser tab—it requires deterministic execution pipelines running directly across brownfield systems of record. Real agentic leverage happens when autonomous agents execute within explicit permission boundaries, shared operational memory, and unambiguous human authority on consequential decisions.",
+    inquiries: [
+      "The boundary between exploratory chat and auditable enterprise execution",
+      "Maintaining shared master data and operational memory across agent workflows",
+      "Designing strict human-in-the-loop authorization on consequential commitments",
     ],
     fieldNoteHref: "/agentic-ai/the-application-layer/",
     fieldNoteLabel: "Read Field Brief: The SaaS/ERP Divide & Runtime",
-    topicKey: "02 / The Workflow & FlowCraft (Human-Agent Runtime & MDM)",
+    topicKey: "02 / Workflows Over Chatbots & Deterministic Runtime",
   },
   {
     num: "03",
-    tag: "DOMAIN 03 / THE FACTORY",
-    actionLabel: "Collaborate on The Rig",
-    title: "The Factory",
-    subtitle: "Software That Builds Software & Rig-in-a-Box",
-    systemName: "The Rig",
-    systemRole: "Autonomous Software Factory & Machine Shop",
+    tag: "THESIS 03 // SOVEREIGN FABRICATION",
+    actionLabel: "Join the Discussion",
+    title: "The Machine That Builds the Machine",
+    subtitle: "Autonomous Software Production on the Operator's PC",
     spot: "factory",
     titanQuote: {
       speaker: "Matan Grinberg & Eno Reyes",
@@ -335,17 +323,15 @@ const COLLECTIVES: CollectivePillar[] = [
         "The incremental units of this system are AI agents. This system will be built by engineers, and in turn will build their software. This system is the software factory... We are building the machine that builds the machine.",
     },
     body:
-      "Factory proves the macro shift: software is no longer typed line by line; it is manufactured by autonomous systems. But where Factory.ai centralizes software generation in a massive venture cloud with proprietary droids, The Rig goes in the exact opposite direction: down to the human operator. The Rig is the machine that builds the machines that builds the living assets of value—delivered as Rig-in-a-Box on local iron. Every operator gets their own sovereign software factory equipped with AST calipers, deterministic test harnesses, and git-grounded task ledgers, operating under absolute human authority without external cloud leakage.",
-    provocation:
-      "Where Big Tech centralizes software generation in the cloud, The Rig decentralizes the factory to the operator—so everybody has their own factory.",
-    bullets: [
-      "The machine that builds the machines that builds the living assets of value",
-      "Rig-in-a-box: sovereign industrial software factory on the operator's PC",
-      "Open fabrication patterns: local iron execution, shared collaborative skills",
+      "Software engineering is crossing a permanent threshold: code is no longer written line by line; it is manufactured by autonomous systems. But where Big Tech centralizes software generation in closed cloud platforms, enterprise reality requires sovereignty. The real power is putting the industrial fabrication line directly into the hands of the human operator on local iron: the machine that builds the machines that build the living software assets—with AST calipers, deterministic test gates, and git-grounded task ledgers under absolute human ownership.",
+    inquiries: [
+      "Moving from prompt-assisted coding to sovereign software fabrication",
+      "Rigorous AST calipers and deterministic test gates vs. unreviewable code generation",
+      "Decentralizing the factory to the operator: complete data sovereignty on local iron",
     ],
     fieldNoteHref: "/agentic-ai/the-delivery-seam/",
     fieldNoteLabel: "Read Field Brief: The Collaborative Seam",
-    topicKey: "03 / The Factory & The Rig (Autonomous Software Factory)",
+    topicKey: "03 / The Machine That Builds the Machine & Sovereign Fabrication",
   },
 ];
 
@@ -553,7 +539,7 @@ export default function AgenticPositionView() {
             <p className={s.eyebrow}>02 / A Shared Inquiry</p>
             <h2>The Collective<span>.</span></h2>
             <p className={s.triadDek}>
-              This is an open collective—not a pitch. I am a passionate builder exploring the hard questions where agentics meets enterprise reality. We track what the industry is saying: Chamath on the space between tasks, Benioff on workflow metadata, and Grinberg on the software factory. Alongside those perspectives, I share open collections based on real, working software—B.O.S.S., FlowCraft, and The Rig. Every enterprise runs in complete isolation and security on its own iron, but the underlying patterns grow through the collective. As people use these systems to solve live floor problems, the topologies, schemas, and skills enrich the shared commons. I am a fellow traveler on this journey with others, building an open collective where curious practitioners can question, explore, and build what&apos;s next together.
+              Three foundational conversations on enterprise agentics. Not a sales pitch or product showcase, but working theses formed from 20+ years on the enterprise floor and over three years inside the agentic runtime—matched against where industry leaders are pointing. A space for peers to question, challenge, and explore together.
             </p>
           </div>
 
@@ -588,20 +574,19 @@ export default function AgenticPositionView() {
                     <div className={s.triadQuoteRole}>{c.titanQuote.role}</div>
                   </div>
 
-                  {/* Working software collection */}
+                  {/* The Operator's Working Thesis */}
                   <div style={{ marginTop: "18px", marginBottom: "6px" }}>
-                    <span className={s.triadSectionTag}>WORKING SOFTWARE COLLECTION • {c.systemName}</span>
+                    <span className={s.triadSectionTag}>WORKING THESIS // OPERATIONAL GROUND TRUTH</span>
                   </div>
                   <p className={s.triadCardBody}>{c.body}</p>
 
-                  <div className={s.triadProvocation}>
-                    <span className={s.triadProvocationLabel}>OPERATIONAL PROVOCATION</span>
-                    <p className={s.triadProvocationText}>&ldquo;{c.provocation}&rdquo;</p>
+                  {/* Core Inquiries */}
+                  <div style={{ marginTop: "14px", marginBottom: "6px" }}>
+                    <span className={s.triadInquiryLabel}>CORE CONVERSATIONAL INQUIRIES</span>
                   </div>
-
                   <ul className={s.triadPointsList}>
-                    {c.bullets.map((b, idx) => (
-                      <li key={idx}>{b}</li>
+                    {c.inquiries.map((inq, idx) => (
+                      <li key={idx}>{inq}</li>
                     ))}
                   </ul>
                 </div>
