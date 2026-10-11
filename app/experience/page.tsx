@@ -5,6 +5,7 @@ import PresenceShell from "@/components/presence/PresenceShell";
 import HaloFilm from "@/components/presence/HaloFilm";
 import ConstellationsFilm from "@/components/presence/ConstellationsFilm";
 import BeehiveFilm from "@/components/presence/BeehiveFilm";
+import DiagramModal from "@/components/experience/DiagramModal";
 
 export const metadata: Metadata = {
   title: { absolute: "Experience | idigdata" },
@@ -155,12 +156,15 @@ export default function ExperiencePage() {
           <div className="hero-split">
             <div className="home-hero-copy">
               <p className="p-kicker">Experience</p>
-              <h1 className="p-h1">{"The breadth to see how the pieces fit."}</h1>
+              <h1 className="p-h1">The breadth to see how the pieces fit.</h1>
               <p className="p-dek">
-                {"I connect the boardroom, the business operation, and the software that makes it run. My career spans CIO responsibility and building a $130M operating business, across 50+ enterprise implementations and 15 scale transformations. When companies modernize, acquire, or deploy autonomous workflows, I bring client-side accountability to technology investment, delivery, and operating results."}
+                I connect the boardroom, the business operation, and the software that makes it run.
               </p>
               <p className="p-prose mt-4">
-                {"Through Data Integration Group, I lead client-side transformation across people, data, applications, and delivery partners. Earlier partner-side solution architecture at Access IT gave me an inside view of how systems integrators, software vendors, and resellers scope and bill. I use both perspectives to eliminate waste, align delivery, and keep operations running."}
+                Twenty years of leadership connecting business ownership, CIO governance, and hands-on systems architecture across 50+ enterprise implementations and 15 scale transformations. When companies modernize, acquire, or deploy autonomous workflows, I bridge the delivery seam between software generation and live operations—bringing accountable execution to people, data, systems, and delivery partners.
+              </p>
+              <p className="p-prose mt-3">
+                Having founded and built a $130M operating business, served as CIO of a multi-site manufacturer, and architected core ERP and supply-chain platforms, I know the business from the floor to the boardroom. I understand how systems integrators and software vendors scope and bill—and I use both perspectives to eliminate partner waste, align delivery, and keep plant and commercial operations running.
               </p>
             </div>
             <div className="home-watermark" aria-hidden="true">
@@ -184,7 +188,7 @@ export default function ExperiencePage() {
               <h3 className="mt-2">Executive Transformation Leadership</h3>
               <p className="font-medium text-sm text-[#142840]/75 mt-1">Sierra Nevada Brewing Co. · Chief Information Officer (Contract)</p>
               <p className="p-prose mt-4">
-                As CIO of a multi-site brewer, led 26 months of enterprise architecture and implementation across business and plant systems around a company-owned data core. Rebuilt IS/IT and led 150 project participants across 25 task forces, establishing governance, delivery accountability, and floor adoption while brewery and commercial operations continued without interruption.
+                As CIO of a multi-site brewer, led 26 months of enterprise modernization connecting business and plant systems around a company-owned data core. Served on the executive leadership team, presented to the board, rebuilt IS/IT, and led 150 project participants across 25 task forces. Coordinated change across finance, warehousing, manufacturing, laboratory systems, food safety, SQF, and TTB compliance—ensuring brewery and commercial operations continued without interruption.
               </p>
             </article>
             <article>
@@ -192,7 +196,7 @@ export default function ExperiencePage() {
               <h3 className="mt-2">Business Ownership &amp; Operating Software</h3>
               <p className="font-medium text-sm text-[#142840]/75 mt-1">Timberline Architectural Openings · Founder, CEO &amp; CTO</p>
               <p className="p-prose mt-4">
-                Founded and scaled an enterprise from $250K in first-year revenue to $130M by year ten, with full P&amp;L responsibility and 100+ employees. Personally engineered the proprietary enterprise software connecting estimating, engineering sales, purchasing, production, inventory, distribution, and finance.
+                Founded and scaled a manufacturing and distribution enterprise from $250K in first-year revenue to $130M by year ten, with full P&amp;L responsibility and 100+ employees. Personally engineered the proprietary enterprise software connecting estimating, engineering sales, purchasing, production, inventory, distribution, and finance. Engaged private equity firms on expansion financing and advised PE sponsors on troubled portfolio distributors.
               </p>
             </article>
             <article>
@@ -200,7 +204,7 @@ export default function ExperiencePage() {
               <h3 className="mt-2">Core Systems Architecture &amp; Delivery</h3>
               <p className="font-medium text-sm text-[#142840]/75 mt-1">Data Integration Group · Principal &amp; Solution Architect</p>
               <p className="p-prose mt-4">
-                Across 50+ implementations and 15 scale transformations, bridging the critical operational seam where enterprise software meets physical work. Proven cutover leadership across Microsoft Dynamics 365, SAP S/4HANA, NetSuite, and OneStream—compressing post-acquisition close from 18 days to four and rescuing troubled multi-million-dollar programs.
+                Across 50+ implementations and 15 scale transformations, bridging the critical operational seam where enterprise software meets physical work. Extensive cutover leadership across Microsoft Dynamics 365, SAP, NetSuite, and OneStream—compressing post-acquisition close from 18 days to four and turning around troubled multi-million-dollar programs. Earlier partner-side delivery at Access IT provides insider mastery of how systems integrators scope, bill, and staff.
               </p>
             </article>
             <article>
@@ -208,13 +212,14 @@ export default function ExperiencePage() {
               <h3 className="mt-2">Applied Enterprise Agentics &amp; Software Factories</h3>
               <p className="font-medium text-sm text-[#142840]/75 mt-1">Data Integration Group · Autonomous Systems Architecture</p>
               <p className="p-prose mt-4">
-                Architecting, engineering, and operating production multi-agent runtimes that bridge the delivery seam between autonomous code generation and physical enterprise workflows. Enforcing deterministic AST validation gates, verifiable audit trails, schema contracts, and human authorization—turning tacit operating knowledge into reliable, production-grade enterprise capacity.
+                Architecting and operating production multi-agent runtimes that bridge the delivery seam between autonomous code generation and physical enterprise workflows. Grounded in the tribal heuristics of frontline operators, enforcing schema contracts, deterministic validation gates, and human authorization at consequential operational steps—turning unwritten company knowledge into dependable enterprise capacity.
               </p>
             </article>
           </div>
         </div>
       </section>
 
+      {/* SELECTED CLIENTS */}
       <section className={"p-section " + styles.section} id="selected-clients" aria-labelledby="selected-clients-title">
         <div className="page-well">
           <h2 className={"p-h2 " + styles.title} id="selected-clients-title">Selected clients</h2>
@@ -238,28 +243,37 @@ export default function ExperiencePage() {
               <dt>Architecture &amp; construction</dt>
               <dd>
                 <ul className={styles.names}>
-                  <li>SOM</li>
-                  <li>HOK</li>
-                  <li>Turner Construction</li>
-                  <li>PCL Construction</li>
+                  <li>Timberline</li>
+                  <li>EPI Materials</li>
+                  <li>Crown Doors</li>
                 </ul>
               </dd>
             </div>
             <div className={styles.row}>
-              <dt>Hospitality &amp; sports</dt>
+              <dt>Public sector &amp; infrastructure</dt>
               <dd>
                 <ul className={styles.names}>
-                  <li>Wynn Resorts</li>
-                  <li>MGM Resorts</li>
-                  <li>San Jose Sharks</li>
+                  <li>Port of Long Beach</li>
+                  <li>San Francisco Municipal Transportation Agency</li>
+                  <li>California High-Speed Rail Authority</li>
                 </ul>
               </dd>
             </div>
             <div className={styles.row}>
-              <dt>Healthcare</dt>
+              <dt>Agtech &amp; distribution</dt>
               <dd>
                 <ul className={styles.names}>
-                  <li>HCA Healthcare</li>
+                  <li>Ag-Wise Enterprises</li>
+                  <li>Bakersfield Ag Chemistry</li>
+                </ul>
+              </dd>
+            </div>
+            <div className={styles.row}>
+              <dt>Non-profit &amp; education</dt>
+              <dd>
+                <ul className={styles.names}>
+                  <li>Save the Redwoods League</li>
+                  <li>San Francisco Botanical Garden</li>
                 </ul>
               </dd>
             </div>
@@ -267,94 +281,74 @@ export default function ExperiencePage() {
         </div>
       </section>
 
-      <section className="p-section">
+      {/* SELECTED TRANSFORMATION WORK */}
+      <section className="p-section" id="selected-transformations" aria-labelledby="selected-transformations-title">
         <div className="page-well">
-          <h2 className="p-h2">{"Selected transformation work"}</h2>
-          <div className="executive-stories">
+          <p className="p-kicker">Delivery track record</p>
+          <h2 className="p-h2" id="selected-transformations-title">Selected transformation work</h2>
+          <div className="home-story mt-8">
             <article>
-              <h3>{"Customer data architecture & market intelligence"}</h3>
+              <h3>Board-mandated enterprise transformation</h3>
               <p className="p-prose mt-4">
-                {"Unified customer touchpoints across direct-to-consumer, three-tier wholesale distribution, POS, and commercial accounts into a single, governed customer data model. Built identity resolution, depletion analytics, and margin-by-customer visibility—giving leadership accurate demand telemetry without the overhead of fragile marketing point tools."}
+                Led 26 months of enterprise architecture and implementation across business and plant systems for a multi-site brewer. Rebuilt IS/IT around a unified data core, coordinating 25 task forces across business functions, technical teams, and implementation partners.
               </p>
             </article>
             <article>
-              <h3>{"Financial integration after acquisition"}</h3>
+              <h3>Financial integration after acquisition</h3>
               <p className="p-prose mt-4">
-                {"Reduced financial close from 18 days to four in an 11-month transformation of a $350M post-acquisition business. Consolidated systems, reconciled master data, unified the chart of accounts, and integrated warehouses across entities and currencies."}
+                Reduced financial close from 18 days to four in an 11-month transformation of a $350M post-acquisition business. Consolidated systems, reconciled master data, unified the chart of accounts, and integrated warehouses across entities and currencies.
               </p>
             </article>
             <article>
-              <h3>{"Recovery of an at-risk $8M ERP program"}</h3>
+              <h3>Recovery of an at-risk $8M ERP program</h3>
               <p className="p-prose mt-4">
-                {"Led an executive mandate to turn around an at-risk $8M enterprise ERP program. Reset partner governance, restored delivery accountability, and brought business leadership and implementation partners back around clear ownership—recovering the program and saving $2M."}
+                Led an executive mandate to turn around an at-risk $8M enterprise ERP program. Reset partner governance, restored delivery accountability, and brought business leadership and implementation partners back around clear ownership—recovering the program and saving $2M.
               </p>
             </article>
             <article>
-              <h3>{"Core systems modernization & API bridges"}</h3>
+              <h3>Core systems modernization &amp; API bridges</h3>
               <p className="p-prose mt-4">
-                {"Led migration from legacy monoliths to modern enterprise platforms. Engineered company-owned API bridges connecting warehouse, manufacturing, and commercial systems with zero operational downtime."}
+                Led migration from legacy monoliths to modern enterprise platforms. Engineered company-owned API bridges connecting warehouse, manufacturing, and commercial systems with zero operational downtime.
               </p>
             </article>
             <article>
-              <h3>{"Integrated business planning and supply chain"}</h3>
+              <h3>Integrated business planning and supply chain</h3>
               <p className="p-prose mt-4">
-                {"Unified planning and supply-chain operations for a $200M multi-entity, multi-facility wine producer. Replaced spreadsheet and PowerPoint preparation for monthly meetings with continuously updated planning across acquired operations. Delivered purchasing and freight savings, improved inventory management, reduced SKUs, and strengthened labor scheduling and waste visibility."}
+                Unified planning and supply-chain operations for a $200M multi-entity, multi-facility wine producer. Replaced spreadsheet and PowerPoint preparation for monthly meetings with continuously updated planning across acquired operations. Delivered purchasing and freight savings, improved inventory management, reduced SKUs, and strengthened labor scheduling and waste visibility.
               </p>
             </article>
             <article>
-              <h3>{"Enterprise platform co-development & shared IP"}</h3>
+              <h3>Enterprise platform co-development &amp; shared IP</h3>
               <p className="p-prose mt-4">
-                {"Brought together client, ERP partner, and custom software firm to design and build an integrated operations platform connecting legacy applications with ERP, WMS, and MES under a shared-IP model, negotiating pilot terms that eliminated software licensing charges for the client."}
+                Brought together client, ERP partner, and custom software firm to design and build an integrated operations platform connecting legacy applications with ERP, WMS, and MES under a shared-IP model, negotiating pilot terms that eliminated software licensing charges for the client.
               </p>
             </article>
           </div>
           <p className="home-more mt-8">
             <Link className="p-link" href="/agentic-ai/">
-              {"Learn through the work: Dispatches from the Operational Seam →"}
+              Learn through the work: Dispatches from the Operational Seam &rarr;
             </Link>
           </p>
         </div>
       </section>
 
-<section className="p-section">
-        <div className="page-well">
-          <h2 className="p-h2">{"Executive leadership, grounded in operating experience"}</h2>
-          <h3 className="executive-role">{"Sierra Nevada Brewing Co. | Chief Information Officer (Contract)"}</h3>
-          <p className="p-prose mt-4">
-            {"Owned technology strategy, investment, operations, data, cybersecurity, and governance for a multi-site brewer. Served on the executive leadership team and presented to the board."}
-          </p>
-          <p className="p-prose mt-4">
-            {"Led modernization connecting enterprise systems around a common data core. Rebuilt IS/IT and led 150 project participants, coordinating 25 task forces across business functions, technical teams, and implementation partners. Change spanned finance, warehousing, manufacturing and planning, including laboratory systems, food safety, SQF, and TTB requirements."}
-          </p>
-          <h3 className="executive-role">{"Timberline | Business ownership and technology leadership"}</h3>
-          <p className="p-prose mt-4">
-            {"Founded and operated a contractor, manufacturer, and distributor of architectural openings. Grew revenue from $250K in year one to $130M by year 10, with P&L responsibility and 100+ employees. Built proprietary software connecting estimating, project delivery, purchasing, production, inventory, distribution, and finance."}
-          </p>
-          <p className="p-prose mt-4">
-            {"Engaged multiple private equity firms on expansion financing; separately advised a PE team on troubled distributors, applying operating experience across ERP, warehouse, and shop-floor systems."}
-          </p>
-          <h3 className="executive-role">{"Access IT | Partner-side delivery"}</h3>
-          <p className="p-prose mt-4">
-            {"Led Microsoft Dynamics and ContractERP implementations across functional, technical, and solution architecture responsibilities, from requirements and customization through migration, integration, testing, cutover, and stabilization."}
-          </p>
-        </div>
-      </section>
-
+      {/* SYSTEMS, WORKFLOWS, AND THE PEOPLE */}
       <section className="p-section">
         <div className="page-well">
-          <h2 className="p-h2">{"Systems, workflows, and the people doing the work"}</h2>
+          <h2 className="p-h2">Systems, workflows, and the people doing the work</h2>
           <p className="p-prose mt-4">
-            {"All businesses are uniquely standard. The fundamentals are familiar; the people, constraints, and consequential exceptions shape the solution."}
+            All businesses are uniquely standard. The fundamentals are familiar; the people, constraints, and consequential exceptions shape the solution.
           </p>
           <p className="p-prose mt-4">
-            {"I work with the CFO and compliance officer, the functional leads, the developers and delivery partners, and the warehouse team using the scanners. The architecture has to support the work across those groups."}
+            I work with the CFO and compliance officer, the functional leads, the developers and delivery partners, and the warehouse team using the scanners. The architecture has to support the work across those groups.
           </p>
           <p className="p-prose mt-4">
-            {"My enterprise application experience also includes electronic medical records (EMR/EHR)."}
+            My enterprise application experience also includes electronic medical records (EMR/EHR).
           </p>
         </div>
       </section>
 
+      {/* THE SYSTEMVERSE PLATE & DIRECTORY */}
       <section className="p-section p-section--job">
         <div className="page-well">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-start">
@@ -384,31 +378,34 @@ export default function ExperiencePage() {
                     Company-owned data core at the center. Systems around it.
                   </p>
                 </div>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <DiagramModal
                   src="/diagrams/system-verse.svg?c=4"
                   alt="The Systemverse: company-owned data core at the center, systems around it"
-                  className="w-full h-auto mx-auto block"
-                />
-                <p className="mt-2 text-left">
-                  <a className="p-link text-xs" href="/diagrams/system-verse.svg?c=4" target="_blank" rel="noopener noreferrer">
-                    Open the diagram
-                  </a>
-                </p>
+                  title="The Systemverse"
+                  subtitle="Company-owned data core at the center, systems around it"
+                  triggerText="Open the diagram"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/diagrams/system-verse.svg?c=4"
+                    alt="The Systemverse: company-owned data core at the center, systems around it"
+                    className="w-full h-auto mx-auto block cursor-pointer hover:opacity-95 transition-opacity"
+                  />
+                </DiagramModal>
                 <div className="telemetry-badge !mt-3">
                   <HaloFilm
                     src="/media/systemverse-loop.mp4?c=2"
-                    poster="/media/systemverse-poster.png?c=2"
-                    label="Systemverse, in motion"
-                    size={56}
+                    poster="/media/systemverse-loop.png"
+                    label="The Systemverse loop in motion"
+                    size={72}
+                    round
                   />
                   <div>
-                    <p className="font-vollkorn text-[13px] font-bold text-navy">
-                      The estate picture, in motion
+                    <p className="font-vollkorn text-[13.5px] font-bold text-navy">
+                      The application orbit, in motion
                     </p>
-                    <p className="mt-0.5 text-[12px] text-[#243345]">
-                      Gold routes from the data core to the systems that run the
-                      work.
+                    <p className="mt-0.5 text-[13px] text-[#243345]">
+                      Visualizing data core gravity pulling functional applications into one sovereign estate.
                     </p>
                   </div>
                 </div>
@@ -416,8 +413,8 @@ export default function ExperiencePage() {
             </div>
           </div>
 
-          <details className="mt-10 rounded-lg border border-[#142840]/20 bg-[#142840]/[0.02] p-6 group">
-            <summary className="cursor-pointer font-vollkorn text-[19px] font-bold text-navy flex items-center justify-between">
+          <details className="group mt-10 rounded-xl border border-[#142840]/15 bg-[#142840]/[0.02] p-5 sm:p-6 transition-colors">
+            <summary className="cursor-pointer list-none flex items-center justify-between font-serif text-lg font-bold text-[#142840] select-none">
               <span>View core systems &amp; platforms directory ({estate.length} functional domains)</span>
               <span className="text-xs font-mono uppercase bg-[#142840]/10 px-2.5 py-1 rounded text-[#142840] group-open:hidden">Expand Directory +</span>
               <span className="text-xs font-mono uppercase bg-[#142840]/10 px-2.5 py-1 rounded text-[#142840] hidden group-open:inline">Close Directory -</span>
@@ -447,6 +444,7 @@ export default function ExperiencePage() {
         </div>
       </section>
 
+      {/* SIX CONSTELLATIONS & THE BEEHIVE */}
       <section className="p-section">
         <div className="page-well">
           <p className="p-kicker">Process and people</p>
@@ -470,16 +468,20 @@ export default function ExperiencePage() {
                   Same six every company. The mix is yours.
                 </p>
               </div>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <DiagramModal
                 src="/diagrams/six-constellations.svg?c=4"
                 alt="The Six Process Constellations: P2P, O2C, P2M, S2S, D2R, MDM around the data core."
-              />
-              <p className="mt-3 text-left">
-                <a className="p-link" href="/diagrams/six-constellations.svg?c=4" target="_blank" rel="noopener noreferrer">
-                  Open the diagram
-                </a>
-              </p>
+                title="The Six Process Constellations"
+                subtitle="Same six every company. The mix is yours."
+                triggerText="Open the diagram"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/diagrams/six-constellations.svg?c=4"
+                  alt="The Six Process Constellations: P2P, O2C, P2M, S2S, D2R, MDM around the data core."
+                  className="w-full h-auto mx-auto block cursor-pointer hover:opacity-95 transition-opacity"
+                />
+              </DiagramModal>
               <div className="telemetry-badge">
                 <ConstellationsFilm size={72} />
                 <div>
@@ -503,16 +505,20 @@ export default function ExperiencePage() {
                   How work crosses functions, from floor to board.
                 </p>
               </div>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <DiagramModal
                 src="/diagrams/beehive.svg"
                 alt="The Beehive process flow map: six process flows crossing functional groups"
-              />
-              <p className="mt-3 text-left">
-                <a className="p-link" href="/diagrams/beehive.svg" target="_blank" rel="noopener noreferrer">
-                  Open the diagram
-                </a>
-              </p>
+                title="The Beehive Process Flow"
+                subtitle="How work crosses functions, from floor to board."
+                triggerText="Open the diagram"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/diagrams/beehive.svg"
+                  alt="The Beehive process flow map: six process flows crossing functional groups"
+                  className="w-full h-auto mx-auto block cursor-pointer hover:opacity-95 transition-opacity"
+                />
+              </DiagramModal>
               <div className="telemetry-badge">
                 <BeehiveFilm size={80} />
                 <div>
@@ -550,18 +556,20 @@ export default function ExperiencePage() {
         </div>
       </section>
 
+      {/* METHOD & PROOF */}
       <section className="p-section">
         <div className="page-well">
-          <h2 className="p-h2">{"Find the cause. Own the change. Check the result."}</h2>
+          <h2 className="p-h2">Find the cause. Own the change. Check the result.</h2>
           <p className="p-prose mt-4">
-            {"I assess how people, data, and technology connect, identify the causes behind the friction, and agree priorities with the people responsible for the business. I align internal teams, vendors, and systems integrators around shared workflows and clear accountability."}
+            I assess how people, data, and technology connect, identify the causes behind the friction, and agree priorities with the people responsible for the business. I align internal teams, vendors, and systems integrators around shared workflows and clear accountability.
           </p>
           <p className="p-prose mt-4">
-            {"Before delivery, we agree what success means and how to verify it. Through implementation and adoption, I keep financial integrity, compliance, and operational continuity in view."}
+            Before delivery, we agree what success means and how to verify it. Through implementation and adoption, I keep financial integrity, compliance, and operational continuity in view.
           </p>
         </div>
       </section>
 
+      {/* FRONTIER PRODUCTION RUNTIMES BRIDGE */}
       <section className="p-section" id="applied-agentics">
         <div className="page-well">
           <div className="p-8 rounded-xl border border-[#142840]/20 bg-[#142840]/[0.02] flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
