@@ -313,7 +313,7 @@ const COLLECTIVES: CollectivePillar[] = [
     tag: "THESIS 03 // SOVEREIGN FABRICATION",
     actionLabel: "Join the Discussion",
     title: "The Machine That Builds the Machine",
-    subtitle: "Autonomous Software Production on the Operator's PC",
+    subtitle: "What a Time to Be Alive: Code Building Code at the Operational Seam",
     spot: "factory",
     titanQuote: {
       speaker: "Matan Grinberg & Eno Reyes",
@@ -323,15 +323,15 @@ const COLLECTIVES: CollectivePillar[] = [
         "The incremental units of this system are AI agents. This system will be built by engineers, and in turn will build their software. This system is the software factory... We are building the machine that builds the machine.",
     },
     body:
-      "Software engineering is crossing a permanent threshold: code is no longer written line by line; it is manufactured by autonomous systems. But where Big Tech centralizes software generation in closed cloud platforms, enterprise reality requires sovereignty. The real power is putting the industrial fabrication line directly into the hands of the human operator on local iron: the machine that builds the machines that build the living software assets—with AST calipers, deterministic test gates, and git-grounded task ledgers under absolute human ownership.",
+      "What an extraordinary time to be alive in technology. Software engineering is reaching a historic intersection: code is building code. Across frontier research labs and open-weight ecosystems, models and capacity are shifting every single week. We are at the dawn stage where small groups of enterprise practitioners are figuring out how to manufacture living software assets. But code generation only creates syntax. True enterprise leverage happens when the machine that builds the machine is grounded by leaders who understand what lives in between the seams.",
     inquiries: [
-      "Moving from prompt-assisted coding to sovereign software fabrication",
-      "Rigorous AST calipers and deterministic test gates vs. unreviewable code generation",
-      "Decentralizing the factory to the operator: complete data sovereignty on local iron",
+      "The fourth wave: how code building code is transforming software from manual craft to fabrication",
+      "The shifting frontier: why models and capacity changing every week demands enterprise sovereignty",
+      "The 80/20 delivery equation: why autonomous software factories still fail without physical floor truth",
     ],
     fieldNoteHref: "/agentic-ai/the-delivery-seam/",
-    fieldNoteLabel: "Read Field Brief: The Collaborative Seam",
-    topicKey: "03 / The Machine That Builds the Machine & Sovereign Fabrication",
+    fieldNoteLabel: "Read Field Brief: The Machine That Builds the Machine",
+    topicKey: "03 / The Machine That Builds the Machine & The Fourth Wave",
   },
 ];
 
