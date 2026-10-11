@@ -280,9 +280,9 @@ export default function ExperiencePage() {
               </article>
 
               <article className={styles.orgCard}>
-                <h3 className={styles.orgTitle}>Craft brewing &amp; manufacturing — Sierra Nevada Brewing Co.</h3>
+                <h3 className={styles.orgTitle}>Executive transformation &amp; architecture — Sierra Nevada Brewing Co.</h3>
                 <p className={styles.orgText}>
-                  Contract CIO engagement leading 26 months of enterprise modernization across business and plant systems, connecting operations around a company-owned data core. Coordinated 150 project participants across 25 task forces spanning finance, warehousing, brewing MES, packaging, laboratory quality, food safety, and TTB compliance—maintaining operating continuity across brewery facilities and commercial distribution.
+                  Served as contract CIO leading 26 months of enterprise modernization, translating board intent into operational architecture. Built the cross-functional teams, coordinating 150 project participants across 25 task forces spanning executive governance, finance, warehousing, plant MES, and compliance. Rebuilt IS/IT around a company-owned data core—preserving continuous operating continuity across multi-site brewery and commercial operations.
                 </p>
               </article>
             </div>
