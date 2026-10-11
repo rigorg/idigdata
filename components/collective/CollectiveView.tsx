@@ -261,11 +261,10 @@ export default function CollectiveView() {
                 </g>
 
                 {/* ========================================================
-                    COMMANDING CONCENTRIC INSTRUMENT DIAL (DIAMETER = 250px)
-                    THREE CONCENTRIC TIERS & SEPARATED LABELS:
-                    - TIER 1 (OUTER BEZEL, 12 O'CLOCK): THE FLASH SPOT
-                    - TIER 2 (MIDDLE ANNULAR TRACK, 6 O'CLOCK): THE LIVING SEAM
-                    - TIER 3 (INNER CORE DISC, CENTER): Intent = Outcome
+                    CONCENTRIC FOCAL DIAL (DIAMETER = 250px)
+                    - TOP CROWN PLAQUE: Intent = Outcome
+                    - INNER CORE DISC: Delivered / Deterministic Proof
+                    - ZERO JARGON: 'The Flash Spot' and 'The Living Seam' removed
                     ======================================================== */}
                 <g transform="translate(600, 300)">
                   {/* Outer Bezel (r=125) */}
@@ -288,39 +287,30 @@ export default function CollectiveView() {
                     <line x1="81" y1="81" x2="88" y2="88" />
                   </g>
 
-                  {/* Middle Annular Track: The Operational Seam (r=92) */}
-                  <circle cx="0" cy="0" r="92" fill="#FDFCFA" stroke="#DDD7C8" strokeWidth="1.2" />
-                  <circle cx="0" cy="0" r="70" fill="none" stroke="#DDD7C8" strokeWidth="1" strokeDasharray="4 3" />
+                  {/* Middle Annular Track (r=88) */}
+                  <circle cx="0" cy="0" r="88" fill="#FDFCFA" stroke="#DDD7C8" strokeWidth="1.2" />
+                  <circle cx="0" cy="0" r="68" fill="none" stroke="#DDD7C8" strokeWidth="1" strokeDasharray="4 3" />
 
-                  {/* Inner Core Disc: The Outcome Engine (r=60) */}
-                  <circle cx="0" cy="0" r="60" fill="#FFFFFF" stroke="#9E7D3B" strokeWidth="2" />
+                  {/* Inner Core Disc (r=56) */}
+                  <circle cx="0" cy="0" r="56" fill="#FFFFFF" stroke="#9E7D3B" strokeWidth="1.8" />
 
-                  {/* 1. TIER 1 / OUTER RING: THE FLASH SPOT (12 O'Clock Crown Plaque) */}
+                  {/* TOP CROWN PLAQUE: INTENT = OUTCOME */}
                   <g transform="translate(0, -114)">
-                    <rect x="-80" y="-13" width="160" height="26" rx="13" fill="#FFFFFF" stroke="#9E7D3B" strokeWidth="1.5" />
-                    <text x="0" y="5" textAnchor="middle" fill="#9E7D3B" fontSize="10" fontFamily="monospace" fontWeight="800" letterSpacing="0.16em">
-                      THE FLASH SPOT
+                    <rect x="-85" y="-13" width="170" height="26" rx="13" fill="#FFFFFF" stroke="#9E7D3B" strokeWidth="1.5" />
+                    <text x="0" y="5" textAnchor="middle" fill="#1E2024" fontSize="13" fontFamily="serif" fontWeight="700" letterSpacing="0.02em">
+                      Intent = Outcome
                     </text>
                   </g>
 
-                  {/* 2. TIER 3 / INNER CORE: INTENT = OUTCOME (Center Stage Axiom) */}
-                  <text x="0" y="-4" textAnchor="middle" fill="#1E2024" fontSize="17" fontFamily="serif" fontWeight="700">
-                    Intent = Outcome
-                  </text>
-                  <line x1="-36" y1="10" x2="36" y2="10" stroke="#DDD7C8" strokeWidth="0.8" />
-                  <circle cx="-32" cy="18" r="2.5" fill="#16A34A" />
-                  <text x="0" y="21" textAnchor="middle" fill="#16A34A" fontSize="8.5" fontFamily="monospace" fontWeight="700" letterSpacing="0.12em">
+                  {/* CENTER CORE: DELIVERED / DETERMINISTIC EXECUTION */}
+                  <circle cx="-30" cy="-2" r="2.5" fill="#16A34A" />
+                  <text x="0" y="2" textAnchor="middle" fill="#16A34A" fontSize="9.5" fontFamily="monospace" fontWeight="700" letterSpacing="0.14em">
                     DELIVERED
                   </text>
-                  <circle cx="32" cy="18" r="2.5" fill="#16A34A" />
-
-                  {/* 3. TIER 2 / MIDDLE RING: THE LIVING SEAM (6 O'Clock Operational Seam Plaque) */}
-                  <g transform="translate(0, 92)">
-                    <rect x="-75" y="-12" width="150" height="24" rx="12" fill="#1E2024" stroke="#9E7D3B" strokeWidth="1" />
-                    <text x="0" y="4" textAnchor="middle" fill="#FAF6EE" fontSize="9" fontFamily="monospace" fontWeight="700" letterSpacing="0.14em">
-                      THE LIVING SEAM
-                    </text>
-                  </g>
+                  <circle cx="30" cy="-2" r="2.5" fill="#16A34A" />
+                  <text x="0" y="18" textAnchor="middle" fill="#68645C" fontSize="9" fontFamily="sans-serif">
+                    Deterministic Proof
+                  </text>
 
                   {/* Cardinal Crosshair Pointers (outside the rim connecting to conduit lines) */}
                   <line x1="-135" y1="0" x2="-125" y2="0" stroke="#9E7D3B" strokeWidth="1.5" />
