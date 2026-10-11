@@ -16,10 +16,10 @@ export default function FolioHome() {
                 </span>
               </h1>
               <p className="p-prose mt-5">
-                Autonomous software factories can now build 80% of the systems an enterprise needs. But enterprise value is won or lost in the remaining 20%—where code meets messy brownfield reality, unwritten shop-floor workflows, and live financial ledgers.
+                Software is only part of enterprise change. The work is connecting it to the systems, decisions, and daily operations your business depends on.
               </p>
               <p className="p-prose mt-3">
-                I bridge that 20% seam. Combining 20 years of business ownership, executive leadership, and hands-on software building, I lead enterprise change from the boardroom mandate through legacy cutover to floor adoption.
+                I bring business ownership, executive leadership, and hands-on systems experience to carry that change from mandate through implementation and adoption.
               </p>
               <p className="executive-proof">
                 20+ years in enterprise systems &middot; 50+ implementations &middot; 15 enterprise transformations at scale
@@ -60,7 +60,7 @@ export default function FolioHome() {
               <p className="home-card-cat">Business Systems &amp; Integration</p>
               <h3>Enterprise applications that work together.</h3>
               <p className="p-prose mt-3">
-                Connect core ERP, supply chain, and shop-floor applications around actual physical workflows ensuring uninterrupted plant operations.
+                Connect core ERP, supply chain, and shop-floor applications around actual physical workflows with operating continuity built into the delivery plan.
               </p>
             </article>
 
@@ -84,7 +84,7 @@ export default function FolioHome() {
               <p className="home-card-cat">Financial Systems</p>
               <h3>Financial integrity through change.</h3>
               <p className="p-prose mt-3">
-                Consolidated financial governance and controls that roll disparate plant and business systems into single-source reporting—enabling the CFO to close true, report with clarity, and see unit performance across complex operations.
+                Consolidated financial governance and controls rolling disparate plant and business systems into single-source reporting—enabling the CFO to close true, report with clarity, and see unit performance.
               </p>
             </article>
 

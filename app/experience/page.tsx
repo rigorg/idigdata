@@ -161,10 +161,7 @@ export default function ExperiencePage() {
                 I connect the boardroom, the business operation, and the software that makes it run.
               </p>
               <p className="p-prose mt-4">
-                Twenty years of leadership connecting business ownership, CIO governance, and hands-on systems architecture across 50+ enterprise implementations and 15 transformations at scale. When companies modernize, acquire, or deploy autonomous workflows, I bridge the delivery seam between software generation and live operations—bringing accountable execution to people, data, systems, and delivery partners.
-              </p>
-              <p className="p-prose mt-3">
-                Having founded and built a $130M operating business, served as CIO of a multi-site manufacturer, and architected core ERP and supply-chain platforms, I know the business from the floor to the boardroom. I understand how systems integrators and software vendors scope and bill—and I use both perspectives to eliminate partner waste, align delivery, and keep plant and commercial operations running.
+                Twenty years of leadership connecting business ownership, CIO governance, and hands-on systems architecture across 50+ implementations and 15 transformations at scale. Having founded a $130M manufacturer, served as CIO for a multi-site producer, and directed complex enterprise cutovers, I bridge executive priorities with the daily realities of people, data, and systems.
               </p>
             </div>
             <div className="home-watermark" aria-hidden="true">
@@ -188,7 +185,7 @@ export default function ExperiencePage() {
               <h3 className="mt-2">Executive Transformation Leadership</h3>
               <p className="font-medium text-sm text-[#142840]/75 mt-1">Sierra Nevada Brewing Co. · Chief Information Officer (Contract)</p>
               <p className="p-prose mt-4">
-                As CIO of a multi-site brewer, led 26 months of enterprise modernization connecting business and plant systems around a company-owned data core. Served on the executive leadership team, presented to the board, rebuilt IS/IT, and led 150 project participants across 25 task forces. Coordinated change across finance, warehousing, manufacturing, laboratory systems, food safety, SQF, and TTB compliance—ensuring brewery and commercial operations continued without interruption.
+                As CIO of a multi-site brewer, led 26 months of enterprise modernization connecting business and plant systems around a company-owned data core. Served on the executive leadership team, presented to the board, rebuilt IS/IT, and led 150 project participants across 25 task forces. Coordinated change across finance, warehousing, manufacturing, laboratory systems, food safety, SQF, and TTB compliance—maintaining operating continuity across brewery and commercial operations.
               </p>
             </article>
             <article>
@@ -200,11 +197,11 @@ export default function ExperiencePage() {
               </p>
             </article>
             <article>
-              <p className="font-mono text-xs font-bold uppercase tracking-wider text-amber-700">03 // The 20% Seam</p>
+              <p className="font-mono text-xs font-bold uppercase tracking-wider text-amber-700">03 // Systems &amp; Delivery</p>
               <h3 className="mt-2">Core Systems Architecture &amp; Delivery</h3>
               <p className="font-medium text-sm text-[#142840]/75 mt-1">Data Integration Group · Principal &amp; Solution Architect</p>
               <p className="p-prose mt-4">
-                Across 50+ implementations and 15 transformations at scale, bridging the critical operational seam where enterprise software meets physical work. Extensive cutover leadership across Microsoft Dynamics 365, SAP, NetSuite, and OneStream—compressing post-acquisition close from 18 days to four and turning around troubled multi-million-dollar programs. Earlier partner-side delivery at Access IT provides insider mastery of how systems integrators scope, bill, and staff.
+                Across 50+ implementations and 15 transformations at scale, bridging the critical operational gap where enterprise software meets physical work. Extensive systems architecture and cutover delivery across Microsoft Dynamics 365, OneStream, and integrated enterprise platforms—compressing post-acquisition close from 18 days to four and recovering troubled multi-million-dollar programs. Earlier partner-side delivery at Access IT provides insider mastery of how systems integrators scope, bill, and staff.
               </p>
             </article>
             <article>
@@ -212,7 +209,7 @@ export default function ExperiencePage() {
               <h3 className="mt-2">Applied Enterprise Agentics &amp; Software Factories</h3>
               <p className="font-medium text-sm text-[#142840]/75 mt-1">Data Integration Group · Autonomous Systems Architecture</p>
               <p className="p-prose mt-4">
-                Architecting and operating production multi-agent runtimes that bridge the delivery seam between autonomous code generation and physical enterprise workflows. Grounded in the tribal heuristics of frontline operators, enforcing schema contracts, deterministic validation gates, and human authorization at consequential operational steps—turning unwritten company knowledge into dependable enterprise capacity.
+                Architecting and operating production multi-agent runtimes that connecting autonomous software generation to live enterprise operations. Grounded in the tribal heuristics of frontline operators, enforcing schema contracts, deterministic validation gates, and human authorization at consequential operational steps—turning unwritten company knowledge into dependable enterprise capacity.
               </p>
             </article>
           </div>
@@ -222,7 +219,7 @@ export default function ExperiencePage() {
       {/* SELECTED CLIENTS */}
       <section className={"p-section " + styles.section} id="selected-clients" aria-labelledby="selected-clients-title">
         <div className="page-well">
-          <h2 className={"p-h2 " + styles.title} id="selected-clients-title">Selected clients</h2>
+          <h2 className={"p-h2 " + styles.title} id="selected-clients-title">Organizations &amp; operating experience</h2>
           <dl className={styles.rows}>
             <div className={styles.row}>
               <dt>Food &amp; beverage</dt>
@@ -243,7 +240,7 @@ export default function ExperiencePage() {
               <dt>Architecture &amp; construction</dt>
               <dd>
                 <ul className={styles.names}>
-                  <li>Timberline</li>
+                  <li>Timberline Architectural Openings (Founder &amp; CEO)</li>
                   <li>EPI Materials</li>
                   <li>Crown Doors</li>
                 </ul>
@@ -308,7 +305,7 @@ export default function ExperiencePage() {
             <article>
               <h3>Core systems modernization &amp; API bridges</h3>
               <p className="p-prose mt-4">
-                Led migration from legacy monoliths to modern enterprise platforms. Engineered company-owned API bridges connecting warehouse, manufacturing, and commercial systems with zero operational downtime.
+                Led migration from legacy monoliths to modern enterprise platforms. Engineered company-owned API bridges connecting warehouse, manufacturing, and commercial systems with operating continuity built into the delivery plan.
               </p>
             </article>
             <article>
@@ -324,11 +321,14 @@ export default function ExperiencePage() {
               </p>
             </article>
           </div>
-          <p className="home-more mt-8">
-            <Link className="p-link" href="/agentic-ai/">
-              Learn through the work: Dispatches from the Operational Seam &rarr;
+          <div className="home-more mt-8 flex flex-col sm:flex-row items-baseline gap-4 sm:gap-8">
+            <Link className="p-link font-semibold text-[#142840]" href="/block/">
+              Explore related outcomes in The Block &rarr;
             </Link>
-          </p>
+            <Link className="p-link text-slate-600" href="/agentic-ai/">
+              Read field dispatches from the operational seam &rarr;
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -361,10 +361,10 @@ export default function ExperiencePage() {
                 company-owned data core.
               </p>
               <p className="p-prose mt-4">
-                Sixteen functional domains form the application orbit around a
-                company-owned data core. Each domain connects via explicit integration
-                spokes, ensuring master records, operational telemetry, and business
-                logic remain sovereign—never locked inside proprietary vendor clouds.
+                The application orbit connects the enterprise around a company-owned
+                data core, grouped into nine core domains below. Each domain connects
+                via explicit integration spokes, ensuring master records, operational
+                telemetry, and business logic remain company-owned and sovereign.
               </p>
             </div>
 

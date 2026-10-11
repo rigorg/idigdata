@@ -126,7 +126,7 @@ export default function ContactForm({ showInterestSelect = false }: Props) {
         <p className="font-display text-navy text-[22px] leading-snug">
           {status === "success"
             ? "Got it. This lands straight in my inbox - no bot, no queue. I read every one."
-            : "Got it. The note is recorded. Email notify did not fire - write robert@idigdata.com if you need a same-day reply."}
+            : "Got it. The note is recorded. Your note is saved. For an urgent reply, email robert@idigdata.com directly."}
         </p>
         {notice === "clear-failed" && (
           <p className="text-sm text-warm-gray">Your note was accepted, but this browser could not clear its saved draft. Do not submit it again.</p>

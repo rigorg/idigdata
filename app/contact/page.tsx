@@ -42,7 +42,7 @@ export default function ContactPage() {
           <div className="hero-split">
           <div className="home-hero-copy">
           <p className="p-kicker">Contact</p>
-          <h1 className="p-h1">Start with the role, the transformation, or the problem.</h1>
+          <h1 className="p-h1">Start with the role or the problem.</h1>
           <p className="p-dek">
             An executive appointment, focused work, or fractional leadership.
             Tell me what your business needs, or email{" "}
@@ -105,27 +105,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="p-section" style={{ borderBottom: 0 }}>
-        <div className="page-well">
-          <div className="lastmove-plate">
-            <DirectSignalObject size={220} />
-            <div>
-              <p className="font-vollkorn text-[13px] font-bold uppercase tracking-[0.16em] text-[#B48A05]">
-                Direct
-              </p>
-              <h3 className="mt-1 font-vollkorn text-[clamp(24px,3vw,32px)] font-extrabold text-navy">
-                Talk directly with me.
-              </h3>
-              <p className="mt-3 text-[17px] leading-[1.65]">
-                We’ll discuss what the work calls for, where my experience fits, and the right scope of responsibility.
-              </p>
-              <p className="mt-4 text-[15px] leading-[1.55] text-[#5A6978]">
-                Pacific Time
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+
     </PresenceShell>
   );
 }

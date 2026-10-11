@@ -150,12 +150,8 @@ export default function CustomAgenticScopingPage() {
   const [selectedArchetype, setSelectedArchetype] = useState<string | null>(null);
   const [selectedOutcomes, setSelectedOutcomes] = useState<string[]>([]);
   const [expandedOutcome, setExpandedOutcome] = useState<string | null>(null);
-  const [selectedDomains, setSelectedDomains] = useState<string[]>(["financial_billing"]);
-  const [selectedSystems, setSelectedSystems] = useState<string[]>([
-    "PostgreSQL",
-    "NetSuite",
-    "Slack",
-  ]);
+  const [selectedDomains, setSelectedDomains] = useState<string[]>([]);
+  const [selectedSystems, setSelectedSystems] = useState<string[]>([]);
   const [customSystemInput, setCustomSystemInput] = useState("");
   const [authority, setAuthority] = useState<"advisory" | "supervised" | "bounded">("supervised");
   const [scale, setScale] = useState<"solo" | "team" | "dept" | "enterprise">("team");
@@ -212,14 +208,16 @@ export default function CustomAgenticScopingPage() {
     }
   };
 
-  // Readiness Score calculation
+  // Scoping Completeness calculation (starts at 0% until business input is entered)
   const readiness = useMemo(() => {
     let score = 0;
-    if (selectedDomains.length > 0) score += 20;
+    if (selectedDomains.length > 0) score += 25;
     if (selectedSystems.length > 0) score += Math.min(25, selectedSystems.length * 8);
-    if (authority) score += 20;
-    if (scale && velocity && deployment) score += 15;
-    if (enablement) score += 10;
+    if (selectedDomains.length > 0 && selectedSystems.length > 0) {
+      if (authority) score += 15;
+      if (scale && velocity && deployment) score += 15;
+      if (enablement) score += 10;
+    }
     if (situationText.trim().length > 20) score += 10;
     return Math.min(100, score);
   }, [selectedDomains, selectedSystems, authority, scale, velocity, deployment, enablement, situationText]);
@@ -274,7 +272,7 @@ export default function CustomAgenticScopingPage() {
       `## 1. Operating Domains & Objectives`,
       domainLabels || "Custom Domain Not Specified",
       ``,
-      `## 2. Integration Surface & Connected Systems`,
+      `## 2. Integration Surface & Selected Systems`,
       selectedSystems.length > 0 ? selectedSystems.map((s) => `- ${s}`).join("\n") : "- None selected yet",
       ``,
       `## 3. Human-in-the-Loop & Authority Model`,
@@ -572,7 +570,7 @@ export default function CustomAgenticScopingPage() {
                 </div>
 
                 <p className={`text-xs leading-relaxed ${isLight ? "text-slate-600" : "text-slate-400"}`}>
-                  Ten verified delivery scopes for production enterprise agentics. Select outcomes to include in your scoped time block:
+                  Ten delivery scopes for enterprise agentic software. Select outcomes to include in your scoped proposal:
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -974,7 +972,7 @@ export default function CustomAgenticScopingPage() {
               {/* READINESS METER */}
               <div className="flex flex-col gap-1">
                 <div className="flex items-center justify-between text-xs font-mono">
-                  <span className="text-slate-500 text-[11px]">Architecture Readiness</span>
+                  <span className="text-slate-500 text-[11px]">Scoping Completeness</span>
                   <span className="font-bold text-amber-600 dark:text-amber-400">{readiness}% Complete</span>
                 </div>
                 <div className="w-full h-1.5 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
