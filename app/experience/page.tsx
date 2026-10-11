@@ -266,9 +266,9 @@ export default function ExperiencePage() {
             <p className={styles.orgsKicker}>Selected organizations and contributions</p>
             <div className={styles.orgsGrid}>
               <article className={styles.orgCard}>
-                <h3 className={styles.orgTitle}>Wynn Resorts — Las Vegas &amp; Macau</h3>
+                <h3 className={styles.orgTitle}>Gaming &amp; hospitality — Wynn Resorts · MGM Grand · Caesars</h3>
                 <p className={styles.orgText}>
-                  Coordinated complex project delivery across two major international resort locations, using data and technology to connect sales engineering, design, distribution, and labor. Integrated sequencing, scheduling, and project management to align commercial commitments with field execution.
+                  Large, complex project delivery across premier resort destinations on two continents—including Las Vegas and Macau—and major projects throughout the United States. Connected sales engineering, architectural design, specialized manufacturing, distribution, and field labor, integrating sequencing and project controls to align commercial commitments with field execution.
                 </p>
               </article>
 
@@ -276,6 +276,13 @@ export default function ExperiencePage() {
                 <h3 className={styles.orgTitle}>Wine industry — Duckhorn · Foley · Scheid · Rodney Strong</h3>
                 <p className={styles.orgText}>
                   Enterprise systems and transformation work across complex, regulated wine operations. Experience spanning specialized winemaking software, bottling, inventory, distribution, and financial operations—with compliance, traceability, and reporting requirements woven into the workflows. Connected the patterns these businesses share with the production methods, business rules, and operating exceptions that make each winery unique.
+                </p>
+              </article>
+
+              <article className={styles.orgCard}>
+                <h3 className={styles.orgTitle}>Craft brewing &amp; manufacturing — Sierra Nevada Brewing Co.</h3>
+                <p className={styles.orgText}>
+                  Contract CIO engagement leading 26 months of enterprise modernization across business and plant systems, connecting operations around a company-owned data core. Coordinated 150 project participants across 25 task forces spanning finance, warehousing, brewing MES, packaging, laboratory quality, food safety, and TTB compliance—maintaining operating continuity across brewery facilities and commercial distribution.
                 </p>
               </article>
             </div>
