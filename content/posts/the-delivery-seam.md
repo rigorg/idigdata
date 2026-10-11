@@ -56,7 +56,7 @@ You inherit:
 - **150 people across 25 disjointed task forces**, each protecting departmental KPIs and working around past IT failures.
 - Conflicting executive incentives between the CFO (cutting costs), the COO (protecting throughput), and the CIO (managing vendor risk).
 - Frontline supervisors who have lived through three failed migrations in a decade and have developed deep institutional immunity to corporate change initiatives.
-- Mary, sitting on the loading dock, running the business on her desktop spreadsheet because she knows the official system will choke the first time an exception occurs.
+- Mary, walking the plant floor, holding thirty years of production scheduling together on her desktop spreadsheet because she knows the official system will choke the first time an exception occurs.
 
 A checklist of "20 champions" is an influencer fantasy. Aligning 150 people across 25 task forces with operating continuity built into the delivery plan is the hardest work in business.
 
@@ -78,7 +78,7 @@ In fact, it is worse than zero: you have spent capital generating software that 
 |                                                             |
 |   THE FACTORY (80%)           THE SEAM OPERATOR (20%)       |
 |   Software That Builds        Ground Reality & Verification |
-|   - Automated Code Gen        - Sit with Mary on the Dock   |
+|   - Automated Code Gen        - Walk the Floor with Mary    |
 |   - Fast Scaffold & MVP       - Map Stated vs Actual Truth  |
 |   - Local Execution Engine    - Align 150 People / 25 Teams |
 |   - Deterministic Harnesses   - Operating Continuity Cutover|

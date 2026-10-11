@@ -273,11 +273,11 @@ const COLLECTIVES: CollectivePillar[] = [
         "A job is more than the sum of its tasks. What’s more intangible is the part between them: deciding which task matters, in what order, and when to stop; coordinating with people on other teams; and being the one accountable when it goes wrong.",
     },
     body:
-      "Enterprise software only captures the happy path. The real operating logic lives in the unwritten space—the desktop spreadsheets, informal workarounds, and tacit judgment that handle exceptions when standard software falls short. In every organization, there is a loading dock spreadsheet that has outlasted multiple multi-million-dollar ERP implementations. You cannot prompt an AI agent with what was never codified. True enterprise agentics starts by surfacing this space between tasks before generating a line of code.",
+      "Enterprise software only captures the happy path. The real operating logic lives in the unwritten space—the daily production schedules, certified workforce matrices, and tacit floor judgment that keep a plant moving when systems change. In every organization, there is a Mary whose personal spreadsheets and floor relationships have outlasted multi-million-dollar ERP implementations. You cannot prompt an AI agent with what was never codified. True enterprise agentics starts by surfacing what lives in between the seams before generating a line of code.",
     inquiries: [
-      "What the experienced operator knows that standard procedures never codified",
-      "Why monolithic platform overhauls fail when they pave over tacit judgment",
-      "Auditing the delta between executive slide decks and actual dock reality",
+      "What thirty years of plant-floor craft knows that standard software never codified",
+      "The 'bus or lotto' risk: why operational continuity lives in human heads, not databases",
+      "In between the seams: why standard data grabs miss the human judgment running the plant",
     ],
     fieldNoteHref: "/agentic-ai/marys-sheet/",
     fieldNoteLabel: "Read Field Brief: Mary's Sheet & Polanyi",
@@ -636,7 +636,7 @@ export default function AgenticPositionView() {
                 <h3 className={s.limelightCardTitle}>B.O.S.S.</h3>
                 <div className={s.limelightCardSubtitle}>Business Operating System Specification</div>
                 <p className={s.limelightCardBody}>
-                  Slabs of enterprise software get bought at the executive level, but the company runs on Mary's unwritten desktop spreadsheet. B.O.S.S. models the delta between stated executive happy paths and actual physical dock reality so agents execute on truth, not fiction.
+                  Slabs of enterprise software get bought at the executive level, but the company runs on Mary's unwritten scheduling spreadsheet and thirty years of plant-floor judgment. B.O.S.S. models the delta between stated executive happy paths and actual operational reality so agents execute on truth, not fiction.
                 </p>
               </div>
               <div className={s.limelightCollaborationBox}>
@@ -687,7 +687,7 @@ export default function AgenticPositionView() {
               <p className={s.eyebrow} style={{ margin: 0 }}>THE COLLECTIVE CALL // PEER COLLABORATION</p>
               <h3>Twenty years on the enterprise floor. Over three years inside the runtime. Built to share and build together.</h3>
               <p>
-                Not a proprietary silo, and not a sales pitch. B.O.S.S., FlowCraft, and The Rig exist because applied agentics requires real architecture, tested against live dock reality. Run in isolation on your own iron; learn and grow through the collective. Whether you want to specialize in one system or collaborate across the entire stack—the schemas, runtimes, and local developer harnesses are open to explore, test, and build together.
+                Not a proprietary silo, and not a sales pitch. B.O.S.S., FlowCraft, and The Rig exist because applied agentics requires real architecture, tested against live plant floor reality. Run in isolation on your own iron; learn and grow through the collective. Whether you want to specialize in one system or collaborate across the entire stack—the schemas, runtimes, and local developer harnesses are open to explore, test, and build together.
               </p>
             </div>
             <a href="#conversation" className={s.limelightBannerCta}>
