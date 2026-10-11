@@ -66,7 +66,8 @@ function ProcessConstellationSpot() {
 
 /**
  * 02 / FlowCraft — The Interlocking Workflow Blocks
- * Modular, stepped instance blocks where the shop floor hits: human + agent synthesis.
+ * Modular, stepped instance blocks: input contract, workflow execution lane,
+ * amber human-in-the-loop authorization gate, and durable state ledger.
  */
 function WorkflowBlocksSpot() {
   return (
@@ -79,82 +80,123 @@ function WorkflowBlocksSpot() {
       <rect width="120" height="120" fill="url(#blockGrid)" />
 
       {/* Drafting frame */}
-      <rect x="12" y="12" width="96" height="96" fill="#FAF6EE" stroke="#DDD7C8" strokeWidth="0.8" />
+      <rect x="10" y="10" width="100" height="100" fill="#FAF6EE" stroke="#DDD7C8" strokeWidth="0.8" />
 
-      {/* Instance Level Block 1: Human Operating Cell (Upper Left) */}
-      <rect x="20" y="22" width="38" height="32" fill="#F4EFE5" stroke="#1E2024" strokeWidth="1.4" />
-      <line x1="26" y1="32" x2="52" y2="32" stroke="#9E7D3B" strokeWidth="1" />
-      <line x1="26" y1="40" x2="46" y2="40" stroke="#DDD7C8" strokeWidth="1" />
-      <circle cx="28" cy="46" r="2" fill="#9E7D3B" />
-      <text x="39" y="29" fontSize="5.5" fill="#68645C" fontFamily="monospace" fontWeight="bold">HUMAN</text>
+      {/* Pipeline Block 01: Input / Schema Block */}
+      <rect x="18" y="20" width="34" height="26" fill="#F4EFE5" stroke="#1E2024" strokeWidth="1.2" />
+      <line x1="22" y1="28" x2="46" y2="28" stroke="#9E7D3B" strokeWidth="1" />
+      <line x1="22" y1="34" x2="40" y2="34" stroke="#DDD7C8" strokeWidth="0.8" />
+      <text x="35" y="42" fontSize="5.2" fill="#68645C" textAnchor="middle" fontFamily="monospace" fontWeight="bold">INPUT CONTRACT</text>
 
-      {/* Instance Level Block 2: Agent Runtime Cell (Lower Right) */}
-      <rect x="58" y="54" width="42" height="38" fill="#FFFFFF" stroke="#1E2024" strokeWidth="1.4" />
-      <line x1="64" y1="68" x2="94" y2="68" stroke="#9E7D3B" strokeWidth="1" />
-      <line x1="64" y1="76" x2="90" y2="76" stroke="#DDD7C8" strokeWidth="1" />
-      <line x1="64" y1="84" x2="82" y2="84" stroke="#DDD7C8" strokeWidth="1" />
-      <circle cx="92" cy="62" r="2" fill="#1E2024" />
-      <text x="79" y="62" fontSize="5.5" fill="#68645C" fontFamily="monospace" fontWeight="bold">AGENT</text>
+      {/* Directed Pipeline Flow Arrow */}
+      <path d="M 52 33 L 64 33 M 60 29 L 65 33 L 60 37" stroke="#9E7D3B" strokeWidth="1.2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
 
-      {/* The Interlocking Seam Block (Center Conductor) */}
-      <rect x="44" y="42" width="30" height="24" fill="#FAF6EE" stroke="#9E7D3B" strokeWidth="1.8" strokeDasharray="2 1" />
-      <circle cx="59" cy="54" r="3.5" fill="#9E7D3B" />
-      <circle cx="59" cy="54" r="1.5" fill="#FAF6EE" />
-      <text x="59" y="49" fontSize="4.8" fill="#1E2024" textAnchor="middle" fontFamily="monospace" fontWeight="bold">MDM SEAM</text>
+      {/* Pipeline Block 02: Deterministic Workflow Block / Agent Lane */}
+      <rect x="66" y="20" width="36" height="34" fill="#FFFFFF" stroke="#1E2024" strokeWidth="1.4" />
+      <line x1="72" y1="28" x2="96" y2="28" stroke="#9E7D3B" strokeWidth="1" />
+      <line x1="72" y1="36" x2="92" y2="36" stroke="#DDD7C8" strokeWidth="0.8" />
+      <line x1="72" y1="44" x2="86" y2="44" stroke="#DDD7C8" strokeWidth="0.8" />
+      <circle cx="94" cy="48" r="2" fill="#9E7D3B" />
+      <text x="84" y="25" fontSize="5" fill="#68645C" textAnchor="middle" fontFamily="monospace" fontWeight="bold">WORKFLOW</text>
 
-      {/* Registration Alignment Ticks */}
-      <line x1="58" y1="18" x2="58" y2="24" stroke="#9E7D3B" strokeWidth="1" />
-      <line x1="58" y1="94" x2="58" y2="100" stroke="#9E7D3B" strokeWidth="1" />
-      <line x1="16" y1="54" x2="22" y2="54" stroke="#9E7D3B" strokeWidth="1" />
-      <line x1="98" y1="54" x2="104" y2="54" stroke="#9E7D3B" strokeWidth="1" />
+      {/* Pipeline Step 03: Human Authorization Diamond Gate */}
+      <polygon points="42,60 56,74 42,88 28,74" fill="#F4EFE5" stroke="#9E7D3B" strokeWidth="1.5" />
+      {/* Checkmark inside diamond */}
+      <path d="M 37 74 L 41 78 L 47 70" stroke="#1E2024" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+      <text x="42" y="96" fontSize="5" fill="#8F4A38" textAnchor="middle" fontFamily="monospace" fontWeight="bold">AUTH GATE</text>
+
+      {/* Conductor Line from Workflow Block down to Auth Gate */}
+      <path d="M 84 54 L 84 74 L 56 74" stroke="#9E7D3B" strokeWidth="1.2" fill="none" strokeDasharray="2 2" />
+
+      {/* Pipeline Step 04: Durable State Ledger Block */}
+      <rect x="64" y="66" width="38" height="26" fill="#FAF6EE" stroke="#1E2024" strokeWidth="1.2" />
+      <line x1="70" y1="74" x2="94" y2="74" stroke="#1E2024" strokeWidth="1" />
+      <line x1="70" y1="80" x2="90" y2="80" stroke="#DDD7C8" strokeWidth="0.8" />
+      <circle cx="92" cy="86" r="2.5" fill="#9E7D3B" />
+      <text x="83" y="87" fontSize="5" fill="#68645C" textAnchor="middle" fontFamily="monospace" fontWeight="bold">STATE LEDGER</text>
+      <path d="M 56 74 L 64 74" stroke="#1E2024" strokeWidth="1.5" />
+
+      {/* Dimension rule at bottom */}
+      <line x1="18" y1="104" x2="102" y2="104" stroke="#9E7D3B" strokeWidth="0.8" />
+      <line x1="18" y1="101" x2="18" y2="107" stroke="#9E7D3B" strokeWidth="0.8" />
+      <line x1="60" y1="101" x2="60" y2="107" stroke="#1E2024" strokeWidth="1" />
+      <line x1="102" y1="101" x2="102" y2="107" stroke="#9E7D3B" strokeWidth="0.8" />
+      <text x="60" y="113" fontSize="5.2" fill="#68645C" textAnchor="middle" fontFamily="monospace" fontWeight="bold">FLOWCRAFT // RUNTIME BLOCKS</text>
     </svg>
   );
 }
 
 /**
- * 03 / The Rig — The Structural Gantry & Test Harness
- * Heavy industrial truss with continuous build loop and deterministic verification calipers.
+ * 03 / The Rig — The Software Factory & Machine Shop
+ * Industrial saw-tooth profile, overhead gantry rail, conveyor line with work units,
+ * precision AST verification calipers, and local sovereign operator station.
  */
-function GantryHarnessSpot() {
+function FactorySpot() {
   return (
     <svg viewBox="0 0 120 120" className={s.spotSvg} aria-hidden="true">
       <defs>
-        <pattern id="rigDots" width="12" height="12" patternUnits="userSpaceOnUse">
-          <circle cx="6" cy="6" r="0.7" fill="#DDD7C8" />
+        <pattern id="factoryDots" width="10" height="10" patternUnits="userSpaceOnUse">
+          <circle cx="5" cy="5" r="0.7" fill="#DDD7C8" />
         </pattern>
       </defs>
-      <rect width="120" height="120" fill="url(#rigDots)" />
+      <rect width="120" height="120" fill="url(#factoryDots)" />
 
-      {/* Structural Gantry Legs / Truss Base */}
-      <line x1="20" y1="98" x2="100" y2="98" stroke="#1E2024" strokeWidth="2" />
-      <line x1="20" y1="98" x2="60" y2="24" stroke="#1E2024" strokeWidth="1.8" />
-      <line x1="100" y1="98" x2="60" y2="24" stroke="#1E2024" strokeWidth="1.8" />
+      {/* Industrial Factory Sawtooth Roofline Profile */}
+      <path
+        d="M 16 42 L 34 26 L 34 42 L 54 26 L 54 42 L 74 26 L 74 42 L 94 26 L 104 34 L 104 94 L 16 94 Z"
+        fill="#FAF6EE"
+        stroke="#DDD7C8"
+        strokeWidth="0.8"
+      />
 
-      {/* Internal Structural Cross-Truss */}
-      <line x1="36" y1="68" x2="84" y2="68" stroke="#9E7D3B" strokeWidth="1.2" />
-      <line x1="36" y1="68" x2="60" y2="98" stroke="#9E7D3B" strokeWidth="0.8" />
-      <line x1="84" y1="68" x2="60" y2="98" stroke="#9E7D3B" strokeWidth="0.8" />
-      <line x1="48" y1="46" x2="72" y2="46" stroke="#9E7D3B" strokeWidth="1" />
+      {/* Overhead Gantry Crane Rail */}
+      <line x1="18" y1="46" x2="102" y2="46" stroke="#1E2024" strokeWidth="2" />
+      {/* Structural Gantry End Brackets */}
+      <line x1="18" y1="46" x2="18" y2="94" stroke="#1E2024" strokeWidth="1.5" />
+      <line x1="102" y1="46" x2="102" y2="94" stroke="#1E2024" strokeWidth="1.5" />
 
-      {/* The Central Continuous Build Loop (Software Factory Engine) */}
-      <circle cx="60" cy="64" r="16" fill="#FAF6EE" stroke="#9E7D3B" strokeWidth="1.5" strokeDasharray="3 2" />
-      {/* 3 Telemetry Gate Pins */}
-      <circle cx="60" cy="48" r="2.5" fill="#1E2024" />
-      <circle cx="74" cy="72" r="2.5" fill="#9E7D3B" />
-      <circle cx="46" cy="72" r="2.5" fill="#9E7D3B" />
+      {/* Gantry Trolley Carriage (Center) */}
+      <rect x="52" y="43" width="16" height="6" fill="#9E7D3B" stroke="#1E2024" strokeWidth="1" />
+      {/* Hoist Cable */}
+      <line x1="60" y1="49" x2="60" y2="58" stroke="#9E7D3B" strokeWidth="1.2" strokeDasharray="1 1" />
+      {/* Precision AST Caliper Tool */}
+      <path d="M 52 58 L 68 58 M 54 58 L 54 66 M 66 58 L 66 66" stroke="#1E2024" strokeWidth="1.2" fill="none" />
 
-      {/* Operator PC Pipeline Crown (Rig-in-a-Box Hub) */}
-      <polygon points="60,18 66,26 54,26" fill="#9E7D3B" stroke="#1E2024" strokeWidth="1" />
-      <circle cx="60" cy="24" r="1.5" fill="#FAF6EE" />
+      {/* Assembly Line Conveyor */}
+      <line x1="20" y1="74" x2="100" y2="74" stroke="#1E2024" strokeWidth="1.5" />
+      {/* Mechanical Rollers */}
+      <circle cx="28" cy="78" r="2.5" fill="#FAF6EE" stroke="#9E7D3B" strokeWidth="0.8" />
+      <circle cx="44" cy="78" r="2.5" fill="#FAF6EE" stroke="#9E7D3B" strokeWidth="0.8" />
+      <circle cx="60" cy="78" r="2.5" fill="#FAF6EE" stroke="#9E7D3B" strokeWidth="0.8" />
+      <circle cx="76" cy="78" r="2.5" fill="#FAF6EE" stroke="#9E7D3B" strokeWidth="0.8" />
+      <circle cx="92" cy="78" r="2.5" fill="#FAF6EE" stroke="#9E7D3B" strokeWidth="0.8" />
 
-      {/* Caliper Verification Base Rule with Tolerance Ticks */}
-      <line x1="28" y1="102" x2="92" y2="102" stroke="#9E7D3B" strokeWidth="0.8" />
-      <line x1="34" y1="100" x2="34" y2="104" stroke="#9E7D3B" strokeWidth="0.8" />
-      <line x1="47" y1="100" x2="47" y2="104" stroke="#9E7D3B" strokeWidth="0.8" />
-      <line x1="60" y1="99" x2="60" y2="105" stroke="#1E2024" strokeWidth="1.2" />
-      <line x1="73" y1="100" x2="73" y2="104" stroke="#9E7D3B" strokeWidth="0.8" />
-      <line x1="86" y1="100" x2="86" y2="104" stroke="#9E7D3B" strokeWidth="0.8" />
-      <text x="60" y="112" fontSize="5.2" fill="#68645C" textAnchor="middle" fontFamily="monospace" fontWeight="bold">RIG-IN-A-BOX</text>
+      {/* Manufactured Work Units */}
+      {/* Unit 01: Raw Spec Block */}
+      <rect x="23" y="62" width="12" height="12" fill="#F4EFE5" stroke="#9E7D3B" strokeWidth="1" />
+      <line x1="26" y1="68" x2="32" y2="68" stroke="#DDD7C8" strokeWidth="0.8" />
+
+      {/* Unit 02: Living Asset being calibrated */}
+      <rect x="55" y="60" width="14" height="14" fill="#FFFFFF" stroke="#1E2024" strokeWidth="1.4" />
+      <circle cx="62" cy="67" r="2" fill="#9E7D3B" />
+
+      {/* Unit 03: Caliper-Verified Work Asset */}
+      <rect x="83" y="62" width="12" height="12" fill="#F4EFE5" stroke="#1E2024" strokeWidth="1" />
+      <path d="M 86 68 L 88 70 L 92 65" stroke="#9E7D3B" strokeWidth="1.2" fill="none" strokeLinecap="round" />
+
+      {/* Local Sovereign Station Base: Rig-in-a-Box Terminal */}
+      <rect x="34" y="86" width="52" height="18" fill="#F4EFE5" stroke="#1E2024" strokeWidth="1.2" />
+      <line x1="40" y1="92" x2="80" y2="92" stroke="#9E7D3B" strokeWidth="1" />
+      <line x1="40" y1="97" x2="70" y2="97" stroke="#DDD7C8" strokeWidth="0.8" />
+      <circle cx="76" cy="97" r="1.5" fill="#9E7D3B" />
+      <text x="60" y="102" fontSize="4.8" fill="#68645C" textAnchor="middle" fontFamily="monospace" fontWeight="bold">SOVEREIGN OPERATOR RIG</text>
+
+      {/* Tolerancing Ticks at Bottom */}
+      <line x1="16" y1="108" x2="104" y2="108" stroke="#9E7D3B" strokeWidth="0.8" />
+      <line x1="16" y1="105" x2="16" y2="111" stroke="#9E7D3B" strokeWidth="0.8" />
+      <line x1="60" y1="105" x2="60" y2="111" stroke="#1E2024" strokeWidth="1" />
+      <line x1="104" y1="105" x2="104" y2="111" stroke="#9E7D3B" strokeWidth="0.8" />
+      <text x="60" y="116" fontSize="5.2" fill="#1E2024" textAnchor="middle" fontFamily="monospace" fontWeight="bold">RIG-IN-A-BOX // LOCAL IRON</text>
     </svg>
   );
 }
@@ -193,6 +235,13 @@ function EnterpriseHiveSpot() {
 // THE THREE COLLECTIVES DATA SPECIFICATION
 // ============================================================================
 
+interface TitanQuote {
+  speaker: string;
+  role: string;
+  source: string;
+  quote: string;
+}
+
 interface CollectivePillar {
   num: string;
   tag: string;
@@ -200,7 +249,8 @@ interface CollectivePillar {
   subtitle: string;
   systemName: string;
   systemRole: string;
-  spot: "constellation" | "blocks" | "gantry";
+  spot: "constellation" | "blocks" | "factory";
+  titanQuote: TitanQuote;
   body: string;
   provocation: string;
   bullets: string[];
@@ -216,16 +266,24 @@ const COLLECTIVES: CollectivePillar[] = [
     tag: "DOMAIN 01 / THE ENTERPRISE",
     actionLabel: "Collaborate on B.O.S.S.",
     title: "The Enterprise",
-    subtitle: "Domain Truth & Process Constellations",
+    subtitle: "Domain Truth, Tacit Reality & Process Constellations",
     systemName: "B.O.S.S.",
     systemRole: "Business Operating System Specification",
     spot: "constellation",
-    body: "Enterprise procedures capture the happy path, but the real operating logic lives in Mary's desktop spreadsheet and unwritten dock exceptions. Slabs of software get bought at the executive level; the company runs on tacit judgment that was never codified. You cannot prompt an AI agent with what was never written down.",
+    titanQuote: {
+      speaker: "Chamath Palihapitiya",
+      role: "Founder, Social Capital & Co-Host, All-In",
+      source: "beehiiv",
+      quote:
+        "A job is more than the sum of its tasks. What’s more intangible is the part between them: deciding which task matters, in what order, and when to stop; coordinating with people on other teams; and being the one accountable when it goes wrong.",
+    },
+    body:
+      "Enterprise procedures only describe the happy path. The real operating logic lives in Mary's loading dock spreadsheet—an informal tool that outlasted five failed ERP implementations because it handles the uncodified exceptions, conflicting priorities, and physical reality of the floor. Kimberling's research shows over 70% of ERP overhauls fail because monolithic software paves over this space between tasks. You cannot prompt an AI agent with what was never written down. B.O.S.S. audits the delta between executive slide decks and actual dock truth, turning tribal judgment into an auditable operational graph.",
     provocation: "Never automate a stated process until you have audited the actual operational truth.",
     bullets: [
       "The 6-radial process constellation (P2P, O2C, P2M, S2S, D2R, MDM)",
-      "Mary's loading dock spreadsheet vs. executive slide decks",
-      "Governed by B.O.S.S. (stated vs. actual delta audits)",
+      "Mary's 15-year spreadsheet vs. $8M failed monolithic ERP overhauls",
+      "B.O.S.S. delta audit: mapping actual floor truth before writing code",
     ],
     fieldNoteHref: "/agentic-ai/marys-sheet/",
     fieldNoteLabel: "Read Field Brief: Mary's Sheet & Polanyi",
@@ -236,16 +294,25 @@ const COLLECTIVES: CollectivePillar[] = [
     tag: "DOMAIN 02 / THE WORKFLOW",
     actionLabel: "Collaborate on FlowCraft",
     title: "The Workflow",
-    subtitle: "Human-Agent Synthesis at the Instance Level",
+    subtitle: "Deterministic Execution & Human-Agent Synthesis",
     systemName: "FlowCraft",
     systemRole: "Instance Operational Runtime",
     spot: "blocks",
-    body: "Where does SaaS end and genuine agentic operations begin? Can a legacy ERP like SAP or Oracle ever truly be an agentic system, or are businesses trapped in monolithic upgrade cycles? Real enterprise agentics requires an instance-level operating system where humans and agents share master data (MDM), permissions, and memory.",
-    provocation: "Most enterprises don't need another chatbot in a tab; they need human-agent synthesis running across their brownfield records.",
+    titanQuote: {
+      speaker: "Marc Benioff",
+      role: "Chair & CEO, Salesforce",
+      source: "Dreamforce / TechCrunch",
+      quote:
+        "Copilot is really the new Microsoft Clippy... DIY AI is a science project. What matters isn't the model—it’s the metadata and the workflows.",
+    },
+    body:
+      "Chat windows, copilots, and conversational 'vibe coding' hallucinate the moment they touch master data and financial commitments. Enterprise agentics is not an off-the-shelf LLM answering questions in a browser tab; it is deterministic workflow blocks executing inside the company's private perimeter. FlowCraft provides the instance-level operating system where agents and human operators share master data management (MDM), auditable state ledgers, and mandatory human authorization gates before any real-world action occurs.",
+    provocation:
+      "Enterprises don't need another chatbot in a tab; they need deterministic workflow blocks running on their private data core.",
     bullets: [
-      "Modular workflow blocks at the concrete shop-floor instance level",
-      "Master Data Management (MDM) and operational memory",
-      "Operationalized in FlowCraft (human-agent instance runtime)",
+      "Modular workflow blocks running at the concrete shop-floor instance level",
+      "Instance-level Master Data Management (MDM) and durable operational memory",
+      "Mandatory human-in-the-loop authorization gates on consequential actions",
     ],
     fieldNoteHref: "/agentic-ai/the-application-layer/",
     fieldNoteLabel: "Read Field Brief: The SaaS/ERP Divide & Runtime",
@@ -258,18 +325,27 @@ const COLLECTIVES: CollectivePillar[] = [
     title: "The Factory",
     subtitle: "Software That Builds Software & Rig-in-a-Box",
     systemName: "The Rig",
-    systemRole: "Autonomous Software Factory",
-    spot: "gantry",
-    body: "The frontier is splitting: external software factories generate code from the outside, while internal droids automate tickets. But true velocity requires putting the power of the pipeline directly on the operator's PC—Rig-in-a-box—feeding a collective without leaking data or losing auditability.",
-    provocation: "A prompt demo is fragile; an enterprise software factory requires deterministic caller gates, test harnesses, and verifiable telemetry.",
+    systemRole: "Autonomous Software Factory & Machine Shop",
+    spot: "factory",
+    titanQuote: {
+      speaker: "Matan Grinberg & Eno Reyes",
+      role: "Co-Founders, Factory (factory.ai, $5B valuation)",
+      source: "Factory 2.0 Manifesto",
+      quote:
+        "The incremental units of this system are AI agents. This system will be built by engineers, and in turn will build their software. This system is the software factory... We are building the machine that builds the machine.",
+    },
+    body:
+      "Factory proves the macro shift: software is no longer typed line by line; it is manufactured by autonomous systems. But where Factory.ai centralizes software generation in a massive venture cloud with proprietary droids, The Rig goes in the exact opposite direction: down to the human operator. The Rig is the machine that builds the machines that builds the living assets of value—delivered as Rig-in-a-Box on local iron. Every operator gets their own sovereign software factory equipped with AST calipers, deterministic test harnesses, and git-grounded task ledgers, operating under absolute human authority without external cloud leakage.",
+    provocation:
+      "Where Big Tech centralizes software generation in the cloud, The Rig decentralizes the factory to the operator—so everybody has their own factory.",
     bullets: [
-      "Structural gantry test harness and deterministic build loop",
-      "Rig-in-a-box: power of the pipeline directly on the operator's PC",
-      "Engineered in The Rig (autonomous software factory)",
+      "The machine that builds the machines that builds the living assets of value",
+      "Rig-in-a-box: sovereign industrial software factory on the operator's PC",
+      "AST verification calipers, deterministic test gates & git-grounded ledgers",
     ],
     fieldNoteHref: "/agentic-ai/the-delivery-seam/",
-    fieldNoteLabel: "Read Field Brief: The Software Factory & The Seam",
-    topicKey: "03 / The Factory & The Rig (Software Factory & Rig-in-a-Box)",
+    fieldNoteLabel: "Read Field Brief: The Collaborative Seam",
+    topicKey: "03 / The Factory & The Rig (Autonomous Software Factory)",
   },
 ];
 
@@ -477,7 +553,7 @@ export default function AgenticPositionView() {
             <p className={s.eyebrow}>02 / Learn and Build</p>
             <h2>The Collective<span>.</span></h2>
             <p className={s.triadDek}>
-              One collective for builders, peers, and curious practitioners exploring live enterprise reality. Three interlocking systems—B.O.S.S., FlowCraft, and The Rig—operating as one happy family. Specialize in one system, or collaborate across all three.
+              I connect people, data, and systems to build what&apos;s next—and make it work in the business you have. Isolating any one layer causes enterprise transformation to fail. Three interlocking systems—B.O.S.S., FlowCraft, and The Rig—unifying enterprise domain truth, deterministic workflow runtime, and autonomous software fabrication.
             </p>
           </div>
 
@@ -489,13 +565,27 @@ export default function AgenticPositionView() {
                     <div className={s.triadSpotFrame}>
                       {c.spot === "constellation" && <ProcessConstellationSpot />}
                       {c.spot === "blocks" && <WorkflowBlocksSpot />}
-                      {c.spot === "gantry" && <GantryHarnessSpot />}
+                      {c.spot === "factory" && <FactorySpot />}
                     </div>
                     <span className={s.triadNumTag}>{c.tag}</span>
                   </div>
 
                   <h3 className={s.triadCardTitle}>{c.title}</h3>
                   <div className={s.triadCardSubtitle}>{c.subtitle}</div>
+
+                  {/* Titan Industry Foil / Context Quote */}
+                  <div className={s.triadQuoteBlock}>
+                    <div className={s.triadQuoteMeta}>
+                      <span className={s.triadQuoteSpeaker}>{c.titanQuote.speaker}</span>
+                      <span className={s.triadQuoteSource}>• {c.titanQuote.source}</span>
+                    </div>
+                    <blockquote className={s.triadQuoteText}>
+                      &ldquo;{c.titanQuote.quote}&rdquo;
+                    </blockquote>
+                    <div className={s.triadQuoteRole}>{c.titanQuote.role}</div>
+                  </div>
+
+                  {/* Ground Truth / Ethos */}
                   <p className={s.triadCardBody}>{c.body}</p>
 
                   <div className={s.triadProvocation}>
