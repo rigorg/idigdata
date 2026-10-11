@@ -8,8 +8,6 @@ topic: "Domain Reality"
 
 # Mary's Sheet & Polanyi's Paradox: The Unwritten Truth of Enterprise Operations
 
-### By Robert Paddock · Founder & Enterprise Operator, DigOps
-
 Every enterprise transformation begins in an air-conditioned boardroom with a pristine slide deck. 
 
 The vendor outlines the happy path: modern cloud ERP, automated workflows, single-pane visibility, and instant transaction clearing. The project sponsors nod in unison. Ten million, twenty million, fifty million dollars are committed.
@@ -67,7 +65,7 @@ When you automate a broken or incomplete process at high velocity, you do not ac
 
 ## 3. Stated Reality vs. Actual Operational Truth
 
-Over twenty-five years and more than fifty enterprise system implementations—fifteen at massive global scale—I have watched this exact pattern repeat across four technological generations: Client/Server, Dot-Com, Cloud ERP, and now Agentic AI.
+Over twenty years and more than fifty enterprise system implementations—fifteen enterprise transformations at scale—I have watched this exact pattern repeat across four technological generations: Client/Server, Dot-Com, Cloud ERP, and now Agentic AI.
 
 The fatal mistake is always the same: mistaking the executive slide deck for shop floor reality.
 
@@ -129,5 +127,7 @@ The future belongs to **sovereign, operator-governed agentic runtimes**: systems
 Building syntax has become cheap. Anyone with an API key can prompt a model to write code.
 
 **Operational architecture has never been more expensive.**
+
+At DigOps, we map these exception seams into bounded execution scopes within [The Block](/block/)—ensuring agentic software serves the business rather than creating operational chaos.
 
 Before you prompt your next agent, walk down to the dock. Find Mary. Look at her sheet. That is where your transformation actually begins.

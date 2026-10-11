@@ -225,7 +225,7 @@ const COLLECTIVES: CollectivePillar[] = [
     bullets: [
       "The 6-radial process constellation (P2P, O2C, P2M, S2S, D2R, MDM)",
       "Mary's loading dock spreadsheet vs. executive slide decks",
-      "Cleverly tethered to B.O.S.S. (stated vs. actual delta audits)",
+      "Governed by B.O.S.S. (stated vs. actual delta audits)",
     ],
     fieldNoteHref: "/agentic-ai/marys-sheet/",
     fieldNoteLabel: "Read Field Brief: Mary's Sheet & Polanyi",
@@ -245,7 +245,7 @@ const COLLECTIVES: CollectivePillar[] = [
     bullets: [
       "Modular workflow blocks at the concrete shop-floor instance level",
       "Master Data Management (MDM) and operational memory",
-      "Cleverly tethered to FlowCraft (instance operational runtime)",
+      "Operationalized in FlowCraft (human-agent instance runtime)",
     ],
     fieldNoteHref: "/agentic-ai/the-application-layer/",
     fieldNoteLabel: "Read Field Brief: The SaaS/ERP Divide & Runtime",
@@ -265,7 +265,7 @@ const COLLECTIVES: CollectivePillar[] = [
     bullets: [
       "Structural gantry test harness and deterministic build loop",
       "Rig-in-a-box: power of the pipeline directly on the operator's PC",
-      "Cleverly tethered to The Rig (13-cell autonomous software factory)",
+      "Engineered in The Rig (autonomous software factory)",
     ],
     fieldNoteHref: "/agentic-ai/the-delivery-seam/",
     fieldNoteLabel: "Read Field Brief: The Software Factory & The Seam",
@@ -471,6 +471,7 @@ export default function AgenticPositionView() {
           The Enterprise (B.O.S.S.) · The Workflow (FlowCraft) · The Factory (The Rig)
           ==================================================================== */}
       <section id="the-collectives" className={s.triadSection}>
+        <span id="dispatches" style={{ display: "block", position: "relative", top: "-80px", visibility: "hidden" }} />
         <div className={s.triadInner}>
           <div className={s.triadHead}>
             <p className={s.eyebrow}>02 / Learn and Build</p>

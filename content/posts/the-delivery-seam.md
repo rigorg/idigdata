@@ -8,15 +8,13 @@ topic: "Software Manufacturing"
 
 # The Software Factory: Putting the Build Pipeline on the Operator's PC
 
-### By Robert Paddock · Founder & Enterprise Operator
-
 Across Silicon Valley and venture circles, the thesis of the **Software Factory** has taken center stage:
 
 > *Traditional packaged software (SAP, Salesforce, Oracle) will be replaced by AI-native software factories that autonomously generate, deploy, and maintain bespoke applications at a fraction of legacy cost.*
 
 In pursuit of this thesis, the frontier has split into two paradigms:
-1. **The External Factory** (e.g. 8090 Solutions): Generating bespoke enterprise applications externally in the cloud to replace both packaged SaaS and traditional Systems Integrators.
-2. **The Internal Autonomous Droid** (e.g. Factory.ai): Installing autonomous droids inside engineering repositories to automate ticket-to-PR-to-deploy cycles.
+1. **The External Software Factory**: Generating bespoke enterprise applications externally in the cloud to replace both packaged SaaS and traditional systems integrators.
+2. **The Internal Autonomous Droid**: Installing autonomous coding agents directly inside engineering repositories to automate ticket-to-PR-to-deploy cycles.
 
 Both motions represent legitimate leaps in code-generation velocity. 
 
@@ -24,7 +22,7 @@ Yet both crash into the exact same physical wall: **the 20% operational seam bet
 
 And more critically, both models keep the factory distant—either hosted in an external vendor's cloud or gated behind centralized SaaS APIs. 
 
-The real frontier is not an external agency writing code from 30,000 feet. The real frontier is **putting the power of the autonomous software factory directly on the operator’s PC: Rig-in-a-Box.**
+The real frontier is not an external agency writing code from 30,000 feet. The real frontier is **putting the power of the autonomous software factory directly on the operator's PC: Rig-in-a-Box.**
 
 ---
 
@@ -60,7 +58,7 @@ You inherit:
 - Frontline supervisors who have lived through three failed migrations in a decade and have developed deep institutional immunity to corporate change initiatives.
 - Mary, sitting on the loading dock, running the business on her desktop spreadsheet because she knows the official system will choke the first time an exception occurs.
 
-A checklist of "20 champions" is an influencer fantasy. Aligning 150 people across 25 task forces into zero-rollback cutover execution is the hardest work in business.
+A checklist of "20 champions" is an influencer fantasy. Aligning 150 people across 25 task forces with operating continuity built into the delivery plan is the hardest work in business.
 
 ---
 
@@ -68,7 +66,7 @@ A checklist of "20 champions" is an influencer fantasy. Aligning 150 people acro
 
 Here is the immutable economic reality of enterprise agentics:
 
-$$\mathbf{80\%\ \text{Automated Generation}} \times \mathbf{20\%\ \text{Physical Floor Delivery}} = \mathbf{100\%\ \text{Enterprise Outcome}}$$
+> **80% Automated Code Generation** × **20% Physical Floor Delivery** = **100% Enterprise Outcome**
 
 If you generate 80% of the code with autonomous agents, but you fail at the 20% delivery seam, your effective outcome is **zero**. 
 
@@ -83,7 +81,7 @@ In fact, it is worse than zero: you have spent capital generating software that 
 |   - Automated Code Gen        - Sit with Mary on the Dock   |
 |   - Fast Scaffold & MVP       - Map Stated vs Actual Truth  |
 |   - Local Execution Engine    - Align 150 People / 25 Teams |
-|   - Deterministic Harnesses   - Zero-Rollback Cutover       |
+|   - Deterministic Harnesses   - Operating Continuity Cutover|
 |                                                             |
 |            \                               /                |
 |             \                             /                 |
@@ -99,10 +97,10 @@ In fact, it is worse than zero: you have spent capital generating software that 
 
 To solve this equation, I didn't write an editorial or build a slide deck. I built **The Rig**.
 
-The Rig is an autonomous software factory running on an operator’s local workstation:
+The Rig is an autonomous software factory running on an operator's local workstation:
 1. **The 13-Cell Multi-Agent Runtime**: Thirteen specialized agent cells operating with deterministic caller gates, strict token governance, and immutable state synchronization.
 2. **Deterministic Test Harnesses Over Chat Prompts**: Instead of hoping a model generates working code through conversational prompting, The Rig runs every generation through automated compilers, unit test runners, and static verifiers before any code touches the codebase.
-3. **Local Sovereignty & Rig-in-a-Box**: Rather than sending proprietary company schemas into external cloud silos, Rig-in-a-box places the entire build and verification pipeline directly on the operator’s PC.
+3. **Local Sovereignty & Rig-in-a-Box**: Rather than sending proprietary company schemas into external cloud silos, Rig-in-a-box places the entire build and verification pipeline directly on the operator's PC.
 4. **Collective Intelligence Without Leakage**: Local workstations execute securely while feeding verified telemetry, skill definitions, and architectural patterns into a shared collective knowledge base.
 
 This is the shift from "asking an AI chatbot to write code" to running an **industrial software machine tool**.
@@ -111,12 +109,12 @@ This is the shift from "asking an AI chatbot to write code" to running an **indu
 
 ## 5. An Open Invitation to Builders & Peers
 
-I have spent twenty years across 50 enterprise implementations, 15 at massive scale, from warehouse docks to boardrooms. I have run 15+ cutovers without a single rollback, recovering an at-risk $8M program to save $2M, and consolidating 200 software silos down to 25 core operating platforms.
+I have spent 20+ years across 50+ enterprise implementations and 15 enterprise transformations at scale, from warehouse docks to boardrooms. I have led enterprise cutovers with operating continuity built into the delivery plan, recovered an at-risk $8M program to save $2M, and consolidated 200 software silos down to 25 core operating platforms.
 
-From day one, the genesis of **The Rig**, **B.O.S.S.**, and **FlowCraft** was never to build a closed proprietary wall garden. 
+From day one, the genesis of **The Rig**, **B.O.S.S.**, and **FlowCraft** was never to build a closed proprietary walled garden. 
 
 It was to build a complete, working, sovereign operating contraption—and share it with peers, builders, and curious practitioners who want to build something incredible together.
 
-If you are an engineer building local pipelines, an architect wrestling with the 20% seam, or an operator curious about what happens when agentics hits physical reality:
+If you are an engineer building local pipelines, an architect wrestling with the 20% seam, or an operator curious about what happens when agentics hits physical reality: explore our delivery outcomes across [The Block](/block/) and [Custom Enterprise Scoping](/block/custom/), or reach out directly.
 
 **The system is open. Let's build together.**

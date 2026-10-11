@@ -49,20 +49,32 @@ function renderMarkdown(md: string) {
   let inCodeBlock = false;
   let codeBuffer: string[] = [];
   let inList = false;
+  let listType: "ul" | "ol" = "ul";
   let listItems: string[] = [];
   let key = 0;
 
   function flushList() {
     if (inList && listItems.length > 0) {
-      elements.push(
-        <ul key={`ul-${key++}`} className={s.list}>
-          {listItems.map((item, idx) => (
-            <li key={idx} dangerouslySetInnerHTML={{ __html: formatInline(item) }} />
-          ))}
-        </ul>
-      );
+      if (listType === "ol") {
+        elements.push(
+          <ol key={`ol-${key++}`} className={s.orderedList}>
+            {listItems.map((item, idx) => (
+              <li key={idx} dangerouslySetInnerHTML={{ __html: formatInline(item) }} />
+            ))}
+          </ol>
+        );
+      } else {
+        elements.push(
+          <ul key={`ul-${key++}`} className={s.list}>
+            {listItems.map((item, idx) => (
+              <li key={idx} dangerouslySetInnerHTML={{ __html: formatInline(item) }} />
+            ))}
+          </ul>
+        );
+      }
       listItems = [];
       inList = false;
+      listType = "ul";
     }
   }
 
@@ -80,6 +92,7 @@ function renderMarkdown(md: string) {
 
   function formatInline(text: string): string {
     return text
+      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
       .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
       .replace(/\*(.*?)\*/g, "<em>$1</em>")
       .replace(/`([^`]+)`/g, "<code>$1</code>");
@@ -116,6 +129,10 @@ function renderMarkdown(md: string) {
       flushList();
       continue; // Skip H1 since it's in the header
     }
+    if (line.startsWith("### By ")) {
+      flushList();
+      continue; // Skip Byline heading since it's in the header
+    }
     if (line.startsWith("## ")) {
       flushList();
       elements.push(<h2 key={`h2-${key++}`} className={s.h2}>{line.slice(3)}</h2>);
@@ -138,10 +155,26 @@ function renderMarkdown(md: string) {
       continue;
     }
 
-    // List item
+    // Unordered list item
     if (line.startsWith("- ") || line.startsWith("* ")) {
+      if (inList && listType !== "ul") {
+        flushList();
+      }
       inList = true;
+      listType = "ul";
       listItems.push(line.slice(2));
+      continue;
+    }
+
+    // Ordered list item
+    const olMatch = line.match(/^(\d+)\.\s+(.*)$/);
+    if (olMatch) {
+      if (inList && listType !== "ol") {
+        flushList();
+      }
+      inList = true;
+      listType = "ol";
+      listItems.push(olMatch[2]);
       continue;
     }
 

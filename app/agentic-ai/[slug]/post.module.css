@@ -292,3 +292,25 @@
   background: var(--surface-alt);
   border-color: var(--line-dark);
 }
+
+.content a {
+  color: var(--brass-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 500;
+  transition: color 0.15s;
+}
+
+.content a:hover {
+  color: var(--ink);
+}
+
+.content .orderedList {
+  margin: 20px 0 28px 24px;
+  list-style-type: decimal;
+}
+
+.content .orderedList li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
