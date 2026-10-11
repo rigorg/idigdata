@@ -161,7 +161,7 @@ export default function ExperiencePage() {
                 I connect the boardroom, the business operation, and the software that makes it run.
               </p>
               <p className="p-prose mt-4">
-                Twenty years of leadership connecting business ownership, CIO governance, and hands-on systems architecture across 50+ enterprise implementations and 15 scale transformations. When companies modernize, acquire, or deploy autonomous workflows, I bridge the delivery seam between software generation and live operations—bringing accountable execution to people, data, systems, and delivery partners.
+                Twenty years of leadership connecting business ownership, CIO governance, and hands-on systems architecture across 50+ enterprise implementations and 15 transformations at scale. When companies modernize, acquire, or deploy autonomous workflows, I bridge the delivery seam between software generation and live operations—bringing accountable execution to people, data, systems, and delivery partners.
               </p>
               <p className="p-prose mt-3">
                 Having founded and built a $130M operating business, served as CIO of a multi-site manufacturer, and architected core ERP and supply-chain platforms, I know the business from the floor to the boardroom. I understand how systems integrators and software vendors scope and bill—and I use both perspectives to eliminate partner waste, align delivery, and keep plant and commercial operations running.
@@ -204,7 +204,7 @@ export default function ExperiencePage() {
               <h3 className="mt-2">Core Systems Architecture &amp; Delivery</h3>
               <p className="font-medium text-sm text-[#142840]/75 mt-1">Data Integration Group · Principal &amp; Solution Architect</p>
               <p className="p-prose mt-4">
-                Across 50+ implementations and 15 scale transformations, bridging the critical operational seam where enterprise software meets physical work. Extensive cutover leadership across Microsoft Dynamics 365, SAP, NetSuite, and OneStream—compressing post-acquisition close from 18 days to four and turning around troubled multi-million-dollar programs. Earlier partner-side delivery at Access IT provides insider mastery of how systems integrators scope, bill, and staff.
+                Across 50+ implementations and 15 transformations at scale, bridging the critical operational seam where enterprise software meets physical work. Extensive cutover leadership across Microsoft Dynamics 365, SAP, NetSuite, and OneStream—compressing post-acquisition close from 18 days to four and turning around troubled multi-million-dollar programs. Earlier partner-side delivery at Access IT provides insider mastery of how systems integrators scope, bill, and staff.
               </p>
             </article>
             <article>
