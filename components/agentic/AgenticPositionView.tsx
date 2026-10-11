@@ -405,7 +405,7 @@ export default function AgenticPositionView() {
           company: "",
           message: formattedMessage,
           interestType: "applied_agentics",
-          source: "learn-through-the-work-collective",
+          source: "website-agentic",
           _hp: hp,
         }),
       });

@@ -164,8 +164,10 @@ export const ROUTE_PRIORITY: Record<string, number> = {
   "/": 1.0,
   "/experience/": 0.9,
   "/block/": 0.9,
+  "/collective/": 0.9,
   [WEBLOG_PATH]: 0.9,
   "/contact/": 0.8,
+  "/block/custom/": 0.8,
   "/faq/": 0.6,
   "/privacy/": 0.3,
 };
@@ -174,8 +176,10 @@ export const ROUTE_CHANGE_FREQUENCY: Record<string, SitemapEntry["changeFrequenc
   "/": "monthly",
   "/experience/": "monthly",
   "/block/": "monthly",
+  "/collective/": "weekly",
   [WEBLOG_PATH]: "weekly",
   "/contact/": "yearly",
+  "/block/custom/": "monthly",
   "/faq/": "monthly",
   "/privacy/": "yearly",
 };

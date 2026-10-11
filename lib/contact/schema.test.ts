@@ -26,7 +26,7 @@ describe("contact schema", () => {
   });
 
   it("accepts each whitelisted website source", () => {
-    for (const source of ["website-contact", "website-reader", "website-block", "website-block-custom"]) {
+    for (const source of ["website-contact", "website-reader", "website-block", "website-block-custom", "website-collective", "website-agentic"]) {
       const parsed = ContactSchema.safeParse({ name: "Alex", email: "alex@example.com", source });
       assert.equal(parsed.success, true, source);
       assert.equal(parsed.success && parsed.data.source, source);

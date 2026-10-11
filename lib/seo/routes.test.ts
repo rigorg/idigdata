@@ -43,8 +43,10 @@ describe("route helpers", () => {
     assert.equal(priorityFor("/"), 1.0);
     assert.equal(priorityFor("/experience/"), 0.9);
     assert.equal(priorityFor("/block/"), 0.9);
+    assert.equal(priorityFor("/collective/"), 0.9);
     assert.equal(priorityFor("/agentic-ai/"), 0.9);
     assert.equal(priorityFor("/contact/"), 0.8);
+    assert.equal(priorityFor("/block/custom/"), 0.8);
     assert.equal(priorityFor("/faq/"), 0.6);
     assert.equal(priorityFor("/privacy/"), 0.3);
     assert.equal(priorityFor("/agentic-ai/some-post/"), 0.7);
@@ -57,7 +59,7 @@ describe("enumerateAppRoutes against the real app directory", () => {
   );
 
   it("includes the public pages", () => {
-    for (const expected of ["/", "/experience/", "/block/", "/contact/", "/faq/", "/privacy/"]) {
+    for (const expected of ["/", "/experience/", "/block/", "/collective/", "/contact/", "/faq/", "/privacy/"]) {
       assert.ok(routes.includes(expected), `missing ${expected} in ${routes.join(", ")}`);
     }
   });

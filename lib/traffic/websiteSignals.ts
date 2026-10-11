@@ -71,16 +71,24 @@ const ASSET_PREFIXES = [
 
 const DIGOPS_SITE_PATHS = new Set([
   "/",
-  "/agentics",
-  "/agentics/",
-  "/applied-agentics",
-  "/applied-agentics/",
-  "/approach",
-  "/approach/",
+  "/collective",
+  "/collective/",
+  "/agentic-ai",
+  "/agentic-ai/",
+  "/agentic-ai/marys-sheet",
+  "/agentic-ai/marys-sheet/",
+  "/agentic-ai/the-application-layer",
+  "/agentic-ai/the-application-layer/",
+  "/agentic-ai/the-delivery-seam",
+  "/agentic-ai/the-delivery-seam/",
+  "/experience",
+  "/experience/",
+  "/block",
+  "/block/",
+  "/block/custom",
+  "/block/custom/",
   "/contact",
   "/contact/",
-  "/engagement",
-  "/engagement/",
   "/faq",
   "/faq/",
   "/privacy",
@@ -95,16 +103,24 @@ const DIGOPS_SITE_PATHS = new Set([
   "/method/",
   "/transformations",
   "/transformations/",
-  "/experience",
-  "/experience/",
-  "/block",
-  "/block/",
   "/application-layer",
   "/application-layer/",
   "/agentics",
   "/agentics/",
+  "/applied-agentics",
+  "/applied-agentics/",
   "/agentic-layer",
   "/agentic-layer/",
+  "/approach",
+  "/approach/",
+  "/engagement",
+  "/engagement/",
+  "/about",
+  "/about/",
+  "/capabilities",
+  "/capabilities/",
+  "/articles",
+  "/articles/",
   "/boss",
   "/boss/",
   "/rig",
@@ -267,7 +283,10 @@ export function isAssetPath(path: string): boolean {
 }
 
 export function isDigOpsSitePath(path: string): boolean {
-  return DIGOPS_SITE_PATHS.has(normalizePath(path));
+  const normalized = normalizePath(path).toLowerCase();
+  if (DIGOPS_SITE_PATHS.has(normalized)) return true;
+  if (normalized.startsWith("/agentic-ai/") || normalized.startsWith("/block/")) return true;
+  return false;
 }
 
 /** Non-marketing paths that scanners hammer — never buyer_signal. */

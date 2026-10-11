@@ -8,15 +8,18 @@ import {
 
 describe("websiteSignals", () => {
   it("marks DigOps paths as buyer signal when direct", () => {
-    const signal = classifyWebsiteSignal({
-      path: "/approach/",
-      hostname: "idigdata.com",
-      userAgent:
-        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/120.0.0.0",
-    });
-    assert.equal(signal.suppress_pageview, false);
-    assert.equal(signal.buyer_signal, true);
-    assert.equal(signal.traffic_class, "direct");
+    for (const testPath of ["/approach/", "/collective/", "/agentic-ai/", "/agentic-ai/marys-sheet/"]) {
+      const signal = classifyWebsiteSignal({
+        path: testPath,
+        hostname: "idigdata.com",
+        userAgent:
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/120.0.0.0",
+      });
+      assert.equal(signal.suppress_pageview, false, testPath);
+      assert.equal(signal.buyer_signal, true, testPath);
+      assert.equal(signal.traffic_class, "direct", testPath);
+      assert.equal(isProbePathName(testPath), false, `${testPath} must not be probe`);
+    }
   });
 
   it("classifies php probes as probe/bot", () => {

@@ -113,11 +113,15 @@ export async function POST(req: NextRequest) {
     message.includes("THE BLOCK") || message.includes("BLOCK SCOPE QUOTE") || message.includes("DELIVERY QUOTE") || message.includes("FLIGHT SCOPE QUOTE");
   const isReaderNote =
     message.includes("[READER NOTE") || message.includes("AGENTIC AI WEBLOG");
+  const isCollectiveInquiry =
+    message.includes("THE COLLECTIVE") || message.includes("COLLECTIVE NOTE") || row.source === "website-collective";
   const subject = isReaderNote
     ? `[Reader Note: Agentic AI] ${safeName} / ${safeEmail}`
-    : isBlockQuote
-      ? `[The Block Quote] ${safeName}${company ? ` (${sanitizeHeaderField(company)})` : ""} / ${safeEmail}`
-      : `[idigdata] Reach out: ${safeName} / ${safeEmail}`;
+    : isCollectiveInquiry
+      ? `[The Collective] ${safeName}${company ? ` (${sanitizeHeaderField(company)})` : ""} / ${safeEmail}`
+      : isBlockQuote
+        ? `[The Block Quote] ${safeName}${company ? ` (${sanitizeHeaderField(company)})` : ""} / ${safeEmail}`
+        : `[idigdata] Reach out: ${safeName} / ${safeEmail}`;
   const lines = [
     `From: ${safeName} <${safeEmail}>`,
     role ? `Role: ${sanitizeHeaderField(role)}` : null,

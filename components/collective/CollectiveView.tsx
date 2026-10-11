@@ -30,18 +30,23 @@ export default function CollectiveView() {
     setErrorMsg("");
 
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("/api/contact/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: formState.name,
-          email: formState.email,
-          company: formState.company,
-          source: "The Collective",
-          topic: formState.interest === "collaborate"
-            ? "The Collective // Peer Collaboration & Shared Patterns"
-            : "Enterprise Build Inquiry // Custom Sovereign System",
-          message: formState.message,
+          name: formState.name.trim(),
+          email: formState.email.trim(),
+          company: formState.company.trim(),
+          role: "Collective Collaborator",
+          message: [
+            `[THE COLLECTIVE // INQUIRY]`,
+            `Topic: ${formState.interest === "collaborate" ? "Peer Collaboration & Shared Patterns" : "Enterprise Build Inquiry (Sovereign System)"}`,
+            ``,
+            formState.message.trim(),
+          ].join("\n"),
+          interestType: "applied_agentics",
+          source: "website-collective",
+          _hp: "",
         }),
       });
 

@@ -18,6 +18,8 @@ export const ContactSourceSchema = z.enum([
   "website-reader",
   "website-block",
   "website-block-custom",
+  "website-collective",
+  "website-agentic",
 ]);
 
 export const ContactSchema = z.object({

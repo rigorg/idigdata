@@ -3,6 +3,7 @@ import { describe, it } from "node:test";
 import {
   blockServiceSchema,
   breadcrumbSchema,
+  collectiveSchema,
   labelForSegment,
   normalizePathname,
   PERSON_DESCRIPTION,
@@ -35,6 +36,7 @@ describe("jsonld builders", () => {
 
   it("labels known segments and title-cases the rest", () => {
     assert.equal(labelForSegment("block"), "The Block");
+    assert.equal(labelForSegment("collective"), "The Collective");
     assert.equal(labelForSegment("agentic-ai"), "Agentic AI");
     assert.equal(labelForSegment("some-new-page"), "Some New Page");
   });
@@ -45,7 +47,7 @@ describe("jsonld builders", () => {
   });
 
   it("emits a breadcrumb for every non-root route", () => {
-    for (const pathname of ["/experience/", "/contact/", "/faq/", "/privacy/", "/agentic-ai/some-post/"]) {
+    for (const pathname of ["/experience/", "/collective/", "/contact/", "/faq/", "/privacy/", "/agentic-ai/some-post/"]) {
       const schemas = routeSchemas(pathname);
       assert.equal(schemas[0]["@type"], "BreadcrumbList", pathname);
       roundTrip(schemas[0]);
@@ -69,6 +71,16 @@ describe("jsonld builders", () => {
     const text = roundTrip(service);
     assert.equal(/price|offers?":\s*\{[^}]*price/i.test(text), false, "no prices");
     assert.equal(routeSchemas("/experience/").some((s) => s["@type"] === "Service"), false);
+  });
+
+  it("adds WebPage on /collective/", () => {
+    assert.deepEqual(
+      routeSchemas("/collective/").map((s) => s["@type"]),
+      ["BreadcrumbList", "WebPage"],
+    );
+    const page = collectiveSchema();
+    assert.equal(page.name, "The Collective");
+    roundTrip(page);
   });
 
   it("adds Blog on /agentic-ai/ only, not on posts", () => {

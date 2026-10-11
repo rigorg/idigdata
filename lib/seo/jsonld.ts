@@ -29,6 +29,7 @@ const BLOCK_DISCIPLINES = [
 const SEGMENT_LABELS: Record<string, string> = {
   experience: "Experience",
   block: "The Block",
+  collective: "The Collective",
   contact: "Contact",
   faq: "FAQ",
   privacy: "Privacy",
@@ -141,12 +142,33 @@ export function weblogSchema(): JsonLdNode {
  * Everything the route layer should emit for `pathname`. Root gets nothing
  * (WebSite/Organization/Person live in the static JsonLd component).
  */
+export function collectiveSchema(): JsonLdNode {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "The Collective",
+    url: `${SITE_ORIGIN}/collective/`,
+    description:
+      "Intent equals outcome delivered. Custom, sovereign operational software built on B.O.S.S., FlowCraft, and The Rig. Run in isolation on private iron; grow through the collective pattern library.",
+    publisher: organizationRef(),
+    author: personRef(),
+    inLanguage: "en-US",
+    about: {
+      "@type": "SoftwareApplication",
+      name: "The Collective Pattern Commons",
+      applicationCategory: "Enterprise Workflow Pattern Exchange",
+      operatingSystem: "Private Enterprise Iron",
+    },
+  };
+}
+
 export function routeSchemas(pathname: string | null | undefined): JsonLdNode[] {
   const normalized = normalizePathname(pathname);
   const out: JsonLdNode[] = [];
   const crumbs = breadcrumbSchema(normalized);
   if (crumbs) out.push(crumbs);
   if (normalized === "/block/") out.push(blockServiceSchema());
+  if (normalized === "/collective/") out.push(collectiveSchema());
   if (normalized === WEBLOG_PATH) out.push(weblogSchema());
   return out;
 }
