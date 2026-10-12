@@ -209,7 +209,7 @@ export default function ExperiencePage() {
               <h3 className="mt-2">Applied Enterprise Agentics &amp; Software Factories</h3>
               <p className="font-medium text-sm text-[#142840]/75 mt-1">Data Integration Group · Autonomous Systems Architecture</p>
               <p className="p-prose mt-4">
-                Architecting and operating production multi-agent runtimes that connect autonomous software generation to live enterprise operations. Grounded in the tribal heuristics of frontline operators, enforcing schema contracts, deterministic validation gates, and human authorization at consequential operational steps—turning unwritten company knowledge into dependable enterprise capacity.
+                Architecting and operating multi-agent runtimes that connect software generation to enterprise operations. Grounded in the tribal heuristics of frontline operators, enforcing schema contracts, deterministic validation gates, and human authorization at consequential operational steps—turning unwritten company knowledge into dependable enterprise capacity.
               </p>
             </article>
           </div>
@@ -285,7 +285,7 @@ export default function ExperiencePage() {
             <article>
               <h3>Multi-facility plant-floor &amp; warehouse integration</h3>
               <p className="p-prose mt-4">
-                Engineered real-time integration across plant MES, automated warehouse tracking, and tier-1 ERPs—maintaining continuous operating continuity with zero unbudgeted downtime across high-volume production facilities.
+                Engineered real-time integration across plant MES, automated warehouse tracking, and tier-1 ERPs—maintaining operational continuity across high-volume production facilities.
               </p>
             </article>
             <article>
@@ -546,7 +546,7 @@ export default function ExperiencePage() {
               <p className="p-kicker">Frontier Production Runtimes</p>
               <h2 className="p-h2 mt-1">Applied agentics on the enterprise already running.</h2>
               <p className="p-prose mt-4">
-                Enterprise agentics requires more than a model and an API key—it requires deterministic caller boundaries, maintained company records, and human authority at consequential operational steps. I architect, build, and deploy multi-agent runtimes with AST validation gates and schema contracts that bridge the delivery seam between autonomous code generation and physical floor execution.
+                Enterprise agentics requires more than a model and an API key—it requires deterministic caller boundaries, maintained company records, and human authority at consequential operational steps. I architect and build multi-agent runtimes with validation gates and schema contracts that bridge the delivery seam between autonomous code generation and physical floor execution.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0">

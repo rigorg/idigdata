@@ -697,6 +697,7 @@ function TheBlockConfiguratorPage() {
                   ? "bg-[#F3ECE0] border-amber-300 text-[#142840] shadow-xs"
                   : "bg-amber-400/10 border-amber-400/30 text-amber-300"
               }`}
+              title="A Block is a defined 2-to-4-week delivery phase. Complex scopes may require several Blocks; deliverables, dependencies, and acceptance are agreed before work begins."
             >
               <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
               <span>1 Block = 2 to 4 Weeks</span>
@@ -770,7 +771,7 @@ function TheBlockConfiguratorPage() {
               isLight ? "text-slate-700" : "text-slate-300"
             }`}
           >
-            Decades of enterprise leadership distilled into six core disciplines. While software factories generate code, transformations succeed or fail in the operational seam—connecting business priority, legacy ledgers, and frontline adoption. Select your verified outcomes, align on scope, and agree on a structured delivery block with a clear flight of time.
+            Decades of enterprise leadership distilled into six core disciplines. While software factories generate code, transformations succeed or fail in the operational seam—connecting business priority, legacy ledgers, and frontline adoption. Select the capabilities your business needs, align on scope, and frame your scope request with clear acceptance criteria.
           </p>
           <p
             className={`text-xs font-mono mt-2 max-w-xl mx-auto ${
@@ -1261,7 +1262,7 @@ function TheBlockConfiguratorPage() {
                       No outcomes selected yet
                     </p>
                     <p className="text-xs text-slate-500 mt-1 leading-relaxed">
-                      Select outcomes on the block above to calculate a delivery flight, or write your situation in the proposal form.
+                      Select outcomes on the block above to frame your scope request, or write your situation in the proposal form.
                     </p>
                     <button
                       type="button"
@@ -1347,7 +1348,7 @@ function TheBlockConfiguratorPage() {
                   Request Your Scoping Proposal
                 </h3>
                 <p className={`text-xs mt-1 ${isLight ? "text-slate-600" : "text-slate-400"}`}>
-                  1 Block = 2 to 4 Weeks. Scope and delivery flight timing are agreed in your proposal.
+                  A Block is a defined 2-to-4-week delivery phase. Complex scopes may require several Blocks; scope, dependencies, and acceptance are agreed before work begins.
                 </p>
               </div>
 

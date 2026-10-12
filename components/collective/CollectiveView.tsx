@@ -13,7 +13,7 @@ export default function CollectiveView() {
     message: "",
   });
   const [submitting, setSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "sent" | "recorded">("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
   const handleInterestSelect = (type: "collaborate" | "build") => {
@@ -50,11 +50,12 @@ export default function CollectiveView() {
         }),
       });
 
-      if (!res.ok) {
-        throw new Error("Failed to send message. Please try again or reach out directly.");
+      const data = await res.json();
+      if ((res.ok || res.status === 202) && data.ok) {
+        setSubmitStatus(data.notification === "sent" ? "sent" : "recorded");
+      } else {
+        throw new Error(data.error || "Failed to send message. Please try again or reach out directly.");
       }
-
-      setSubmitted(true);
     } catch (err: unknown) {
       const msg = err instanceof Error ? err.message : "An unexpected error occurred.";
       setErrorMsg(msg);
@@ -73,23 +74,23 @@ export default function CollectiveView() {
             The Collective<span>.</span>
           </h1>
           <p className={s.heroDek}>
-            1 Rig. 100 Rigs. 1,000 Rigs. An open collective of sovereign human factories—collaborating together on enterprise agentics.
+            The Collective brings together the enterprise agentic systems I am building and an invitation to develop them with other practitioners.
           </p>
           <div style={{ maxWidth: "860px", color: "var(--ink)", fontSize: "16px", lineHeight: "1.7", marginBottom: "36px" }}>
             <p style={{ marginBottom: "14px" }}>
-              Every human operator can now be their own software factory. The Rig is the machine that builds the machines that build living assets of value—and it builds the machines that can build themselves. Operating on private iron, it couples a human operator with an autonomous agent crew to map, fabricate, and run systems that match how an enterprise actually functions.
+              Every human operator can now be their own software factory. The Rig couples an experienced operator with agentic build harnesses to map, fabricate, and run systems that match how an enterprise actually functions.
             </p>
             <p style={{ marginBottom: "14px" }}>
-              Software is not a static purchase or a rented seat. It is an <strong>org-instance structure</strong> with a continuous learning loop. The Rig designs and provisions authoritative orgs—with B.O.S.S. mapping domain truth and FlowCraft executing runtime operations—each spawning as many running instances as the firm requires.
+              Software is not a static purchase or a rented seat. It is an <strong>org-instance structure</strong> with a continuous learning loop. Authoritative orgs map domain truth and execute operations, while firm instances run the daily work.
             </p>
             <p style={{ marginBottom: "14px" }}>
-              Each org carries its own built-in software factory, making it completely <strong>sovereign and severable</strong> from day one. An enterprise can take a B.O.S.S. or FlowCraft org and run it entirely on its own private iron, with its ledgers, transactions, and customer records remaining 100% private.
+              <strong>What works today:</strong> deterministic developer harnesses running on local iron, structured schema boundaries that isolate sensitive ledgers, and verified workflow blocks.
             </p>
             <p style={{ marginBottom: "14px" }}>
-              When an org stays part of <strong>The Collective</strong>, the pattern flywheel turns: the patterns are driven through composable <strong>workflow blocks</strong>. A workflow block updated and battle-tested in one org flows through to the other orgs through The Rig. Capability compounds across the commons without anyone ever sharing private data.
+              <strong>What we are developing:</strong> open pattern sharing across sovereign orgs, composable multi-seat collaboration, and severable enterprise architectures that reduce recurring vendor lock-in.
             </p>
             <p style={{ marginBottom: "14px" }}>
-              <strong>We are not claiming we have it all figured out. This is the seed.</strong> We are pulling the pieces together, and we are looking for passionate builders to join the collective. I am sharing the architecture, the runtimes, and the harnesses so we can collaborate, build open source, and make something special together.
+              <strong>We are not claiming we have it all figured out. This is the seed.</strong> We are pulling the pieces together, and we are looking for passionate builders to join the collective. I am sharing the architecture, the runtimes, and the harnesses so we can collaborate, build open patterns, and create something durable together.
             </p>
           </div>
 
@@ -442,10 +443,10 @@ export default function CollectiveView() {
 
             <div className={s.specCaption}>
               <div>
-                <strong>Org-Instance Sovereignty &amp; Built-In Factory:</strong> The Rig creates the org-instance structure. B.O.S.S. and FlowCraft each hold an authoritative org and spawn as many firm instances as needed. Each org contains its own built-in factory—completely sovereign, severable, and runnable on private iron with zero vendor lock-in.
+                <strong>Org-Instance Sovereignty &amp; Built-In Factory:</strong> The Rig creates the org-instance structure. B.O.S.S. and FlowCraft each hold an authoritative org and spawn as many firm instances as needed. Each org is designed with built-in development harnesses—architected to be severable and runnable on private iron to minimize vendor dependencies.
               </div>
               <div>
-                <strong>The Workflow Block Network Effect:</strong> The patterns are driven through composable workflow blocks (WFBs). When connected to The Collective, workflow blocks updated in one org flow through to the other, through The Rig. The collective library compounds while private data and ledgers stay 100% inside your perimeter.
+                <strong>The Workflow Block Network Effect:</strong> The patterns are driven through composable workflow blocks (WFBs). When connected to The Collective, workflow blocks updated in one org flow through to the other, through The Rig. The collective library compounds while private data and ledgers remain within your operational boundary.
               </div>
             </div>
           </div>
@@ -459,7 +460,7 @@ export default function CollectiveView() {
             <p className={s.eyebrow}>THE WORKING CONTRAPTION // THREE INTERLOCKING SYSTEMS</p>
             <h2>How the systems work together<span>.</span></h2>
             <p>
-              To make a collective work in practice, you need a deterministic stack. Three open systems, tested on live enterprise floors, designed to fit together seamlessly.
+              To make a collective work in practice, you need a deterministic stack. Three systems designed to work together, grounding twenty years of plant-floor operating experience into modern agentic runtimes.
             </p>
           </div>
 
@@ -693,9 +694,17 @@ export default function CollectiveView() {
             </p>
           </div>
 
-          {submitted ? (
+          {submitStatus === "sent" || submitStatus === "recorded" ? (
             <div className={`${s.statusMessage} ${s.statusSuccess}`}>
-              <strong>Message received.</strong> Thank you for reaching out. I have received your note and will review it and reply directly to your email shortly.
+              {submitStatus === "sent" ? (
+                <>
+                  <strong>Message received.</strong> Thank you for reaching out. Your note has been sent directly to Rob. He will review it and reply directly to your email shortly.
+                </>
+              ) : (
+                <>
+                  <strong>Note recorded.</strong> Thank you for reaching out. Your note has been safely recorded. Direct email notification is unconfirmed on this environment — write robert@idigdata.com directly if you need a same-day response.
+                </>
+              )}
             </div>
           ) : (
             <form onSubmit={handleSubmit}>

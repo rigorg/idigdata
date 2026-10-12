@@ -115,7 +115,7 @@ export default function FolioHome() {
               <p className="p-kicker">Operational Knowledge &amp; Frontier Software</p>
               <h2 className="p-h2 mt-1">Put the full knowledge of your business to work.</h2>
               <p className="p-prose mt-3">
-                Years of operating knowledge live across your people, your data, and your systems. I design, build, and deploy production agentic workflows that turn company knowledge into executable enterprise capacity—grounded in company-owned data with human authorization.
+                Years of operating knowledge live across your people, your data, and your systems. I bring decades of enterprise leadership into modern agentic workflows that turn company knowledge into executable enterprise capacity—grounded in company-owned data with human authorization.
               </p>
             </div>
             <div className="shrink-0">

@@ -23,7 +23,7 @@ const FAQ = [
   },
   {
     q: "What mandates do you take?",
-    a: "The full mandate or a defined phase: Interim or Contract CIO, Chief Transformation Officer, or Lead Enterprise Systems Architect. Work can also be structured through The Block—focused, two-to-four-week productized capability blocks across six enterprise disciplines. I work above software vendors and systems integrators, reporting directly to the CEO, CFO, or Board.",
+    a: "Executive leadership, transformation delivery, or a defined part of the work. The mandate, reporting relationship, and engagement structure depend on the responsibility and business need. Work can also be structured through The Block—focused, two-to-four-week productized capability blocks across six enterprise disciplines.",
   },
   {
     q: "What does the company own when you leave?",

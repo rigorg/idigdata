@@ -89,7 +89,7 @@ The catastrophe was averted because Mary walked past maintenance on her morning 
 
 ## 4. "You're Going to Have More Important Things to Do, Mary"
 
-When we led this transformation, our goal was never to replace Mary with software or pave over her judgment with a generic corporate template. The goal was to solve the multi-variable puzzle that was exhausting her, liberate her from clerical firefighting, and eliminate the catastrophic single-point-of-failure risk hanging over the brewery.
+When addressing an operational challenge of this scale, the goal is never to replace experienced operators with software or pave over their judgment with a generic corporate template. The goal is to solve the multi-variable puzzle that exhausts people on the floor, liberate them from clerical firefighting, and eliminate the single-point-of-failure risk hanging over the facility.
 
 We implemented purpose-built operational scheduling:
 - Multi-tier skill and certification tracking mapped directly to physical machines.
@@ -142,7 +142,7 @@ Enterprise agentics will not succeed by attempting to eliminate the people who r
 
 ---
 
-> ### The Field Brief Trilogy
-> **Field Brief 01 // The Workflows**: Uncovering the unwritten reality of Mary's sheet is the mandatory first step. But once you capture how work actually happens on the floor, you confront the next operational boundary: what happens when those workflows cross department boundaries into the space between the tasks?
-> 
-> → Continue to **[Field Brief 02: The Space Between the Tasks & The Delivery Seam](/agentic-ai/the-delivery-seam/)**
+### The Field Brief Trilogy
+**Field Brief 01 // The Workflows**: Uncovering the unwritten reality of Mary's sheet is the mandatory first step. But once you capture how work actually happens on the floor, you confront the next operational boundary: how metadata and deterministic workflows enable teams to own their operational software.
+
+→ Continue to **[Field Brief 02: Workflows Over Chatbots & The Sovereign Substrate](/agentic-ai/the-application-layer/)**

@@ -298,7 +298,7 @@ const COLLECTIVES: CollectivePillar[] = [
         "Copilot is really the new Microsoft Clippy... DIY AI is a science project. What matters isn't the model—it’s the metadata and the workflows.",
     },
     body:
-      "Enterprise computing is crossing an architectural threshold: conversational chat and 'vibe coding' fail the moment they touch master data, regulatory compliance, and general ledgers. Salesforce is right: enterprise value lives in metadata and workflows, not chatbots. But while industry rags celebrate 'agentic champions,' internal builders remain handcuffed without a deterministic enterprise framework. The controversial reality: when talented enterprise teams are equipped with open patterns and runtime harnesses, legacy ERP monopolies fall away. The enterprise will build and own its core operational systems.",
+      "Enterprise computing is crossing an architectural threshold: conversational chat and unstructured prompts struggle the moment they touch master data, regulatory compliance, and general ledgers. Salesforce is right: enterprise value lives in metadata and workflows, not generic chat. But while trade press often focuses on isolated champions, internal builders need deterministic enterprise frameworks to make dependable progress. Agentic tools expand what enterprise teams can build and own. The judgment is knowing what to build, what to retain, what to integrate, and how to verify it.",
     inquiries: [
       "Where Salesforce gets it right: why metadata and consequential workflows beat chatbots",
       "The agentic champion dilemma: why internal builders need a deterministic enterprise framework",
@@ -323,11 +323,11 @@ const COLLECTIVES: CollectivePillar[] = [
         "The incremental units of this system are AI agents. This system will be built by engineers, and in turn will build their software. This system is the software factory... We are building the machine that builds the machine.",
     },
     body:
-      "Software engineering is crossing a permanent threshold: code is no longer written line by line; it is manufactured by autonomous systems. But where Factory.ai and Big Tech centralize software generation in closed venture clouds with proprietary droids, enterprise reality requires sovereignty. The real power is putting the industrial fabrication line directly into the hands of the human operator on local iron: the machine that builds the machines that build the living software assets—with AST calipers, deterministic test gates, and git-grounded task ledgers under absolute human ownership.",
+      "Software engineering is crossing an important threshold: code is increasingly assisted and accelerated by autonomous systems. While cloud-hosted developer platforms offer speed, enterprises handling regulated data and proprietary workflows often require architectural sovereignty. The real leverage comes from placing software fabrication tools directly into the hands of experienced operators on local iron: building living software assets with deterministic test gates and git-grounded task ledgers under human oversight.",
     inquiries: [
       "Moving from prompt-assisted coding to sovereign software fabrication",
       "Rigorous AST calipers and deterministic test gates vs. unreviewable code generation",
-      "The 80/20 delivery equation: why autonomous software factories still need physical floor truth",
+      "The delivery seam: why autonomous software factories still need physical floor truth",
     ],
     fieldNoteHref: "/agentic-ai/the-delivery-seam/",
     fieldNoteLabel: "Read Field Brief: The Machine That Builds the Machine",
