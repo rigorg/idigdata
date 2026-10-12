@@ -71,3 +71,4 @@ Production publishing is executed by the cc chief (superintendent) on Capo's wor
 | 2026-10-06 (2) | idigdata-j4z91qp9u-loop-smith.vercel.app | 0d1756a | cc, on Capo's word ("go"): Open Graph cards per page |
 
 | 2026-10-07 | idigdata-8x9779wxr-loop-smith.vercel.app | c2987c1 | CX on Capo's explicit release-specific reassignment: narrow Sierra disclosure correction; both domains aliased and read back HTTP 200; nine routes match local 3100; typecheck and 65 tests pass; IndexNow 200 OK. Standing custody policy unchanged. |
+| 2026-10-12 | idigdata-ixn108omy-loop-smith.vercel.app | 7245e39 | AG, on Capo's word ("go"): credibility & tone pass; The Block delivery scope framing, Delivery Seam dynamic, trilogy 01->02->03 alignment, Collective maturity calibration & HTTP 202 handling, FAQ mandate expansion, Home & Experience grounded statements; both domains aliased and read back HTTP 200; 76 tests pass; IndexNow 200 OK. |
