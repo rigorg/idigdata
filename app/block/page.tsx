@@ -375,7 +375,11 @@ function TheBlockConfiguratorPage() {
       setLinkedOutcomeId(target.kind === "found" ? target.item.id : null);
       if (target.kind === "found") {
         setActiveDomainId(target.item.domainId);
-        setCubeRotation(current => getCanonicalRotationForDomain(target.item.domainId, current));
+        setCubeRotation(current => {
+          const next = getCanonicalRotationForDomain(target.item.domainId, current);
+          currentRotRef.current = next;
+          return next;
+        });
         setConfigModalDomainId(target.item.domainId);
       }
   }, [searchParams]);
@@ -401,6 +405,10 @@ function TheBlockConfiguratorPage() {
   const [submitError, setSubmitError] = useState<string | null>(null);
 
   const aggregatorRef = useRef<HTMLDivElement>(null);
+  const cubeRef = useRef<HTMLDivElement>(null);
+  const currentRotRef = useRef<{ x: number; y: number }>({ x: -12, y: 0 });
+  const rafIdRef = useRef<number | null>(null);
+  const lastWheelTimeRef = useRef<number>(0);
   const dragStartRef = useRef<{ x: number; y: number; rotX: number; rotY: number }>({ x: 0, y: 0, rotX: -12, rotY: 0 });
   const hasDraggedRef = useRef(false);
 
@@ -454,14 +462,14 @@ function TheBlockConfiguratorPage() {
     }).filter((group) => group.items.length > 0 || group.note.trim().length > 0);
   }, [selectedOutcomeIds, domainNotes]);
 
-  // Drag-to-spin cube pointer handling
+  // Drag-to-spin cube pointer handling with requestAnimationFrame throttling
   const handlePointerDown = (e: React.PointerEvent) => {
     (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
     dragStartRef.current = {
       x: e.clientX,
       y: e.clientY,
-      rotX: cubeRotation.x,
-      rotY: cubeRotation.y,
+      rotX: currentRotRef.current.x,
+      rotY: currentRotRef.current.y,
     };
     hasDraggedRef.current = false;
     setIsDragging(true);
@@ -479,11 +487,24 @@ function TheBlockConfiguratorPage() {
     const sensitivity = 0.55;
     const nextRotX = dragStartRef.current.rotX - dy * sensitivity;
     const nextRotY = dragStartRef.current.rotY + dx * sensitivity;
-    setCubeRotation({ x: nextRotX, y: nextRotY });
+    currentRotRef.current = { x: nextRotX, y: nextRotY };
+
+    if (!rafIdRef.current) {
+      rafIdRef.current = requestAnimationFrame(() => {
+        if (cubeRef.current) {
+          cubeRef.current.style.transform = `rotateX(${currentRotRef.current.x}deg) rotateY(${currentRotRef.current.y}deg)`;
+        }
+        rafIdRef.current = null;
+      });
+    }
   };
 
   const handlePointerUp = (e: React.PointerEvent) => {
     if (!isDragging) return;
+    if (rafIdRef.current) {
+      cancelAnimationFrame(rafIdRef.current);
+      rafIdRef.current = null;
+    }
     try {
       (e.currentTarget as HTMLElement).releasePointerCapture(e.pointerId);
     } catch {}
@@ -509,20 +530,27 @@ function TheBlockConfiguratorPage() {
         nextDomainId = getNextDomainOnGesture(activeDomainId, dir);
       } else {
         // Fallback to angle-based closest face calculation
-        nextDomainId = getClosestDomainFromRotation(cubeRotation.x, cubeRotation.y);
+        nextDomainId = getClosestDomainFromRotation(currentRotRef.current.x, currentRotRef.current.y);
       }
 
+      const nextRotation = getCanonicalRotationForDomain(nextDomainId, currentRotRef.current, dir);
+      currentRotRef.current = nextRotation;
       setActiveDomainId(nextDomainId);
-      setCubeRotation((current) => getCanonicalRotationForDomain(nextDomainId, current, dir));
+      setCubeRotation(nextRotation);
     }
   };
 
+  // Wheel handling with cooldown to prevent rapid-fire spinning on trackpad / mouse scroll
   const handleWheel = (e: React.WheelEvent) => {
     if (configModalDomainId) return;
+    const now = Date.now();
+    if (now - lastWheelTimeRef.current < 400) return;
+
     const absDeltaY = Math.abs(e.deltaY);
     const absDeltaX = Math.abs(e.deltaX);
 
-    if (absDeltaY > 15 || absDeltaX > 15) {
+    if (absDeltaY > 25 || absDeltaX > 25) {
+      lastWheelTimeRef.current = now;
       let nextDomainId = activeDomainId;
       let dir: "PULL_UP" | "PULL_DOWN" | "PULL_LEFT" | "PULL_RIGHT";
 
@@ -533,22 +561,32 @@ function TheBlockConfiguratorPage() {
       }
 
       nextDomainId = getNextDomainOnGesture(activeDomainId, dir);
+      const nextRotation = getCanonicalRotationForDomain(nextDomainId, currentRotRef.current, dir);
+      currentRotRef.current = nextRotation;
       setActiveDomainId(nextDomainId);
-      setCubeRotation((current) => getCanonicalRotationForDomain(nextDomainId, current, dir));
+      setCubeRotation(nextRotation);
     }
   };
 
   const handleFaceClick = (domainId: string) => {
     if (hasDraggedRef.current) return;
     setActiveDomainId(domainId);
-    setCubeRotation((current) => getCanonicalRotationForDomain(domainId, current));
+    setCubeRotation((current) => {
+      const next = getCanonicalRotationForDomain(domainId, current);
+      currentRotRef.current = next;
+      return next;
+    });
     setConfigModalDomainId(domainId);
   };
 
   // Click on one of the six categories underneath the cube
   const handleCategorySelect = (domainId: string) => {
     setActiveDomainId(domainId);
-    setCubeRotation((current) => getCanonicalRotationForDomain(domainId, current));
+    setCubeRotation((current) => {
+      const next = getCanonicalRotationForDomain(domainId, current);
+      currentRotRef.current = next;
+      return next;
+    });
   };
 
   // Toggle outcome selection (NO auto-select; explicit buyer choice)
@@ -801,11 +839,14 @@ function TheBlockConfiguratorPage() {
             title="Drag or swipe to spin the 3D block. Snaps and locks to face on release. Click to configure."
           >
             <div
+              ref={cubeRef}
               className={`relative w-[280px] h-[280px] ${
                 isDragging ? "" : "transition-transform duration-700 cubic-bezier(0.16, 1, 0.3, 1)"
               }`}
               style={{
                 transformStyle: "preserve-3d",
+                WebkitTransformStyle: "preserve-3d",
+                willChange: "transform",
                 transform: `rotateX(${cubeRotation.x}deg) rotateY(${cubeRotation.y}deg)`,
               }}
             >
@@ -816,18 +857,19 @@ function TheBlockConfiguratorPage() {
                   <div
                     key={domain.id}
                     onClick={() => handleFaceClick(domain.id)}
-                    className={`absolute inset-0 rounded-2xl border-2 flex flex-col justify-between p-5 transition-all duration-300 shadow-2xl backdrop-blur-md group touch-none cursor-pointer ${
+                    className={`absolute inset-0 rounded-2xl border-2 flex flex-col justify-between p-5 shadow-2xl group touch-none cursor-pointer transition-[background-color,border-color,box-shadow] duration-200 ${
                       isLight
                         ? isFocused
                           ? "bg-white shadow-[0_12px_40px_rgba(20,40,64,0.18)] ring-2 ring-amber-500/40"
-                          : "bg-white/95 hover:bg-white shadow-md hover:shadow-lg"
+                          : "bg-white hover:bg-white shadow-md hover:shadow-lg"
                         : isFocused
-                          ? "bg-slate-950/95 shadow-[0_0_35px_rgba(255,255,255,0.15)] ring-1 ring-white/40"
-                          : "bg-slate-950/85 hover:bg-slate-950 hover:border-white/50"
+                          ? "bg-slate-950 shadow-[0_0_35px_rgba(255,255,255,0.15)] ring-1 ring-white/40"
+                          : "bg-slate-950 hover:bg-slate-950 hover:border-white/50"
                     }`}
                     style={{
                       transform: domain.faceTransform,
                       backfaceVisibility: "hidden",
+                      WebkitBackfaceVisibility: "hidden",
                       borderColor: isFocused ? domain.accentHex : isLight ? "#E2DCD2" : `${domain.accentHex}50`,
                       touchAction: "none",
                     }}
