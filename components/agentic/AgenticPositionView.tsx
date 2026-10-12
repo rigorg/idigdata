@@ -635,7 +635,7 @@ export default function AgenticPositionView() {
               <p className={s.eyebrow} style={{ margin: 0 }}>THE SOFTWARE CONTRAPTION // SPEC-COL-01</p>
               <h3>Three Interlocking Open Systems. Intent Equals Outcome Delivered.</h3>
               <p>
-                From specialized operators running QuickBooks to multi-site manufacturers needing sovereign purchasing and receiving engines. Mapped by <strong>B.O.S.S.</strong>, fabricated by <strong>The Rig</strong>, and executed on <strong>FlowCraft</strong>. Explore the architecture, launch a custom scoping brief, or join peer builders in the collective.
+                From specialized operators running QuickBooks to multi-site manufacturers needing sovereign purchasing and receiving engines. Mapped by <strong>B.O.S.S.</strong>, fabricated by <strong>The Rig</strong>, and executed on <strong>FlowCraft</strong>. Explore the architecture, examine the delivery blocks, or engage directly in the collective.
               </p>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "10px", alignItems: "flex-start", flexShrink: 0 }}>

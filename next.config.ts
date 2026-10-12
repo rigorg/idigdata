@@ -23,12 +23,12 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/owned-software",
-        destination: "/block/custom/",
+        destination: "/block/",
         permanent: true,
       },
       {
         source: "/owned-software/",
-        destination: "/block/custom/",
+        destination: "/block/",
         permanent: true,
       },
       {

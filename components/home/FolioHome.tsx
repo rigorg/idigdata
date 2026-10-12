@@ -45,7 +45,7 @@ export default function FolioHome() {
         <div className="page-well">
           <h2 className="p-h2">What needs to change?</h2>
           <p className="p-prose mt-4">
-            Transformation in practice. Real enterprise progress starts where systems, people, and daily work collide. Across six core disciplines, I resolve operational friction and lead delivery from intent to working outcome.
+            Transformation in practice. Real enterprise progress starts where people, systems, and workflows meet the reality of daily operations. Across six core disciplines, I resolve operational friction and lead delivery from intent to working outcome.
           </p>
           <div className="home-cards mt-8">
             <article className="home-card">

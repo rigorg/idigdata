@@ -16,7 +16,7 @@ const beats = [
   },
   {
     kicker: "Both layers",
-    h2: "What you get is both layers under one owner. The application layer keeps the business running while the stack moves. Enterprise-Agentics is the new layer: owned, not rented. The result is a living asset the company keeps. The work remains one job across people, data, and workflows.",
+    h2: "What you get is both layers under one owner. The application layer keeps the business running while the stack moves. Enterprise-Agentics is the new layer: owned, not rented. The result is a living asset the company keeps. The work remains one job across people, systems, and workflows.",
     body: "A capital asset the CFO can defend, not another expense line. Keep-running lives on the application layer. The agentic layer is how the new arrival actually runs. You don't rent another tool.",
     gold: false,
   },

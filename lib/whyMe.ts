@@ -16,7 +16,7 @@ export const WHY_ME_BEATS = [
   {
     roman: "III",
     kicker: "Both layers",
-    h2: "What you get is both layers, one owner. The application layer: keep the business running while the stack moves. Enterprise-Agentics is the new layer: owned, not rented. What you keep is a living asset. One job: people, data, and workflows.",
+    h2: "What you get is both layers, one owner. The application layer: keep the business running while the stack moves. Enterprise-Agentics is the new layer: owned, not rented. What you keep is a living asset. One job: people, systems, and workflows.",
     body: "A capital asset the CFO can defend, not another expense line. Keep-running lives on the application layer. The agentic layer is how the new arrival actually runs. You don't rent another tool.",
   },
 ] as const;

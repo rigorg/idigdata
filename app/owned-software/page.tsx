@@ -1,6 +1,6 @@
 import { permanentRedirect } from "next/navigation";
 
-/** Former owned-software door. Custom Agentic Development under The Block is the one door. */
+/** Former owned-software door. The Block catalog is the primary door. */
 export default function OwnedSoftwareRedirect() {
-  permanentRedirect("/block/custom/");
+  permanentRedirect("/block/");
 }

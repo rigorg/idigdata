@@ -133,7 +133,7 @@ export const PUBLIC_CATALOG_ITEMS: CatalogItem[] = [
     "id": "bs_cutover_readiness",
     "domainId": "business_systems",
     "name": "Cutover & Go-Live Leadership",
-    "tagline": "Lead the move to the new system with people, data, integrations, support, and recovery plans ready for real operations.",
+    "tagline": "Lead the move to the new system with people, systems, and workflows stabilized for real operations.",
     "situation": "Scope: Integrate data, interfaces, access, user readiness, support, and timed cutover tasks. Rehearse go/no-go decisions, recovery triggers, and post-launch stabilization.\n\nWhat you receive: A cutover runbook and readiness evidence pack. Recovery decision criteria and a stabilization ownership roster.\n\nCompletion: The rehearsal meets agreed critical scenarios; authorized owners make the launch decision with visible risks and recovery options.\n\nBoundaries: No cutover is represented as incapable of failure; outage tolerance, rollback feasibility, and launch authority are agreed explicitly.",
     "deliverables": []
   },
@@ -197,7 +197,7 @@ export const PUBLIC_CATALOG_ITEMS: CatalogItem[] = [
     "id": "dk_preserve_memory",
     "domainId": "data_knowledge",
     "name": "Operational Knowledge Capture",
-    "tagline": "Capture the judgment, decisions, and exceptions your business depends on so that knowledge survives changes in people and systems.",
+    "tagline": "Capture the judgment, decisions, and exceptions your business depends on so that knowledge survives changes in people, systems, and workflows.",
     "situation": "Scope: Elicit decisions, exceptions, and reasoning from experienced staff and historical sources. Package knowledge for the people inheriting the work.\n\nWhat you receive: An operating knowledge and exception record. Transition walkthroughs and successor validation evidence.\n\nCompletion: Successors can perform or explain agreed critical scenarios without depending on the departing person or retired system.\n\nBoundaries: Capture is limited by access to knowledgeable people and reliable records; uncertainty and conflicting accounts are recorded rather than invented away.",
     "deliverables": []
   },

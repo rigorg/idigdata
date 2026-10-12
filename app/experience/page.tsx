@@ -161,7 +161,7 @@ export default function ExperiencePage() {
                 I connect the boardroom, the business operation, and the software that makes it run.
               </p>
               <p className="p-prose mt-4">
-                Twenty years of leadership connecting business ownership, CIO governance, and hands-on systems architecture across 50+ implementations and 15 transformations at scale. Having founded a $130M manufacturer, served as CIO for a multi-site producer, and directed complex enterprise cutovers, I bridge executive priorities with the daily realities of people, data, and systems.
+                Twenty years of leadership connecting business ownership, CIO governance, and hands-on systems architecture across 50+ implementations and 15 transformations at scale. Having founded a $130M manufacturer, served as CIO for a multi-site producer, and directed complex enterprise cutovers, I bridge executive priorities with the daily realities of people, systems, and workflows.
               </p>
             </div>
             <div className="home-watermark" aria-hidden="true">
@@ -222,7 +222,7 @@ export default function ExperiencePage() {
           <p className="p-kicker">Operating Foundations</p>
           <h2 className={"p-h2 " + styles.title} id="selected-clients-title">Enterprise breadth. Operating depth.</h2>
           <p className="p-prose mt-4 text-base lg:text-[17px] leading-relaxed text-[#142840]/90 max-w-[72ch]">
-            Every enterprise is uniquely standard. The books need to balance. The business needs to run. Across industries, financial control, regulatory obligations, and operating accountability form a common foundation. The work is knowing which patterns to standardize, where the business is different, and how to connect its people, systems, and data.
+            Every enterprise is uniquely standard. The books need to balance. The business needs to run. Across industries, financial control, regulatory obligations, and operating accountability form a common foundation. The work is knowing which patterns to standardize, where the business is different, and how to connect its people, systems, and workflows through a unified data fabric.
           </p>
 
           <div className={styles.domainsGrid}>
@@ -336,7 +336,7 @@ export default function ExperiencePage() {
           <p className="p-kicker">Operating Architecture</p>
           <h2 className="p-h2">Three views of how an enterprise works</h2>
           <p className="p-prose mt-4 text-base lg:text-[17px] leading-relaxed text-[#142840]/90 max-w-[72ch]">
-            The Systemverse maps the applications and their connection to a company-owned data core. The six constellations map the recurring workflows. The Beehive maps the people, teams, and responsibilities that carry those workflows across the business.
+            The framework unifies people, systems, and workflows around a central data core: The Systemverse maps applications and dependencies, the six constellations map recurring workflows, and The Beehive maps operating people and ownership.
           </p>
           <p className="p-prose mt-4 text-base lg:text-[17px] leading-relaxed text-[#142840]/90 max-w-[72ch]">
             I work across those views—from the CFO and functional leads to delivery partners and the warehouse team using the scanners—to turn operating knowledge into clear requirements, SOPs, and accountable delivery. Before delivery, we agree what success means and how to verify it, keeping financial integrity, compliance, and operational continuity in view.

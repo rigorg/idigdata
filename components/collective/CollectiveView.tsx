@@ -662,11 +662,11 @@ export default function CollectiveView() {
               </div>
               <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginTop: "16px" }}>
                 <Link
-                  href="/block/custom/"
+                  href="/block/"
                   className={`${s.doorBtn} ${s.doorBtnSecondary}`}
                   style={{ textDecoration: "none", display: "inline-flex", alignItems: "center" }}
                 >
-                  <span>Launch Custom Scoping Brief &rarr;</span>
+                  <span>Explore Delivery Blocks &rarr;</span>
                 </Link>
                 <button
                   type="button"

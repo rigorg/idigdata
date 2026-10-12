@@ -403,7 +403,7 @@ export default function AgenticLayerView({ mock = false }: { mock?: boolean }) {
                 What the company keeps
               </p>
               <p className="p-prose mt-2">
-                People who can run it and extend it. Workflows and data the
+                People who run and extend it. Sovereign systems and workflows the
                 company owns. Agents inside boundaries a person can halt.
               </p>
             </div>
