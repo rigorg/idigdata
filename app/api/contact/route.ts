@@ -101,7 +101,11 @@ export async function POST(req: NextRequest) {
   const safeEmail = sanitizeHeaderField(email);
 
   const apiKey = process.env.RESEND_API_KEY;
-  const notifyTo = process.env.EMAIL_NOTIFY_TO ?? "robert@idigdata.com";
+  const rawNotify = process.env.EMAIL_NOTIFY_TO?.trim();
+  const notifyTo =
+    rawNotify && rawNotify.includes("@") && !rawNotify.includes("[SENSITIVE]")
+      ? rawNotify
+      : "robert@idigdata.com";
   const fromAddr =
     process.env.EMAIL_NOTIFY_FROM ?? "idigdata website <noreply@idigdata.com>";
 
