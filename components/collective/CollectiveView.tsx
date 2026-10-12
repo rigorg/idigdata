@@ -68,20 +68,25 @@ export default function CollectiveView() {
       {/* Hero Section */}
       <section className={s.hero}>
         <div className={s.heroInner}>
-          <p className={s.eyebrow}>THE OPERATIONAL SEAM // A LIVING EXPERIMENT</p>
+          <p className={s.eyebrow}>AN ORGANIZING COLLECTIVE // OPEN SOURCE &amp; SOVEREIGN</p>
           <h1 className={s.heroTitle}>
             The Collective<span>.</span>
           </h1>
           <p className={s.heroDek}>
-            We are at a unique juncture in technology. Agentics is arriving, and we have picked our lane: the enterprise.
+            1 Rig. 100 Rigs. 1,000 Rigs. An open collective of sovereign human factories—collaborating together on enterprise agentics.
           </p>
           <div style={{ maxWidth: "860px", color: "var(--ink)", fontSize: "16px", lineHeight: "1.7", marginBottom: "36px" }}>
             <p style={{ marginBottom: "14px" }}>
-              Not to build another closed silo, rent another software seat, or push generic chatbots into meetings. 
-              We are here to figure out something much more interesting: <strong>how people and autonomous systems actually work together in the business you have.</strong>
+              Every human operator can now be their own software factory. That is what The Rig is: a human and an autonomous agent crew on private iron, mapping, building, and running systems that match how a business actually operates.
             </p>
             <p style={{ marginBottom: "14px" }}>
-              It is about the sharing, the sovereignty, and the patterns. Running in complete isolation on your own iron—where your data, your ledgers, and your customer relationships remain 100% private—while connecting to a larger collective that feeds each other. The &ldquo;what if?&rdquo; The joy of building. Being part of something that helps define how work gets done at a truly historic moment in computing.
+              Software is not a static purchase or a rented seat. It is a <strong>continuous learning loop</strong>. You bring unwritten plant-floor judgment and domain truth; your agents bring tireless execution and verification. Working together, knowledge transfers in both directions, and your capability compounds every day.
+            </p>
+            <p style={{ marginBottom: "14px" }}>
+              Your data, your accounting ledgers, and your customer relationships remain 100% private on your own iron—<strong>sovereign and severable</strong> from day one. But the code patterns—the zeros and ones of tested workflow blocks, domain schemas, and caller test gates—can be contributed to an open collective commons.
+            </p>
+            <p style={{ marginBottom: "14px" }}>
+              <strong>We are not claiming we have it all figured out. This is the seed.</strong> We are pulling the pieces together, and we are looking for passionate builders to join the collective. I am willing to share what I have—the architecture, the runtimes, and the harnesses—so we can collaborate, build open source, and make something special together.
             </p>
           </div>
 
@@ -138,13 +143,13 @@ export default function CollectiveView() {
                 {/* Perimeter Header Badges */}
                 <rect x="56" y="32" width="340" height="24" rx="2" fill="#1E2024" />
                 <text x="68" y="48" fill="#FAF6EE" fontSize="9.5" fontFamily="monospace" fontWeight="700" letterSpacing="0.08em">
-                  SOVEREIGN ENTERPRISE PERIMETER
+                  SOVEREIGN HUMAN FACTORY // PRIVATE IRON
                 </text>
                 
-                <rect x="800" y="32" width="220" height="24" rx="2" fill="#FFFFFF" stroke="#DDD7C8" />
-                <circle cx="814" cy="44" r="4" fill="#16A34A" />
-                <text x="826" y="47.5" fill="#1E2024" fontSize="9" fontFamily="monospace" fontWeight="600">
-                  Private Iron &bull; Isolated Execution
+                <rect x="760" y="32" width="260" height="24" rx="2" fill="#FFFFFF" stroke="#DDD7C8" />
+                <circle cx="774" cy="44" r="4" fill="#16A34A" />
+                <text x="786" y="47.5" fill="#1E2024" fontSize="9" fontFamily="monospace" fontWeight="600">
+                  Private Iron &bull; Sovereign &amp; Severable
                 </text>
 
                 <text x="1144" y="48" textAnchor="end" fill="#9E7D3B" fontSize="9.5" fontFamily="monospace" fontWeight="700" letterSpacing="0.08em">
@@ -368,10 +373,10 @@ export default function CollectiveView() {
                 <rect x="40" y="524" width="1120" height="28" fill="#1E2024" />
                 
                 <text x="56" y="542" fill="#FAF6EE" fontSize="10.5" fontFamily="monospace" fontWeight="700" letterSpacing="0.1em">
-                  THE COLLECTIVE PATTERN COMMONS // PEER BUILDER EXCHANGE
+                  THE COLLECTIVE PATTERN COMMONS // PEER BUILDER EXCHANGE (OPEN SOURCE)
                 </text>
                 <text x="1144" y="542" textAnchor="end" fill="#D4C29A" fontSize="9.5" fontFamily="monospace" fontWeight="600">
-                  PUBLIC COMMONS &bull; ANONYMIZED PATTERNS ONLY
+                  OPEN SOURCE &bull; ANONYMIZED PATTERNS &bull; ZEROS AND ONES
                 </text>
 
                 <g transform="translate(56, 564)">
@@ -434,10 +439,10 @@ export default function CollectiveView() {
 
             <div className={s.specCaption}>
               <div>
-                <strong>Sovereign Execution on Private Iron:</strong> Your operational ledgers, transactions, customer records, and physical telemetry stay 100% inside your perimeter. Run in isolation with complete data privacy.
+                <strong>The Human Factory on Private Iron:</strong> Your operational ledgers, transactions, customer records, and physical telemetry stay 100% inside your perimeter. Run in complete isolation on your own hardware—sovereign, exportable, and severable from day one.
               </div>
               <div>
-                <strong>The Pattern Commons:</strong> What connects us is patterns, not data. Proven domain schemas, composable workflow blocks, and deterministic test harnesses refined through real-world work.
+                <strong>The Open Pattern Commons:</strong> We share the zeros and ones, not private data. Tested domain schemas (B.O.S.S.), composable workflow blocks (FlowCraft), and deterministic test harnesses (The Rig)—contributed by sovereign builders so everyone moves faster.
               </div>
             </div>
           </div>
@@ -499,7 +504,7 @@ export default function CollectiveView() {
                 <h3 className={s.systemTitle}>The Rig</h3>
                 <div className={s.systemSub}>Autonomous Software Factory</div>
                 <p className={s.systemBody}>
-                  Moving beyond fragile prompt-and-pray development. The Rig puts a 13-cell autonomous build pipeline on the operator’s PC—running multi-agent synthesis, deterministic caller gates, and verified test harnesses that prove code behaves correctly before release.
+                  Moving beyond fragile prompt-and-pray development. The Rig puts an autonomous multi-agent software factory on personal iron—running multi-seat synthesis, deterministic caller gates, and verified test harnesses that prove code behaves correctly before release.
                 </p>
               </div>
               <div className={s.systemUseCaseBox}>
@@ -565,7 +570,7 @@ export default function CollectiveView() {
             <p className={s.eyebrow}>TWO DOORS // ENTERING THE SEAM</p>
             <h2>How to take part<span>.</span></h2>
             <p>
-              Whether you want to build and explore together as part of the collective, or need a working sovereign system built for your enterprise.
+              Whether you are a builder who wants to run a Rig and collaborate in the collective, or an enterprise looking for a working sovereign system.
             </p>
           </div>
 
@@ -573,10 +578,10 @@ export default function CollectiveView() {
             {/* Door 1: Build Together */}
             <div className={`${s.doorCard} ${s.doorCardPrimary}`}>
               <div>
-                <p className={s.doorEyebrow}>PATH 01 // PEER COLLABORATION</p>
-                <h3 className={s.doorTitle}>Build and learn together in The Collective.</h3>
+                <p className={s.doorEyebrow}>PATH 01 // OPEN SOURCE &amp; PEER COLLABORATION</p>
+                <h3 className={s.doorTitle}>Join the Collective. Build with us.</h3>
                 <p className={s.doorBody}>
-                  For software builders, systems architects, and technical operators who want to define what enterprise agentics can be. Explore open schemas, run runtimes on your own iron, test local developer harnesses, and contribute verified workflow blocks to the collective library.
+                  For software builders, systems architects, and technical operators who want to build real enterprise agentics. Run a Rig on your own iron, explore open schemas, test local developer harnesses, and collaborate with us on verified, severable workflow blocks. We are looking for passionate builders to pull the pieces together, share our zeros and ones, and create something special.
                 </p>
               </div>
               <button
@@ -592,9 +597,9 @@ export default function CollectiveView() {
             <div className={s.doorCard}>
               <div>
                 <p className={s.doorEyebrow}>PATH 02 // SOVEREIGN ENTERPRISE BUILD</p>
-                <h3 className={s.doorTitle}>Have a system built for your enterprise.</h3>
+                <h3 className={s.doorTitle}>Commission a sovereign system for your enterprise.</h3>
                 <p className={s.doorBody}>
-                  Have an operational bottleneck, a legacy ledger, or a broken manual workflow? We use B.O.S.S. to map domain truth, The Rig to fabricate and verify the code, and FlowCraft to deploy a living, sovereign system around how your team actually works.
+                  Have an operational bottleneck, an unyielding legacy ERP, or a mission-critical workflow trapped on whiteboards? We use B.O.S.S. to map domain truth, The Rig to fabricate and verify the code, and FlowCraft to deploy a living, sovereign system around how your team actually works. Zero per-seat rent. You own the code.
                 </p>
               </div>
               <button
@@ -616,7 +621,7 @@ export default function CollectiveView() {
             <p className={s.eyebrow}>DIRECT CORRESPONDENCE // ROB PADDOCK</p>
             <h3>Start the conversation.</h3>
             <p>
-              Direct to my desk. Tell me what you are working on, an operational seam you are trying to solve, or how you would like to collaborate.
+              Direct to my desk. Tell me what you are building, an operational problem you are trying to solve, or why you want to collaborate in the collective.
             </p>
           </div>
 
@@ -679,8 +684,8 @@ export default function CollectiveView() {
                   value={formState.interest}
                   onChange={(e) => setFormState({ ...formState, interest: e.target.value as "collaborate" | "build" })}
                 >
-                  <option value="collaborate">Join The Collective // Peer Collaboration &amp; Shared Patterns</option>
-                  <option value="build">Commission a Custom Sovereign Build (Intent = Outcome)</option>
+                  <option value="collaborate">Join The Collective // Open Source Collaboration &amp; Shared Patterns</option>
+                  <option value="build">Commission a Sovereign Enterprise Build (Zero Per-Seat Rent)</option>
                 </select>
               </div>
 
