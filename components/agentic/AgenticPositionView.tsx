@@ -267,8 +267,8 @@ const COLLECTIVES: CollectivePillar[] = [
     spot: "constellation",
     titanQuote: {
       speaker: "Chamath Palihapitiya",
-      role: "Founder, Social Capital & Co-Host, All-In",
-      source: "beehiiv",
+      role: "CEO, 8090 · Founder, Social Capital & Co-Host, All-In",
+      source: "8090 / beehiiv (“The space between the tasks”)",
       quote:
         "A job is more than the sum of its tasks. What's more intangible is the part between them: deciding which task matters, in what order, and when to stop; coordinating with people on other teams; and being the one accountable when it goes wrong.",
     },

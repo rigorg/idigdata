@@ -23,7 +23,7 @@ Today, we have entered the Fourth Wave. The consensus around commercial software
 
 ## 1. The 80/90 Thesis: The Collapse of Per-Seat SaaS
 
-In recent *All-In Podcast* disclosures and *beehiiv* essays, **Chamath Palihapitiya** outlined the financial reckoning sweeping enterprise software:
+In recent *All-In Podcast* disclosures and *beehiiv* essays, **Chamath Palihapitiya** (CEO of 8090, Founder of Social Capital, and co-host of *All-In*) outlined the financial reckoning sweeping enterprise software:
 
 > *"The per-seat SaaS subscription model is structurally collapsing under AI. Paying $150 per user per month for rigid, multi-tenant software suites is unsustainable when software factories can synthesize bespoke internal tools tailored directly to an enterprise's workflow."*
 

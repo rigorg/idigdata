@@ -48,7 +48,7 @@ This Fourth Wave represents a qualitative break from manual development. But it 
 
 ## 2. The 80/90 Insight: The Space Between the Tasks
 
-In his widely read October 2026 *beehiiv* analysis, **Chamath Palihapitiya** cut directly to the heart of why autonomous agents struggle inside the enterprise:
+In his widely read October 2026 *beehiiv* analysis, **Chamath Palihapitiya** (CEO of 8090, Founder of Social Capital, and co-host of *All-In*) cut directly to the heart of why autonomous agents struggle inside the enterprise:
 
 > *"A job is more than the sum of its tasks. What's more intangible is the part between them: deciding which task matters, in what order, and when to stop; coordinating with people on other teams; and being the one accountable when it goes wrong."*
 
