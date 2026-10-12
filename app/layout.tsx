@@ -6,7 +6,7 @@ import SiteFooter from "@/components/SiteFooter";
 import JsonLd from "@/components/analytics/JsonLd";
 import RouteJsonLd from "@/components/analytics/RouteJsonLd";
 import PageviewBeacon from "@/components/analytics/PageviewBeacon";
-import SiteNotice from "@/components/analytics/SiteNotice";
+import CookieConsentBanner from "@/components/analytics/CookieConsentBanner";
 import VercelAnalytics from "@/components/analytics/VercelAnalytics";
 
 const display = Lora({
@@ -146,7 +146,7 @@ export default function RootLayout({
           <SiteHeader />
           <main>{children}</main>
           <SiteFooter />
-          <SiteNotice />
+          <CookieConsentBanner />
           <VercelAnalytics />
           <PageviewBeacon />
         </ThemeProvider>

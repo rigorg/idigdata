@@ -13,6 +13,8 @@ const DOOR_SESSION_COOKIE = "idig_door_sid";
 const DOOR_SEEN_COOKIE = "idig_door_seen";
 const INTERNAL_COOKIE = "idig_internal_traffic";
 const FLEET_COOKIE = "idig_fleet_traffic";
+const COOKIE_CONSENT_KEY = "idig_cookie_consent";
+const ANALYTICS_OPT_OUT_KEY = "idig_analytics_opt_out";
 const DOOR_SESSION_SECONDS = 30 * 60;
 const MARKER_SECONDS = 365 * 24 * 60 * 60;
 
@@ -24,6 +26,12 @@ export function proxy(req: NextRequest, event: NextFetchEvent) {
   if (!shouldCaptureDoorKnock(req)) return response;
 
   const marks = resolveTrafficMarks(req);
+  const consent = req.cookies.get(COOKIE_CONSENT_KEY)?.value;
+  const isOptedOut = consent === "declined" || req.cookies.get(ANALYTICS_OPT_OUT_KEY)?.value === "1";
+
+  // Suppress all door knock telemetry if visitor declined / opted out
+  if (isOptedOut) return response;
+
   const isSeen = req.cookies.get(DOOR_SEEN_COOKIE)?.value === "1";
   const isAgentUa =
     /curl|wget|python|node-fetch|headless|playwright|puppeteer|bot|spider|crawl|x11; linux/i.test(
@@ -32,7 +40,11 @@ export function proxy(req: NextRequest, event: NextFetchEvent) {
 
   const doorSessionId =
     req.cookies.get(DOOR_SESSION_COOKIE)?.value || crypto.randomUUID();
-  stampDoorCookies(response, doorSessionId);
+
+  // Only stamp door cookies if consented or marked internal/fleet (zero pre-consent tracking cookies)
+  if (consent === "accepted" || marks.isInternalMarked || marks.isFleetMarked) {
+    stampDoorCookies(response, doorSessionId);
+  }
 
   // Always capture marked internal/fleet (even if door-seen) so DigOps gets the flag.
   // Unmarked agents/scanners still re-fire when UA looks automated.
@@ -70,7 +82,7 @@ function syncTrafficCookies(req: NextRequest, response: NextResponse) {
   }
 
   if (fleet === "1") {
-    // Production: URL alone cannot mint fleet — requires DIGOPS_FLEET_BEACON_SECRET header.
+    // Production: URL alone cannot mint fleet - requires DIGOPS_FLEET_BEACON_SECRET header.
     if (process.env.NODE_ENV !== "production" || isFleetHeaderAuthorized(req)) {
       setMarkerCookie(response, FLEET_COOKIE, "1", secure);
     }
@@ -87,8 +99,16 @@ function syncTrafficCookies(req: NextRequest, response: NextResponse) {
 
 function syncAttributionCookie(req: NextRequest, response: NextResponse) {
   const secure = process.env.NODE_ENV === "production";
-  if (req.nextUrl.searchParams.get("clear_attr") === "1") {
+  const consent = req.cookies.get(COOKIE_CONSENT_KEY)?.value;
+  const isOptedOut = consent === "declined" || req.cookies.get(ANALYTICS_OPT_OUT_KEY)?.value === "1";
+
+  if (req.nextUrl.searchParams.get("clear_attr") === "1" || isOptedOut) {
     setMarkerCookie(response, ATTRIBUTION_COOKIE, "", secure, 0);
+    return;
+  }
+
+  // Zero pre-consent tracking cookies: Only stamp attribution cookie if visitor has accepted
+  if (consent !== "accepted") {
     return;
   }
 

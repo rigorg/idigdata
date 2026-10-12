@@ -3,6 +3,7 @@ import Link from "next/link";
 import M4Watermark from "@/components/M4Watermark";
 import SectionKicker from "@/components/SectionKicker";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
+import CookiePreferenceControls from "@/components/analytics/CookiePreferenceControls";
 
 export const dynamic = "force-static";
 
@@ -46,21 +47,22 @@ const SECTIONS: { title: string; body: React.ReactNode }[] = [
     body: (
       <>
         <p className="mb-3">
-          When someone opens a page on idigdata.com, we record one first-party
-          entrance (the door-knock) for operating this practice: path, time,
-          referrer, basic device/browser signals, optional UTM / click-id
-          parameters (also kept in a short first-party attribution cookie), and
-          coarse host location (country / region / city). Home, Experience,
-          The Block, Agentic AI, The Collective, and Contact are live pages. We store a
-          keyed HMAC of the visitor IP - not the raw address - plus a small
-          allowlisted set of request metadata (for example accept-language and
-          fetch-site). We do not keep precise latitude/longitude or full proxy
-          header dumps.
+          We operate a strict opt-in privacy posture. We do not pre-load tracking
+          cookies or fire client tracking beacons until you explicitly choose to
+          accept measurement.
+        </p>
+        <p className="mb-3">
+          When consent is granted, we record first-party site visits to evaluate
+          engagement and improve this practice: path, time, referrer, basic device/browser
+          signals, and optional UTM campaign attribution. Home, Experience, The Block,
+          Agentic AI, The Collective, and Contact are live pages. When telemetry is captured,
+          we store an anonymous session identifier and keyed HMAC of client IP - never the
+          raw address - with coarse location (country / region / city). We do not collect
+          precise GPS or keep proxy header dumps.
         </p>
         <p>
-          We also use Vercel Analytics for aggregate, privacy-oriented visit
-          counts. You can opt out of that analytics layer from the site notice or
-          the control below.
+          We also use Vercel Analytics for aggregate, privacy-first visit counts.
+          Both first-party beacons and Vercel Analytics are gated by your cookie preferences.
         </p>
       </>
     ),
@@ -70,26 +72,24 @@ const SECTIONS: { title: string; body: React.ReactNode }[] = [
     body: (
       <ul className="list-disc space-y-2 pl-5">
         <li>
-          <span className="font-semibold text-ink">Session door cookies</span>
+          <span className="font-semibold text-ink">Cookie consent preference</span>
           {" - "}
-          short-lived markers so we do not double-count the same entrance window.
+          remembers whether you accepted or declined telemetry so you are not prompted repeatedly.
         </li>
         <li>
           <span className="font-semibold text-ink">Attribution cookie</span>
           {" - "}
-          remembers UTM / gclid from a campaign landing for about 30 days so later
-          pages in the same browser still attribute correctly.
+          only set if you accept cookies on campaign landing; remembers UTM parameters for 30 days so subsequent page visits reflect the campaign source.
         </li>
         <li>
-          <span className="font-semibold text-ink">Analytics preference</span>
+          <span className="font-semibold text-ink">Session door markers</span>
           {" - "}
-          remembers if you opted out of Vercel Analytics.
+          short-lived markers to prevent double-counting visits during an active reading session.
         </li>
         <li>
-          <span className="font-semibold text-ink">Internal / fleet markers</span>
+          <span className="font-semibold text-ink">Operator markers</span>
           {" - "}
-          only if this practice deliberately marks a browser so operator and
-          automation traffic can be filtered from buyer traffic.
+          only if this practice intentionally marks a browser to keep operator and test traffic separate from client traffic.
         </li>
       </ul>
     ),
@@ -117,8 +117,8 @@ const SECTIONS: { title: string; body: React.ReactNode }[] = [
     body: (
       <>
         Hosting and edge delivery: Vercel. Operating database: Supabase.
-        Transactional notify mail from the contact form: Resend. Each is under
-        their own terms; we configure them for this practice site.
+        Transactional notify mail from the contact form: Resend. Each operates under
+        their own standard terms; we configure them for this practice site.
       </>
     ),
   },
@@ -153,8 +153,7 @@ export default function PrivacyPage() {
           Plain notice. No theater.
         </h1>
         <p className="mt-5 max-w-[720px] font-display italic text-warm-gray text-[18px] leading-snug">
-          What this site measures, why entrance traffic is recorded, and how to
-          opt out of aggregate analytics.
+          What this site measures, how cookie consent works, and how to manage your preferences.
         </p>
       </section>
 
@@ -173,26 +172,18 @@ export default function PrivacyPage() {
 
           <div className="border-t border-navy/10 pt-6">
             <h2 className="font-brand text-[12px] font-semibold uppercase tracking-[0.18em] text-navy">
-              Analytics opt-out
+              Cookie & Measurement Preferences
             </h2>
             <p className="mt-3 font-body text-[15.5px] leading-relaxed text-warm-gray">
-              Prefer no Vercel Analytics from this browser? Use the site notice, or
-              turn it off here. First-party entrance telemetry for operating the
-              practice still runs; this control only stops the Vercel Analytics
-              layer.
+              You can review or change your cookie and telemetry preferences at any time.
+              Choosing &ldquo;Opt Out&rdquo; removes any stored attribution cookies and
+              suppresses all client-side telemetry.
             </p>
-            <p className="mt-4 font-body text-[14px] text-navy">
-              <Link
-                href="/?va-opt-out=1"
-                className="inline-flex items-center rounded-md bg-navy px-4 py-2.5 text-[13px] font-semibold text-porcelain hover:bg-navy-mid"
-              >
-                Opt out of analytics
-              </Link>
-            </p>
+            <CookiePreferenceControls />
           </div>
 
           <p className="font-body text-[13px] text-warm-gray/80">
-            Last updated October 11, 2026.
+            Last updated October 12, 2026.
           </p>
         </div>
       </section>
