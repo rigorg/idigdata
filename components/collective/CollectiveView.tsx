@@ -602,13 +602,23 @@ export default function CollectiveView() {
                   Have an operational bottleneck, an unyielding legacy ERP, or a mission-critical workflow trapped on whiteboards? We use B.O.S.S. to map domain truth, The Rig to fabricate and verify the code, and FlowCraft to deploy a living, sovereign system around how your team actually works. Zero per-seat rent. You own the code.
                 </p>
               </div>
-              <button
-                type="button"
-                onClick={() => handleInterestSelect("build")}
-                className={`${s.doorBtn} ${s.doorBtnSecondary}`}
-              >
-                <span>Explore a Custom Build &rarr;</span>
-              </button>
+              <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginTop: "16px" }}>
+                <Link
+                  href="/block/custom/"
+                  className={`${s.doorBtn} ${s.doorBtnSecondary}`}
+                  style={{ textDecoration: "none", display: "inline-flex", alignItems: "center" }}
+                >
+                  <span>Launch Custom Scoping Brief &rarr;</span>
+                </Link>
+                <button
+                  type="button"
+                  onClick={() => handleInterestSelect("build")}
+                  className={s.doorBtn}
+                  style={{ background: "transparent", color: "var(--ink)", border: "1px solid var(--border)" }}
+                >
+                  <span>Direct Note to Rob &rarr;</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>

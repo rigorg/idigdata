@@ -635,12 +635,27 @@ export default function AgenticPositionView() {
               <p className={s.eyebrow} style={{ margin: 0 }}>THE SOFTWARE CONTRAPTION // SPEC-COL-01</p>
               <h3>Three Interlocking Open Systems. Intent Equals Outcome Delivered.</h3>
               <p>
-                From specialized operators running QuickBooks to multi-site manufacturers needing sovereign purchasing and receiving engines. Mapped by <strong>B.O.S.S.</strong>, fabricated by <strong>The Rig</strong>, and executed on <strong>FlowCraft</strong>. Explore the architecture, commission an enterprise build, or join peer builders in the collective.
+                From specialized operators running QuickBooks to multi-site manufacturers needing sovereign purchasing and receiving engines. Mapped by <strong>B.O.S.S.</strong>, fabricated by <strong>The Rig</strong>, and executed on <strong>FlowCraft</strong>. Explore the architecture, launch a custom scoping brief, or join peer builders in the collective.
               </p>
             </div>
-            <Link href="/collective/" className={s.limelightBannerCta}>
-              <span>Enter The Collective &rarr;</span>
-            </Link>
+            <div style={{ display: "flex", flexDirection: "column", gap: "10px", alignItems: "flex-start", flexShrink: 0 }}>
+              <Link href="/collective/" className={s.limelightBannerCta}>
+                <span>Enter The Collective &rarr;</span>
+              </Link>
+              <Link
+                href="/block/custom/"
+                style={{
+                  fontSize: "12px",
+                  fontFamily: "var(--font-mono)",
+                  color: "var(--ink)",
+                  textDecoration: "underline",
+                  opacity: 0.85,
+                  paddingLeft: "4px",
+                }}
+              >
+                <span>Launch Custom Scoping Brief &rarr;</span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

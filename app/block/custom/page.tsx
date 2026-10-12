@@ -378,7 +378,7 @@ export default function CustomAgenticScopingPage() {
           }`}
         >
           <div className="flex items-center gap-3">
-            <Link href="/block/" className="hover:opacity-85 transition-opacity" title="Return to The Block">
+            <Link href="/collective/" className="hover:opacity-85 transition-opacity" title="The Collective">
               <TheBlockLogo
                 size="sm"
                 variant="monochrome"
@@ -390,12 +390,23 @@ export default function CustomAgenticScopingPage() {
               /
             </span>
             <Link
-              href="/block/"
+              href="/collective/"
               className={`text-xs font-mono font-semibold transition-colors flex items-center gap-1.5 ${
                 isLight ? "text-[#142840]/70 hover:text-[#142840]" : "text-slate-300 hover:text-white"
               }`}
             >
-              <span>← Return to Outcomes Storefront</span>
+              <span>← The Collective</span>
+            </Link>
+            <span className={`text-xs font-mono hidden sm:inline ${isLight ? "text-slate-400" : "text-slate-500"}`}>
+              ·
+            </span>
+            <Link
+              href="/agentic-ai/"
+              className={`text-xs font-mono font-semibold transition-colors flex items-center gap-1.5 ${
+                isLight ? "text-[#142840]/70 hover:text-[#142840]" : "text-slate-300 hover:text-white"
+              }`}
+            >
+              <span>Agentic AI</span>
             </Link>
           </div>
 
@@ -420,16 +431,16 @@ export default function CustomAgenticScopingPage() {
         {/* ==================================================================== */}
         <section className="flex flex-col gap-1.5">
           <div className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-amber-600 dark:text-amber-400 font-bold">
-            <span>THE BLOCK</span>
+            <span>THE COLLECTIVE</span>
             <span>·</span>
-            <span>CUSTOM AGENTIC DEVELOPMENT</span>
+            <span>AGENTIC AI</span>
             <span>·</span>
-            <span>SCOPING BRIEF</span>
+            <span>CUSTOM SCOPING BRIEF</span>
           </div>
 
           <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-medium tracking-tight leading-tight">
-              Enterprise Agentic Software. <span className="text-amber-600 dark:text-amber-400">Scoped in Time Blocks.</span>
+              Enterprise Agentic Systems. <span className="text-amber-600 dark:text-amber-400">Scoped in Delivery Blocks.</span>
             </h1>
             <span className="text-xs font-mono text-slate-500 shrink-0">
               2 to 4 Weeks per deliverable module
@@ -441,9 +452,7 @@ export default function CustomAgenticScopingPage() {
               isLight ? "text-slate-700" : "text-slate-300"
             }`}
           >
-            We are not vibe coders. We are an engineering firm with decades in enterprise software, systems
-            integration, and production agentics. Configure your technical brief below to structure your time blocks
-            and receive an executable proposal.
+            We build custom, sovereign enterprise systems mapped by <strong>B.O.S.S.</strong>, fabricated on <strong>The Rig</strong>, and executed on <strong>FlowCraft</strong>. Configure your technical brief below to define your operational invariants, target ledgers, and delivery flight.
           </p>
         </section>
 
