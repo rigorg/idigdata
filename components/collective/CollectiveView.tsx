@@ -77,16 +77,19 @@ export default function CollectiveView() {
           </p>
           <div style={{ maxWidth: "860px", color: "var(--ink)", fontSize: "16px", lineHeight: "1.7", marginBottom: "36px" }}>
             <p style={{ marginBottom: "14px" }}>
-              Every human operator can now be their own software factory. That is what The Rig is: a human and an autonomous agent crew on private iron, mapping, building, and running systems that match how a business actually operates.
+              Every human operator can now be their own software factory. The Rig is the machine that builds the machines that build living assets of value—and it builds the machines that can build themselves. Operating on private iron, it couples a human operator with an autonomous agent crew to map, fabricate, and run systems that match how an enterprise actually functions.
             </p>
             <p style={{ marginBottom: "14px" }}>
-              Software is not a static purchase or a rented seat. It is a <strong>continuous learning loop</strong>. You bring unwritten plant-floor judgment and domain truth; your agents bring tireless execution and verification. Working together, knowledge transfers in both directions, and your capability compounds every day.
+              Software is not a static purchase or a rented seat. It is an <strong>org-instance structure</strong> with a continuous learning loop. The Rig designs and provisions authoritative orgs—with B.O.S.S. mapping domain truth and FlowCraft executing runtime operations—each spawning as many running instances as the firm requires.
             </p>
             <p style={{ marginBottom: "14px" }}>
-              Your data, your accounting ledgers, and your customer relationships remain 100% private on your own iron—<strong>sovereign and severable</strong> from day one. But the code patterns—the zeros and ones of tested workflow blocks, domain schemas, and caller test gates—can be contributed to an open collective commons.
+              Each org carries its own built-in software factory, making it completely <strong>sovereign and severable</strong> from day one. An enterprise can take a B.O.S.S. or FlowCraft org and run it entirely on its own private iron, with its ledgers, transactions, and customer records remaining 100% private.
             </p>
             <p style={{ marginBottom: "14px" }}>
-              <strong>We are not claiming we have it all figured out. This is the seed.</strong> We are pulling the pieces together, and we are looking for passionate builders to join the collective. I am willing to share what I have—the architecture, the runtimes, and the harnesses—so we can collaborate, build open source, and make something special together.
+              When an org stays part of <strong>The Collective</strong>, the pattern flywheel turns: the patterns are driven through composable <strong>workflow blocks</strong>. A workflow block updated and battle-tested in one org flows through to the other orgs through The Rig. Capability compounds across the commons without anyone ever sharing private data.
+            </p>
+            <p style={{ marginBottom: "14px" }}>
+              <strong>We are not claiming we have it all figured out. This is the seed.</strong> We are pulling the pieces together, and we are looking for passionate builders to join the collective. I am sharing the architecture, the runtimes, and the harnesses so we can collaborate, build open source, and make something special together.
             </p>
           </div>
 
@@ -439,10 +442,10 @@ export default function CollectiveView() {
 
             <div className={s.specCaption}>
               <div>
-                <strong>The Human Factory on Private Iron:</strong> Your operational ledgers, transactions, customer records, and physical telemetry stay 100% inside your perimeter. Run in complete isolation on your own hardware—sovereign, exportable, and severable from day one.
+                <strong>Org-Instance Sovereignty &amp; Built-In Factory:</strong> The Rig creates the org-instance structure. B.O.S.S. and FlowCraft each hold an authoritative org and spawn as many firm instances as needed. Each org contains its own built-in factory—completely sovereign, severable, and runnable on private iron with zero vendor lock-in.
               </div>
               <div>
-                <strong>The Open Pattern Commons:</strong> We share the zeros and ones, not private data. Tested domain schemas (B.O.S.S.), composable workflow blocks (FlowCraft), and deterministic test harnesses (The Rig)—contributed by sovereign builders so everyone moves faster.
+                <strong>The Workflow Block Network Effect:</strong> The patterns are driven through composable workflow blocks (WFBs). When connected to The Collective, workflow blocks updated in one org flow through to the other, through The Rig. The collective library compounds while private data and ledgers stay 100% inside your perimeter.
               </div>
             </div>
           </div>
@@ -464,17 +467,17 @@ export default function CollectiveView() {
             {/* System 1: B.O.S.S. */}
             <div className={s.systemCard}>
               <div>
-                <span className={s.systemBadge}>DOMAIN TRUTH &bull; SPECIFICATION</span>
+                <span className={s.systemBadge}>DOMAIN TRUTH &bull; SPECIFICATION (ORG)</span>
                 <h3 className={s.systemTitle}>B.O.S.S.</h3>
                 <div className={s.systemSub}>Business Operating System Specification</div>
                 <p className={s.systemBody}>
-                  Every business runs on unwritten plant-floor judgment, Mary&rsquo;s edge-case scheduling spreadsheet, and thirty years of experience that never made it into the software manual. B.O.S.S. maps that domain truth—capturing business rules, exception boundaries, and operational invariants into clear, machine-actionable schemas.
+                  Every business runs on unwritten plant-floor judgment, Mary&rsquo;s edge-case scheduling spreadsheet, and thirty years of experience that never made it into the software manual. B.O.S.S. is the authoritative specification org that maps and digitally twins that domain truth—capturing business rules, exception boundaries, and operational invariants into clear, machine-actionable schemas. An enterprise can take a B.O.S.S. org and run it entirely on their own private iron; it carries its own built-in factory inside.
                 </p>
               </div>
               <div className={s.systemUseCaseBox}>
                 <span className={s.systemUseCaseLabel}>HOW IT IS USED</span>
                 <p className={s.systemUseCaseText}>
-                  Rapid domain onboarding. Turns tacit human heuristics into unambiguous schemas so agents understand real constraints before touching anything.
+                  Domain mapping &amp; specification. Turns tacit human heuristics into unambiguous schemas so agents understand real operating constraints before touching anything.
                 </p>
               </div>
             </div>
@@ -482,17 +485,17 @@ export default function CollectiveView() {
             {/* System 2: FlowCraft */}
             <div className={s.systemCard}>
               <div>
-                <span className={s.systemBadge}>OPERATIONAL RUNTIME &bull; HUMAN + AGENT</span>
+                <span className={s.systemBadge}>OPERATIONAL RUNTIME &bull; ORG &amp; INSTANCES</span>
                 <h3 className={s.systemTitle}>FlowCraft</h3>
-                <div className={s.systemSub}>Instance-Level Operating System</div>
+                <div className={s.systemSub}>Workflow Operating System</div>
                 <p className={s.systemBody}>
-                  The live operational runtime. FlowCraft bridges existing systems, databases, and autonomous agent swarms. It orchestrates humans and agents side-by-side with shared Master Data (MDM), live permissions, state machines, and complete audit trails.
+                  The live operational runtime. FlowCraft structures execution across an authoritative org and as many running firm instances as the business requires. It bridges existing systems, databases, and autonomous agent swarms—composing named workflow blocks into isolated, severable companies that actually run, with shared Master Data (MDM), live permissions, state machines, and complete audit trails.
                 </p>
               </div>
               <div className={s.systemUseCaseBox}>
                 <span className={s.systemUseCaseLabel}>HOW IT IS USED</span>
                 <p className={s.systemUseCaseText}>
-                  Live execution. Coordinates daily tasks, runs custom workflows around ledgers like QuickBooks or ERPs, and keeps humans in authorization command.
+                  Live execution across instances. Runs composable workflow blocks around ledgers like QuickBooks or ERPs, keeping humans in authorization command.
                 </p>
               </div>
             </div>
@@ -500,17 +503,72 @@ export default function CollectiveView() {
             {/* System 3: The Rig */}
             <div className={s.systemCard}>
               <div>
-                <span className={s.systemBadge}>SOFTWARE FACTORY &bull; DETERMINISTIC TEST</span>
+                <span className={s.systemBadge}>SOFTWARE FACTORY &bull; BUILDS THE MACHINES</span>
                 <h3 className={s.systemTitle}>The Rig</h3>
-                <div className={s.systemSub}>Autonomous Software Factory</div>
+                <div className={s.systemSub}>The Machine That Builds The Machines</div>
                 <p className={s.systemBody}>
-                  Moving beyond fragile prompt-and-pray development. The Rig puts an autonomous multi-agent software factory on personal iron—running multi-seat synthesis, deterministic caller gates, and verified test harnesses that prove code behaves correctly before release.
+                  The Rig creates living assets of value. It is the machine that builds the machines that build assets—and builds the machines that can build themselves. The Rig provisions the org-instance structure for B.O.S.S. and FlowCraft, runs multi-seat synthesis, deterministic caller gates, and verified test harnesses. When workflow blocks are updated in one org, they flow through to the other, through The Rig.
                 </p>
               </div>
               <div className={s.systemUseCaseBox}>
                 <span className={s.systemUseCaseLabel}>HOW IT IS USED</span>
                 <p className={s.systemUseCaseText}>
-                  Code fabrication and proof. Builds, tests, and verifies custom operational blocks on local developer iron before plant-floor release.
+                  Asset fabrication &amp; cross-org flow. Builds, tests, and verifies custom operational blocks on local developer iron, and distributes updated workflow blocks across the collective.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section: Architectural Flywheel // Org-Instance & The Workflow Block Commons */}
+      <section className={s.flywheelSection}>
+        <div className={s.sectionInner}>
+          <div className={s.sectionHead}>
+            <p className={s.eyebrow}>THE ARCHITECTURAL FLYWHEEL // ORG-INSTANCE &amp; WORKFLOW BLOCK FLOW</p>
+            <h2>Machines that build themselves. Patterns that flow<span>.</span></h2>
+            <p>
+              Two foundational principles govern the architecture: complete sovereignty on private iron through the org-instance model, and compound capability through workflow block flow across The Collective.
+            </p>
+          </div>
+
+          <div className={s.flywheelGrid}>
+            {/* Flywheel Card 1 */}
+            <div className={s.flywheelCard}>
+              <div>
+                <span className={s.flywheelTag}>01 // ORG-INSTANCE STRUCTURE</span>
+                <h3 className={s.flywheelTitle}>The Machine That Builds the Machines</h3>
+                <p className={s.flywheelText}>
+                  The Rig does not just generate scripts; it creates living assets of value. It is the machine that builds the machines that build assets—and builds the machines that can build themselves. The Rig designs and provisions the <strong>org-instance structure</strong>: both B.O.S.S. and FlowCraft each maintain an authoritative org, and spin up as many running firm instances as needed.
+                </p>
+                <p className={s.flywheelText}>
+                  Every org carries its own <strong>built-in software factory</strong>. It is completely sovereign and severable from day one: an enterprise can take a B.O.S.S. or FlowCraft org and run it entirely on their own private iron, operating autonomously with its own internal build capability.
+                </p>
+              </div>
+              <div className={s.flywheelBox}>
+                <span className={s.flywheelBoxLabel}>BUILT-IN FACTORY // PRIVATE IRON</span>
+                <p className={s.flywheelBoxText}>
+                  Each org is self-contained. Take an org and run it yourself on private iron—it has its own built-in factory, zero cloud locks, and zero per-seat rent.
+                </p>
+              </div>
+            </div>
+
+            {/* Flywheel Card 2 */}
+            <div className={s.flywheelCard}>
+              <div>
+                <span className={s.flywheelTag}>02 // THE PATTERN COMMONS</span>
+                <h3 className={s.flywheelTitle}>Workflow Blocks Flow Through The Rig</h3>
+                <p className={s.flywheelText}>
+                  The collective&rsquo;s patterns are mainly driven through <strong>Workflow Blocks (WFBs)</strong>—modular, verified operational building blocks for accounting connectors, inventory state machines, and frontline dispatch.
+                </p>
+                <p className={s.flywheelText}>
+                  When an org stays a part of The Collective, the network effect ignites: <strong>workflow blocks that get updated in one org, flow through to the other, through The Rig</strong>. When one builder solves an edge-case ERP reconciliation or refines a receiving state machine, that verified pattern flows to every rig in the collective.
+                </p>
+              </div>
+              <div className={s.flywheelBox}>
+                <span className={s.flywheelBoxLabel}>COMPOUND CAPABILITY // OPEN COMMONS</span>
+                <p className={s.flywheelBoxText}>
+                  Patterns compound across all rigs while your accounting ledgers, transactions, and customer relationships remain 100% private and sovereign.
                 </p>
               </div>
             </div>

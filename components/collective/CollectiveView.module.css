@@ -337,6 +337,87 @@
   line-height: 1.45;
 }
 
+
+/* Section: Architectural Flywheel / Org-Instance */
+.flywheelSection {
+  padding: 80px 24px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.flywheelGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+@media (max-width: 800px) {
+  .flywheelGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.flywheelCard {
+  background: var(--panel-bg);
+  border: 1px solid var(--line-dark);
+  border-top: 3px solid var(--brass);
+  padding: 32px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.flywheelTag {
+  font-family: monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--brass-dark);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.flywheelTitle {
+  font-size: 24px;
+  margin-bottom: 14px;
+  color: var(--ink);
+  line-height: 1.25;
+}
+
+.flywheelText {
+  font-size: 15px;
+  color: var(--ink);
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+
+.flywheelBox {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 16px 18px;
+  border-radius: 2px;
+  margin-top: auto;
+}
+
+.flywheelBoxLabel {
+  display: block;
+  font-family: monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--brass-dark);
+  margin-bottom: 6px;
+}
+
+.flywheelBoxText {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
 /* Section: Blueprints / Use Cases */
 .blueprintsSection {
   padding: 80px 24px;
