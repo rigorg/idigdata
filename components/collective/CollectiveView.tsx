@@ -102,18 +102,18 @@ export default function CollectiveView() {
               The Collective is About the People<span>.</span>
             </h1>
             <p className={s.heroDek}>
-              Builders, developers, operators, and curious minds slinging code with autonomous agents—discovering, failing, and succeeding together.
+              Sovereign enterprise software running on private iron, compounded through an open collective pattern commons.
             </p>
 
             <div className={s.leadBody}>
               <p style={{ marginBottom: "14px" }}>
-                Every human operator can now build and direct their own software assets. In this era, humans and autonomous software agents work together inside common, configurable frameworks.
+                Every human operator can now direct their own software factory. In this era, humans and autonomous software agents work together inside common, configurable frameworks.
               </p>
               <p style={{ marginBottom: "14px" }}>
-                Genuine enterprise improvement is an active human-agent learning loop: operators bringing their domain expertise and local iron to test, adapt, and deliver real outcomes on the shop floor.
+                The software—B.O.S.S., FlowCraft, and The Rig—provides the industrial gantry and execution runtime on local iron. The Collective is where verified operational patterns compound across independent enterprises.
               </p>
               <p style={{ marginBottom: "18px" }}>
-                <strong>The operating rule is voluntary:</strong> Operators choose what to share. Other operators review and choose what to adopt. Business data and operational decisions stay strictly with their owners.
+                <strong>The operating rule is voluntary:</strong> Your data, ledgers, and business records remain strictly private on your own iron. You choose which operational blueprints to share, and you choose which peer patterns to adopt.
               </p>
             </div>
 
@@ -257,10 +257,10 @@ export default function CollectiveView() {
       <section className={s.systemsSection}>
         <div className={s.sectionInner}>
           <div className={s.sectionHead}>
-            <p className={s.eyebrow}>TWO ENTERPRISE BODIES OF WORK &amp; THE PATTERN COMMONS</p>
-            <h2>An operator with a development shop<span>.</span></h2>
+            <p className={s.eyebrow}>THE INDUSTRIAL APPARATUS // SOFTWARE MEETS THE COMMONS</p>
+            <h2>The Software is the Gantry. The Collective is the Commons<span>.</span></h2>
             <p>
-              To make a collective work in practice, you need a deterministic stack. Two distinct, high-value enterprise software bodies of work, anchored by an open pattern commons.
+              A collective without software is just talk; software without a collective reinvents every wheel from scratch. We pair an industrial three-part software stack on private iron with an open pattern commons where verified operational blueprints flow between member rigs.
             </p>
           </div>
 
@@ -326,10 +326,10 @@ export default function CollectiveView() {
       <section className={s.flywheelSection}>
         <div className={s.sectionInner}>
           <div className={s.sectionHead}>
-            <p className={s.eyebrow}>THE FOUNDATIONAL PRINCIPLES // KUMBAYA OF BUILDERS</p>
+            <p className={s.eyebrow}>THE OPERATING PRINCIPLES // THE SOVEREIGN PRODUCTION COMMONS</p>
             <h2>Built for people. Grounded in the enterprise<span>.</span></h2>
             <p>
-              Three core commitments govern the architecture: complete sovereignty on private iron, a joint human-agent learning loop, and a pattern commons where one success lifts everyone.
+              Three core commitments govern the architecture: complete data sovereignty on private iron, a joint human-agent learning loop, and a pattern commons where one operator&rsquo;s breakthrough lifts the entire network.
             </p>
           </div>
 
@@ -354,10 +354,10 @@ export default function CollectiveView() {
             {/* Principle 2 */}
             <div className={s.flywheelCard}>
               <div>
-                <span className={s.flywheelTag}>02 // JOINT LEARNING LOOP</span>
-                <h3 className={s.flywheelTitle}>Slinging Zeros &amp; Ones Together</h3>
+                <span className={s.flywheelTag}>02 // THE OPERATOR GUILD</span>
+                <h3 className={s.flywheelTitle}>Slinging Zeros &amp; Ones in Production</h3>
                 <p className={s.flywheelText}>
-                  The Collective is not a passive software package. It is an active learning community where operators, engineers, and curious minds sling code with autonomous agents. We test on real floor realities, discover together, fail together, and deliver real outcomes through deterministic workflows.
+                  The Collective is not a passive software package or an abstract theory. It is an active operating guild where operators, engineers, and curious minds sling code with autonomous agents. We test against real shop-floor realities, discover together, fail together, and deliver real business outcomes through deterministic workflows and AST calipers.
                 </p>
               </div>
               <div className={s.flywheelBox}>

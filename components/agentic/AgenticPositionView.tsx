@@ -212,7 +212,7 @@ const COLLECTIVES: CollectivePillar[] = [
     tag: "MAIN EVENT 01 // THE SEAM",
     actionLabel: "Join the Discussion",
     title: "The Operational Seam",
-    subtitle: "Why ERPs Fail: Information Silos, Business Mapping & The Human Seam",
+    subtitle: "Why ERPs Fail: Context Gathering vs. Floor Truth & The Human Seam",
     spot: "constellation",
     titanQuote: {
       speaker: "Chamath Palihapitiya",
@@ -222,9 +222,9 @@ const COLLECTIVES: CollectivePillar[] = [
         "A job is more than the sum of its tasks. What's more intangible is the part between them: deciding which task matters, in what order, and when to stop; coordinating with people on other teams; and being the one accountable when it goes wrong.",
     },
     body:
-      "Why do enterprise ERP implementations so often struggle to deliver on their promise? Gartner forecasts that through 2027, over 70% of new ERP initiatives will fail to fully realize their business-case goals. It is rarely a computational limitation. It is disparate information systems, entrenched departmental silos, and the absence of a unified, company-owned common data model. Monolithic software captures sanitized Standard Operating Procedures—how an organization wishes it functioned on its best day. But actual operations survive on tacit human judgment, informal cross-department trust, and exception handling that lives entirely between the seams. AI hits that exact wall if it merely automates documented processes. Before generating code, an architect must map the business as it actually operates on the floor—honoring the human seam that holds the enterprise together.",
+      "Why do enterprise ERP implementations so often struggle to deliver on their promise? Gartner forecasts that through 2027, over 70% of new ERP initiatives will fail to fully realize their business-case goals. Modern AI software factories diagnose this as a 'context gathering' problem—assuming enterprise truth sits in clean wikis waiting to be ingested. But on the enterprise floor, 80% of operating truth is unwritten: held in tacit human judgment, informal cross-department trust, and Mary's edge-case scheduling spreadsheet. Monolithic software captures sanitized Standard Operating Procedures—how an organization wishes it functioned on its best day. AI hits a brick wall if it merely automates documented fiction. Before writing code, an architect must map how the enterprise actually runs—synthesizing an authoritative, company-owned Common Data Model that bridges fragmented silos and honors the human seam holding the business together.",
     inquiries: [
-      "Disparate silos & the common data model: why database introspection misses how the company runs",
+      "Context gathering vs. floor truth: why database introspection misses how the company actually runs",
       "The human seam: what happens when systems flag green but physical steel is torn apart",
       "Elevating frontline judgment: turning human data conduits into operational leaders",
     ],
@@ -237,7 +237,7 @@ const COLLECTIVES: CollectivePillar[] = [
     tag: "MAIN EVENT 02 // SYNTHESIS",
     actionLabel: "Join the Discussion",
     title: "Human-Agent Synthesis",
-    subtitle: "Enterprise Workflows: Humans and Autonomous Agents Building Together",
+    subtitle: "Enterprise Workflows: Information Continuity, Human Authority & Consequential Action",
     spot: "blocks",
     titanQuote: {
       speaker: "Marc Benioff",
@@ -247,10 +247,10 @@ const COLLECTIVES: CollectivePillar[] = [
         "What matters isn’t just the model—it’s the metadata, the business context, and the deterministic enterprise workflows.",
     },
     body:
-      "The enterprise computing conversation has too often focused on generic conversational prompts and the fantasy of zero-human automation. The enterprises that will dominate the next decade are mastering a fundamentally new discipline: Human-Agent Synthesis—experienced operators and autonomous software agents collaborating inside deterministic business workflows. What matters is enterprise context, domain metadata, and consequential workflows. As businesses move work through goal-directed pipelines—governed by strict requirements, state validation, and human authorization gates—enterprises are reclaiming complete ownership of their operational systems.",
+      "The enterprise computing conversation has too often focused on conversational prompt droids or the fantasy of zero-human automation. But democratizing information does not create organizational agreement: an AI agent can surface a conflict between purchasing, sales, and controllers, but only an executive with skin in the game can make the decision and carry the liability. The winning discipline is Human-Agent Synthesis: experienced operators and autonomous agents collaborating inside deterministic left-to-right pipelines. Moving work through goal-directed assembly lines—governed by strict data contracts, state validation, and human authorization gates—allows enterprises to harness autonomous software while keeping operational authority firmly with human leadership.",
     inquiries: [
       "Beyond conversational chat: why deterministic left-to-right pipelines beat prompt droids",
-      "Human-agent collaboration: the new operational skill set separating winning enterprises",
+      "Information vs. authority: why surfacing data conflicts still requires executive decision ownership",
       "Reclaiming the application layer: why businesses will build and own their core workflows",
     ],
     fieldNoteHref: "/agentic-ai/the-application-layer/",
@@ -262,7 +262,7 @@ const COLLECTIVES: CollectivePillar[] = [
     tag: "MAIN EVENT 03 // THE FACTORY",
     actionLabel: "Join the Discussion",
     title: "The Machine That Builds the Machines",
-    subtitle: "The Software Factory: Code Building Code, The Gantry Harness & Tokenomics",
+    subtitle: "The Software Factory: Code Building Code, The Gantry Harness & Sovereign Iron",
     spot: "factory",
     titanQuote: {
       speaker: "Matan Grinberg & Eno Reyes",
@@ -272,10 +272,10 @@ const COLLECTIVES: CollectivePillar[] = [
         "The incremental units of this system are AI agents. This system will be built by engineers, and in turn will build their software. This system is the software factory.",
     },
     body:
-      "We have crossed the threshold into the software factory: code now building code. But autonomous software fabrication introduces a demanding new engineering discipline: managing token burn, orchestrating open-weight models alongside frontier APIs, and mastering multi-seat execution. Frontier models and APIs evolve rapidly. If an enterprise welds its core business logic directly to a single proprietary endpoint, it invites fragile dependencies. The durable asset is the machine that builds the machines: the test-driven gantry harness on local iron. Wrapping volatile intelligence in deterministic AST calipers, git-backed state ledgers, and human authorization gates turns model tokens into living, verifiable enterprise software.",
+      "We have crossed the threshold into the software factory: code now building code. But autonomous software fabrication introduces a demanding new engineering discipline: managing token burn, orchestrating open-weight models alongside frontier APIs, and mastering multi-seat execution. Frontier models and APIs evolve rapidly. If an enterprise welds its core business logic directly to a single proprietary endpoint or hosted SaaS, it invites fragile dependencies. The durable asset is the machine that builds the machines: the test-driven gantry harness on local iron. Wrapping volatile intelligence in deterministic AST calipers, git-backed state ledgers, and human authorization gates turns model tokens into living, verifiable enterprise software.",
     inquiries: [
       "Decoupling model churn: why the competitive moat is the gantry harness on local iron",
-      "Taming token burn & tokenomics: multi-seat worktrees and AST calipers vs. Ralph Wiggum loops",
+      "Deterministic calipers vs. Ralph Wiggum loops: wrapping volatile models in AST inspection gates",
       "The delivery seam: why autonomous software factories still require operators on the physical dock",
     ],
     fieldNoteHref: "/agentic-ai/the-delivery-seam/",
