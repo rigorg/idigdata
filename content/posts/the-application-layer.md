@@ -46,12 +46,12 @@ Frontline engineers, systems administrators, and operational managers are openly
 
 Frontline operators are exhausted from acting as human shock absorbers for broken vendor software.
 
-> **SEAM LOG 02-A // THE MANUFACTURING SCHEDULER & THE JOY OF BUILDING**
+> **SEAM LOG 02-A // THE MANUFACTURING SCHEDULER & THE DOMAIN CHAMPION**
 > In a complex manufacturing operation, I worked alongside a production scheduler who had spent a decade keeping the entire plant running through sheer personal grit. He wasn't formally trained in computer science, but he loved technology. Over years on the job, he had built an elaborate, interconnected maze of Excel workbooks stitched together with home-spun PowerShell scripts.
 >
 > If this gentleman had been hit by a bus or won the lottery on a Monday morning, the entire company would have been in immediate jeopardy. But instead of sidelining him or replacing his life's work with an off-the-shelf software package that would have failed his floor, we partnered with him as an Agentic Domain Champion.
 >
-> We gave him a bounded agentic framework—a clean data contract, deterministic state boundaries, and guardrails where he could build safely without breaking the company. Working with agentics empowered him to a level of software fabrication that was completely unimaginable before agentics. As he told me with wide eyes, what he built went way beyond anything he ever thought himself capable of doing. The sheer, heartfelt joy on his face is what happens when you give a real domain expert the power to vibecode inside a safe architecture. These are the champions every enterprise needs—and already has. Every enterprise has these people. Every one of them.
+> We gave him a bounded agentic framework—a clean data contract, deterministic state boundaries, and guardrails where he could build safely without breaking the company. Working with agentics empowered him to a level of software fabrication that was completely unimaginable before agentics. As he told me with wide eyes, what he built went way beyond anything he ever thought himself capable of doing. The sheer satisfaction on his face is what happens when you empower a true domain expert to author custom software inside a safe architecture. These are the champions every enterprise needs—and already has.
 
 This groundswell is not cynical noise; it is an undeniable signal that enterprises are ready to take back control of their operational core.
 
@@ -62,13 +62,13 @@ This groundswell is not cynical noise; it is an undeniable signal that enterpris
 |   THE LEGACY SEAM                     THE AGENTIC FRAMEWORK             |
 |   Interconnected Excel Workbooks      Typed Data Schema & State Gates   |
 |   Ad-hoc PowerShell Automations  ---> Bounded Runtime Worktrees         |
-|   Single Point of Failure (Lotto)     Domain Champion Vibecoding        |
+|   Single Point of Failure (Lotto)     Domain Champion Custom Build      |
 |                                                                         |
 |                \                                     /                  |
 |                 \                                   /                   |
 |                  v                                 v                    |
 |                    HUMAN-AGENT OPERATIONAL SYNTHESIS                    |
-|           Domain Intuition · Bounded Speed · The Joy of Building        |
+|           Domain Intuition · Bounded Speed · Grounded Delivery          |
 +-------------------------------------------------------------------------+
 ```
 
@@ -78,10 +78,10 @@ This groundswell is not cynical noise; it is an undeniable signal that enterpris
 
 Yet as enterprises attempt to build custom software with AI, they frequently crash into a dangerous trap identified by the 80/90 group:
 
-> **SEAM LOG 02-B // VIBECODING WITHIN AN ARCHITECTURAL FRAMEWORK**
-> Building with agentics is not for everybody. It takes deep operational curiosity, patience, and domain obsession. But inside every enterprise—especially among frontline domain experts—there are people who would love to vibecode within a framework.
+> **SEAM LOG 02-B // BUILDING WITHIN AN ARCHITECTURAL FRAMEWORK**
+> Building with agentics is not for everybody. It takes deep operational curiosity, patience, and domain obsession. But inside every enterprise—especially among frontline domain experts—there are individuals who thrive when given the power to build custom software within a framework.
 >
-> The key is the framework. Left unconstrained in brownfield systems, agents hallucinate, loop endlessly in Ralph Wiggum token incinerators, and destroy data integrity. But when you identify your domain champions and wrap them in a disciplined architecture—isolated worktree lanes, typed schemas, and deterministic test gates—you eliminate token burn and unlock human potential. You give domain masters the sheer joy of software creation while keeping the enterprise safe.
+> The key is the framework. Left unconstrained in brownfield systems, agents hallucinate, loop endlessly in runaway token incinerators, and destroy data integrity. But when you identify your domain champions and wrap them in a disciplined architecture—isolated worktree lanes, typed schemas, and deterministic test gates—you eliminate wasted burn and unlock human potential. You give domain masters the ability to author reliable software while keeping the enterprise safe.
 
 Unbounded agents entering a complex brownfield repository will happily generate thousands of lines of syntactically valid code that passes isolated unit tests but completely destroys production database integrity.
 

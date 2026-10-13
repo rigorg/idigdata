@@ -265,7 +265,7 @@ const COLLECTIVES: CollectivePillar[] = [
     fieldNoteCard: {
       rubric: "SEAM LOG // HUMAN-AGENT SYNTHESIS",
       stamp: "THE DOMAIN CHAMPION",
-      text: "In a complex manufacturing plant, one scheduler kept operations running with interconnected Excel workbooks and PowerShell scripts—a single point of failure who loved tech. We partnered with him as an Agentic Domain Champion inside a bounded framework. What he built blew past anything he thought possible. The sheer joy on his face is what happens when you empower domain experts to vibecode inside a safe architecture. These are the champions every enterprise needs—and already has. Every one of them.",
+      text: "In a complex manufacturing plant, one scheduler kept operations running with interconnected Excel workbooks and PowerShell scripts—a single point of failure who loved technology. We partnered with him as an Agentic Domain Champion inside a bounded framework. What he built blew past anything he thought possible. The sheer satisfaction on his face is what happens when you empower frontline domain experts to author custom software inside a safe architecture. These are the champions every enterprise needs—and already has.",
       signature: "— Rob Paddock · Manufacturing Floor Field Note",
     },
     inquiries: [
@@ -294,10 +294,10 @@ const COLLECTIVES: CollectivePillar[] = [
     body:
       "We have crossed the threshold into the software factory: code now building code. But autonomous software fabrication introduces a demanding new engineering discipline: managing token burn, orchestrating open-weight models alongside frontier APIs, and mastering multi-seat execution. Frontier models and APIs evolve rapidly. If an enterprise welds its core business logic directly to a single proprietary endpoint or hosted SaaS, it invites fragile dependencies. The durable asset is the machine that builds the machines: the test-driven gantry harness on local iron. Wrapping volatile intelligence in deterministic AST calipers, git-backed state ledgers, and human authorization gates turns model tokens into living, verifiable enterprise software.",
     fieldNoteCard: {
-      rubric: "SEAM LOG // DOWN THE RABBIT HOLE",
-      stamp: "THE JOY AND THE PAIN",
-      text: "I fell down the agentic rabbit hole three years ago. Working with agentics has empowered people like me—and domain champions with their PowerShell spreadsheets—to work with software at a level unimaginable before agentics. The pure joy, and the pain. I've burned down my codebase and started over more times than I can count. When agents click, it's electric; when they go rogue, intent fails to equal outcome. Above all, I am an enthusiast, but I apply that to the enterprise: that's where I started, that's what I know, and now I have agentics. It's a brave new world, and I'm all in on the ride.",
-      signature: "— Rob Paddock · A Man in the Build",
+      rubric: "SEAM LOG // THE RUNTIME SEAM",
+      stamp: "THE BUILDER'S REALITY",
+      text: "Building enterprise agentic systems is serious, demanding work. Over three years inside the runtime, I have burned down codebases and started over when early assumptions failed under operational pressure. When agents operate inside a deterministic harness, delivery velocity is unmatched; when they run unconstrained, intent fails to equal outcome. I bring hands-on builder depth to enterprise technology: knowing what to automate, where guardrails must hold, and what it takes to make autonomous systems reliable in daily operations.",
+      signature: "— Rob Paddock · Systems Builder Field Note",
     },
     inquiries: [
       "Decoupling model churn: why the competitive moat is the gantry harness on local iron",
@@ -414,7 +414,7 @@ export default function AgenticPositionView() {
               Where a 20-year enterprise systems arc meets over three years inside the agentic runtime.
             </p>
             <p className={s.heroLead}>
-              I&rsquo;ve spent 20+ years connecting business intent with the work people do every day on the enterprise floor. Three years ago, I fell down the agentic rabbit hole&mdash;discovering both the pure joy and the pain of building at the bleeding edge. Working with agentics has empowered people like me, and the domain champions on the floor with their interconnected spreadsheets and scripts, to build software at a level that was unimaginable before agentics. Above all, I am an enthusiast. But I apply that passion to the enterprise: that&rsquo;s where I started, that&rsquo;s what I know, and that&rsquo;s where software has to actually work. It&rsquo;s a brave new world, and I&rsquo;m all in on the ride.
+              I&rsquo;ve spent 20+ years connecting business intent with the work people do every day on the enterprise floor. For over three years, I&rsquo;ve been hands-on inside the agentic runtime&mdash;learning where autonomous systems accelerate delivery and where human judgment remains essential. Between executive slide decks and automated software factories, every enterprise deployment succeeds or fails in the operational seam. This is where I build, lead, and deliver technology that works in daily operations.
             </p>
             <div className={s.byline}>
               <span className={s.square} />
