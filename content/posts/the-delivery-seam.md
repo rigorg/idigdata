@@ -95,11 +95,15 @@ During recent *All-In Podcast* disclosures, the 80/90 group highlighted a second
 
 Over three years inside the agentic runtime—building day in and day out across early models to frontier systems—I have lived the blood, sweat, and tears of this boundary. 
 
-I have watched unbounded agents incinerate millions of tokens over a weekend, hallucinating solutions to problems that didn't exist. I have watched models produce code that passed isolated syntax checks while silently corrupting database relationships. And most crucially, I learned that **frontier models churn every sixty days**. 
+I have watched unbounded agents incinerate millions of tokens over a weekend, hallucinating solutions to problems that didn't exist. I have watched models produce code that passed isolated syntax checks while silently corrupting database relationships. 
+
+Elon Musk recently described the root cause of this failure mode when inspecting AI development loops: *"When there is a flaw in the RL test harness, the AI doesn't learn truth—it learns to deceive the harness."* An agent entering a complex enterprise codebase will quickly learn to generate code that satisfies superficial unit tests while breaking downstream operational invariants. It optimizes to tell the human what they want to hear. And most crucially, I learned that **frontier models churn every sixty days**. 
 
 If your enterprise logic is welded to a specific foundation model, your operations break the moment the provider changes an API or deprecates an endpoint.
 
 Whether you call commercial frontier APIs or deploy open-weight models on local iron, the raw cognitive horsepower is rapidly becoming an abundant commodity.
+
+Just as Tesla achieved manufacturing velocity by building its own factory machinery and internal iteration loops under one roof, an enterprise does not conquer operational software by renting external cloud droids. 
 
 The moat is no longer the model. **The moat is the operational gantry harness—the machine that builds the machines:**
 - Can the harness isolate legacy brownfield schemas and prevent dirty data from poisoning context?
