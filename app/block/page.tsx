@@ -902,14 +902,14 @@ function TheBlockConfiguratorPage() {
                       <div className="flex items-center gap-2.5">
                         <DomainBlockIcon code={domain.code} color={domain.accentHex} className="w-6 h-6 flex-shrink-0" />
                         <h3
-                          className={`font-serif text-lg font-bold leading-snug line-clamp-2 ${
+                          className={`font-serif text-[15px] sm:text-[16px] font-bold leading-snug ${
                             isLight ? "text-[#142840]" : "text-white"
                           }`}
                         >
                           {domain.name}
                         </h3>
                       </div>
-                      <p className={`text-xs leading-relaxed line-clamp-2 mt-0.5 ${isLight ? "text-slate-600" : "text-slate-300"}`}>
+                      <p className={`text-[11.5px] leading-relaxed line-clamp-3 mt-0.5 ${isLight ? "text-slate-600" : "text-slate-300"}`}>
                         {domain.essence}
                       </p>
                     </div>
@@ -932,11 +932,11 @@ function TheBlockConfiguratorPage() {
           {/* ==================================================================== */}
           {/* SIX CATEGORIES UNDERNEATH THE BLOCK                                  */}
           {/* ==================================================================== */}
-          <div className="w-full max-w-4xl mt-5">
+          <div className="w-full max-w-5xl lg:max-w-6xl mt-5">
             <p className={`text-xs font-mono uppercase tracking-wider font-semibold text-center mb-2.5 ${isLight ? "text-slate-600" : "text-slate-400"}`}>
               Select an enterprise discipline to rotate the block and view outcomes
             </p>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5">
               {DOMAIN_CONFIGS.map((domain) => {
                 const count = domainSelectionStats[domain.id] || 0;
                 const isSelected = activeDomainId === domain.id;
@@ -944,7 +944,7 @@ function TheBlockConfiguratorPage() {
                   <button
                     key={domain.id}
                     onClick={() => handleCategorySelect(domain.id)}
-                    className={`flex flex-col items-start justify-between p-2.5 rounded-xl border text-left transition-all cursor-pointer ${
+                    className={`flex flex-col items-start justify-between min-h-[124px] p-3 rounded-xl border text-left transition-all cursor-pointer ${
                       isSelected
                         ? isLight
                           ? "bg-white border-amber-500 shadow-md ring-2 ring-amber-500/20"
@@ -969,10 +969,10 @@ function TheBlockConfiguratorPage() {
                         <span className="w-2 h-2 rounded-full bg-emerald-500" title={`${count} configured`} />
                       )}
                     </div>
-                    <span className={`font-serif text-xs font-bold mt-2 line-clamp-1 ${isLight ? "text-[#142840]" : "text-white"}`}>
-                      {domain.shortName}
+                    <span className={`font-serif text-[12px] sm:text-[12.5px] font-bold mt-2 leading-[1.3] text-balance ${isLight ? "text-[#142840]" : "text-white"}`}>
+                      {domain.name}
                     </span>
-                    <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 mt-0.5">
+                    <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 mt-2">
                       {count > 0 ? `${count} configured` : `${PUBLIC_CATALOG_ITEMS.filter((i) => i.domainId === domain.id).length} outcomes`}
                     </span>
                   </button>
@@ -1327,7 +1327,7 @@ function TheBlockConfiguratorPage() {
                               {domain.code}
                             </span>
                             <span className={`font-serif text-xs font-bold ${isLight ? "text-[#142840]" : "text-white"}`}>
-                              {domain.shortName}
+                              {domain.name}
                             </span>
                           </div>
                           <button
