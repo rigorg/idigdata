@@ -7,7 +7,7 @@
     "catalog:import-factory": "tsx scripts/import-factory-outcome-catalog.ts",
     "dev": "next dev -p 3100",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 3100",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "test": "tsx --test \"lib/**/*.test.ts\" \"lib/**/*.test.tsx\"",
     "audit:prod": "npm audit --omit=dev",

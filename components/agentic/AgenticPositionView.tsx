@@ -161,30 +161,22 @@ function FactorySpot() {
 /**
  * Unified Enterprise Constellation Symbol (Hero Plate)
  */
-function EnterpriseHiveSpot() {
+function PeopleSystemsWorkflowSpot() {
   return (
-    <svg viewBox="0 0 120 120" className={s.spotSvg} aria-hidden="true">
-      <defs>
-        <pattern id="plateDotGrid" width="12" height="12" patternUnits="userSpaceOnUse">
-          <circle cx="6" cy="6" r="0.8" fill="#DDD7C8" />
-        </pattern>
-      </defs>
-      <rect width="120" height="120" fill="url(#plateDotGrid)" />
-      <g stroke="#9E7D3B" strokeWidth="1.2" fill="#FAF6EE" strokeLinejoin="round">
-        <polygon points="60,48 70,54 70,66 60,72 50,66 50,54" fill="#F4EFE5" stroke="#1E2024" strokeWidth="1.5" />
-        <polygon points="60,26 70,32 70,44 60,50 50,44 50,32" />
-        <polygon points="79,37 89,43 89,55 79,61 69,55 69,43" />
-        <polygon points="79,59 89,65 89,77 79,83 69,77 69,65" />
-        <polygon points="60,70 70,76 70,88 60,94 50,88 50,76" />
-        <polygon points="41,59 51,65 51,77 41,83 31,77 31,65" />
-        <polygon points="41,37 51,43 51,55 41,61 31,55 31,43" />
-      </g>
-      <circle cx="60" cy="60" r="2.5" fill="#9E7D3B" />
-      <line x1="8" y1="8" x2="16" y2="8" stroke="#9E7D3B" strokeWidth="0.8" />
-      <line x1="8" y1="8" x2="8" y2="16" stroke="#9E7D3B" strokeWidth="0.8" />
-      <line x1="112" y1="112" x2="104" y2="112" stroke="#9E7D3B" strokeWidth="0.8" />
-      <line x1="112" y1="112" x2="112" y2="104" stroke="#9E7D3B" strokeWidth="0.8" />
-    </svg>
+    <div className={s.emblemSpot}>
+      <Image
+        src="/diagrams/personal-symbol-transparent.webp"
+        alt="People, Systems, and Workflows · Connected by data"
+        width={144}
+        height={144}
+        className={s.emblemImg}
+        priority
+      />
+      <div className={s.emblemCaption}>
+        <strong className={s.emblemCaptionTitle}>People, Systems, and Workflows</strong>
+        <span className={s.emblemCaptionSubtitle}>Connected by data</span>
+      </div>
+    </div>
   );
 }
 
@@ -230,7 +222,7 @@ const COLLECTIVES: CollectivePillar[] = [
         "A job is more than the sum of its tasks. What's more intangible is the part between them: deciding which task matters, in what order, and when to stop; coordinating with people on other teams; and being the one accountable when it goes wrong.",
     },
     body:
-      "Why do 70% of enterprise ERP implementations fail? It is rarely a failure of computational horsepower or database scale. It is disparate information systems, deeply entrenched departmental silos, and the absence of a unified, company-owned common data model. Monolithic software captures the sanitized Standard Operating Procedures (SOPs)—how an organization wishes it functioned on its best day. But actual operations survive on tacit human judgment, informal cross-department trust, and exception handling that lives entirely between the seams. AI will hit the exact same brick wall if it merely automates documented processes. Before generating a line of code, an architect must map the business as it actually operates on the floor—honoring the human seam that holds the enterprise together.",
+      "Why do enterprise ERP implementations so often struggle to deliver on their promise? Gartner forecasts that through 2027, over 70% of new ERP initiatives will fail to fully realize their business-case goals. It is rarely a computational limitation. It is disparate information systems, entrenched departmental silos, and the absence of a unified, company-owned common data model. Monolithic software captures sanitized Standard Operating Procedures—how an organization wishes it functioned on its best day. But actual operations survive on tacit human judgment, informal cross-department trust, and exception handling that lives entirely between the seams. AI hits that exact wall if it merely automates documented processes. Before generating code, an architect must map the business as it actually operates on the floor—honoring the human seam that holds the enterprise together.",
     inquiries: [
       "Disparate silos & the common data model: why database introspection misses how the company runs",
       "The human seam: what happens when systems flag green but physical steel is torn apart",
@@ -250,12 +242,12 @@ const COLLECTIVES: CollectivePillar[] = [
     titanQuote: {
       speaker: "Marc Benioff",
       role: "Chair & CEO, Salesforce",
-      source: "Dreamforce / TechCrunch",
+      source: "Dreamforce / The Road to Service-as-Software",
       quote:
-        "Copilot is really the new Microsoft Clippy... DIY AI is a science project. What matters isn't the model—it’s the metadata and the workflows.",
+        "What matters isn’t just the model—it’s the metadata, the business context, and the deterministic enterprise workflows.",
     },
     body:
-      "The enterprise computing conversation has been derailed by toy chatbots and the fantasy of zero-human automation. The enterprises that will dominate the next decade are mastering a fundamentally new skill set: Human-Agent Synthesis—experienced operators and autonomous software agents collaborating inside deterministic business workflows. This is where Salesforce and forward-looking leaders have it right: enterprise value lives in metadata and consequential workflows, not unstructured chat prompts. The legacy era of rigid, multi-tenant per-seat SaaS is coming to a close. As businesses move work from left to right through goal-directed pipelines—governed by strict requirements gathering, state validation, and human authorization gates—enterprises are reclaiming complete ownership of their operational workflows.",
+      "The enterprise computing conversation has too often focused on generic conversational prompts and the fantasy of zero-human automation. The enterprises that will dominate the next decade are mastering a fundamentally new discipline: Human-Agent Synthesis—experienced operators and autonomous software agents collaborating inside deterministic business workflows. What matters is enterprise context, domain metadata, and consequential workflows. As businesses move work through goal-directed pipelines—governed by strict requirements, state validation, and human authorization gates—enterprises are reclaiming complete ownership of their operational systems.",
     inquiries: [
       "Beyond conversational chat: why deterministic left-to-right pipelines beat prompt droids",
       "Human-agent collaboration: the new operational skill set separating winning enterprises",
@@ -274,13 +266,13 @@ const COLLECTIVES: CollectivePillar[] = [
     spot: "factory",
     titanQuote: {
       speaker: "Matan Grinberg & Eno Reyes",
-      role: "Co-Founders, Factory (factory.ai)",
-      source: "Factory 2.0 Manifesto",
+      role: "Co-Founders, Factory",
+      source: "Factory 2.0: From Coding Agents to Software Factories",
       quote:
-        "The incremental units of this system are AI agents. This system will be built by engineers, and in turn will build their software. This system is the software factory... We are building the machine that builds the machine.",
+        "The incremental units of this system are AI agents. This system will be built by engineers, and in turn will build their software. This system is the software factory.",
     },
     body:
-      "We have crossed the threshold into the software factory: code now building code. But autonomous software fabrication introduces a demanding new engineering discipline: managing token burn, orchestrating open-weight models alongside frontier APIs, and mastering the tokenomics of multi-seat execution. Frontier models churn every sixty days. If an enterprise welds its business logic directly to a provider's model, its operations break on the next API deprecation. The durable asset is not the model—it is the machine that builds the machines: the test-driven gantry harness on local iron. Wrapping volatile intelligence in deterministic AST calipers, git-backed state ledgers, and human authorization gates turns raw model tokens into living, verifiable enterprise software.",
+      "We have crossed the threshold into the software factory: code now building code. But autonomous software fabrication introduces a demanding new engineering discipline: managing token burn, orchestrating open-weight models alongside frontier APIs, and mastering multi-seat execution. Frontier models and APIs evolve rapidly. If an enterprise welds its core business logic directly to a single proprietary endpoint, it invites fragile dependencies. The durable asset is the machine that builds the machines: the test-driven gantry harness on local iron. Wrapping volatile intelligence in deterministic AST calipers, git-backed state ledgers, and human authorization gates turns model tokens into living, verifiable enterprise software.",
     inquiries: [
       "Decoupling model churn: why the competitive moat is the gantry harness on local iron",
       "Taming token burn & tokenomics: multi-seat worktrees and AST calipers vs. Ralph Wiggum loops",
@@ -308,7 +300,7 @@ type FormErrors = {
 export default function AgenticPositionView() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [topic, setTopic] = useState("All Three Systems (Full Stack: B.O.S.S. + FlowCraft + The Rig)");
+  const [topic, setTopic] = useState("All Three Systems & Field Theses");
   const [message, setMessage] = useState("");
   const [hp, setHp] = useState("");
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "recorded" | "error">("idle");
@@ -396,7 +388,7 @@ export default function AgenticPositionView() {
               Where a 20-year enterprise systems arc meets over three years inside the agentic runtime.
             </p>
             <p className={s.heroLead}>
-              Macro venture capital views enterprise transformation from financial altitude; the physical floor runs on unwritten reality. Between executive slide decks and automated software factories, every enterprise deployment succeeds or fails in the operational seam between software and the physical dock. This is where I build, question, and learn through the work.
+              I&rsquo;ve spent 20+ years connecting business intent with the work people do every day on the enterprise floor. Now I&rsquo;m applying that experience to agentic systems: what they can do, where human judgment matters, and what it takes to make the result useful in daily operations. Between executive slide decks and automated software factories, every enterprise deployment succeeds or fails in the operational seam. This is where I build, question, and learn through the work.
             </p>
             <div className={s.byline}>
               <span className={s.square} />
@@ -413,22 +405,22 @@ export default function AgenticPositionView() {
               <div className={s.plateCornerBL} />
               <div className={s.plateCornerBR} />
               <div className={s.plateInner}>
-                <span className={s.plateTag}>THE COLLECTIVE • THREE INTERLOCKING SYSTEMS</span>
-                <EnterpriseHiveSpot />
+                <span className={s.plateTag}>PEOPLE • SYSTEMS • WORKFLOWS</span>
+                <PeopleSystemsWorkflowSpot />
                 <div className={s.plateMetrics}>
                   <div>
-                    <strong>B.O.S.S.</strong>
-                    <span>The Enterprise</span>
+                    <strong>20+ YRS</strong>
+                    <span>Systems Arc</span>
                   </div>
                   <div className={s.metricDivider} />
                   <div>
-                    <strong>FLOWCRAFT</strong>
-                    <span>The Workflow</span>
+                    <strong>3+ YRS</strong>
+                    <span>Agentic Runtime</span>
                   </div>
                   <div className={s.metricDivider} />
                   <div>
-                    <strong>THE RIG</strong>
-                    <span>The Factory</span>
+                    <strong>SHOP FLOOR</strong>
+                    <span>Ground Truth</span>
                   </div>
                 </div>
               </div>
@@ -583,7 +575,7 @@ export default function AgenticPositionView() {
             <p className={s.eyebrow}>03 / The Patterns at the Seam</p>
             <h2>Where The Work Turns Into Code<span>.</span></h2>
             <p className={s.limelightDek}>
-              The field briefs above explore why enterprise systems break down at the human seam. The Collective is the actual software—B.O.S.S., FlowCraft, and The Rig—built to solve it. Each enterprise runs in sovereign isolation on its own iron, while the collective pattern library grows as practitioners use the systems to solve real-world problems.
+              These field notes inform the systems I&rsquo;m building. The Collective brings that work together with an invitation to other builders and operators: develop useful enterprise software, test it in real work, and share what proves valuable.
             </p>
           </div>
 
@@ -592,7 +584,7 @@ export default function AgenticPositionView() {
               <p className={s.eyebrow} style={{ margin: 0 }}>THE HUMAN &amp; AGENT BUILDER COMMONS // SOVEREIGN RUNTIMES</p>
               <h3>Humans and Autonomous Agents Building Together in a New Era.</h3>
               <p>
-                An open organizing collective where experienced enterprise operators and autonomous software agents build sovereign systems together on private iron. We are figuring this out together on the frontlines—sharing verified patterns, living blueprints, and sovereign execution lanes. From specialized operators to multi-site enterprises, run in complete isolation on your own iron, compounding through the collective pattern library.
+                An organizing collective where experienced enterprise operators and autonomous software agents build sovereign systems together on private iron. Operators choose what to share. Other operators review and choose what to adopt. Business data and decisions stay with their owners.
               </p>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "10px", alignItems: "flex-start", flexShrink: 0 }}>
@@ -736,20 +728,20 @@ export default function AgenticPositionView() {
                     className={s.select}
                     disabled={status === "submitting"}
                   >
-                    <option value="All Three Systems (Full Stack: B.O.S.S. + FlowCraft + The Rig)">
-                      All Three Systems (Full Stack: B.O.S.S. + FlowCraft + The Rig)
+                    <option value="All Three Systems & Field Theses">
+                      All Three Systems &amp; Field Theses
                     </option>
-                    <option value="01 / The Enterprise & B.O.S.S. (Domain Truth & Schemas)">
-                      01 / The Enterprise &amp; B.O.S.S. (Domain Truth &amp; Schemas)
+                    <option value="01 / The Operational Seam: Mary's Sheet">
+                      01 / The Operational Seam: Mary&apos;s Sheet &amp; The Unwritten Core
                     </option>
-                    <option value="02 / The Workflow & FlowCraft (Human-Agent Runtime & MDM)">
-                      02 / The Workflow &amp; FlowCraft (Human-Agent Runtime &amp; MDM)
+                    <option value="02 / Human-Agent Synthesis: The Sovereign Substrate">
+                      02 / Human-Agent Synthesis: The Sovereign Substrate &amp; Enterprise Workflows
                     </option>
-                    <option value="03 / The Factory & The Rig (Software Factory & Rig-in-a-Box)">
-                      03 / The Factory &amp; The Rig (Software Factory &amp; Rig-in-a-Box)
+                    <option value="03 / The Machine That Builds the Machines">
+                      03 / The Machine That Builds the Machines: Software Factories &amp; Tokenomics
                     </option>
-                    <option value="Open Source Collaboration & Code Sharing">
-                      Open Source Collaboration &amp; Shared Systems
+                    <option value="The Collective / Collaboration & Shared Patterns">
+                      The Collective / Collaboration &amp; Shared Patterns
                     </option>
                     <option value="General Builder / Peer Connection">
                       General Builder / Peer Connection

@@ -86,7 +86,7 @@ export default function SiteHeader() {
           : "border-navy/10 bg-[#FBF9F4]/95 text-navy"
       }`}
     >
-      <div className="page-well flex items-center justify-between py-3.5 md:py-5">
+      <div className="page-well !px-3 sm:!px-6 flex items-center justify-between py-3.5 md:py-5">
         <div className="flex items-center gap-3">
           <Link
             href="/"

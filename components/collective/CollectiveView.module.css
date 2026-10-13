@@ -108,18 +108,130 @@
 
 /* Hero */
 .hero {
-  padding: 72px 24px 48px;
+  padding: 72px 24px 56px;
   border-bottom: 1px solid var(--line);
 }
 
+
+/* Hero Two-Column Layout */
 .heroInner {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 48px;
+  align-items: center;
+}
+
+@media (max-width: 960px) {
+  .heroInner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
 }
 
 .heroContent {
-  max-width: 880px;
+  max-width: 100%;
 }
+
+.leadBody {
+  max-width: 820px;
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.heroVisual {
+  display: flex;
+  justify-content: center;
+}
+
+.heroPlateFrame {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  background: var(--panel-bg);
+  border: 1px solid var(--line);
+  padding: 32px;
+  box-shadow: 0 4px 20px rgba(30, 32, 36, 0.04);
+  border-radius: 2px;
+}
+
+.plateCornerTL,
+.plateCornerTR,
+.plateCornerBL,
+.plateCornerBR {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: var(--brass);
+  border-style: solid;
+}
+
+.plateCornerTL { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+.plateCornerTR { top: -1px; right: -1px; border-width: 2px 2px 0 0; }
+.plateCornerBL { bottom: -1px; left: -1px; border-width: 0 0 2px 2px; }
+.plateCornerBR { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+
+.plateInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.plateTag {
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.spotSvg {
+  width: 120px;
+  height: 120px;
+  display: block;
+}
+
+.plateMetrics {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.plateMetrics strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+
+.plateMetrics span {
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.metricDivider {
+  width: 1px;
+  height: 30px;
+  background-color: var(--line);
+}
+
+.heroBottomPlate {
+  max-width: 1200px;
+  margin: 40px auto 0;
+}
+
 
 .eyebrow {
   font-size: 11px;
@@ -146,12 +258,12 @@
   font-size: clamp(18px, 2.2vw, 22px);
   line-height: 1.5;
   color: var(--muted);
-  max-width: 860px;
+  max-width: 900px;
   margin-bottom: 32px;
 }
 
-/* Spec Plate (Diagram Bay) */
-.specPlate {
+/* Commons Learning Loop Bay (Replaces Old Cold SVG) */
+.commonsPlate {
   background: var(--panel-bg);
   border: 1px solid var(--line-dark);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
@@ -160,10 +272,10 @@
   margin-top: 40px;
 }
 
-.specBar {
+.commonsBar {
   background: var(--surface);
   border-bottom: 1px solid var(--line);
-  padding: 10px 18px;
+  padding: 12px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -171,64 +283,128 @@
   font-size: 11px;
 }
 
-.specTag {
+.commonsTag {
   color: var(--brass-dark);
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.specLive {
+.commonsLive {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   color: var(--ink);
   font-weight: 600;
 }
 
-.specLiveDot {
+.commonsLiveDot {
   width: 7px;
   height: 7px;
   border-radius: 50%;
   background: #16A34A;
 }
 
-.diagramContainer {
-  padding: 32px 20px;
-  display: flex;
-  justify-content: center;
-  background: #FCFAF6;
-  overflow-x: auto;
-}
-
-.diagramSvg {
-  width: 100%;
-  max-width: 1320px;
-  min-width: 900px;
-  height: auto;
-  display: block;
-}
-
-.specCaption {
-  background: var(--surface);
-  border-top: 1px solid var(--line);
-  padding: 14px 20px;
-  font-size: 13px;
-  color: var(--muted);
-  line-height: 1.5;
+.commonsGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  background: var(--panel-bg);
 }
 
-@media (max-width: 768px) {
-  .specCaption {
+@media (max-width: 960px) {
+  .commonsGrid {
     grid-template-columns: 1fr;
-    gap: 12px;
   }
 }
 
-.specCaption strong {
+.commonsCol {
+  padding: 32px 28px;
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.commonsCol:last-child {
+  border-right: none;
+}
+
+@media (max-width: 960px) {
+  .commonsCol {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+  .commonsCol:last-child {
+    border-bottom: none;
+  }
+}
+
+.commonsColTag {
+  display: inline-block;
+  font-family: monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brass-dark);
+  margin-bottom: 10px;
+}
+
+.commonsColTitle {
+  font-size: 22px;
   color: var(--ink);
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.commonsColText {
+  font-size: 14.5px;
+  color: var(--ink);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.commonsColFoot {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 10px 14px;
+  border-radius: 2px;
+  font-size: 12px;
+  font-family: monospace;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.commonsColFoot strong {
+  color: var(--brass-dark);
+}
+
+.commonsBanner {
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .commonsBanner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.commonsBannerText {
+  font-size: 14px;
+  color: var(--ink);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.commonsBannerText strong {
+  color: var(--brass-dark);
 }
 
 /* Section: The Three Systems */
@@ -238,12 +414,12 @@
 }
 
 .sectionInner {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .sectionHead {
-  max-width: 800px;
+  max-width: 820px;
   margin-bottom: 48px;
 }
 
@@ -337,8 +513,7 @@
   line-height: 1.45;
 }
 
-
-/* Section: Architectural Flywheel / Org-Instance */
+/* Section: Architectural Flywheel / Principles */
 .flywheelSection {
   padding: 80px 24px;
   background: var(--surface);
@@ -347,11 +522,11 @@
 
 .flywheelGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .flywheelGrid {
     grid-template-columns: 1fr;
   }
@@ -599,6 +774,15 @@
   border-radius: 4px;
 }
 
+@media (max-width: 640px) {
+  .formSection {
+    padding: 48px 16px;
+  }
+  .formBox {
+    padding: 24px 16px;
+  }
+}
+
 .formHead {
   margin-bottom: 28px;
   text-align: center;
@@ -695,21 +879,4 @@
   color: #B71C1C;
 }
 
-/* Footer */
-.footer {
-  border-top: 1px solid var(--line);
-  padding: 32px 24px;
-  text-align: center;
-  font-size: 13px;
-  color: var(--muted);
-}
 
-.footer a {
-  color: var(--ink);
-  text-decoration: none;
-  margin: 0 12px;
-}
-
-.footer a:hover {
-  text-decoration: underline;
-}
