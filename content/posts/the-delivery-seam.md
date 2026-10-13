@@ -32,7 +32,7 @@ To understand where we are, you have to look at the macro architecture of enterp
 |                                                                         |
 |  Wave 1: Mainframe (1960s-1980s)   -> Centralized Batch Processing      |
 |  Wave 2: Client-Server & ERP (90s) -> Distributed Enterprise Execution  |
-|  Wave 3: Cloud & SaaS (2000s-2020) -> Multi-Tenant Rental & Subscriptions|
+|  Wave 3: Cloud & SaaS (2000s-2020) -> Multi-Tenant Subscriptions        |
 |  Wave 4: Applied Agentics (Now)    -> Autonomous Software Fabrication   |
 +-------------------------------------------------------------------------+
 ```
@@ -129,7 +129,7 @@ This reality defines how modern enterprise technology creates durable value:
 |                \                                     /                  |
 |                 \                                   /                   |
 |                  v                                 v                    |
-|                      COMPLETE ENTERPRISE OUTCOME                         |
+|                      COMPLETE ENTERPRISE OUTCOME                        |
 |                    Sovereign - Resilient - Human-Led                    |
 +-------------------------------------------------------------------------+
 ```

@@ -92,6 +92,24 @@ The catastrophe was averted because Mary walked past maintenance on her morning 
 
 **No AI agent, scraping database records, could have caught that.** The status flag in the database was green. Only human presence, physical observation, and cross-department trust prevented a multi-thousand-dollar dump down the drain.
 
+```
++-------------------------------------------------------------------------+
+|               THE CHASM: STATED REALITY VS. ACTUAL REALITY              |
+|                                                                         |
+|   THE STATED ENTERPRISE (DATABASE)    THE ACTUAL OPERATING FLOOR        |
+|   - Status: Green / Line 2 Idle       - Pump Unbolted 20 Minutes Prior  |
+|   - Schedule: 911 Rush Batch Ready    - Weeping Mechanical Seal Failed  |
+|   - ERP Record: All Systems Clear     - Grease Marker on Torn Cardboard |
+|                                                                         |
+|                \                                     /                  |
+|                 \                                   /                   |
+|                  v                                 v                    |
+|                        THE OPERATIONAL SEAM                             |
+|               Mary's Clipboard · Physical Floor Presence                |
+|                   4,000 Gallons Saved From the Drain                    |
++-------------------------------------------------------------------------+
+```
+
 ---
 
 ## 4. "You're Going to Have More Important Things to Do, Mary"
@@ -134,6 +152,24 @@ That is the ultimate test of enterprise software.
 Bad software treats people as disposable data conduits—and then fails because the uncodified reality crashes the plant. Great operational architecture absorbs the clerical machinery so that the human beings on the floor can do what only humans can do: exercise judgment, build trust, mentor others, and lead. 
 
 Mary didn't lose her job. She finally got to do the work she was born to do.
+
+```
++-------------------------------------------------------------------------+
+|                 THE ELEVATION OF THE OPERATIONAL SEAM                   |
+|                                                                         |
+|   CLERICAL ABSORPTION (MACHINE)       HUMAN ELEVATION (MARY)            |
+|   - Deterministic Rule Processing     - Walk the Packaging Floor        |
+|   - Cross-System Data Sync            - Mentor Next-Gen Supervisors     |
+|   - Certification & Rest Logic        - Detect Pre-Failure Vibrations   |
+|   - Real-Time Tank Telemetry          - Anchor Institutional Trust      |
+|                                                                         |
+|                \                                     /                  |
+|                 \                                   /                   |
+|                  v                                 v                    |
+|                        THE ELEVATED ENTERPRISE                          |
+|           Machine Takes Clerical Load · Human Leads the Floor           |
++-------------------------------------------------------------------------+
+```
 
 ---
 
