@@ -79,14 +79,14 @@ You can automate tasks at machine speed. But **the enterprise lives in the space
 
 During recent *All-In Podcast* disclosures, the 80/90 group highlighted a second critical consensus emerging across the engineering frontier:
 
-> **SEAM LOG 03-B // A MAN IN THE BUILD: BLOOD, SWEAT, TEARS, AND JOY**
-> Let's be completely real about what it actually takes to build with agentic software systems today: it is serious blood, sweat, and tears. Don't let polished vendor stage demos fool you. This is a marathon, and we are all learning together in real time on this frontier.
+> **SEAM LOG 03-B // DOWN THE RABBIT HOLE: THE PURE JOY AND THE PAIN**
+> I fell down the agentic rabbit hole, like others on this frontier, three years ago. Working with agentics has empowered people like me—and frontline domain champions like the scheduler with his PowerShell workbooks—to work with software at a level that was completely unimaginable before agentics.
 >
-> I cannot count the number of times I have had to burn down my codebase and start over from scratch at two in the morning because an architectural assumption collapsed under real operational pressure. You pour eighty hours into crafting a custom multi-agent pipeline, and thirty days later a frontier model or vendor releases a capability that is genuinely better than what you just built. You have to swallow your pride, throw away your favorite code, and immediately adopt the better solution into your build without looking back.
+> The pure joy, and the pain. I cannot count the number of times I have had to burn down my codebase and start over from scratch at two in the morning because an architectural assumption collapsed under real operational pressure. You pour eighty hours into crafting a custom multi-agent pipeline, and thirty days later a frontier model or vendor releases a capability that is genuinely better than what you just built. You have to swallow your pride, throw away your favorite code, and immediately adopt the better solution into your build without looking back.
 >
-> And then there is the emotional intensity of the runtime: the pure, electric joy on one side when an agentic swarm clicks into place and writes verifiable production code—and the visceral pain and exhaustion on the other when agents go rogue, when hallucinations quietly slip past naive guardrails, and when your stated intent does not equal the actual outcome.
+> And then there is the emotional intensity of the runtime: the electric joy on one side when an agentic swarm clicks into place and writes verifiable production code—and the visceral pain on the other when agents go rogue and intent does not equal outcome.
 >
-> That is the true story of a man in the build. You don't survive it by giving up. You survive it through relentless resilience, ruthless deterministic testing, and the hard-won joy of watching real software emerge from the fire.
+> By all, I am an enthusiast. But I apply that enthusiasm to the enterprise: that's where I started, that's what I know, and now I have agentics. It's a brave new world, and I am all in on the ride.
 
 > **SEAM LOG 03-C // WHEN INTENT DOES NOT EQUAL OUTCOME**
 > In traditional programming, compilers either accept your syntax or reject it. In agentic development, the hardest battle is that human intent does not equal agentic outcome. An agent will give you an articulate, polite summary of victory while having quietly shredded your production database foreign keys.

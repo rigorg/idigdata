@@ -294,10 +294,10 @@ const COLLECTIVES: CollectivePillar[] = [
     body:
       "We have crossed the threshold into the software factory: code now building code. But autonomous software fabrication introduces a demanding new engineering discipline: managing token burn, orchestrating open-weight models alongside frontier APIs, and mastering multi-seat execution. Frontier models and APIs evolve rapidly. If an enterprise welds its core business logic directly to a single proprietary endpoint or hosted SaaS, it invites fragile dependencies. The durable asset is the machine that builds the machines: the test-driven gantry harness on local iron. Wrapping volatile intelligence in deterministic AST calipers, git-backed state ledgers, and human authorization gates turns model tokens into living, verifiable enterprise software.",
     fieldNoteCard: {
-      rubric: "SEAM LOG // THE MACHINE THAT BUILDS",
-      stamp: "A MAN IN THE BUILD",
-      text: "Building agentic systems is serious blood, sweat, and tears. I have burned down my codebase and started over more times than I can count. You build something custom, and thirty days later a vendor beats it—so you adapt. You live the electric joy when agents click, and the agony when they go rogue and intent fails to equal outcome. Don't give up: this is a marathon, and we're all learning together.",
-      signature: "— Rob Paddock · Builder Field Note",
+      rubric: "SEAM LOG // DOWN THE RABBIT HOLE",
+      stamp: "THE JOY AND THE PAIN",
+      text: "I fell down the agentic rabbit hole three years ago. Working with agentics has empowered people like me—and domain champions with their PowerShell spreadsheets—to work with software at a level unimaginable before agentics. The pure joy, and the pain. I've burned down my codebase and started over more times than I can count. When agents click, it's electric; when they go rogue, intent fails to equal outcome. Above all, I am an enthusiast, but I apply that to the enterprise: that's where I started, that's what I know, and now I have agentics. It's a brave new world, and I'm all in on the ride.",
+      signature: "— Rob Paddock · A Man in the Build",
     },
     inquiries: [
       "Decoupling model churn: why the competitive moat is the gantry harness on local iron",
@@ -414,7 +414,7 @@ export default function AgenticPositionView() {
               Where a 20-year enterprise systems arc meets over three years inside the agentic runtime.
             </p>
             <p className={s.heroLead}>
-              I&rsquo;ve spent 20+ years connecting business intent with the work people do every day on the enterprise floor. Now I&rsquo;m applying that experience to agentic systems: what they can do, where human judgment matters, and what it takes to make the result useful in daily operations. Between executive slide decks and automated software factories, every enterprise deployment succeeds or fails in the operational seam. This is where I build, question, and learn through the work.
+              I&rsquo;ve spent 20+ years connecting business intent with the work people do every day on the enterprise floor. Three years ago, I fell down the agentic rabbit hole&mdash;discovering both the pure joy and the pain of building at the bleeding edge. Working with agentics has empowered people like me, and the domain champions on the floor with their interconnected spreadsheets and scripts, to build software at a level that was unimaginable before agentics. Above all, I am an enthusiast. But I apply that passion to the enterprise: that&rsquo;s where I started, that&rsquo;s what I know, and that&rsquo;s where software has to actually work. It&rsquo;s a brave new world, and I&rsquo;m all in on the ride.
             </p>
             <div className={s.byline}>
               <span className={s.square} />
