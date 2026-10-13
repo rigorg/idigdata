@@ -18,48 +18,45 @@ function ProcessConstellationSpot() {
   return (
     <svg viewBox="0 0 120 120" className={s.spotSvg} aria-hidden="true">
       <defs>
-        <pattern id="constellationDots" width="12" height="12" patternUnits="userSpaceOnUse">
-          <circle cx="6" cy="6" r="0.7" fill="#DDD7C8" />
+        <pattern id="seamDots" width="10" height="10" patternUnits="userSpaceOnUse">
+          <circle cx="5" cy="5" r="0.6" fill="#DDD7C8" />
         </pattern>
       </defs>
-      <rect width="120" height="120" fill="url(#constellationDots)" />
+      <rect width="120" height="120" fill="url(#seamDots)" />
       
-      {/* Outer concentric orbital rings */}
-      <circle cx="60" cy="60" r="46" fill="none" stroke="#DDD7C8" strokeWidth="0.8" strokeDasharray="2 3" />
-      <circle cx="60" cy="60" r="32" fill="none" stroke="#9E7D3B" strokeWidth="0.8" opacity="0.6" />
-      <circle cx="60" cy="60" r="16" fill="#FAF6EE" stroke="#9E7D3B" strokeWidth="1.2" />
+      {/* Top Half: Stated Reality (Boardroom ERP Schema) */}
+      <rect x="12" y="12" width="96" height="34" rx="2" fill="#FAF6EE" stroke="#9E7D3B" strokeWidth="1" />
+      <rect x="16" y="16" width="30" height="10" fill="#EAE4D6" stroke="#1E2024" strokeWidth="0.8" />
+      <text x="31" y="23" fontSize="4.2" fill="#1E2024" textAnchor="middle" fontFamily="monospace" fontWeight="bold">ERP SCHEMA</text>
+      <line x1="52" y1="21" x2="102" y2="21" stroke="#9E7D3B" strokeWidth="0.8" strokeDasharray="2 2" />
+      <text x="77" y="29" fontSize="3.8" fill="#8F4A38" textAnchor="middle" fontFamily="monospace">STATED HAPPY PATH</text>
+      <text x="60" y="41" fontSize="4" fill="#68645C" textAnchor="middle" fontFamily="monospace">BILLABLE-HOUR MODEL</text>
 
-      {/* Six 60-degree radial vectors radiating from central data core */}
-      {/* 0 deg (12 o'clock: P2P) */}
-      <line x1="60" y1="60" x2="60" y2="16" stroke="#9E7D3B" strokeWidth="1.2" />
-      {/* 60 deg (2 o'clock: O2C) */}
-      <line x1="60" y1="60" x2="98" y2="38" stroke="#9E7D3B" strokeWidth="1.2" />
-      {/* 120 deg (4 o'clock: P2M) */}
-      <line x1="60" y1="60" x2="98" y2="82" stroke="#9E7D3B" strokeWidth="1.2" />
-      {/* 180 deg (6 o'clock: S2S) */}
-      <line x1="60" y1="60" x2="60" y2="104" stroke="#9E7D3B" strokeWidth="1.2" />
-      {/* 240 deg (8 o'clock: D2R) */}
-      <line x1="60" y1="60" x2="22" y2="82" stroke="#9E7D3B" strokeWidth="1.2" />
-      {/* 300 deg (10 o'clock: MDM) */}
-      <line x1="60" y1="60" x2="22" y2="38" stroke="#9E7D3B" strokeWidth="1.2" />
+      {/* The Operational Seam (The Chasm) */}
+      <line x1="8" y1="56" x2="112" y2="56" stroke="#8F4A38" strokeWidth="1.2" strokeDasharray="3 2" />
+      <circle cx="60" cy="56" r="3" fill="#8F4A38" />
+      <text x="60" y="52" fontSize="3.8" fill="#8F4A38" textAnchor="middle" fontFamily="monospace" fontWeight="bold">THE OPERATIONAL SEAM</text>
 
-      {/* Six Constellation Nodes */}
-      <circle cx="60" cy="16" r="3.5" fill="#FAF6EE" stroke="#1E2024" strokeWidth="1.5" />
-      <circle cx="98" cy="38" r="3.5" fill="#FAF6EE" stroke="#1E2024" strokeWidth="1.5" />
-      <circle cx="98" cy="82" r="3.5" fill="#FAF6EE" stroke="#1E2024" strokeWidth="1.5" />
-      <circle cx="60" cy="104" r="3.5" fill="#FAF6EE" stroke="#1E2024" strokeWidth="1.5" />
-      <circle cx="22" cy="82" r="3.5" fill="#FAF6EE" stroke="#1E2024" strokeWidth="1.5" />
-      <circle cx="22" cy="38" r="3.5" fill="#FAF6EE" stroke="#1E2024" strokeWidth="1.5" />
-
-      {/* Central Core (MDM / Company Truth) */}
-      <circle cx="60" cy="60" r="5" fill="#9E7D3B" />
-      <circle cx="60" cy="60" r="1.5" fill="#FAF6EE" />
-
-      {/* Dimension ticks */}
-      <line x1="10" y1="10" x2="16" y2="10" stroke="#9E7D3B" strokeWidth="0.8" />
-      <line x1="10" y1="10" x2="10" y2="16" stroke="#9E7D3B" strokeWidth="0.8" />
-      <line x1="110" y1="110" x2="104" y2="110" stroke="#9E7D3B" strokeWidth="0.8" />
-      <line x1="110" y1="110" x2="110" y2="104" stroke="#9E7D3B" strokeWidth="0.8" />
+      {/* Bottom Half: Actual Reality (Mary's Sheet & Floor Heuristics) */}
+      <rect x="12" y="66" width="96" height="42" rx="2" fill="#FFFFFF" stroke="#1E2024" strokeWidth="1.2" />
+      {/* Green metal clipboard bar */}
+      <rect x="44" y="63" width="32" height="6" rx="1.5" fill="#2E4F3E" stroke="#1E2024" strokeWidth="0.8" />
+      <circle cx="60" cy="66" r="1.2" fill="#FAF6EE" />
+      
+      {/* 11x17 Ledger grid rows */}
+      <line x1="16" y1="76" x2="104" y2="76" stroke="#2E4F3E" strokeWidth="0.8" />
+      <line x1="16" y1="84" x2="104" y2="84" stroke="#DDD7C8" strokeWidth="0.6" />
+      <line x1="16" y1="92" x2="104" y2="92" stroke="#DDD7C8" strokeWidth="0.6" />
+      <line x1="16" y1="100" x2="104" y2="100" stroke="#DDD7C8" strokeWidth="0.6" />
+      
+      <line x1="42" y1="72" x2="42" y2="104" stroke="#2E4F3E" strokeWidth="0.8" />
+      <line x1="72" y1="72" x2="72" y2="104" stroke="#DDD7C8" strokeWidth="0.6" />
+      
+      <text x="29" y="81" fontSize="3.8" fill="#2E4F3E" textAnchor="middle" fontFamily="monospace" fontWeight="bold">MARY'S SHEET</text>
+      <text x="57" y="81" fontSize="3.6" fill="#1E2024" textAnchor="middle" fontFamily="monospace">PUMP EXCEPTION</text>
+      <text x="88" y="81" fontSize="3.6" fill="#1E2024" textAnchor="middle" fontFamily="monospace">CREW MATCH</text>
+      
+      <text x="60" y="105" fontSize="4.2" fill="#2E4F3E" textAnchor="middle" fontFamily="monospace" fontWeight="bold">ACTUAL REALITY // FLOOR TRUTH</text>
     </svg>
   );
 }
@@ -73,55 +70,51 @@ function WorkflowBlocksSpot() {
   return (
     <svg viewBox="0 0 120 120" className={s.spotSvg} aria-hidden="true">
       <defs>
-        <pattern id="blockGrid" width="10" height="10" patternUnits="userSpaceOnUse">
-          <circle cx="5" cy="5" r="0.7" fill="#DDD7C8" />
+        <pattern id="wfGrid" width="10" height="10" patternUnits="userSpaceOnUse">
+          <circle cx="5" cy="5" r="0.6" fill="#DDD7C8" />
         </pattern>
       </defs>
-      <rect width="120" height="120" fill="url(#blockGrid)" />
+      <rect width="120" height="120" fill="url(#wfGrid)" />
 
-      {/* Drafting frame */}
-      <rect x="10" y="10" width="100" height="100" fill="#FAF6EE" stroke="#DDD7C8" strokeWidth="0.8" />
+      {/* Top: Toy Chatbot / Unbounded Prompt Loop (Crossed out) */}
+      <rect x="14" y="10" width="92" height="22" rx="2" fill="#FAF6EE" stroke="#A89F91" strokeWidth="0.8" strokeDasharray="2 2" />
+      <text x="36" y="21" fontSize="4" fill="#A89F91" fontFamily="monospace">PROMPT CHATBOT</text>
+      <text x="36" y="27" fontSize="3.4" fill="#8F4A38" fontFamily="monospace">RALPH WIGGUM LOOP</text>
+      <line x1="86" y1="14" x2="98" y2="28" stroke="#8F4A38" strokeWidth="1.5" />
+      <line x1="98" y1="14" x2="86" y2="28" stroke="#8F4A38" strokeWidth="1.5" />
 
-      {/* Pipeline Block 01: Input / Schema Block */}
-      <rect x="18" y="20" width="34" height="26" fill="#F4EFE5" stroke="#1E2024" strokeWidth="1.2" />
-      <line x1="22" y1="28" x2="46" y2="28" stroke="#9E7D3B" strokeWidth="1" />
-      <line x1="22" y1="34" x2="40" y2="34" stroke="#DDD7C8" strokeWidth="0.8" />
-      <text x="35" y="42" fontSize="5.2" fill="#68645C" textAnchor="middle" fontFamily="monospace" fontWeight="bold">INPUT CONTRACT</text>
+      {/* Transition: Arrow down to deterministic left-to-right pipeline */}
+      <path d="M 60 33 L 60 42 M 57 39 L 60 43 L 63 39" stroke="#9E7D3B" strokeWidth="1.2" fill="none" strokeLinecap="round" />
+      <text x="60" y="47" fontSize="3.8" fill="#9E7D3B" textAnchor="middle" fontFamily="monospace" fontWeight="bold">PIPELINE WITH GOALS // LEFT ➔ RIGHT</text>
 
-      {/* Directed Pipeline Flow Arrow */}
-      <path d="M 52 33 L 64 33 M 60 29 L 65 33 L 60 37" stroke="#9E7D3B" strokeWidth="1.2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+      {/* Step 1: Requirements Gathering */}
+      <rect x="8" y="52" width="32" height="26" rx="2" fill="#F4EFE5" stroke="#1E2024" strokeWidth="1" />
+      <text x="24" y="62" fontSize="3.8" fill="#1E2024" textAnchor="middle" fontFamily="monospace" fontWeight="bold">01 // REQS</text>
+      <line x1="12" y1="67" x2="36" y2="67" stroke="#9E7D3B" strokeWidth="0.8" />
+      <text x="24" y="73" fontSize="3.2" fill="#68645C" textAnchor="middle" fontFamily="monospace">RULES &amp; MDM</text>
 
-      {/* Pipeline Block 02: Deterministic Workflow Block / Agent Lane */}
-      <rect x="66" y="20" width="36" height="34" fill="#FFFFFF" stroke="#1E2024" strokeWidth="1.4" />
-      <line x1="72" y1="28" x2="96" y2="28" stroke="#9E7D3B" strokeWidth="1" />
-      <line x1="72" y1="36" x2="92" y2="36" stroke="#DDD7C8" strokeWidth="0.8" />
-      <line x1="72" y1="44" x2="86" y2="44" stroke="#DDD7C8" strokeWidth="0.8" />
-      <circle cx="94" cy="48" r="2" fill="#9E7D3B" />
-      <text x="84" y="25" fontSize="5" fill="#68645C" textAnchor="middle" fontFamily="monospace" fontWeight="bold">WORKFLOW</text>
+      {/* Flow arrow 1 -> 2 */}
+      <path d="M 40 65 L 45 65 M 43 62 L 46 65 L 43 68" stroke="#9E7D3B" strokeWidth="1" fill="none" />
 
-      {/* Pipeline Step 03: Human Authorization Diamond Gate */}
-      <polygon points="42,60 56,74 42,88 28,74" fill="#F4EFE5" stroke="#9E7D3B" strokeWidth="1.5" />
-      {/* Checkmark inside diamond */}
-      <path d="M 37 74 L 41 78 L 47 70" stroke="#1E2024" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-      <text x="42" y="96" fontSize="5" fill="#8F4A38" textAnchor="middle" fontFamily="monospace" fontWeight="bold">AUTH GATE</text>
+      {/* Step 2: UAT & State Gate */}
+      <rect x="46" y="52" width="34" height="26" rx="2" fill="#FFFFFF" stroke="#9E7D3B" strokeWidth="1.2" />
+      <polygon points="63,55 71,63 63,71 55,63" fill="#FAF6EE" stroke="#9E7D3B" strokeWidth="0.8" />
+      <path d="M 61 63 L 62.5 65 L 66 60.5" stroke="#1E2024" strokeWidth="1" fill="none" />
+      <text x="63" y="75" fontSize="3.2" fill="#8F4A38" textAnchor="middle" fontFamily="monospace" fontWeight="bold">UAT GATE</text>
 
-      {/* Conductor Line from Workflow Block down to Auth Gate */}
-      <path d="M 84 54 L 84 74 L 56 74" stroke="#9E7D3B" strokeWidth="1.2" fill="none" strokeDasharray="2 2" />
+      {/* Flow arrow 2 -> 3 */}
+      <path d="M 80 65 L 85 65 M 83 62 L 86 65 L 83 68" stroke="#9E7D3B" strokeWidth="1" fill="none" />
 
-      {/* Pipeline Step 04: Durable State Ledger Block */}
-      <rect x="64" y="66" width="38" height="26" fill="#FAF6EE" stroke="#1E2024" strokeWidth="1.2" />
-      <line x1="70" y1="74" x2="94" y2="74" stroke="#1E2024" strokeWidth="1" />
-      <line x1="70" y1="80" x2="90" y2="80" stroke="#DDD7C8" strokeWidth="0.8" />
-      <circle cx="92" cy="86" r="2.5" fill="#9E7D3B" />
-      <text x="83" y="87" fontSize="5" fill="#68645C" textAnchor="middle" fontFamily="monospace" fontWeight="bold">STATE LEDGER</text>
-      <path d="M 56 74 L 64 74" stroke="#1E2024" strokeWidth="1.5" />
+      {/* Step 3: Validated Ledger / Autonomy */}
+      <rect x="86" y="52" width="28" height="26" rx="2" fill="#FAF6EE" stroke="#1E2024" strokeWidth="1" />
+      <text x="100" y="62" fontSize="3.8" fill="#1E2024" textAnchor="middle" fontFamily="monospace" fontWeight="bold">03 // CORE</text>
+      <line x1="90" y1="67" x2="110" y2="67" stroke="#1E2024" strokeWidth="0.8" />
+      <text x="100" y="73" fontSize="3.2" fill="#2E4F3E" textAnchor="middle" fontFamily="monospace">SOVEREIGN</text>
 
-      {/* Dimension rule at bottom */}
-      <line x1="18" y1="104" x2="102" y2="104" stroke="#9E7D3B" strokeWidth="0.8" />
-      <line x1="18" y1="101" x2="18" y2="107" stroke="#9E7D3B" strokeWidth="0.8" />
-      <line x1="60" y1="101" x2="60" y2="107" stroke="#1E2024" strokeWidth="1" />
-      <line x1="102" y1="101" x2="102" y2="107" stroke="#9E7D3B" strokeWidth="0.8" />
-      <text x="60" y="113" fontSize="5.2" fill="#68645C" textAnchor="middle" fontFamily="monospace" fontWeight="bold">FLOWCRAFT // RUNTIME BLOCKS</text>
+      {/* Bottom Result: Complete Workflow Autonomy */}
+      <rect x="8" y="86" width="104" height="24" rx="2" fill="#1E2024" />
+      <text x="60" y="97" fontSize="4.4" fill="#FAF6EE" textAnchor="middle" fontFamily="monospace" fontWeight="bold">HUMAN-AGENT SYNTHESIS</text>
+      <text x="60" y="105" fontSize="3.4" fill="#9E7D3B" textAnchor="middle" fontFamily="monospace">HUMANS + AGENTS · DETERMINISTIC</text>
     </svg>
   );
 }
@@ -135,68 +128,32 @@ function FactorySpot() {
   return (
     <svg viewBox="0 0 120 120" className={s.spotSvg} aria-hidden="true">
       <defs>
-        <pattern id="factoryDots" width="10" height="10" patternUnits="userSpaceOnUse">
-          <circle cx="5" cy="5" r="0.7" fill="#DDD7C8" />
+        <pattern id="rigHatch" width="8" height="8" patternUnits="userSpaceOnUse">
+          <line x1="0" y1="0" x2="8" y2="8" stroke="#DDD7C8" strokeWidth="0.6" />
         </pattern>
       </defs>
-      <rect width="120" height="120" fill="url(#factoryDots)" />
+      <rect width="120" height="120" fill="url(#rigHatch)" />
 
-      {/* Industrial Factory Sawtooth Roofline Profile */}
-      <path
-        d="M 16 42 L 34 26 L 34 42 L 54 26 L 54 42 L 74 26 L 74 42 L 94 26 L 104 34 L 104 94 L 16 94 Z"
-        fill="#FAF6EE"
-        stroke="#DDD7C8"
-        strokeWidth="0.8"
-      />
+      {/* Outer Gantry Frame: The Test-Driven Harness */}
+      <rect x="8" y="8" width="104" height="104" rx="2" fill="#FAF6EE" stroke="#1E2024" strokeWidth="1.4" />
+      <line x1="8" y1="20" x2="112" y2="20" stroke="#9E7D3B" strokeWidth="1.2" />
+      <text x="60" y="16" fontSize="4.2" fill="#1E2024" textAnchor="middle" fontFamily="monospace" fontWeight="bold">THE GANTRY HARNESS // LOCAL IRON</text>
 
-      {/* Overhead Gantry Crane Rail */}
-      <line x1="18" y1="46" x2="102" y2="46" stroke="#1E2024" strokeWidth="2" />
-      {/* Structural Gantry End Brackets */}
-      <line x1="18" y1="46" x2="18" y2="94" stroke="#1E2024" strokeWidth="1.5" />
-      <line x1="102" y1="46" x2="102" y2="94" stroke="#1E2024" strokeWidth="1.5" />
+      {/* Rapid Frontier Intelligence Churn Core */}
+      <rect x="22" y="28" width="76" height="28" rx="2" fill="#FFFFFF" stroke="#8F4A38" strokeWidth="1" strokeDasharray="2 2" />
+      <text x="60" y="38" fontSize="4" fill="#8F4A38" textAnchor="middle" fontFamily="monospace" fontWeight="bold">FRONTIER LLM CHURN (60-DAY)</text>
+      <text x="60" y="47" fontSize="3.4" fill="#68645C" textAnchor="middle" fontFamily="monospace">COMMODITY COGNITION · DECOUPLED</text>
 
-      {/* Gantry Trolley Carriage (Center) */}
-      <rect x="52" y="43" width="16" height="6" fill="#9E7D3B" stroke="#1E2024" strokeWidth="1" />
-      {/* Hoist Cable */}
-      <line x1="60" y1="49" x2="60" y2="58" stroke="#9E7D3B" strokeWidth="1.2" strokeDasharray="1 1" />
-      {/* Precision AST Caliper Tool */}
-      <path d="M 52 58 L 68 58 M 54 58 L 54 66 M 66 58 L 66 66" stroke="#1E2024" strokeWidth="1.2" fill="none" />
+      {/* AST Calipers & Test Gates Layer */}
+      <rect x="16" y="62" width="88" height="20" rx="1.5" fill="#F4EFE5" stroke="#9E7D3B" strokeWidth="1.2" />
+      <path d="M 22 72 L 28 72 M 25 67 L 25 77" stroke="#1E2024" strokeWidth="1" />
+      <text x="60" y="70" fontSize="3.8" fill="#1E2024" textAnchor="middle" fontFamily="monospace" fontWeight="bold">DETERMINISTIC TEST CALIPERS</text>
+      <text x="60" y="77" fontSize="3.2" fill="#9E7D3B" textAnchor="middle" fontFamily="monospace">GIT STATE LEDGER · HUMAN AUTH GATE</text>
 
-      {/* Assembly Line Conveyor */}
-      <line x1="20" y1="74" x2="100" y2="74" stroke="#1E2024" strokeWidth="1.5" />
-      {/* Mechanical Rollers */}
-      <circle cx="28" cy="78" r="2.5" fill="#FAF6EE" stroke="#9E7D3B" strokeWidth="0.8" />
-      <circle cx="44" cy="78" r="2.5" fill="#FAF6EE" stroke="#9E7D3B" strokeWidth="0.8" />
-      <circle cx="60" cy="78" r="2.5" fill="#FAF6EE" stroke="#9E7D3B" strokeWidth="0.8" />
-      <circle cx="76" cy="78" r="2.5" fill="#FAF6EE" stroke="#9E7D3B" strokeWidth="0.8" />
-      <circle cx="92" cy="78" r="2.5" fill="#FAF6EE" stroke="#9E7D3B" strokeWidth="0.8" />
-
-      {/* Manufactured Work Units */}
-      {/* Unit 01: Raw Spec Block */}
-      <rect x="23" y="62" width="12" height="12" fill="#F4EFE5" stroke="#9E7D3B" strokeWidth="1" />
-      <line x1="26" y1="68" x2="32" y2="68" stroke="#DDD7C8" strokeWidth="0.8" />
-
-      {/* Unit 02: Living Asset being calibrated */}
-      <rect x="55" y="60" width="14" height="14" fill="#FFFFFF" stroke="#1E2024" strokeWidth="1.4" />
-      <circle cx="62" cy="67" r="2" fill="#9E7D3B" />
-
-      {/* Unit 03: Caliper-Verified Work Asset */}
-      <rect x="83" y="62" width="12" height="12" fill="#F4EFE5" stroke="#1E2024" strokeWidth="1" />
-      <path d="M 86 68 L 88 70 L 92 65" stroke="#9E7D3B" strokeWidth="1.2" fill="none" strokeLinecap="round" />
-
-      {/* Local Sovereign Station Base: Rig-in-a-Box Terminal */}
-      <rect x="34" y="86" width="52" height="18" fill="#F4EFE5" stroke="#1E2024" strokeWidth="1.2" />
-      <line x1="40" y1="92" x2="80" y2="92" stroke="#9E7D3B" strokeWidth="1" />
-      <line x1="40" y1="97" x2="70" y2="97" stroke="#DDD7C8" strokeWidth="0.8" />
-      <circle cx="76" cy="97" r="1.5" fill="#9E7D3B" />
-      <text x="60" y="102" fontSize="4.8" fill="#68645C" textAnchor="middle" fontFamily="monospace" fontWeight="bold">SOVEREIGN OPERATOR RIG</text>
-
-      {/* Tolerancing Ticks at Bottom */}
-      <line x1="16" y1="108" x2="104" y2="108" stroke="#9E7D3B" strokeWidth="0.8" />
-      <line x1="16" y1="105" x2="16" y2="111" stroke="#9E7D3B" strokeWidth="0.8" />
-      <line x1="60" y1="105" x2="60" y2="111" stroke="#1E2024" strokeWidth="1" />
-      <line x1="104" y1="105" x2="104" y2="111" stroke="#9E7D3B" strokeWidth="0.8" />
-      <text x="60" y="116" fontSize="5.2" fill="#1E2024" textAnchor="middle" fontFamily="monospace" fontWeight="bold">RIG-IN-A-BOX // LOCAL IRON</text>
+      {/* Output: Living Operational Machines (Plural) */}
+      <rect x="14" y="88" width="92" height="18" rx="2" fill="#2E4F3E" stroke="#1E2024" strokeWidth="1" />
+      <text x="60" y="99" fontSize="4.2" fill="#FAF6EE" textAnchor="middle" fontFamily="monospace" fontWeight="bold">LIVING MACHINES (PLURAL)</text>
+      <text x="60" y="104" fontSize="3.2" fill="#DDD7C8" textAnchor="middle" fontFamily="monospace">B.O.S.S. · FLOWCRAFT · THE RIG</text>
     </svg>
   );
 }
@@ -260,10 +217,10 @@ interface CollectivePillar {
 const COLLECTIVES: CollectivePillar[] = [
   {
     num: "01",
-    tag: "FIELD BRIEF 01 // THE WORKFLOWS",
+    tag: "MAIN EVENT 01 // THE SEAM",
     actionLabel: "Join the Discussion",
-    title: "Stated vs. Actual Reality",
-    subtitle: "Mary's Sheet & The Unwritten Operating Core",
+    title: "The Operational Seam",
+    subtitle: "Why ERPs Fail: Information Silos, Business Mapping & The Human Seam",
     spot: "constellation",
     titanQuote: {
       speaker: "Chamath Palihapitiya",
@@ -273,22 +230,22 @@ const COLLECTIVES: CollectivePillar[] = [
         "A job is more than the sum of its tasks. What's more intangible is the part between them: deciding which task matters, in what order, and when to stop; coordinating with people on other teams; and being the one accountable when it goes wrong.",
     },
     body:
-      "Enterprise software only captures the happy path. The real operating logic lives in the unwritten space—the certified workforce matrices, informal plant phone calls, and thirty years of frontline judgment that keep a facility moving when systems change. In every organization, there is a Mary whose personal spreadsheets have outlasted multi-million-dollar ERP implementations. You cannot prompt an AI agent with what was never codified. True enterprise agentics begins by surfacing what lives in between the seams before generating a line of code.",
+      "Why do 70% of enterprise ERP implementations fail? It is rarely a failure of computational horsepower or database scale. It is disparate information systems, deeply entrenched departmental silos, and the absence of a unified, company-owned common data model. Monolithic software captures the sanitized Standard Operating Procedures (SOPs)—how an organization wishes it functioned on its best day. But actual operations survive on tacit human judgment, informal cross-department trust, and exception handling that lives entirely between the seams. AI will hit the exact same brick wall if it merely automates documented processes. Before generating a line of code, an architect must map the business as it actually operates on the floor—honoring the human seam that holds the enterprise together.",
     inquiries: [
-      "Stated vs. actual reality: why automated database introspection misses how the floor runs",
-      "The maintenance exception: what happens when systems say clear but physical pumps are pulled",
-      "Elevating frontline judgment: turning human data conduits into cross-department leaders",
+      "Disparate silos & the common data model: why database introspection misses how the company runs",
+      "The human seam: what happens when systems flag green but physical steel is torn apart",
+      "Elevating frontline judgment: turning human data conduits into operational leaders",
     ],
     fieldNoteHref: "/agentic-ai/marys-sheet/",
-    fieldNoteLabel: "Read Field Brief: Mary's Sheet & Stated Reality",
-    topicKey: "01 / The Workflows: Stated vs. Actual Reality",
+    fieldNoteLabel: "Read Field Dispatch: Mary's Sheet & The Unwritten Core",
+    topicKey: "01 / The Operational Seam: Mary's Sheet",
   },
   {
     num: "02",
-    tag: "FIELD BRIEF 02 // WORKFLOWS OVER CHATBOTS",
+    tag: "MAIN EVENT 02 // SYNTHESIS",
     actionLabel: "Join the Discussion",
-    title: "Workflows Over Chatbots",
-    subtitle: "The SaaS/ERP Divide, Metadata, and the Sovereign Substrate",
+    title: "Human-Agent Synthesis",
+    subtitle: "Enterprise Workflows: Humans and Autonomous Agents Building Together",
     spot: "blocks",
     titanQuote: {
       speaker: "Marc Benioff",
@@ -298,22 +255,22 @@ const COLLECTIVES: CollectivePillar[] = [
         "Copilot is really the new Microsoft Clippy... DIY AI is a science project. What matters isn't the model—it’s the metadata and the workflows.",
     },
     body:
-      "Enterprise computing is crossing an architectural threshold: conversational chat and unstructured prompts struggle the moment they touch master data, regulatory compliance, and general ledgers. Salesforce is right: enterprise value lives in metadata and workflows, not generic chat. But while trade press often focuses on isolated champions, internal builders need deterministic enterprise frameworks to make dependable progress. Agentic tools expand what enterprise teams can build and own. The judgment is knowing what to build, what to retain, what to integrate, and how to verify it.",
+      "The enterprise computing conversation has been derailed by toy chatbots and the fantasy of zero-human automation. The enterprises that will dominate the next decade are mastering a fundamentally new skill set: Human-Agent Synthesis—experienced operators and autonomous software agents collaborating inside deterministic business workflows. This is where Salesforce and forward-looking leaders have it right: enterprise value lives in metadata and consequential workflows, not unstructured chat prompts. The legacy era of rigid, multi-tenant per-seat SaaS is coming to a close. As businesses move work from left to right through goal-directed pipelines—governed by strict requirements gathering, state validation, and human authorization gates—enterprises are reclaiming complete ownership of their operational workflows.",
     inquiries: [
-      "Where Salesforce gets it right: why metadata and consequential workflows beat chatbots",
-      "The agentic champion dilemma: why internal builders need a deterministic enterprise framework",
-      "The controversial shift: can a talented enterprise team build their own operational ERP?",
+      "Beyond conversational chat: why deterministic left-to-right pipelines beat prompt droids",
+      "Human-agent collaboration: the new operational skill set separating winning enterprises",
+      "Reclaiming the application layer: why businesses will build and own their core workflows",
     ],
     fieldNoteHref: "/agentic-ai/the-application-layer/",
-    fieldNoteLabel: "Read Field Brief: Workflows, Champions & Sovereign ERPs",
-    topicKey: "02 / Workflows, Agentic Champions & Sovereign ERPs",
+    fieldNoteLabel: "Read Field Dispatch: The Sovereign Substrate & The Inevitable ERP",
+    topicKey: "02 / Human-Agent Synthesis: The Sovereign Substrate",
   },
   {
     num: "03",
-    tag: "FIELD BRIEF 03 // SOVEREIGN FABRICATION",
+    tag: "MAIN EVENT 03 // THE FACTORY",
     actionLabel: "Join the Discussion",
-    title: "The Machine That Builds the Machine",
-    subtitle: "The Delivery Seam & Code Building Code on Local Iron",
+    title: "The Machine That Builds the Machines",
+    subtitle: "The Software Factory: Code Building Code, The Gantry Harness & Tokenomics",
     spot: "factory",
     titanQuote: {
       speaker: "Matan Grinberg & Eno Reyes",
@@ -323,15 +280,15 @@ const COLLECTIVES: CollectivePillar[] = [
         "The incremental units of this system are AI agents. This system will be built by engineers, and in turn will build their software. This system is the software factory... We are building the machine that builds the machine.",
     },
     body:
-      "Software engineering is crossing an important threshold: code is increasingly assisted and accelerated by autonomous systems. While cloud-hosted developer platforms offer speed, enterprises handling regulated data and proprietary workflows often require architectural sovereignty. The real leverage comes from placing software fabrication tools directly into the hands of experienced operators on local iron: building living software assets with deterministic test gates and git-grounded task ledgers under human oversight.",
+      "We have crossed the threshold into the software factory: code now building code. But autonomous software fabrication introduces a demanding new engineering discipline: managing token burn, orchestrating open-weight models alongside frontier APIs, and mastering the tokenomics of multi-seat execution. Frontier models churn every sixty days. If an enterprise welds its business logic directly to a provider's model, its operations break on the next API deprecation. The durable asset is not the model—it is the machine that builds the machines: the test-driven gantry harness on local iron. Wrapping volatile intelligence in deterministic AST calipers, git-backed state ledgers, and human authorization gates turns raw model tokens into living, verifiable enterprise software.",
     inquiries: [
-      "Moving from prompt-assisted coding to sovereign software fabrication",
-      "Rigorous AST calipers and deterministic test gates vs. unreviewable code generation",
-      "The delivery seam: why autonomous software factories still need physical floor truth",
+      "Decoupling model churn: why the competitive moat is the gantry harness on local iron",
+      "Taming token burn & tokenomics: multi-seat worktrees and AST calipers vs. Ralph Wiggum loops",
+      "The delivery seam: why autonomous software factories still require operators on the physical dock",
     ],
     fieldNoteHref: "/agentic-ai/the-delivery-seam/",
-    fieldNoteLabel: "Read Field Brief: The Machine That Builds the Machine",
-    topicKey: "03 / The Machine That Builds the Machine & Sovereign Fabrication",
+    fieldNoteLabel: "Read Field Dispatch: The Delivery Seam & Floor Truth",
+    topicKey: "03 / The Machine That Builds the Machines",
   },
 ];
 
@@ -537,10 +494,10 @@ export default function AgenticPositionView() {
         <span id="dispatches" style={{ display: "block", position: "relative", top: "-80px", visibility: "hidden" }} />
         <div className={s.triadInner}>
           <div className={s.triadHead}>
-            <p className={s.eyebrow}>02 / Field Briefs</p>
-            <h2>Field Briefs<span>.</span></h2>
+            <p className={s.eyebrow}>02 / Three Main Events &amp; Field Dispatches</p>
+            <h2>Three Core Theses on Enterprise Agentics<span>.</span></h2>
             <p className={s.triadDek}>
-              Three foundational field briefs on enterprise agentics. Working theses formed from 20+ years on the enterprise floor and over three years inside the agentic runtime—grounded in the operational seam where code generation meets physical execution.
+              Three foundational working theses formed from 20+ years on the enterprise floor and over three years inside the agentic runtime—each paired with an in-depth operational field dispatch from the seam.
             </p>
           </div>
 
@@ -632,10 +589,10 @@ export default function AgenticPositionView() {
 
           <div className={s.limelightBanner} style={{ marginTop: 0 }}>
             <div className={s.limelightBannerContent}>
-              <p className={s.eyebrow} style={{ margin: 0 }}>THE SOFTWARE CONTRAPTION // SPEC-COL-01</p>
-              <h3>Three Interlocking Open Systems. Intent Equals Outcome Delivered.</h3>
+              <p className={s.eyebrow} style={{ margin: 0 }}>THE HUMAN &amp; AGENT BUILDER COMMONS // SOVEREIGN RUNTIMES</p>
+              <h3>Humans and Autonomous Agents Building Together in a New Era.</h3>
               <p>
-                From specialized operators running QuickBooks to multi-site manufacturers needing sovereign purchasing and receiving engines. Mapped by <strong>B.O.S.S.</strong>, fabricated by <strong>The Rig</strong>, and executed on <strong>FlowCraft</strong>. Explore the architecture, examine the delivery blocks, or engage directly in the collective.
+                An open organizing collective where experienced enterprise operators and autonomous software agents build sovereign systems together on private iron. We are figuring this out together on the frontlines—sharing verified patterns, living blueprints, and sovereign execution lanes. From specialized operators to multi-site enterprises, run in complete isolation on your own iron, compounding through the collective pattern library.
               </p>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "10px", alignItems: "flex-start", flexShrink: 0 }}>
