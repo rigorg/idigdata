@@ -50,7 +50,9 @@ This Fourth Wave represents a qualitative break from manual development. But it 
 
 In his widely read October 2026 *beehiiv* analysis, **Chamath Palihapitiya** (CEO of 8090, Founder of Social Capital, and co-host of *All-In*) cut directly to the heart of why autonomous agents struggle inside the enterprise:
 
-> *"A job is more than the sum of its tasks. What's more intangible is the part between them: deciding which task matters, in what order, and when to stop; coordinating with people on other teams; and being the one accountable when it goes wrong."*
+> **FIELD NOTE 03-A // THE 80/90 CONSENSUS: THE SPACE BETWEEN THE TASKS**
+> "A job is more than the sum of its tasks. What's more intangible is the part between them: deciding which task matters, in what order, and when to stop; coordinating with people on other teams; and being the one accountable when it goes wrong."
+> Software factories automate discrete tasks at machine speed. But work is the messy, continuous space between tasks: dock exceptions, carrier disputes, and human cutover accountability. The enterprise lives in the space between the tasks.
 
 This is the exact operational seam where Silicon Valley software factories stumble.
 
@@ -76,7 +78,9 @@ You can automate tasks at machine speed. But **the enterprise lives in the space
 
 During recent *All-In Podcast* disclosures, the 80/90 group highlighted a second critical consensus emerging across the engineering frontier:
 
-> *"Foundation models are converging within margins of error. The competitive edge is entirely in the harness that you wrap around the model to give it arms, legs, hands, and eyes. But harnesses are wildly variant in terms of cost, state governance, and execution quality."*
+> **FIELD NOTE 03-B // GANTRY HARNESS: DECOUPLING 60-DAY MODEL CHURN**
+> "Foundation models are converging within margins of error. The competitive edge is entirely in the harness that you wrap around the model to give it arms, legs, hands, and eyes. But harnesses are wildly variant in terms of cost, state governance, and execution quality."
+> Frontier models churn every sixty days. If your enterprise logic is welded to a specific foundation model endpoint, your operations break with every deprecation notice. The competitive moat is never the model—it is the operational gantry harness on local iron: deterministic AST calipers, spend caps, read-only schema sandboxes, and cryptographic provenance.
 
 Over three years inside the agentic runtime—building day in and day out across early models to frontier systems—I have lived the blood, sweat, and tears of this boundary. 
 

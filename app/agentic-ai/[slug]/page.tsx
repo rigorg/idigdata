@@ -51,13 +51,15 @@ function renderMarkdown(md: string) {
   let inList = false;
   let listType: "ul" | "ol" = "ul";
   let listItems: string[] = [];
+  let inQuote = false;
+  let quoteBuffer: string[] = [];
   let key = 0;
 
   function flushList() {
     if (inList && listItems.length > 0) {
       if (listType === "ol") {
         elements.push(
-          <ol key={`ol-${key++}`} className={s.orderedList}>
+          <ol key={"ol-" + key++} className={s.orderedList}>
             {listItems.map((item, idx) => (
               <li key={idx} dangerouslySetInnerHTML={{ __html: formatInline(item) }} />
             ))}
@@ -65,7 +67,7 @@ function renderMarkdown(md: string) {
         );
       } else {
         elements.push(
-          <ul key={`ul-${key++}`} className={s.list}>
+          <ul key={"ul-" + key++} className={s.list}>
             {listItems.map((item, idx) => (
               <li key={idx} dangerouslySetInnerHTML={{ __html: formatInline(item) }} />
             ))}
@@ -81,7 +83,7 @@ function renderMarkdown(md: string) {
   function flushCode() {
     if (inCodeBlock) {
       elements.push(
-        <pre key={`code-${key++}`} className={s.codeBlock}>
+        <pre key={"code-" + key++} className={s.codeBlock}>
           <code>{codeBuffer.join("\n")}</code>
         </pre>
       );
@@ -90,12 +92,74 @@ function renderMarkdown(md: string) {
     }
   }
 
+  function flushQuote() {
+    if (inQuote && quoteBuffer.length > 0) {
+      const cleanLines = quoteBuffer.map((l) => l.replace(/^>\s?/, "").trim()).filter(Boolean);
+      if (cleanLines.length === 0) {
+        quoteBuffer = [];
+        inQuote = false;
+        return;
+      }
+
+      let rubric = "FIELD NOTE // OBSERVED REALITY";
+      let stamp = "IDIGDATA // OPERATIONAL SEAM";
+      let contentLines = cleanLines;
+
+      const firstLine = cleanLines[0];
+      const fieldNoteMatch = firstLine.match(/^\*\*FIELD NOTE\s*([0-9A-Za-z\-]*)\s*\/\/\s*(.*?)\*\*$/i);
+      const operationalMatch = firstLine.match(/^\*\*OPERATIONAL\s*(.*?)\*\*$/i);
+      const trilogyMatch = firstLine.match(/^###\s*(The .*?Trilogy)/i);
+
+      if (fieldNoteMatch) {
+        const idPart = fieldNoteMatch[1] ? (" " + fieldNoteMatch[1]) : "";
+        rubric = "FIELD NOTE" + idPart + " // " + fieldNoteMatch[2];
+        stamp = "STATUS: GROUND TRUTH";
+        contentLines = cleanLines.slice(1);
+      } else if (operationalMatch) {
+        rubric = "OPERATIONAL DISPATCH // " + operationalMatch[1];
+        stamp = "SEAM OBSERVATION";
+        contentLines = cleanLines.slice(1);
+      } else if (trilogyMatch) {
+        rubric = trilogyMatch[1].toUpperCase() + " // THE SEAM SERIES";
+        stamp = "CANONICAL SEQUENCE";
+        contentLines = cleanLines.slice(1);
+      } else if (firstLine.startsWith('*"') || firstLine.startsWith('"') || firstLine.startsWith("*'")) {
+        rubric = "FIELD NOTE // SEAM LOG";
+        stamp = "VERIFIED IN ARENA";
+      }
+
+      elements.push(
+        <aside key={"field-card-" + key++} className={s.fieldNoteCard} aria-label="Field Note">
+          <div className={s.fieldNoteHeader}>
+            <div className={s.fieldNoteRubric}>
+              <span className={s.fieldNoteRubricDot} aria-hidden="true" />
+              <span>{rubric}</span>
+            </div>
+            {stamp && <span className={s.fieldNoteStamp}>{stamp}</span>}
+          </div>
+          <div className={s.fieldNoteBody}>
+            {contentLines.map((cLine, cIdx) => (
+              <p key={cIdx} dangerouslySetInnerHTML={{ __html: formatInline(cLine) }} />
+            ))}
+          </div>
+          <div className={s.fieldNoteFooter}>
+            <span>DISPATCH LOG · IDIGDATA OPERATIONAL SEAM</span>
+            <span>HUMAN AUTHORITY REQUIRED</span>
+          </div>
+        </aside>
+      );
+
+      quoteBuffer = [];
+      inQuote = false;
+    }
+  }
+
   function formatInline(text: string): string {
     return text
       .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
-      .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
-      .replace(/\*(.*?)\*/g, "<em>$1</em>")
-      .replace(/`([^`]+)`/g, "<code>$1</code>");
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.*?)\*/g, '<em>$1</em>')
+      .replace(/`([^`]+)`/g, '<code>$1</code>');
   }
 
   for (let i = 0; i < lines.length; i++) {
@@ -103,6 +167,7 @@ function renderMarkdown(md: string) {
 
     // Code blocks
     if (line.startsWith("```")) {
+      flushQuote();
       if (inCodeBlock) {
         flushCode();
       } else {
@@ -120,38 +185,39 @@ function renderMarkdown(md: string) {
     // Horizontal rule
     if (line.trim() === "---") {
       flushList();
-      elements.push(<hr key={`hr-${key++}`} className={s.hr} />);
-      continue;
-    }
-
-    // Headings
-    if (line.startsWith("# ")) {
-      flushList();
-      continue; // Skip H1 since it's in the header
-    }
-    if (line.startsWith("### By ")) {
-      flushList();
-      continue; // Skip Byline heading since it's in the header
-    }
-    if (line.startsWith("## ")) {
-      flushList();
-      elements.push(<h2 key={`h2-${key++}`} className={s.h2}>{line.slice(3)}</h2>);
-      continue;
-    }
-    if (line.startsWith("### ")) {
-      flushList();
-      elements.push(<h3 key={`h3-${key++}`} className={s.h3}>{line.slice(4)}</h3>);
+      flushQuote();
+      elements.push(<hr key={"hr-" + key++} className={s.hr} />);
       continue;
     }
 
     // Blockquote
-    if (line.startsWith("> ")) {
+    if (line.startsWith("> ") || line === ">") {
       flushList();
-      elements.push(
-        <blockquote key={`quote-${key++}`} className={s.blockquote}>
-          <p dangerouslySetInnerHTML={{ __html: formatInline(line.slice(2)) }} />
-        </blockquote>
-      );
+      inQuote = true;
+      quoteBuffer.push(line);
+      continue;
+    }
+
+    // Not in blockquote anymore
+    flushQuote();
+
+    // Headings
+    if (line.startsWith("# ")) {
+      flushList();
+      continue;
+    }
+    if (line.startsWith("### By ")) {
+      flushList();
+      continue;
+    }
+    if (line.startsWith("## ")) {
+      flushList();
+      elements.push(<h2 key={"h2-" + key++} className={s.h2}>{line.slice(3)}</h2>);
+      continue;
+    }
+    if (line.startsWith("### ")) {
+      flushList();
+      elements.push(<h3 key={"h3-" + key++} className={s.h3}>{line.slice(4)}</h3>);
       continue;
     }
 
@@ -187,16 +253,16 @@ function renderMarkdown(md: string) {
     // Paragraph
     flushList();
     elements.push(
-      <p key={`p-${key++}`} className={s.p} dangerouslySetInnerHTML={{ __html: formatInline(line) }} />
+      <p key={"p-" + key++} className={s.p} dangerouslySetInnerHTML={{ __html: formatInline(line) }} />
     );
   }
 
   flushList();
+  flushQuote();
   flushCode();
 
   return elements;
 }
-
 export default async function PostPage({
   params,
 }: {

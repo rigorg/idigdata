@@ -46,6 +46,9 @@ Frontline engineers, systems administrators, and operational managers are openly
 
 Frontline operators are exhausted from acting as human shock absorbers for broken vendor software.
 
+> **FIELD NOTE 02-A // THE FRONTLINE REBELLION: HUMAN MIDDLEWARE**
+> Frontline workers spend entire careers acting as human shock absorbers for broken vendor software—manually copying and pasting records between five disconnected applications because vendor-promised integrations require a $250,000 consulting retainer. Wrapping broken application architectures in conversational chatbots does not create an autonomous enterprise; it creates conversational sludge that masks operational decay.
+
 This groundswell is not cynical noise; it is an undeniable signal that enterprises are ready to take back control of their operational core.
 
 ---
@@ -54,7 +57,9 @@ This groundswell is not cynical noise; it is an undeniable signal that enterpris
 
 Yet as enterprises attempt to build custom software with AI, they frequently crash into a dangerous trap identified by the 80/90 group:
 
-> *"AI-driven development without upstream specification devolves into massive rework loops where agents endlessly iterate and incinerate tokens without making functional progress ('Ralph Wiggum loops')."*
+> **FIELD NOTE 02-B // RUNTIME ARCHITECTURE: THE RALPH WIGGUM LOOP**
+> "AI-driven development without upstream specification devolves into massive rework loops where agents endlessly iterate and incinerate tokens without making functional progress ('Ralph Wiggum loops')."
+> Unbounded agents entering a complex brownfield repository will happily generate thousands of lines of syntactically valid code that passes isolated unit tests but completely destroys production database integrity. The answer to runaway token burn is not more prompting—it is industrial architecture: isolated worktree lanes, deterministic caller gates, and a reconciled data spine.
 
 Unbounded agents entering a complex brownfield repository will happily generate thousands of lines of syntactically valid code that passes isolated unit tests but completely destroys production database integrity.
 
@@ -78,6 +83,9 @@ The future of enterprise software is neither purely manual human coding nor unsu
 - **User Acceptance Testing (UAT)**: Real frontline operators validating that the system solves their daily problems without creating friction.
 
 Marc Benioff and enterprise innovators have recognized this reality: the value is not in conversational prompt boxes; **the value is in the metadata, the schema, and the workflow state gates**.
+
+> **FIELD NOTE 02-C // THE SOVEREIGN CORE: THE FOUR SOLVED PATTERNS**
+> At its foundational computational level, operational software is not proprietary magic. It is four deterministic patterns: the double-entry general ledger (balance invariance), order-to-cash (finite state machines), procure-to-pay (three-way matching), and inventory valuation (SKU lot ledgers). High-churn compliance is decoupled into specialized APIs. The operational core belongs to the business.
 
 Here is why enterprise workflow autonomy is now inevitable:
 

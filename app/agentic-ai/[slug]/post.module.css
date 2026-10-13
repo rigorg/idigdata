@@ -485,3 +485,147 @@
     font-size: 11px;
   }
 }
+
+
+/* ==========================================================================
+   AUTHENTIC TYPED FIELD NOTE CARD (TACTILE INDEX CARD / SEAM DISPATCH)
+   Looks like an authentic typed operational index card from the physical field.
+   ========================================================================== */
+.fieldNoteCard {
+  position: relative;
+  background: #FFFDF9;
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--brass);
+  box-shadow: 0 4px 16px rgba(30, 32, 36, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03);
+  padding: 24px 28px;
+  margin: 36px 0;
+  border-radius: 4px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+:global(.dark) .fieldNoteCard {
+  background: #171A20;
+  border-color: #2D323C;
+  border-left-color: var(--brass);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.fieldNoteCard:hover {
+  box-shadow: 0 8px 24px rgba(30, 32, 36, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.fieldNoteHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+  border-bottom: 1px dashed var(--line);
+}
+
+:global(.dark) .fieldNoteHeader {
+  border-bottom-color: #2D323C;
+}
+
+.fieldNoteRubric {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: ui-monospace, "SF Mono", "Roboto Mono", Menlo, Consolas, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rust);
+}
+
+.fieldNoteRubricDot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--rust);
+  border-radius: 1px;
+  display: inline-block;
+}
+
+.fieldNoteStamp {
+  font-family: ui-monospace, "SF Mono", "Roboto Mono", Menlo, Consolas, monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brass-dark);
+}
+
+:global(.dark) .fieldNoteStamp {
+  color: var(--brass-light);
+}
+
+.fieldNoteBody {
+  font-family: ui-monospace, "SF Mono", "Roboto Mono", Menlo, Consolas, "Courier New", monospace;
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+:global(.dark) .fieldNoteBody {
+  color: #FAF6EE;
+}
+
+.fieldNoteBody p {
+  margin-bottom: 12px;
+}
+
+.fieldNoteBody p:last-child {
+  margin-bottom: 0;
+}
+
+.fieldNoteBody strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+:global(.dark) .fieldNoteBody strong {
+  color: #FFFFFF;
+}
+
+.fieldNoteBody em {
+  font-style: italic;
+  color: var(--ink);
+}
+
+:global(.dark) .fieldNoteBody em {
+  color: #FAF6EE;
+}
+
+.fieldNoteBody a {
+  color: var(--brass-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+}
+
+:global(.dark) .fieldNoteBody a {
+  color: var(--brass-light);
+}
+
+.fieldNoteFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  padding-top: 10px;
+  border-top: 1px solid #EFEAE0;
+  font-family: ui-monospace, "SF Mono", "Roboto Mono", Menlo, Consolas, monospace;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+:global(.dark) .fieldNoteFooter {
+  border-top-color: #252A34;
+  color: #8C877D;
+}

@@ -2077,3 +2077,85 @@
 .limelightBannerCta:hover {
   background: #333842;
 }
+
+
+/* ==========================================================================
+   AUTHENTIC TYPED FIELD NOTE CARD FOR THE THREE MAIN EVENTS
+   ========================================================================== */
+.triadFieldNoteCard {
+  background: #FFFDF9;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--brass);
+  box-shadow: 0 3px 12px rgba(30, 32, 36, 0.04);
+  padding: 16px 18px;
+  margin-top: 16px;
+  margin-bottom: 18px;
+  border-radius: 4px;
+}
+
+:global(.dark) .triadFieldNoteCard {
+  background: #181B22;
+  border-color: #2D323C;
+  border-left-color: var(--brass);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+.triadFieldNoteHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+  border-bottom: 1px dashed var(--line);
+}
+
+:global(.dark) .triadFieldNoteHead {
+  border-bottom-color: #2D323C;
+}
+
+.triadFieldNoteRubric {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: ui-monospace, "SF Mono", "Roboto Mono", Menlo, Consolas, monospace;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rust);
+}
+
+.triadFieldNoteDot {
+  width: 5px;
+  height: 5px;
+  background-color: var(--rust);
+  border-radius: 1px;
+  display: inline-block;
+}
+
+.triadFieldNoteStamp {
+  font-family: ui-monospace, "SF Mono", "Roboto Mono", Menlo, Consolas, monospace;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--brass-dark);
+  text-transform: uppercase;
+}
+
+:global(.dark) .triadFieldNoteStamp {
+  color: var(--brass-light);
+}
+
+.triadFieldNoteText {
+  font-family: ui-monospace, "SF Mono", "Roboto Mono", Menlo, Consolas, "Courier New", monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ink);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+:global(.dark) .triadFieldNoteText {
+  color: #FAF6EE;
+}

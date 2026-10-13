@@ -191,6 +191,12 @@ interface TitanQuote {
   quote: string;
 }
 
+interface FieldNoteCard {
+  rubric: string;
+  stamp: string;
+  text: string;
+}
+
 interface CollectivePillar {
   num: string;
   tag: string;
@@ -199,6 +205,7 @@ interface CollectivePillar {
   spot: "constellation" | "blocks" | "factory";
   titanQuote: TitanQuote;
   body: string;
+  fieldNoteCard: FieldNoteCard;
   inquiries: string[];
   fieldNoteHref: string;
   fieldNoteLabel: string;
@@ -223,6 +230,11 @@ const COLLECTIVES: CollectivePillar[] = [
     },
     body:
       "Why do enterprise ERP implementations so often struggle to deliver on their promise? Gartner forecasts that through 2027, over 70% of new ERP initiatives will fail to fully realize their business-case goals. Modern AI software factories diagnose this as a 'context gathering' problem—assuming enterprise truth sits in clean wikis waiting to be ingested. But on the enterprise floor, 80% of operating truth is unwritten: held in tacit human judgment, informal cross-department trust, and Mary's edge-case scheduling spreadsheet. Monolithic software captures sanitized Standard Operating Procedures—how an organization wishes it functioned on its best day. AI hits a brick wall if it merely automates documented fiction. Before writing code, an architect must map how the enterprise actually runs—synthesizing an authoritative, company-owned Common Data Model that bridges fragmented silos and honors the human seam holding the business together.",
+    fieldNoteCard: {
+      rubric: "FIELD NOTE 01 // SEAM DISPATCH",
+      stamp: "STATUS: GROUND TRUTH",
+      text: "80% of enterprise operating truth is unwritten: held in tacit human judgment and Mary's scheduling spreadsheet. AI hits a brick wall if it merely automates documented fiction.",
+    },
     inquiries: [
       "Context gathering vs. floor truth: why database introspection misses how the company actually runs",
       "The human seam: what happens when systems flag green but physical steel is torn apart",
@@ -248,6 +260,11 @@ const COLLECTIVES: CollectivePillar[] = [
     },
     body:
       "The enterprise computing conversation has too often focused on conversational prompt droids or the fantasy of zero-human automation. But democratizing information does not create organizational agreement: an AI agent can surface a conflict between purchasing, sales, and controllers, but only an executive with skin in the game can make the decision and carry the liability. The winning discipline is Human-Agent Synthesis: experienced operators and autonomous agents collaborating inside deterministic left-to-right pipelines. Moving work through goal-directed assembly lines—governed by strict data contracts, state validation, and human authorization gates—allows enterprises to harness autonomous software while keeping operational authority firmly with human leadership.",
+    fieldNoteCard: {
+      rubric: "FIELD NOTE 02 // WORKFLOW DISPATCH",
+      stamp: "STATUS: GROUND TRUTH",
+      text: "AI chat windows fail the moment they touch inventory allocations and ledger transactions. The value is not in conversational prompt boxes; it is in metadata, schema contracts, and deterministic workflow state gates.",
+    },
     inquiries: [
       "Beyond conversational chat: why deterministic left-to-right pipelines beat prompt droids",
       "Information vs. authority: why surfacing data conflicts still requires executive decision ownership",
@@ -273,6 +290,11 @@ const COLLECTIVES: CollectivePillar[] = [
     },
     body:
       "We have crossed the threshold into the software factory: code now building code. But autonomous software fabrication introduces a demanding new engineering discipline: managing token burn, orchestrating open-weight models alongside frontier APIs, and mastering multi-seat execution. Frontier models and APIs evolve rapidly. If an enterprise welds its core business logic directly to a single proprietary endpoint or hosted SaaS, it invites fragile dependencies. The durable asset is the machine that builds the machines: the test-driven gantry harness on local iron. Wrapping volatile intelligence in deterministic AST calipers, git-backed state ledgers, and human authorization gates turns model tokens into living, verifiable enterprise software.",
+    fieldNoteCard: {
+      rubric: "FIELD NOTE 03 // FACTORY DISPATCH",
+      stamp: "STATUS: GROUND TRUTH",
+      text: "Frontier models churn every sixty days. The competitive moat is never the model—it is the operational gantry harness on local iron with deterministic AST calipers, spend caps, and complete data sovereignty.",
+    },
     inquiries: [
       "Decoupling model churn: why the competitive moat is the gantry harness on local iron",
       "Deterministic calipers vs. Ralph Wiggum loops: wrapping volatile models in AST inspection gates",
@@ -529,6 +551,18 @@ export default function AgenticPositionView() {
                     <span className={s.triadSectionTag}>WORKING THESIS // OPERATIONAL GROUND TRUTH</span>
                   </div>
                   <p className={s.triadCardBody}>{c.body}</p>
+
+                  {/* Typed Field Note Card */}
+                  <div className={s.triadFieldNoteCard}>
+                    <div className={s.triadFieldNoteHead}>
+                      <div className={s.triadFieldNoteRubric}>
+                        <span className={s.triadFieldNoteDot} aria-hidden="true" />
+                        <span>{c.fieldNoteCard.rubric}</span>
+                      </div>
+                      <span className={s.triadFieldNoteStamp}>{c.fieldNoteCard.stamp}</span>
+                    </div>
+                    <p className={s.triadFieldNoteText}>{c.fieldNoteCard.text}</p>
+                  </div>
 
                   {/* Core Inquiries */}
                   <div style={{ marginTop: "14px", marginBottom: "6px" }}>

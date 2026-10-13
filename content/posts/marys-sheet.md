@@ -85,6 +85,9 @@ The catastrophe was averted because Mary walked past maintenance on her morning 
 - She re-routed the rush run to line 4 before brewing dumped the wort.
 - She reassigned three certified operators to line 4 to handle the changeover.
 
+> **FIELD NOTE 01-A // OBSERVED REALITY: MARY'S CLIPBOARD VS. THE DATABASE**
+> The database status flag was green: packaging line 2 idle and available. In physical reality, line 2 was dead. Mechanics had unbolted the main filling pump twenty minutes earlier to replace a weeping mechanical seal, with the work order scrawled on a grease-stained piece of cardboard sitting on the maintenance bench. No AI agent scraping databases could have caught that. Only human presence, physical observation, and cross-department trust saved the batch.
+
 **No AI agent, scraping database records, could have caught that.** The status flag in the database was green. Only human presence, physical observation, and cross-department trust prevented a multi-thousand-dollar dump down the drain.
 
 ---
@@ -120,6 +123,9 @@ For the first time in thirty years, Mary could look up from the spreadsheets and
 - **Protecting Frontline Dignity**: Freed from clerical terror, Mary became the moral anchor of the floor. She ensured light-duty assignments were handled with dignity, that operators were advancing through their certifications, and that the physical reality of the floor was respected by management.
 
 That is the ultimate test of enterprise software. 
+
+> **FIELD NOTE 01-B // THE OPERATIONAL SEAM: HUMAN ELEVATION**
+> Bad enterprise software treats frontline people as disposable human data conduits—and then fails because unwritten reality crashes the plant. Great operational architecture absorbs the clerical machinery so that the human beings on the floor can do what only humans can do: exercise judgment, build trust, mentor junior supervisors, and lead.
 
 Bad software treats people as disposable data conduits—and then fails because the uncodified reality crashes the plant. Great operational architecture absorbs the clerical machinery so that the human beings on the floor can do what only humans can do: exercise judgment, build trust, mentor others, and lead. 
 
