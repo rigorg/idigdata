@@ -265,7 +265,7 @@ const COLLECTIVES: CollectivePillar[] = [
     fieldNoteCard: {
       rubric: "SEAM LOG // HUMAN-AGENT SYNTHESIS",
       stamp: "THE DOMAIN CHAMPION",
-      text: "In a complex manufacturing plant, one scheduler kept operations running with interconnected Excel workbooks and PowerShell scripts—a single point of failure who loved tech. We partnered with him as an Agentic Domain Champion inside a bounded framework. What he built blew past anything he thought possible. The sheer joy on his face is what happens when you empower domain experts to vibecode inside a safe architecture.",
+      text: "In a complex manufacturing plant, one scheduler kept operations running with interconnected Excel workbooks and PowerShell scripts—a single point of failure who loved tech. We partnered with him as an Agentic Domain Champion inside a bounded framework. What he built blew past anything he thought possible. The sheer joy on his face is what happens when you empower domain experts to vibecode inside a safe architecture. These are the champions every enterprise needs—and already has. Every one of them.",
       signature: "— Rob Paddock · Manufacturing Floor Field Note",
     },
     inquiries: [
