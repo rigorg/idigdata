@@ -16,7 +16,7 @@ import { TheBlockLogo } from "@/components/TheBlockLogo";
 import { outcomeLinkTarget } from "@/lib/outcome-links";
 
 // Strictly: 0 dollars ($), 0 phone numbers, ASCII hyphens only.
-// Delivery Standard: 1 Block = 2 to 4 Weeks. Client selects outcomes, we quote blocks.
+// Delivery Model: Client selects target outcomes, we scope and quote engagement blocks.
 // Client-facing voice: the firm ("We", "Our team"); Robert Paddock is named as the lead who reviews every proposal.
 // Capo Architecture:
 // - Big, Centered 3D Spinning Cube Configurator in the center stage.
@@ -645,7 +645,6 @@ function TheBlockConfiguratorPage() {
     const fullMessage = [
       `[THE BLOCK SCOPING PROPOSAL]`,
       `Mine: the_block`,
-      `Standard: 1 Block = 2 to 4 Weeks`,
       selectedCount > 0
         ? `Configured Outcomes (${selectedCount} selected across ${aggregatedByDomain.length} disciplines):\n${outcomesList}`
         : `No outcomes pre-selected from catalog (direct inquiry).`,
@@ -728,18 +727,6 @@ function TheBlockConfiguratorPage() {
           </div>
 
           <div className="flex flex-wrap items-center gap-2.5">
-            {/* DELIVERY STANDARD BADGE */}
-            <div
-              className={`inline-flex items-center gap-2 px-3 py-1 rounded-full border text-xs font-mono font-semibold ${
-                isLight
-                  ? "bg-[#F3ECE0] border-amber-300 text-[#142840] shadow-xs"
-                  : "bg-amber-400/10 border-amber-400/30 text-amber-300"
-              }`}
-              title="A Block is a defined 2-to-4-week delivery phase. Complex scopes may require several Blocks; deliverables, dependencies, and acceptance are agreed before work begins."
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
-              <span>1 Block = 2 to 4 Weeks</span>
-            </div>
 
 
 
@@ -1390,7 +1377,7 @@ function TheBlockConfiguratorPage() {
                   Request Your Scoping Proposal
                 </h3>
                 <p className={`text-xs mt-1 ${isLight ? "text-slate-600" : "text-slate-400"}`}>
-                  A Block is a defined 2-to-4-week delivery phase. Complex scopes may require several Blocks; scope, dependencies, and acceptance are agreed before work begins.
+                  Configure your target outcomes to submit a scoping proposal. We evaluate deliverables, dependencies, and milestones to determine your engagement blocks.
                 </p>
               </div>
 

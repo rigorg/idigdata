@@ -111,7 +111,7 @@ export function blockServiceSchema(): JsonLdNode {
     url: `${SITE_ORIGIN}/block/`,
     serviceType: "Enterprise transformation scoping and delivery blocks",
     description:
-      "A scoping and outcome configurator. Configure outcomes across six transformation disciplines; one Block is two to four weeks.",
+      "A scoping and outcome configurator. Configure outcomes across six transformation disciplines to determine your engagement blocks.",
     provider: organizationRef(),
     areaServed: { "@type": "Country", name: "United States" },
     hasOfferCatalog: {

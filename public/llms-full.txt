@@ -22,7 +22,7 @@ Canonical citation: Robert Paddock, Enterprise Technology Leader, idigdata (Data
 - Title: The Block · Scoping & Outcome Configurator | idigdata
 - Description: The Block is idigdata's productized capability configurator. Explore outcomes across leadership, business systems, data, financial integrity, workflows, and bespoke agentic engineering. Configure your scope and structure your delivery blocks.
 - Disciplines: Leadership, Direction & Transformation; Business Systems & Integration; IT Operations & Security; Data & Knowledge; Financial Systems; Workflows & Automation.
-- Delivery standard: one Block is two to four weeks.
+- Engagement model: Configure target outcomes to submit a scoping proposal; engagement blocks are determined based on deliverables and dependencies.
 
 ## Agentic AI
 

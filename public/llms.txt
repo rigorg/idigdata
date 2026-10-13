@@ -12,7 +12,7 @@
 ## Two storefronts
 
 - [idigdata](https://idigdata.com/): the executive seat for enterprise transformation leadership. Executive roles, focused transformation work, and fractional leadership.
-- [The Block](https://idigdata.com/block/): configurable block work. A scoping and outcome configurator: configure outcomes across six transformation disciplines; one Block is two to four weeks. The six disciplines: Leadership, Direction & Transformation; Business Systems & Integration; IT Operations & Security; Data & Knowledge; Financial Systems; Workflows & Automation.
+- [The Block](https://idigdata.com/block/): configurable block work. A scoping and outcome configurator: configure outcomes across six transformation disciplines; determine your engagement blocks across six disciplines: Leadership, Direction & Transformation; Business Systems & Integration; IT Operations & Security; Data & Knowledge; Financial Systems; Workflows & Automation.
 
 ## Weblog: Agentic AI
 
@@ -23,7 +23,7 @@
 
 - [Home](https://idigdata.com/): Enterprise technology leadership grounded in 50+ implementations and 15 enterprise transformations at scale.
 - [Experience](https://idigdata.com/experience/): Executive leadership and enterprise transformation across 50+ implementations and 15 enterprise transformations at scale.
-- [The Block](https://idigdata.com/block/): Scoping and outcome configurator across six transformation disciplines; one Block is two to four weeks.
+- [The Block](https://idigdata.com/block/): Scoping and outcome configurator across six transformation disciplines to determine engagement blocks.
 - [Agentic AI](https://idigdata.com/agentic-ai/): Dispatches from the operational seam where autonomous code meets live enterprise operations.
 - [The Collective](https://idigdata.com/collective/): Sovereign enterprise software architecture, living operational blueprints, and shared pattern commons.
 - [Contact](https://idigdata.com/contact/): Executive roles, focused transformation work, and fractional leadership. Start with the situation.
@@ -38,7 +38,7 @@
 - Enterprise transformation connecting systems around a common company-owned data core.
 - $8M ERP program recovered, saving $2M.
 - Verified client & enterprise leadership receipts published on the site: Sierra Nevada Brewing Co. (Contract CIO, 26 months, 150 participants across 25 task forces), Wynn Resorts, MGM Grand, Caesars, Duckhorn, Foley, Scheid, Rodney Strong.
-- The Block: configure outcomes across six transformation disciplines; one Block is two to four weeks.
+- The Block: configure outcomes across six transformation disciplines to determine engagement blocks.
 - The Collective: sovereign enterprise runtimes on private iron connected to a collective pattern commons.
 - Agentic AI: field briefs on enterprise agentics, verification gates, and operational cutover.
 
