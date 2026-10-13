@@ -16,10 +16,10 @@ export default function FolioHome() {
                 </span>
               </h1>
               <p className="p-prose mt-5">
-                Software is only part of enterprise change. The work is connecting it to the systems, decisions, and daily operations your business depends on.
+                I connect people, systems, and workflows through data to make enterprise technology work in the business you have.
               </p>
               <p className="p-prose mt-3">
-                I bring business ownership, executive leadership, and hands-on systems experience to carry that change from mandate through implementation and adoption.
+                I turn business priorities into executable work, build and lead the teams to deliver it, and carry responsibility through implementation, adoption, and daily operations. My work combines the judgment of a business owner, the accountability of a CIO, and the technical depth of a software builder.
               </p>
               <p className="executive-proof">
                 20+ years in enterprise systems &middot; 50+ implementations &middot; 15 enterprise transformations at scale
@@ -45,54 +45,54 @@ export default function FolioHome() {
         <div className="page-well">
           <h2 className="p-h2">What needs to change?</h2>
           <p className="p-prose mt-4">
-            Transformation in practice. Real enterprise progress starts where people, systems, and workflows meet the reality of daily operations. Across six core disciplines, I resolve operational friction and lead delivery from intent to working outcome.
+            Transformation in practice. Real enterprise progress starts where people, systems, and workflows meet the reality of daily operations. Across six primary domains, I resolve operational friction and lead delivery from intent to working outcome.
           </p>
           <div className="home-cards mt-8">
             <article className="home-card">
-              <p className="home-card-cat">Leadership, Direction &amp; Transformation</p>
+              <p className="home-card-cat">Commercial &amp; Solution Leadership</p>
+              <h3>Strategic opportunities. Defensible investment.</h3>
+              <p className="p-prose mt-3">
+                Translate enterprise operating priorities into qualified solutions, clear delivery responsibilities, and aligned commercial agreements executives can defend and support.
+              </p>
+            </article>
+
+            <article className="home-card">
+              <p className="home-card-cat">Enterprise Transformation &amp; Delivery</p>
               <h3>Clear priorities. Accountable leadership.</h3>
               <p className="p-prose mt-3">
-                Align technology investments, internal teams, and systems integrators directly to measurable business milestones and floor adoption.
+                Lead cross-functional delivery teams, internal technology groups, and systems integrators from initial charter through cutover, adoption, and daily operations.
               </p>
             </article>
 
             <article className="home-card">
-              <p className="home-card-cat">Business Systems &amp; Integration</p>
-              <h3>Enterprise applications that work together.</h3>
+              <p className="home-card-cat">Architecture &amp; Business Systems</p>
+              <h3>Enterprise platforms connected by data.</h3>
               <p className="p-prose mt-3">
-                Connect core ERP, supply chain, and shop-floor applications around actual physical workflows with operating continuity built into the delivery plan.
+                Connect core ERP, supply chain, and shop-floor applications around physical operating workflows with business continuity built into every cutover.
               </p>
             </article>
 
             <article className="home-card">
-              <p className="home-card-cat">IT Operations &amp; Security</p>
-              <h3>A modern IT function for the operation.</h3>
+              <p className="home-card-cat">Data, Knowledge &amp; Financial Systems</p>
+              <h3>Trusted information. Auditable integrity.</h3>
               <p className="p-prose mt-3">
-                Dependable enterprise infrastructure, pragmatic cybersecurity posture, and high-availability operations protecting plant continuity.
+                Unify master records, accelerate financial close, and turn company history and operating rules into reliable institutional memory for people and agents.
               </p>
             </article>
 
             <article className="home-card">
-              <p className="home-card-cat">Data &amp; Knowledge</p>
-              <h3>Trusted information. Knowledge the company owns.</h3>
+              <p className="home-card-cat">Agentic Software &amp; Workflow Delivery</p>
+              <h3>Autonomous capacity. Human authority.</h3>
               <p className="p-prose mt-3">
-                Unified master data governance, clean integration pipelines, and institutionalized operating knowledge turning company data into dependable decisions.
+                Build custom agentic software and workflow automation around frontline operating heuristics—governed by deterministic data contracts and human authorization.
               </p>
             </article>
 
             <article className="home-card">
-              <p className="home-card-cat">Financial Systems</p>
-              <h3>Financial integrity through change.</h3>
+              <p className="home-card-cat">Technology Operations &amp; Control</p>
+              <h3>Dependable operations. Plant continuity.</h3>
               <p className="p-prose mt-3">
-                Consolidated financial governance and controls rolling disparate plant and business systems into single-source reporting—enabling the CFO to close true, report with clarity, and see unit performance.
-              </p>
-            </article>
-
-            <article className="home-card">
-              <p className="home-card-cat">Workflows &amp; Automation</p>
-              <h3>Better handoffs. Less repeated work.</h3>
-              <p className="p-prose mt-3">
-                Build custom agentic workflows around the tribal knowledge of the people doing the work—transforming unwritten operating heuristics into dependable, human-authorized capacity.
+                Maintain high-availability infrastructure, pragmatic cybersecurity posture, and multi-site operational change management that protect business and plant continuity.
               </p>
             </article>
           </div>
@@ -115,7 +115,7 @@ export default function FolioHome() {
               <p className="p-kicker">Operational Knowledge &amp; Frontier Software</p>
               <h2 className="p-h2 mt-1">Put the full knowledge of your business to work.</h2>
               <p className="p-prose mt-3">
-                Years of operating knowledge live across your people, your data, and your systems. I bring decades of enterprise leadership into modern agentic workflows that turn company knowledge into executable enterprise capacity—grounded in company-owned data with human authorization.
+                Years of operating knowledge live across your people, your data, and your systems. I design and build enterprise agentic systems—putting company knowledge and data to work with clear business ownership, traceable actions, and human authority.
               </p>
             </div>
             <div className="shrink-0">

@@ -46,13 +46,13 @@ interface DomainConfig {
 
 const DOMAIN_CONFIGS: DomainConfig[] = [
   {
-    id: "leadership_direction",
-    code: "LD",
-    name: "Leadership, Direction & Transformation",
-    shortName: "Leadership",
-    subtitle: "Turn business priorities into an executable roadmap, accountable delivery, and measurable improvement.",
-    essence: "Align priorities, investment, ownership, and sequencing across teams and executive partners.",
-    badge: "EXECUTIVE",
+    id: "commercial_solution",
+    code: "CS",
+    name: "Commercial & Solution Leadership",
+    shortName: "Commercial & Solution",
+    subtitle: "Turn business priorities into qualified enterprise opportunities, defensible investment cases, and agreed commercial scope.",
+    essence: "Enterprise opportunity alignment, sponsor commitment, solution architecture, and commercial agreement execution.",
+    badge: "COMMERCIAL",
     accentHex: "#D97706",
     borderClass: "border-amber-500/40 hover:border-amber-500",
     bgGlowClass: "from-amber-500/10 via-transparent to-transparent",
@@ -61,44 +61,44 @@ const DOMAIN_CONFIGS: DomainConfig[] = [
     faceTransform: "rotateY(0deg) translateZ(140px)",
   },
   {
-    id: "business_systems",
-    code: "BS",
-    name: "Business Systems & Integration",
-    shortName: "Business Systems",
-    subtitle: "Get more value from enterprise applications and make them work together.",
-    essence: "Connect ERP, WMS, MES, HRM/HCM, EAM, and CRM around shared operational truth.",
-    badge: "APPLICATIONS",
+    id: "transformation_delivery",
+    code: "TD",
+    name: "Enterprise Transformation & Delivery Leadership",
+    shortName: "Transformation & Delivery",
+    subtitle: "Carry transformation mandates into measurable business results with clear executive ownership and team delivery.",
+    essence: "Align priorities, investment, cross-functional delivery teams, and floor adoption across executive partners.",
+    badge: "TRANSFORMATION",
     accentHex: "#0284C7",
     borderClass: "border-sky-500/40 hover:border-sky-500",
     bgGlowClass: "from-sky-500/10 via-transparent to-transparent",
     pillClass: "bg-sky-500/15 text-sky-700 dark:text-sky-300 border-sky-500/30",
     cubeRotation: { x: -12, y: -90 },
     faceTransform: "rotateY(90deg) translateZ(140px)",
-    appGroups: "ERP, WMS, MES, HRM/HCM, EAM, CRM",
   },
   {
-    id: "it_ot_operations",
-    code: "IT",
-    name: "IT Operations & Security",
-    shortName: "IT Operations",
-    subtitle: "Maintain dependable enterprise infrastructure, cybersecurity, and operational continuity across business and plant systems.",
-    essence: "Dependable infrastructure, cybersecurity, and operational continuity across business and plant systems.",
-    badge: "OPERATIONS & SEC",
+    id: "architecture_systems",
+    code: "AS",
+    name: "Enterprise Architecture & Business Systems",
+    shortName: "Architecture & Systems",
+    subtitle: "Connect core enterprise platforms and physical operations around shared operational truth.",
+    essence: "Connect ERP, WMS, MES, HRM/HCM, EAM, and CRM around physical workflows with operating continuity.",
+    badge: "APPLICATIONS & ARCHITECTURE",
     accentHex: "#2563EB",
     borderClass: "border-blue-500/40 hover:border-blue-500",
     bgGlowClass: "from-blue-500/10 via-transparent to-transparent",
     pillClass: "bg-blue-500/15 text-blue-700 dark:text-blue-300 border-blue-500/30",
     cubeRotation: { x: -12, y: -180 },
     faceTransform: "rotateY(180deg) translateZ(140px)",
+    appGroups: "ERP, WMS, MES, HRM/HCM, EAM, CRM",
   },
   {
-    id: "data_knowledge",
+    id: "data_knowledge_financial",
     code: "DK",
-    name: "Data & Knowledge",
-    shortName: "Data & Knowledge",
-    subtitle: "Turn business records, operating history, and company knowledge into trusted information people and agents can use.",
-    essence: "Master data integrity, repeatable analytics, institutional memory retention, and RAG.",
-    badge: "DATA & KNOWLEDGE",
+    name: "Data, Knowledge & Financial Systems",
+    shortName: "Data, Knowledge & Finance",
+    subtitle: "Turn company data, operating history, and financial records into trusted information people and agents can act on.",
+    essence: "Master data integrity, accelerated close, auditable controls, unified reporting, and enterprise memory for people and agents.",
+    badge: "DATA, KNOWLEDGE & FINANCE",
     accentHex: "#7C3AED",
     borderClass: "border-purple-500/40 hover:border-purple-500",
     bgGlowClass: "from-purple-500/10 via-transparent to-transparent",
@@ -107,13 +107,13 @@ const DOMAIN_CONFIGS: DomainConfig[] = [
     faceTransform: "rotateY(-90deg) translateZ(140px)",
   },
   {
-    id: "financial_systems",
-    code: "FS",
-    name: "Financial Systems & Management",
-    shortName: "Financial Systems",
-    subtitle: "Maintain financial management & controls, accelerate close, and reconcile operations to finance.",
-    essence: "Reconciliation, audit readiness, cost-to-serve, working capital visibility, and margin control.",
-    badge: "FINANCIAL SYSTEMS",
+    id: "technology_operations",
+    code: "OC",
+    name: "Technology Operations, Adoption & Control",
+    shortName: "Operations & Control",
+    subtitle: "Maintain dependable multi-site infrastructure, cybersecurity, and operational continuity across business and plant systems.",
+    essence: "Dependable infrastructure, cybersecurity, and operational continuity across business and plant systems; coordinated with plant floor owners.",
+    badge: "OPERATIONS & CONTROL",
     accentHex: "#0D9488",
     borderClass: "border-teal-500/40 hover:border-teal-500",
     bgGlowClass: "from-teal-500/10 via-transparent to-transparent",
@@ -122,13 +122,13 @@ const DOMAIN_CONFIGS: DomainConfig[] = [
     faceTransform: "rotateX(-90deg) translateZ(140px)",
   },
   {
-    id: "workflows_automation",
-    code: "WA",
-    name: "Workflows & Automation",
-    shortName: "Workflows",
-    subtitle: "Eliminate friction between teams and automate operational handoffs.",
-    essence: "Order-to-cash, procure-to-pay, frontline mobile capture, and exception routing.",
-    badge: "AUTOMATION",
+    id: "agentic_workflows",
+    code: "AW",
+    name: "Agentic Software & Workflow Delivery",
+    shortName: "Agentic Workflows",
+    subtitle: "Build custom agentic software and workflow automation around how frontline operators actually work.",
+    essence: "Deterministic agent pipelines, AST calipers, human authorization gates, and operational handoff elimination.",
+    badge: "AGENTIC WORKFLOWS",
     accentHex: "#DB2777",
     borderClass: "border-pink-500/40 hover:border-pink-500",
     bgGlowClass: "from-pink-500/10 via-transparent to-transparent",
@@ -149,19 +149,19 @@ function getNextDomainOnGesture(
   direction: "PULL_UP" | "PULL_DOWN" | "PULL_LEFT" | "PULL_RIGHT"
 ): string {
   const horizontalRing = [
-    "leadership_direction", // 0: Front
-    "business_systems",     // 1: Right
-    "it_ot_operations",     // 2: Back
-    "data_knowledge",       // 3: Left
+    "commercial_solution",      // 0: Front
+    "transformation_delivery", // 1: Right
+    "architecture_systems",    // 2: Back
+    "data_knowledge_financial",// 3: Left
   ];
 
   // Vertical ring cycles smoothly between Front, Bottom, and Top
-  // Pulling UP: Leadership (Front) -> Financial Systems (Bottom) -> Workflows (Top) -> Leadership (Front)...
-  // Pulling DOWN: Leadership (Front) -> Workflows (Top) -> Financial Systems (Bottom) -> Leadership (Front)...
+  // Pulling UP: Commercial (Front) -> Operations (Bottom) -> Agentic Workflows (Top) -> Commercial (Front)...
+  // Pulling DOWN: Commercial (Front) -> Agentic Workflows (Top) -> Operations (Bottom) -> Commercial (Front)...
   const verticalRing = [
-    "leadership_direction", // 0: Front
-    "financial_systems",    // 1: Bottom
-    "workflows_automation", // 2: Top
+    "commercial_solution",    // 0: Front
+    "technology_operations",  // 1: Bottom
+    "agentic_workflows",      // 2: Top
   ];
 
   const hIndex = horizontalRing.indexOf(currentDomainId);
@@ -172,25 +172,25 @@ function getNextDomainOnGesture(
       if (vIndex !== -1) {
         return verticalRing[(vIndex + 1) % verticalRing.length];
       }
-      return "financial_systems";
+      return "technology_operations";
 
     case "PULL_DOWN":
       if (vIndex !== -1) {
         return verticalRing[(vIndex - 1 + verticalRing.length) % verticalRing.length];
       }
-      return "workflows_automation";
+      return "agentic_workflows";
 
     case "PULL_LEFT":
       if (hIndex !== -1) {
         return horizontalRing[(hIndex + 1) % horizontalRing.length];
       }
-      return "business_systems";
+      return "transformation_delivery";
 
     case "PULL_RIGHT":
       if (hIndex !== -1) {
         return horizontalRing[(hIndex - 1 + horizontalRing.length) % horizontalRing.length];
       }
-      return "data_knowledge";
+      return "data_knowledge_financial";
   }
 }
 
@@ -203,20 +203,20 @@ function getClosestDomainFromRotation(rotX: number, rotY: number): string {
   if (normY > 180) normY -= 360;
 
   if (normX > 35 && normX <= 135) {
-    return "financial_systems";
+    return "technology_operations";
   }
   if (normX < -45 && normX >= -135) {
-    return "workflows_automation";
+    return "agentic_workflows";
   }
 
   if (normY >= -45 && normY <= 45) {
-    return "leadership_direction";
+    return "commercial_solution";
   } else if (normY < -45 && normY >= -135) {
-    return "business_systems";
+    return "transformation_delivery";
   } else if (normY > 45 && normY <= 135) {
-    return "data_knowledge";
+    return "data_knowledge_financial";
   } else {
-    return "it_ot_operations";
+    return "architecture_systems";
   }
 }
 
@@ -227,7 +227,7 @@ function getCanonicalRotationForDomain(
 ): { x: number; y: number } {
   const config = DOMAIN_CONFIGS.find((d) => d.id === targetDomainId) || DOMAIN_CONFIGS[0];
 
-  if (targetDomainId === "financial_systems") {
+  if (targetDomainId === "technology_operations") {
     let diff = (78 - currentRotation.x) % 360;
     if (diff > 180) diff -= 360;
     if (diff < -180) diff += 360;
@@ -240,7 +240,7 @@ function getCanonicalRotationForDomain(
     return { x: targetX, y: nearest360Y };
   }
 
-  if (targetDomainId === "workflows_automation") {
+  if (targetDomainId === "agentic_workflows") {
     let diff = (-102 - currentRotation.x) % 360;
     if (diff > 180) diff -= 360;
     if (diff < -180) diff += 360;
@@ -286,6 +286,7 @@ function DomainBlockIcon({
   color?: string;
 }) {
   switch (code) {
+    case "CS":
     case "LD":
       return (
         <svg viewBox="0 0 24 24" fill="none" className={className} stroke={color} strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
@@ -295,6 +296,16 @@ function DomainBlockIcon({
           <circle cx="12" cy="12" r="2" fill="currentColor" stroke={color} strokeWidth="2" />
         </svg>
       );
+    case "TD":
+      return (
+        <svg viewBox="0 0 24 24" fill="none" className={className} stroke={color} strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M4 19.5v-15l16 7.5-16 7.5z" fill={`${color}20`} strokeOpacity="0.85" />
+          <path d="M4 4.5v15" strokeWidth="2.5" />
+          <line x1="12" y1="8.5" x2="12" y2="15.5" strokeOpacity="0.75" />
+          <circle cx="12" cy="12" r="1.5" fill={color} />
+        </svg>
+      );
+    case "AS":
     case "BS":
       return (
         <svg viewBox="0 0 24 24" fill="none" className={className} stroke={color} strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
@@ -306,16 +317,8 @@ function DomainBlockIcon({
           <circle cx="12" cy="12" r="2" fill={color} />
         </svg>
       );
-    case "IT":
-      return (
-        <svg viewBox="0 0 24 24" fill="none" className={className} stroke={color} strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M12 2.5l8 3.5v6c0 5-3.5 9.5-8 11-4.5-1.5-8-6-8-11v-6l8-3.5z" fill={`${color}20`} strokeOpacity="0.85" />
-          <path d="M12 7.5v9" />
-          <path d="M8.5 12h7" />
-          <circle cx="12" cy="12" r="2" fill={color} />
-        </svg>
-      );
     case "DK":
+    case "FS":
       return (
         <svg viewBox="0 0 24 24" fill="none" className={className} stroke={color} strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
           <path d="M6 3.5h12l4 6.5-10 11.5L2 10l4-6.5z" fill={`${color}20`} strokeOpacity="0.85" />
@@ -325,16 +328,7 @@ function DomainBlockIcon({
           <circle cx="12" cy="10" r="1.75" fill={color} stroke="currentColor" strokeWidth="1.5" />
         </svg>
       );
-    case "FS":
-      return (
-        <svg viewBox="0 0 24 24" fill="none" className={className} stroke={color} strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M12 3v18M6 21h12" />
-          <path d="M4 8l8-2 8 2" />
-          <path d="M4 8l-2 6c0 1.5 1.5 2.5 3 2.5s3-1 3-2.5L6 8" fill={`${color}25`} />
-          <path d="M20 8l-2 6c0 1.5 1.5 2.5 3 2.5s3-1 3-2.5L22 8" fill={`${color}25`} />
-          <circle cx="12" cy="6" r="1.5" fill={color} />
-        </svg>
-      );
+    case "AW":
     case "WA":
       return (
         <svg viewBox="0 0 24 24" fill="none" className={className} stroke={color} strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
@@ -343,6 +337,16 @@ function DomainBlockIcon({
           <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16" />
           <polyline points="16 16 21 16 21 21" />
           <circle cx="12" cy="12" r="2.5" fill={`${color}30`} stroke={color} strokeWidth="1.5" />
+        </svg>
+      );
+    case "OC":
+    case "IT":
+      return (
+        <svg viewBox="0 0 24 24" fill="none" className={className} stroke={color} strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 2.5l8 3.5v6c0 5-3.5 9.5-8 11-4.5-1.5-8-6-8-11v-6l8-3.5z" fill={`${color}20`} strokeOpacity="0.85" />
+          <path d="M12 7.5v9" />
+          <path d="M8.5 12h7" />
+          <circle cx="12" cy="12" r="2" fill={color} />
         </svg>
       );
     default:
@@ -360,7 +364,7 @@ function TheBlockConfiguratorPage() {
   const { theme, setTheme, isLight } = useTheme();
 
   // Active domain currently focused on the 3D block
-  const [activeDomainId, setActiveDomainId] = useState<string>("leadership_direction");
+  const [activeDomainId, setActiveDomainId] = useState<string>("commercial_solution");
   const [cubeRotation, setCubeRotation] = useState<{ x: number; y: number }>({ x: -12, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   

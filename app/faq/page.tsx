@@ -23,7 +23,7 @@ const FAQ = [
   },
   {
     q: "What mandates do you take?",
-    a: "Executive leadership, transformation delivery, or a defined part of the work. The mandate, reporting relationship, and engagement structure depend on the responsibility and business need. Work can also be structured through The Block—focused, two-to-four-week productized capability blocks across six enterprise disciplines.",
+    a: "Executive leadership, transformation delivery, or a defined part of the work. The mandate, reporting relationship, and engagement structure depend on the responsibility and business need. Work can also be structured through The Block—focused, two-to-four-week productized capability blocks across six primary enterprise domains.",
   },
   {
     q: "What does the company own when you leave?",

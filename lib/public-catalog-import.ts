@@ -10,9 +10,9 @@ function keys(value: Record<string, unknown>, expected: string[]) {
 function validateProjection(input: unknown, factory: boolean): PublicExport {
   if (!object(input)) throw new Error("Expected public catalog export");
   keys(input, ["version", "generated_at", "source", "public_hash", "count", "aliases", "retired_ids", "outcomes", "items"]);
-  const version = factory ? "factory-outcome-catalog-2026-10-10" : "outcome-catalog-2026-10-10";
+  const prefix = factory ? "factory-outcome-catalog-" : "outcome-catalog-";
   const count = factory ? 10 : 60;
-  if (input.version !== version || typeof input.generated_at !== "string" || !Number.isFinite(Date.parse(input.generated_at)) || typeof input.source !== "string" || !input.source.trim()) throw new Error("Invalid export provenance");
+  if (typeof input.version !== "string" || !input.version.startsWith(prefix) || typeof input.generated_at !== "string" || !Number.isFinite(Date.parse(input.generated_at)) || typeof input.source !== "string" || !input.source.trim()) throw new Error("Invalid export provenance");
   if (!Array.isArray(input.outcomes) || input.outcomes.length !== count || input.count !== count || JSON.stringify(input.items) !== JSON.stringify(input.outcomes)) throw new Error(`Expected ${count} consistent public outcomes`);
   const counts = new Map((factory ? ["Factory Agentic Software"] : PUBLIC_OUTCOME_DOMAINS.map(domain => domain.name)).map(name => [name, 0]));
   const ids = new Set<string>();

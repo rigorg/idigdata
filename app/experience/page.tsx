@@ -321,7 +321,7 @@ export default function ExperiencePage() {
           </div>
           <div className="home-more mt-8 flex flex-col sm:flex-row items-baseline gap-4 sm:gap-8">
             <Link className="p-link font-semibold text-[#142840]" href="/block/">
-              Explore related outcomes in The Block &rarr;
+              Explore the 60 enterprise outcomes in The Block &rarr;
             </Link>
             <Link className="p-link text-slate-600" href="/agentic-ai/">
               Read field briefs from the operational seam &rarr;

@@ -17,12 +17,12 @@ export const PERSON_DESCRIPTION =
   "Enterprise Technology Leader. 30 years, 50+ implementations, 15 enterprise transformations at scale. Founder of Data Integration Group (DIG LLC), the practice behind idigdata, founded 2016.";
 
 const BLOCK_DISCIPLINES = [
-  "Leadership, Direction & Transformation",
-  "Business Systems & Integration",
-  "IT Operations & Security",
-  "Data & Knowledge",
-  "Financial Systems",
-  "Workflows & Automation",
+  "Commercial & Solution Leadership",
+  "Enterprise Transformation & Delivery Leadership",
+  "Enterprise Architecture & Business Systems",
+  "Data, Knowledge & Financial Systems",
+  "Agentic Software & Workflow Delivery",
+  "Technology Operations, Adoption & Control",
 ];
 
 /** Human labels for known top-level segments; others are title-cased. */
