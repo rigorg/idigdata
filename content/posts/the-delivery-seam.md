@@ -50,8 +50,9 @@ This Fourth Wave represents a qualitative break from manual development. But it 
 
 In his widely read October 2026 *beehiiv* analysis, **Chamath Palihapitiya** (CEO of 8090, Founder of Social Capital, and co-host of *All-In*) cut directly to the heart of why autonomous agents struggle inside the enterprise:
 
-> **FIELD NOTE 03-A // THE 80/90 CONSENSUS: THE SPACE BETWEEN THE TASKS**
+> **SEAM LOG 03-A // THE 80/90 CONSENSUS: THE SPACE BETWEEN THE TASKS**
 > "A job is more than the sum of its tasks. What's more intangible is the part between them: deciding which task matters, in what order, and when to stop; coordinating with people on other teams; and being the one accountable when it goes wrong."
+>
 > Software factories automate discrete tasks at machine speed. But work is the messy, continuous space between tasks: dock exceptions, carrier disputes, and human cutover accountability. The enterprise lives in the space between the tasks.
 
 This is the exact operational seam where Silicon Valley software factories stumble.
@@ -78,9 +79,19 @@ You can automate tasks at machine speed. But **the enterprise lives in the space
 
 During recent *All-In Podcast* disclosures, the 80/90 group highlighted a second critical consensus emerging across the engineering frontier:
 
-> **FIELD NOTE 03-B // GANTRY HARNESS: DECOUPLING 60-DAY MODEL CHURN**
-> "Foundation models are converging within margins of error. The competitive edge is entirely in the harness that you wrap around the model to give it arms, legs, hands, and eyes. But harnesses are wildly variant in terms of cost, state governance, and execution quality."
-> Frontier models churn every sixty days. If your enterprise logic is welded to a specific foundation model endpoint, your operations break with every deprecation notice. The competitive moat is never the model—it is the operational gantry harness on local iron: deterministic AST calipers, spend caps, read-only schema sandboxes, and cryptographic provenance.
+> **SEAM LOG 03-B // A MAN IN THE BUILD: BLOOD, SWEAT, TEARS, AND JOY**
+> Let's be completely real about what it actually takes to build with agentic software systems today: it is serious blood, sweat, and tears. Don't let polished vendor stage demos fool you. This is a marathon, and we are all learning together in real time on this frontier.
+>
+> I cannot count the number of times I have had to burn down my codebase and start over from scratch at two in the morning because an architectural assumption collapsed under real operational pressure. You pour eighty hours into crafting a custom multi-agent pipeline, and thirty days later a frontier model or vendor releases a capability that is genuinely better than what you just built. You have to swallow your pride, throw away your favorite code, and immediately adopt the better solution into your build without looking back.
+>
+> And then there is the emotional intensity of the runtime: the pure, electric joy on one side when an agentic swarm clicks into place and writes verifiable production code—and the visceral pain and exhaustion on the other when agents go rogue, when hallucinations quietly slip past naive guardrails, and when your stated intent does not equal the actual outcome.
+>
+> That is the true story of a man in the build. You don't survive it by giving up. You survive it through relentless resilience, ruthless deterministic testing, and the hard-won joy of watching real software emerge from the fire.
+
+> **SEAM LOG 03-C // WHEN INTENT DOES NOT EQUAL OUTCOME**
+> In traditional programming, compilers either accept your syntax or reject it. In agentic development, the hardest battle is that human intent does not equal agentic outcome. An agent will give you an articulate, polite summary of victory while having quietly shredded your production database foreign keys.
+>
+> The only salvation is the machine that builds the machines: wrapping volatile intelligence in local-iron gantry harnesses, deterministic AST calipers, spend caps, and human-in-the-loop authorization gates. Every guardrail in our harness was paid for in scar tissue.
 
 Over three years inside the agentic runtime—building day in and day out across early models to frontier systems—I have lived the blood, sweat, and tears of this boundary. 
 

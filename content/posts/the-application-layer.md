@@ -46,8 +46,12 @@ Frontline engineers, systems administrators, and operational managers are openly
 
 Frontline operators are exhausted from acting as human shock absorbers for broken vendor software.
 
-> **FIELD NOTE 02-A // THE FRONTLINE REBELLION: HUMAN MIDDLEWARE**
-> Frontline workers spend entire careers acting as human shock absorbers for broken vendor software—manually copying and pasting records between five disconnected applications because vendor-promised integrations require a $250,000 consulting retainer. Wrapping broken application architectures in conversational chatbots does not create an autonomous enterprise; it creates conversational sludge that masks operational decay.
+> **SEAM LOG 02-A // THE MANUFACTURING SCHEDULER & THE JOY OF BUILDING**
+> In a complex manufacturing operation, I worked alongside a production scheduler who had spent a decade keeping the entire plant running through sheer personal grit. He wasn't formally trained in computer science, but he loved technology. Over years on the job, he had built an elaborate, interconnected maze of Excel workbooks stitched together with home-spun PowerShell scripts.
+>
+> If this gentleman had been hit by a bus or won the lottery on a Monday morning, the entire company would have been in immediate jeopardy. But instead of sidelining him or replacing his life's work with an off-the-shelf software package that would have failed his floor, we partnered with him as an Agentic Domain Champion.
+>
+> We gave him a bounded agentic framework—a clean data contract, deterministic state boundaries, and guardrails where he could build safely without breaking the company. What he was able to build inside that framework blew past anything he thought possible. As he told me with wide eyes, it was way beyond anything he could ever have imagined himself creating. The sheer, heartfelt joy on his face is what happens when you give a real domain expert the power to vibecode inside a framework. Those are the champions every enterprise needs.
 
 This groundswell is not cynical noise; it is an undeniable signal that enterprises are ready to take back control of their operational core.
 
@@ -57,9 +61,10 @@ This groundswell is not cynical noise; it is an undeniable signal that enterpris
 
 Yet as enterprises attempt to build custom software with AI, they frequently crash into a dangerous trap identified by the 80/90 group:
 
-> **FIELD NOTE 02-B // RUNTIME ARCHITECTURE: THE RALPH WIGGUM LOOP**
-> "AI-driven development without upstream specification devolves into massive rework loops where agents endlessly iterate and incinerate tokens without making functional progress ('Ralph Wiggum loops')."
-> Unbounded agents entering a complex brownfield repository will happily generate thousands of lines of syntactically valid code that passes isolated unit tests but completely destroys production database integrity. The answer to runaway token burn is not more prompting—it is industrial architecture: isolated worktree lanes, deterministic caller gates, and a reconciled data spine.
+> **SEAM LOG 02-B // VIBECODING WITHIN AN ARCHITECTURAL FRAMEWORK**
+> Building with agentics is not for everybody. It takes deep operational curiosity, patience, and domain obsession. But inside every enterprise—especially among frontline domain experts—there are people who would love to vibecode within a framework.
+>
+> The key is the framework. Left unconstrained in brownfield systems, agents hallucinate, loop endlessly in Ralph Wiggum token incinerators, and destroy data integrity. But when you identify your domain champions and wrap them in a disciplined architecture—isolated worktree lanes, typed schemas, and deterministic test gates—you eliminate token burn and unlock human potential. You give domain masters the sheer joy of software creation while keeping the enterprise safe.
 
 Unbounded agents entering a complex brownfield repository will happily generate thousands of lines of syntactically valid code that passes isolated unit tests but completely destroys production database integrity.
 
@@ -84,8 +89,8 @@ The future of enterprise software is neither purely manual human coding nor unsu
 
 Marc Benioff and enterprise innovators have recognized this reality: the value is not in conversational prompt boxes; **the value is in the metadata, the schema, and the workflow state gates**.
 
-> **FIELD NOTE 02-C // THE SOVEREIGN CORE: THE FOUR SOLVED PATTERNS**
-> At its foundational computational level, operational software is not proprietary magic. It is four deterministic patterns: the double-entry general ledger (balance invariance), order-to-cash (finite state machines), procure-to-pay (three-way matching), and inventory valuation (SKU lot ledgers). High-churn compliance is decoupled into specialized APIs. The operational core belongs to the business.
+> **SEAM LOG 02-C // THE SOVEREIGN CORE: THE FOUR DETERMINISTIC PATTERNS**
+> At its foundational computational level, operational software is not proprietary magic. It is four deterministic patterns: the double-entry general ledger (balance invariance), order-to-cash (finite state machines), procure-to-pay (three-way matching), and inventory valuation (SKU lot ledgers). High-churn compliance is decoupled into specialized APIs. When wrapped in a deterministic harness, the operational core belongs to the business.
 
 Here is why enterprise workflow autonomy is now inevitable:
 

@@ -85,8 +85,10 @@ The catastrophe was averted because Mary walked past maintenance on her morning 
 - She re-routed the rush run to line 4 before brewing dumped the wort.
 - She reassigned three certified operators to line 4 to handle the changeover.
 
-> **FIELD NOTE 01-A // OBSERVED REALITY: MARY'S CLIPBOARD VS. THE DATABASE**
-> The database status flag was green: packaging line 2 idle and available. In physical reality, line 2 was dead. Mechanics had unbolted the main filling pump twenty minutes earlier to replace a weeping mechanical seal, with the work order scrawled on a grease-stained piece of cardboard sitting on the maintenance bench. No AI agent scraping databases could have caught that. Only human presence, physical observation, and cross-department trust saved the batch.
+> **SEAM LOG 01-A // OBSERVED REALITY: MARY'S CLIPBOARD VS. THE DATABASE**
+> I stood on that plant floor next to Mary as the multi-million-dollar enterprise software reported packaging line 2 as green, idle, and ready. In physical reality twenty feet away, line 2 was dead. Mechanics had unbolted the main filling pump twenty minutes earlier to replace a weeping mechanical seal, with the work order scrawled in black grease marker on a piece of cardboard sitting on the maintenance bench.
+>
+> No AI agent scraping databases could have caught that. The ERP was a clean fiction; Mary's clipboard was the living business. Only physical presence, floor observation, and cross-department trust saved the batch.
 
 **No AI agent, scraping database records, could have caught that.** The status flag in the database was green. Only human presence, physical observation, and cross-department trust prevented a multi-thousand-dollar dump down the drain.
 
@@ -124,8 +126,10 @@ For the first time in thirty years, Mary could look up from the spreadsheets and
 
 That is the ultimate test of enterprise software. 
 
-> **FIELD NOTE 01-B // THE OPERATIONAL SEAM: HUMAN ELEVATION**
-> Bad enterprise software treats frontline people as disposable human data conduits—and then fails because unwritten reality crashes the plant. Great operational architecture absorbs the clerical machinery so that the human beings on the floor can do what only humans can do: exercise judgment, build trust, mentor junior supervisors, and lead.
+> **SEAM LOG 01-B // THE OPERATIONAL SEAM: HUMAN ELEVATION**
+> When we finally built software that respected how the floor actually worked—absorbing the five hours of clerical data re-entry she was doing every afternoon just to reconcile the ERP's blind spots—Mary didn't get displaced. She got elevated.
+>
+> For the first time in thirty years, she could spend her morning walking the floor, mentoring younger supervisors, and solving cross-department bottlenecks before they happened. That is the true dignity of the operational seam: technology that takes the clerical weight off human shoulders so real human expertise and leadership can shine.
 
 Bad software treats people as disposable data conduits—and then fails because the uncodified reality crashes the plant. Great operational architecture absorbs the clerical machinery so that the human beings on the floor can do what only humans can do: exercise judgment, build trust, mentor others, and lead. 
 

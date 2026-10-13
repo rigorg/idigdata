@@ -493,25 +493,26 @@
    ========================================================================== */
 .fieldNoteCard {
   position: relative;
-  background: #FFFDF9;
-  border: 1px solid var(--line);
-  border-left: 5px solid var(--brass);
-  box-shadow: 0 4px 16px rgba(30, 32, 36, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03);
-  padding: 24px 28px;
+  background-color: #14161A;
+  color: #F4F1EA;
+  border: 1px solid #2B2F38;
+  border-left: 4px solid #8E929A;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22), 0 2px 8px rgba(0, 0, 0, 0.12);
+  padding: 24px 28px 22px;
   margin: 36px 0;
-  border-radius: 4px;
+  border-radius: 6px;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 :global(.dark) .fieldNoteCard {
-  background: #171A20;
-  border-color: #2D323C;
-  border-left-color: var(--brass);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  background-color: #0E1013;
+  border-color: #242730;
+  border-left-color: #8E929A;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
 }
 
 .fieldNoteCard:hover {
-  box-shadow: 0 8px 24px rgba(30, 32, 36, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28), 0 4px 12px rgba(0, 0, 0, 0.16);
 }
 
 .fieldNoteHeader {
@@ -521,60 +522,56 @@
   gap: 12px;
   padding-bottom: 12px;
   margin-bottom: 16px;
-  border-bottom: 1px dashed var(--line);
+  border-bottom: 1px solid #262933;
 }
 
 :global(.dark) .fieldNoteHeader {
-  border-bottom-color: #2D323C;
+  border-bottom-color: #20232A;
 }
 
 .fieldNoteRubric {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: ui-monospace, "SF Mono", "Roboto Mono", Menlo, Consolas, monospace;
-  font-size: 11px;
+  font-family: var(--next-font-sans), "Source Sans 3", Inter, -apple-system, sans-serif;
+  font-size: 11.5px;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--rust);
+  color: #F0EDE6;
 }
 
 .fieldNoteRubricDot {
   width: 6px;
   height: 6px;
-  background-color: var(--rust);
-  border-radius: 1px;
+  background-color: #FAF6EE;
+  border-radius: 50%;
   display: inline-block;
 }
 
 .fieldNoteStamp {
   font-family: ui-monospace, "SF Mono", "Roboto Mono", Menlo, Consolas, monospace;
   font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-weight: 600;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--brass-dark);
+  color: #8C929E;
 }
 
 :global(.dark) .fieldNoteStamp {
-  color: var(--brass-light);
+  color: #7B818D;
 }
 
 .fieldNoteBody {
-  font-family: ui-monospace, "SF Mono", "Roboto Mono", Menlo, Consolas, "Courier New", monospace;
-  font-size: 14.5px;
-  line-height: 1.7;
-  color: var(--ink);
-  letter-spacing: -0.01em;
-}
-
-:global(.dark) .fieldNoteBody {
-  color: #FAF6EE;
+  font-family: var(--next-font-sans), "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 15.5px;
+  line-height: 1.72;
+  color: #EDE8DE;
+  letter-spacing: 0;
 }
 
 .fieldNoteBody p {
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .fieldNoteBody p:last-child {
@@ -582,50 +579,41 @@
 }
 
 .fieldNoteBody strong {
-  color: var(--ink);
-  font-weight: 700;
-}
-
-:global(.dark) .fieldNoteBody strong {
   color: #FFFFFF;
+  font-weight: 700;
 }
 
 .fieldNoteBody em {
   font-style: italic;
-  color: var(--ink);
-}
-
-:global(.dark) .fieldNoteBody em {
-  color: #FAF6EE;
+  color: #F5F2EB;
 }
 
 .fieldNoteBody a {
-  color: var(--brass-dark);
+  color: #D4C29A;
   text-decoration: underline;
   text-underline-offset: 3px;
   font-weight: 600;
 }
 
-:global(.dark) .fieldNoteBody a {
-  color: var(--brass-light);
+.fieldNoteBody a:hover {
+  color: #FFFFFF;
 }
 
 .fieldNoteFooter {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 16px;
-  padding-top: 10px;
-  border-top: 1px solid #EFEAE0;
-  font-family: ui-monospace, "SF Mono", "Roboto Mono", Menlo, Consolas, monospace;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid #242730;
+  font-family: var(--next-font-sans), "Source Sans 3", Inter, -apple-system, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #888E99;
 }
 
 :global(.dark) .fieldNoteFooter {
-  border-top-color: #252A34;
-  color: #8C877D;
+  border-top-color: #1F2228;
+  color: #767B86;
 }

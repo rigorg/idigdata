@@ -101,35 +101,36 @@ function renderMarkdown(md: string) {
         return;
       }
 
-      let rubric = "FIELD NOTE // OBSERVED REALITY";
-      let stamp = "IDIGDATA // OPERATIONAL SEAM";
+      let rubric = "SEAM LOG // FIELD DISPATCH";
+      let stamp = "OPERATIONAL SEAM";
+      let signature = "— Rob Paddock · From the Seam Log";
       let contentLines = cleanLines;
 
       const firstLine = cleanLines[0];
-      const fieldNoteMatch = firstLine.match(/^\*\*FIELD NOTE\s*([0-9A-Za-z\-]*)\s*\/\/\s*(.*?)\*\*$/i);
+      const seamLogMatch = firstLine.match(/^\*\*(?:SEAM LOG|FIELD NOTE)\s*([0-9A-Za-z\-]*)\s*\/\/\s*(.*?)\*\*$/i);
       const operationalMatch = firstLine.match(/^\*\*OPERATIONAL\s*(.*?)\*\*$/i);
       const trilogyMatch = firstLine.match(/^###\s*(The .*?Trilogy)/i);
 
-      if (fieldNoteMatch) {
-        const idPart = fieldNoteMatch[1] ? (" " + fieldNoteMatch[1]) : "";
-        rubric = "FIELD NOTE" + idPart + " // " + fieldNoteMatch[2];
-        stamp = "STATUS: GROUND TRUTH";
+      if (seamLogMatch) {
+        const idPart = seamLogMatch[1] ? (" " + seamLogMatch[1]) : "";
+        rubric = "SEAM LOG" + idPart + " // " + seamLogMatch[2];
+        stamp = "GROUND TRUTH";
         contentLines = cleanLines.slice(1);
       } else if (operationalMatch) {
-        rubric = "OPERATIONAL DISPATCH // " + operationalMatch[1];
-        stamp = "SEAM OBSERVATION";
+        rubric = "SEAM LOG // " + operationalMatch[1];
+        stamp = "FIELD OBSERVATION";
         contentLines = cleanLines.slice(1);
       } else if (trilogyMatch) {
         rubric = trilogyMatch[1].toUpperCase() + " // THE SEAM SERIES";
         stamp = "CANONICAL SEQUENCE";
         contentLines = cleanLines.slice(1);
       } else if (firstLine.startsWith('*"') || firstLine.startsWith('"') || firstLine.startsWith("*'")) {
-        rubric = "FIELD NOTE // SEAM LOG";
+        rubric = "SEAM LOG // OBSERVED REALITY";
         stamp = "VERIFIED IN ARENA";
       }
 
       elements.push(
-        <aside key={"field-card-" + key++} className={s.fieldNoteCard} aria-label="Field Note">
+        <aside key={"field-card-" + key++} className={s.fieldNoteCard} aria-label="Seam Log Field Note">
           <div className={s.fieldNoteHeader}>
             <div className={s.fieldNoteRubric}>
               <span className={s.fieldNoteRubricDot} aria-hidden="true" />
@@ -143,8 +144,8 @@ function renderMarkdown(md: string) {
             ))}
           </div>
           <div className={s.fieldNoteFooter}>
-            <span>DISPATCH LOG · IDIGDATA OPERATIONAL SEAM</span>
-            <span>HUMAN AUTHORITY REQUIRED</span>
+            <span>{signature}</span>
+            <span>VERIFIED IN THE ARENA</span>
           </div>
         </aside>
       );

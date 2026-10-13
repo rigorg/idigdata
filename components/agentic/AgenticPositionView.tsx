@@ -195,6 +195,7 @@ interface FieldNoteCard {
   rubric: string;
   stamp: string;
   text: string;
+  signature: string;
 }
 
 interface CollectivePillar {
@@ -231,9 +232,10 @@ const COLLECTIVES: CollectivePillar[] = [
     body:
       "Why do enterprise ERP implementations so often struggle to deliver on their promise? Gartner forecasts that through 2027, over 70% of new ERP initiatives will fail to fully realize their business-case goals. Modern AI software factories diagnose this as a 'context gathering' problem—assuming enterprise truth sits in clean wikis waiting to be ingested. But on the enterprise floor, 80% of operating truth is unwritten: held in tacit human judgment, informal cross-department trust, and Mary's edge-case scheduling spreadsheet. Monolithic software captures sanitized Standard Operating Procedures—how an organization wishes it functioned on its best day. AI hits a brick wall if it merely automates documented fiction. Before writing code, an architect must map how the enterprise actually runs—synthesizing an authoritative, company-owned Common Data Model that bridges fragmented silos and honors the human seam holding the business together.",
     fieldNoteCard: {
-      rubric: "FIELD NOTE 01 // SEAM DISPATCH",
-      stamp: "STATUS: GROUND TRUTH",
-      text: "80% of enterprise operating truth is unwritten: held in tacit human judgment and Mary's scheduling spreadsheet. AI hits a brick wall if it merely automates documented fiction.",
+      rubric: "SEAM LOG // THE OPERATIONAL SEAM",
+      stamp: "OBSERVED REALITY",
+      text: "The enterprise ERP showed packaging line 2 as green and ready. On the physical floor, mechanics had unbolted the pump twenty minutes earlier, work order scrawled in grease on cardboard. Mary caught it because she walked the concrete with her clipboard. The software was a clean fiction; Mary's sheet was the living enterprise.",
+      signature: "— Rob Paddock · Plant Floor Field Note",
     },
     inquiries: [
       "Context gathering vs. floor truth: why database introspection misses how the company actually runs",
@@ -261,9 +263,10 @@ const COLLECTIVES: CollectivePillar[] = [
     body:
       "The enterprise computing conversation has too often focused on conversational prompt droids or the fantasy of zero-human automation. But democratizing information does not create organizational agreement: an AI agent can surface a conflict between purchasing, sales, and controllers, but only an executive with skin in the game can make the decision and carry the liability. The winning discipline is Human-Agent Synthesis: experienced operators and autonomous agents collaborating inside deterministic left-to-right pipelines. Moving work through goal-directed assembly lines—governed by strict data contracts, state validation, and human authorization gates—allows enterprises to harness autonomous software while keeping operational authority firmly with human leadership.",
     fieldNoteCard: {
-      rubric: "FIELD NOTE 02 // WORKFLOW DISPATCH",
-      stamp: "STATUS: GROUND TRUTH",
-      text: "AI chat windows fail the moment they touch inventory allocations and ledger transactions. The value is not in conversational prompt boxes; it is in metadata, schema contracts, and deterministic workflow state gates.",
+      rubric: "SEAM LOG // HUMAN-AGENT SYNTHESIS",
+      stamp: "THE DOMAIN CHAMPION",
+      text: "In a complex manufacturing plant, one scheduler kept operations running with interconnected Excel workbooks and PowerShell scripts—a single point of failure who loved tech. We partnered with him as an Agentic Domain Champion inside a bounded framework. What he built blew past anything he thought possible. The sheer joy on his face is what happens when you empower domain experts to vibecode inside a safe architecture.",
+      signature: "— Rob Paddock · Manufacturing Floor Field Note",
     },
     inquiries: [
       "Beyond conversational chat: why deterministic left-to-right pipelines beat prompt droids",
@@ -291,9 +294,10 @@ const COLLECTIVES: CollectivePillar[] = [
     body:
       "We have crossed the threshold into the software factory: code now building code. But autonomous software fabrication introduces a demanding new engineering discipline: managing token burn, orchestrating open-weight models alongside frontier APIs, and mastering multi-seat execution. Frontier models and APIs evolve rapidly. If an enterprise welds its core business logic directly to a single proprietary endpoint or hosted SaaS, it invites fragile dependencies. The durable asset is the machine that builds the machines: the test-driven gantry harness on local iron. Wrapping volatile intelligence in deterministic AST calipers, git-backed state ledgers, and human authorization gates turns model tokens into living, verifiable enterprise software.",
     fieldNoteCard: {
-      rubric: "FIELD NOTE 03 // FACTORY DISPATCH",
-      stamp: "STATUS: GROUND TRUTH",
-      text: "Frontier models churn every sixty days. The competitive moat is never the model—it is the operational gantry harness on local iron with deterministic AST calipers, spend caps, and complete data sovereignty.",
+      rubric: "SEAM LOG // THE MACHINE THAT BUILDS",
+      stamp: "A MAN IN THE BUILD",
+      text: "Building agentic systems is serious blood, sweat, and tears. I have burned down my codebase and started over more times than I can count. You build something custom, and thirty days later a vendor beats it—so you adapt. You live the electric joy when agents click, and the agony when they go rogue and intent fails to equal outcome. Don't give up: this is a marathon, and we're all learning together.",
+      signature: "— Rob Paddock · Builder Field Note",
     },
     inquiries: [
       "Decoupling model churn: why the competitive moat is the gantry harness on local iron",
@@ -552,7 +556,7 @@ export default function AgenticPositionView() {
                   </div>
                   <p className={s.triadCardBody}>{c.body}</p>
 
-                  {/* Typed Field Note Card */}
+                  {/* Dark Notebook Seam Log Card */}
                   <div className={s.triadFieldNoteCard}>
                     <div className={s.triadFieldNoteHead}>
                       <div className={s.triadFieldNoteRubric}>
@@ -562,6 +566,10 @@ export default function AgenticPositionView() {
                       <span className={s.triadFieldNoteStamp}>{c.fieldNoteCard.stamp}</span>
                     </div>
                     <p className={s.triadFieldNoteText}>{c.fieldNoteCard.text}</p>
+                    <div className={s.triadFieldNoteFooter}>
+                      <span>{c.fieldNoteCard.signature}</span>
+                      <span>VERIFIED IN ARENA</span>
+                    </div>
                   </div>
 
                   {/* Core Inquiries */}
