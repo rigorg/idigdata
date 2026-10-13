@@ -26,7 +26,7 @@ In the emerging debate around autonomous software factories, the industry group 
 
 > *"There is a massive chasm between Stated Reality and Actual Reality. Systems logic is buried in custom parameters and human habits that synthetic code and automated scrapers cannot see."*
 
-Why do over 70% of enterprise ERP implementations fail or stall in post-go-live abandonment? It is rarely a failure of computational horsepower or database bandwidth. 
+Why do over 70% of enterprise ERP implementations struggle to fully realize their business-case goals? It is rarely a failure of computational horsepower or database bandwidth. 
 
 The breakdown happens because enterprises are fractured into disparate information silos. Each department maintains its own partial view of the world: supply chain looks at forward forecasts, brewing looks at fermentation kinetics, packaging looks at line speed, and finance looks at cleared invoices. There is no unified, company-owned common data model connecting them.
 

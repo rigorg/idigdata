@@ -104,10 +104,11 @@ Whether you call commercial frontier APIs or deploy open-weight models on local 
 Just as Tesla achieved manufacturing velocity by building its own factory machinery and internal iteration loops under one roof, an enterprise does not conquer operational software by renting external cloud droids. 
 
 The moat is no longer the model. **The moat is the operational gantry harness—the machine that builds the machines:**
-- Can the harness isolate legacy brownfield schemas and prevent dirty data from poisoning context?
-- Does the harness enforce deterministic caller gates that block unauthorized general ledger mutations?
-- Does the harness provide cryptographic input provenance so Big-4 auditors have complete traceability?
-- Does the harness manage tokenomics and prevent runaway iteration loops ("Ralph Wiggum loops") that incinerate model token budgets over weekends?
+- **Structural AST & Type Calipers**: Inspecting generated syntax, validating schema contracts, and preventing hallucinated imports or broken types before code ever executes.
+- **Deterministic State & Integration Gates**: Isolating legacy brownfield schemas, running deterministic regression suites, and blocking unauthorized transaction mutations.
+- **Auditable Cryptographic Provenance**: Providing complete input/output ledgers so leadership, internal audit, and regulators have transparent traceability.
+- **Tokenomics & Loop Controls**: Managing spend ceilings and preventing runaway iteration loops ("Ralph Wiggum loops") that incinerate model token budgets over weekends.
+- **The Human Authorization Seam**: Halting consequential execution at defined approval gates where experienced operators verify outcomes against floor truth.
 
 A model without an operational harness is just a token incinerator. An enterprise harness wraps the model in deterministic rules, binds it to physical floor truth, and enforces human accountability at the boundary.
 

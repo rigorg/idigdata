@@ -308,7 +308,7 @@ export default function CollectiveView() {
                 <h3 className={s.systemTitle}>The Rig &amp; Commons</h3>
                 <div className={s.systemSub}>The Machine That Builds the Machines</div>
                 <p className={s.systemBody}>
-                  The communal development shop and pattern commons. The Rig couples human operators with agentic build harnesses on local iron to fabricate living software assets. When connected to The Collective, the network effect ignites: workflow blocks updated in one org flow through to the other, through The Rig. The collective library compounds while your private data, ledgers, and transactions remain strictly within your operational boundary.
+                  The development shop and pattern commons. The Rig couples human operators with agentic build harnesses on local iron to fabricate living software assets. When connected to The Collective, the network effect ignites: shared workflow patterns can be published to the commons or adopted voluntarily, while private enterprise data and ledgers remain strictly within your operational boundary.
                 </p>
               </div>
               <div className={s.systemUseCaseBox}>
@@ -340,7 +340,7 @@ export default function CollectiveView() {
                 <span className={s.flywheelTag}>01 // SOVEREIGN &amp; SEVERABLE</span>
                 <h3 className={s.flywheelTitle}>Private Iron &amp; Built-In Factory</h3>
                 <p className={s.flywheelText}>
-                  Each enterprise org is self-contained and carries its own built-in development factory. Take an org and run it entirely on your own private iron—with complete data isolation, zero cloud locks, and zero SaaS per-seat taxes. If you ever choose to disconnect from the collective, your software runs uninterrupted.
+                  Each enterprise org is self-contained and carries its own built-in development factory. Take an org and run it on your own private iron or infrastructure—with sovereign data boundaries and zero per-seat SaaS taxes. If you ever choose to disconnect from the collective, your code and workflows remain in your hands.
                 </p>
               </div>
               <div className={s.flywheelBox}>
@@ -463,13 +463,13 @@ export default function CollectiveView() {
               </button>
             </div>
 
-            {/* Door 2: Custom Build */}
+            {/* Door 2: Enterprise Collaboration */}
             <div className={s.doorCard}>
               <div>
-                <p className={s.doorEyebrow}>PATH 02 // SOVEREIGN ENTERPRISE BUILD</p>
-                <h3 className={s.doorTitle}>Commission a sovereign system for your enterprise.</h3>
+                <p className={s.doorEyebrow}>PATH 02 // ENTERPRISE COLLABORATION</p>
+                <h3 className={s.doorTitle}>Bring an operating problem. Build with us.</h3>
                 <p className={s.doorBody}>
-                  For business owners, operations leaders, and CIOs who need custom, production-grade agentic systems without multi-year ERP delays or runaway SaaS fees. We map your domain truth through B.O.S.S., fabricate your custom workflow blocks through The Rig, and deploy a turnkey FlowCraft org on your private infrastructure.
+                  For business owners, operations leaders, and technology executives who need software built around how their business actually operates. If you know where the work is getting stuck, let&rsquo;s examine it together. We can identify a consequential first outcome, bring the right people into the build, and test the result directly against your daily operations.
                 </p>
               </div>
               <button
@@ -477,7 +477,7 @@ export default function CollectiveView() {
                 onClick={() => handleInterestSelect("build")}
                 className={`${s.doorBtn} ${s.doorBtnSecondary}`}
               >
-                <span>Discuss an Enterprise Build &rarr;</span>
+                <span>Discuss an Operating Problem &rarr;</span>
               </button>
             </div>
           </div>
@@ -566,13 +566,13 @@ export default function CollectiveView() {
                   onChange={(e) => setFormState({ ...formState, interest: e.target.value as "collaborate" | "build" })}
                   className={s.fieldSelect}
                 >
-                  <option value="collaborate">Join The Collective // Open Source Collaboration &amp; Shared Patterns</option>
-                  <option value="build">Commission a Sovereign System // Enterprise Build</option>
+                  <option value="collaborate">Join The Collective // Open Builder Collaboration &amp; Shared Patterns</option>
+                  <option value="build">Explore an Enterprise Collaboration // Address an Operating Problem</option>
                 </select>
                 <p className={s.fieldHelp}>
                   {formState.interest === "collaborate"
-                    ? "Collaborate on open schemas, test local developer harnesses, and build shared patterns."
-                    : "Commission an enterprise-owned, private-iron operational system for your business."}
+                    ? "Collaborate on agentic developer harnesses, shared schemas, and operational patterns."
+                    : "Work directly with Robert to scope a consequential operating challenge and test agentic workflows in your business."}
                 </p>
               </div>
 

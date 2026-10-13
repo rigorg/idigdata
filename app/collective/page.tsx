@@ -4,7 +4,7 @@ import CollectiveView from "@/components/collective/CollectiveView";
 export const metadata: Metadata = {
   title: "The Collective · Sovereign Enterprise Software & Shared Patterns | Robert Paddock",
   description:
-    "1 Rig. 100 Rigs. 1,000 Rigs. An open organizing collective of sovereign human factories collaborating on enterprise agentics. Built on B.O.S.S., FlowCraft, and The Rig.",
+    "Enterprise operators and builders learning together, developing useful software, and sharing methods through B.O.S.S., FlowCraft, and The Rig.",
   alternates: {
     canonical: "https://idigdata.com/collective/",
   },

@@ -191,13 +191,13 @@ const COLLECTIVES: CollectivePillar[] = [
     spot: "constellation",
     titanQuote: {
       speaker: "Chamath Palihapitiya",
-      role: "CEO, 8090 · Founder, Social Capital & Co-Host, All-In",
-      source: "8090 / beehiiv (“The space between the tasks”)",
+      role: "CEO, 8090 · Founder, Social Capital · Co-Host, All-In",
+      source: "8090 (“The Space Between the Tasks”)",
       quote:
         "A job is more than the sum of its tasks. What's more intangible is the part between them: deciding which task matters, in what order, and when to stop; coordinating with people on other teams; and being the one accountable when it goes wrong.",
     },
     body:
-      "Why do enterprise ERP implementations so often struggle to deliver on their promise? Gartner forecasts that through 2027, over 70% of new ERP initiatives will fail to fully realize their business-case goals. Modern AI software factories diagnose this as a 'context gathering' problem—assuming enterprise truth sits in clean wikis waiting to be ingested. But on the enterprise floor, 80% of operating truth is unwritten: held in tacit human judgment, informal cross-department trust, and Mary's edge-case scheduling spreadsheet. Monolithic software captures sanitized Standard Operating Procedures—how an organization wishes it functioned on its best day. AI hits a brick wall if it merely automates documented fiction. Before writing code, an architect must map how the enterprise actually runs—synthesizing an authoritative, company-owned Common Data Model that bridges fragmented silos and honors the human seam holding the business together.",
+      "Why do enterprise ERP implementations so often struggle to deliver on their promise? Gartner forecasts that through 2027, over 70% of new ERP initiatives will fail to fully realize their business-case goals. Modern AI software factories diagnose this as a 'context gathering' problem—assuming enterprise truth sits in clean wikis waiting to be ingested. But on the enterprise floor, the vast majority of operating knowledge is unwritten: held in experienced human judgment, informal cross-department trust, and Mary's edge-case scheduling spreadsheet. Monolithic software captures sanitized Standard Operating Procedures—how an organization wishes it functioned on its best day. AI hits a brick wall if it merely automates documented fiction. Before writing code, an architect must map how the enterprise actually runs—synthesizing an authoritative, company-owned Common Data Model that bridges fragmented silos and honors the human seam holding the business together.",
     fieldNoteCard: {
       rubric: "SEAM LOG // THE OPERATIONAL SEAM",
       stamp: "OBSERVED REALITY",
@@ -222,7 +222,7 @@ const COLLECTIVES: CollectivePillar[] = [
     spot: "blocks",
     titanQuote: {
       speaker: "Marc Benioff",
-      role: "Chair & CEO, Salesforce",
+      role: "Chair & CEO, Salesforce · Investor, 8090",
       source: "Dreamforce / The Road to Service-as-Software",
       quote:
         "What matters isn’t just the model—it’s the metadata, the business context, and the deterministic enterprise workflows.",
@@ -253,7 +253,7 @@ const COLLECTIVES: CollectivePillar[] = [
     spot: "factory",
     titanQuote: {
       speaker: "Matan Grinberg & Eno Reyes",
-      role: "Co-Founders, Factory",
+      role: "Co-Founders, Factory (The Software Factory)",
       source: "Factory 2.0: From Coding Agents to Software Factories",
       quote:
         "The incremental units of this system are AI agents. This system will be built by engineers, and in turn will build their software. This system is the software factory.",
@@ -502,22 +502,7 @@ export default function AgenticPositionView() {
                   <h3 className={s.triadCardTitle}>{c.title}</h3>
                   <div className={s.triadCardSubtitle}>{c.subtitle}</div>
 
-                  {/* What the industry is saying */}
-                  <div style={{ marginTop: "16px", marginBottom: "6px" }}>
-                    <span className={s.triadSectionTag}>WHAT THE INDUSTRY IS SAYING</span>
-                  </div>
-                  <div className={s.triadQuoteBlock}>
-                    <div className={s.triadQuoteMeta}>
-                      <span className={s.triadQuoteSpeaker}>{c.titanQuote.speaker}</span>
-                      <span className={s.triadQuoteSource}>• {c.titanQuote.source}</span>
-                    </div>
-                    <blockquote className={s.triadQuoteText}>
-                      &ldquo;{c.titanQuote.quote}&rdquo;
-                    </blockquote>
-                    <div className={s.triadQuoteRole}>{c.titanQuote.role}</div>
-                  </div>
-
-                  {/* The Operator's Working Thesis */}
+                  {/* The Operator's Working Thesis (Robert's Voice Leads) */}
                   <div style={{ marginTop: "18px", marginBottom: "6px" }}>
                     <span className={s.triadSectionTag}>WORKING THESIS // OPERATIONAL GROUND TRUTH</span>
                   </div>
@@ -537,6 +522,21 @@ export default function AgenticPositionView() {
                       <span>{c.fieldNoteCard.signature}</span>
                       <span>VERIFIED IN ARENA</span>
                     </div>
+                  </div>
+
+                  {/* Industry Corroboration / Macro Consensus */}
+                  <div style={{ marginTop: "16px", marginBottom: "6px" }}>
+                    <span className={s.triadSectionTag}>FRONTIER CORROBORATION // INDUSTRY CONSENSUS</span>
+                  </div>
+                  <div className={s.triadQuoteBlock}>
+                    <div className={s.triadQuoteMeta}>
+                      <span className={s.triadQuoteSpeaker}>{c.titanQuote.speaker}</span>
+                      <span className={s.triadQuoteSource}>• {c.titanQuote.source}</span>
+                    </div>
+                    <blockquote className={s.triadQuoteText}>
+                      &ldquo;{c.titanQuote.quote}&rdquo;
+                    </blockquote>
+                    <div className={s.triadQuoteRole}>{c.titanQuote.role}</div>
                   </div>
 
                   {/* Core Inquiries */}
@@ -601,7 +601,7 @@ export default function AgenticPositionView() {
                 <span>Enter The Collective &rarr;</span>
               </Link>
               <Link
-                href="/block/custom/"
+                href="/block/"
                 style={{
                   fontSize: "12px",
                   fontFamily: "var(--font-mono)",
@@ -611,7 +611,7 @@ export default function AgenticPositionView() {
                   paddingLeft: "4px",
                 }}
               >
-                <span>Launch Custom Scoping Brief &rarr;</span>
+                <span>Configure Outcomes in The Block &rarr;</span>
               </Link>
             </div>
           </div>
