@@ -11,149 +11,116 @@ import s from "./AgenticPositionView.module.css";
 // ============================================================================
 
 /**
- * 01 / B.O.S.S. — The Process Constellation
- * 6-radial process vectors (P2P, O2C, P2M, S2S, D2R, MDM) radiating from central core.
+ * 01 / Theme 01 — The Operational Seam
+ * Precision architectural cross-section: Stated Digital Plane (top) and Living Floor (bottom)
+ * meeting at an active illuminated laser seam line with central datum alignment crosshair.
  */
 function ProcessConstellationSpot() {
   return (
-    <svg viewBox="0 0 120 120" className={s.spotSvg} aria-hidden="true">
-      <defs>
-        <pattern id="seamDots" width="10" height="10" patternUnits="userSpaceOnUse">
-          <circle cx="5" cy="5" r="0.6" fill="#DDD7C8" />
-        </pattern>
-      </defs>
-      <rect width="120" height="120" fill="url(#seamDots)" />
+    <svg viewBox="0 0 48 48" className={s.spotSvg} fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      {/* Background card frame */}
+      <rect x="2" y="2" width="44" height="44" rx="3" fill="#FAF6EE" stroke="#E2DCD0" strokeWidth="1" />
       
-      {/* Top Half: Stated Reality (Boardroom ERP Schema) */}
-      <rect x="12" y="12" width="96" height="34" rx="2" fill="#FAF6EE" stroke="#9E7D3B" strokeWidth="1" />
-      <rect x="16" y="16" width="30" height="10" fill="#EAE4D6" stroke="#1E2024" strokeWidth="0.8" />
-      <text x="31" y="23" fontSize="4.2" fill="#1E2024" textAnchor="middle" fontFamily="monospace" fontWeight="bold">ERP SCHEMA</text>
-      <line x1="52" y1="21" x2="102" y2="21" stroke="#9E7D3B" strokeWidth="0.8" strokeDasharray="2 2" />
-      <text x="77" y="29" fontSize="3.8" fill="#8F4A38" textAnchor="middle" fontFamily="monospace">STATED HAPPY PATH</text>
-      <text x="60" y="41" fontSize="4" fill="#68645C" textAnchor="middle" fontFamily="monospace">BILLABLE-HOUR MODEL</text>
+      {/* Upper Plate: Stated Digital Plane (ERP / Database Blueprint) */}
+      <path d="M 6 6 L 42 6 L 42 20 L 28 20 L 24 23 L 6 23 Z" fill="#F4EFE5" stroke="#1E2024" strokeWidth="1.2" />
+      {/* Digital blueprint grid lines */}
+      <line x1="10" y1="11" x2="38" y2="11" stroke="#9E7D3B" strokeWidth="0.8" strokeDasharray="2 2" />
+      <line x1="10" y1="16" x2="26" y2="16" stroke="#DDD7C8" strokeWidth="0.8" />
 
-      {/* The Operational Seam (The Chasm) */}
-      <line x1="8" y1="56" x2="112" y2="56" stroke="#8F4A38" strokeWidth="1.2" strokeDasharray="3 2" />
-      <circle cx="60" cy="56" r="3" fill="#8F4A38" />
-      <text x="60" y="52" fontSize="3.8" fill="#8F4A38" textAnchor="middle" fontFamily="monospace" fontWeight="bold">THE OPERATIONAL SEAM</text>
+      {/* Lower Plate: Living Operational Floor (Physical Reality) */}
+      <path d="M 6 25 L 24 25 L 28 22 L 42 22 L 42 42 L 6 42 Z" fill="#FFFFFF" stroke="#1E2024" strokeWidth="1.2" />
+      {/* Floor clipboard verification marks */}
+      <line x1="10" y1="31" x2="20" y2="31" stroke="#2E4F3E" strokeWidth="1.2" strokeLinecap="round" />
+      <line x1="10" y1="36" x2="30" y2="36" stroke="#2E4F3E" strokeWidth="1.2" strokeLinecap="round" />
 
-      {/* Bottom Half: Actual Reality (Mary's Sheet & Floor Heuristics) */}
-      <rect x="12" y="66" width="96" height="42" rx="2" fill="#FFFFFF" stroke="#1E2024" strokeWidth="1.2" />
-      {/* Green metal clipboard bar */}
-      <rect x="44" y="63" width="32" height="6" rx="1.5" fill="#2E4F3E" stroke="#1E2024" strokeWidth="0.8" />
-      <circle cx="60" cy="66" r="1.2" fill="#FAF6EE" />
-      
-      {/* 11x17 Ledger grid rows */}
-      <line x1="16" y1="76" x2="104" y2="76" stroke="#2E4F3E" strokeWidth="0.8" />
-      <line x1="16" y1="84" x2="104" y2="84" stroke="#DDD7C8" strokeWidth="0.6" />
-      <line x1="16" y1="92" x2="104" y2="92" stroke="#DDD7C8" strokeWidth="0.6" />
-      <line x1="16" y1="100" x2="104" y2="100" stroke="#DDD7C8" strokeWidth="0.6" />
-      
-      <line x1="42" y1="72" x2="42" y2="104" stroke="#2E4F3E" strokeWidth="0.8" />
-      <line x1="72" y1="72" x2="72" y2="104" stroke="#DDD7C8" strokeWidth="0.6" />
-      
-      <text x="29" y="81" fontSize="3.8" fill="#2E4F3E" textAnchor="middle" fontFamily="monospace" fontWeight="bold">MARY'S SHEET</text>
-      <text x="57" y="81" fontSize="3.6" fill="#1E2024" textAnchor="middle" fontFamily="monospace">PUMP EXCEPTION</text>
-      <text x="88" y="81" fontSize="3.6" fill="#1E2024" textAnchor="middle" fontFamily="monospace">CREW MATCH</text>
-      
-      <text x="60" y="105" fontSize="4.2" fill="#2E4F3E" textAnchor="middle" fontFamily="monospace" fontWeight="bold">ACTUAL REALITY // FLOOR TRUTH</text>
+      {/* The Illuminated Seam: Precision gold active threshold */}
+      <path d="M 5 24 L 24 24 L 28 21 L 43 21" stroke="#9E7D3B" strokeWidth="1.8" strokeLinecap="round" />
+
+      {/* Central Seam Alignment Datum / Caliper Crosshair */}
+      <circle cx="26" cy="22.5" r="4" fill="#FAF6EE" stroke="#9E7D3B" strokeWidth="1.4" />
+      <circle cx="26" cy="22.5" r="1.5" fill="#8F4A38" />
+      <line x1="26" y1="16.5" x2="26" y2="19.5" stroke="#9E7D3B" strokeWidth="1" strokeLinecap="round" />
+      <line x1="26" y1="25.5" x2="26" y2="28.5" stroke="#9E7D3B" strokeWidth="1" strokeLinecap="round" />
+
+      {/* Corner calibration tick marks */}
+      <path d="M 5 9 L 5 5 L 9 5" stroke="#9E7D3B" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M 43 39 L 43 43 L 39 43" stroke="#9E7D3B" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
 
 /**
- * 02 / FlowCraft — The Interlocking Workflow Blocks
- * Modular, stepped instance blocks: input contract, workflow execution lane,
- * Human-in-the-loop authorization gate, and durable state ledger.
+ * 02 / Theme 02 — Human-Agent Synthesis
+ * Sovereign human authority (concentric compass ring) and autonomous machine execution
+ * (isometric software cube) synthesizing at a central deterministic gold handshake gate.
  */
 function WorkflowBlocksSpot() {
   return (
-    <svg viewBox="0 0 120 120" className={s.spotSvg} aria-hidden="true">
-      <defs>
-        <pattern id="wfGrid" width="10" height="10" patternUnits="userSpaceOnUse">
-          <circle cx="5" cy="5" r="0.6" fill="#DDD7C8" />
-        </pattern>
-      </defs>
-      <rect width="120" height="120" fill="url(#wfGrid)" />
+    <svg viewBox="0 0 48 48" className={s.spotSvg} fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      {/* Background card frame */}
+      <rect x="2" y="2" width="44" height="44" rx="3" fill="#FAF6EE" stroke="#E2DCD0" strokeWidth="1" />
 
-      {/* Top: Toy Chatbot / Unbounded Prompt Loop (Crossed out) */}
-      <rect x="14" y="10" width="92" height="22" rx="2" fill="#FAF6EE" stroke="#A89F91" strokeWidth="0.8" strokeDasharray="2 2" />
-      <text x="36" y="21" fontSize="4" fill="#A89F91" fontFamily="monospace">PROMPT CHATBOT</text>
-      <text x="36" y="27" fontSize="3.4" fill="#8F4A38" fontFamily="monospace">RALPH WIGGUM LOOP</text>
-      <line x1="86" y1="14" x2="98" y2="28" stroke="#8F4A38" strokeWidth="1.5" />
-      <line x1="98" y1="14" x2="86" y2="28" stroke="#8F4A38" strokeWidth="1.5" />
+      {/* Left Node: Human Authority (Concentric Sovereign Compass) */}
+      <circle cx="17" cy="24" r="10.5" fill="#F4EFE5" stroke="#1E2024" strokeWidth="1.2" />
+      <circle cx="17" cy="24" r="6.5" stroke="#9E7D3B" strokeWidth="1" strokeDasharray="2.5 1.5" />
+      <circle cx="17" cy="24" r="2.2" fill="#1E2024" />
 
-      {/* Transition: Arrow down to deterministic left-to-right pipeline */}
-      <path d="M 60 33 L 60 42 M 57 39 L 60 43 L 63 39" stroke="#9E7D3B" strokeWidth="1.2" fill="none" strokeLinecap="round" />
-      <text x="60" y="47" fontSize="3.8" fill="#9E7D3B" textAnchor="middle" fontFamily="monospace" fontWeight="bold">PIPELINE WITH GOALS // LEFT ➔ RIGHT</text>
+      {/* Right Node: Autonomous Machine (Faceted Isometric Software Cube) */}
+      <path d="M 31 15 L 39 19.5 L 39 28.5 L 31 33 L 23 28.5 L 23 19.5 Z" fill="#FFFFFF" stroke="#1E2024" strokeWidth="1.2" />
+      <line x1="31" y1="15" x2="31" y2="24" stroke="#9E7D3B" strokeWidth="1" />
+      <line x1="39" y1="19.5" x2="31" y2="24" stroke="#9E7D3B" strokeWidth="1" />
+      <line x1="23" y1="19.5" x2="31" y2="24" stroke="#9E7D3B" strokeWidth="1" />
 
-      {/* Step 1: Requirements Gathering */}
-      <rect x="8" y="52" width="32" height="26" rx="2" fill="#F4EFE5" stroke="#1E2024" strokeWidth="1" />
-      <text x="24" y="62" fontSize="3.8" fill="#1E2024" textAnchor="middle" fontFamily="monospace" fontWeight="bold">01 // REQS</text>
-      <line x1="12" y1="67" x2="36" y2="67" stroke="#9E7D3B" strokeWidth="0.8" />
-      <text x="24" y="73" fontSize="3.2" fill="#68645C" textAnchor="middle" fontFamily="monospace">RULES &amp; MDM</text>
+      {/* Central Synthesis Checkpoint / Deterministic Gold Handshake Diamond */}
+      <path d="M 24 19.5 L 28.5 24 L 24 28.5 L 19.5 24 Z" fill="#9E7D3B" stroke="#1E2024" strokeWidth="1.2" />
+      <circle cx="24" cy="24" r="1.2" fill="#FAF6EE" />
 
-      {/* Flow arrow 1 -> 2 */}
-      <path d="M 40 65 L 45 65 M 43 62 L 46 65 L 43 68" stroke="#9E7D3B" strokeWidth="1" fill="none" />
+      {/* Directed Pipeline Flow Ticks */}
+      <path d="M 7 24 L 9.5 24" stroke="#9E7D3B" strokeWidth="1.2" strokeLinecap="round" />
+      <path d="M 38.5 24 L 41 24" stroke="#9E7D3B" strokeWidth="1.2" strokeLinecap="round" />
 
-      {/* Step 2: UAT & State Gate */}
-      <rect x="46" y="52" width="34" height="26" rx="2" fill="#FFFFFF" stroke="#9E7D3B" strokeWidth="1.2" />
-      <polygon points="63,55 71,63 63,71 55,63" fill="#FAF6EE" stroke="#9E7D3B" strokeWidth="0.8" />
-      <path d="M 61 63 L 62.5 65 L 66 60.5" stroke="#1E2024" strokeWidth="1" fill="none" />
-      <text x="63" y="75" fontSize="3.2" fill="#8F4A38" textAnchor="middle" fontFamily="monospace" fontWeight="bold">UAT GATE</text>
-
-      {/* Flow arrow 2 -> 3 */}
-      <path d="M 80 65 L 85 65 M 83 62 L 86 65 L 83 68" stroke="#9E7D3B" strokeWidth="1" fill="none" />
-
-      {/* Step 3: Validated Ledger / Autonomy */}
-      <rect x="86" y="52" width="28" height="26" rx="2" fill="#FAF6EE" stroke="#1E2024" strokeWidth="1" />
-      <text x="100" y="62" fontSize="3.8" fill="#1E2024" textAnchor="middle" fontFamily="monospace" fontWeight="bold">03 // CORE</text>
-      <line x1="90" y1="67" x2="110" y2="67" stroke="#1E2024" strokeWidth="0.8" />
-      <text x="100" y="73" fontSize="3.2" fill="#2E4F3E" textAnchor="middle" fontFamily="monospace">SOVEREIGN</text>
-
-      {/* Bottom Result: Complete Workflow Autonomy */}
-      <rect x="8" y="86" width="104" height="24" rx="2" fill="#1E2024" />
-      <text x="60" y="97" fontSize="4.4" fill="#FAF6EE" textAnchor="middle" fontFamily="monospace" fontWeight="bold">HUMAN-AGENT SYNTHESIS</text>
-      <text x="60" y="105" fontSize="3.4" fill="#9E7D3B" textAnchor="middle" fontFamily="monospace">HUMANS + AGENTS · DETERMINISTIC</text>
+      {/* Corner calibration tick marks */}
+      <path d="M 5 9 L 5 5 L 9 5" stroke="#9E7D3B" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M 43 39 L 43 43 L 39 43" stroke="#9E7D3B" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
 
 /**
- * 03 / The Rig — The Software Factory & Machine Shop
- * Industrial saw-tooth profile, overhead gantry rail, conveyor line with work units,
- * precision AST verification calipers, and local sovereign operator station.
+ * 03 / Theme 03 — The Software Factory & Gantry Harness
+ * Heavy industrial gantry rail on sovereign iron with dual AST caliper inspection arms
+ * guiding and verifying a living software engine core.
  */
 function FactorySpot() {
   return (
-    <svg viewBox="0 0 120 120" className={s.spotSvg} aria-hidden="true">
-      <defs>
-        <pattern id="rigHatch" width="8" height="8" patternUnits="userSpaceOnUse">
-          <line x1="0" y1="0" x2="8" y2="8" stroke="#DDD7C8" strokeWidth="0.6" />
-        </pattern>
-      </defs>
-      <rect width="120" height="120" fill="url(#rigHatch)" />
+    <svg viewBox="0 0 48 48" className={s.spotSvg} fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      {/* Background card frame */}
+      <rect x="2" y="2" width="44" height="44" rx="3" fill="#FAF6EE" stroke="#E2DCD0" strokeWidth="1" />
 
-      {/* Outer Gantry Frame: The Test-Driven Harness */}
-      <rect x="8" y="8" width="104" height="104" rx="2" fill="#FAF6EE" stroke="#1E2024" strokeWidth="1.4" />
-      <line x1="8" y1="20" x2="112" y2="20" stroke="#9E7D3B" strokeWidth="1.2" />
-      <text x="60" y="16" fontSize="4.2" fill="#1E2024" textAnchor="middle" fontFamily="monospace" fontWeight="bold">THE GANTRY HARNESS // LOCAL IRON</text>
+      {/* Overhead Gantry Structural Rail */}
+      <rect x="6" y="7" width="36" height="5" rx="1" fill="#1E2024" stroke="#1E2024" strokeWidth="1" />
+      <line x1="10" y1="9.5" x2="38" y2="9.5" stroke="#9E7D3B" strokeWidth="0.8" strokeDasharray="2 2" />
 
-      {/* Rapid Frontier Intelligence Churn Core */}
-      <rect x="22" y="28" width="76" height="28" rx="2" fill="#FFFFFF" stroke="#8F4A38" strokeWidth="1" strokeDasharray="2 2" />
-      <text x="60" y="38" fontSize="4" fill="#8F4A38" textAnchor="middle" fontFamily="monospace" fontWeight="bold">FRONTIER LLM CHURN (60-DAY)</text>
-      <text x="60" y="47" fontSize="3.4" fill="#68645C" textAnchor="middle" fontFamily="monospace">COMMODITY COGNITION · DECOUPLED</text>
+      {/* Dual Vertical Gantry Caliper Arms */}
+      <line x1="12" y1="12" x2="12" y2="20" stroke="#1E2024" strokeWidth="1.2" />
+      <line x1="36" y1="12" x2="36" y2="20" stroke="#1E2024" strokeWidth="1.2" />
 
-      {/* AST Calipers & Test Gates Layer */}
-      <rect x="16" y="62" width="88" height="20" rx="1.5" fill="#F4EFE5" stroke="#9E7D3B" strokeWidth="1.2" />
-      <path d="M 22 72 L 28 72 M 25 67 L 25 77" stroke="#1E2024" strokeWidth="1" />
-      <text x="60" y="70" fontSize="3.8" fill="#1E2024" textAnchor="middle" fontFamily="monospace" fontWeight="bold">DETERMINISTIC TEST CALIPERS</text>
-      <text x="60" y="77" fontSize="3.2" fill="#9E7D3B" textAnchor="middle" fontFamily="monospace">GIT STATE LEDGER · HUMAN AUTH GATE</text>
+      {/* Precision AST Inspection Calipers */}
+      <path d="M 10 20 L 15 20 L 15 28 L 19 28" stroke="#9E7D3B" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M 38 20 L 33 20 L 33 28 L 29 28" stroke="#9E7D3B" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
 
-      {/* Output: Living Operational Machines (Plural) */}
-      <rect x="14" y="88" width="92" height="18" rx="2" fill="#2E4F3E" stroke="#1E2024" strokeWidth="1" />
-      <text x="60" y="99" fontSize="4.2" fill="#FAF6EE" textAnchor="middle" fontFamily="monospace" fontWeight="bold">LIVING MACHINES (PLURAL)</text>
-      <text x="60" y="104" fontSize="3.2" fill="#DDD7C8" textAnchor="middle" fontFamily="monospace">B.O.S.S. · FLOWCRAFT · THE RIG</text>
+      {/* Fabricated Software Engine Core: Precision Nested Diamond */}
+      <rect x="18.5" y="18.5" width="11" height="11" rx="1.5" transform="rotate(45 24 24)" fill="#FFFFFF" stroke="#1E2024" strokeWidth="1.2" />
+      <circle cx="24" cy="24" r="2.8" fill="#FAF6EE" stroke="#9E7D3B" strokeWidth="1" />
+      <circle cx="24" cy="24" r="1.2" fill="#2E4F3E" />
+
+      {/* Sovereign Iron Bed / Machine Anvil Base */}
+      <path d="M 6 36 L 10 32 L 38 32 L 42 36 L 42 41 L 6 41 Z" fill="#F4EFE5" stroke="#1E2024" strokeWidth="1.2" />
+      <line x1="14" y1="36" x2="34" y2="36" stroke="#9E7D3B" strokeWidth="1" />
+
+      {/* Corner calibration tick marks */}
+      <path d="M 5 9 L 5 5 L 9 5" stroke="#9E7D3B" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M 43 39 L 43 43 L 39 43" stroke="#9E7D3B" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -217,7 +184,7 @@ interface CollectivePillar {
 const COLLECTIVES: CollectivePillar[] = [
   {
     num: "01",
-    tag: "MAIN EVENT 01 // THE SEAM",
+    tag: "THEME 01 // THE SEAM",
     actionLabel: "Join the Discussion",
     title: "The Operational Seam",
     subtitle: "Why ERPs Fail: Context Gathering vs. Floor Truth & The Human Seam",
@@ -248,7 +215,7 @@ const COLLECTIVES: CollectivePillar[] = [
   },
   {
     num: "02",
-    tag: "MAIN EVENT 02 // SYNTHESIS",
+    tag: "THEME 02 // SYNTHESIS",
     actionLabel: "Join the Discussion",
     title: "Human-Agent Synthesis",
     subtitle: "Enterprise Workflows: Information Continuity, Human Authority & Consequential Action",
@@ -279,7 +246,7 @@ const COLLECTIVES: CollectivePillar[] = [
   },
   {
     num: "03",
-    tag: "MAIN EVENT 03 // THE FACTORY",
+    tag: "THEME 03 // THE FACTORY",
     actionLabel: "Join the Discussion",
     title: "The Machine That Builds the Machines",
     subtitle: "The Software Factory: Code Building Code, The Gantry Harness & Sovereign Iron",
@@ -512,7 +479,7 @@ export default function AgenticPositionView() {
         <span id="dispatches" style={{ display: "block", position: "relative", top: "-80px", visibility: "hidden" }} />
         <div className={s.triadInner}>
           <div className={s.triadHead}>
-            <p className={s.eyebrow}>02 / Three Main Events &amp; Field Dispatches</p>
+            <p className={s.eyebrow}>02 / Three Core Themes &amp; Field Dispatches</p>
             <h2>Three Core Theses on Enterprise Agentics<span>.</span></h2>
             <p className={s.triadDek}>
               Three foundational working theses formed from 20+ years on the enterprise floor and over three years inside the agentic runtime—each paired with an in-depth operational field dispatch from the seam.
