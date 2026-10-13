@@ -249,17 +249,17 @@ const COLLECTIVES: CollectivePillar[] = [
     tag: "THEME 03 // THE FACTORY",
     actionLabel: "Join the Discussion",
     title: "The Machine That Builds the Machines",
-    subtitle: "The Software Factory: Code Building Code, The Gantry Harness & Sovereign Iron",
+    subtitle: "The Agentic Dev Shop: Code Building Code, The Gantry Harness & Sovereign Iron",
     spot: "factory",
     titanQuote: {
       speaker: "Matan Grinberg & Eno Reyes",
-      role: "Co-Founders, Factory (The Software Factory)",
-      source: "Factory 2.0: From Coding Agents to Software Factories",
+      role: "Co-Founders, Factory (factory.ai)",
+      source: "Factory 2.0 Manifesto",
       quote:
-        "The incremental units of this system are AI agents. This system will be built by engineers, and in turn will build their software. This system is the software factory.",
+        "The incremental units of this system are AI agents. This system will be built by engineers, and in turn will build their software. This system is the software factory... We are building the machine that builds the machine.",
     },
     body:
-      "We have crossed the threshold into the software factory: code now building code. But autonomous software fabrication introduces a demanding new engineering discipline: managing token burn, orchestrating open-weight models alongside frontier APIs, and mastering multi-seat execution. Frontier models and APIs evolve rapidly. If an enterprise welds its core business logic directly to a single proprietary endpoint or hosted SaaS, it invites fragile dependencies. The durable asset is the machine that builds the machines: the test-driven gantry harness on local iron. Wrapping volatile intelligence in deterministic AST calipers, git-backed state ledgers, and human authorization gates turns model tokens into living, verifiable enterprise software.",
+      "We have crossed the threshold into operator-led agentic development: code now building code. But autonomous software fabrication introduces a demanding new operational discipline: managing token burn, orchestrating open-weight models alongside frontier APIs, and mastering multi-seat execution. We are not building an abstract factory—we are building an operator-led agentic development shop controlled by disciplined harnesses on local iron. Frontier models evolve rapidly. If an enterprise welds its core business logic directly to a single proprietary endpoint or hosted SaaS, it invites fragile dependencies. The durable asset is the machine that builds the machines: wrapping volatile intelligence in deterministic AST calipers, git-backed state ledgers, and human authorization gates to turn model tokens into living, verifiable enterprise software.",
     fieldNoteCard: {
       rubric: "SEAM LOG // THE RUNTIME SEAM",
       stamp: "THE BUILDER'S REALITY",

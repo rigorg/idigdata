@@ -14,7 +14,8 @@ If you have spent decades in enterprise computing—watching the slow, grinding 
 
 We have arrived at a historic intersection: **code is building code.**
 
-Software engineering is no longer defined solely by human developers typing syntax into text editors line by line. We are witnessing the emergence of autonomous software fabrication—systems of machine intelligence that synthesize schemas, generate unit tests, assemble microservices, and compile working applications at machine speed.
+As Matan Grinberg and Eno Reyes, co-founders of Factory, stated in their manifesto:
+> *"The incremental units of this system are AI agents. This system will be built by engineers, and in turn will build their software. This system is the software factory... We are building the machine that builds the machine."*
 
 Yet as this exponential wave accelerates, an urgent operational boundary confronts every technology leader and enterprise builder:
 

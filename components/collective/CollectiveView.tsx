@@ -107,10 +107,10 @@ export default function CollectiveView() {
 
             <div className={s.leadBody}>
               <p style={{ marginBottom: "14px" }}>
-                Every human operator can now direct their own software factory. In this era, humans and autonomous software agents work together inside common, configurable frameworks.
+                Every human operator can now lead their own agentic development shop. In this era, experienced operators and autonomous software agents build together inside disciplined, configurable frameworks.
               </p>
               <p style={{ marginBottom: "14px" }}>
-                The software—B.O.S.S., FlowCraft, and The Rig—provides the industrial gantry and execution runtime on local iron. The Collective is where verified operational patterns compound across independent enterprises.
+                The software—B.O.S.S., FlowCraft, and The Rig—provides the operational apparatus, workflow runtime, and build harness on local iron. The Collective is where verified operational patterns compound across independent enterprises.
               </p>
               <p style={{ marginBottom: "18px" }}>
                 <strong>The operating rule is voluntary:</strong> Your data, ledgers, and business records remain strictly private on your own iron. You choose which operational blueprints to share, and you choose which peer patterns to adopt.
@@ -132,7 +132,7 @@ export default function CollectiveView() {
                 className={`${s.doorBtn} ${s.doorBtnSecondary}`}
                 style={{ fontSize: "12px", padding: "10px 18px" }}
               >
-                Discuss An Enterprise Build &rarr;
+                Discuss An Operating Problem &rarr;
               </button>
               <Link
                 href="/agentic-ai/"
@@ -173,7 +173,7 @@ export default function CollectiveView() {
                   <div className={s.metricDivider} />
                   <div>
                     <strong>THE RIG</strong>
-                    <span>The Factory</span>
+                    <span>The Dev Shop</span>
                   </div>
                 </div>
               </div>
@@ -304,11 +304,11 @@ export default function CollectiveView() {
             {/* System 3: The Rig & Pattern Commons */}
             <div className={s.systemCard}>
               <div>
-                <span className={s.systemBadge}>SOFTWARE FACTORY &bull; THE LIVING COMMONS</span>
+                <span className={s.systemBadge}>AGENTIC DEV SHOP &bull; THE LIVING COMMONS</span>
                 <h3 className={s.systemTitle}>The Rig &amp; Commons</h3>
                 <div className={s.systemSub}>The Machine That Builds the Machines</div>
                 <p className={s.systemBody}>
-                  The development shop and pattern commons. The Rig couples human operators with agentic build harnesses on local iron to fabricate living software assets. When connected to The Collective, the network effect ignites: shared workflow patterns can be published to the commons or adopted voluntarily, while private enterprise data and ledgers remain strictly within your operational boundary.
+                  The operator-led development shop and pattern commons. The Rig couples human operators with agentic build harnesses on local iron to fabricate living software assets. Controlled by disciplined harnesses and integrated into the collective, shared workflow patterns can be published to the commons or adopted voluntarily, while private enterprise data and ledgers remain strictly within your operational boundary.
                 </p>
               </div>
               <div className={s.systemUseCaseBox}>
@@ -338,9 +338,9 @@ export default function CollectiveView() {
             <div className={s.flywheelCard}>
               <div>
                 <span className={s.flywheelTag}>01 // SOVEREIGN &amp; SEVERABLE</span>
-                <h3 className={s.flywheelTitle}>Private Iron &amp; Built-In Factory</h3>
+                <h3 className={s.flywheelTitle}>Private Iron &amp; Operator-Led Dev Shop</h3>
                 <p className={s.flywheelText}>
-                  Each enterprise org is self-contained and carries its own built-in development factory. Take an org and run it on your own private iron or infrastructure—with sovereign data boundaries and zero per-seat SaaS taxes. If you ever choose to disconnect from the collective, your code and workflows remain in your hands.
+                  Each enterprise org is self-contained and carries its own operator-led agentic development shop. Run it on your own private iron or infrastructure—with sovereign data boundaries, disciplined harnesses, and zero per-seat SaaS taxes. If you ever choose to disconnect from the collective, your code and workflows remain in your hands.
                 </p>
               </div>
               <div className={s.flywheelBox}>
