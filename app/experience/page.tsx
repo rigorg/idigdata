@@ -206,7 +206,7 @@ export default function ExperiencePage() {
             </article>
             <article>
               <p className="font-mono text-xs font-bold uppercase tracking-wider text-[#9E7D3B]">04 // Frontier Runtime</p>
-              <h3 className="mt-2">Applied Enterprise Agentics &amp; Software Factories</h3>
+              <h3 className="mt-2">Agentic Development Companies &amp; Software Factories</h3>
               <p className="font-medium text-sm text-[#142840]/75 mt-1">Data Integration Group · Autonomous Systems Architecture</p>
               <p className="p-prose mt-4">
                 Architecting and operating multi-agent runtimes that connect software generation to enterprise operations. Grounded in the tribal heuristics of frontline operators, enforcing schema contracts, deterministic validation gates, and human authorization at consequential operational steps—turning unwritten company knowledge into dependable enterprise capacity.

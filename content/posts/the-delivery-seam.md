@@ -144,7 +144,7 @@ The Seam Operator provides the physical grounding: walking the floor, discoverin
 
 Both halves are essential: a software factory that operates in a sandbox without understanding the physical floor delivers little enterprise value. An operation that refuses to harness modern software fabrication will struggle with speed and cost.
 
-True enterprise leverage happens when the machine that builds the machines is placed in the hands of operators who own the delivery seam.
+True enterprise leverage happens when the machine that builds the machines is governed through an operator-led agentic development company, placed in the hands of operators who own the delivery seam.
 
 ---
 

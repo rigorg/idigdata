@@ -107,7 +107,7 @@ export default function CollectiveView() {
 
             <div className={s.leadBody}>
               <p style={{ marginBottom: "14px" }}>
-                Every human operator can now lead their own agentic development shop. In this era, experienced operators and autonomous software agents build together inside disciplined, configurable frameworks.
+                Every human operator can now build and lead their own agentic development company. In this era, experienced operators and autonomous software agents build together inside disciplined, configurable frameworks.
               </p>
               <p style={{ marginBottom: "14px" }}>
                 The software—B.O.S.S., FlowCraft, and The Rig—provides the operational apparatus, workflow runtime, and build harness on local iron. The Collective is where verified operational patterns compound across independent enterprises.
@@ -173,7 +173,7 @@ export default function CollectiveView() {
                   <div className={s.metricDivider} />
                   <div>
                     <strong>THE RIG</strong>
-                    <span>The Dev Shop</span>
+                    <span>Agentic Dev Company</span>
                   </div>
                 </div>
               </div>
@@ -304,11 +304,11 @@ export default function CollectiveView() {
             {/* System 3: The Rig & Pattern Commons */}
             <div className={s.systemCard}>
               <div>
-                <span className={s.systemBadge}>AGENTIC DEV SHOP &bull; THE LIVING COMMONS</span>
+                <span className={s.systemBadge}>AGENTIC DEVELOPMENT COMPANY &bull; THE LIVING COMMONS</span>
                 <h3 className={s.systemTitle}>The Rig &amp; Commons</h3>
                 <div className={s.systemSub}>The Machine That Builds the Machines</div>
                 <p className={s.systemBody}>
-                  The operator-led development shop and pattern commons. The Rig couples human operators with agentic build harnesses on local iron to fabricate living software assets. Controlled by disciplined harnesses and integrated into the collective, shared workflow patterns can be published to the commons or adopted voluntarily, while private enterprise data and ledgers remain strictly within your operational boundary.
+                  The operator-led agentic development company and pattern commons. The Rig couples human operators with agentic build harnesses on local iron to fabricate living software assets. Controlled by disciplined harnesses and integrated into the collective, shared workflow patterns can be published to the commons or adopted voluntarily, while private enterprise data and ledgers remain strictly within your operational boundary.
                 </p>
               </div>
               <div className={s.systemUseCaseBox}>
@@ -338,9 +338,9 @@ export default function CollectiveView() {
             <div className={s.flywheelCard}>
               <div>
                 <span className={s.flywheelTag}>01 // SOVEREIGN &amp; SEVERABLE</span>
-                <h3 className={s.flywheelTitle}>Private Iron &amp; Operator-Led Dev Shop</h3>
+                <h3 className={s.flywheelTitle}>Private Iron &amp; Operator-Led Agentic Development Company</h3>
                 <p className={s.flywheelText}>
-                  Each enterprise org is self-contained and carries its own operator-led agentic development shop. Run it on your own private iron or infrastructure—with sovereign data boundaries, disciplined harnesses, and zero per-seat SaaS taxes. If you ever choose to disconnect from the collective, your code and workflows remain in your hands.
+                  Each enterprise org is self-contained and carries its own operator-led agentic development company. Run it on your own private iron or infrastructure—with sovereign data boundaries, disciplined harnesses, and zero per-seat SaaS taxes. If you ever choose to disconnect from the collective, your code and workflows remain in your hands.
                 </p>
               </div>
               <div className={s.flywheelBox}>

@@ -249,7 +249,7 @@ const COLLECTIVES: CollectivePillar[] = [
     tag: "THEME 03 // THE FACTORY",
     actionLabel: "Join the Discussion",
     title: "The Machine That Builds the Machines",
-    subtitle: "The Agentic Dev Shop: Code Building Code, The Gantry Harness & Sovereign Iron",
+    subtitle: "The Agentic Development Company: Code Building Code, The Gantry Harness & Sovereign Iron",
     spot: "factory",
     titanQuote: {
       speaker: "Matan Grinberg & Eno Reyes",
@@ -259,7 +259,7 @@ const COLLECTIVES: CollectivePillar[] = [
         "The incremental units of this system are AI agents. This system will be built by engineers, and in turn will build their software. This system is the software factory... We are building the machine that builds the machine.",
     },
     body:
-      "We have crossed the threshold into operator-led agentic development: code now building code. But autonomous software fabrication introduces a demanding new operational discipline: managing token burn, orchestrating open-weight models alongside frontier APIs, and mastering multi-seat execution. We are not building an abstract factory—we are building an operator-led agentic development shop controlled by disciplined harnesses on local iron. Frontier models evolve rapidly. If an enterprise welds its core business logic directly to a single proprietary endpoint or hosted SaaS, it invites fragile dependencies. The durable asset is the machine that builds the machines: wrapping volatile intelligence in deterministic AST calipers, git-backed state ledgers, and human authorization gates to turn model tokens into living, verifiable enterprise software.",
+      "We have crossed the threshold into operator-led agentic development: code now building code. But autonomous software fabrication introduces a demanding new operational discipline: managing token burn, orchestrating open-weight models alongside frontier APIs, and mastering multi-seat execution. We are not building an abstract factory—we are building an operator-led agentic development company controlled by disciplined harnesses on local iron. Frontier models evolve rapidly. If an enterprise welds its core business logic directly to a single proprietary endpoint or hosted SaaS, it invites fragile dependencies. The durable asset is the machine that builds the machines: wrapping volatile intelligence in deterministic AST calipers, git-backed state ledgers, and human authorization gates to turn model tokens into living, verifiable enterprise software.",
     fieldNoteCard: {
       rubric: "SEAM LOG // THE RUNTIME SEAM",
       stamp: "THE BUILDER'S REALITY",
@@ -472,7 +472,7 @@ export default function AgenticPositionView() {
 
       {/* ====================================================================
           SECTION 02: THE THREE COLLECTIVES (LEARN AND BUILD)
-          The Enterprise (B.O.S.S.) · The Workflow (FlowCraft) · The Factory (The Rig)
+          The Enterprise (B.O.S.S.) · The Workflow (FlowCraft) · The Agentic Dev Company (The Rig)
           ==================================================================== */}
       <section id="field-briefs" className={s.triadSection}>
         <span id="the-collectives" style={{ display: "block", position: "relative", top: "-80px", visibility: "hidden" }} />
