@@ -156,7 +156,24 @@ HUMAN ELEVATION (OPERATOR)
 
 ---
 
-## 5. Why Generative AI and "Coding Droids" Crash Into the Plant Floor
+## 5. Unifying the Legacy Item Catalog: Why Bringing "Don WMS" Into the Journey Was Instrumental
+
+If *Mary's Sheet* shows what happens when scheduling workflows ignore the plant floor, **Don WMS** shows the other side of *Transforming Zeros and Ones*: one of the single hardest problems in any legacy manufacturing or distribution company—**getting legacy items into a unified item catalog**.
+
+Walk into almost any multi-decade manufacturer or distributor and look at how items are identified:
+- **Bastardized "Smart Schemas"**: Decades ago, someone tried to design a "smart schema"—encoding product family, size, finish, or warehouse zone right inside the item number. Over 30 to 40 years of new product lines, acquisitions, and workarounds, that schema got bastardized over time, yet people in the field are still attached to their old codes.
+- **Third-Party Item Translations**: Vendors ship pallets without proper labels or use their own supplier part numbers, while customers, 3PLs, and distributors rely on external item translations to do business.
+- **Internal Departments with Different Keys**: Inside the company, purchasing, manufacturing, warehousing, sales, and finance each use different keys across different legacy systems to identify the exact same physical item.
+
+> **SEAM LOG 01-C // PERSONAL FIELD NOTE: "DON WMS," THE UNIFIED ITEM CATALOG & HIS PARTNER, "DON"**
+> This was before agentics—we called him **Don WMS**. Don worked for a multi-location manufacturing and distribution company in New York, in tight city quarters cobbled together over 30–40 years where every inch of space was at a premium and constantly in movement. Taking the systems they had—bastardized item schemas, third-party item translations, internal departments with different system keys, and vendors that didn't get proper labels—he built a fragile system that worked because he knew where every item was, where every location was, and where every person was.
+>
+> Unifying an item data model is one of the hardest things in legacy manufacturing, and transformation was very difficult on Don and his crew because his purpose was knowing where everything was at. Making Don WMS part of that item-catalog journey was instrumental—both for Don and for the success of the project. And when we designed the floor workflows, Don still did what Don loved to do: be around the people, armed with knowledge. Now his knowledge came from—or was helped by—real-time data on an iPad. He still touched base, talked to all the people, and knew where everything was at, but double-checked with his new partner. So it was still Don WMS, but Don WMS had a partner, **DON**—and that was technology working for Don.
+> — Robert Paddock · Personal Field Note
+
+---
+
+## 6. Why Generative AI and "Coding Droids" Crash Into the Plant Floor
 
 Today, the technology industry is swept up in another wave of breathless claims: *Autonomous AI Agents*, *LLM Coding Droids*, and *Zero-Human Software Factories*.
 
@@ -172,7 +189,7 @@ When you automate an incomplete model of reality at machine speed, you don't ach
 
 ---
 
-## 6. Three Principles of the Operational Seam
+## 7. Three Principles of the Operational Seam
 
 Enterprise agentics succeeds by building governed runtime scaffolding around the people who run the operation:
 
@@ -183,6 +200,6 @@ Enterprise agentics succeeds by building governed runtime scaffolding around the
 ---
 
 ### The Operational Trilogy
-**Field Dispatch 01 // Mary's Sheet & Why 70% of ERPs Miss Expectations**: Uncovering the unwritten reality of Mary's sheet is the first step. Once you capture how work actually happens on the floor, you confront the next operational question: what happens when people are directly empowered with agents.
+**Field Dispatch 01 // Mary's Sheet & Why 70% of ERPs Miss Expectations**: Uncovering the unwritten reality of Mary's sheet and unifying legacy item catalogs with Don WMS is the first step. Once you see how designing around people gave Don WMS a partner (`DON`) working for him on the floor, you see the exact blueprint for how people and agents work together today.
 
-→ Continue to **[Field Dispatch 02: People and Agents at Work: Empowered Workflows & The Sovereign Substrate](/agentic-ai/the-application-layer/)**
+→ Continue to **[Field Dispatch 02: People and Agents at Work: Don WMS, His Partner 'DON' & Technology Working for People](/agentic-ai/the-application-layer/)**

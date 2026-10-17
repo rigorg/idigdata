@@ -199,7 +199,7 @@ interface CollectivePillar {
   spot: "constellation" | "blocks" | "factory";
   titanQuote: TitanQuote;
   body: string;
-  fieldNoteCard: FieldNoteCard;
+  fieldNoteCards: FieldNoteCard[];
   inquiries: string[];
   fieldNoteHref: string;
   fieldNoteLabel: string;
@@ -213,7 +213,7 @@ const COLLECTIVES: CollectivePillar[] = [
     tag: "WEB LOG 01 // WHY 70% OF ERPs MISS EXPECTATIONS",
     actionLabel: "Join the Discussion",
     title: "Transforming Zeros and Ones",
-    subtitle: "Mary's Sheet, Why 70% of ERPs Fall Short & Why Agentics Still Starts With People, Systems, and Workflows",
+    subtitle: "Mary's Sheet, Unifying Bastardized Item Catalogs & Why Transformation Still Starts With People, Data, Systems, and Workflows",
     spot: "constellation",
     titanQuote: {
       speaker: "Chamath Palihapitiya",
@@ -223,28 +223,30 @@ const COLLECTIVES: CollectivePillar[] = [
         "A job is more than the sum of its tasks. What's more intangible is the part between them: deciding which task matters, in what order, and when to stop; coordinating with people on other teams; and being the one accountable when it goes wrong.",
     },
     body:
-      "Gartner predicts that over 70% of ERP initiatives fail to fully meet their original business-case goals—because organizations treat transformation as a software install instead of aligning people, data, systems, and workflows. Layering agentics on top sits on that exact same reality: capturing unwritten floor rules ('Mary's Sheet') and unifying data before automating.",
-    fieldNoteCard: {
-      rubric: "PERSONAL FIELD NOTE // THE REAL REASON 70% OF ERPs MISS THE MARK",
-      stamp: "MARY'S SHEET",
-      text: "Walk almost any plant floor after a multimillion-dollar ERP go-live and you will find 'Mary's Sheet'—the clipboard or spreadsheet keeping the operation running when the database says Line 2 is green while mechanics have the pump unbolted on the bench. Now we have agentics layered right on top of that same world: people, data, systems, and workflows. Start with Mary on the floor and unify the data around how the work really happens, and she finally gets her time back to lead.",
-      signature: "— Robert Paddock · Personal Field Note (Illustrative Composite)",
-      footerLabel: "PEOPLE · DATA · SYSTEMS · WORKFLOWS",
-    },
+      "Over 70% of ERP initiatives miss expectations because they treat transformation as a software install instead of aligning people, data, systems, and workflows. Look at any legacy manufacturer trying to build a unified item catalog: decades-old 'smart schemas' bastardized over time, third parties relying on item translations, and internal departments using different keys across different systems. You only solve that by starting with the people on the floor.",
+    fieldNoteCards: [
+      {
+        rubric: "FIELD BRIEF 01 // THE REAL REASON 70% OF ERPs MISS THE MARK",
+        stamp: "MARY'S SHEET",
+        text: "Walk almost any plant floor after a multimillion-dollar ERP go-live and you will find 'Mary's Sheet'—the clipboard or spreadsheet keeping the operation running when the database says Line 2 is green while mechanics have the pump unbolted on the bench. Now we have agentics layered right on top of that same world: people, data, systems, and workflows. Start with Mary on the floor and unify the data around how the work really happens, and she finally gets her time back to lead.",
+        signature: "— Robert Paddock · Field Brief 01",
+        footerLabel: "PEOPLE · DATA · SYSTEMS · WORKFLOWS",
+      },
+    ],
     inquiries: [
-      "Why 70% of ERPs miss expectations: aligning people, data, systems, and workflows",
-      "Capturing unwritten floor truth ('Mary's Sheet') before automating",
+      "Why 70% of ERPs miss expectations: capturing unwritten floor truth ('Mary's Sheet') before automating",
+      "Unifying legacy item catalogs: untangling bastardized 'smart schemas,' 3rd-party translations, and cross-department keys with people like Don WMS",
     ],
     fieldNoteHref: "/agentic-ai/marys-sheet/",
-    fieldNoteLabel: "Read Field Dispatch 01: Mary's Sheet & Why 70% of ERPs Miss",
-    topicKey: "01 / Transforming Zeros & Ones: Mary's Sheet",
+    fieldNoteLabel: "Read Field Dispatch 01: Mary's Sheet & Unifying the Item Catalog",
+    topicKey: "01 / Transforming Zeros & Ones: Mary's Sheet & Item Catalogs",
   },
   {
     num: "02",
-    tag: "WEB LOG 02 // EMPOWERED WITH AGENTS",
+    tag: "WEB LOG 02 // TECHNOLOGY WORKING FOR PEOPLE",
     actionLabel: "Join the Discussion",
     title: "People and Agents at Work",
-    subtitle: "How Being Empowered With Agents Changes Workflows, Speed to Decisions, and Data Organization in Ways Unimaginable a Few Years Ago",
+    subtitle: "Don WMS, the Unified Item Catalog & His Partner 'DON': Why Designing Around What People Love to Do Is the Foundation",
     spot: "blocks",
     titanQuote: {
       speaker: "Marc Benioff",
@@ -254,28 +256,30 @@ const COLLECTIVES: CollectivePillar[] = [
         "What matters isn’t just the model—it’s the metadata, the business context, and the deterministic enterprise workflows.",
     },
     body:
-      "Once people, systems, and data are aligned, something genuinely new happens—a shift that was never imaginable just a few years ago. Being directly empowered with agents changes how workflows run, how fast decisions get made, and how enterprise data is organized across Intent, Define, Deliver, and Outcome.",
-    fieldNoteCard: {
-      rubric: "PERSONAL FIELD NOTE // WATCHING PEOPLE STEP INTO AGENT EMPOWERMENT",
-      stamp: "UNIMAGINABLE A FEW YEARS AGO",
-      text: "After twenty years of watching capable operators spend their days reconciling spreadsheets and waiting weeks for a workflow change, seeing what happens when someone is empowered with agents is remarkable. Put a production scheduler or operations lead on top of organized data with governed agents, and suddenly they are organizing data, reshaping workflows, and reaching decisions in minutes that used to take weeks.",
-      signature: "— Robert Paddock · Personal Field Note",
-      footerLabel: "WORKFLOWS · DATA · SPEED TO DECISIONS",
-    },
+      "Long before agentics, the hardest part of enterprise transformation was human: helping a veteran operator whose whole purpose was holding a fragile system together in his head become part of the journey—helping unify the item catalog and stepping into workflows designed around what he loved to do. That lesson is the exact blueprint for how people and agents work together today.",
+    fieldNoteCards: [
+      {
+        rubric: "FIELD BRIEF 02 // UNIFYING THE ITEM CATALOG & DON'S PARTNER, 'DON'",
+        stamp: "DON WMS + DON",
+        text: "Before agentics, we called him Don WMS. Don worked for a multi-location manufacturing and distribution company in New York, in tight city quarters cobbled together over 30–40 years where every inch of space was at a premium and constantly in movement. With bastardized 'smart' item schemas, third-party item translations, different internal department keys, and vendors shipping without proper labels, Don built a fragile system that worked—he knew where every item and every person was. Transformation was hard on him and his crew because knowing where everything sat was his purpose. Making Don part of the journey to unify the item catalog—and designing the workflows so he still did what he loved to do, walking the floor around his people armed with real-time knowledge on an iPad—changed everything. It was still Don WMS, but Don WMS had a partner, DON—and that was technology working for Don.",
+        signature: "— Robert Paddock · Field Brief 02",
+        footerLabel: "DON WMS + DON · TECHNOLOGY WORKING FOR PEOPLE",
+      },
+    ],
     inquiries: [
-      "How agent empowerment changes workflows, data organization, and speed to decisions",
-      "Equipping domain champions to build and run governed workflows on a Common Data Core",
+      "Don WMS & his iPad partner 'DON': designing workflows so people keep doing what they love, armed with real-time knowledge",
+      "Making domain veterans part of the unified item catalog journey—and carrying that partnership into the agentic era",
     ],
     fieldNoteHref: "/agentic-ai/the-application-layer/",
-    fieldNoteLabel: "Read Field Dispatch 02: People and Agents at Work",
-    topicKey: "02 / People and Agents at Work & Workflow Ownership",
+    fieldNoteLabel: "Read Field Dispatch 02: Don WMS, His Partner 'DON' & People at Work",
+    topicKey: "02 / People and Agents at Work: Don WMS & Partner DON",
   },
   {
     num: "03",
-    tag: "WEB LOG 03 // SOFTWARE FACTORIES & THE BUILDER'S REALITY",
+    tag: "WEB LOG 03 // THE RABBIT HOLE & DISCO DANCING",
     actionLabel: "Join the Discussion",
     title: "The Agentic Development Company",
-    subtitle: "What Frontier Software Factories Are Proving—And the Human Side of Learning, Being Excited, and Being Mad in This Brave New World",
+    subtitle: "Falling Down the Rabbit Hole, the Disco Dance of Agents Going Off the Rails & Where Agentic AI Separates from Vibe Coding",
     spot: "factory",
     titanQuote: {
       speaker: "Matan Grinberg & Eno Reyes",
@@ -285,21 +289,30 @@ const COLLECTIVES: CollectivePillar[] = [
         "The incremental units of this system are AI agents. This system will be built by engineers, and in turn will build their software. This system is the software factory... We are building the machine that builds the machine.",
     },
     body:
-      "Frontier software factories are proving that AI agents are now the incremental units building software—writing code and running checks inside governed pipelines while engineers build 'the machine that builds the machine.' I operate that thesis in practice as a multi-harness Agentic Development Company proof of concept (The Rig), building both B.O.S.S. and FlowCraft under human outcome accountability.",
-    fieldNoteCard: {
-      rubric: "PERSONAL FIELD NOTE // THE HUMAN SIDE OF A BUILDER IN THIS BRAVE NEW WORLD",
-      stamp: "EXCITED · MAD · LEARNING",
-      text: "Let me tell you the human side of spending the last three years building in this brave new world: you spend half your time blown away with excitement and the other half mad as hell. One hour four agent harnesses coordinate across a spec and land working software at a pace you never dreamed of; two hours later an agent confidently hallucinates across a seam and you have to tear the harness down and rethink the guardrails. Living through that excitement, frustration, and relentless learning is what forged The Rig.",
-      signature: "— Robert Paddock · Personal Builder Note",
-      footerLabel: "3 YEARS IN THE BRAVE NEW WORLD",
-    },
+      "Over the last three years of hands-on agentic development, I have lived two distinct realities: the pure builder joy of falling down the Rabbit Hole into a whole new world, and the painful Disco Dance when agents go off the rails the deeper you get. Surviving both is what separates disciplined Agentic AI from Vibe Coding—and forged The Rig to build B.O.S.S. and FlowCraft.",
+    fieldNoteCards: [
+      {
+        rubric: "FIELD BRIEF 03 // THE PURE JOY OF A WHOLE NEW WORLD FOR BUILDERS",
+        stamp: "THE RABBIT HOLE",
+        text: "There is a pure, unmistakable joy to what this period of time has given builders. For those of us who fell down the rabbit hole, it is a whole new world: sitting at your desk watching multiple agent harnesses coordinate across an architectural blueprint, turning 20 years of operational patterns into working data models, financial suites, and workflow blocks at a pace you never dreamed possible.",
+        signature: "— Robert Paddock · Field Brief 03",
+        footerLabel: "PURE BUILDER JOY · A WHOLE NEW WORLD",
+      },
+      {
+        rubric: "FIELD BRIEF 04 // BURNING IT DOWN & AGENTIC AI VS. VIBE CODING",
+        stamp: "DISCO DANCING",
+        text: "Then there is Disco Dancing: the pain of thinking things are happening and finding out they didn't, learning how to interact, burning down the code and rebuilding from the ground up, and keeping pace with constant changes in model capabilities, new tools, and new standards. Agents go off the rails—and the deeper you get, the harder it is to solve. That exact point is where the separation between disciplined Agentic AI and Vibe Coding comes into play.",
+        signature: "— Robert Paddock · Field Brief 04",
+        footerLabel: "OFF THE RAILS · AGENTIC AI VS. VIBE CODING",
+      },
+    ],
     inquiries: [
-      "What frontier software factories are saying: building 'the machine that builds the machine'",
-      "The human side of the builder: learning, being excited, and getting mad in this brave new world",
+      "The Rabbit Hole vs. Disco Dancing: the joy of a new builder world and the pain of burning code down to rebuild it right",
+      "Where disciplined Agentic AI (The Rig) separates from Vibe Coding as systems get deeper",
     ],
     fieldNoteHref: "/agentic-ai/the-delivery-seam/",
-    fieldNoteLabel: "Read Field Dispatch 03: The Agentic Development Company",
-    topicKey: "03 / The Agentic Development Company & The Collective",
+    fieldNoteLabel: "Read Field Dispatch 03: The Rabbit Hole & Disco Dancing",
+    topicKey: "03 / The Agentic Development Company: Rabbit Hole & Disco Dancing",
   },
 ];
 
@@ -492,66 +505,21 @@ export default function AgenticPositionView() {
               />
             </a>
           </div>
-
-          {/* THE PARADOX & ROBERT'S WORKING ETHOS */}
-          <div className={s.briefGrid} style={{ marginTop: "32px" }}>
-            <div className={s.briefCard}>
-              <div className={s.cardHeader}>
-                <span className={s.cardNum}>THE PARADOX // WHY 70% OF ERPs MISS EXPECTATIONS</span>
-                <h3>&ldquo;We Know More Than We Can Tell.&rdquo;</h3>
-                <p>
-                  Gartner predicts that over 70% of ERP initiatives fail to fully meet their business-case goals because they treat transformation as a software install instead of aligning <strong>people, data, systems, and workflows</strong> (<em>Mary&rsquo;s Sheet</em>). <strong>Layering agentics on top sits on that exact same reality&mdash;it still starts with the people.</strong>
-                </p>
-              </div>
-              <div className={s.cardFootnote}>
-                <span>People · Data · Workflows</span>
-                <strong>SAME CORE PROBLEM</strong>
-              </div>
-            </div>
-
-            <div className={s.briefCard}>
-              <div className={s.cardHeader}>
-                <span className={s.cardNum}>ETHOS 01 // EMPOWERED WITH AGENTS AT WORK</span>
-                <h3>Workflows, Data &amp; Speed to Decisions</h3>
-                <p>
-                  What is uniquely new&mdash;and <strong>never imaginable just a few years ago</strong>&mdash;is what happens when operators and domain experts are directly empowered with agents. It transforms how workflows run, how data is organized, and how fast decisions get made across <em>Intent, Define, Deliver, and Outcome</em>.
-                </p>
-              </div>
-              <div className={s.cardFootnote}>
-                <span>Human + Agent Empowerment</span>
-                <strong>UNIMAGINABLE A FEW YEARS AGO</strong>
-              </div>
-            </div>
-
-            <div className={s.briefCard}>
-              <div className={s.cardHeader}>
-                <span className={s.cardNum}>ETHOS 02 // SOFTWARE FACTORIES &amp; THE BUILDER&rsquo;S REALITY</span>
-                <h3>Agent-Built Code · Human Outcome Accountability</h3>
-                <p>
-                  Frontier software factories are proving that AI agents are the incremental units building software. Living that shift for three years&mdash;<strong>learning, being excited, and getting mad in this brave new world</strong>&mdash;forged the discipline of <strong>The Rig</strong> to build <strong>B.O.S.S.</strong> and <strong>FlowCraft</strong> under human accountability.
-                </p>
-              </div>
-              <div className={s.cardFootnote}>
-                <span>Accountable Command</span>
-                <strong>EXCITED · MAD · LEARNING</strong>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
       {/* ====================================================================
-          SECTION 02: THE THREE CORE THEMES & FIELD DISPATCHES
+          SECTION 02: THE THREE CORE THEMES & FOUR PERSONAL FIELD BRIEFS
           ==================================================================== */}
       <section id="field-briefs" className={s.triadSection}>
         <span id="the-collectives" style={{ display: "block", position: "relative", top: "-80px", visibility: "hidden" }} />
         <span id="dispatches" style={{ display: "block", position: "relative", top: "-80px", visibility: "hidden" }} />
         <div className={s.triadInner}>
           <div className={s.triadHead}>
-            <p className={s.eyebrow}>02 / Field Web Log &middot; Three Field Themes</p>
+            <p className={s.eyebrow}>02 / Field Web Log &middot; Three Field Themes &amp; Four Personal Field Briefs</p>
             <h2>One Human Thread Across Three Field Themes of Binary Intelligence<span>.</span></h2>
             <p className={s.triadDek}>
-              From transforming enterprise zeros and ones on the floor, to human-agentic workflow synthesis around a company-owned data core, to three years of hands-on agentic development building The Rig, B.O.S.S., and FlowCraft.
+              Each theme leads with a personal field brief from the work&mdash;from <em>Mary&rsquo;s Sheet</em> on the plant floor, to <em>Don WMS</em> and his partner <em>DON</em> in tight New York quarters, to both sides of the builder&rsquo;s life in this era: <em>The Rabbit Hole</em> and <em>Disco Dancing</em>.
             </p>
           </div>
 
@@ -574,9 +542,27 @@ export default function AgenticPositionView() {
                   {/* Concise Executive Thesis Summary */}
                   <p className={s.triadCardBody} style={{ marginTop: "14px" }}>{c.body}</p>
 
-                  {/* Industry Corroboration / Macro Consensus */}
-                  <div style={{ marginTop: "14px", marginBottom: "6px" }}>
-                    <span className={s.triadSectionTag}>FRONTIER CORROBORATION // INDUSTRY PERSPECTIVE</span>
+                  {/* Personal Field Brief Card(s) Lead First */}
+                  {c.fieldNoteCards.map((fn) => (
+                    <div key={fn.stamp} className={s.triadFieldNoteCard} style={{ marginTop: "16px" }}>
+                      <div className={s.triadFieldNoteHead}>
+                        <div className={s.triadFieldNoteRubric}>
+                          <span className={s.triadFieldNoteDot} aria-hidden="true" />
+                          <span>{fn.rubric}</span>
+                        </div>
+                        <span className={s.triadFieldNoteStamp}>{fn.stamp}</span>
+                      </div>
+                      <p className={s.triadFieldNoteText}>{fn.text}</p>
+                      <div className={s.triadFieldNoteFooter}>
+                        <span>{fn.signature}</span>
+                        <span>{fn.footerLabel}</span>
+                      </div>
+                    </div>
+                  ))}
+
+                  {/* Supporting Industry Corroboration / Macro Consensus */}
+                  <div style={{ marginTop: "16px", marginBottom: "6px" }}>
+                    <span className={s.triadSectionTag}>SUPPORTING CORROBORATION // INDUSTRY PERSPECTIVE</span>
                   </div>
                   <div className={s.triadQuoteBlock}>
                     <div className={s.triadQuoteMeta}>
@@ -587,22 +573,6 @@ export default function AgenticPositionView() {
                       &ldquo;{c.titanQuote.quote}&rdquo;
                     </blockquote>
                     <div className={s.triadQuoteRole}>{c.titanQuote.role}</div>
-                  </div>
-
-                  {/* Dark Notebook Seam Log Card */}
-                  <div className={s.triadFieldNoteCard}>
-                    <div className={s.triadFieldNoteHead}>
-                      <div className={s.triadFieldNoteRubric}>
-                        <span className={s.triadFieldNoteDot} aria-hidden="true" />
-                        <span>{c.fieldNoteCard.rubric}</span>
-                      </div>
-                      <span className={s.triadFieldNoteStamp}>{c.fieldNoteCard.stamp}</span>
-                    </div>
-                    <p className={s.triadFieldNoteText}>{c.fieldNoteCard.text}</p>
-                    <div className={s.triadFieldNoteFooter}>
-                      <span>{c.fieldNoteCard.signature}</span>
-                      <span>{c.fieldNoteCard.footerLabel}</span>
-                    </div>
                   </div>
                 </div>
 
@@ -632,24 +602,16 @@ export default function AgenticPositionView() {
 
       {/* ====================================================================
           SECTION 03: THE PATTERNS & THE COLLECTIVE GATEWAY
-          A concise, poignant bridge from the essays into Whole Assets & The Collective
+          A single compact bridge from the field briefs into The Collective
           ==================================================================== */}
-      <section id="open-systems" className={s.limelightSection}>
+      <section id="open-systems" className={s.limelightSection} style={{ padding: "56px 32px" }}>
         <div className={s.limelightInner}>
-          <div className={s.limelightHead}>
-            <p className={s.eyebrow}>03 / Leading Into The Collective &middot; Patterns &amp; Reusable Blocks</p>
-            <h2>Where Shared Patterns Reduce Repeated Work and Token Burn<span>.</span></h2>
-            <p className={s.limelightDek}>
-              When you connect these three practices&mdash;mapping enterprise reality around people and data (<strong>B.O.S.S.</strong>), executing governed human-agentic workflow blocks (<strong>FlowCraft</strong>), and building through a multi-harness <strong>Agentic Development Company</strong> (<strong>The Rig</strong>)&mdash;verified schemas and workflow patterns can be reused across builds instead of re-solving every problem from scratch.
-            </p>
-          </div>
-
           <div className={s.limelightBanner} style={{ marginTop: 0 }}>
             <div className={s.limelightBannerContent}>
-              <p className={s.eyebrow} style={{ margin: 0 }}>THE COLLECTIVE // THE RIG · B.O.S.S. · FLOWCRAFT · SHARED PATTERNS</p>
-              <h3>See What I Have Built and How Reusable Patterns Compound.</h3>
+              <p className={s.eyebrow} style={{ margin: 0 }}>03 / LEADING INTO THE COLLECTIVE // WHERE SHARED PATTERNS COMPOUND</p>
+              <h3>From the Floor to the Collective: People, Patterns, and Three Working Systems.</h3>
               <p>
-                Explore <strong>The Collective</strong>: how <strong>The Rig</strong> (Agentic Development Company) built <strong>B.O.S.S.</strong> (Enterprise Foundation Asset) and <strong>FlowCraft</strong> (Human-Agentic Runtime System &amp; Workflow Blocks) on a shared Data Spine, and how builders can voluntarily share reusable workflow patterns.
+                When you preserve the knowledge inside your people (<em>Mary</em> and <em>Don WMS</em>), build with governed multi-harness discipline instead of vibe coding (<strong>The Rig</strong>), and structure enterprise transformation and daily workflows around a shared Data Spine (<strong>B.O.S.S.</strong> and <strong>FlowCraft</strong>), what proves useful in one operation becomes a reusable pattern for the next.
               </p>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "10px", alignItems: "flex-start", flexShrink: 0 }}>
