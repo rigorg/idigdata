@@ -127,7 +127,7 @@ const DOMAIN_CONFIGS: DomainConfig[] = [
     name: "Agentic Software & Workflow Delivery",
     shortName: "Agentic Workflows",
     subtitle: "Build custom agentic software and workflow automation around how frontline operators actually work.",
-    essence: "Deterministic agent pipelines, AST calipers, human authorization gates, and operational handoff elimination.",
+    essence: "Custom agentic workflows, clear handoffs and ownership, governed data contracts, and human authorization gates.",
     badge: "AGENTIC WORKFLOWS",
     accentHex: "#DB2777",
     borderClass: "border-pink-500/40 hover:border-pink-500",
@@ -360,7 +360,7 @@ function DomainBlockIcon({
 
 function TheBlockConfiguratorPage() {
   const searchParams = useSearchParams();
-  const { draft, update } = useEngagementDraft();
+  const { draft, notice: draftNotice, update, complete } = useEngagementDraft();
   const { theme, setTheme, isLight } = useTheme();
 
   // Active domain currently focused on the 3D block
@@ -405,6 +405,7 @@ function TheBlockConfiguratorPage() {
   const [contactCompany, setContactCompany] = useState("");
   const [contactNote, setContactNote] = useState("");
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submittedSummaryCount, setSubmittedSummaryCount] = useState<{ outcomes: number; disciplines: number }>({ outcomes: 0, disciplines: 0 });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
 
@@ -468,7 +469,6 @@ function TheBlockConfiguratorPage() {
 
   // Drag-to-spin cube pointer handling with requestAnimationFrame throttling
   const handlePointerDown = (e: React.PointerEvent) => {
-    (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
     dragStartRef.current = {
       x: e.clientX,
       y: e.clientY,
@@ -485,6 +485,9 @@ function TheBlockConfiguratorPage() {
     const dy = e.clientY - dragStartRef.current.y;
     
     if (Math.abs(dx) > 4 || Math.abs(dy) > 4) {
+      if (!hasDraggedRef.current) {
+        try { (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId); } catch {}
+      }
       hasDraggedRef.current = true;
     }
 
@@ -591,6 +594,7 @@ function TheBlockConfiguratorPage() {
       currentRotRef.current = next;
       return next;
     });
+    setConfigModalDomainId(domainId);
   };
 
   // Toggle outcome selection (NO auto-select; explicit buyer choice)
@@ -635,7 +639,6 @@ function TheBlockConfiguratorPage() {
     e.preventDefault();
     if (isSubmitting) return;
 
-    setIsSubmitting(true);
     setSubmitError(null);
 
     const outcomesList = aggregatedByDomain
@@ -659,6 +662,15 @@ function TheBlockConfiguratorPage() {
       .filter(Boolean)
       .join("\n\n");
 
+    if (fullMessage.length > 4000) {
+      setSubmitError(
+        "Your note and configured outcomes exceed 4,000 characters. Shorten your note or domain context notes before sending; your selected outcomes remain intact."
+      );
+      return;
+    }
+
+    setIsSubmitting(true);
+
     const payload = {
       name: contactName.trim(),
       email: contactEmail.trim(),
@@ -676,7 +688,11 @@ function TheBlockConfiguratorPage() {
         body: JSON.stringify(payload),
       });
       const data = await res.json().catch(() => null);
-      if (res.ok && data?.ok) {
+      if ((res.ok || res.status === 202) && data?.ok) {
+        setSubmittedSummaryCount({ outcomes: selectedCount, disciplines: aggregatedByDomain.length });
+        complete(res.ok || res.status === 202, data);
+        setSelectedOutcomeIds([]);
+        setDomainNotes({});
         setSubmitSuccess(true);
       } else {
         setSubmitError(data?.error || "Unable to transmit scoping proposal. Please retry.");
@@ -800,7 +816,7 @@ function TheBlockConfiguratorPage() {
               isLight ? "text-slate-700" : "text-slate-300"
             }`}
           >
-            Decades of enterprise leadership distilled into six core disciplines. While software factories generate code, transformations succeed or fail in the operational seam—connecting business priority, legacy ledgers, and frontline adoption. Select the capabilities your business needs, align on scope, and frame your scope request with clear acceptance criteria.
+            Select the outcomes your business needs across six disciplines. We carry the agreed work through Intent, Define, Deliver and Outcome, with people accountable throughout. Your selections shape the scope, acceptance criteria and measures of success.
           </p>
           <p
             className={`text-xs font-mono mt-2 max-w-xl mx-auto ${
@@ -943,6 +959,7 @@ function TheBlockConfiguratorPage() {
                 return (
                   <button
                     key={domain.id}
+                    type="button"
                     onClick={() => handleCategorySelect(domain.id)}
                     className={`flex flex-col items-start justify-between min-h-[124px] p-3 rounded-xl border text-left transition-all cursor-pointer ${
                       isSelected
@@ -972,7 +989,7 @@ function TheBlockConfiguratorPage() {
                     <span className={`font-serif text-[12px] sm:text-[12.5px] font-bold mt-2 leading-[1.3] text-balance ${isLight ? "text-[#142840]" : "text-white"}`}>
                       {domain.name}
                     </span>
-                    <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 mt-2">
+                    <span className={`text-[10px] font-mono mt-2 ${isLight ? "text-slate-600" : "text-slate-400"}`}>
                       {count > 0 ? `${count} configured` : `${PUBLIC_CATALOG_ITEMS.filter((i) => i.domainId === domain.id).length} outcomes`}
                     </span>
                   </button>
@@ -986,6 +1003,7 @@ function TheBlockConfiguratorPage() {
           {/* ==================================================================== */}
           <div className="mt-6 flex flex-col items-center gap-2">
             <button
+              type="button"
               onClick={() => setConfigModalDomainId(activeDomainId)}
               className="inline-flex items-center gap-3 px-8 py-3.5 rounded-xl font-serif text-base font-bold text-white transition-all shadow-lg hover:shadow-xl hover:scale-[1.02] cursor-pointer"
               style={{
@@ -997,7 +1015,7 @@ function TheBlockConfiguratorPage() {
                 {domainSelectionStats[activeDomain.id] || 0} / {PUBLIC_CATALOG_ITEMS.filter((i) => i.domainId === activeDomain.id).length} Selected →
               </span>
             </button>
-            <p className={`text-xs font-mono ${isLight ? "text-slate-500" : "text-slate-400"}`}>
+            <p className={`text-xs font-mono ${isLight ? "text-slate-600" : "text-slate-400"}`}>
               Opens outcome selection drawer · Checkboxes to add or remove outcomes
             </p>
           </div>
@@ -1383,6 +1401,15 @@ function TheBlockConfiguratorPage() {
                 <p className={`text-xs mt-1 ${isLight ? "text-slate-600" : "text-slate-400"}`}>
                   Configure your target outcomes to submit a scoping proposal. We evaluate deliverables, dependencies, and milestones to determine your engagement blocks.
                 </p>
+                {draftNotice !== "none" && (
+                  <p className="mt-2 text-[11px] font-mono text-amber-700 dark:text-amber-300" role="status">
+                    {draftNotice === "unavailable"
+                      ? "Browser storage is unavailable in this session; your selections stay active on this page until submitted."
+                      : draftNotice === "clear-failed"
+                      ? "Proposal transmitted; browser storage could not be cleared automatically."
+                      : "An earlier saved draft could not be restored; starting with a clean scope."}
+                  </p>
+                )}
               </div>
 
               {submitSuccess ? (
@@ -1396,19 +1423,19 @@ function TheBlockConfiguratorPage() {
                   </div>
                   <h4 className="font-serif text-xl font-bold">Proposal Request Transmitted</h4>
                   <p className="text-xs sm:text-sm max-w-md leading-relaxed">
-                    {selectedCount > 0
-                      ? `Robert Paddock will review your ${selectedCount} configured outcomes across ${aggregatedByDomain.length} disciplines and assemble your engagement proposal.`
+                    {submittedSummaryCount.outcomes > 0
+                      ? `Robert Paddock will review your ${submittedSummaryCount.outcomes} configured outcomes across ${submittedSummaryCount.disciplines} disciplines and assemble your engagement proposal.`
                       : `Robert Paddock will review your message and reach out to discuss your scoping needs.`}
                   </p>
                   <span className="font-mono text-[11px] text-emerald-700 dark:text-emerald-300">
-                    Logged to DigOps pipeline via The Block storefront.
+                    Recorded for direct review by Robert Paddock.
                   </span>
                 </div>
               ) : (
                 <form onSubmit={handleSubmitProposal} className="flex flex-col gap-3">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-xs font-mono font-semibold uppercase tracking-wider mb-1 text-slate-700 dark:text-slate-300">
+                      <label className={`block text-xs font-mono font-bold uppercase tracking-wider mb-1 ${isLight ? "text-[#142840]" : "text-slate-200"}`}>
                         Full Name *
                       </label>
                       <input
@@ -1424,7 +1451,7 @@ function TheBlockConfiguratorPage() {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-mono font-semibold uppercase tracking-wider mb-1 text-slate-700 dark:text-slate-300">
+                      <label className={`block text-xs font-mono font-bold uppercase tracking-wider mb-1 ${isLight ? "text-[#142840]" : "text-slate-200"}`}>
                         Corporate Email *
                       </label>
                       <input
@@ -1441,7 +1468,7 @@ function TheBlockConfiguratorPage() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono font-semibold uppercase tracking-wider mb-1 text-slate-700 dark:text-slate-300">
+                    <label className={`block text-xs font-mono font-bold uppercase tracking-wider mb-1 ${isLight ? "text-[#142840]" : "text-slate-200"}`}>
                       Company / Organization *
                     </label>
                     <input
@@ -1457,7 +1484,7 @@ function TheBlockConfiguratorPage() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono font-semibold uppercase tracking-wider mb-1 text-slate-700 dark:text-slate-300">
+                    <label className={`block text-xs font-mono font-bold uppercase tracking-wider mb-1 ${isLight ? "text-[#142840]" : "text-slate-200"}`}>
                       Your Situation or Notes (Optional)
                     </label>
                     <textarea
@@ -1491,7 +1518,7 @@ function TheBlockConfiguratorPage() {
                       : "Request Scoping Proposal →"}
                   </button>
 
-                  <p className="text-center text-[11px] font-mono text-slate-500">
+                  <p className={`text-center text-[11px] font-mono ${isLight ? "text-slate-600" : "text-slate-400"}`}>
                     Direct principal review · Scope agreed before engagement begins
                   </p>
                 </form>

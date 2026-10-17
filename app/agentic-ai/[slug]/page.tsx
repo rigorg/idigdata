@@ -44,7 +44,7 @@ export async function generateMetadata({
 function renderMarkdown(md: string) {
   // Strip frontmatter
   const body = md.replace(/^---[\s\S]*?---\n*/, "").trim();
-  const lines = body.split("\n");
+  const lines = body.split(/\r?\n/);
   const elements: React.ReactNode[] = [];
   let inCodeBlock = false;
   let codeBuffer: string[] = [];
@@ -101,54 +101,96 @@ function renderMarkdown(md: string) {
         return;
       }
 
-      let rubric = "SEAM LOG // FIELD DISPATCH";
-      let stamp = "OPERATIONAL SEAM";
-      let signature = "— Rob Paddock · From the Seam Log";
-      let contentLines = cleanLines;
-
       const firstLine = cleanLines[0];
       const seamLogMatch = firstLine.match(/^\*\*(?:SEAM LOG|FIELD NOTE)\s*([0-9A-Za-z\-]*)\s*\/\/\s*(.*?)\*\*$/i);
       const operationalMatch = firstLine.match(/^\*\*OPERATIONAL\s*(.*?)\*\*$/i);
       const trilogyMatch = firstLine.match(/^###\s*(The .*?Trilogy)/i);
 
-      if (seamLogMatch) {
-        const idPart = seamLogMatch[1] ? (" " + seamLogMatch[1]) : "";
-        rubric = "SEAM LOG" + idPart + " // " + seamLogMatch[2];
-        stamp = "GROUND TRUTH";
-        contentLines = cleanLines.slice(1);
-      } else if (operationalMatch) {
-        rubric = "SEAM LOG // " + operationalMatch[1];
-        stamp = "FIELD OBSERVATION";
-        contentLines = cleanLines.slice(1);
-      } else if (trilogyMatch) {
-        rubric = trilogyMatch[1].toUpperCase() + " // THE SEAM SERIES";
-        stamp = "CANONICAL SEQUENCE";
-        contentLines = cleanLines.slice(1);
-      } else if (firstLine.startsWith('*"') || firstLine.startsWith('"') || firstLine.startsWith("*'")) {
-        rubric = "SEAM LOG // OBSERVED REALITY";
-        stamp = "VERIFIED IN ARENA";
-      }
+      // Explicit Seam Log / Field Note cards authored by Rob
+      if (seamLogMatch || operationalMatch || trilogyMatch) {
+        let rubric = "SEAM LOG // FIELD NOTE";
+        let stamp = "FIELD NOTE";
+        let signature = "— Robert Paddock · Field Dispatch Note";
+        let rightBadge = "FIELD OBSERVATION";
+        let contentLines = cleanLines.slice(1);
 
-      elements.push(
-        <aside key={"field-card-" + key++} className={s.fieldNoteCard} aria-label="Seam Log Field Note">
-          <div className={s.fieldNoteHeader}>
-            <div className={s.fieldNoteRubric}>
-              <span className={s.fieldNoteRubricDot} aria-hidden="true" />
-              <span>{rubric}</span>
+        if (seamLogMatch) {
+          const idPart = seamLogMatch[1] ? (" " + seamLogMatch[1]) : "";
+          const labelPart = seamLogMatch[2];
+          rubric = "SEAM LOG" + idPart + " // " + labelPart;
+          if (/ILLUSTRATIVE/i.test(labelPart)) {
+            stamp = "ILLUSTRATIVE COMPOSITE";
+            signature = "— Robert Paddock · Illustrative Field Scenario";
+            rightBadge = "COMPOSITE SCENARIO";
+          } else if (/CONSENSUS|PERSPECTIVE/i.test(labelPart)) {
+            stamp = "INDUSTRY PERSPECTIVE";
+            signature = "— Industry Citation & Field Commentary";
+            rightBadge = "FIELD COMMENTARY";
+          }
+        } else if (operationalMatch) {
+          rubric = "SEAM LOG // " + operationalMatch[1];
+          stamp = "FIELD OBSERVATION";
+        } else if (trilogyMatch) {
+          rubric = trilogyMatch[1].toUpperCase() + " // THE SEAM SERIES";
+          stamp = "CANONICAL SEQUENCE";
+        }
+
+        // Check if last line is an explicit attribution line starting with — or --
+        const lastLine = contentLines[contentLines.length - 1] ?? "";
+        if (/^(?:—|--)\s+/.test(lastLine)) {
+          signature = lastLine.replace(/^--\s+/, "— ");
+          contentLines = contentLines.slice(0, -1);
+        }
+
+        elements.push(
+          <aside key={"field-card-" + key++} className={s.fieldNoteCard} aria-label="Seam Log Field Note">
+            <div className={s.fieldNoteHeader}>
+              <div className={s.fieldNoteRubric}>
+                <span className={s.fieldNoteRubricDot} aria-hidden="true" />
+                <span>{rubric}</span>
+              </div>
+              {stamp && <span className={s.fieldNoteStamp}>{stamp}</span>}
             </div>
-            {stamp && <span className={s.fieldNoteStamp}>{stamp}</span>}
-          </div>
-          <div className={s.fieldNoteBody}>
-            {contentLines.map((cLine, cIdx) => (
-              <p key={cIdx} dangerouslySetInnerHTML={{ __html: formatInline(cLine) }} />
-            ))}
-          </div>
-          <div className={s.fieldNoteFooter}>
-            <span>{signature}</span>
-            <span>VERIFIED IN THE ARENA</span>
-          </div>
-        </aside>
-      );
+            <div className={s.fieldNoteBody}>
+              {contentLines.map((cLine, cIdx) => (
+                <p key={cIdx} dangerouslySetInnerHTML={{ __html: formatInline(cLine) }} />
+              ))}
+            </div>
+            <div className={s.fieldNoteFooter}>
+              <span>{signature}</span>
+              <span>{rightBadge}</span>
+            </div>
+          </aside>
+        );
+      } else {
+        // Standard quotation or dialogue excerpt — do NOT stamp as "Rob Paddock · Verified in the Arena"
+        let contentLines = cleanLines;
+        let attribution: string | null = null;
+        const lastLine = contentLines[contentLines.length - 1] ?? "";
+        if (contentLines.length > 1 && /^(?:—|--)\s+/.test(lastLine)) {
+          attribution = lastLine.replace(/^--\s+/, "— ");
+          contentLines = contentLines.slice(0, -1);
+        }
+
+        elements.push(
+          <blockquote
+            key={"quote-" + key++}
+            className="my-6 border-l-4 border-[#9E7D3B] bg-[#FAF6EE] px-5 py-4 rounded-r-xl text-[#142840]"
+          >
+            <div className="space-y-2 text-[16px] leading-relaxed font-serif italic">
+              {contentLines.map((cLine, cIdx) => (
+                <p key={cIdx} dangerouslySetInnerHTML={{ __html: formatInline(cLine) }} />
+              ))}
+            </div>
+            {attribution && (
+              <footer
+                className="mt-2.5 font-mono text-xs uppercase tracking-wider text-[#5A6978] not-italic"
+                dangerouslySetInnerHTML={{ __html: formatInline(attribution) }}
+              />
+            )}
+          </blockquote>
+        );
+      }
 
       quoteBuffer = [];
       inQuote = false;
@@ -264,6 +306,7 @@ function renderMarkdown(md: string) {
 
   return elements;
 }
+
 export default async function PostPage({
   params,
 }: {
@@ -286,6 +329,7 @@ export default async function PostPage({
         year: "numeric",
         month: "long",
         day: "numeric",
+        timeZone: "UTC",
       })
     : "October 2026";
 
@@ -328,7 +372,7 @@ export default async function PostPage({
           <p className={s.dek}>{fm.description}</p>
           <div className={s.byline}>
             <span className={s.square} />
-            <span>Robert Paddock <small>Founder, Operator, Enterprise Technology Leader</small></span>
+            <span>Robert Paddock <small>Enterprise Transformation Executive</small></span>
           </div>
         </header>
 
@@ -370,7 +414,7 @@ export default async function PostPage({
           <div className={s.footerCard}>
             <h3>Continue the Conversation</h3>
             <p>
-              Have a perspective on the 20% operational seam, or navigating an active enterprise system cutover?
+              Have a perspective on human-agentic workflows, enterprise data foundations, or navigating an active transformation?
             </p>
             <div className={s.footerActions}>
               <Link href="/agentic-ai/#conversation" className={s.ctaBtn}>

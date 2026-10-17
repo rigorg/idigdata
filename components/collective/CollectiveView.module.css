@@ -150,7 +150,7 @@
 .heroPlateFrame {
   position: relative;
   width: 100%;
-  max-width: 420px;
+  max-width: 440px;
   background: var(--panel-bg);
   border: 1px solid var(--line);
   padding: 32px;
@@ -187,12 +187,12 @@
   text-transform: uppercase;
   color: var(--muted);
   font-weight: 700;
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 }
 
 .spotSvg {
-  width: 120px;
-  height: 120px;
+  width: 280px;
+  height: 280px;
   display: block;
 }
 
@@ -433,6 +433,52 @@
   font-size: 17px;
   color: var(--muted);
   line-height: 1.6;
+}
+
+.blueprintPlateWrap {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 52px;
+}
+
+.blueprintPlateFrame {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  background: var(--panel-bg);
+  border: 1px solid var(--line-dark);
+  padding: 18px 20px 20px;
+  box-shadow: 0 6px 24px rgba(30, 32, 36, 0.05);
+  border-radius: 2px;
+}
+
+.blueprintPlateBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brass-dark);
+}
+
+.blueprintPlateLink {
+  display: block;
+  text-decoration: none;
+}
+
+.blueprintPlateImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 2px;
+  border: 1px solid var(--line);
 }
 
 .systemsGrid {

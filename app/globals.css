@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   /* Brand v4 (canonical going forward) */
@@ -30,6 +31,10 @@
 
 @utility max-w-content {
   max-width: 1040px;
+}
+
+html {
+  scrollbar-gutter: stable;
 }
 
 /* One centered well. Same box as the header. Not the viewport edges. */

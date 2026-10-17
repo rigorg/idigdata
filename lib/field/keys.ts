@@ -15,17 +15,14 @@ export const BPF_KEY: FieldKeyItem[] = [
   { code: "MDM", name: "Master Data Management" },
 ];
 
-/** Acronyms on the Beehive hexes. */
+/** Beehive functional vocabulary. Legacy export name retained for compatibility. Systems have a separate key below. */
 export const BEEHIVE_SYSTEM_KEY: FieldKeyItem[] = [
-  { code: "PLM", name: "Product Lifecycle Management" },
-  { code: "MES", name: "Manufacturing Execution Systems" },
-  { code: "EAM", name: "Enterprise Asset Management" },
-  { code: "MDM", name: "Master Data Management" },
-  { code: "CDM", name: "Common Data Model" },
-  { code: "WMS", name: "Warehouse Management System" },
-  { code: "HRIS", name: "Human Resource Information System" },
-  { code: "ERP", name: "Enterprise Resource Planning" },
+  { code: "IBP", name: "Integrated Business Planning" },
+  { code: "HRM", name: "Human Resource Management" },
+  { code: "QA", name: "Quality Assurance" },
+  { code: "QC", name: "Quality Control" },
   { code: "IT", name: "Information Technology" },
+  { code: "OT", name: "Operational Technology" },
 ];
 
 /** Applied Agentics path. Spoken method, not a product SKU. */
@@ -37,8 +34,11 @@ export const AGENTICS_METHOD: FieldKeyItem[] = [
   { code: "05", name: "Adopt" },
 ];
 
-/** Acronyms on the Systemverse ring and data core, clockwise from PLM. */
+/** Supporting system vocabulary for the approved Systemverse. Public circles use capability labels. */
 export const SYSTEMVERSE_KEY: FieldKeyItem[] = [
+  { code: "MDM", name: "Master Data Management" },
+  { code: "OT", name: "Operational Technology" },
+  { code: "EHS", name: "Environment, Health and Safety" },
   { code: "PLM", name: "Product Lifecycle Management" },
   { code: "MES", name: "Manufacturing Execution Systems" },
   { code: "QMS", name: "Quality Management Systems" },
@@ -47,7 +47,7 @@ export const SYSTEMVERSE_KEY: FieldKeyItem[] = [
   { code: "TMS", name: "Transportation Management Systems" },
   { code: "EAM", name: "Enterprise Asset Management" },
   { code: "ERP", name: "Enterprise Resource Planning" },
-  { code: "HRIS", name: "Human Resource Information System" },
+  { code: "HRM", name: "Human Resource Management" },
   { code: "FP&A", name: "Financial Planning and Analysis" },
   { code: "IBP", name: "Integrated Business Planning" },
   { code: "S&OP", name: "Sales and Operations Planning" },

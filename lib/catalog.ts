@@ -1,5 +1,5 @@
 // Generated from approved Operations public export. Do not edit outcome copy here.
-// Revision: outcome-catalog-2026-10-13-v5; SHA256: 02056777d9487bc3cfdf497c39ac8741d853330d2c2303232ec8c2e5fe8692b8; 60 outcomes, ten per category.
+// Revision: outcome-catalog-2026-10-15-v6; SHA256: 8b0f4a5a604187238c2cbfe7e72ede60c408613bd38e32cb729eafbc538676b9; 60 outcomes, ten per category.
 
 export interface CatalogDomain {
   id: string;
@@ -74,90 +74,10 @@ export const PUBLIC_OUTCOME_DOMAINS: CatalogDomain[] = [
 
 export const PUBLIC_CATALOG_ITEMS: CatalogItem[] = [
   {
-    "id": "fa_build_specification",
-    "domainId": "agentic_workflows",
-    "name": "Enterprise Intent Turned into Buildable Work",
-    "tagline": "Break a bounded business problem into specifications, interfaces, dependencies, operating rules, and tests that define acceptable behavior.",
-    "situation": "",
-    "deliverables": []
-  },
-  {
-    "id": "fa_factory_implementation",
-    "domainId": "agentic_workflows",
-    "name": "A Controlled Path from Agent Work to Usable Software",
-    "tagline": "Establish scoped assignments, execution boundaries, independent checks, correction, integration, and delivery evidence for an agreed development workflow.",
-    "situation": "",
-    "deliverables": []
-  },
-  {
-    "id": "fa_custom_delivery",
-    "domainId": "agentic_workflows",
-    "name": "Company-Owned Software the Team Can Operate and Evolve",
-    "tagline": "Build a bounded solution around enterprise workflows and hand over reviewable code, tests, deployment guidance, ownership, and operating knowledge.",
-    "situation": "",
-    "deliverables": []
-  },
-  {
-    "id": "bs_agentic_workflows",
-    "domainId": "agentic_workflows",
-    "name": "Agents Connected to Systems with Controlled Authority",
-    "tagline": "Integrate agents with existing applications through permitted reads and actions, validation, approvals, traceability, and failure handling.",
-    "situation": "",
-    "deliverables": []
-  },
-  {
-    "id": "fa_software_verification",
-    "domainId": "agentic_workflows",
-    "name": "Agent-Built Changes Verified Against Business Reality",
-    "tagline": "Evaluate generated changes against business scenarios, source requirements, integrations, data behavior, and failure conditions before acceptance.",
-    "situation": "",
-    "deliverables": []
-  },
-  {
-    "id": "wa_handoffs",
-    "domainId": "agentic_workflows",
-    "name": "Work Moving Across Teams with Clear Ownership",
-    "tagline": "Connect human and automated tasks with the context, decisions, next-owner routing, and exceptions needed for end-to-end work. Examples include routing supplier-cost changes through approved pricing decisions and downstream updates.",
-    "situation": "",
-    "deliverables": []
-  },
-  {
-    "id": "wa_order_to_cash",
-    "domainId": "agentic_workflows",
-    "name": "Orders Connected Through Fulfillment, Billing and Collection",
-    "tagline": "Implement traceable order-to-cash workflows with reconciled status and accountable action at critical handoffs.",
-    "situation": "",
-    "deliverables": []
-  },
-  {
-    "id": "fs_invoice_discrepancies",
-    "domainId": "agentic_workflows",
-    "name": "Purchasing and Payment Workflows with Controlled Exceptions",
-    "tagline": "Connect purchase orders, receipts, and supplier invoices through approved matching rules, discrepancy review, and traceable authorization; scope the engagement to an agreed process or exception pattern.",
-    "situation": "",
-    "deliverables": []
-  },
-  {
-    "id": "wa_ai_pilot_to_scale",
-    "domainId": "agentic_workflows",
-    "name": "AI Pilots Turned into Supported Business Workflows",
-    "tagline": "Carry a validated use case through system integration, evaluated behavior, business ownership, user readiness, and supported operation.",
-    "situation": "",
-    "deliverables": []
-  },
-  {
-    "id": "wa_recoverable_automation",
-    "domainId": "agentic_workflows",
-    "name": "Automation That Can Recover or Hand Work to a Person",
-    "tagline": "Preserve completed work, expose unresolved state, route exceptions, and exercise controlled retries or human intervention.",
-    "situation": "",
-    "deliverables": []
-  },
-  {
     "id": "cs_enterprise_opportunities",
     "domainId": "commercial_solution",
-    "name": "Enterprise Opportunities Aligned to Business Need and Delivery Capability",
-    "tagline": "Identify enterprises where the operating need, strategic fit, investment readiness, and available delivery capability justify pursuing an engagement.",
+    "name": "Enterprise Opportunities Worth Pursuing",
+    "tagline": "Decide which enterprise opportunities justify investment based on operating need, readiness, strategic fit and delivery capability.",
     "situation": "",
     "deliverables": []
   },
@@ -165,15 +85,15 @@ export const PUBLIC_CATALOG_ITEMS: CatalogItem[] = [
     "id": "cs_executive_sponsorship",
     "domainId": "commercial_solution",
     "name": "An Enterprise Engagement Backed by an Accountable Sponsor",
-    "tagline": "Establish executive ownership, decision and funding authority, business priorities, and organizational commitment before committing delivery resources.",
+    "tagline": "Establish executive ownership, funding authority and business priorities before committing delivery resources.",
     "situation": "",
     "deliverables": []
   },
   {
     "id": "cs_solution_engineering",
     "domainId": "commercial_solution",
-    "name": "Customer Needs Translated into a Credible Solution",
-    "tagline": "Connect discovery findings to a solution approach, dependencies, delivery responsibilities, and measurable business value.",
+    "name": "Operating Needs Translated into a Credible Solution Design",
+    "tagline": "Turn discovery findings into a solution approach with clear dependencies, delivery responsibilities and measurable value.",
     "situation": "",
     "deliverables": []
   },
@@ -181,15 +101,15 @@ export const PUBLIC_CATALOG_ITEMS: CatalogItem[] = [
     "id": "ld_business_case",
     "domainId": "commercial_solution",
     "name": "An Investment Case Executives Can Defend",
-    "tagline": "Make costs, benefits, risks, alternatives, and assumptions clear enough to support an informed buying decision.",
+    "tagline": "Make costs, benefits, risks, alternatives and assumptions clear enough for an informed investment decision.",
     "situation": "",
     "deliverables": []
   },
   {
     "id": "cs_solution_proof",
     "domainId": "commercial_solution",
-    "name": "Solution Value Demonstrated in the Customer\u2019s Business",
-    "tagline": "Use representative customer workflows, data, and constraints in demonstrations or bounded proofs of value to test the proposed solution before commitment.",
+    "name": "Solution Value Demonstrated Before Commitment",
+    "tagline": "Test the proposed solution against representative workflows, data and constraints before making a larger commitment.",
     "situation": "",
     "deliverables": []
   },
@@ -197,7 +117,7 @@ export const PUBLIC_CATALOG_ITEMS: CatalogItem[] = [
     "id": "cs_product_commercialization",
     "domainId": "commercial_solution",
     "name": "A Product Offering Enterprises Can Buy and Adopt",
-    "tagline": "Help a product team turn its capabilities into an enterprise offering with clear use cases, value, packaging, implementation requirements, support, and commercial boundaries.",
+    "tagline": "Give an enterprise offering clear use cases, value, packaging, implementation requirements and support commitments.",
     "situation": "",
     "deliverables": []
   },
@@ -205,7 +125,7 @@ export const PUBLIC_CATALOG_ITEMS: CatalogItem[] = [
     "id": "cs_engagement_scope",
     "domainId": "commercial_solution",
     "name": "An Engagement Scoped to Deliver Its Promise",
-    "tagline": "Define the result, inclusions, exclusions, milestones, acceptance, customer responsibilities, and change process before commitment.",
+    "tagline": "Agree the result, scope, milestones, acceptance criteria and customer responsibilities before work begins.",
     "situation": "",
     "deliverables": []
   },
@@ -213,15 +133,15 @@ export const PUBLIC_CATALOG_ITEMS: CatalogItem[] = [
     "id": "cs_commercial_terms",
     "domainId": "commercial_solution",
     "name": "Commercial Terms That Support Successful Delivery",
-    "tagline": "Align pricing, responsibilities, dependencies, risk allocation, and acceptance with what both parties can deliver.",
+    "tagline": "Align pricing, obligations, dependencies and risk allocation with what both parties can deliver.",
     "situation": "",
     "deliverables": []
   },
   {
     "id": "cs_enterprise_close",
     "domainId": "commercial_solution",
-    "name": "Complex Enterprise Engagements Brought to Close",
-    "tagline": "Lead solution and commercial discussions through negotiation, resolution of buying concerns, and agreement, independently or alongside a commercial leader within the agreed mandate.",
+    "name": "Complex Enterprise Engagements Brought to Signed Agreement",
+    "tagline": "Resolve buying concerns and lead solution and commercial negotiations through to agreement within the agreed mandate.",
     "situation": "",
     "deliverables": []
   },
@@ -229,175 +149,15 @@ export const PUBLIC_CATALOG_ITEMS: CatalogItem[] = [
     "id": "cs_sales_delivery_handoff",
     "domainId": "commercial_solution",
     "name": "Customer Commitments Carried from Sale into Delivery",
-    "tagline": "Transfer the business intent, decisions, obligations, and success measures into accountable delivery ownership.",
-    "situation": "",
-    "deliverables": []
-  },
-  {
-    "id": "dk_master_records",
-    "domainId": "data_knowledge_financial",
-    "name": "Consistent Master Data with Accountable Owners",
-    "tagline": "Reconcile customer, supplier, product, and account records and establish stewardship and maintenance rules.",
-    "situation": "",
-    "deliverables": []
-  },
-  {
-    "id": "dk_data_migration",
-    "domainId": "data_knowledge_financial",
-    "name": "Migrated Data Reconciled to Its Source",
-    "tagline": "Rehearse conversion and validate agreed balances, record populations, history, and exception treatment with business owners.",
-    "situation": "",
-    "deliverables": []
-  },
-  {
-    "id": "dk_data_foundation",
-    "domainId": "data_knowledge_financial",
-    "name": "A Company-Owned Data Foundation for People and Agents",
-    "tagline": "Connect enterprise information with traceable sources, quality checks, governed access, reliable refresh, and accountable ownership, including the context agents are permitted to use.",
-    "situation": "",
-    "deliverables": []
-  },
-  {
-    "id": "dk_knowledge_base",
-    "domainId": "data_knowledge_financial",
-    "name": "Enterprise Memory People and Agents Can Use",
-    "tagline": "Capture operating knowledge, decisions, business rules, exceptions, and lessons in maintained sources with permissions, provenance, and ownership, so they remain usable when people or systems change.",
-    "situation": "",
-    "deliverables": []
-  },
-  {
-    "id": "dk_operating_rules",
-    "domainId": "data_knowledge_financial",
-    "name": "Operating Rules Turned into Testable Requirements",
-    "tagline": "Translate frontline knowledge, legacy behavior, spreadsheet logic, and exceptions into business-validated requirements and acceptance examples.",
-    "situation": "",
-    "deliverables": []
-  },
-  {
-    "id": "dk_repeatable_analytics",
-    "domainId": "data_knowledge_financial",
-    "name": "Business Answers Supported by Authorized Sources",
-    "tagline": "Deliver reporting, analysis, or AI-assisted retrieval with agreed definitions, source traceability, access controls, and visible uncertainty.",
-    "situation": "",
-    "deliverables": []
-  },
-  {
-    "id": "fs_close_repeatability",
-    "domainId": "data_knowledge_financial",
-    "name": "A Reliable Financial Close with Reconciled Balances",
-    "tagline": "Connect operating transactions to the books and establish a close calendar, reconciliations, and accountable resolution of differences.",
-    "situation": "",
-    "deliverables": []
-  },
-  {
-    "id": "fs_ma_financial_structure",
-    "domainId": "data_knowledge_financial",
-    "name": "Consolidated Financial Reporting Across Entities",
-    "tagline": "Align account structures, acquired-entity records, consolidation rules, intercompany treatment, and historical traceability.",
-    "situation": "",
-    "deliverables": []
-  },
-  {
-    "id": "fs_integrated_planning",
-    "domainId": "data_knowledge_financial",
-    "name": "Integrated Planning with Budgets, Forecasts and Actuals",
-    "tagline": "Align sales, supply, operations, and Finance around shared assumptions, constraints, budgets, forecasts, and explainable variances.",
-    "situation": "",
-    "deliverables": []
-  },
-  {
-    "id": "fs_working_capital",
-    "domainId": "data_knowledge_financial",
-    "name": "Working Capital and Profitability the Business Can Act On",
-    "tagline": "Connect inventory, receivables, payables, and cost-to-serve with financial results to identify owned actions on working capital and profitability.",
-    "situation": "",
-    "deliverables": []
-  },
-  {
-    "id": "as_enterprise_architecture",
-    "domainId": "architecture_systems",
-    "name": "An Enterprise Architecture Grounded in How the Business Works",
-    "tagline": "Map people, operating rules, workflows, data, applications, and dependencies into a target architecture and transition path.",
-    "situation": "",
-    "deliverables": []
-  },
-  {
-    "id": "bs_existing_value",
-    "domainId": "architecture_systems",
-    "name": "A Simpler Application Landscape That Works Better",
-    "tagline": "Improve useful systems, remove agreed duplication, and reduce unnecessary interfaces and workarounds without losing required behavior.",
-    "situation": "",
-    "deliverables": []
-  },
-  {
-    "id": "bs_selection_partners",
-    "domainId": "architecture_systems",
-    "name": "Software and Partners Proven Against Operating Requirements",
-    "tagline": "Evaluate products and delivery partners against representative business scenarios, exceptions, lifecycle costs, and implementation responsibilities.",
-    "situation": "",
-    "deliverables": []
-  },
-  {
-    "id": "bs_modernize_erp",
-    "domainId": "architecture_systems",
-    "name": "ERP That Supports Daily Operations",
-    "tagline": "Lead requirements, migration, integrations, testing, cutover, and stabilization around the enterprise\u2019s end-to-end operating scenarios.",
-    "situation": "",
-    "deliverables": []
-  },
-  {
-    "id": "bs_connect_applications",
-    "domainId": "architecture_systems",
-    "name": "Connected Systems with Reconciled Transactions",
-    "tagline": "Establish system-of-record boundaries and dependable exchanges with validation, exception ownership, monitoring, and safe recovery.",
-    "situation": "",
-    "deliverables": []
-  },
-  {
-    "id": "as_legacy_modernization",
-    "domainId": "architecture_systems",
-    "name": "Legacy Systems Modernized with Essential Behavior Preserved",
-    "tagline": "Make operating rules and dependencies explicit, then lead staged replacement or modernization with representative behavior checks.",
-    "situation": "",
-    "deliverables": []
-  },
-  {
-    "id": "bs_ma_consolidation",
-    "domainId": "architecture_systems",
-    "name": "Acquired Businesses Operating Together",
-    "tagline": "Connect applications, information, and cross-entity operations through a phased integration with accountable business owners.",
-    "situation": "",
-    "deliverables": []
-  },
-  {
-    "id": "bs_carve_out",
-    "domainId": "architecture_systems",
-    "name": "A Separated Business Ready to Operate",
-    "tagline": "Deliver the agreed systems, data, service transitions, and rehearsed Day 1 capabilities for independent operation.",
-    "situation": "",
-    "deliverables": []
-  },
-  {
-    "id": "bs_operations_support",
-    "domainId": "architecture_systems",
-    "name": "Plant and Warehouse Systems That Fit the Work",
-    "tagline": "Implement production, inventory, quality, maintenance, and warehouse capabilities around real frontline tasks and exceptions.",
-    "situation": "",
-    "deliverables": []
-  },
-  {
-    "id": "bs_cutover_readiness",
-    "domainId": "architecture_systems",
-    "name": "A Rehearsed, Business-Ready Go-Live",
-    "tagline": "Bring data, interfaces, people, access, support, recovery, and go/no-go decisions together for a controlled transition.",
+    "tagline": "Carry the business intent, obligations and success measures into accountable delivery ownership.",
     "situation": "",
     "deliverables": []
   },
   {
     "id": "td_transformation_delivery",
     "domainId": "transformation_delivery",
-    "name": "Business Priorities Carried into Operating Results",
-    "tagline": "Lead the transformation mandate from agreed direction through implementation, adoption, and evaluation of operating results.",
+    "name": "Business Priorities Realized in Daily Operations",
+    "tagline": "Put executive leadership behind the full transformation, from agreed direction through implementation, adoption and operating results.",
     "situation": "",
     "deliverables": []
   },
@@ -405,7 +165,7 @@ export const PUBLIC_CATALOG_ITEMS: CatalogItem[] = [
     "id": "ld_roadmap",
     "domainId": "transformation_delivery",
     "name": "A Transformation Roadmap the Business Can Execute",
-    "tagline": "Sequence investment and change around business dependencies, readiness, capacity, and achievable milestones.",
+    "tagline": "Sequence investment and change around business dependencies, readiness, capacity and achievable milestones.",
     "situation": "",
     "deliverables": []
   },
@@ -413,15 +173,15 @@ export const PUBLIC_CATALOG_ITEMS: CatalogItem[] = [
     "id": "ld_partner_bench",
     "domainId": "transformation_delivery",
     "name": "Teams Built to Own Delivery",
-    "tagline": "Build and lead internal teams and delivery partners with the capability, decision rights, and accountability to carry the work.",
+    "tagline": "Build and lead internal teams and partners with the capability, authority and accountability to carry the work.",
     "situation": "",
     "deliverables": []
   },
   {
     "id": "ld_capacity_plan",
     "domainId": "transformation_delivery",
-    "name": "Delivery Commitments Backed by Capacity and Decisions",
-    "tagline": "Coordinate resources, dependencies, milestones, decisions, and scope changes against an achievable delivery baseline.",
+    "name": "A Delivery Plan Backed by Resources and Decisions",
+    "tagline": "Coordinate people, dependencies, milestones and decisions against an achievable delivery baseline.",
     "situation": "",
     "deliverables": []
   },
@@ -429,7 +189,7 @@ export const PUBLIC_CATALOG_ITEMS: CatalogItem[] = [
     "id": "ld_stalled_turnaround",
     "domainId": "transformation_delivery",
     "name": "Stalled Transformation Back on Course",
-    "tagline": "Diagnose technical, organizational, and commercial obstacles, reset the baseline, and deliver a demonstrable recovery milestone.",
+    "tagline": "Diagnose the obstacles, reset the delivery baseline and demonstrate a recovery milestone.",
     "situation": "",
     "deliverables": []
   },
@@ -437,7 +197,7 @@ export const PUBLIC_CATALOG_ITEMS: CatalogItem[] = [
     "id": "ld_stakeholder_alignment",
     "domainId": "transformation_delivery",
     "name": "Leaders and Operators Aligned on the Work",
-    "tagline": "Resolve conflicting priorities and establish shared decisions, operating ownership, and useful executive and board communication.",
+    "tagline": "Resolve competing priorities through shared decisions, operating ownership and clear executive communication.",
     "situation": "",
     "deliverables": []
   },
@@ -445,71 +205,311 @@ export const PUBLIC_CATALOG_ITEMS: CatalogItem[] = [
     "id": "ld_vendor_commitments",
     "domainId": "transformation_delivery",
     "name": "Partners Accountable for Working Results",
-    "tagline": "Connect vendor obligations to demonstrable milestones, acceptance evidence, corrective action, and commercial escalation.",
+    "tagline": "Tie vendor commitments to demonstrable results, acceptance evidence and corrective action.",
     "situation": "",
     "deliverables": []
   },
   {
     "id": "ld_ai_coordination",
     "domainId": "transformation_delivery",
-    "name": "AI Investment Directed toward Useful Business Capabilities",
-    "tagline": "Select and sequence business-owned AI use cases, with evaluation criteria and explicit decisions to continue, expand, or stop.",
+    "name": "AI Investments with Clear Business Priorities and Success Measures",
+    "tagline": "Prioritize business-owned AI use cases with clear measures and decisions to continue, expand or stop.",
     "situation": "",
     "deliverables": []
   },
   {
     "id": "ld_benefits_realization",
     "domainId": "transformation_delivery",
-    "name": "Business Value Verified After Go-Live",
-    "tagline": "Compare adoption and operating results with the agreed baseline, then lead corrective work where benefits fall short.",
+    "name": "Business Value Verified and Delivery Improved After Go-Live",
+    "tagline": "Measure operating results against the business case, correct shortfalls and carry proven lessons into subsequent delivery.",
     "situation": "",
     "deliverables": []
   },
   {
-    "id": "td_delivery_learning",
+    "id": "proposed_regulated_operations",
     "domainId": "transformation_delivery",
-    "name": "Delivery Experience Turned into Better Methods",
-    "tagline": "Convert customer feedback, recurring failures, and successful delivery practices into reusable methods, standards, and product improvements for the delivery organization.",
+    "name": "SOC 2 and Regulatory Readiness with Traceable Evidence",
+    "tagline": "Prepare the controls, operating records and accountable evidence needed for the agreed SOC 2 examination or industry-specific review.",
+    "situation": "",
+    "deliverables": []
+  },
+  {
+    "id": "as_enterprise_architecture",
+    "domainId": "architecture_systems",
+    "name": "An Enterprise Architecture Grounded in How the Business Works",
+    "tagline": "Connect people, rules, workflows, data and applications in a practical target architecture and transition path.",
+    "situation": "",
+    "deliverables": []
+  },
+  {
+    "id": "bs_existing_value",
+    "domainId": "architecture_systems",
+    "name": "An Application Landscape with Less Duplication and Complexity",
+    "tagline": "Improve useful systems and remove unnecessary duplication, interfaces and workarounds while preserving required behavior.",
+    "situation": "",
+    "deliverables": []
+  },
+  {
+    "id": "bs_selection_partners",
+    "domainId": "architecture_systems",
+    "name": "Software and Partners Proven Against Operating Requirements",
+    "tagline": "Evaluate software and delivery partners against real operating scenarios, exceptions, lifecycle costs and responsibilities.",
+    "situation": "",
+    "deliverables": []
+  },
+  {
+    "id": "bs_modernize_erp",
+    "domainId": "architecture_systems",
+    "name": "ERP That Supports Daily Operations",
+    "tagline": "Lead ERP requirements, migration, integration, testing and stabilization around end-to-end business operations.",
+    "situation": "",
+    "deliverables": []
+  },
+  {
+    "id": "bs_connect_applications",
+    "domainId": "architecture_systems",
+    "name": "Connected Systems with Reconciled Transactions",
+    "tagline": "Establish dependable exchanges between systems with validation, exception ownership and safe recovery.",
+    "situation": "",
+    "deliverables": []
+  },
+  {
+    "id": "as_legacy_modernization",
+    "domainId": "architecture_systems",
+    "name": "Legacy Systems Modernized Without Losing Essential Business Rules",
+    "tagline": "Make embedded rules and dependencies explicit, then verify essential behavior through staged modernization.",
+    "situation": "",
+    "deliverables": []
+  },
+  {
+    "id": "bs_ma_consolidation",
+    "domainId": "architecture_systems",
+    "name": "Acquired Businesses Operating Together",
+    "tagline": "Integrate applications, information and cross-entity operations in phases with accountable business owners.",
+    "situation": "",
+    "deliverables": []
+  },
+  {
+    "id": "bs_carve_out",
+    "domainId": "architecture_systems",
+    "name": "A Separated Business Ready to Operate",
+    "tagline": "Deliver the systems, data and service transitions needed for a rehearsed first day of independent operation.",
+    "situation": "",
+    "deliverables": []
+  },
+  {
+    "id": "bs_operations_support",
+    "domainId": "architecture_systems",
+    "name": "Plant and Warehouse Applications That Fit the Work",
+    "tagline": "Align production, inventory, quality, maintenance and warehouse applications with frontline tasks, traceability and exceptions.",
+    "situation": "",
+    "deliverables": []
+  },
+  {
+    "id": "bs_cutover_readiness",
+    "domainId": "architecture_systems",
+    "name": "A Rehearsed, Business-Ready Go-Live",
+    "tagline": "Bring data, interfaces, people, support and recovery together for a controlled go-live decision and transition.",
+    "situation": "",
+    "deliverables": []
+  },
+  {
+    "id": "dk_master_records",
+    "domainId": "data_knowledge_financial",
+    "name": "Consistent Master Data with Accountable Owners",
+    "tagline": "Reconcile customer, supplier, product and account records with clear stewardship and maintenance rules.",
+    "situation": "",
+    "deliverables": []
+  },
+  {
+    "id": "dk_data_migration",
+    "domainId": "data_knowledge_financial",
+    "name": "Migrated Data Reconciled to Its Source",
+    "tagline": "Rehearse conversion and validate balances, record populations, history and exceptions with business owners.",
+    "situation": "",
+    "deliverables": []
+  },
+  {
+    "id": "dk_data_foundation",
+    "domainId": "data_knowledge_financial",
+    "name": "A Company-Owned Data Foundation for People and Agents",
+    "tagline": "Connect company information with traceable sources, quality checks, governed access and reliable refresh.",
+    "situation": "",
+    "deliverables": []
+  },
+  {
+    "id": "dk_knowledge_base",
+    "domainId": "data_knowledge_financial",
+    "name": "Enterprise Memory People and Agents Can Use",
+    "tagline": "Preserve operating knowledge, decisions and lessons in maintained sources that remain usable as people and systems change.",
+    "situation": "",
+    "deliverables": []
+  },
+  {
+    "id": "dk_operating_rules",
+    "domainId": "data_knowledge_financial",
+    "name": "Operating Rules Turned into Testable Requirements",
+    "tagline": "Translate frontline knowledge, legacy behavior and spreadsheet logic into validated rules and acceptance examples.",
+    "situation": "",
+    "deliverables": []
+  },
+  {
+    "id": "dk_repeatable_analytics",
+    "domainId": "data_knowledge_financial",
+    "name": "Business Reporting and Answers from Trusted, Traceable Sources",
+    "tagline": "Give people reporting, analysis and AI-assisted answers with agreed definitions, source traceability and visible uncertainty.",
+    "situation": "",
+    "deliverables": []
+  },
+  {
+    "id": "fs_close_repeatability",
+    "domainId": "data_knowledge_financial",
+    "name": "A Reliable Financial Close with Reconciled Balances",
+    "tagline": "Connect operating transactions to the books with a repeatable close calendar and accountable reconciliation.",
+    "situation": "",
+    "deliverables": []
+  },
+  {
+    "id": "fs_ma_financial_structure",
+    "domainId": "data_knowledge_financial",
+    "name": "Consolidated Financial Reporting Across Entities",
+    "tagline": "Align account structures, consolidation rules and intercompany treatment while preserving historical traceability.",
+    "situation": "",
+    "deliverables": []
+  },
+  {
+    "id": "fs_integrated_planning",
+    "domainId": "data_knowledge_financial",
+    "name": "Integrated Planning with Budgets, Forecasts and Actuals",
+    "tagline": "Connect sales, supply, operations and Finance through shared assumptions, budgets, forecasts and explainable variances.",
+    "situation": "",
+    "deliverables": []
+  },
+  {
+    "id": "fs_working_capital",
+    "domainId": "data_knowledge_financial",
+    "name": "Working Capital and Profitability Connected to Operating Decisions",
+    "tagline": "Link inventory, receivables, payables and cost-to-serve to decisions on cash and profitability with named owners.",
+    "situation": "",
+    "deliverables": []
+  },
+  {
+    "id": "fa_build_specification",
+    "domainId": "agentic_workflows",
+    "name": "A Build-Ready Software Specification with Clear Interfaces and Tests",
+    "tagline": "Define the software boundaries, interfaces, dependencies and acceptance tests needed to build an agreed solution.",
+    "situation": "",
+    "deliverables": []
+  },
+  {
+    "id": "fa_factory_implementation",
+    "domainId": "agentic_workflows",
+    "name": "A Governed Delivery Pipeline for Agent-Built Software",
+    "tagline": "Establish scoped agent assignments, execution boundaries, independent checks, correction and delivery evidence.",
+    "situation": "",
+    "deliverables": []
+  },
+  {
+    "id": "fa_custom_delivery",
+    "domainId": "agentic_workflows",
+    "name": "Company-Owned Software the Team Can Operate and Evolve",
+    "tagline": "Deliver a bounded solution with reviewable code, tests, deployment guidance and the knowledge to maintain it.",
+    "situation": "",
+    "deliverables": []
+  },
+  {
+    "id": "bs_agentic_workflows",
+    "domainId": "agentic_workflows",
+    "name": "Agents Connected to Systems with Controlled Authority",
+    "tagline": "Connect agents to enterprise applications through permitted actions, validation, approvals and traceable failure handling.",
+    "situation": "",
+    "deliverables": []
+  },
+  {
+    "id": "fa_software_verification",
+    "domainId": "agentic_workflows",
+    "name": "Agent-Built Software Verified Against Operating Scenarios and Rules",
+    "tagline": "Test generated changes against business requirements, integrations, data behavior and failure conditions before acceptance.",
+    "situation": "",
+    "deliverables": []
+  },
+  {
+    "id": "wa_handoffs",
+    "domainId": "agentic_workflows",
+    "name": "Connected Workflows with Clear Handoffs and Ownership",
+    "tagline": "Connect human and automated work with the context, decisions and exception routing each next owner needs.",
+    "situation": "",
+    "deliverables": []
+  },
+  {
+    "id": "wa_order_to_cash",
+    "domainId": "agentic_workflows",
+    "name": "Orders Connected Through Fulfillment, Billing and Collection",
+    "tagline": "Make order-to-cash status traceable and reconciled, with accountable action at critical handoffs.",
+    "situation": "",
+    "deliverables": []
+  },
+  {
+    "id": "fs_invoice_discrepancies",
+    "domainId": "agentic_workflows",
+    "name": "Purchase Orders, Receipts and Invoices Matched with Controlled Approvals",
+    "tagline": "Connect purchase orders, receipts and invoices through agreed matching rules, discrepancy review and traceable authorization.",
+    "situation": "",
+    "deliverables": []
+  },
+  {
+    "id": "wa_ai_pilot_to_scale",
+    "domainId": "agentic_workflows",
+    "name": "AI Pilots Turned into Supported Business Operations",
+    "tagline": "Carry validated AI use cases into daily operation with integration, evaluated behavior, support ownership, monitoring, cost visibility and recovery.",
+    "situation": "",
+    "deliverables": []
+  },
+  {
+    "id": "wa_recoverable_automation",
+    "domainId": "agentic_workflows",
+    "name": "Automation That Can Recover or Hand Work to a Person",
+    "tagline": "Preserve completed work, expose exceptions and exercise controlled retries or human intervention.",
     "situation": "",
     "deliverables": []
   },
   {
     "id": "it_modern_dept",
     "domainId": "technology_operations",
-    "name": "An IT Organization Accountable to the Business",
-    "tagline": "Establish service ownership, internal capability, partner coverage, investment priorities, and an operating cadence tied to business needs.",
+    "name": "An IT Organization Accountable for Service, Investment and Risk",
+    "tagline": "Establish leadership, internal capability, partner accountability and technology priorities tied to business needs.",
     "situation": "",
     "deliverables": []
   },
   {
     "id": "it_infra_modernization",
     "domainId": "technology_operations",
-    "name": "Infrastructure Transitions with Services Intact",
-    "tagline": "Move or modernize agreed workloads with tested dependencies, security, recovery, monitoring, and operational handover.",
+    "name": "Modernized Infrastructure with Tested Service Continuity",
+    "tagline": "Modernize agreed workloads with tested dependencies, security, recovery and operational handover.",
     "situation": "",
     "deliverables": []
   },
   {
     "id": "it_dependable_support",
     "domainId": "technology_operations",
-    "name": "Support That Reaches the People Doing the Work",
-    "tagline": "Align support coverage, incident routing, escalation, and service restoration with sites, shifts, and critical operations.",
+    "name": "Reliable IT Services Across Sites and Shifts",
+    "tagline": "Put infrastructure, networks, end-user services and support under clear ownership, monitoring and incident management.",
     "situation": "",
     "deliverables": []
   },
   {
-    "id": "it_agentic_runtime",
+    "id": "it_monitoring_response",
     "domainId": "technology_operations",
-    "name": "AI Workloads the Business Can Operate and Support",
-    "tagline": "Establish monitoring, cost visibility, deployment, intervention, recovery, and named service ownership for bounded agentic workloads.",
-    "situation": "",
+    "name": "Security Monitoring and Incident Response Ready to Operate",
+    "tagline": "Establish accountable monitoring, escalation, containment decisions and exercised incident response with the appropriate teams and providers.",
+    "situation": "Scope: Define severity, escalation, communication, containment decisions, and restoration ownership. Exercise realistic incident scenarios and close gaps.\n\nWhat you receive: An incident response playbook and contact model. Exercise evidence and corrective actions.\n\nCompletion: A representative exercise shows timely escalation, named decision-makers, coordinated recovery, and retained incident evidence.\n\nBoundaries: Legal notification, forensic investigation, and regulated incident duties remain with appropriately authorized specialists and executives.",
     "deliverables": []
   },
   {
     "id": "it_access_control",
     "domainId": "technology_operations",
     "name": "Access and Agent Authority Matched to Responsibility",
-    "tagline": "Define and test employee, partner, and agent permissions, revocation, approval boundaries, and separation of reasoning from execution authority.",
+    "tagline": "Define and test employee, partner and agent permissions, approval boundaries and revocation.",
     "situation": "",
     "deliverables": []
   },
@@ -517,7 +517,7 @@ export const PUBLIC_CATALOG_ITEMS: CatalogItem[] = [
     "id": "it_security_remediation",
     "domainId": "technology_operations",
     "name": "Security Gaps Closed and Retested",
-    "tagline": "Coordinate prioritized remediation, appropriate retesting, and accountable decisions on remaining exposure.",
+    "tagline": "Close prioritized security gaps, verify the fixes and assign accountable decisions on remaining exposure.",
     "situation": "",
     "deliverables": []
   },
@@ -525,23 +525,23 @@ export const PUBLIC_CATALOG_ITEMS: CatalogItem[] = [
     "id": "it_disaster_recovery",
     "domainId": "technology_operations",
     "name": "Critical Services Restored Through a Practiced Response",
-    "tagline": "Exercise incident coordination, backup recovery, restoration dependencies, communications, and business continuity against agreed scenarios.",
+    "tagline": "Practice incident coordination, backup recovery, communications and restoration against agreed business scenarios.",
     "situation": "",
     "deliverables": []
   },
   {
-    "id": "it_plant_responsibilities",
+    "id": "it_plant_floor_connect",
     "domainId": "technology_operations",
-    "name": "Production Technology with Clear Ownership and Boundaries",
-    "tagline": "Coordinate IT and plant engineering around support, controlled connectivity, maintenance, and production-impacting changes.",
-    "situation": "",
+    "name": "Operational Technology Connected to Machines and Production",
+    "tagline": "Connect agreed machine and production information through validated shop-floor interfaces, with controlled access, clear ownership and known failure handling.",
+    "situation": "Scope: Define required signals, interfaces, ownership, and permitted traffic. Coordinate controlled connectivity and validation with plant engineering and security owners.\n\nWhat you receive: A plant-to-business interface and access design. Validated data exchanges and operating monitoring procedures.\n\nCompletion: Agreed production information reaches its business destination with verified access boundaries and a known response to interface failure.\n\nBoundaries: Changes to controllers, safety systems, or production networks require their qualified owners; physical process behavior is outside an information-interface mandate.",
     "deliverables": []
   },
   {
     "id": "wa_process_adoption",
     "domainId": "technology_operations",
     "name": "Teams Ready to Operate New Processes Across Sites",
-    "tagline": "Deliver practical training, frontline tools, local readiness, staged adoption at the agreed sites, and stabilization with named operating owners.",
+    "tagline": "Equip teams with practical training, frontline tools, local readiness and support through stabilization.",
     "situation": "",
     "deliverables": []
   },
@@ -549,7 +549,7 @@ export const PUBLIC_CATALOG_ITEMS: CatalogItem[] = [
     "id": "fs_preserve_controls",
     "domainId": "technology_operations",
     "name": "Financial and Operating Controls Preserved Through Change",
-    "tagline": "Keep spending authority, payment approvals, separation of duties, review, and transaction evidence effective as software and agentic workflows change.",
+    "tagline": "Keep spending authority, payment approvals, separation of duties and transaction evidence effective as systems change.",
     "situation": "",
     "deliverables": []
   }
@@ -579,10 +579,6 @@ export const LEGACY_OUTCOME_ALIASES: Record<string, string> = {
   "wa_field_service_work_order_mesh": "wa_handoffs"
 };
 
-export const PUBLIC_CATALOG_REVISION = {
-  "version": "outcome-catalog-2026-10-13-v5",
-  "public_hash": "02056777d9487bc3cfdf497c39ac8741d853330d2c2303232ec8c2e5fe8692b8",
-  "count": 60
-};
+export const PUBLIC_CATALOG_REVISION = {"version":"outcome-catalog-2026-10-15-v6","public_hash":"8b0f4a5a604187238c2cbfe7e72ede60c408613bd38e32cb729eafbc538676b9","count":60};
 
-export const RETIRED_OUTCOME_IDS: string[] = ["bs_lifecycle_control", "dk_ai_data_readiness", "dk_operational_diagnostics", "dk_preserve_memory", "dk_rag_search", "dk_self_service_bi", "fa_engineering_context", "fa_execution_control", "fa_harness_integration", "fa_legacy_modernization", "fa_multi_agent_delivery", "fa_release_recovery", "fs_abc_profitability", "fs_budget_forecast_actuals", "fs_reconciliation", "fs_spend_payment_controls", "fs_unified_cfo_view", "it_monitoring_response", "it_plant_floor_connect", "ld_ai_decision_rights", "ld_board_visibility", "wa_exception_routing", "wa_mobile_capture", "wa_multi_site_process", "wa_procure_to_pay", "wa_supplier_cost_pricing"];
+export const RETIRED_OUTCOME_IDS: string[] = ["bs_lifecycle_control","dk_ai_data_readiness","dk_operational_diagnostics","dk_preserve_memory","dk_rag_search","dk_self_service_bi","fa_engineering_context","fa_execution_control","fa_harness_integration","fa_legacy_modernization","fa_multi_agent_delivery","fa_release_recovery","fs_abc_profitability","fs_budget_forecast_actuals","fs_reconciliation","fs_spend_payment_controls","fs_unified_cfo_view","ld_ai_decision_rights","ld_board_visibility","wa_exception_routing","wa_mobile_capture","wa_multi_site_process","wa_procure_to_pay","wa_supplier_cost_pricing"];

@@ -1,0 +1,755 @@
+{
+  "model": "Beehive manufacturing reference",
+  "version": "1.1",
+  "date": "2026-10-15",
+  "status": "Implemented local reference under Capo direction; not an external industry standard or certification",
+  "purpose": "Map functional domain responsibility for workflows, then configure the business-specific groups and task forces that carry the work.",
+  "principle": "Uniquely standard: common functional needs, business-specific organization and task forces.",
+  "source_of_truth": "C:\\flowcraft\\instances\\digops\\brand-content\\triad\\beehive-manufacturing-reference.json",
+  "groups": [
+    {
+      "id": "FG-01",
+      "name": "Enterprise Strategy & Leadership",
+      "diagram_lines": [
+        "Enterprise",
+        "Strategy &",
+        "Leadership"
+      ],
+      "scope": "Purpose, portfolio, investment priorities, performance oversight and enterprise decision authority.",
+      "applicability": "Assess for each business; may combine or split",
+      "use_case_entries": []
+    },
+    {
+      "id": "FG-02",
+      "name": "Integrated Business Planning",
+      "diagram_lines": [
+        "Integrated",
+        "Business Planning"
+      ],
+      "scope": "Align demand, supply, inventory, capacity and financial plans; coordinate S&OP/SIOP, MPS and MRP.",
+      "applicability": "Assess for each business; may combine or split",
+      "use_case_entries": [
+        {
+          "id": "tf:hos-16",
+          "flow": "sfg:p2m",
+          "label": "Demand Planning",
+          "description": "Supply chain DP"
+        },
+        {
+          "id": "tf:hos-17",
+          "flow": "sfg:p2m",
+          "label": "MPS",
+          "description": "Master production schedule"
+        },
+        {
+          "id": "tf:hos-18",
+          "flow": "sfg:p2m",
+          "label": "MRP",
+          "description": "Material requirements"
+        },
+        {
+          "id": "tf:hos-22",
+          "flow": "sfg:p2m",
+          "label": "IBP / SIOP",
+          "description": "Integrated business planning"
+        }
+      ]
+    },
+    {
+      "id": "FG-03",
+      "name": "Product Development & Innovation",
+      "diagram_lines": [
+        "Product Development",
+        "& Innovation"
+      ],
+      "scope": "Research, design, formulations, specifications, product lifecycle, industrialization and engineering changes.",
+      "applicability": "Assess for each business; may combine or split",
+      "use_case_entries": [
+        {
+          "id": "tf:hos-03",
+          "flow": "sfg:p2m",
+          "label": "R&D",
+          "description": "R&D / innovation"
+        },
+        {
+          "id": "tf:hos-28",
+          "flow": "sfg:o2c",
+          "label": "PLM / NPD",
+          "description": "Product lifecycle / NPD"
+        },
+        {
+          "id": "tf:hos-34",
+          "flow": "sfg:p2m",
+          "label": "BOMs",
+          "description": "BOMs and routings"
+        }
+      ]
+    },
+    {
+      "id": "FG-04",
+      "name": "Marketing & Brand",
+      "diagram_lines": [
+        "Marketing",
+        "& Brand"
+      ],
+      "scope": "Market and customer insight, brand stewardship, campaigns, communications and demand generation.",
+      "applicability": "Assess for each business; may combine or split",
+      "use_case_entries": [
+        {
+          "id": "tf:hos-10",
+          "flow": "sfg:o2c",
+          "label": "Marketing",
+          "description": "Marketing"
+        }
+      ]
+    },
+    {
+      "id": "FG-05",
+      "name": "Sales & Channel Management",
+      "diagram_lines": [
+        "Sales &",
+        "Channel Management"
+      ],
+      "scope": "Commercial accounts, distributors, contracts, pricing, sales commitments and channel relationships.",
+      "applicability": "Assess for each business; may combine or split",
+      "use_case_entries": [
+        {
+          "id": "tf:hos-04",
+          "flow": "sfg:o2c",
+          "label": "Wholesale Sales",
+          "description": "Wholesale / route sales"
+        },
+        {
+          "id": "tf:hos-08",
+          "flow": "sfg:o2c",
+          "label": "Contract Sales",
+          "description": "Contract channel"
+        },
+        {
+          "id": "tf:hos-37",
+          "flow": "sfg:o2c",
+          "label": "CRM",
+          "description": "Customer relationship"
+        }
+      ]
+    },
+    {
+      "id": "FG-06",
+      "name": "Direct Commerce & Retail",
+      "diagram_lines": [
+        "Direct Commerce",
+        "& Retail"
+      ],
+      "scope": "Direct sales, shops, digital commerce, merchandising and transaction operations where the business uses these channels.",
+      "applicability": "Business-model dependent",
+      "use_case_entries": [
+        {
+          "id": "tf:hos-05",
+          "flow": "sfg:o2c",
+          "label": "Connected Commerce",
+          "description": "Digital commerce"
+        },
+        {
+          "id": "tf:hos-06",
+          "flow": "sfg:o2c",
+          "label": "Direct Sales",
+          "description": "Direct / on-site sales"
+        }
+      ]
+    },
+    {
+      "id": "FG-07",
+      "name": "Hospitality & Guest Experiences",
+      "diagram_lines": [
+        "Hospitality &",
+        "Guest Experiences"
+      ],
+      "scope": "Restaurants, taprooms, tours, events and visitor services where the business operates them.",
+      "applicability": "Business-model dependent",
+      "use_case_entries": []
+    },
+    {
+      "id": "FG-08",
+      "name": "Customer Service",
+      "diagram_lines": [
+        "Customer",
+        "Service"
+      ],
+      "scope": "Order support, customer inquiries, complaints, returns, warranties and service recovery.",
+      "applicability": "Assess for each business; may combine or split",
+      "use_case_entries": []
+    },
+    {
+      "id": "FG-09",
+      "name": "Procurement & Supplier Management",
+      "diagram_lines": [
+        "Procurement &",
+        "Supplier Management"
+      ],
+      "scope": "Sourcing, supplier qualification with Quality, contracts, purchasing and supplier performance.",
+      "applicability": "Assess for each business; may combine or split",
+      "use_case_entries": [
+        {
+          "id": "tf:hos-31",
+          "flow": "sfg:p2p",
+          "label": "Purchasing",
+          "description": "Purchasing"
+        }
+      ]
+    },
+    {
+      "id": "FG-10",
+      "name": "Production & Manufacturing",
+      "diagram_lines": [
+        "Production &",
+        "Manufacturing"
+      ],
+      "scope": "Production preparation, execution, packaging, contract manufacturing, labor deployment and production records.",
+      "applicability": "Assess for each business; may combine or split",
+      "use_case_entries": [
+        {
+          "id": "tf:hos-09",
+          "flow": "sfg:p2m",
+          "label": "Contract Production",
+          "description": "Contract manufacturing"
+        },
+        {
+          "id": "tf:hos-15",
+          "flow": "sfg:p2m",
+          "label": "Production MES",
+          "description": "Production MES"
+        },
+        {
+          "id": "tf:hos-36",
+          "flow": "sfg:p2m",
+          "label": "Labor Scheduling",
+          "description": "Labor scheduling"
+        }
+      ]
+    },
+    {
+      "id": "FG-11",
+      "name": "Warehousing & Inventory",
+      "diagram_lines": [
+        "Warehousing",
+        "& Inventory"
+      ],
+      "scope": "Receiving, putaway, storage, stock accuracy, material movements, picking and stock disposition.",
+      "applicability": "Assess for each business; may combine or split",
+      "use_case_entries": [
+        {
+          "id": "tf:hos-11",
+          "flow": "sfg:p2m",
+          "label": "WMS",
+          "description": "Warehouse management"
+        },
+        {
+          "id": "tf:hos-33",
+          "flow": "sfg:p2m",
+          "label": "Inventory",
+          "description": "Inventory control"
+        }
+      ]
+    },
+    {
+      "id": "FG-12",
+      "name": "Transportation & Fulfillment",
+      "diagram_lines": [
+        "Transportation",
+        "& Fulfillment"
+      ],
+      "scope": "Shipment planning, carriers, dispatch, distribution and delivery performance.",
+      "applicability": "Assess for each business; may combine or split",
+      "use_case_entries": [
+        {
+          "id": "tf:hos-07",
+          "flow": "sfg:o2c",
+          "label": "Fulfillment / Logistics",
+          "description": "FLO"
+        },
+        {
+          "id": "tf:hos-12",
+          "flow": "sfg:p2m",
+          "label": "TMS",
+          "description": "Transportation"
+        }
+      ]
+    },
+    {
+      "id": "FG-13",
+      "name": "Quality Management",
+      "diagram_lines": [
+        "Quality",
+        "Management"
+      ],
+      "scope": "Quality assurance, quality control, laboratory testing, product acceptance, nonconformance and corrective action. Configure product safety, sanitation assurance and validation responsibilities by industry.",
+      "applicability": "Assess for each business; may combine or split",
+      "use_case_entries": [
+        {
+          "id": "tf:hos-02",
+          "flow": "sfg:p2m",
+          "label": "LIMS / Quality",
+          "description": "LIMS / sensory / SPC"
+        },
+        {
+          "id": "tf:hos-39",
+          "flow": "sfg:p2m",
+          "label": "QMS",
+          "description": "Quality management"
+        }
+      ]
+    },
+    {
+      "id": "FG-14",
+      "name": "Engineering, Maintenance & Asset Reliability",
+      "diagram_lines": [
+        "Engineering, Maintenance",
+        "& Asset Reliability"
+      ],
+      "scope": "Process and equipment engineering, capital delivery, commissioning, maintenance, calibration and reliability.",
+      "applicability": "Assess for each business; may combine or split",
+      "use_case_entries": [
+        {
+          "id": "tf:hos-14",
+          "flow": "sfg:p2m",
+          "label": "EAM",
+          "description": "Enterprise asset management"
+        }
+      ]
+    },
+    {
+      "id": "FG-15",
+      "name": "Operational Technology & Automation",
+      "diagram_lines": [
+        "Operational Technology",
+        "& Automation"
+      ],
+      "scope": "Machine connectivity, controls, instrumentation, automation and operational technology lifecycle; share security responsibilities explicitly with IT.",
+      "applicability": "Assess for each business; may combine or split",
+      "use_case_entries": [
+        {
+          "id": "tf:hos-13",
+          "flow": "sfg:p2m",
+          "label": "Controls / OT",
+          "description": "Controls / automation"
+        }
+      ]
+    },
+    {
+      "id": "FG-16",
+      "name": "Facilities & Utilities",
+      "diagram_lines": [
+        "Facilities",
+        "& Utilities"
+      ],
+      "scope": "Buildings, site services, utilities, energy delivery, water, refrigeration and infrastructure supporting operations.",
+      "applicability": "Assess for each business; may combine or split",
+      "use_case_entries": [
+        {
+          "id": "tf:hos-23",
+          "flow": "sfg:p2m",
+          "label": "Infrastructure",
+          "description": "Plant / cloud infrastructure"
+        }
+      ]
+    },
+    {
+      "id": "FG-17",
+      "name": "Environmental Health & Safety",
+      "diagram_lines": [
+        "Environmental",
+        "Health & Safety"
+      ],
+      "scope": "Workplace safety, occupational health, environmental operating controls, incidents and emergency preparedness.",
+      "applicability": "Assess for each business; may combine or split",
+      "use_case_entries": [
+        {
+          "id": "tf:hos-19",
+          "flow": "sfg:p2m",
+          "label": "EH&S",
+          "description": "Safety and security"
+        }
+      ]
+    },
+    {
+      "id": "FG-18",
+      "name": "Sustainability",
+      "diagram_lines": [
+        "Sustainability"
+      ],
+      "scope": "Resource stewardship, energy and water efficiency, waste, emissions measurement and sustainability improvement with accountable operating owners.",
+      "applicability": "Assess for each business; may combine or split",
+      "use_case_entries": [
+        {
+          "id": "tf:hos-20",
+          "flow": "sfg:p2m",
+          "label": "Sustainability",
+          "description": "Sustainability"
+        }
+      ]
+    },
+    {
+      "id": "FG-19",
+      "name": "Legal, Governance, Risk & Regulatory Compliance",
+      "diagram_lines": [
+        "Legal, Governance, Risk",
+        "& Regulatory Compliance"
+      ],
+      "scope": "Legal obligations, contracts, licenses, regulatory commitments, risk, internal controls, audit coordination, business continuity and compliance assurance.",
+      "applicability": "Assess for each business; may combine or split",
+      "use_case_entries": [
+        {
+          "id": "tf:hos-29",
+          "flow": "sfg:p2m",
+          "label": "Compliance",
+          "description": "Compliance / traceability"
+        }
+      ]
+    },
+    {
+      "id": "FG-20",
+      "name": "Human Resource Management",
+      "diagram_lines": [
+        "Human Resource",
+        "Management"
+      ],
+      "scope": "Workforce planning, recruitment, employee relations, compensation, learning, skills and people development; payroll interfaces with Finance.",
+      "applicability": "Assess for each business; may combine or split",
+      "use_case_entries": [
+        {
+          "id": "tf:hos-21",
+          "flow": "sfg:s2s",
+          "label": "HRIS",
+          "description": "Human resources systems"
+        }
+      ]
+    },
+    {
+      "id": "FG-21",
+      "name": "Finance & Accounting",
+      "diagram_lines": [
+        "Finance &",
+        "Accounting"
+      ],
+      "scope": "Accounting, costing, financial planning, treasury, tax, expenses, financial reporting and financial controls.",
+      "applicability": "Assess for each business; may combine or split",
+      "use_case_entries": [
+        {
+          "id": "tf:hos-30",
+          "flow": "sfg:p2p",
+          "label": "Accounting",
+          "description": "Accounting and finance"
+        },
+        {
+          "id": "tf:hos-32",
+          "flow": "sfg:p2p",
+          "label": "Expenses",
+          "description": "Expense management"
+        },
+        {
+          "id": "tf:hos-42",
+          "flow": "sfg:p2p",
+          "label": "FP&A",
+          "description": "Financial planning"
+        }
+      ]
+    },
+    {
+      "id": "FG-22",
+      "name": "Information Technology & Service Operations",
+      "diagram_lines": [
+        "Information Technology",
+        "& Service Operations"
+      ],
+      "scope": "Enterprise applications, infrastructure, identity, cybersecurity, support, recovery and technology service ownership.",
+      "applicability": "Assess for each business; may combine or split",
+      "use_case_entries": [
+        {
+          "id": "tf:hos-23",
+          "flow": "sfg:p2m",
+          "label": "Infrastructure",
+          "description": "Plant / cloud infrastructure"
+        },
+        {
+          "id": "tf:hos-26",
+          "flow": "sfg:s2s",
+          "label": "Enterprise Apps",
+          "description": "Enterprise applications"
+        },
+        {
+          "id": "tf:hos-27",
+          "flow": "sfg:s2s",
+          "label": "IS Support",
+          "description": "IS support"
+        }
+      ]
+    },
+    {
+      "id": "FG-23",
+      "name": "Digital Engineering & Automation Enablement",
+      "diagram_lines": [
+        "Digital Engineering",
+        "& Automation Enablement"
+      ],
+      "scope": "Software delivery, integration, development platforms and governed automation, including agents where used.",
+      "applicability": "Assess for each business; may combine or split",
+      "use_case_entries": [
+        {
+          "id": "tf:hos-01",
+          "flow": "sfg:s2s",
+          "label": "Platform Delivery",
+          "description": "PDT pattern"
+        },
+        {
+          "id": "tf:hos-24",
+          "flow": "sfg:s2s",
+          "label": "DevOps",
+          "description": "Integrations and development"
+        },
+        {
+          "id": "tf:hos-38",
+          "flow": "sfg:s2s",
+          "label": "Agentics",
+          "description": "AI / agents"
+        }
+      ]
+    },
+    {
+      "id": "FG-24",
+      "name": "Data, Knowledge & Business Insights",
+      "diagram_lines": [
+        "Data, Knowledge",
+        "& Business Insights"
+      ],
+      "scope": "Master data ownership, definitions, data quality, analytics, reporting and stewardship of operating knowledge.",
+      "applicability": "Assess for each business; may combine or split",
+      "use_case_entries": [
+        {
+          "id": "tf:hos-35",
+          "flow": "sfg:d2r",
+          "label": "BI & Insights",
+          "description": "Business intelligence"
+        },
+        {
+          "id": "tf:hos-40",
+          "flow": "sfg:mdm",
+          "label": "Master Data",
+          "description": "Master data creation and governance"
+        }
+      ]
+    },
+    {
+      "id": "FG-25",
+      "name": "Program & Project Delivery",
+      "diagram_lines": [
+        "Program &",
+        "Project Delivery"
+      ],
+      "scope": "Portfolio execution, scope, dependencies, schedule, resources, delivery risks and coordinated project decisions.",
+      "applicability": "Assess for each business; may combine or split",
+      "use_case_entries": [
+        {
+          "id": "tf:hos-25",
+          "flow": "sfg:s2s",
+          "label": "PMO",
+          "description": "Project management"
+        }
+      ]
+    },
+    {
+      "id": "FG-26",
+      "name": "Operational Excellence, Change & Adoption",
+      "diagram_lines": [
+        "Operational Excellence,",
+        "Change & Adoption"
+      ],
+      "scope": "Process improvement, change coordination, stakeholder readiness, training adoption and operational learning with workflow owners.",
+      "applicability": "Assess for each business; may combine or split",
+      "use_case_entries": [
+        {
+          "id": "tf:hos-41",
+          "flow": "sfg:mdm",
+          "label": "Change Board",
+          "description": "Change management board"
+        }
+      ]
+    }
+  ],
+  "distinctions": {
+    "reference_functional_group": "Reusable domain of expertise and responsibility; not a mandated department.",
+    "business_functional_group": "The actual business-specific group responsible for one or more domains.",
+    "task_force": "Named working group with domain experts and delegated responsibilities for specified workflows. May span functional groups, be enduring or be time bounded.",
+    "org_chart": "Reporting and management relationships; informs authority but does not define workflow membership.",
+    "system": "Supporting application, machine or technology; represented in Systemverse and linked to workflows.",
+    "workflow": "The work that crosses domains, people, agents, data and systems; ownership is explicit per workflow or decision."
+  },
+  "configuration_rules": [
+    "Preserve stable reference IDs. Map a company group to one or more reference groups and a reference group to multiple company groups as needed.",
+    "Record applicable, combined, split, outsourced or not applicable for every reference group, with an explanation.",
+    "The reference count is not a required number of departments, task forces or people.",
+    "People and agents contribute throughout. Named humans retain authority, risk acceptance and outcome accountability.",
+    "Assign domain decision rights to task forces explicitly; membership does not confer approval authority.",
+    "A workflow may have multiple contributing groups. Name its accountable human owner and decision owners to avoid ambiguous collective accountability.",
+    "Connect task forces to requirements, tests, SOPs, readiness, acceptance, daily operation and improvement.",
+    "Industry overlays define applicable obligations and specialist task forces; they do not replace the reference model.",
+    "A process flow is not a functional group. Six process constellations cross the hive; a domain can contribute to multiple flows."
+  ],
+  "company_configuration_fields": [
+    "company_group_id",
+    "reference_group_ids",
+    "local_name",
+    "applicability",
+    "taskforce_id",
+    "mandate",
+    "workflow_ids",
+    "domain_experts",
+    "accountable_human_owner",
+    "decision_authorities",
+    "human_and_agent_contributors",
+    "handoffs",
+    "acceptance_criteria",
+    "escalation_owner",
+    "lifecycle"
+  ],
+  "industry_overlay_examples": {
+    "regulated_manufacturing": [
+      "Traceability and recall coordination",
+      "Document and change control",
+      "Product acceptance and release",
+      "Validation and calibration",
+      "Supplier assurance",
+      "Product safety and sanitation where applicable"
+    ],
+    "food_and_beverage": [
+      "Applicable FDA and TTB obligations assessed by the business",
+      "GMP practices and applicable SQF requirements, distinguished from statutory obligations"
+    ],
+    "other_manufacturing": [
+      "Configure sector-specific product safety, quality and regulatory requirements"
+    ]
+  },
+  "lineage": {
+    "HOS_Kabo": "Use-case evidence only: 42 scrubbed lead-seat definitions in seed.demo-flesh.sql. Not the North Star, not proof of live staffing, and not the original historical 25-task-force roster.",
+    "source": "C:\\boss\\instances\\kabo\\supabase\\seed.demo-flesh.sql",
+    "original_25_register": "Not located",
+    "FAS": "Operator-mentioned lineage; source and transformation not yet independently traced.",
+    "APQC": "Completeness cross-check only; this functional catalog is not an APQC taxonomy or endorsed industry standard."
+  },
+  "public_groups": [
+    {
+      "id": "PG-01",
+      "name": "Strategy & Planning",
+      "domain_ids": [
+        "FG-01",
+        "FG-02"
+      ]
+    },
+    {
+      "id": "PG-02",
+      "name": "Product & Innovation",
+      "domain_ids": [
+        "FG-03"
+      ]
+    },
+    {
+      "id": "PG-03",
+      "name": "Marketing & Sales",
+      "domain_ids": [
+        "FG-04",
+        "FG-05"
+      ]
+    },
+    {
+      "id": "PG-04",
+      "name": "Customer & Guest Experience",
+      "domain_ids": [
+        "FG-06",
+        "FG-07",
+        "FG-08"
+      ]
+    },
+    {
+      "id": "PG-05",
+      "name": "Supply Chain & Logistics",
+      "domain_ids": [
+        "FG-09",
+        "FG-11",
+        "FG-12"
+      ]
+    },
+    {
+      "id": "PG-06",
+      "name": "Manufacturing & Operations",
+      "domain_ids": [
+        "FG-10"
+      ]
+    },
+    {
+      "id": "PG-07",
+      "name": "Engineering & Assets",
+      "domain_ids": [
+        "FG-14",
+        "FG-16"
+      ]
+    },
+    {
+      "id": "PG-08",
+      "name": "Quality & Compliance",
+      "domain_ids": [
+        "FG-13",
+        "FG-19"
+      ]
+    },
+    {
+      "id": "PG-09",
+      "name": "Safety & Sustainability",
+      "domain_ids": [
+        "FG-17",
+        "FG-18"
+      ]
+    },
+    {
+      "id": "PG-10",
+      "name": "People & Organization",
+      "domain_ids": [
+        "FG-20",
+        "FG-26"
+      ]
+    },
+    {
+      "id": "PG-11",
+      "name": "Finance & Accounting",
+      "domain_ids": [
+        "FG-21"
+      ]
+    },
+    {
+      "id": "PG-12",
+      "name": "Technology & Transformation",
+      "domain_ids": [
+        "FG-15",
+        "FG-22",
+        "FG-23",
+        "FG-24",
+        "FG-25",
+        "FG-26"
+      ]
+    }
+  ],
+  "presentation_rule": "Public Beehive shows 12 primary groups. The 26 FG domains remain the detailed reference. Actual company groups and task forces are configured separately.",
+  "public_mapping_notes": [
+    "FG-26 spans People & Organization for adoption and Technology & Transformation for operational improvement. This is an intentional shared mapping, not duplicate ownership.",
+    "Public grouping is a navigation and communication layer, not a required org chart or task-force count."
+  ],
+  "public_graphic_approval": {
+    "status": "Operator approved \u2014 locked",
+    "date": "2026-10-15",
+    "authority": "Capo",
+    "instruction": "There we go. Lock it down. That is our graphic.",
+    "design": "Twelve primary functional groups; warm wax and gold edges, fine honeycomb texture, shared junctions and subtle connecting threads.",
+    "change_rule": "Preserve this approved design and the twelve public groups unless Capo requests a revision.",
+    "website_asset": "C:/flowcraft/instances/digops/idigdata-site/public/diagrams/beehive.svg",
+    "editable_source": "C:\\flowcraft-lanes\\cx-flowcraft-org-home\\outputs\\beehive-functional-model-2026-10-15\\beehive-public-12.svg",
+    "preview": "C:\\flowcraft-lanes\\cx-flowcraft-org-home\\outputs\\beehive-functional-model-2026-10-15\\beehive-public-12.png"
+  }
+}

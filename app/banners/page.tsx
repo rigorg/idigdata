@@ -13,25 +13,25 @@ export default function BannerLabPage() {
     <main className="presence py-12 md:py-16">
       <div className="page-well max-w-5xl mx-auto space-y-12">
         <header className="border-b border-navy/15 pb-8">
-          <p className="p-eyebrow">Digital Operations · Brand & Authority Surface</p>
-          <h1 className="p-h1 mt-2">LinkedIn Executive Banner · Locked Master</h1>
+          <p className="p-eyebrow">Internal Design Archive · Historical Brand Study (Non-Canonical)</p>
+          <h1 className="p-h1 mt-2">LinkedIn Banner Archive · Historical Iteration</h1>
           <p className="p-prose mt-4 max-w-2xl text-lg">
-            Exact match to your screenshot: authentic brand navy background (<code>#142840</code>), circular disc constellation graphic with 6 glowing gold nodes & M4 core, zero text collision, and full avatar clearance.
+            Internal design archive preserving an earlier brand navy (<code>#142840</code>) banner study. For current executive positioning, see <a href="/" className="underline">Home</a> and <a href="/experience/" className="underline">Experience</a>.
           </p>
         </header>
 
-        {/* LOCKED PRODUCTION MASTER BANNER */}
+        {/* HISTORICAL ARCHIVE BANNER */}
         <section className="p-section rounded-lg border-2 border-gold bg-white p-6 md:p-8 shadow-xl">
           <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-4 border-b border-navy/10 pb-4">
             <div>
               <span className="font-vollkorn text-xs font-bold uppercase tracking-widest text-gold-ink">
-                Production Master · 1584 × 396 PNG
+                Historical Archive Study · 1584 × 396 PNG
               </span>
               <h2 className="font-vollkorn text-2xl font-extrabold text-navy mt-1">
-                Authentic Brand Navy (#142840) + Circular Disc Process Constellation
+                Brand Navy (#142840) + Circular Disc Process Constellation (Archive)
               </h2>
               <p className="font-vollkorn text-sm italic text-stone mt-0.5">
-                "Your transformation gets an owner. The business keeps running."
+                Archived tagline study (superseded by current Intent-to-Outcome executive baseline)
               </p>
             </div>
             <div className="flex items-center gap-3">
@@ -57,10 +57,10 @@ export default function BannerLabPage() {
           <div className="mt-6">
             <div className="flex items-center justify-between mb-2">
               <p className="text-xs font-bold uppercase tracking-wider text-warm-gray">
-                Official Production Canvas (1584 × 396 PNG):
+                Archived Canvas (1584 × 396 PNG):
               </p>
               <span className="text-xs font-mono text-stone bg-cream px-2 py-0.5 rounded border border-navy/10">
-                1584 × 396 px · Lossless PNG · Active Master
+                1584 × 396 px · Historical Archive
               </span>
             </div>
             <div className="overflow-hidden rounded-md border border-navy/20 shadow-sm">

@@ -2,17 +2,21 @@ import { createHash } from "node:crypto";
 import { PUBLIC_OUTCOME_DOMAINS, type CatalogItem } from "./catalog";
 
 type PublicRow = { outcome_id: string; face: string; name: string; tagline: string; situation: string; deliverables: string[]; public_order: number; public_revision: number };
-export type PublicExport = { version: string; generated_at: string; source: string; public_hash: string; count: number; aliases: Record<string, string>; retired_ids: string[]; outcomes: PublicRow[]; items: PublicRow[] };
+export type PublicExport = { version: string; generated_at?: string; categories?: string[]; source: string; public_hash: string; count: number; aliases: Record<string, string>; retired_ids: string[]; outcomes: PublicRow[]; items: PublicRow[] };
 const object = (value: unknown): value is Record<string, unknown> => !!value && typeof value === "object" && !Array.isArray(value);
 function keys(value: Record<string, unknown>, expected: string[]) {
   if (Object.keys(value).sort().join() !== [...expected].sort().join()) throw new Error("Unexpected or missing public export fields");
 }
 function validateProjection(input: unknown, factory: boolean): PublicExport {
   if (!object(input)) throw new Error("Expected public catalog export");
-  keys(input, ["version", "generated_at", "source", "public_hash", "count", "aliases", "retired_ids", "outcomes", "items"]);
+  const hasCategories = "categories" in input;
+  const hasGeneratedAt = "generated_at" in input;
+  const expectedKeys = ["version", "source", "public_hash", "count", "aliases", "retired_ids", "outcomes", "items", ...(hasCategories ? ["categories"] : []), ...(hasGeneratedAt ? ["generated_at"] : [])];
+  keys(input, expectedKeys);
   const prefix = factory ? "factory-outcome-catalog-" : "outcome-catalog-";
   const count = factory ? 10 : 60;
-  if (typeof input.version !== "string" || !input.version.startsWith(prefix) || typeof input.generated_at !== "string" || !Number.isFinite(Date.parse(input.generated_at)) || typeof input.source !== "string" || !input.source.trim()) throw new Error("Invalid export provenance");
+  if (typeof input.version !== "string" || !input.version.startsWith(prefix) || (hasGeneratedAt && (typeof input.generated_at !== "string" || !Number.isFinite(Date.parse(input.generated_at)))) || typeof input.source !== "string" || !input.source.trim()) throw new Error("Invalid export provenance");
+  if (hasCategories && (!Array.isArray(input.categories) || JSON.stringify(input.categories) !== JSON.stringify(PUBLIC_OUTCOME_DOMAINS.map(domain => domain.name)))) throw new Error("Invalid public export categories");
   if (!Array.isArray(input.outcomes) || input.outcomes.length !== count || input.count !== count || JSON.stringify(input.items) !== JSON.stringify(input.outcomes)) throw new Error(`Expected ${count} consistent public outcomes`);
   const counts = new Map((factory ? ["Factory Agentic Software"] : PUBLIC_OUTCOME_DOMAINS.map(domain => domain.name)).map(name => [name, 0]));
   const ids = new Set<string>();
@@ -33,7 +37,10 @@ function validateProjection(input: unknown, factory: boolean): PublicExport {
   for (const [alias, target] of Object.entries(input.aliases)) {
     if (!/^[a-z][a-z0-9_]+$/.test(alias) || ids.has(alias) || typeof target !== "string" || !ids.has(target)) throw new Error("Alias must resolve directly to an active public outcome");
   }
-  const hash = createHash("sha256").update(JSON.stringify({ outcomes: input.outcomes, aliases: input.aliases, retired_ids: input.retired_ids })).digest("hex");
+  const hashPayload = hasCategories
+    ? { categories: input.categories, outcomes: input.outcomes, aliases: input.aliases, retired_ids: input.retired_ids }
+    : { outcomes: input.outcomes, aliases: input.aliases, retired_ids: input.retired_ids };
+  const hash = createHash("sha256").update(JSON.stringify(hashPayload)).digest("hex");
   if (input.public_hash !== hash) throw new Error("Public export hash mismatch");
   return input as PublicExport;
 }
@@ -62,7 +69,8 @@ export function factoryCatalogItems(payload: PublicExport): CatalogItem[] {
 }
 
 export function siteCatalogItems(payload: PublicExport): CatalogItem[] {
-  return [...payload.outcomes].sort((a, b) => a.face.localeCompare(b.face) || a.public_order - b.public_order || a.outcome_id.localeCompare(b.outcome_id)).map(row => ({
+  const domainOrder = new Map(PUBLIC_OUTCOME_DOMAINS.map((domain, index) => [domain.name, index]));
+  return [...payload.outcomes].sort((a, b) => (domainOrder.get(a.face) ?? 99) - (domainOrder.get(b.face) ?? 99) || a.public_order - b.public_order || a.outcome_id.localeCompare(b.outcome_id)).map(row => ({
     id: row.outcome_id, domainId: PUBLIC_OUTCOME_DOMAINS.find(domain => domain.name === row.face)!.id,
     name: row.name, tagline: row.tagline, situation: row.situation, deliverables: [],
   }));

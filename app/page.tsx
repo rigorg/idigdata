@@ -3,17 +3,17 @@ import FolioHome from "@/components/home/FolioHome";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Robert Paddock — Enterprise Technology Leader | idigdata",
+    absolute: "Robert Paddock — Enterprise Transformation Executive | idigdata",
   },
   description:
-    "Enterprise technology leadership grounded in 50+ implementations and 15 enterprise transformations at scale.",
+    "I connect people, systems, and workflows to shorten the path from intent to outcome. 20+ years of business leadership, over 50 enterprise transformations, and three years of hands-on agentic development.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/",
-    title: "Robert Paddock — Enterprise Technology Leader",
+    title: "Robert Paddock — Enterprise Transformation Executive",
     description:
-      "Enterprise technology leadership grounded in 50+ implementations and 15 enterprise transformations at scale.",
+      "I connect people, systems, and workflows to shorten the path from intent to outcome. 20+ years of business leadership, over 50 enterprise transformations, and three years of hands-on agentic development.",
     images: [
       {
         url: "/og-image.png?v=20260828",

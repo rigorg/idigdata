@@ -1,142 +1,314 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg viewBox="50 12 710 848" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="six-title six-desc">
-  <title id="six-title">AV-02 · The Process Constellations · brand-v2 · author-v2.4 · 2026-05-17</title>
-  <desc id="six-desc">A radial diagram with six labeled process constellation nodes (P2P, O2C, P2M, S2S, D2R, MDM) arranged clockwise from 12 o'clock around a central data core. The colored band around each constellation is the workflow blocks that live in that constellation. The six are categorical: every business process in any company maps to exactly one. S2S is Systems that Support — the ERP side and the HR side, plus IT, cybersecurity, and productivity; these support and span the three primary chains (P2P, O2C, P2M). D2R is Data to Report (was Record to Report). MDM is required. Agentic apps are first-class peers in EVERY constellation, not categorically S2S. Each process constellation is ringed by a BPSc weight band built from the BOSS palette: charcoal anchors heavy bands, sun-gold appears in every band as the brand cohesion signal, pale-yellow appears only on the lightest bands, and a single deep-orange criticality accent marks the highest-weight constellation only. Per-constellation weight (criticality fused with size) reads via charcoal-anchoredness — heavy = charcoal-dominant, mid = gold-dominant, light = pale-dominant. Gradient stops along the arc carry within-constellation density variation across the constellation's clusters. The band gap on each constellation faces the data core and marks the constellation→cluster connector port. Hierarchy: Process Constellation → Cluster → BPSc → PEGS → Steps + Schema availability. Same six in every install; the weight pattern differs per operator. Canonical mid-market manufacturer baseline.</desc>
-
-  <defs>
-    <!-- BPSc weight gradients · BOSS palette (charcoal #1F2937 + sun-gold #FACC15 + pale-yellow #FDE68A) carries per-constellation weight signal. Sun-gold appears in every band for brand cohesion. Charcoal anchors heavy. Pale-yellow appears only on light. Deep-orange #C2410C is reserved for the highest-criticality constellation only. -->
-
-    <!-- D2R (Data to Report) — MID-LIGHT · sun-gold + pale-yellow · 8 o'clock -->
-    <linearGradient id="band-d2r" gradientUnits="userSpaceOnUse" x1="60" y1="515" x2="265" y2="715">
-      <stop offset="0%" stop-color="#FACC15" stop-opacity="0.78"/>
-      <stop offset="25%" stop-color="#FDE68A" stop-opacity="0.62"/>
-      <stop offset="50%" stop-color="#FACC15" stop-opacity="0.92"/>
-      <stop offset="75%" stop-color="#FDE68A" stop-opacity="0.55"/>
-      <stop offset="100%" stop-color="#FACC15" stop-opacity="0.72"/>
-    </linearGradient>
-
-    <!-- O2C (Order to Cash) — MID · charcoal + sun-gold balanced -->
-    <linearGradient id="band-o2c" gradientUnits="userSpaceOnUse" x1="540" y1="245" x2="745" y2="445">
-      <stop offset="0%" stop-color="#FACC15" stop-opacity="0.85"/>
-      <stop offset="22%" stop-color="#1F2937" stop-opacity="0.62"/>
-      <stop offset="44%" stop-color="#FACC15" stop-opacity="0.92"/>
-      <stop offset="68%" stop-color="#1F2937" stop-opacity="0.45"/>
-      <stop offset="100%" stop-color="#FACC15" stop-opacity="0.72"/>
-    </linearGradient>
-
-    <!-- P2M (Plan to Manufacture) — HEAVIEST · charcoal-dominant + gold + single deep-orange criticality flash (transformation core in a manufacturer) -->
-    <linearGradient id="band-p2m" gradientUnits="userSpaceOnUse" x1="745" y1="515" x2="540" y2="715">
-      <stop offset="0%" stop-color="#1F2937" stop-opacity="0.92"/>
-      <stop offset="22%" stop-color="#FACC15" stop-opacity="0.62"/>
-      <stop offset="48%" stop-color="#1F2937" stop-opacity="0.95"/>
-      <stop offset="72%" stop-color="#C2410C" stop-opacity="0.68"/>
-      <stop offset="100%" stop-color="#1F2937" stop-opacity="0.85"/>
-    </linearGradient>
-
-    <!-- MDM (Master Data Management) — MID · sun-gold dominant + charcoal anchor · 10 o'clock -->
-    <linearGradient id="band-mdm" gradientUnits="userSpaceOnUse" x1="60" y1="245" x2="265" y2="445">
-      <stop offset="0%" stop-color="#FACC15" stop-opacity="0.92"/>
-      <stop offset="32%" stop-color="#1F2937" stop-opacity="0.55"/>
-      <stop offset="62%" stop-color="#FACC15" stop-opacity="0.85"/>
-      <stop offset="100%" stop-color="#1F2937" stop-opacity="0.45"/>
-    </linearGradient>
-
-    <!-- P2P (Procure to Pay) — MID-HEAVY · charcoal + sun-gold alternation · 12 o'clock -->
-    <linearGradient id="band-p2p" gradientUnits="userSpaceOnUse" x1="300" y1="110" x2="500" y2="310">
-      <stop offset="0%" stop-color="#1F2937" stop-opacity="0.85"/>
-      <stop offset="25%" stop-color="#FACC15" stop-opacity="0.62"/>
-      <stop offset="50%" stop-color="#1F2937" stop-opacity="0.78"/>
-      <stop offset="75%" stop-color="#FACC15" stop-opacity="0.55"/>
-      <stop offset="100%" stop-color="#1F2937" stop-opacity="0.82"/>
-    </linearGradient>
-
-    <!-- S2S (Systems that Support) — ERP + HR + IT + cyber + productivity · 6 o'clock -->
-    <linearGradient id="band-s2s" gradientUnits="userSpaceOnUse" x1="300" y1="650" x2="500" y2="850">
-      <stop offset="0%" stop-color="#FDE68A" stop-opacity="0.62"/>
-      <stop offset="35%" stop-color="#FACC15" stop-opacity="0.78"/>
-      <stop offset="65%" stop-color="#FDE68A" stop-opacity="0.45"/>
-      <stop offset="100%" stop-color="#FACC15" stop-opacity="0.55"/>
-    </linearGradient>
-  </defs>
-
-  <!-- Background · cream substrate (brand v2 §3) -->
-  <rect width="810" height="940" fill="#FBF9F4"/>
-
-  <!-- Title block · heavy geometric sans (Helvetica Black approximation pending Druk Wide Super) + Georgia italic subtitle -->
-  <text x="400" y="48" text-anchor="middle" font-weight="900" font-size="28" fill="#1F2937" letter-spacing="-0.3" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">THE SIX PROCESS CONSTELLATIONS</text>
-  <text x="400" y="72" text-anchor="middle" font-style="italic" font-size="15" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Each ring is the workflow blocks in that constellation</text>
-  <text x="400" y="92" text-anchor="middle" font-style="italic" font-size="15" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Same six · one data core · the fill is yours</text>
-
-  <!-- Spokes (drawn first; nodes overlay) — charcoal at v2 spoke opacity 0.22 -->
-  <g stroke="#1F2937" stroke-width="2" stroke-opacity="0.22" fill="none">
-    <line x1="400" y1="385" x2="400" y2="298"/>
-    <line x1="482.27" y1="432.5" x2="557.62" y2="389"/>
-    <line x1="482.27" y1="527.5" x2="557.62" y2="571"/>
-    <line x1="400" y1="575" x2="400" y2="662"/>
-    <line x1="317.73" y1="527.5" x2="242.38" y2="571"/>
-    <line x1="317.73" y1="432.5" x2="242.38" y2="389"/>
-  </g>
-
-  <!-- Data Core — sun-gold fill (brand v2 inversion from v1 navy fill); charcoal text inside -->
-  <circle cx="400" cy="480" r="95" fill="#FACC15" stroke="#1F2937" stroke-width="2.5"/>
-  <text x="400" y="453" text-anchor="middle" font-weight="900" font-size="20" fill="#1F2937" letter-spacing="3" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">DATA CORE</text>
-  <line x1="365" y1="467" x2="435" y2="467" stroke="#1F2937" stroke-width="1.5" opacity="0.5"/>
-  <text x="400" y="485" text-anchor="middle" font-size="14" font-weight="700" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Common Data Model</text>
-  <text x="400" y="503" text-anchor="middle" font-size="10.5" fill="#1F2937" opacity="0.85" font-family="system-ui, -apple-system, sans-serif">Integrations · Ingestion</text>
-  <text x="400" y="519" text-anchor="middle" font-size="10.5" fill="#1F2937" opacity="0.85" font-family="system-ui, -apple-system, sans-serif">Transformations · DW</text>
-
-  <!-- P2P · 12 o'clock + BPSc weight band (gap at south, spoke angle 90°) — cadence start -->
-  <g>
-    <path d="M 374.1 306.6 A 100 100 0 1 1 425.9 306.6" fill="none" stroke="url(#band-p2p)" stroke-width="11" stroke-linecap="butt"/>
-    <circle cx="400" cy="210" r="88" fill="#FBF9F4" stroke="#1F2937" stroke-width="2"/>
-    <text x="400" y="188" text-anchor="middle" font-weight="900" font-size="24" fill="#1F2937" letter-spacing="2" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">P2P</text>
-    <text x="400" y="210" text-anchor="middle" font-size="14" font-weight="700" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Procure to Pay</text>
-    <text x="400" y="228" text-anchor="middle" font-style="italic" font-size="13" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Inbound value chain</text>
-  </g>
-
-  <!-- O2C · 2 o'clock + band (gap at lower-left, spoke angle 150°) -->
-  <g>
-    <path d="M 537.2 370.9 A 100 100 0 1 1 563.1 415.7" fill="none" stroke="url(#band-o2c)" stroke-width="11" stroke-linecap="butt"/>
-    <circle cx="633.83" cy="345" r="88" fill="#FBF9F4" stroke="#1F2937" stroke-width="2"/>
-    <text x="633.83" y="323" text-anchor="middle" font-weight="900" font-size="24" fill="#1F2937" letter-spacing="2" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">O2C</text>
-    <text x="633.83" y="345" text-anchor="middle" font-size="14" font-weight="700" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Order to Cash</text>
-    <text x="633.83" y="363" text-anchor="middle" font-style="italic" font-size="13" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Outbound value chain</text>
-  </g>
-
-  <!-- P2M · 4 o'clock + band (gap at upper-left, spoke angle 210°) — heavy -->
-  <g>
-    <path d="M 563.1 544.3 A 100 100 0 1 1 537.2 589.1" fill="none" stroke="url(#band-p2m)" stroke-width="11" stroke-linecap="butt"/>
-    <circle cx="633.83" cy="615" r="88" fill="#FBF9F4" stroke="#1F2937" stroke-width="2"/>
-    <text x="633.83" y="593" text-anchor="middle" font-weight="900" font-size="24" fill="#1F2937" letter-spacing="2" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">P2M</text>
-    <text x="633.83" y="615" text-anchor="middle" font-size="14" font-weight="700" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Plan to Manufacture</text>
-    <text x="633.83" y="633" text-anchor="middle" font-style="italic" font-size="13" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Transformation core</text>
-  </g>
-
-  <!-- S2S · 6 o'clock + band (gap at north, spoke angle 270°) -->
-  <g>
-    <path d="M 425.9 653.4 A 100 100 0 1 1 374.1 653.4" fill="none" stroke="url(#band-s2s)" stroke-width="11" stroke-linecap="butt"/>
-    <circle cx="400" cy="750" r="88" fill="#FBF9F4" stroke="#1F2937" stroke-width="2"/>
-    <text x="400" y="728" text-anchor="middle" font-weight="900" font-size="24" fill="#1F2937" letter-spacing="2" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">S2S</text>
-    <text x="400" y="750" text-anchor="middle" font-size="14" font-weight="700" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Systems that Support</text>
-    <text x="400" y="766" text-anchor="middle" font-style="italic" font-size="13" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">ERP · HR · IT</text>
-    <text x="400" y="780" text-anchor="middle" font-style="italic" font-size="13" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">cyber · productivity</text>
-  </g>
-
-  <!-- D2R · 8 o'clock + band (gap at upper-right, spoke angle 330°) -->
-  <g>
-    <path d="M 262.8 589.1 A 100 100 0 1 1 236.9 544.3" fill="none" stroke="url(#band-d2r)" stroke-width="11" stroke-linecap="butt"/>
-    <circle cx="166.17" cy="615" r="88" fill="#FBF9F4" stroke="#1F2937" stroke-width="2"/>
-    <text x="166.17" y="593" text-anchor="middle" font-weight="900" font-size="24" fill="#1F2937" letter-spacing="2" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">D2R</text>
-    <text x="166.17" y="615" text-anchor="middle" font-size="14" font-weight="700" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Data to Report</text>
-    <text x="166.17" y="633" text-anchor="middle" font-style="italic" font-size="13" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Analytics + awareness</text>
-  </g>
-
-  <!-- MDM · 10 o'clock + band (gap at lower-right, spoke angle 30°) -->
-  <g>
-    <path d="M 236.9 415.7 A 100 100 0 1 1 262.8 370.9" fill="none" stroke="url(#band-mdm)" stroke-width="11" stroke-linecap="butt"/>
-    <circle cx="166.17" cy="345" r="88" fill="#FBF9F4" stroke="#1F2937" stroke-width="2"/>
-    <text x="166.17" y="323" text-anchor="middle" font-weight="900" font-size="24" fill="#1F2937" letter-spacing="2" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">MDM</text>
-    <text x="166.17" y="345" text-anchor="middle" font-size="14" font-weight="700" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Master Data Management</text>
-    <text x="166.17" y="363" text-anchor="middle" font-style="italic" font-size="13" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Cross-cutting foundation</text>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1560" role="img" aria-labelledby="title desc">
+<title id="title">The Six Process Constellations</title>
+<desc id="desc">Six process constellations share a data core. Broad segmented arcs represent clusters. Fine outer segments represent workflow blocks grouped within those clusters. Segmentation is illustrative, not measured counts. Each business supplies its own clusters and workflow blocks.</desc>
+<defs>
+<radialGradient id="paper"><stop stop-color="#FFFDF8"/><stop offset="1" stop-color="#F8F3E7"/></radialGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#E8D49A"/><stop offset=".5" stop-color="#B79445"/><stop offset="1" stop-color="#E3C87F"/></linearGradient>
+<radialGradient id="core"><stop stop-color="#FFF4C9"/><stop offset=".7" stop-color="#E2C779"/><stop offset="1" stop-color="#B79445"/></radialGradient>
+</defs>
+<rect width="1400" height="1560" fill="#FBF9F4"/>
+<text x="700.00" y="65.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#26313A">THE SIX PROCESS CONSTELLATIONS</text>
+<text x="700.00" y="111.00" text-anchor="middle" font-family="Georgia, serif" font-size="26" font-weight="400" fill="#966B26">Same six. Shared data. Each business’s own workflows.</text>
+<circle cx="700" cy="750" r="267" fill="none" stroke="#B99A52" stroke-width=".7" opacity=".2"/>
+<circle cx="700" cy="750" r="280" fill="none" stroke="#B99A52" stroke-width=".7" opacity=".2"/>
+<circle cx="700" cy="750" r="293" fill="none" stroke="#B99A52" stroke-width=".7" opacity=".2"/>
+<path d="M700.00 310.00Q700 750 1081.05 530.00" fill="none" stroke="#AA8B40" stroke-width=".7" opacity=".14"/>
+<path d="M700.00 310.00Q700 750 1081.05 970.00" fill="none" stroke="#AA8B40" stroke-width=".7" opacity=".14"/>
+<path d="M700.00 310.00Q700 750 700.00 1190.00" fill="none" stroke="#AA8B40" stroke-width=".7" opacity=".14"/>
+<path d="M700.00 310.00Q700 750 318.95 970.00" fill="none" stroke="#AA8B40" stroke-width=".7" opacity=".14"/>
+<path d="M700.00 310.00Q700 750 318.95 530.00" fill="none" stroke="#AA8B40" stroke-width=".7" opacity=".14"/>
+<path d="M700.00 560.00L700.00 440.00" stroke="#947944" stroke-width="1.8" opacity=".65"/>
+<circle cx="700.00" cy="470.00" r="4" fill="#B79445"/>
+<path d="M1081.05 530.00Q700 750 1081.05 970.00" fill="none" stroke="#AA8B40" stroke-width=".7" opacity=".14"/>
+<path d="M1081.05 530.00Q700 750 700.00 1190.00" fill="none" stroke="#AA8B40" stroke-width=".7" opacity=".14"/>
+<path d="M1081.05 530.00Q700 750 318.95 970.00" fill="none" stroke="#AA8B40" stroke-width=".7" opacity=".14"/>
+<path d="M1081.05 530.00Q700 750 318.95 530.00" fill="none" stroke="#AA8B40" stroke-width=".7" opacity=".14"/>
+<path d="M864.54 655.00L968.47 595.00" stroke="#947944" stroke-width="1.8" opacity=".65"/>
+<circle cx="942.49" cy="610.00" r="4" fill="#B79445"/>
+<path d="M1081.05 970.00Q700 750 700.00 1190.00" fill="none" stroke="#AA8B40" stroke-width=".7" opacity=".14"/>
+<path d="M1081.05 970.00Q700 750 318.95 970.00" fill="none" stroke="#AA8B40" stroke-width=".7" opacity=".14"/>
+<path d="M1081.05 970.00Q700 750 318.95 530.00" fill="none" stroke="#AA8B40" stroke-width=".7" opacity=".14"/>
+<path d="M864.54 845.00L968.47 905.00" stroke="#947944" stroke-width="1.8" opacity=".65"/>
+<circle cx="942.49" cy="890.00" r="4" fill="#B79445"/>
+<path d="M700.00 1190.00Q700 750 318.95 970.00" fill="none" stroke="#AA8B40" stroke-width=".7" opacity=".14"/>
+<path d="M700.00 1190.00Q700 750 318.95 530.00" fill="none" stroke="#AA8B40" stroke-width=".7" opacity=".14"/>
+<path d="M700.00 940.00L700.00 1060.00" stroke="#947944" stroke-width="1.8" opacity=".65"/>
+<circle cx="700.00" cy="1030.00" r="4" fill="#B79445"/>
+<path d="M318.95 970.00Q700 750 318.95 530.00" fill="none" stroke="#AA8B40" stroke-width=".7" opacity=".14"/>
+<path d="M535.46 845.00L431.53 905.00" stroke="#947944" stroke-width="1.8" opacity=".65"/>
+<circle cx="457.51" cy="890.00" r="4" fill="#B79445"/>
+<path d="M535.46 655.00L431.53 595.00" stroke="#947944" stroke-width="1.8" opacity=".65"/>
+<circle cx="457.51" cy="610.00" r="4" fill="#B79445"/>
+<g id="P2P">
+<path d="M652.47 448.05A146 146 0 0 1 563.40 361.53" fill="none" stroke="#A88940" stroke-width="12"/>
+<path d="M646.28 466.01A165 165 0 0 1 623.00 455.93" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M619.84 454.22A165 165 0 0 1 598.68 440.23" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M595.86 437.99A165 165 0 0 1 577.48 420.51" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M575.10 417.81A165 165 0 0 1 560.05 397.40" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M558.17 394.32A165 165 0 0 1 546.92 371.59" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M560.13 351.87A146 146 0 0 1 641.24 176.35" fill="none" stroke="#34413B" stroke-width="12"/>
+<path d="M541.93 357.32A165 165 0 0 1 536.43 331.68" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M536.00 328.11A165 165 0 0 1 535.20 301.89" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M535.42 298.30A165 165 0 0 1 539.35 272.37" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M540.21 268.87A165 165 0 0 1 548.74 244.07" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M550.22 240.79A165 165 0 0 1 563.07 217.93" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M565.12 214.97A165 165 0 0 1 581.88 194.80" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M584.42 192.25A165 165 0 0 1 604.54 175.42" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M607.49 173.37A165 165 0 0 1 630.31 160.44" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M650.70 172.57A146 146 0 0 1 749.30 172.57" fill="none" stroke="#CFB775" stroke-width="12"/>
+<path d="M644.29 154.69A165 165 0 0 1 668.19 148.10" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M671.73 147.44A165 165 0 0 1 696.40 145.04" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M700.00 145.00A165 165 0 0 1 724.72 146.86" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M728.27 147.44A165 165 0 0 1 752.31 153.51" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M758.76 176.35A146 146 0 0 1 845.43 297.11" fill="none" stroke="#A88940" stroke-width="12"/>
+<path d="M766.41 158.95A165 165 0 0 1 789.10 171.12" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M792.11 173.10A165 165 0 0 1 812.28 189.10" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M814.89 191.58A165 165 0 0 1 831.92 210.89" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M834.05 213.79A165 165 0 0 1 847.38 235.82" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M848.97 239.05A165 165 0 0 1 858.19 263.09" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M859.18 266.55A165 165 0 0 1 864.00 291.85" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M845.97 307.28A146 146 0 0 1 747.53 448.05" fill="none" stroke="#34413B" stroke-width="12"/>
+<path d="M864.97 306.93A165 165 0 0 1 863.40 332.90" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M862.86 336.46A165 165 0 0 1 856.68 361.74" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M855.51 365.14A165 165 0 0 1 844.91 388.91" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M843.15 392.05A165 165 0 0 1 828.47 413.53" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M826.19 416.31A165 165 0 0 1 807.90 434.83" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M805.15 437.15A165 165 0 0 1 783.86 452.10" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M780.74 453.90A165 165 0 0 1 757.11 464.80" fill="none" stroke="#9D813F" stroke-width="6"/>
+<circle cx="700.00" cy="310.00" r="129" fill="#34413B"/><circle cx="700.00" cy="310.00" r="126" fill="url(#gold)"/><circle cx="700.00" cy="310.00" r="119" fill="url(#paper)"/><circle cx="700.00" cy="310.00" r="110" fill="none" stroke="#B49A5C" stroke-width=".7" opacity=".6"/>
+<text x="700.00" y="286.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="40" font-weight="700" fill="#26313A">P2P</text>
+<text x="700.00" y="332.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#26313A">Procure to Pay</text>
+</g>
+<g id="O2C">
+<path d="M937.73 557.86A146 146 0 0 1 973.46 431.31" fill="none" stroke="#A88940" stroke-width="12"/>
+<path d="M919.08 561.48A165 165 0 0 1 916.33 539.58" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M916.16 535.98A165 165 0 0 1 916.84 513.92" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M917.23 510.34A165 165 0 0 1 921.32 488.65" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M922.26 485.17A165 165 0 0 1 929.66 464.37" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M931.13 461.09A165 165 0 0 1 941.67 441.69" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M943.63 438.67A165 165 0 0 1 957.05 421.14" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M980.61 424.04A146 146 0 0 1 1057.92 385.84" fill="none" stroke="#34413B" stroke-width="12"/>
+<path d="M967.53 410.25A165 165 0 0 1 983.76 396.74" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M986.69 394.65A165 165 0 0 1 1004.75 383.70" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1007.96 382.07A165 165 0 0 1 1027.45 373.95" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M1030.87 372.82A165 165 0 0 1 1051.36 367.69" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1068.03 384.58A146 146 0 0 1 1204.87 452.63" fill="none" stroke="#CFB775" stroke-width="12"/>
+<path d="M1066.33 365.66A165 165 0 0 1 1088.68 365.18" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1092.27 365.38A165 165 0 0 1 1114.42 368.41" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M1117.93 369.17A165 165 0 0 1 1139.33 375.63" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1142.68 376.94A165 165 0 0 1 1162.80 386.68" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1165.91 388.49A165 165 0 0 1 1184.25 401.26" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M1187.04 403.54A165 165 0 0 1 1203.15 419.02" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1205.55 421.71A165 165 0 0 1 1219.04 439.53" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1209.96 461.46A146 146 0 0 1 1221.44 570.10" fill="none" stroke="#A88940" stroke-width="12"/>
+<path d="M1226.74 452.54A165 165 0 0 1 1235.64 472.32" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M1236.86 475.71A165 165 0 0 1 1242.64 496.61" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1243.33 500.15A165 165 0 0 1 1245.84 521.69" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1245.98 525.29A165 165 0 0 1 1245.18 546.97" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M1244.77 550.55A165 165 0 0 1 1240.66 571.85" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1218.30 579.79A146 146 0 0 1 1074.31 675.84" fill="none" stroke="#34413B" stroke-width="12"/>
+<path d="M1236.16 586.27A165 165 0 0 1 1227.03 606.90" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1225.32 610.07A165 165 0 0 1 1213.06 628.99" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1210.86 631.85A165 165 0 0 1 1195.76 648.60" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M1193.15 651.08A165 165 0 0 1 1175.59 665.23" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1172.61 667.26A165 165 0 0 1 1153.04 678.47" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1149.78 680.00A165 165 0 0 1 1128.68 687.97" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M1125.23 688.98A165 165 0 0 1 1103.13 693.52" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1099.56 693.96A165 165 0 0 1 1077.03 694.95" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1064.15 675.02A146 146 0 0 1 985.27 640.19" fill="none" stroke="#CFB775" stroke-width="12"/>
+<path d="M1061.95 693.89A165 165 0 0 1 1041.18 690.11" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1037.69 689.20A165 165 0 0 1 1017.71 682.36" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M1014.40 680.94A165 165 0 0 1 995.67 671.19" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M992.61 669.30A165 165 0 0 1 975.54 656.86" fill="none" stroke="#9D813F" stroke-width="6"/>
+<circle cx="1081.05" cy="530.00" r="129" fill="#34413B"/><circle cx="1081.05" cy="530.00" r="126" fill="url(#gold)"/><circle cx="1081.05" cy="530.00" r="119" fill="url(#paper)"/><circle cx="1081.05" cy="530.00" r="110" fill="none" stroke="#B49A5C" stroke-width=".7" opacity=".6"/>
+<text x="1081.05" y="506.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="40" font-weight="700" fill="#26313A">O2C</text>
+<text x="1081.05" y="552.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#26313A">Order to Cash</text>
+</g>
+<g id="P2M">
+<path d="M985.27 859.81A146 146 0 0 1 1085.05 824.05" fill="none" stroke="#A88940" stroke-width="12"/>
+<path d="M972.80 845.47A165 165 0 0 1 983.67 836.80" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M986.60 834.71A165 165 0 0 1 998.33 827.23" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1001.47 825.46A165 165 0 0 1 1013.93 819.27" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1017.23 817.84A165 165 0 0 1 1030.27 813.01" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M1033.71 811.94A165 165 0 0 1 1047.19 808.51" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1050.72 807.81A165 165 0 0 1 1064.49 805.83" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1068.08 805.51A165 165 0 0 1 1081.98 805.00" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M1095.23 824.69A146 146 0 0 1 1209.30 900.22" fill="none" stroke="#34413B" stroke-width="12"/>
+<path d="M1097.07 805.78A165 165 0 0 1 1111.21 807.78" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1114.74 808.48A165 165 0 0 1 1128.57 811.99" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1132.01 813.07A165 165 0 0 1 1145.38 818.06" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M1148.68 819.50A165 165 0 0 1 1161.44 825.91" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1164.56 827.69A165 165 0 0 1 1176.55 835.44" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1179.46 837.56A165 165 0 0 1 1190.54 846.56" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M1193.21 848.98A165 165 0 0 1 1203.25 859.13" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1205.64 861.82A165 165 0 0 1 1214.52 872.99" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1216.61 875.93A165 165 0 0 1 1224.23 888.00" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M1213.85 909.34A146 146 0 0 1 1226.56 982.00" fill="none" stroke="#CFB775" stroke-width="12"/>
+<path d="M1231.13 901.44A165 165 0 0 1 1236.15 913.71" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1237.34 917.10A165 165 0 0 1 1241.08 929.82" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M1241.92 933.32A165 165 0 0 1 1244.35 946.35" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1244.82 949.91A165 165 0 0 1 1245.91 963.12" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1246.02 966.72A165 165 0 0 1 1245.75 979.97" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M1225.37 992.12A146 146 0 0 1 1158.55 1093.73" fill="none" stroke="#A88940" stroke-width="12"/>
+<path d="M1244.15 995.00A165 165 0 0 1 1241.41 1008.85" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M1240.53 1012.34A165 165 0 0 1 1236.33 1025.81" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1235.07 1029.19A165 165 0 0 1 1229.45 1042.13" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1227.84 1045.35A165 165 0 0 1 1220.86 1057.62" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M1218.92 1060.65A165 165 0 0 1 1210.66 1072.10" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1208.41 1074.91A165 165 0 0 1 1198.97 1085.41" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1196.43 1087.95A165 165 0 0 1 1185.92 1097.38" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M1183.12 1099.64A165 165 0 0 1 1171.67 1107.89" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1149.73 1098.84A146 146 0 0 1 1061.09 1114.63" fill="none" stroke="#34413B" stroke-width="12"/>
+<path d="M1158.67 1115.60A165 165 0 0 1 1146.38 1121.52" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1143.06 1122.90A165 165 0 0 1 1130.22 1127.50" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1126.78 1128.54A165 165 0 0 1 1113.53 1131.77" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M1109.99 1132.44A165 165 0 0 1 1096.48 1134.28" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1092.89 1134.57A165 165 0 0 1 1079.26 1134.99" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1075.66 1134.91A165 165 0 0 1 1062.07 1133.90" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M1051.05 1112.88A146 146 0 0 1 945.94 1025.32" fill="none" stroke="#CFB775" stroke-width="12"/>
+<path d="M1047.15 1131.48A165 165 0 0 1 1033.32 1127.94" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M1029.88 1126.87A165 165 0 0 1 1016.52 1121.86" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M1013.22 1120.41A165 165 0 0 1 1000.47 1113.99" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M997.35 1112.19A165 165 0 0 1 985.37 1104.43" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M982.46 1102.31A165 165 0 0 1 971.40 1093.29" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M968.73 1090.87A165 165 0 0 1 958.70 1080.71" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M956.32 1078.01A165 165 0 0 1 947.45 1066.83" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M945.37 1063.89A165 165 0 0 1 937.76 1051.81" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M936.01 1048.67A165 165 0 0 1 929.75 1035.83" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M942.41 1015.76A146 146 0 0 1 937.73 942.14" fill="none" stroke="#A88940" stroke-width="12"/>
+<path d="M924.36 1021.71A165 165 0 0 1 920.72 1008.97" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M919.91 1005.47A165 165 0 0 1 917.58 992.42" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M917.13 988.85A165 165 0 0 1 916.15 975.63" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M916.06 972.03A165 165 0 0 1 916.43 958.79" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M916.72 955.20A165 165 0 0 1 918.43 942.06" fill="none" stroke="#9D813F" stroke-width="6"/>
+<circle cx="1081.05" cy="970.00" r="129" fill="#34413B"/><circle cx="1081.05" cy="970.00" r="126" fill="url(#gold)"/><circle cx="1081.05" cy="970.00" r="119" fill="url(#paper)"/><circle cx="1081.05" cy="970.00" r="110" fill="none" stroke="#B49A5C" stroke-width=".7" opacity=".6"/>
+<text x="1081.05" y="946.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="40" font-weight="700" fill="#26313A">P2M</text>
+<text x="1081.05" y="992.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#26313A">Plan to</text>
+<text x="1081.05" y="1021.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#26313A">Manufacture</text>
+</g>
+<g id="S2S">
+<path d="M747.53 1051.95A146 146 0 0 1 832.49 1128.65" fill="none" stroke="#A88940" stroke-width="12"/>
+<path d="M753.72 1033.99A165 165 0 0 1 780.72 1046.09" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M783.84 1047.89A165 165 0 0 1 807.87 1065.15" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M810.57 1067.53A165 165 0 0 1 830.67 1089.25" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M832.83 1092.12A165 165 0 0 1 848.18 1117.42" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M836.44 1138.04A146 146 0 0 1 793.09 1302.47" fill="none" stroke="#34413B" stroke-width="12"/>
+<path d="M854.20 1131.28A165 165 0 0 1 862.38 1160.71" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M862.98 1164.26A165 165 0 0 1 864.93 1194.74" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M864.79 1198.34A165 165 0 0 1 860.43 1228.57" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M859.55 1232.06A165 165 0 0 1 849.06 1260.75" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M847.48 1263.99A165 165 0 0 1 831.32 1289.90" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M829.11 1292.74A165 165 0 0 1 807.96 1314.78" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M785.02 1308.69A146 146 0 0 1 642.77 1324.32" fill="none" stroke="#CFB775" stroke-width="12"/>
+<path d="M796.09 1324.14A165 165 0 0 1 770.06 1339.39" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M766.79 1340.88A165 165 0 0 1 738.21 1350.52" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M734.70 1351.31A165 165 0 0 1 704.75 1354.93" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M701.15 1355.00A165 165 0 0 1 671.10 1352.45" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M667.56 1351.78A165 165 0 0 1 638.65 1343.17" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M633.54 1320.00A146 146 0 0 1 563.56 1138.04" fill="none" stroke="#A88940" stroke-width="12"/>
+<path d="M624.89 1336.92A165 165 0 0 1 598.88 1320.39" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M596.06 1318.15A165 165 0 0 1 574.05 1296.59" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M571.75 1293.81A165 165 0 0 1 554.68 1268.15" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M553.01 1264.96A165 165 0 0 1 541.64 1236.32" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M540.66 1232.86A165 165 0 0 1 535.47 1202.48" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M535.24 1198.89A165 165 0 0 1 536.46 1168.09" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M536.98 1164.53A165 165 0 0 1 544.56 1134.66" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M567.51 1128.65A146 146 0 0 1 652.47 1051.95" fill="none" stroke="#34413B" stroke-width="12"/>
+<path d="M550.27 1120.67A165 165 0 0 1 565.06 1095.04" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M567.17 1092.12A165 165 0 0 1 586.78 1069.97" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M589.43 1067.53A165 165 0 0 1 613.08 1049.75" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M616.16 1047.89A165 165 0 0 1 642.89 1035.20" fill="none" stroke="#9D813F" stroke-width="6"/>
+<circle cx="700.00" cy="1190.00" r="129" fill="#34413B"/><circle cx="700.00" cy="1190.00" r="126" fill="url(#gold)"/><circle cx="700.00" cy="1190.00" r="119" fill="url(#paper)"/><circle cx="700.00" cy="1190.00" r="110" fill="none" stroke="#B49A5C" stroke-width=".7" opacity=".6"/>
+<text x="700.00" y="1166.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="40" font-weight="700" fill="#26313A">S2S</text>
+<text x="700.00" y="1212.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#26313A">Systems that</text>
+<text x="700.00" y="1241.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#26313A">Support</text>
+</g>
+<g id="D2R">
+<path d="M462.27 942.14A146 146 0 0 1 393.95 1095.27" fill="none" stroke="#A88940" stroke-width="12"/>
+<path d="M480.92 938.52A165 165 0 0 1 483.87 975.09" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M483.72 978.69A165 165 0 0 1 477.73 1014.89" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M476.71 1018.34A165 165 0 0 1 462.12 1052.01" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M460.30 1055.12A165 165 0 0 1 437.99 1084.25" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M435.47 1086.82A165 165 0 0 1 406.77 1109.68" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M385.02 1100.19A146 146 0 0 1 179.46 1013.13" fill="none" stroke="#34413B" stroke-width="12"/>
+<path d="M393.62 1117.13A165 165 0 0 1 358.62 1130.16" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M355.12 1130.99A165 165 0 0 1 317.99 1135.00" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M314.39 1134.94A165 165 0 0 1 277.41 1129.69" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M273.94 1128.74A165 165 0 0 1 239.39 1114.55" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M236.25 1112.78A165 165 0 0 1 206.26 1090.53" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M203.66 1088.04A165 165 0 0 1 180.07 1059.09" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M178.16 1056.04A165 165 0 0 1 162.41 1022.17" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M176.80 1003.29A146 146 0 0 1 210.60 872.13" fill="none" stroke="#CFB775" stroke-width="12"/>
+<path d="M158.30 1007.63A165 165 0 0 1 153.96 971.77" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M153.96 968.17A165 165 0 0 1 158.31 932.31" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M159.17 928.81A165 165 0 0 1 171.96 895.03" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M173.63 891.84A165 165 0 0 1 194.12 862.10" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M217.70 864.82A146 146 0 0 1 414.73 859.81" fill="none" stroke="#A88940" stroke-width="12"/>
+<path d="M204.52 851.13A165 165 0 0 1 233.95 828.58" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M237.05 826.76A165 165 0 0 1 271.10 812.09" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M274.56 811.08A165 165 0 0 1 311.16 805.18" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M314.76 805.05A165 165 0 0 1 351.69 808.28" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M355.21 809.03A165 165 0 0 1 390.24 821.20" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M393.47 822.79A165 165 0 0 1 424.46 843.14" fill="none" stroke="#9D813F" stroke-width="6"/>
+<circle cx="318.95" cy="970.00" r="129" fill="#34413B"/><circle cx="318.95" cy="970.00" r="126" fill="url(#gold)"/><circle cx="318.95" cy="970.00" r="119" fill="url(#paper)"/><circle cx="318.95" cy="970.00" r="110" fill="none" stroke="#B49A5C" stroke-width=".7" opacity=".6"/>
+<text x="318.95" y="946.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="40" font-weight="700" fill="#26313A">D2R</text>
+<text x="318.95" y="992.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#26313A">Data to Report</text>
+</g>
+<g id="MDM">
+<path d="M414.73 640.19A146 146 0 0 1 257.58 662.47" fill="none" stroke="#A88940" stroke-width="12"/>
+<path d="M427.20 654.53A165 165 0 0 1 404.61 671.02" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M401.51 672.86A165 165 0 0 1 376.19 684.75" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M372.80 685.97A165 165 0 0 1 345.67 692.82" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M342.12 693.37A165 165 0 0 1 314.18 694.93" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M310.59 694.79A165 165 0 0 1 282.87 691.01" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M279.36 690.18A165 165 0 0 1 252.87 681.19" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M248.49 657.87A146 146 0 0 1 180.55 576.50" fill="none" stroke="#34413B" stroke-width="12"/>
+<path d="M239.32 674.51A165 165 0 0 1 216.80 659.58" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M214.00 657.32A165 165 0 0 1 194.62 638.48" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M192.29 635.74A165 165 0 0 1 176.73 613.66" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M174.94 610.53A165 165 0 0 1 163.72 585.95" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M177.64 566.73A146 146 0 0 1 252.50 400.00" fill="none" stroke="#CFB775" stroke-width="12"/>
+<path d="M159.26 571.51A165 165 0 0 1 154.52 543.66" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M154.26 540.07A165 165 0 0 1 154.95 511.83" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M155.39 508.26A165 165 0 0 1 161.49 480.68" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M162.61 477.25A165 165 0 0 1 173.89 451.36" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M175.65 448.21A165 165 0 0 1 191.70 424.97" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M194.02 422.22A165 165 0 0 1 214.23 402.49" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M217.04 400.23A165 165 0 0 1 240.67 384.75" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M261.73 395.68A146 146 0 0 1 394.46 405.04" fill="none" stroke="#A88940" stroke-width="12"/>
+<path d="M254.29 378.20A165 165 0 0 1 280.49 369.54" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M284.00 368.74A165 165 0 0 1 311.36 365.17" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M314.96 365.05A165 165 0 0 1 342.50 366.69" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M346.06 367.24A165 165 0 0 1 372.80 374.04" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M376.19 375.25A165 165 0 0 1 401.18 386.95" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M402.99 410.61A146 146 0 0 1 462.27 557.86" fill="none" stroke="#34413B" stroke-width="12"/>
+<path d="M413.93 395.08A165 165 0 0 1 435.35 413.06" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M437.88 415.63A165 165 0 0 1 455.49 437.36" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M457.48 440.36A165 165 0 0 1 470.63 465.06" fill="none" stroke="#55635B" stroke-width="6"/>
+<path d="M472.01 468.38A165 165 0 0 1 480.22 495.12" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M480.94 498.65A165 165 0 0 1 483.91 526.47" fill="none" stroke="#9D813F" stroke-width="6"/>
+<path d="M483.95 530.07A165 165 0 0 1 481.57 557.94" fill="none" stroke="#55635B" stroke-width="6"/>
+<circle cx="318.95" cy="530.00" r="129" fill="#34413B"/><circle cx="318.95" cy="530.00" r="126" fill="url(#gold)"/><circle cx="318.95" cy="530.00" r="119" fill="url(#paper)"/><circle cx="318.95" cy="530.00" r="110" fill="none" stroke="#B49A5C" stroke-width=".7" opacity=".6"/>
+<text x="318.95" y="506.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="40" font-weight="700" fill="#26313A">MDM</text>
+<text x="318.95" y="552.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#26313A">Master Data</text>
+<text x="318.95" y="581.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#26313A">Management</text>
+</g>
+<circle cx="700" cy="750" r="190" fill="#34413B"/><circle cx="700" cy="750" r="185" fill="url(#gold)"/><circle cx="700" cy="750" r="174" fill="url(#core)"/><circle cx="700" cy="750" r="162" fill="none" stroke="#846D37" stroke-width=".8" opacity=".5"/>
+<text x="700.00" y="696.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#26313A">DATA CORE</text>
+<text x="700.00" y="750.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#26313A">Common Data Model</text>
+<path d="M600 777H800" stroke="#846D37" stroke-width=".8"/>
+<text x="700.00" y="813.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="400" fill="#26313A">Governed data</text>
+<text x="700.00" y="849.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="400" fill="#26313A">Shared definitions</text>
+<text x="700.00" y="1413.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#26313A">Constellation → Clusters → Workflow blocks</text>
+<path d="M310 1457H365" stroke="#A88940" stroke-width="12"/>
+<text x="444.00" y="1465.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#26313A">Clusters</text>
+<path d="M655 1457h7" stroke="#55635B" stroke-width="6"/>
+<path d="M666 1457h7" stroke="#55635B" stroke-width="6"/>
+<path d="M677 1457h7" stroke="#55635B" stroke-width="6"/>
+<path d="M688 1457h7" stroke="#55635B" stroke-width="6"/>
+<path d="M699 1457h7" stroke="#55635B" stroke-width="6"/>
+<path d="M710 1457h7" stroke="#55635B" stroke-width="6"/>
+<path d="M721 1457h7" stroke="#55635B" stroke-width="6"/>
+<text x="858.00" y="1465.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#26313A">Workflow blocks</text>
+<text x="700.00" y="1510.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#966B26">Clusters and workflow blocks vary by business.</text>
 </svg>

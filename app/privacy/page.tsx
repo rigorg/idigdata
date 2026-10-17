@@ -47,22 +47,13 @@ const SECTIONS: { title: string; body: React.ReactNode }[] = [
     body: (
       <>
         <p className="mb-3">
-          We operate a strict opt-in privacy posture. We do not pre-load tracking
-          cookies or fire client tracking beacons until you explicitly choose to
-          accept measurement.
+          We distinguish between basic server-side request handling and opt-in client analytics. We do not pre-load persistent tracking cookies or fire client tracking beacons until you explicitly choose to accept measurement, and declining suppresses both client beacons and server telemetry recording.
         </p>
         <p className="mb-3">
-          When consent is granted, we record first-party site visits to evaluate
-          engagement and improve this practice: path, time, referrer, basic device/browser
-          signals, and optional UTM campaign attribution. Home, Experience, The Block,
-          Agentic AI, The Collective, and Contact are live pages. When telemetry is captured,
-          we store an anonymous session identifier and keyed HMAC of client IP - never the
-          raw address - with coarse location (country / region / city). We do not collect
-          precise GPS or keep proxy header dumps.
+          Unless you have declined telemetry, our server proxy and first-party visit log can record basic page-visit signals to evaluate engagement and protect the site: path, timestamp, referrer, basic device/browser user-agent signals, and optional UTM campaign parameters. We store an anonymous session identifier and a keyed HMAC of client IP &mdash; never the raw IP address &mdash; alongside coarse location headers (country / region / city). We do not collect precise GPS or retain raw proxy header dumps.
         </p>
         <p>
-          We also use Vercel Analytics for aggregate, privacy-first visit counts.
-          Both first-party beacons and Vercel Analytics are gated by your cookie preferences.
+          When you explicitly accept cookies, we also enable client-side first-party engagement beacons, campaign attribution persistence, and Vercel Analytics for aggregate visit counts. You can change or revoke your preference at any time using the controls below.
         </p>
       </>
     ),

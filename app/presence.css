@@ -34,17 +34,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 220px;
+  width: 280px;
+  min-height: 280px;
+  margin-inline: auto;
   pointer-events: none;
   user-select: none;
 }
 
 .presence .home-watermark img {
   display: block;
-  width: min(280px, 100%);
-  height: auto;
+  width: 280px;
+  height: 280px;
   opacity: 0.18;
   transform: rotate(12deg);
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
 }
 
 @media (max-width: 800px) {
@@ -683,7 +689,7 @@
 
 .presence .hero-split {
   display: grid;
-  grid-template-columns: minmax(0, 1.7fr) minmax(220px, 0.7fr);
+  grid-template-columns: minmax(0, 1fr) 280px;
   gap: 28px;
   align-items: start;
 }

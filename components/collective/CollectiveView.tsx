@@ -1,32 +1,65 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import s from "./CollectiveView.module.css";
 
 function EnterpriseHiveSpot() {
   return (
-    <svg viewBox="0 0 120 120" className={s.spotSvg} aria-hidden="true">
+    <svg viewBox="0 0 240 240" className={s.spotSvg} aria-hidden="true">
       <defs>
-        <pattern id="plateDotGrid" width="12" height="12" patternUnits="userSpaceOnUse">
-          <circle cx="6" cy="6" r="0.8" fill="#DDD7C8" />
+        <pattern id="plateDotGrid" width="16" height="16" patternUnits="userSpaceOnUse">
+          <circle cx="8" cy="8" r="1.1" fill="#D5CEC0" />
         </pattern>
       </defs>
-      <rect width="120" height="120" fill="url(#plateDotGrid)" />
-      <g stroke="#9E7D3B" strokeWidth="1.2" fill="#FAF6EE" strokeLinejoin="round">
-        <polygon points="60,48 70,54 70,66 60,72 50,66 50,54" fill="#F4EFE5" stroke="#1E2024" strokeWidth="1.5" />
-        <polygon points="60,26 70,32 70,44 60,50 50,44 50,32" />
-        <polygon points="79,37 89,43 89,55 79,61 69,55 69,43" />
-        <polygon points="79,59 89,65 89,77 79,83 69,77 69,65" />
-        <polygon points="60,70 70,76 70,88 60,94 50,88 50,76" />
-        <polygon points="41,59 51,65 51,77 41,83 31,77 31,65" />
-        <polygon points="41,37 51,43 51,55 41,61 31,55 31,43" />
+      {/* Warm ivory drafting paper background & subtle border */}
+      <rect width="240" height="240" rx="2" fill="#FAF6EE" stroke="#DDD7C8" strokeWidth="1" />
+      <rect x="8" y="8" width="224" height="224" fill="url(#plateDotGrid)" />
+
+      {/* Outer sovereign orbital rings */}
+      <circle cx="120" cy="120" r="96" fill="none" stroke="#9E7D3B" strokeWidth="0.9" strokeDasharray="3 4" opacity="0.65" />
+      <circle cx="120" cy="120" r="82" fill="none" stroke="#1E2024" strokeWidth="0.75" opacity="0.25" />
+
+      {/* Crosshair axis ticks */}
+      <line x1="120" y1="16" x2="120" y2="32" stroke="#9E7D3B" strokeWidth="1" opacity="0.6" />
+      <line x1="120" y1="208" x2="120" y2="224" stroke="#9E7D3B" strokeWidth="1" opacity="0.6" />
+      <line x1="16" y1="120" x2="32" y2="120" stroke="#9E7D3B" strokeWidth="1" opacity="0.6" />
+      <line x1="208" y1="120" x2="224" y2="120" stroke="#9E7D3B" strokeWidth="1" opacity="0.6" />
+
+      {/* 7-cell Enterprise Hive (scaled 2.2x to command the plate) */}
+      <g stroke="#9E7D3B" strokeWidth="2" fill="#FAF6EE" strokeLinejoin="round">
+        {/* Top cell */}
+        <polygon points="120,40 142,53 142,79 120,92 98,79 98,53" />
+        {/* Top-right cell */}
+        <polygon points="162,64 184,77 184,103 162,116 140,103 140,77" />
+        {/* Bottom-right cell */}
+        <polygon points="162,112 184,125 184,151 162,164 140,151 140,125" />
+        {/* Bottom cell */}
+        <polygon points="120,136 142,149 142,175 120,188 98,175 98,149" />
+        {/* Bottom-left cell */}
+        <polygon points="78,112 100,125 100,151 78,164 56,151 56,125" />
+        {/* Top-left cell */}
+        <polygon points="78,64 100,77 100,103 78,116 56,103 56,77" />
+        {/* Center sovereign core cell */}
+        <polygon points="120,88 142,101 142,127 120,140 98,127 98,101" fill="#F4EFE5" stroke="#1E2024" strokeWidth="2.4" />
       </g>
-      <circle cx="60" cy="60" r="2.5" fill="#9E7D3B" />
-      <line x1="8" y1="8" x2="16" y2="8" stroke="#9E7D3B" strokeWidth="0.8" />
-      <line x1="8" y1="8" x2="8" y2="16" stroke="#9E7D3B" strokeWidth="0.8" />
-      <line x1="112" y1="112" x2="104" y2="112" stroke="#9E7D3B" strokeWidth="0.8" />
-      <line x1="112" y1="112" x2="112" y2="104" stroke="#9E7D3B" strokeWidth="0.8" />
+
+      {/* Inner core ring & node points */}
+      <circle cx="120" cy="114" r="14" fill="none" stroke="#9E7D3B" strokeWidth="1.2" />
+      <circle cx="120" cy="114" r="4.5" fill="#1E2024" />
+      <circle cx="120" cy="66" r="2.5" fill="#9E7D3B" />
+      <circle cx="162" cy="90" r="2.5" fill="#9E7D3B" />
+      <circle cx="162" cy="138" r="2.5" fill="#9E7D3B" />
+      <circle cx="120" cy="162" r="2.5" fill="#9E7D3B" />
+      <circle cx="78" cy="138" r="2.5" fill="#9E7D3B" />
+      <circle cx="78" cy="90" r="2.5" fill="#9E7D3B" />
+
+      {/* Corner calibration tick marks */}
+      <path d="M 14 26 L 14 14 L 26 14" fill="none" stroke="#9E7D3B" strokeWidth="1.4" strokeLinecap="round" />
+      <path d="M 226 26 L 226 14 L 214 14" fill="none" stroke="#9E7D3B" strokeWidth="1.4" strokeLinecap="round" />
+      <path d="M 14 214 L 14 226 L 26 226" fill="none" stroke="#9E7D3B" strokeWidth="1.4" strokeLinecap="round" />
+      <path d="M 226 214 L 226 226 L 214 226" fill="none" stroke="#9E7D3B" strokeWidth="1.4" strokeLinecap="round" />
     </svg>
   );
 }
@@ -97,23 +130,23 @@ export default function CollectiveView() {
       <section className={s.hero}>
         <div className={s.heroInner}>
           <div className={s.heroContent}>
-            <p className={s.eyebrow}>AN OPEN BUILDER COMMONS // SOVEREIGN RUNTIMES</p>
+            <p className={s.eyebrow}>WHAT I HAVE BUILT // WORKING PROOF OF CONCEPT &amp; PATTERN COMMONS</p>
             <h1 className={s.heroTitle}>
-              The Collective is About the People<span>.</span>
+              The Collective is About the People and the Patterns<span>.</span>
             </h1>
             <p className={s.heroDek}>
-              Sovereign enterprise software running on private iron, compounded through an open collective pattern commons.
+              An operator-led Agentic Development Company (The Rig) building enterprise foundation software (B.O.S.S.) and human-agentic runtime workflow blocks (FlowCraft) on a shared Data Spine.
             </p>
 
             <div className={s.leadBody}>
               <p style={{ marginBottom: "14px" }}>
-                Every human operator can now build and lead their own agentic development company. In this era, experienced operators and autonomous software agents build together inside disciplined, configurable frameworks.
+                <strong>In plain business terms:</strong> before any enterprise can automate or scale workflows, it needs a clear map of its people, systems, and data—and a reliable way to build and run the workflows that connect them. Over the past three years, I built a working proof of concept across three connected layers:
               </p>
               <p style={{ marginBottom: "14px" }}>
-                The software—B.O.S.S., FlowCraft, and The Rig—provides the operational apparatus, workflow runtime, and build harness on local iron. The Collective is where verified operational patterns compound across independent enterprises.
+                It starts with <strong>Function 1: the Agentic Development Company (The Rig)</strong>—a multi-agent software build environment where AI harnesses write and check code under human verification. The Rig built our <strong>Enterprise Foundation Asset (B.O.S.S.)</strong> to map how a business actually runs, and built our <strong>Human-Agentic Runtime System &amp; Workflow Blocks (FlowCraft)</strong> to execute daily operational workflows across a company-owned <strong>Data Spine</strong>.
               </p>
               <p style={{ marginBottom: "18px" }}>
-                <strong>The operating rule is voluntary:</strong> Your data, ledgers, and business records remain strictly private on your own iron. You choose which operational blueprints to share, and you choose which peer patterns to adopt.
+                <strong>Wider participation and sharing:</strong> Each software layer follows a repeating <strong>Builder Org &rarr; Instance</strong> pattern (one builder organization maintaining the core asset and provisioning isolated instances for individual operations). Around that foundation, <strong>The Collective</strong> is where builders and operators can voluntarily share reusable workflow patterns while keeping their business data private.
               </p>
             </div>
 
@@ -158,22 +191,22 @@ export default function CollectiveView() {
               <div className={s.plateCornerBL} />
               <div className={s.plateCornerBR} />
               <div className={s.plateInner}>
-                <span className={s.plateTag}>THE COLLECTIVE • THREE INTERLOCKING SYSTEMS</span>
+                <span className={s.plateTag}>THE COLLECTIVE • BUILDER ORG &rarr; INSTANCE</span>
                 <EnterpriseHiveSpot />
                 <div className={s.plateMetrics}>
                   <div>
-                    <strong>B.O.S.S.</strong>
-                    <span>The Enterprise</span>
+                    <strong>AGENTIC DEV CO.</strong>
+                    <span>The Rig</span>
                   </div>
                   <div className={s.metricDivider} />
                   <div>
-                    <strong>FLOWCRAFT</strong>
-                    <span>The Workflow</span>
+                    <strong>FOUNDATION ASSET</strong>
+                    <span>B.O.S.S.</span>
                   </div>
                   <div className={s.metricDivider} />
                   <div>
-                    <strong>THE RIG</strong>
-                    <span>Agentic Dev Company</span>
+                    <strong>RUNTIME SYSTEM</strong>
+                    <span>FlowCraft</span>
                   </div>
                 </div>
               </div>
@@ -185,10 +218,10 @@ export default function CollectiveView() {
         <div className={s.heroBottomPlate}>
           <div className={s.commonsPlate}>
             <div className={s.commonsBar}>
-              <span className={s.commonsTag}>THE JOINT HUMAN-AGENT LEARNING LOOP // COMMONS-01</span>
+              <span className={s.commonsTag}>BUILDER ORG &rarr; INSTANCE ARCHITECTURE // WORKING PROOF OF CONCEPT</span>
               <div className={s.commonsLive}>
                 <span className={s.commonsLiveDot} />
-                <span>SOVEREIGN IRON &bull; PATTERN COMMONS</span>
+                <span>WORKING POC &bull; COMPANY CONTROL &amp; SHARED PATTERNS</span>
               </div>
             </div>
 
@@ -196,49 +229,49 @@ export default function CollectiveView() {
               {/* Col 1 */}
               <div className={s.commonsCol}>
                 <div>
-                  <span className={s.commonsColTag}>01 // THE HUMAN SEAM</span>
-                  <h3 className={s.commonsColTitle}>Operators, Builders &amp; Compute</h3>
+                  <span className={s.commonsColTag}>01 // AGENTIC DEVELOPMENT COMPANY</span>
+                  <h3 className={s.commonsColTitle}>The Rig (Multi-Harness Builder)</h3>
                   <p className={s.commonsColText}>
-                    Real people bringing their brainpower, plant-floor judgment, and private compute to the operational seam. Running on local iron in complete isolation: your data, your general ledger, your sovereignty.
+                    Function 1 is the Agentic Development Company: an operator-led multi-harness build environment (Claude Code, Codex, Antigravity, Grokbot) running in isolated git worktrees with deterministic test gates and human authorization.
                   </p>
                 </div>
                 <div className={s.commonsColFoot}>
-                  <strong>LOCAL IRON:</strong> Zero per-seat rent. Complete data custody.
+                  <strong>FUNCTION 1:</strong> Built both B.O.S.S. and FlowCraft.
                 </div>
               </div>
 
               {/* Col 2 */}
               <div className={s.commonsCol}>
                 <div>
-                  <span className={s.commonsColTag}>02 // THE SYNTHESIS LOOP</span>
-                  <h3 className={s.commonsColTitle}>Humans + Autonomous Agents</h3>
+                  <span className={s.commonsColTag}>02 // FOUNDATION &amp; RUNTIME</span>
+                  <h3 className={s.commonsColTitle}>B.O.S.S. + FlowCraft</h3>
                   <p className={s.commonsColText}>
-                    Code building code. Humans and autonomous agents collaborating inside deterministic workflows: refining state machines, testing schemas, catching exceptions, and learning together through the zeros and ones.
+                    <strong>B.O.S.S.</strong> maps enterprise systems, processes, people, and master data into a shared blueprint. <strong>FlowCraft</strong> executes human-agentic workflow blocks across builder organizations and operational instances.
                   </p>
                 </div>
                 <div className={s.commonsColFoot}>
-                  <strong>THE LEARNING LOOP:</strong> Not AI in a vacuum—a joint human-agent effort.
+                  <strong>REPEATING PATTERN:</strong> Builder Org &rarr; Operational Instance.
                 </div>
               </div>
 
               {/* Col 3 */}
               <div className={s.commonsCol}>
                 <div>
-                  <span className={s.commonsColTag}>03 // THE NETWORK EFFECT</span>
+                  <span className={s.commonsColTag}>03 // WIDER PARTICIPATION</span>
                   <h3 className={s.commonsColTitle}>The Pattern Commons</h3>
                   <p className={s.commonsColText}>
-                    When an operator validates an edge-case ERP reconciliation or receiving pattern, they can choose to contribute that pattern back to the commons—allowing peer operators to review and adopt it.
+                    When a workflow block—such as a 3-way match, receiving check, or close reconciliation—is proven in practice, the reusable pattern can be shared with peer builders while company data stays private.
                   </p>
                 </div>
                 <div className={s.commonsColFoot}>
-                  <strong>NETWORK EFFECT:</strong> Voluntary sharing compounding peer capability.
+                  <strong>VOLUNTARY COMMONS:</strong> Private data; shared patterns.
                 </div>
               </div>
             </div>
 
             <div className={s.commonsBanner}>
               <p className={s.commonsBannerText}>
-                <strong>Common Frameworks:</strong> Fully open source in spirit and architecture—configurable, sovereign, and severable, but tied back to a shared learning loop.
+                <strong>Company Ownership &amp; Control:</strong> Keep the systems of record that work, govern your own data spine, and build or adopt reusable workflow blocks with clear ownership.
               </p>
               <button
                 type="button"
@@ -257,64 +290,94 @@ export default function CollectiveView() {
       <section className={s.systemsSection}>
         <div className={s.sectionInner}>
           <div className={s.sectionHead}>
-            <p className={s.eyebrow}>THE INDUSTRIAL APPARATUS // SOFTWARE MEETS THE COMMONS</p>
-            <h2>The Software is the Gantry. The Collective is the Commons<span>.</span></h2>
+            <p className={s.eyebrow}>THE ARCHITECTURE // WHAT IS BUILT &amp; HOW IT CONNECTS</p>
+            <h2>One Builder Rig. Two Operating Systems. One Data Spine<span>.</span></h2>
             <p>
-              A collective without software is just talk; software without a collective reinvents every wheel from scratch. We pair an industrial three-part software stack on private iron with an open pattern commons where verified operational blueprints flow between member rigs.
+              The concentric blueprint below shows the exact structural relationship: <strong>The Agentic Development Company (The Rig)</strong> builds the <strong>Enterprise Foundation Asset (B.O.S.S.)</strong> and the <strong>Human-Agentic Runtime System &amp; Workflow Blocks (FlowCraft)</strong> around <strong>The Data Spine</strong>, while verified patterns compound through the outer <strong>Patterns Collective</strong>.
             </p>
           </div>
 
+          {/* Medium-Scale Architectural Blueprint Plate */}
+          <div className={s.blueprintPlateWrap}>
+            <div className={s.blueprintPlateFrame}>
+              <div className={s.plateCornerTL} />
+              <div className={s.plateCornerTR} />
+              <div className={s.plateCornerBL} />
+              <div className={s.plateCornerBR} />
+              <div className={s.blueprintPlateBar}>
+                <span>ARCHITECTURAL PLATE // PATTERNS COLLECTIVE &bull; AGENTIC DEVELOPMENT COMPANY &bull; ENTERPRISE FOUNDATION ASSET &bull; HUMAN-AGENTIC RUNTIME SYSTEM &bull; WORKFLOW BLOCKS</span>
+                <span>THE DATA SPINE</span>
+              </div>
+              <a
+                href="/diagrams/collective-patterns-concentric-v67.png"
+                target="_blank"
+                rel="noreferrer"
+                className={s.blueprintPlateLink}
+                aria-label="Open the Collective Patterns and Data Spine blueprint in a new tab"
+              >
+                <Image
+                  src="/diagrams/collective-patterns-concentric-v67.png"
+                  alt="Patterns Collective, Agentic Development Company, Enterprise Foundation Asset, Human-Agentic Runtime System, Workflow Blocks, and The Data Spine"
+                  width={640}
+                  height={640}
+                  className={s.blueprintPlateImg}
+                  priority
+                />
+              </a>
+            </div>
+          </div>
+
           <div className={s.systemsGrid}>
-            {/* System 1: B.O.S.S. */}
+            {/* System 1: The Rig */}
             <div className={s.systemCard}>
               <div>
-                <span className={s.systemBadge}>DOMAIN TRUTH &bull; COMMON DATA MODEL</span>
+                <span className={s.systemBadge}>FUNCTION 01 &bull; AGENTIC DEVELOPMENT COMPANY</span>
+                <h3 className={s.systemTitle}>The Rig</h3>
+                <div className={s.systemSub}>Multi-Harness Agentic Development Company</div>
+                <p className={s.systemBody}>
+                  Function 1 is the <strong>Agentic Development Company</strong> (`rigorg/rig001`). It coordinates multiple AI coding harnesses (`CC`, `CX`, `AG`, `Grokbot`) in isolated git worktree lanes with AST calipers, automated test gates, and human authorization—and is the builder environment that constructed both <strong>B.O.S.S.</strong> and <strong>FlowCraft</strong>.
+                </p>
+              </div>
+              <div className={s.systemUseCaseBox}>
+                <span className={s.systemUseCaseLabel}>BUILDER CAPABILITY</span>
+                <p className={s.systemUseCaseText}>
+                  Multi-harness software fabrication &amp; verification. Every unit is scoped, tested, and accepted by a human operator before landing.
+                </p>
+              </div>
+            </div>
+
+            {/* System 2: B.O.S.S. */}
+            <div className={s.systemCard}>
+              <div>
+                <span className={s.systemBadge}>FUNCTION 02 &bull; ENTERPRISE FOUNDATION ASSET</span>
                 <h3 className={s.systemTitle}>B.O.S.S.</h3>
                 <div className={s.systemSub}>Business Operating System Specification</div>
                 <p className={s.systemBody}>
-                  A unique, standalone body of enterprise work. Before touching a line of code, B.O.S.S. maps how the business actually runs: unwritten plant-floor judgment, Mary&rsquo;s edge-case scheduling spreadsheet, tacit SOPs, and cross-departmental exception rules. Most critically, B.O.S.S. synthesizes an authoritative, company-owned <strong>Common Data Model</strong> that bridges fragmented silos. Even before deploying autonomous agents, having an unambiguous common data model is one of the highest-leverage assets an enterprise can own.
+                  Built by The Rig (`rigorg/boss`), <strong>B.O.S.S.</strong> is the <strong>Enterprise Foundation Asset</strong>. Before custom workflows are written, B.O.S.S. maps a company&rsquo;s applications (<em>Systemverse</em>), core processes (<em>Six Constellations</em>), operating teams (<em>Beehive</em>), and master records into a company-owned <strong>Common Data Model</strong>.
                 </p>
               </div>
               <div className={s.systemUseCaseBox}>
-                <span className={s.systemUseCaseLabel}>STANDALONE VALUE</span>
+                <span className={s.systemUseCaseLabel}>BUILDER ORG &rarr; INSTANCE</span>
                 <p className={s.systemUseCaseText}>
-                  Domain truth &amp; common data model mapping. Exposes missing business rules, exception paths, and data silos before implementation.
+                  The B.O.S.S. builder org maintains the mapping platform and provisions dedicated instances for individual enterprise estates.
                 </p>
               </div>
             </div>
 
-            {/* System 2: FlowCraft */}
+            {/* System 3: FlowCraft */}
             <div className={s.systemCard}>
               <div>
-                <span className={s.systemBadge}>OPERATIONAL RUNTIME &bull; OPERATOR SOVEREIGNTY</span>
+                <span className={s.systemBadge}>FUNCTION 03 &bull; HUMAN-AGENTIC RUNTIME &amp; WORKFLOW BLOCKS</span>
                 <h3 className={s.systemTitle}>FlowCraft</h3>
-                <div className={s.systemSub}>The Workflow Machine</div>
+                <div className={s.systemSub}>Human-Agentic Runtime System &amp; Workflow Blocks</div>
                 <p className={s.systemBody}>
-                  The live operational runtime. FlowCraft takes domain truth and executes it across an authoritative org and as many running firm instances as needed. It bridges legacy systems, databases, and autonomous agent swarms into composable workflow blocks. Crucially, FlowCraft honors <strong>total operator sovereignty</strong>: if an operator builds or improves a workflow—whether an ERP reconciliation or a dock-receiving state machine—it is entirely up to them whether they push that pattern back to the Collective or keep it private. Complete freedom.
+                  Built by The Rig (`rigorg/flowcraft`), <strong>FlowCraft</strong> is the <strong>Human-Agentic Runtime System</strong> that executes reusable <strong>Workflow Blocks</strong>. It connects existing ERPs, plant systems, data cores, and agents into governed operational workflows where people and agents contribute throughout <em>Intent, Define, Deliver, and Outcome</em>.
                 </p>
               </div>
               <div className={s.systemUseCaseBox}>
-                <span className={s.systemUseCaseLabel}>HOW IT IS USED</span>
+                <span className={s.systemUseCaseLabel}>BUILDER ORG &rarr; INSTANCE</span>
                 <p className={s.systemUseCaseText}>
-                  Live multi-instance workflow orchestration. Runs composable workflow blocks with shared master data, state machines, and human authorization command.
-                </p>
-              </div>
-            </div>
-
-            {/* System 3: The Rig & Pattern Commons */}
-            <div className={s.systemCard}>
-              <div>
-                <span className={s.systemBadge}>AGENTIC DEVELOPMENT COMPANY &bull; THE LIVING COMMONS</span>
-                <h3 className={s.systemTitle}>The Rig &amp; Commons</h3>
-                <div className={s.systemSub}>The Machine That Builds the Machines</div>
-                <p className={s.systemBody}>
-                  The operator-led agentic development company and pattern commons. The Rig couples human operators with agentic build harnesses on local iron to fabricate living software assets. Controlled by disciplined harnesses and integrated into the collective, shared workflow patterns can be published to the commons or adopted voluntarily, while private enterprise data and ledgers remain strictly within your operational boundary.
-                </p>
-              </div>
-              <div className={s.systemUseCaseBox}>
-                <span className={s.systemUseCaseLabel}>NETWORK COMPOUNDING</span>
-                <p className={s.systemUseCaseText}>
-                  Asset fabrication &amp; cross-org pattern flow. Builds on local iron, pushing verified operational blueprints down across the collective.
+                  The FlowCraft builder org maintains the runtime and reusable workflow blocks, deploying isolated instances (such as DigOps) for daily operations.
                 </p>
               </div>
             </div>
@@ -326,10 +389,10 @@ export default function CollectiveView() {
       <section className={s.flywheelSection}>
         <div className={s.sectionInner}>
           <div className={s.sectionHead}>
-            <p className={s.eyebrow}>THE OPERATING PRINCIPLES // THE SOVEREIGN PRODUCTION COMMONS</p>
+            <p className={s.eyebrow}>OPERATING PRINCIPLES // COMPANY CONTROL &amp; SHARED PATTERNS</p>
             <h2>Built for people. Grounded in the enterprise<span>.</span></h2>
             <p>
-              Three core commitments govern the architecture: complete data sovereignty on private iron, a joint human-agent learning loop, and a pattern commons where one operator&rsquo;s breakthrough lifts the entire network.
+              Three commitments govern the work: company control over data and core workflows, human accountability across every stage of delivery, and voluntary pattern sharing across builders.
             </p>
           </div>
 
@@ -337,16 +400,16 @@ export default function CollectiveView() {
             {/* Principle 1 */}
             <div className={s.flywheelCard}>
               <div>
-                <span className={s.flywheelTag}>01 // SOVEREIGN &amp; SEVERABLE</span>
-                <h3 className={s.flywheelTitle}>Private Iron &amp; Operator-Led Agentic Development Company</h3>
+                <span className={s.flywheelTag}>01 // COMPANY CONTROL &amp; DATA CUSTODY</span>
+                <h3 className={s.flywheelTitle}>Keep What Works, Own What Differentiates</h3>
                 <p className={s.flywheelText}>
-                  Each enterprise org is self-contained and carries its own operator-led agentic development company. Run it on your own private iron or infrastructure—with sovereign data boundaries, disciplined harnesses, and zero per-seat SaaS taxes. If you ever choose to disconnect from the collective, your code and workflows remain in your hands.
+                  Operational sovereignty means the business controls its master data, workflow definitions, and decision rules. Keep the commercial systems of record that work, anchor them to a company-owned data spine, and build or adapt the workflows that differentiate the operation—with licensing, hosting, and ownership agreed explicitly.
                 </p>
               </div>
               <div className={s.flywheelBox}>
-                <span className={s.flywheelBoxLabel}>OPERATOR COMMAND</span>
+                <span className={s.flywheelBoxLabel}>COMPANY CUSTODY</span>
                 <p className={s.flywheelBoxText}>
-                  Your compute, your database, your rules. Severable from day one without vendor entanglements.
+                  Designed for company control, clear data custody, and severable workflow ownership.
                 </p>
               </div>
             </div>
@@ -354,16 +417,16 @@ export default function CollectiveView() {
             {/* Principle 2 */}
             <div className={s.flywheelCard}>
               <div>
-                <span className={s.flywheelTag}>02 // THE OPERATOR GUILD</span>
-                <h3 className={s.flywheelTitle}>Slinging Zeros &amp; Ones in Production</h3>
+                <span className={s.flywheelTag}>02 // HUMAN &amp; AGENTIC SYNTHESIS</span>
+                <h3 className={s.flywheelTitle}>Intent &middot; Define &middot; Deliver &middot; Outcome</h3>
                 <p className={s.flywheelText}>
-                  The Collective is not a passive software package or an abstract theory. It is an active operating guild where operators, engineers, and curious minds sling code with autonomous agents. We test against real shop-floor realities, discover together, fail together, and deliver real business outcomes through deterministic workflows and AST calipers.
+                  People and agents contribute throughout every stage of the Outcome Loop, with human judgment and accountability guiding the work. Domain experts define operational reality, harnesses verify code against real constraints, and operators accept outcomes in daily use.
                 </p>
               </div>
               <div className={s.flywheelBox}>
-                <span className={s.flywheelBoxLabel}>HUMAN-AGENT SYNTHESIS</span>
+                <span className={s.flywheelBoxLabel}>ACCOUNTABLE DELIVERY</span>
                 <p className={s.flywheelBoxText}>
-                  Joint brainpower and local compute replacing the fantasy of zero-human automation.
+                  Working software, retained business knowledge, and people equipped to keep improving.
                 </p>
               </div>
             </div>
@@ -371,16 +434,16 @@ export default function CollectiveView() {
             {/* Principle 3 */}
             <div className={s.flywheelCard}>
               <div>
-                <span className={s.flywheelTag}>03 // THE NETWORK EFFECT</span>
-                <h3 className={s.flywheelTitle}>One Success is Everybody&rsquo;s Success</h3>
+                <span className={s.flywheelTag}>03 // THE PATTERN COMMONS</span>
+                <h3 className={s.flywheelTitle}>Reusable Workflow Blueprints</h3>
                 <p className={s.flywheelText}>
-                  When one builder solves an edge-case ERP reconciliation, builds a custom freight variance checker, or refines a receiving state machine, that verified pattern flows to the commons. The entire network gets smarter and more resilient with every deployed workflow block.
+                  When a builder validates a reusable workflow block—such as a 3-way match, receiving variance check, or master-data reconciliation—the structural pattern can be shared with the Collective while company records remain completely private.
                 </p>
               </div>
               <div className={s.flywheelBox}>
-                <span className={s.flywheelBoxLabel}>OPEN PATTERN COMMONS</span>
+                <span className={s.flywheelBoxLabel}>VOLUNTARY SHARING</span>
                 <p className={s.flywheelBoxText}>
-                  Shared patterns compound across all rigs while business records remain 100% private.
+                  Shared patterns reduce repeated work across participating builders while business data stays private.
                 </p>
               </div>
             </div>
@@ -392,41 +455,41 @@ export default function CollectiveView() {
       <section className={s.blueprintsSection}>
         <div className={s.sectionInner}>
           <div className={s.sectionHead}>
-            <p className={s.eyebrow}>OPERATIONAL BLUEPRINTS // INTENT = OUTCOME</p>
-            <h2>Tested on operational patterns. Illustrative reference designs<span>.</span></h2>
+            <p className={s.eyebrow}>ILLUSTRATIVE REFERENCE DESIGNS // INTENT &rarr; OUTCOME</p>
+            <h2>How the three functions work together on operational problems<span>.</span></h2>
             <p>
-              The Collective is an applied operational lab. When domain mapping (B.O.S.S.), code fabrication (The Rig), and workflow execution (FlowCraft) work together, working sovereign systems take shape:
+              Illustrative reference designs showing how <strong>The Rig</strong> (Agentic Development Company), <strong>B.O.S.S.</strong> (Enterprise Foundation Asset), and <strong>FlowCraft</strong> (Human-Agentic Runtime System &amp; Workflow Blocks) combine in practice:
             </p>
           </div>
 
           <div className={s.blueprintsGrid}>
             {/* Practical Example 1 */}
             <div className={s.blueprintCard}>
-              <span className={s.blueprintTag}>REFERENCE ARCHETYPE // FRONTLINE OPERATIONS</span>
-              <h3 className={s.blueprintTitle}>Frontline Billing &amp; Work-Order State Machine</h3>
+              <span className={s.blueprintTag}>ILLUSTRATIVE REFERENCE DESIGN // FRONTLINE OPERATIONS</span>
+              <h3 className={s.blueprintTitle}>Frontline Billing &amp; Work-Order Workflow Block</h3>
               <p className={s.blueprintText}>
-                An automotive shop or specialty service business runs accounting on QuickBooks, but job tracking, mechanic schedules, parts ordering, and customer sign-offs live on whiteboards and text messages.
+                A specialty service or distribution operation runs accounting on an existing ledger while job tracking, schedules, parts, and customer sign-offs live on whiteboards and spreadsheets.
               </p>
               <ul className={s.blueprintList}>
-                <li><strong>B.O.S.S.</strong> maps the shop&rsquo;s pricing tiers, labor rules, and bay scheduling invariants in days.</li>
-                <li><strong>The Rig</strong> fabricates and verifies custom QuickBooks connectors and mobile work-order state machines.</li>
-                <li><strong>FlowCraft</strong> executes the runtime—tracking bay throughput, notifying technicians, and updating QuickBooks.</li>
-                <li><strong>Outcome:</strong> A working operational blueprint Dave&rsquo;s shop can own and evolve. Zero per-seat rent.</li>
+                <li><strong>B.O.S.S. (Enterprise Foundation Asset)</strong> maps pricing tiers, labor rules, and scheduling constraints into a clean data contract.</li>
+                <li><strong>The Rig (Agentic Development Company)</strong> builds and tests the ledger connectors and work-order state machines.</li>
+                <li><strong>FlowCraft (Runtime &amp; Workflow Blocks)</strong> runs the daily workflow block—tracking progress, capturing approvals, and syncing accounting.</li>
+                <li><strong>Target Outcome:</strong> A company-controlled workflow connecting frontline work and finance without tearing out the accounting ledger.</li>
               </ul>
             </div>
 
             {/* Practical Example 2 */}
             <div className={s.blueprintCard}>
-              <span className={s.blueprintTag}>REFERENCE ARCHETYPE // MANUFACTURING &amp; SUPPLY</span>
-              <h3 className={s.blueprintTitle}>Sovereign Purchasing &amp; Receiving System</h3>
+              <span className={s.blueprintTag}>ILLUSTRATIVE REFERENCE DESIGN // MANUFACTURING &amp; SUPPLY</span>
+              <h3 className={s.blueprintTitle}>Purchasing, Receiving &amp; 3-Way Match Workflow Block</h3>
               <p className={s.blueprintText}>
-                A multi-facility producer struggles with purchase order exception loops, invoice variances, and slow dock handoffs, facing multi-million-dollar ERP consulting quotes to fix it.
+                A multi-facility producer faces purchase order exception loops, invoice variances, and slow dock handoffs across existing ERP and warehouse systems.
               </p>
               <ul className={s.blueprintList}>
-                <li><strong>B.O.S.S.</strong> codifies the unwritten receiving rules, freight variance tolerances, and 3-way match logic.</li>
-                <li><strong>The Rig</strong> tests automated reconciliation agents against historical edge-case ledger records.</li>
-                <li><strong>FlowCraft</strong> orchestrates human approvals and autonomous PO matching across warehouse and finance.</li>
-                <li><strong>Outcome:</strong> A sovereign purchasing architecture with full audit trails, owned by the enterprise.</li>
+                <li><strong>B.O.S.S. (Enterprise Foundation Asset)</strong> documents receiving rules, freight variance tolerances, and 3-way match logic across the Data Spine.</li>
+                <li><strong>The Rig (Agentic Development Company)</strong> builds and verifies reconciliation logic against historical exception cases.</li>
+                <li><strong>FlowCraft (Runtime &amp; Workflow Blocks)</strong> orchestrates human exception approvals and PO matching across warehouse and finance.</li>
+                <li><strong>Target Outcome:</strong> Auditable purchasing and receiving workflows built around the systems of record that already work.</li>
               </ul>
             </div>
           </div>
@@ -440,7 +503,7 @@ export default function CollectiveView() {
             <p className={s.eyebrow}>TWO DOORS // ENTERING THE SEAM</p>
             <h2>How to take part<span>.</span></h2>
             <p>
-              Whether you are a builder who wants to run a Rig and collaborate in the collective, or an enterprise looking for a working sovereign system.
+              Whether you are a builder interested in multi-harness development and reusable workflow patterns, or an executive looking to solve an operating problem.
             </p>
           </div>
 
@@ -448,10 +511,10 @@ export default function CollectiveView() {
             {/* Door 1: Build Together */}
             <div className={`${s.doorCard} ${s.doorCardPrimary}`}>
               <div>
-                <p className={s.doorEyebrow}>PATH 01 // OPEN COMMONS &amp; PEER COLLABORATION</p>
-                <h3 className={s.doorTitle}>Join the Collective. Build with us.</h3>
+                <p className={s.doorEyebrow}>PATH 01 // PEER BUILDERS &amp; SHARED PATTERNS</p>
+                <h3 className={s.doorTitle}>Join the Collective. Compare notes and patterns.</h3>
                 <p className={s.doorBody}>
-                  For software builders, systems architects, and technical operators who want to build real enterprise agentics. Run a Rig on your own iron, explore open schemas, test local developer harnesses, and collaborate with us on verified, severable workflow blocks. We are looking for passionate builders to pull the pieces together, share our zeros and ones, and create something durable together.
+                  For software builders, systems architects, and technical operators building with agents. Exchange lessons on multi-harness development, enterprise schemas, and reusable workflow blocks.
                 </p>
               </div>
               <button
@@ -466,10 +529,10 @@ export default function CollectiveView() {
             {/* Door 2: Enterprise Collaboration */}
             <div className={s.doorCard}>
               <div>
-                <p className={s.doorEyebrow}>PATH 02 // ENTERPRISE COLLABORATION</p>
+                <p className={s.doorEyebrow}>PATH 02 // ENTERPRISE TRANSFORMATION &amp; WORKFLOWS</p>
                 <h3 className={s.doorTitle}>Bring an operating problem. Build with us.</h3>
                 <p className={s.doorBody}>
-                  For business owners, operations leaders, and technology executives who need software built around how their business actually operates. If you know where the work is getting stuck, let&rsquo;s examine it together. We can identify a consequential first outcome, bring the right people into the build, and test the result directly against your daily operations.
+                  For business owners, operations leaders, and executives who need systems and workflows built around how their company actually runs. Bring where the work is stuck—we will scope a practical outcome and carry it into daily use.
                 </p>
               </div>
               <button
@@ -489,9 +552,9 @@ export default function CollectiveView() {
         <div className={s.formBox}>
           <div className={s.formHead}>
             <p className={s.eyebrow} style={{ marginBottom: "6px" }}>DIRECT CORRESPONDENCE</p>
-            <h3>Connect with the Collective<span>.</span></h3>
+            <h3>Connect with Robert<span>.</span></h3>
             <p>
-              Send a note directly to Robert. Whether you are curious about running a local Rig or evaluating a sovereign enterprise system.
+              Send a note directly to Robert regarding builder collaboration, workflow patterns, or an enterprise transformation mandate.
             </p>
           </div>
 
@@ -566,13 +629,13 @@ export default function CollectiveView() {
                   onChange={(e) => setFormState({ ...formState, interest: e.target.value as "collaborate" | "build" })}
                   className={s.fieldSelect}
                 >
-                  <option value="collaborate">Join The Collective // Open Builder Collaboration &amp; Shared Patterns</option>
+                  <option value="collaborate">Join The Collective // Peer Builder Collaboration &amp; Shared Patterns</option>
                   <option value="build">Explore an Enterprise Collaboration // Address an Operating Problem</option>
                 </select>
                 <p className={s.fieldHelp}>
                   {formState.interest === "collaborate"
-                    ? "Collaborate on agentic developer harnesses, shared schemas, and operational patterns."
-                    : "Work directly with Robert to scope a consequential operating challenge and test agentic workflows in your business."}
+                    ? "Collaborate on multi-harness development, enterprise schemas, and reusable workflow patterns."
+                    : "Work directly with Robert to scope a consequential operating challenge and deliver working outcomes."}
                 </p>
               </div>
 
@@ -602,7 +665,7 @@ export default function CollectiveView() {
       {/* Reciprocal bridge back to Agentic AI */}
       <div style={{ textAlign: "center", padding: "40px 24px 20px", borderTop: "1px solid var(--line)" }}>
         <p style={{ fontSize: "14px", color: "var(--muted)", margin: 0 }}>
-          Looking for the underlying operational theses?{" "}
+          Looking for the underlying operational field notes?{" "}
           <Link href="/agentic-ai/" style={{ color: "var(--ink)", textDecoration: "underline", fontWeight: 600 }}>
             Read Dispatches from the Operational Seam &rarr;
           </Link>

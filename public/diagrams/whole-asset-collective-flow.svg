@@ -1,0 +1,373 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 860" width="1800" height="860">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FBF8F3"/>
+      <stop offset="100%" stop-color="#F3ECE1"/>
+    </linearGradient>
+    <linearGradient id="darkGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#23282E"/>
+      <stop offset="100%" stop-color="#15191D"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#D7C69D"/>
+      <stop offset="50%" stop-color="#C3B083"/>
+      <stop offset="100%" stop-color="#A89260"/>
+    </linearGradient>
+    <linearGradient id="synergyGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8F6128"/>
+      <stop offset="50%" stop-color="#0F766E"/>
+      <stop offset="100%" stop-color="#0D9488"/>
+    </linearGradient>
+    <marker id="arrowGold" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 1 1 L 10 6 L 1 11 z" fill="#9A6B2F"/>
+    </marker>
+    <marker id="arrowTeal" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 1 1 L 10 6 L 1 11 z" fill="#0F766E"/>
+    </marker>
+    <filter id="softShadow" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Outer Canvas Plate -->
+  <rect x="8" y="8" width="1784" height="844" rx="22" fill="url(#bgGrad)" stroke="#D8CCB8" stroke-width="2"/>
+
+  <!-- Subtle Architectural Grid Lines -->
+  <g stroke="#E6DEC8" stroke-width="1" opacity="0.5">
+    <line x1="310" y1="20" x2="310" y2="840" stroke-dasharray="6 6"/>
+    <line x1="682" y1="20" x2="682" y2="840" stroke-dasharray="6 6"/>
+    <line x1="1055" y1="20" x2="1055" y2="840" stroke-dasharray="6 6"/>
+    <line x1="1540" y1="20" x2="1540" y2="840" stroke-dasharray="6 6"/>
+    <line x1="20" y1="412" x2="1780" y2="412" stroke-dasharray="6 6"/>
+  </g>
+
+  <!-- ===================================================================== -->
+  <!-- TOP CREST: THE RIG (RIG001) — BUILDS THE SELF-BUILDING ASSET ORGS     -->
+  <!-- ===================================================================== -->
+  <path d="M 465 110 C 365 110, 310 142, 310 192" fill="none" stroke="#9A6B2F" stroke-width="3.5" stroke-dasharray="8 5" marker-end="url(#arrowGold)"/>
+  <path d="M 895 110 C 995 110, 1055 142, 1055 192" fill="none" stroke="#0F766E" stroke-width="3.5" stroke-dasharray="8 5" marker-end="url(#arrowTeal)"/>
+
+  <rect x="290" y="130" width="175" height="24" rx="12" fill="#FBF8F3" stroke="#C3B083" stroke-width="1.5"/>
+  <text x="377" y="146" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="800" fill="#7C5826">BUILDS B.O.S.S. ORG</text>
+
+  <rect x="895" y="130" width="195" height="24" rx="12" fill="#FBF8F3" stroke="#0F766E" stroke-width="1.5"/>
+  <text x="992" y="146" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="800" fill="#0F766E">BUILDS FLOWCRAFT ORG</text>
+
+  <!-- THE RIG Center Foundry Hub -->
+  <g filter="url(#softShadow)">
+    <rect x="425" y="24" width="510" height="118" rx="59" fill="url(#darkGrad)" stroke="#C3B083" stroke-width="3"/>
+    <polygon points="516.3,65.5 516.3,100.5 486.0,118.0 455.7,100.5 455.7,65.5 486.0,48.0" fill="#C3B083"/>
+    <polygon points="508.5,70.0 508.5,96.0 486.0,109.0 463.5,96.0 463.5,70.0 486.0,57.0" fill="#1F2429"/>
+    <circle cx="486" cy="83" r="10" fill="#C3B083"/>
+    <text x="538" y="57" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="800" fill="#C3B083" letter-spacing="1.8">00 // THE RIG — META-BUILDER ENGINE</text>
+    <text x="538" y="82" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="800" fill="#FFFFFF">The Machine That Builds the Machines</text>
+    <text x="538" y="104" font-family="Segoe UI, Arial, sans-serif" font-size="11.2" font-weight="700" fill="#5EEAD4">Forges self-building Whole Asset orgs that build &amp; evolve themselves.</text>
+  </g>
+
+  <!-- UNIVERSAL ENGINE BADGE (Top Right) -->
+  <g filter="url(#softShadow)">
+    <rect x="1155" y="26" width="605" height="112" rx="18" fill="#FFFFFF" stroke="#C3B083" stroke-width="2"/>
+    <text x="1457" y="50" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="800" fill="#8F6128" letter-spacing="1.4">SHARED 4-GATE SPINE INSIDE EVERY ASSET ORG</text>
+    <rect x="1175" y="62" width="126" height="36" rx="18" fill="#1F2429" stroke="#C3B083" stroke-width="1.5"/>
+    <text x="1238" y="84" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800" fill="#C3B083">1. INTENT</text>
+    <path d="M 1305 80 L 1323 80" stroke="#9A6B2F" stroke-width="2.5" marker-end="url(#arrowGold)"/>
+
+    <rect x="1328" y="62" width="136" height="36" rx="18" fill="#1F2429" stroke="#C3B083" stroke-width="1.5"/>
+    <text x="1396" y="84" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800" fill="#C3B083">2. DEFINITION</text>
+    <path d="M 1468 80 L 1486 80" stroke="#9A6B2F" stroke-width="2.5" marker-end="url(#arrowGold)"/>
+
+    <rect x="1491" y="62" width="126" height="36" rx="18" fill="#1F2429" stroke="#C3B083" stroke-width="1.5"/>
+    <text x="1554" y="84" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800" fill="#C3B083">3. DELIVERY</text>
+    <path d="M 1621 80 L 1639 80" stroke="#0F766E" stroke-width="2.5" marker-end="url(#arrowTeal)"/>
+
+    <rect x="1644" y="62" width="98" height="36" rx="18" fill="#0F766E"/>
+    <text x="1693" y="84" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800" fill="#FFFFFF">4. OUTCOME</text>
+
+    <text x="1457" y="120" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#334155">Every asset org (Rig, B.O.S.S., FlowCraft) runs this same outcome-gated loop.</text>
+  </g>
+
+  <!-- Top Left Rule of Engagement -->
+  <g filter="url(#softShadow)">
+    <rect x="40" y="30" width="355" height="76" rx="16" fill="#1F2429" stroke="#C3B083" stroke-width="2"/>
+    <text x="60" y="56" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="800" fill="#C3B083" letter-spacing="1.3">20 YEARS OF OPERATING SCARS (HOS &#8594; B.O.S.S.)</text>
+    <text x="60" y="84" font-family="Segoe UI, Arial, sans-serif" font-size="15.5" font-weight="800" fill="#FFFFFF">&#8220;Map &amp; test the business before Go-Live.&#8221;</text>
+  </g>
+
+  <!-- ===================================================================== -->
+  <!-- STAGE 1 (LEFT WHEEL): B.O.S.S. — MAP, DIGITAL TWIN & READINESS         -->
+  <!-- ===================================================================== -->
+  <g filter="url(#softShadow)">
+    <rect x="105" y="194" width="410" height="52" rx="26" fill="#1F2429" stroke="#C3B083" stroke-width="2.5"/>
+    <text x="310" y="216" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="800" fill="#C3B083" letter-spacing="1.5">01 // B.O.S.S. — TRANSFORMATION &amp; DIGITAL TWIN</text>
+    <text x="310" y="236" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16.5" font-weight="800" fill="#FFFFFF">People, Data Core &amp; Constellations Lighting Up</text>
+
+    <!-- Outer Orbital Mapping Ring -->
+    <circle cx="310" cy="412" r="176" fill="#23282E" stroke="#C3B083" stroke-width="3.5"/>
+    <!-- Progressive Lighting-Up Arc along the left/top-left side (Digital Twin -> Readiness) -->
+    <path d="M 310 528 A 116 116 0 0 1 210 354" fill="none" stroke="#10B981" stroke-width="4" stroke-dasharray="6 4"/>
+    <circle cx="310" cy="412" r="116" fill="none" stroke="#C3B083" stroke-width="1.8" opacity="0.45"/>
+
+    <!-- 6 B.O.S.S. Lifecycle Circles around the Common Data Core -->
+    
+      <g>
+        <line x1="310" y1="412" x2="310.0" y2="296.0" stroke="#C3B083" stroke-width="2.8" opacity="0.85"/>
+        <circle cx="310.0" cy="296.0" r="45" fill="#1F2429" stroke="#C3B083" stroke-width="2.8"/>
+        <circle cx="310.0" cy="296.0" r="39" fill="none" stroke="#C3B083" stroke-width="1" stroke-dasharray="3 3" opacity="0.65"/>
+        <text x="310.0" y="283.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9.5" font-weight="900" fill="#C3B083">01</text>
+        <text x="310.0" y="298.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10.2" font-weight="800" fill="#C3B083">PEOPLE &amp; PM</text>
+        <text x="310.0" y="311.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#F1F5F9">Roadmap &amp; Change</text>
+      </g>
+
+      <g>
+        <line x1="310" y1="412" x2="410.5" y2="354.0" stroke="#C3B083" stroke-width="2.8" opacity="0.85"/>
+        <circle cx="410.5" cy="354.0" r="45" fill="#1F2429" stroke="#C3B083" stroke-width="2.8"/>
+        <circle cx="410.5" cy="354.0" r="39" fill="none" stroke="#C3B083" stroke-width="1" stroke-dasharray="3 3" opacity="0.65"/>
+        <text x="410.5" y="341.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9.5" font-weight="900" fill="#C3B083">02</text>
+        <text x="410.5" y="356.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10.2" font-weight="800" fill="#C3B083">MASSIVE ETL</text>
+        <text x="410.5" y="369.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#F1F5F9">400+ Systems</text>
+      </g>
+
+      <g>
+        <line x1="310" y1="412" x2="410.5" y2="470.0" stroke="#C3B083" stroke-width="2.8" opacity="0.85"/>
+        <circle cx="410.5" cy="470.0" r="45" fill="#1F2429" stroke="#C3B083" stroke-width="2.8"/>
+        <circle cx="410.5" cy="470.0" r="39" fill="none" stroke="#C3B083" stroke-width="1" stroke-dasharray="3 3" opacity="0.65"/>
+        <text x="410.5" y="457.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9.5" font-weight="900" fill="#C3B083">03</text>
+        <text x="410.5" y="472.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10.2" font-weight="800" fill="#C3B083">FUTURE STATE</text>
+        <text x="410.5" y="485.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#F1F5F9">6 Constellations</text>
+      </g>
+
+      <g>
+        <line x1="310" y1="412" x2="310.0" y2="528.0" stroke="#D97706" stroke-width="2.8" opacity="0.85"/>
+        <circle cx="310.0" cy="528.0" r="45" fill="#1F2429" stroke="#D97706" stroke-width="2.8"/>
+        <circle cx="310.0" cy="528.0" r="39" fill="none" stroke="#D97706" stroke-width="1" stroke-dasharray="3 3" opacity="0.65"/>
+        <text x="310.0" y="515.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9.5" font-weight="900" fill="#D97706">04</text>
+        <text x="310.0" y="530.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10.2" font-weight="800" fill="#C3B083">LIVING SOPs</text>
+        <text x="310.0" y="543.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#F1F5F9">Build &amp; Record</text>
+      </g>
+
+      <g>
+        <line x1="310" y1="412" x2="209.5" y2="470.0" stroke="#14B8A6" stroke-width="2.8" opacity="0.85"/>
+        <circle cx="209.5" cy="470.0" r="45" fill="#0F3D3E" stroke="#14B8A6" stroke-width="2.8"/>
+        <circle cx="209.5" cy="470.0" r="39" fill="none" stroke="#14B8A6" stroke-width="1" stroke-dasharray="3 3" opacity="0.65"/>
+        <text x="209.5" y="457.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9.5" font-weight="900" fill="#14B8A6">05</text>
+        <text x="209.5" y="472.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10.2" font-weight="800" fill="#5EEAD4">DIGITAL TWIN</text>
+        <text x="209.5" y="485.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#F1F5F9">E2E &amp; UAT Test</text>
+      </g>
+
+      <g>
+        <line x1="310" y1="412" x2="209.5" y2="354.0" stroke="#10B981" stroke-width="2.8" opacity="0.85"/>
+        <circle cx="209.5" cy="354.0" r="45" fill="#064E3B" stroke="#10B981" stroke-width="2.8"/>
+        <circle cx="209.5" cy="354.0" r="39" fill="none" stroke="#10B981" stroke-width="1" stroke-dasharray="3 3" opacity="0.65"/>
+        <text x="209.5" y="341.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9.5" font-weight="900" fill="#10B981">06</text>
+        <text x="209.5" y="356.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10.2" font-weight="800" fill="#5EEAD4">READINESS</text>
+        <text x="209.5" y="369.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#F1F5F9">Lights Go-Live</text>
+      </g>
+
+    <!-- Central Golden Data Core (MDM + CDM) -->
+    <circle cx="310" cy="412" r="53" fill="url(#goldGrad)" stroke="#FFFFFF" stroke-width="3"/>
+    <circle cx="310" cy="412" r="45" fill="none" stroke="#1F2429" stroke-width="1.2" opacity="0.45"/>
+    <text x="310" y="402" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="800" fill="#1F2429">COMPANY</text>
+    <text x="310" y="418" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="900" fill="#1F2429">DATA CORE</text>
+    <text x="310" y="433" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="800" fill="#1E293B">MDM + CDM</text>
+
+    <!-- Clean 2-Line Summary Banner Below B.O.S.S. Wheel -->
+    <rect x="95" y="600" width="430" height="58" rx="14" fill="#1F2429" stroke="#C3B083" stroke-width="2"/>
+    <text x="310" y="624" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="800" fill="#FFFFFF">Stakeholders &amp; Change Mgmt + Massive Data ETL &#8594; Digital Twin</text>
+    <text x="310" y="644" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#5EEAD4">Constellations light up through E2E &amp; UAT until ready for Go-Live.</text>
+  </g>
+
+  <!-- ===================================================================== -->
+  <!-- CENTER SYNERGY BRIDGE: 1-TO-1 HANDOFF FROM DIGITAL TWIN TO GO-LIVE     -->
+  <!-- ===================================================================== -->
+  <g filter="url(#softShadow)">
+    <rect x="520" y="252" width="325" height="54" rx="14" fill="url(#synergyGrad)" stroke="#1F2429" stroke-width="2"/>
+    <text x="682" y="273" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="800" fill="#FEF3C7" letter-spacing="1.3">THE 1-TO-1 SYNERGY HANDOFF</text>
+    <text x="682" y="294" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="800" fill="#FFFFFF">E2E &#8594; UAT &#8594; Readiness &#8594; Go-Live</text>
+
+    <!-- Stream 1: Tested Workflows & Living SOPs -->
+    <path d="M 488 348 L 866 348" stroke="#9A6B2F" stroke-width="10" stroke-linecap="round" opacity="0.22"/>
+    <path d="M 488 348 L 866 348" stroke="#9A6B2F" stroke-width="3.5" marker-end="url(#arrowGold)"/>
+    <rect x="528" y="328" width="308" height="38" rx="19" fill="#FFFBEB" stroke="#C3B083" stroke-width="2"/>
+    <text x="682" y="346" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800" fill="#7C5826">1. UAT-VERIFIED WORKFLOWS &amp; SOPs</text>
+    <text x="682" y="361" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="700" fill="#92400E">Digital Twin constellations ready to run</text>
+
+    <!-- Stream 2: Company Common Data Core -->
+    <path d="M 488 412 L 866 412" stroke="#C3B083" stroke-width="12" stroke-linecap="round" opacity="0.28"/>
+    <path d="M 488 412 L 866 412" stroke="#1F2429" stroke-width="4" marker-end="url(#arrowTeal)"/>
+    <rect x="524" y="392" width="316" height="40" rx="20" fill="#1F2429" stroke="#C3B083" stroke-width="2"/>
+    <text x="682" y="411" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800" fill="#C3B083">2. COMPANY COMMON DATA CORE</text>
+    <text x="682" y="426" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="600" fill="#E2E8F0">Customers, Items, BOMs, Orders &amp; Records</text>
+
+    <!-- Stream 3: Governed Rules & Permissions -->
+    <path d="M 488 478 L 866 478" stroke="#0F766E" stroke-width="10" stroke-linecap="round" opacity="0.2"/>
+    <path d="M 488 478 L 866 478" stroke="#0F766E" stroke-width="3.5" marker-end="url(#arrowTeal)"/>
+    <rect x="528" y="458" width="308" height="38" rx="19" fill="#F0FDFA" stroke="#0F766E" stroke-width="2"/>
+    <text x="682" y="476" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800" fill="#0F766E">3. GOVERNED GATES &amp; PERMISSIONS</text>
+    <text x="682" y="491" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="700" fill="#115E59">Read / Write / Auth / Preconditions</text>
+
+    <!-- Reverse Telemetry Sync -->
+    <path d="M 866 532 L 492 532" stroke="#0F766E" stroke-width="2.2" stroke-dasharray="6 4" marker-end="url(#arrowGold)"/>
+    <rect x="542" y="518" width="280" height="26" rx="13" fill="#FBF8F3" stroke="#94A3B8" stroke-width="1.2"/>
+    <text x="682" y="535" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#334155">&#8592; Live Production Telemetry Updates Digital Twin</text>
+  </g>
+
+  <!-- ===================================================================== -->
+  <!-- STAGE 2 (RIGHT WHEEL): FLOWCRAFT — THE PROVERBIAL GO-LIVE RUNTIME      -->
+  <!-- ===================================================================== -->
+  <g filter="url(#softShadow)">
+    <rect x="845" y="194" width="420" height="52" rx="26" fill="#0F766E" stroke="#1F2429" stroke-width="2.5"/>
+    <text x="1055" y="216" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="800" fill="#99F6E4" letter-spacing="1.5">02 // FLOWCRAFT — OPERATIONAL WORKFLOW RUNTIME</text>
+    <text x="1055" y="236" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16.5" font-weight="800" fill="#FFFFFF">The Proverbial Go-Live: Workflows in Production</text>
+
+    <!-- Outer Runtime Engine Ring -->
+    <circle cx="1055" cy="412" r="176" fill="#1B2428" stroke="#0F766E" stroke-width="4"/>
+    <polygon points="1171.0,412.0 1113.0,512.5 997.0,512.5 939.0,412.0 997.0,311.5 1113.0,311.5" fill="none" stroke="#C3B083" stroke-width="1.8" opacity="0.55"/>
+
+    <!-- 6 Surrounding Work-Block Hexagons -->
+    
+      <g>
+        <line x1="1055" y1="412" x2="1055.0" y2="296.0" stroke="#14B8A6" stroke-width="2.5" stroke-dasharray="4 3" opacity="0.75"/>
+        <polygon points="1090.5,275.5 1090.5,316.5 1055.0,337.0 1019.5,316.5 1019.5,275.5 1055.0,255.0" fill="#1F2429" stroke="#5EEAD4" stroke-width="2.5"/>
+        <polygon points="1085.3,278.5 1085.3,313.5 1055.0,331.0 1024.7,313.5 1024.7,278.5 1055.0,261.0" fill="none" stroke="#C3B083" stroke-width="1.2" opacity="0.8"/>
+        <text x="1055.0" y="294.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15.5" font-weight="900" fill="#FFFFFF">P2P</text>
+        <text x="1055.0" y="310.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#5EEAD4">Procure</text>
+      </g>
+
+      <g>
+        <line x1="1055" y1="412" x2="1155.5" y2="354.0" stroke="#14B8A6" stroke-width="2.5" stroke-dasharray="4 3" opacity="0.75"/>
+        <polygon points="1191.0,333.5 1191.0,374.5 1155.5,395.0 1120.0,374.5 1120.0,333.5 1155.5,313.0" fill="#1F2429" stroke="#5EEAD4" stroke-width="2.5"/>
+        <polygon points="1185.8,336.5 1185.8,371.5 1155.5,389.0 1125.1,371.5 1125.1,336.5 1155.5,319.0" fill="none" stroke="#C3B083" stroke-width="1.2" opacity="0.8"/>
+        <text x="1155.5" y="352.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15.5" font-weight="900" fill="#FFFFFF">O2C</text>
+        <text x="1155.5" y="368.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#5EEAD4">Order</text>
+      </g>
+
+      <g>
+        <line x1="1055" y1="412" x2="1155.5" y2="470.0" stroke="#14B8A6" stroke-width="2.5" stroke-dasharray="4 3" opacity="0.75"/>
+        <polygon points="1191.0,449.5 1191.0,490.5 1155.5,511.0 1120.0,490.5 1120.0,449.5 1155.5,429.0" fill="#1F2429" stroke="#5EEAD4" stroke-width="2.5"/>
+        <polygon points="1185.8,452.5 1185.8,487.5 1155.5,505.0 1125.1,487.5 1125.1,452.5 1155.5,435.0" fill="none" stroke="#C3B083" stroke-width="1.2" opacity="0.8"/>
+        <text x="1155.5" y="468.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15.5" font-weight="900" fill="#FFFFFF">P2M</text>
+        <text x="1155.5" y="484.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#5EEAD4">Make</text>
+      </g>
+
+      <g>
+        <line x1="1055" y1="412" x2="1055.0" y2="528.0" stroke="#14B8A6" stroke-width="2.5" stroke-dasharray="4 3" opacity="0.75"/>
+        <polygon points="1090.5,507.5 1090.5,548.5 1055.0,569.0 1019.5,548.5 1019.5,507.5 1055.0,487.0" fill="#1F2429" stroke="#5EEAD4" stroke-width="2.5"/>
+        <polygon points="1085.3,510.5 1085.3,545.5 1055.0,563.0 1024.7,545.5 1024.7,510.5 1055.0,493.0" fill="none" stroke="#C3B083" stroke-width="1.2" opacity="0.8"/>
+        <text x="1055.0" y="526.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15.5" font-weight="900" fill="#FFFFFF">D2R</text>
+        <text x="1055.0" y="542.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#5EEAD4">Deliver</text>
+      </g>
+
+      <g>
+        <line x1="1055" y1="412" x2="954.5" y2="470.0" stroke="#14B8A6" stroke-width="2.5" stroke-dasharray="4 3" opacity="0.75"/>
+        <polygon points="990.0,449.5 990.0,490.5 954.5,511.0 919.0,490.5 919.0,449.5 954.5,429.0" fill="#1F2429" stroke="#5EEAD4" stroke-width="2.5"/>
+        <polygon points="984.9,452.5 984.9,487.5 954.5,505.0 924.2,487.5 924.2,452.5 954.5,435.0" fill="none" stroke="#C3B083" stroke-width="1.2" opacity="0.8"/>
+        <text x="954.5" y="468.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15.5" font-weight="900" fill="#FFFFFF">S2S</text>
+        <text x="954.5" y="484.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#5EEAD4">Support</text>
+      </g>
+
+      <g>
+        <line x1="1055" y1="412" x2="954.5" y2="354.0" stroke="#14B8A6" stroke-width="2.5" stroke-dasharray="4 3" opacity="0.75"/>
+        <polygon points="990.0,333.5 990.0,374.5 954.5,395.0 919.0,374.5 919.0,333.5 954.5,313.0" fill="#1F2429" stroke="#5EEAD4" stroke-width="2.5"/>
+        <polygon points="984.9,336.5 984.9,371.5 954.5,389.0 924.2,371.5 924.2,336.5 954.5,319.0" fill="none" stroke="#C3B083" stroke-width="1.2" opacity="0.8"/>
+        <text x="954.5" y="352.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15.5" font-weight="900" fill="#FFFFFF">MDM</text>
+        <text x="954.5" y="368.0" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#5EEAD4">Master</text>
+      </g>
+
+    <!-- Central Hexagonal Runtime Core -->
+    <polygon points="1103.5,384.0 1103.5,440.0 1055.0,468.0 1006.5,440.0 1006.5,384.0 1055.0,356.0" fill="#0F766E" stroke="#C3B083" stroke-width="3"/>
+    <polygon points="1095.7,388.5 1095.7,435.5 1055.0,459.0 1014.3,435.5 1014.3,388.5 1055.0,365.0" fill="#15191D" stroke="#5EEAD4" stroke-width="1.2"/>
+    <text x="1055" y="402" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="800" fill="#5EEAD4">WORKFLOW</text>
+    <text x="1055" y="418" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13.5" font-weight="900" fill="#FFFFFF">RUNTIME</text>
+    <text x="1055" y="433" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#C3B083">AGENTS + ERPs</text>
+
+    <!-- Clean 2-Line Summary Banner Below FlowCraft Wheel -->
+    <rect x="840" y="600" width="430" height="58" rx="14" fill="#1F2429" stroke="#0F766E" stroke-width="2"/>
+    <text x="1055" y="624" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="800" fill="#FFFFFF">The Asset Org Builds the Instance &#8594; The Instance Runs Daily Ops</text>
+    <text x="1055" y="644" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#5EEAD4">Runs 100% Agentic OR Integrated with ERPs &amp; 3rd-Party Systems.</text>
+  </g>
+
+  <!-- ===================================================================== -->
+  <!-- STAGE 3 (RIGHT DEPLOYMENT ZONE): SOVEREIGN CUSTOMER INSTANCES         -->
+  <!-- ===================================================================== -->
+  <path d="M 1234 360 L 1318 335" stroke="#0F766E" stroke-width="4" marker-end="url(#arrowTeal)"/>
+  <path d="M 1234 475 L 1318 535" stroke="#9A6B2F" stroke-width="3" stroke-dasharray="6 4" marker-end="url(#arrowGold)"/>
+
+  <g filter="url(#softShadow)">
+    <rect x="1325" y="194" width="435" height="464" rx="22" fill="#1F2429" stroke="#C3B083" stroke-width="2.5"/>
+    <text x="1542" y="224" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="800" fill="#C3B083" letter-spacing="1.4">03 // SOVEREIGN CUSTOMER INSTANCES</text>
+    <text x="1542" y="246" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16.5" font-weight="800" fill="#FFFFFF">Sovereign, Inseparable &amp; Outcome-Owned</text>
+
+    <!-- PRIMARY CARD: 1-FOR-1 PAIRED ENTERPRISE DEPLOYMENT -->
+    <rect x="1345" y="264" width="395" height="212" rx="16" fill="#2A3038" stroke="#C3B083" stroke-width="2"/>
+    <rect x="1360" y="276" width="365" height="26" rx="13" fill="#C3B083"/>
+    <text x="1542" y="294" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="900" fill="#1F2429" letter-spacing="0.8">STANDARD ENTERPRISE PATTERN // 1-FOR-1 PAIRED</text>
+
+    <circle cx="1465" cy="368" r="54" fill="#1F2429" stroke="#C3B083" stroke-width="3"/>
+    <circle cx="1615" cy="368" r="54" fill="#0F766E" stroke="#5EEAD4" stroke-width="3"/>
+    <path d="M 1505 368 L 1575 368" stroke="#FFFFFF" stroke-width="3.5"/>
+    <rect x="1516" y="355" width="48" height="26" rx="13" fill="#C3B083" stroke="#1F2429" stroke-width="1.5"/>
+    <text x="1540" y="372" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="900" fill="#1F2429">1 : 1</text>
+
+    <text x="1465" y="362" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800" fill="#C3B083">B.O.S.S.</text>
+    <text x="1465" y="378" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#FFFFFF">INSTANCE</text>
+    <text x="1465" y="393" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9.2" font-weight="600" fill="#CBD5E1">Digital Twin + CDM</text>
+
+    <text x="1615" y="362" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800" fill="#FFFFFF">FLOWCRAFT</text>
+    <text x="1615" y="378" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#99F6E4">INSTANCE</text>
+    <text x="1615" y="393" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9.2" font-weight="600" fill="#E2E8F0">Go-Live Workflows</text>
+
+    <text x="1542" y="440" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#F8FAFC">Agentic Runtime + ERP / 3rd-Party Connectors</text>
+    <text x="1542" y="458" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#5EEAD4">B.O.S.S. maps &amp; tests &#8594; FlowCraft runs production.</text>
+
+    <!-- STANDALONE OPTIONS -->
+    <text x="1542" y="502" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="800" fill="#94A3B8" letter-spacing="1.2">OR DEPLOY STANDALONE WHEN NEEDED</text>
+
+    <rect x="1345" y="514" width="190" height="124" rx="14" fill="#252B32" stroke="#C3B083" stroke-width="1.5"/>
+    <circle cx="1440" cy="542" r="14" fill="#C3B083"/>
+    <text x="1440" y="546" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="900" fill="#1F2429">A</text>
+    <text x="1440" y="572" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800" fill="#C3B083">B.O.S.S. Only</text>
+    <text x="1440" y="592" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#E2E8F0">Digital Twin, Data Core</text>
+    <text x="1440" y="608" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#E2E8F0">&amp; ERP Cutover Readiness</text>
+
+    <rect x="1550" y="514" width="190" height="124" rx="14" fill="#252B32" stroke="#0F766E" stroke-width="1.5"/>
+    <circle cx="1645" cy="542" r="14" fill="#0F766E"/>
+    <text x="1645" y="546" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="900" fill="#FFFFFF">B</text>
+    <text x="1645" y="572" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800" fill="#5EEAD4">FlowCraft Only</text>
+    <text x="1645" y="592" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#E2E8F0">Direct Agentic Workflows</text>
+    <text x="1645" y="608" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#E2E8F0">(e.g. DigOps Instance)</text>
+  </g>
+
+  <!-- ===================================================================== -->
+  <!-- BOTTOM FLYWHEEL ARC: 04 // THE COLLECTIVE (SOVEREIGN LEARNING LOOP)   -->
+  <!-- ===================================================================== -->
+  <path d="M 1542 660 C 1542 790, 1180 800, 900 800 C 560 800, 220 790, 220 665" fill="none" stroke="#C3B083" stroke-width="14" stroke-linecap="round" opacity="0.25"/>
+  <path d="M 1542 660 C 1542 790, 1180 800, 900 800 C 560 800, 220 790, 220 665" fill="none" stroke="#8F6128" stroke-width="3.5" stroke-dasharray="10 6" marker-end="url(#arrowGold)"/>
+  <path d="M 1055 765 L 1055 664" fill="none" stroke="#0F766E" stroke-width="3" stroke-dasharray="6 4" marker-end="url(#arrowTeal)"/>
+
+  <g filter="url(#softShadow)">
+    <rect x="275" y="694" width="1210" height="122" rx="61" fill="url(#darkGrad)" stroke="#C3B083" stroke-width="3"/>
+    <rect x="285" y="704" width="1190" height="102" rx="51" fill="none" stroke="#C3B083" stroke-width="1" stroke-dasharray="4 4" opacity="0.45"/>
+
+    <text x="880" y="726" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800" fill="#C3B083" letter-spacing="2">04 // THE COLLECTIVE — SOVEREIGN, INSEPARABLE LEARNING LOOP ACROSS EVERY BUILD &amp; RUN</text>
+
+    <rect x="315" y="738" width="345" height="44" rx="22" fill="#2A3038" stroke="#C3B083" stroke-width="1.5"/>
+    <circle cx="342" cy="760" r="13" fill="#C3B083"/>
+    <text x="342" y="764" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="900" fill="#1F2429">01</text>
+    <text x="500" y="757" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800" fill="#FFFFFF">Digital Twin &amp; Readiness Patterns</text>
+    <text x="500" y="773" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="600" fill="#CBD5E1">Compresses future B.O.S.S. roadmaps &amp; UAT</text>
+
+    <rect x="680" y="738" width="375" height="44" rx="22" fill="#2A3038" stroke="#C3B083" stroke-width="1.5"/>
+    <circle cx="707" cy="760" r="13" fill="#C3B083"/>
+    <text x="707" y="764" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="900" fill="#1F2429">02</text>
+    <text x="880" y="757" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800" fill="#FFFFFF">Canonical Common Data Schemas</text>
+    <text x="880" y="773" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="600" fill="#CBD5E1">Pre-hardened Customer, Item &amp; BOM models</text>
+
+    <rect x="1075" y="738" width="375" height="44" rx="22" fill="#2A3038" stroke="#0F766E" stroke-width="1.5"/>
+    <circle cx="1102" cy="760" r="13" fill="#0F766E"/>
+    <text x="1102" y="764" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="900" fill="#FFFFFF">03</text>
+    <text x="1275" y="757" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="800" fill="#5EEAD4">Proven Work-Block Blueprints</text>
+    <text x="1275" y="773" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="600" fill="#CBD5E1">Compounds into faster FlowCraft Go-Lives</text>
+
+    <text x="880" y="801" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="800" fill="#5EEAD4">SOVEREIGN BOUNDARY: Customer data &amp; IP stay 100% on customer iron — only proven structural patterns return.</text>
+  </g>
+</svg>

@@ -9,32 +9,49 @@ export default function FolioHome() {
         <div className="page-well">
           <div className="hero-split">
             <div className="home-hero-copy">
+              <p className="p-kicker mb-2">
+                Robert Paddock &middot; Enterprise Transformation Executive
+              </p>
               <h1 className="p-h1 home-hero-title">
-                <span className="block text-navy">Build what's next.</span>
-                <span className="block mt-3 text-[0.62em] font-medium leading-[1.15] text-navy/85 tracking-normal">
-                  Make enterprise technology work in the business you have.
-                </span>
+                Build what&apos;s next.
               </h1>
-              <p className="p-prose mt-5">
-                I connect people, systems, and workflows through data to make enterprise technology work in the business you have.
+              <p className="p-dek mt-3">
+                I connect people, systems, and workflows to shorten the path from intent to outcome.
               </p>
-              <p className="p-prose mt-3">
-                I turn business priorities into executable work, build and lead the teams to deliver it, and carry responsibility through implementation, adoption, and daily operations. My work combines the judgment of a business owner, the accountability of a CIO, and the technical depth of a software builder.
+              <p className="p-prose mt-3 text-[15px] font-semibold text-[#142840]">
+                Available for executive leadership roles, focused transformation mandates, and defined work through The Block (fractional and interim mandates welcome).
               </p>
-              <p className="executive-proof">
-                20+ years in enterprise systems &middot; 50+ implementations &middot; 15 enterprise transformations at scale
-              </p>
-              <div className="home-hero-actions">
+              <div className="home-hero-actions mt-4 mb-5">
                 <Link className="p-btn" href="/block/">
                   Explore outcomes in The Block
                 </Link>
                 <Link className="p-link" href="/contact/">
                   Start a conversation
                 </Link>
+                <Link className="p-link" href="/experience/">
+                  Executive experience
+                </Link>
               </div>
+              <p className="p-prose mt-2">
+                <strong>20+ years of business leadership, over 50 enterprise transformations, and three years of hands-on agentic development.</strong> My perspective combines business ownership, CEO and CIO accountability, and building software around how companies actually operate—shaping engagements, organizing delivery, and leading change into daily use through <strong>The Outcome Loop</strong> (<em>Intent, Define, Deliver, Outcome</em>), where people and agents contribute throughout under human judgment and accountability.
+              </p>
             </div>
             <div className="home-watermark" aria-hidden="true">
-              <img src="/idigdata-mark.svg" alt="" />
+              <img
+                src="/idigdata-mark.svg"
+                alt=""
+                style={{
+                  display: "block",
+                  width: "280px",
+                  height: "280px",
+                  opacity: 0.18,
+                  transform: "rotate(12deg)",
+                  border: "none",
+                  borderRadius: 0,
+                  boxShadow: "none",
+                  background: "transparent",
+                }}
+              />
             </div>
           </div>
         </div>
@@ -57,7 +74,7 @@ export default function FolioHome() {
             </article>
 
             <article className="home-card">
-              <p className="home-card-cat">Enterprise Transformation &amp; Delivery</p>
+              <p className="home-card-cat">Enterprise Transformation &amp; Delivery Leadership</p>
               <h3>Clear priorities. Accountable leadership.</h3>
               <p className="p-prose mt-3">
                 Lead cross-functional delivery teams, internal technology groups, and systems integrators from initial charter through cutover, adoption, and daily operations.
@@ -65,7 +82,7 @@ export default function FolioHome() {
             </article>
 
             <article className="home-card">
-              <p className="home-card-cat">Architecture &amp; Business Systems</p>
+              <p className="home-card-cat">Enterprise Architecture &amp; Business Systems</p>
               <h3>Enterprise platforms connected by data.</h3>
               <p className="p-prose mt-3">
                 Connect core ERP, supply chain, and shop-floor applications around physical operating workflows with business continuity built into every cutover.
@@ -84,12 +101,12 @@ export default function FolioHome() {
               <p className="home-card-cat">Agentic Software &amp; Workflow Delivery</p>
               <h3>Autonomous capacity. Human authority.</h3>
               <p className="p-prose mt-3">
-                Build custom agentic software and workflow automation around frontline operating heuristics—governed by deterministic data contracts and human authorization.
+                Build custom agentic software and workflow blocks around frontline operating heuristics—governed by clean data contracts and human authorization.
               </p>
             </article>
 
             <article className="home-card">
-              <p className="home-card-cat">Technology Operations &amp; Control</p>
+              <p className="home-card-cat">Technology Operations, Adoption &amp; Control</p>
               <h3>Dependable operations. Plant continuity.</h3>
               <p className="p-prose mt-3">
                 Maintain high-availability infrastructure, pragmatic cybersecurity posture, and multi-site operational change management that protect business and plant continuity.
@@ -101,7 +118,7 @@ export default function FolioHome() {
               Explore the 60 enterprise outcomes in The Block &rarr;
             </Link>
             <Link className="p-link text-slate-600" href="/experience/">
-              See executive track record on Experience &rarr;
+              See executive track record across all four roles &rarr;
             </Link>
           </div>
         </div>
@@ -115,12 +132,15 @@ export default function FolioHome() {
               <p className="p-kicker">Operational Knowledge &amp; Frontier Software</p>
               <h2 className="p-h2 mt-1">Put the full knowledge of your business to work.</h2>
               <p className="p-prose mt-3">
-                Years of operating knowledge live across your people, your data, and your systems. As founder of an operator-led agentic development company, I design and build enterprise agentic systems—putting company knowledge and data to work with clear business ownership, traceable actions, and human authority.
+                Today, I build and operate a multi-harness agentic development proof of concept (<strong>The Rig</strong>), alongside enterprise foundation software (<strong>B.O.S.S.</strong>) and reusable human-agentic workflow blocks (<strong>FlowCraft</strong>). The aim is working software, retained business knowledge, and people equipped to keep improving.
               </p>
             </div>
-            <div className="shrink-0">
+            <div className="shrink-0 flex flex-col sm:flex-row gap-3">
               <Link className="p-btn whitespace-nowrap" href="/agentic-ai/">
                 Read Field Briefs &rarr;
+              </Link>
+              <Link className="p-link whitespace-nowrap self-center" href="/collective/">
+                Explore The Collective &rarr;
               </Link>
             </div>
           </div>

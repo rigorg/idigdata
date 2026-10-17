@@ -14,7 +14,7 @@ export const SITE_NAME = "idigdata";
 export const PERSON_NAME = "Robert Paddock";
 
 export const PERSON_DESCRIPTION =
-  "Enterprise Technology Leader. 30 years, 50+ implementations, 15 enterprise transformations at scale. Founder of Data Integration Group (DIG LLC), the practice behind idigdata, founded 2016.";
+  "Enterprise Transformation Executive. 20+ years of business leadership, over 50 enterprise transformations, and three years of hands-on agentic development. Founder of Data Integration Group (DIG LLC), the practice behind idigdata, founded 2016.";
 
 const BLOCK_DISCIPLINES = [
   "Commercial & Solution Leadership",
@@ -66,7 +66,7 @@ export function personRef(): Record<string, unknown> {
   return {
     "@type": "Person",
     name: PERSON_NAME,
-    jobTitle: "Enterprise Technology Leader",
+    jobTitle: "Enterprise Transformation Executive",
     url: SITE_ORIGIN,
     sameAs: ["https://www.linkedin.com/in/robertpaddock"],
   };
@@ -149,7 +149,7 @@ export function collectiveSchema(): JsonLdNode {
     name: "The Collective",
     url: `${SITE_ORIGIN}/collective/`,
     description:
-      "Intent equals outcome delivered. Custom, sovereign operational software built on B.O.S.S., FlowCraft, and The Rig. Run in isolation on private iron; grow through the collective pattern library.",
+      "How The Rig (Agentic Development Company) builds B.O.S.S. (Enterprise Foundation Asset) and FlowCraft (Human-Agentic Runtime System & Workflow Blocks) on a shared Data Spine.",
     publisher: organizationRef(),
     author: personRef(),
     inLanguage: "en-US",

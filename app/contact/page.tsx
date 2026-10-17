@@ -56,7 +56,21 @@ export default function ContactPage() {
           </p>
           </div>
           <div className="home-watermark" aria-hidden="true">
-            <img src="/idigdata-mark.svg" alt="" />
+            <img
+              src="/idigdata-mark.svg"
+              alt=""
+              style={{
+                display: "block",
+                width: "280px",
+                height: "280px",
+                opacity: 0.18,
+                transform: "rotate(12deg)",
+                border: "none",
+                borderRadius: 0,
+                boxShadow: "none",
+                background: "transparent",
+              }}
+            />
           </div>
           </div>
           <div className="form-grid mt-8">

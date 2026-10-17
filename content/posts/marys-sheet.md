@@ -1,176 +1,157 @@
 ---
-title: "Mary's Sheet & The Unwritten Operating Core"
+title: "Mary's Sheet & Why 70% of ERPs Miss Expectations"
 date: 2026-10-10
 slug: marys-sheet
-description: "Why enterprise systems crash into the plant floor: the true story of Mary's workforce scheduling sheet at Sierra Nevada and the unwritten operational seam."
-topic: "Field Dispatch 01 // The Operational Seam"
+description: "Why over 70% of ERP initiatives fail to fully meet their business-case goals—and why layering agentics on top of enterprise systems still starts with people, data, systems, and workflows."
+topic: "Field Dispatch 01 // Why 70% of ERPs Miss Expectations"
 ---
 
-# Mary's Sheet & The Unwritten Operating Core
+# Mary's Sheet & Why 70% of ERPs Miss Expectations
 
-Every enterprise transformation begins in an air-conditioned boardroom with a pristine slide deck.
+Across the industry, [Gartner predicts](https://www.gartner.com/en/documents/5697891) that **more than 70% of recently implemented ERP initiatives will fail to fully meet their original business-case goals**. Too many of them begin the exact same way: in an air-conditioned boardroom with a pristine slide deck.
 
 The vendor outlines the happy path: modern cloud systems, automated workflows, single-pane visibility, and instant transaction clearing. The steering committee nods in unison. Ten million, twenty million, fifty million dollars are committed.
 
-Sixteen months later, the cutover date arrives. The executive committee cuts the ribbon, flips the switch on the new system of record, and watches the plant grind to a dead halt.
+When a program treats transformation as a software install rather than aligning **people, data, systems, and workflows**, the cutover date arrives and collides with the physical plant floor.
 
-Batches sit stalled in the cellar. Packaging lines sit dark. Operators stand around waiting for shift assignments while supervisors scramble through disconnected printouts. 
-
-Why? Because the enterprise software captured the official, documented operating procedure. But the actual enterprise runs on **Mary's Sheet**.
+Why? Because the enterprise software captured only the official, sanitized operating procedure—while the day-to-day operation still depends on **Mary's Sheet**. And today, as companies rush to layer agentics on top of their enterprise stack, it is the **exact same problem**: people, data, systems, and workflows.
 
 ---
 
-## 1. Why ERPs Fail: Information Silos & The Sanitized SOP
+## 1. Why 70% of ERPs Fall Short—And Why Agentics Sits on the Same Foundation
 
-In the emerging debate around autonomous software factories, the industry group **8090 Solutions** recently articulated a truth that plant-floor operators have lived for decades:
+In the emerging conversation around enterprise AI and software delivery, **8090** and plant-floor operators alike point to the chasm between **Stated Reality** and **Actual Reality**: much of a company's real operating logic lives in unwritten parameters, exception handling, and frontline habits that automated database scrapers never see.
 
-> *"There is a massive chasm between Stated Reality and Actual Reality. Systems logic is buried in custom parameters and human habits that synthetic code and automated scrapers cannot see."*
+When over 70% of enterprise ERP programs struggle to realize their business-case goals, it is rarely a failure of computational horsepower or database bandwidth. Putting AI agents on top of disconnected systems does not magically fix that gap—it simply accelerates whatever foundation is underneath.
 
-Why do over 70% of enterprise ERP implementations struggle to fully realize their business-case goals? It is rarely a failure of computational horsepower or database bandwidth. 
+The breakdown happens because enterprises are fractured into disparate information silos. Each department maintains its own partial view of the world: supply chain looks at forward forecasts, brewing looks at fermentation kinetics, packaging looks at line speed, and finance looks at cleared invoices. Without a unified, company-owned common data model connecting **people, systems, and workflows**, frontline supervisors bridge the gap by hand.
 
-The breakdown happens because enterprises are fractured into disparate information silos. Each department maintains its own partial view of the world: supply chain looks at forward forecasts, brewing looks at fermentation kinetics, packaging looks at line speed, and finance looks at cleared invoices. There is no unified, company-owned common data model connecting them.
-
-Traditional software projects try to paper over these fractures by formalizing Standard Operating Procedures (SOPs). But SOPs describe how an organization *wishes* it functioned on its best day. Stated reality is the sanitized diagram in the corporate intranet.
+Traditional software projects try to paper over these fractures by formalizing Standard Operating Procedures (SOPs). But SOPs describe how an organization *wishes* it functioned on its best day. Stated reality is the sanitized diagram on the corporate intranet.
 
 **Actual reality is what happens when a packaging pump fails at 2:00 AM on a Friday before a holiday weekend.**
 
-Actual reality lives in the unwritten parameters, the informal cross-department phone calls, and the tribal heuristics of frontline people who have spent thirty years learning where the official software lies.
+Actual reality lives in the unwritten parameters, the cross-department handoffs, and the frontline judgment of operators who know where the official software has blind spots.
 
 ---
 
-## 2. Thirty Years of Tribal Truth on the Flagship Floor
+## 2. Thirty Years of Tribal Truth on the Plant Floor
 
-This is not a hypothetical case study. Mary is real.
+To illustrate how this plays out on the floor, consider **Mary**—a composite portrait drawn from frontline schedulers and plant coordinators across multi-facility brewing and manufacturing operations.
 
-The setting was a premier multi-facility craft brewer, and this happened at the most complex plant in the estate: the flagship facility in Chico, California.
+Every morning at 6:30 AM, Mary arrives on the floor with a green metal clipboard holding three tightly folded 11x17 ledger spreadsheets.
 
-Every single morning at 6:30 AM, Mary arrived at the plant with a green metal clipboard. On that clipboard were three tightly folded 11x17 ledger spreadsheets. 
+Those sheets capture the unwritten operating core of the facility:
+- Which operators hold active pasteurizer or centrifuge certifications.
+- Which crew members need light-duty or rotational assignments on a given shift.
+- How overtime balances and shift rotations affect line coverage.
+- Which packaging crew works best together on tight line changeovers.
+- The operational coordination with the cellar team when a tank requires extended caustic wash cycles between specialty runs.
 
-Those sheets contained the real operating core of the entire facility:
-- Which operators held active pasteurizer or centrifuge certifications.
-- Which technicians were nursing physical injuries and needed light-duty assignments.
-- Who was approaching union overtime limits and who had worked double shifts.
-- Which packaging crew worked best together on tight line changeovers.
-- The informal agreement with the cellar team that tank 14 required an extra four hours of caustic wash regardless of what the batch recipe stated.
+Mary acts as the human node holding together the multi-variable puzzle of production scheduling, maintenance windows, and quality compliance.
 
-Mary was the sole human node holding together the multi-variable puzzle of production scheduling, maintenance downtime, and regulatory compliance.
-
-Over thirty years, through four major enterprise software overhauls, Mary's spreadsheet had outlasted every single system of record. Every time a new ERP arrived, Mary nodded politely, attended the mandatory corporate training, and went right back to updating her green sheets.
-
-She had to. If Mary relied solely on the official software, the brewery would have stopped shipping beer within forty-eight hours.
+Through multiple enterprise software generations, spreadsheets like Mary's outlast official systems of record whenever the software ignores how the floor actually runs.
 
 ---
 
 ## 3. The Maintenance Exception: What Data Never Picks Up
 
-The fundamental limitation of modern data engineering and autonomous coding agents is rooted in **Polanyi's Paradox**:
+The fundamental limitation of pure data engineering and unsupervised coding agents is rooted in **Polanyi's Paradox**:
 
 > *"We know more than we can tell."*
+> — Michael Polanyi, *The Tacit Dimension*
 
-Data can be organized. Data can be stored in data warehouses, indexed in vector stores, and visualized on executive monitors. But data only records transactions that have already cleared. **Data cannot pick up what lives in between the seams.**
+Data can be organized, stored in warehouses, indexed in vector stores, and visualized on executive monitors. But data only records transactions that have already been entered. **Data cannot pick up what lives unrecorded between the seams.**
 
-As pure software code is commoditized and reproduced in seconds, enterprise value migrates to the one thing AI cannot copy: **the physical operational seam**. An AI agent running in a data center can scrape database records and declare packaging line 2 "idle and green." But it cannot walk the concrete floor, observe two millwrights with an unbolted filling pump, smell the caustic wash, or read a grease-scrawled note on a torn piece of cardboard. Mary's clipboard was not an inefficient relic; it was the living business.
+As code generation accelerates, enterprise value concentrates in the physical operational seam. An AI agent in a data center can query database records and declare packaging line 2 "idle and green." It cannot walk the concrete floor, see a maintenance crew inspecting a weeping mechanical seal, or read a note on a maintenance bench before the work order is keyed into the terminal.
 
-Consider a real-world morning during that transformation:
-1. The official maintenance system showed packaging line 2 as "idle and available."
-2. The supply chain scheduling engine saw an open production slot and routed an emergency 911 rush order for 5,000 cases of seasonal ale to line 2.
-3. In synthetic software land, the workflow cleared with a green checkmark.
+Consider how a typical floor exception unfolds in this composite scenario:
+1. The maintenance system still shows packaging line 2 as "idle and available."
+2. The scheduling engine sees an open production slot and routes a rush order of seasonal ale to line 2.
+3. In the database, the workflow clears with a green checkmark.
 
-In physical reality, line 2 was dead. 
+On the physical floor, line 2 is down for a seal replacement that hasn't been logged at the terminal across the building yet.
 
-Two mechanics had unbolted the main filling pump twenty minutes earlier to replace a weeping mechanical seal. The work order was written on a grease-stained piece of cardboard sitting on the maintenance bench; it had not been logged into the enterprise maintenance system because the mechanic's terminal was across the building.
+The schedule collision is caught because Mary walks past maintenance on her morning rounds, sees the pump on the bench, knows the rush order is coming, and coordinates across teams:
+- She aligns maintenance and packaging on the realistic window.
+- She re-routes the rush run to an available line before brewing transfers the batch.
+- She assigns certified operators to cover the changeover.
 
-The software said clear. The physical steel was torn apart.
-
-The catastrophe was averted because Mary walked past maintenance on her morning rounds. She saw the pump on the bench, knew the 911 rush order was coming down the pipe, and intervened directly:
-- She told maintenance to hold off on tear-down until Monday.
-- She re-routed the rush run to line 4 before brewing dumped the wort.
-- She reassigned three certified operators to line 4 to handle the changeover.
-
-> **SEAM LOG 01-A // OBSERVED REALITY: MARY'S CLIPBOARD VS. THE DATABASE**
-> I stood on that plant floor next to Mary as the multi-million-dollar enterprise software reported packaging line 2 as green, idle, and ready. In physical reality twenty feet away, line 2 was dead. Mechanics had unbolted the main filling pump twenty minutes earlier to replace a weeping mechanical seal, with the work order scrawled in black grease marker on a piece of cardboard sitting on the maintenance bench.
+> **SEAM LOG 01-A // ILLUSTRATIVE FLOOR COMPOSITE: THE CLIPBOARD VS. THE DATABASE**
+> Picture the multi-million-dollar enterprise software reporting packaging line 2 as green, idle, and ready—while twenty feet away on the physical floor, mechanics have unbolted a filling pump to replace a weeping seal before logging the ticket at the terminal.
 >
-> No AI agent scraping databases could have caught that. The ERP was a clean fiction; Mary's clipboard was the living business. Only physical presence, floor observation, and cross-department trust saved the batch.
+> No AI agent scraping databases alone can catch an unlogged physical exception. Only floor visibility, connected operational workflows, and cross-department coordination prevent a costly mistake.
 
-**No AI agent, scraping database records, could have caught that.** The status flag in the database was green. Only human presence, physical observation, and cross-department trust prevented a multi-thousand-dollar dump down the drain.
+**No AI agent scraping database records alone could catch that.** Only human presence, connected floor workflows, and cross-department trust close the gap.
 
 ```
-+-------------------------------------------------------------------------+
-|               THE CHASM: STATED REALITY VS. ACTUAL REALITY              |
-|                                                                         |
-|   THE STATED ENTERPRISE (DATABASE)    THE ACTUAL OPERATING FLOOR        |
-|   - Status: Green / Line 2 Idle       - Pump Unbolted 20 Minutes Prior  |
-|   - Schedule: 911 Rush Batch Ready    - Weeping Mechanical Seal Failed  |
-|   - ERP Record: All Systems Clear     - Grease Marker on Torn Cardboard |
-|                                                                         |
-|                \                                     /                  |
-|                 \                                   /                   |
-|                  v                                 v                    |
-|                        THE OPERATIONAL SEAM                             |
-|               Mary's Clipboard · Physical Floor Presence                |
-|                   4,000 Gallons Saved From the Drain                    |
-+-------------------------------------------------------------------------+
+STATED ENTERPRISE (DATABASE)
+- Status: Green / Line 2 Idle
+- Schedule: 911 Rush Batch Ready
+- ERP Record: All Systems Clear
+          |
+          v
+ACTUAL OPERATING FLOOR
+- Pump Unbolted 20 Minutes Prior
+- Weeping Mechanical Seal Failed
+- Note on Maintenance Bench
+          |
+          v
+THE OPERATIONAL SEAM (COMPOSITE SCENARIO)
+- Mary's Clipboard & Floor Presence
+- Rush Batch Re-Routed Before Transfer
+- Illustrative Example: 4,000 Gal. Saved
 ```
 
 ---
 
 ## 4. "You're Going to Have More Important Things to Do, Mary"
 
-During the cutover, as the automated operational scheduling took over the daily spreadsheet shuffle, Mary walked into my office.
+Continuing this composite scenario into cutover—as automated operational scheduling replaces the daily spreadsheet shuffle—captures a human moment that recurs across nearly every plant-floor transformation. Mary walks into the office without her green metal clipboard. For thirty years, that clipboard had been an extension of her arms. Without it, her hands look empty.
 
-She did not have her green metal clipboard with her. For thirty years, that clipboard had been an extension of her arms. Without it, her hands looked empty.
-
-She sat down across from my desk and looked at me with raw, quiet vulnerability:
+She sits down and voices the quiet fear shared by experienced coordinators everywhere:
 
 > *"Well, I guess I'm going to lose my job and have nothing to do."*
 
-That sentence carries the heartbreak of every enterprise transformation that ever failed its people.
+That sentence carries the weight of every enterprise transformation that ever failed its people.
 
-For three decades, Mary had carried the terrifying weight of the entire facility on her shoulders. If she miscalculated a union rest cycle, if she missed an expired pasteurizer certification, if she misread an informal note from the cellar—packaging lines stalled, beer was dumped down the drain, and Mary took the hit. 
+For three decades, coordinators like Mary carry the operational weight of the facility on their shoulders. If a rest cycle is miscalculated, an expired certification is missed, or an informal note from the cellar is overlooked—packaging lines stall and the coordinator takes the hit. 
 
-She had spent thirty years serving as human middleware: hunched over 11x17 paper ledgers for six to eight hours a day, transcribing names and shift codes, firefighting exceptions, and absorbing the stress of an entire manufacturing plant. She thought that clerical exhaustion was her value. She thought that being the single point of failure was her security.
+When experienced operators spend decades serving as human middleware—hunched over paper ledgers for hours a day, transcribing shift codes, and firefighting exceptions—it is natural to feel that clerical exhaustion is their security.
 
-I looked her dead in the eyes:
+The response that matters most at cutover is simple:
 
 > *"You're going to have more important things to do, Mary."*
 
-And she did.
+When software takes over the deterministic rules—the certification matching, the overtime constraints, the live feeds between tank status and packaging lines—it does not eliminate frontline leaders. It liberates them.
 
-When the software took over the deterministic rules—the certification matching, the overtime constraints, the live endpoint feeds between tank status and packaging lines—it did not eliminate Mary. It liberated her.
+Instead of spending the day reconciling spreadsheets, an experienced coordinator's work shifts from clerical firefighting to operational leadership:
 
-For the first time in thirty years, Mary could look up from the spreadsheets and look people in the eyes. Her daily work transformed from clerical firefighting into deep operational leadership:
+- **Mentoring the Next Generation**: Taking younger supervisors under their wing and teaching what no standard operating procedure codifies: how cellar and packaging teams communicate under pressure, which crews handle tight line changeovers best, and how the plant adapts when production spikes.
+- **Walking the Floor with Presence**: Instead of racing against the shift whistle with a pencil and eraser, walking the packaging bays and cellar decks—noticing mechanical issues early, speaking with mechanics before teardowns begin, and spotting fatigue before it becomes a safety incident.
+- **Protecting Frontline Standards**: Ensuring rotational assignments are handled fairly, operators advance through certifications, and physical floor realities are represented clearly.
 
-- **Mentoring the Next Generation**: Mary took younger supervisors under her wing. She taught them what no standard operating procedure could ever codify: how the cellar and packaging teams actually communicate under pressure, which operators have the steady hands for difficult line changeovers, and how the plant breathes when production spikes.
-- **Walking the Floor with Presence**: Instead of frantically racing against the shift whistle with a pencil and eraser, Mary walked the packaging bays and cellar decks. She noticed mechanical vibrations before pumps failed. She spoke with mechanics before teardowns began. She spotted burnout in operators' eyes before it led to a safety incident.
-- **Protecting Frontline Dignity**: Freed from clerical terror, Mary became the moral anchor of the floor. She ensured light-duty assignments were handled with dignity, that operators were advancing through their certifications, and that the physical reality of the floor was respected by management.
+That is the real test of enterprise software. 
 
-That is the ultimate test of enterprise software. 
-
-> **SEAM LOG 01-B // THE OPERATIONAL SEAM: HUMAN ELEVATION**
-> When we finally built software that respected how the floor actually worked—absorbing the five hours of clerical data re-entry she was doing every afternoon just to reconcile the ERP's blind spots—Mary didn't get displaced. She got elevated.
+> **SEAM LOG 01-B // ILLUSTRATIVE FLOOR COMPOSITE: HUMAN ELEVATION**
+> When software is built around how the floor actually works—absorbing the hours of clerical data re-entry required to reconcile ERP blind spots—frontline coordinators aren't displaced. They are elevated.
 >
-> For the first time in thirty years, she could spend her morning walking the floor, mentoring younger supervisors, and solving cross-department bottlenecks before they happened. That is the true dignity of the operational seam: technology that takes the clerical weight off human shoulders so real human expertise and leadership can shine.
+> Instead of clerical reconciliation, they can spend their mornings walking the floor, mentoring younger supervisors, and solving cross-department bottlenecks before they happen. That is the goal of the operational seam: technology that takes the clerical weight off human shoulders so human expertise and leadership can lead.
 
-Bad software treats people as disposable data conduits—and then fails because the uncodified reality crashes the plant. Great operational architecture absorbs the clerical machinery so that the human beings on the floor can do what only humans can do: exercise judgment, build trust, mentor others, and lead. 
-
-Mary didn't lose her job. She finally got to do the work she was born to do.
+Bad software treats people as disposable data conduits—and stumbles when uncodified reality hits the floor. Good operational architecture absorbs the clerical machinery so the people on the floor can exercise judgment, build trust, mentor others, and lead.
 
 ```
-+-------------------------------------------------------------------------+
-|                 THE ELEVATION OF THE OPERATIONAL SEAM                   |
-|                                                                         |
-|   CLERICAL ABSORPTION (MACHINE)       HUMAN ELEVATION (MARY)            |
-|   - Deterministic Rule Processing     - Walk the Packaging Floor        |
-|   - Cross-System Data Sync            - Mentor Next-Gen Supervisors     |
-|   - Certification & Rest Logic        - Detect Pre-Failure Vibrations   |
-|   - Real-Time Tank Telemetry          - Anchor Institutional Trust      |
-|                                                                         |
-|                \                                     /                  |
-|                 \                                   /                   |
-|                  v                                 v                    |
-|                        THE ELEVATED ENTERPRISE                          |
-|           Machine Takes Clerical Load · Human Leads the Floor           |
-+-------------------------------------------------------------------------+
+CLERICAL ABSORPTION (SYSTEM)
+- Deterministic Rule Processing
+- Cross-System Data Sync
+- Certification & Rest Logic
+- Real-Time Tank Telemetry
+          |
+          v
+HUMAN ELEVATION (OPERATOR)
+- Walk the Packaging Floor
+- Mentor Next-Gen Supervisors
+- Spot Maintenance Issues Early
+- Lead Cross-Team Coordination
 ```
 
 ---
@@ -181,27 +162,27 @@ Today, the technology industry is swept up in another wave of breathless claims:
 
 The narrative claims that because frontier models can generate syntactically valid code from text prompts, enterprise systems and operational architects are obsolete. Point an agent at an API or documentation, and the agent will run the company.
 
-This thesis suffers from the exact same fatal blind spot that doomed monolithic ERPs: **an AI agent can only execute on tokens that have been codified.**
+This thesis suffers from the exact same blind spot that undermined monolithic ERPs: **an AI agent can only execute on rules and context that have been captured and structured.**
 
-An LLM can only synthesize what has been written down. When an autonomous agent builds software against documented standard operating procedures, it builds a lightning-fast execution engine for a business that *does not exist*.
+When an autonomous agent builds software solely against sanitized operating procedures, it builds an execution engine for an idealized version of the business.
 
-The AI will schedule an operator for a changeover because the personnel system says they are on shift—blind to the fact that the operator's pasteurizer certification expired yesterday, or that the CIP sanitation crew is still running caustic rinse through tank 14.
+The AI will schedule an operator for a changeover because the personnel system says they are on shift—unaware that the operator's pasteurizer certification expired yesterday, or that the CIP sanitation crew is still running caustic rinse through tank 14.
 
-When you automate an incomplete model of reality at machine speed, you don't achieve digital transformation. You achieve **automated operational chaos**.
+When you automate an incomplete model of reality at machine speed, you don't achieve digital transformation. You create **automated operational friction**.
 
 ---
 
-## 6. The Three Laws of the Operational Seam
+## 6. Three Principles of the Operational Seam
 
-Enterprise agentics will not succeed by attempting to eliminate the people who run the floor. It will succeed by building sovereign, governed runtime scaffolding around them:
+Enterprise agentics succeeds by building governed runtime scaffolding around the people who run the operation:
 
-1. **Walk the Floor Before Writing Code**: You do not discover operational reality in a conference room over catered lunch, and you do not discover it through automated database introspection. You discover it in steel-toed boots on the plant floor, watching how physical exceptions are handled when a pump fails or an ingredient is delayed. You find Mary. You understand why her spreadsheets exist.
-2. **Preserve the Human Connection Fabric**: A dashboard can display throughput; it cannot tell you that a bottling line mechanic pulled a pump on an idle line while a rush schedule change was brewing. Map the tacit judgment, exception handoffs, and informal trust networks that hold the company together into explicit, human-governed decision boundaries.
-3. **Build Deterministic Scaffolding, Not Chatbots**: Once tacit rules are excavated, do not dump them into a sprawling, un-audited LLM prompt. Translate them into deterministic workflow blocks with strict state machines, certified human authorization gates, and local iron execution where company data remains 100% private.
+1. **Walk the Floor Before Writing Code**: You do not discover operational reality in a conference room alone, and you do not discover it through automated database introspection alone. You discover it on the floor, watching how physical exceptions are handled when a pump fails or an ingredient is delayed. You understand why the spreadsheets exist.
+2. **Preserve the Human Connection Fabric**: A dashboard can display throughput; it cannot replace cross-department coordination when a line mechanic pulls a pump while a rush schedule change is underway. Map tacit judgment, exception handoffs, and decision boundaries explicitly.
+3. **Build Governed Workflow Blocks, Not Unbounded Chatbots**: Once tacit rules are understood, translate them into structured workflow blocks with clear state rules, human authorization gates, and company-controlled data custody.
 
 ---
 
 ### The Operational Trilogy
-**Field Dispatch 01 // The Operational Seam**: Uncovering the unwritten reality of Mary's sheet is the mandatory first step. But once you capture how work actually happens on the floor, you confront the next operational frontier: how humans and autonomous agents synthesize within consequential enterprise workflows.
+**Field Dispatch 01 // Mary's Sheet & Why 70% of ERPs Miss Expectations**: Uncovering the unwritten reality of Mary's sheet is the first step. Once you capture how work actually happens on the floor, you confront the next operational question: what happens when people are directly empowered with agents.
 
-→ Continue to **[Field Dispatch 02: Human-Agent Synthesis & The Sovereign Substrate](/agentic-ai/the-application-layer/)**
+→ Continue to **[Field Dispatch 02: People and Agents at Work: Empowered Workflows & The Sovereign Substrate](/agentic-ai/the-application-layer/)**
