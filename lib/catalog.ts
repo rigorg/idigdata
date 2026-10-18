@@ -1,5 +1,5 @@
 // Generated from approved Operations public export. Do not edit outcome copy here.
-// Revision: outcome-catalog-2026-10-15-v6; SHA256: 8b0f4a5a604187238c2cbfe7e72ede60c408613bd38e32cb729eafbc538676b9; 60 outcomes, ten per category.
+// Revision: outcome-catalog-2026-10-15-v6; SHA256: cbdd56e3d877f51474f7bf8f10280ee9391f12f9db8cc3a803c5c2e270639be5; 60 outcomes, ten per category.
 
 export interface CatalogDomain {
   id: string;
@@ -278,7 +278,7 @@ export const PUBLIC_CATALOG_ITEMS: CatalogItem[] = [
     "domainId": "architecture_systems",
     "name": "Legacy Systems Modernized Without Losing Essential Business Rules",
     "tagline": "Make embedded rules and dependencies explicit, then verify essential behavior through staged modernization.",
-    "situation": "",
+    "situation": "Scope: Map embedded business rules and dependencies, reconcile source data, and sequence migration or integration with retained systems. Relevant environments may include COBOL applications, AS/400, mainframe and legacy SQL systems.\n\nWhat you receive: A modernization scope, mapped rules and data, acceptance examples, and a staged transition plan.\n\nCompletion: Agreed business behavior and data reconcile through end-to-end testing and user acceptance, with ownership for cutover, recovery and ongoing operation.",
     "deliverables": []
   },
   {
@@ -477,7 +477,7 @@ export const PUBLIC_CATALOG_ITEMS: CatalogItem[] = [
     "id": "it_modern_dept",
     "domainId": "technology_operations",
     "name": "An IT Organization Accountable for Service, Investment and Risk",
-    "tagline": "Establish leadership, internal capability, partner accountability and technology priorities tied to business needs.",
+    "tagline": "Align internal IT, business leaders and delivery partners around service ownership, investment priorities and accountable execution.",
     "situation": "",
     "deliverables": []
   },
@@ -532,8 +532,8 @@ export const PUBLIC_CATALOG_ITEMS: CatalogItem[] = [
   {
     "id": "it_plant_floor_connect",
     "domainId": "technology_operations",
-    "name": "Operational Technology Connected to Machines and Production",
-    "tagline": "Connect agreed machine and production information through validated shop-floor interfaces, with controlled access, clear ownership and known failure handling.",
+    "name": "Plant Information Connected to Enterprise Workflows",
+    "tagline": "Connect production information with business systems through validated interfaces, working with plant engineering and OT owners.",
     "situation": "Scope: Define required signals, interfaces, ownership, and permitted traffic. Coordinate controlled connectivity and validation with plant engineering and security owners.\n\nWhat you receive: A plant-to-business interface and access design. Validated data exchanges and operating monitoring procedures.\n\nCompletion: Agreed production information reaches its business destination with verified access boundaries and a known response to interface failure.\n\nBoundaries: Changes to controllers, safety systems, or production networks require their qualified owners; physical process behavior is outside an information-interface mandate.",
     "deliverables": []
   },
@@ -579,6 +579,6 @@ export const LEGACY_OUTCOME_ALIASES: Record<string, string> = {
   "wa_field_service_work_order_mesh": "wa_handoffs"
 };
 
-export const PUBLIC_CATALOG_REVISION = {"version":"outcome-catalog-2026-10-15-v6","public_hash":"8b0f4a5a604187238c2cbfe7e72ede60c408613bd38e32cb729eafbc538676b9","count":60};
+export const PUBLIC_CATALOG_REVISION = {"version":"outcome-catalog-2026-10-15-v6","public_hash":"cbdd56e3d877f51474f7bf8f10280ee9391f12f9db8cc3a803c5c2e270639be5","count":60};
 
 export const RETIRED_OUTCOME_IDS: string[] = ["bs_lifecycle_control","dk_ai_data_readiness","dk_operational_diagnostics","dk_preserve_memory","dk_rag_search","dk_self_service_bi","fa_engineering_context","fa_execution_control","fa_harness_integration","fa_legacy_modernization","fa_multi_agent_delivery","fa_release_recovery","fs_abc_profitability","fs_budget_forecast_actuals","fs_reconciliation","fs_spend_payment_controls","fs_unified_cfo_view","ld_ai_decision_rights","ld_board_visibility","wa_exception_routing","wa_mobile_capture","wa_multi_site_process","wa_procure_to_pay","wa_supplier_cost_pricing"];

@@ -50,11 +50,11 @@ const estate = [
     ],
   },
   {
-    title: "Manufacturing & Plant Automation",
-    tag: "MES — SCADA",
+    title: "Manufacturing Systems & Plant Integration",
+    tag: "Plant Data",
     rows: [
-      "ProLeiT — Brewing & Process Automation MES",
-      "Ignition — Industrial SCADA & Plant Floor Execution",
+      "ProLeiT — Integration with Brewing & Process Systems",
+      "Ignition — Integration with Plant Data & SCADA",
     ],
   },
   {
@@ -107,6 +107,15 @@ const estate = [
       "Power BI — Executive Reporting & BI",
     ],
   },
+  {
+    title: "Legacy Systems & Modernization",
+    tag: "Business Rules & Data",
+    rows: [
+      "COBOL applications, AS/400, mainframe and legacy SQL environments",
+      "Business-rule mapping, migration, validation and reconciliation",
+      "Integration with retained enterprise systems through ETL and APIs",
+    ],
+  },
 ] as const;
 
 const constellations = [
@@ -126,7 +135,7 @@ const constellations = [
     code: "P2M",
     name: "Plan to Manufacture",
     tagline: "Transformation core",
-    desc: "Demand planning (S&OP), MRP, BOMs, plant SCADA/MES automation, scheduling, and batch traceability.",
+    desc: "Demand planning (S&OP), MRP, BOMs, integration with plant MES and SCADA, scheduling, and batch traceability.",
   },
   {
     code: "S2S",
@@ -197,37 +206,37 @@ export default function ExperiencePage() {
             <article>
               <p className="font-mono text-xs font-bold uppercase tracking-wider text-[#9E7D3B]">01 // 2016–Present · Transformation &amp; Agentic Delivery</p>
               <h3 className="mt-2">Data Integration Group (idigdata)</h3>
-              <p className="font-medium text-sm text-[#142840]/75 mt-1">Founder &amp; Enterprise Transformation Leader</p>
+              <p className="font-medium text-sm text-[#142840]/75 mt-1">Founder and Principal, Enterprise Transformation</p>
               <p className="p-prose mt-4">
                 Lead enterprise transformation for family-owned, private equity-backed, and post-acquisition businesses, connecting commercial commitments to delivery and adoption.
               </p>
               <ul className="mt-3 space-y-2 text-[14.5px] leading-relaxed text-[#142840]/85 list-disc pl-5">
-                <li>Shape engagements through sales engineering, solution design, and contracts. Organize domain experts and delivery partners around business priorities, workflows, and data.</li>
-                <li>Recovered a stalled $8M ERP program with $2M in savings. Led acquisition integration for a $350M business, reducing financial close from 18 days to four.</li>
-                <li>Deliver legacy modernization and custom software connecting ERP, warehouse, manufacturing, and commercial operations through company-owned integrations and data foundations.</li>
-                <li>Build and operate a multi-harness agentic development environment that builds enterprise foundation software and reusable workflow blocks for people and agents on a shared data core.</li>
+                <li>Shape engagements through executive discovery, sales engineering, solution design, and contracts, with clear scope and partner accountability.</li>
+                <li>Align internal IT, operations, and domain champions around business priorities. Carry workflow prototypes through end-to-end testing, user acceptance, go-live, and adoption.</li>
+                <li>Lead program recovery, acquisition integration, and custom software delivery. Selected results below show the operating and financial impact.</li>
+                <li>Build and operate an agentic development environment with independent review and human decision authority, leaving customer teams able to run and continue improving their software.</li>
               </ul>
             </article>
 
             <article>
-              <p className="font-mono text-xs font-bold uppercase tracking-wider text-[#9E7D3B]">02 // 2023–2025 · Enterprise CIO Mandate</p>
+              <p className="font-mono text-xs font-bold uppercase tracking-wider text-[#9E7D3B]">02 // 2024–2026 · Enterprise CIO Mandate</p>
               <h3 className="mt-2">Sierra Nevada Brewing Co.</h3>
               <p className="font-medium text-sm text-[#142840]/75 mt-1">Chief Information Officer (Contract)</p>
               <p className="p-prose mt-4">
                 Served as CIO and executive leadership team member for a multi-site brewer, responsible for technology strategy, investment, operations, data, cybersecurity, and governance, with reporting to the board.
               </p>
               <ul className="mt-3 space-y-2 text-[14.5px] leading-relaxed text-[#142840]/85 list-disc pl-5">
-                <li><strong>Enterprise transformation:</strong> Led 26 months of architecture and implementation connecting business and plant systems around a company-owned data core.</li>
-                <li><strong>Organizational leadership:</strong> Rebuilt IS/IT and led 150 project participants across 25 task forces, establishing accountability for decisions, delivery, and adoption.</li>
+                <li><strong>Enterprise transformation:</strong> Led 150+ project participants across 25 task forces through 26 months of architecture and implementation, connecting business and plant systems around a company-owned data core.</li>
+                <li><strong>IT leadership:</strong> Rebuilt the internal IS/IT organization, establishing accountability for technology priorities, vendor delivery, and adoption.</li>
                 <li><strong>Operational continuity:</strong> Maintained business operations through changes across purchasing, order-to-cash, planning, manufacturing, warehousing, and finance, including laboratory systems, food safety, SQF, and TTB requirements.</li>
                 <li><strong>Applied agentics:</strong> Put agentic applications into production on the company-owned data core, with training, controls, and business ownership.</li>
               </ul>
             </article>
 
             <article>
-              <p className="font-mono text-xs font-bold uppercase tracking-wider text-[#9E7D3B]">03 // 2013–2016 · Partner-Side ERP Implementation</p>
+              <p className="font-mono text-xs font-bold uppercase tracking-wider text-[#9E7D3B]">03 // 2012–2016 · Partner-Side ERP Implementation</p>
               <h3 className="mt-2">Access IT, Inc.</h3>
-              <p className="font-medium text-sm text-[#142840]/75 mt-1">Founder &amp; Managing Partner</p>
+              <p className="font-medium text-sm text-[#142840]/75 mt-1">Lead Consultant and Solution Architect</p>
               <p className="p-prose mt-4">
                 Led partner-side Microsoft Dynamics NAV and ContractERP implementations for construction, distribution, manufacturing, and services clients.
               </p>
@@ -239,7 +248,7 @@ export default function ExperiencePage() {
             </article>
 
             <article>
-              <p className="font-mono text-xs font-bold uppercase tracking-wider text-[#9E7D3B]">04 // 2003–2013 · Business Ownership &amp; Custom Software</p>
+              <p className="font-mono text-xs font-bold uppercase tracking-wider text-[#9E7D3B]">04 // 1996–2012 · Business Ownership &amp; Custom Software</p>
               <h3 className="mt-2">Timberline Architectural Openings</h3>
               <p className="font-medium text-sm text-[#142840]/75 mt-1">Founder, CEO &amp; CTO</p>
               <p className="p-prose mt-4">
@@ -339,7 +348,7 @@ export default function ExperiencePage() {
             <article>
               <h3>Multi-facility plant-floor &amp; warehouse integration</h3>
               <p className="p-prose mt-4">
-                Engineered real-time integration across plant MES, automated warehouse tracking, and tier-1 ERPs—maintaining continuous operations across high-volume production facilities.
+                Led integration between enterprise systems, plant MES, and warehouse tracking, working with plant leaders and operational technology specialists to connect production information with business workflows.
               </p>
             </article>
             <article>
@@ -357,7 +366,7 @@ export default function ExperiencePage() {
             <article>
               <h3>Core systems modernization &amp; API bridges</h3>
               <p className="p-prose mt-4">
-                Led migration from legacy monoliths to modern enterprise platforms using company-owned API bridges across warehouse, manufacturing, and commercial systems without operational disruption.
+                Led modernization of heavily customized legacy software through company-owned API bridges, with reconciled data, staged cutovers, and clear ownership of business continuity.
               </p>
             </article>
             <article>
@@ -475,6 +484,9 @@ export default function ExperiencePage() {
             </div>
             <p className="p-prose mt-6 text-sm text-[#142840]/75">
               Direct systems leadership and cutover delivery across Microsoft Dynamics 365, OneStream, JD Edwards, and enterprise platforms. Major tier-1 estates—including SAP, Oracle Financials, and NetSuite—are architectures I integrate and work across when the enterprise mandate sits on them. Oracle Primavera is project scheduling and controls I have run directly.
+            </p>
+            <p className="p-prose mt-3 text-sm text-[#142840]/75">
+              My legacy modernization work connects business rules, data, and retained systems. For plant integration, I work with operational technology specialists who own the controls and physical processes.
             </p>
           </details>
         </div>
