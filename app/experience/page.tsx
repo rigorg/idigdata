@@ -230,7 +230,7 @@ export default function ExperiencePage() {
                 <li><strong>Enterprise transformation:</strong> Led a 26-month enterprise transformation with 150+ project participants across 25 task forces, directing architecture and implementation to consolidate business and plant systems around a company-owned data core. Aligned executive sponsors, functional leaders, and delivery partners—establishing the organizational and technical foundation to carry the company through go-live and sustain ongoing operations.</li>
                 <li><strong>IT leadership:</strong> Rebuilt the internal IS/IT organization, modernized enterprise IT, established vendor accountability, and worked with plant leaders and operational technology (OT) specialists to connect enterprise systems with plant operations.</li>
                 <li><strong>Operational continuity:</strong> Maintained operational continuity and addressed regulatory requirements across purchasing, order-to-cash, planning, manufacturing, warehousing, and finance, including laboratory systems, food safety, SQF, and TTB compliance.</li>
-                <li><strong>Applied agentics:</strong> Built an enterprise mapping digital twin and transformation command system across 25 task forces, putting agentic workflow patterns into operation on the company-owned data core with human decision authority.</li>
+                <li><strong>Applied agentics:</strong> Built an enterprise mapping digital twin and transformation command system across 25 task forces to support discovery, prototyping, and implementation—generating the 6 process constellations, 74 clusters, and 200+ workflow patterns around the company-owned data core with human decision authority.</li>
               </ul>
             </article>
 
@@ -293,7 +293,7 @@ export default function ExperiencePage() {
             <article className={styles.domainItem}>
               <h3 className={styles.domainHeading}>Healthcare &amp; Life Sciences</h3>
               <p className={styles.domainText}>
-                Patient care, research, and clinical operations depend on tightly connected workflows—where EMR/EHR integration, quality, privacy, and regulatory traceability support both the mission and the business.
+                Healthcare facilities and regulated operations depend on tightly connected workflows—where facility infrastructure, operational systems delivery, life-safety compliance, quality, and traceability support both the mission and the business.
               </p>
             </article>
 
@@ -332,7 +332,7 @@ export default function ExperiencePage() {
               <article className={styles.orgCard}>
                 <h3 className={styles.orgTitle}>Healthcare &amp; life sciences — HCA Healthcare &amp; Regional Health Systems</h3>
                 <p className={styles.orgText}>
-                  Enterprise systems, facility infrastructure, and operational workflow delivery across hospital networks and clinical environments. Connected EMR/EHR integration, life-safety and infection-control compliance, supply chain, and financial controls where care continuity and traceability are non-negotiable.
+                  Healthcare facility infrastructure and operational systems delivery across hospital networks and medical environments. Connected project controls, life-safety and infection-control compliance, supply chain, and operational workflows where facility continuity and regulatory traceability are non-negotiable.
                 </p>
               </article>
             </div>

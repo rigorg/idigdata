@@ -33,10 +33,9 @@ When you pair domain champions with governed agents around a clean, company-owne
 
 This shift in how humans and agents work together collides head-on with the twenty-year commercial software playbook.
 
-Look at the large SaaS incumbents today. If any of the major SaaS providers make it through this transition intact, **Marc Benioff's Salesforce play** shows why: he is going headless, recognizing that static per-seat screens are giving way to governed data, metadata, and deterministic workflows:
+Look at the large SaaS incumbents today. Across major SaaS platforms, the clearest strategic move is going headless—recognizing that static per-seat screens are giving way to governed data, metadata, and deterministic API workflows:
 
-> *"What matters isn't just the model—it's the metadata, the business context, and the deterministic enterprise workflows."*
-> — Marc Benioff, Chair & CEO of Salesforce
+> **Architectural Principle:** What separates a durable enterprise system from a fragile demo isn't the language model alone—it is the governed metadata, the deterministic accounting and compliance rules, and the company-owned data spine underneath the workflow blocks.
 
 Now look at the monolithic **ERP vendors and giant system integrators** that have held mid-market and enterprise companies hostage for thirty years. Their favorite defense is that they possess decades of "irreplaceable history" and billions of dollars of proprietary business logic that no one else could ever replicate.
 
@@ -79,7 +78,7 @@ DETERMINISTIC SPINE + AGENTIC WORKFLOW BLOCKS
 
 1. **Debits, Credits, and Financial Controls Stay Deterministic**: Double-entry accounting, chart-of-accounts reconciliation, sub-ledger posting, and three-way match (`PO · Dock Receipt · Invoice`) are never left to probabilistic guessing—they execute as strict, auditable state machines on the Data Spine.
 2. **Regulatory, Tax, and Compliance Edge Cases Require Explicit Controls**: Food safety (`SQF`), alcohol and excise reporting (`TTB`), SOX audit trails, and multi-jurisdiction tax rules require deterministic validation gates paired with human sign-off on exceptions.
-3. **423 Reference Workflow Patterns Across 6 Enterprise Constellations**: Across 20+ years and 50+ transformations, we have cataloged **423 reference enterprise workflows across 6 Enterprise Constellations** (*Operations, Finance, Workforce, Asset, Supply Chain, and Governance & IT*).
+3. **423 Reference Workflow Patterns Across 6 Process Constellations**: Across 20+ years and 50+ transformations, we have cataloged **423 mapped reference workflows across 6 Process Constellations** (*Procure to Pay [P2P], Order to Cash [O2C], Plan to Manufacture [P2M], Systems to Support [S2S], Data to Reporting [D2R], and Master Data Management [MDM]*).
 4. **Prove It One Bounded Workflow at a Time**: An enterprise does not replace a legacy core overnight. You keep the systems of record that work, stand up a company-owned **Data Spine**, and use our two Builder Orgs (**B.O.S.S.** and **FlowCraft**) to provision **Agentic Workflow Runtime Blocks** for the highest-friction seams first—close acceleration, receiving reconciliation, and catalog unification.
 
 ---

@@ -201,10 +201,13 @@ export default function CollectiveView() {
 
             <div className={s.leadBody}>
               <p style={{ marginBottom: "12px" }}>
-                <strong>Why The Collective exists:</strong> across 20+ years and 50+ enterprise transformations, I watched companies repeatedly hit the same walls—ERP cutovers that miss the plant floor (<em>Mary&rsquo;s Sheet</em>), 40-year bastardized item catalogs that trap veteran operators (<em>Don WMS</em>), and monolithic software suites that hold customer data and operational patterns hostage.
+                <strong>Why The Collective exists:</strong> across 20+ years and 50+ enterprise transformations, I watched companies repeatedly hit the same walls—ERP cutovers that miss the plant floor (<em>Mary&rsquo;s Sheet</em>), 40-year bastardized item catalogs that trap veteran operators (<em>Don WMS</em>), and monolithic software suites that hold customer data and operational patterns captive.
+              </p>
+              <p style={{ marginBottom: "12px" }}>
+                <strong>How the peer exchange works:</strong> you do not have to adopt our software to take part. Operators, CIOs, domain leads, and builders bring real transformation challenges, compare data and workflow patterns directly with me, and trade practical lessons on what survives cutover while keeping private company records strictly in their own custody.
               </p>
               <p style={{ marginBottom: "16px" }}>
-                <strong>How we work together:</strong> you do not have to adopt our stack to take part. Practitioners bring real operating problems, compare workflow and data patterns directly with me, and trade hard-won lessons from the field. Inside our own workshop, <strong>The Rig</strong> (our multi-harness Agentic Development Company) exchanges patterns bi-directionally with our two <strong>Builder Orgs</strong>—<strong>B.O.S.S.</strong> and <strong>FlowCraft</strong>—which provision dedicated <strong>Operational Instances</strong> running modular <strong>Agentic Workflow Runtime Blocks (`WFBs`)</strong> on a company-owned <strong>Data Spine</strong>.
+                <strong>What is running inside our workshop today:</strong> alongside the peer exchange, we build and test these patterns in three distinct layers—<strong>DigOps</strong> (our live internal operations instance running iDigData&rsquo;s daily commercial pipeline, signal intake, and Block scoping), <strong>B.O.S.S. + FlowCraft</strong> (our working enterprise reference platform and workflow runtime architecture), and <strong>The Rig</strong> (our working multi-harness agentic development environment).
               </p>
             </div>
 
@@ -409,17 +412,17 @@ export default function CollectiveView() {
             {/* System 2: B.O.S.S. Builder Org & Instances */}
             <div className={s.systemCard}>
               <div>
-                <span className={s.systemBadge}>BUILDER ORG 01 &bull; CANONICAL ENTERPRISE DATA SPINE</span>
+                <span className={s.systemBadge}>BUILDER ORG 01 &bull; WORKING ENTERPRISE REFERENCE PLATFORM</span>
                 <h3 className={s.systemTitle}>B.O.S.S.</h3>
-                <div className={s.systemSub}>10-Workflow-Block Transformation &amp; Pattern System</div>
+                <div className={s.systemSub}>9-Workflow-Block Enterprise Digital Twin &amp; Data Spine</div>
                 <p className={s.systemBody}>
-                  Maps how the business runs and structures full-cycle enterprise transformation across <strong>10 Workflow Blocks</strong>: mobilizing stakeholders and domain champions in the <em>7-Cell Beehive</em>, generating the SOW, governing budgets and token burn in <em>Project Financials (PFS)</em>, reconciling the <em>Common Data Core</em>, and linking <em>6 Enterprise Constellations</em> (423 reference workflows across Operations, Finance, Workforce, Asset, Supply Chain, and Governance &amp; IT).
+                  Maps how an enterprise runs and structures full-cycle transformation across <strong>9 Workflow Blocks</strong>: mobilizing stakeholders and domain champions in the <em>Beehive</em>, governing sprint roadmaps and <em>Project Financial Status (PFS)</em>, reconciling the <em>Common Data Core</em>, and linking <em>6 Process Constellations</em> (74 business process clusters and 423 mapped reference workflows across <em>P2P, O2C, P2M, S2S, D2R, and MDM</em>).
                 </p>
               </div>
               <div className={s.systemUseCaseBox}>
-                <span className={s.systemUseCaseLabel}>BUILDER ORG &rarr; INSTANCE</span>
+                <span className={s.systemUseCaseLabel}>REFERENCE PLATFORM &rarr; INSTANCE</span>
                 <p className={s.systemUseCaseText}>
-                  Provisions B.O.S.S. instances that supply canonical schemas, mapped process graphs, and deterministic control rules to FlowCraft.
+                  Supplies canonical schemas, mapped process constellations, and deterministic control rules to FlowCraft workflow blocks.
                 </p>
               </div>
             </div>

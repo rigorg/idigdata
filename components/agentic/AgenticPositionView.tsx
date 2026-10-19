@@ -123,6 +123,8 @@ interface TitanQuote {
   speaker: string;
   role: string;
   source: string;
+  sourceUrl?: string;
+  isQuoted?: boolean;
   quote: string;
 }
 
@@ -167,7 +169,9 @@ const COLLECTIVES: CollectivePillar[] = [
     titanQuote: {
       speaker: "Chamath Palihapitiya",
       role: "CEO, 8090 · Founder, Social Capital · Co-Host, All-In",
-      source: "8090 (“The Space Between the Tasks”)",
+      source: "“What AI spend does to headcount” (Oct 2, 2026)",
+      sourceUrl: "https://research.socialcapital.com/p/ai-and-employment",
+      isQuoted: true,
       quote:
         "A job is more than the sum of its tasks. What's more intangible is the part between them: deciding which task matters, in what order, and when to stop; coordinating with people on other teams; and being the one accountable when it goes wrong.",
     },
@@ -214,14 +218,15 @@ const COLLECTIVES: CollectivePillar[] = [
     spot: "blocks",
     paragraphs: [
       "Agents are real, they are here, and we are at the beginning of a remarkable shift in how enterprises operate. While much of the outside commentary fixates on replacing people, the real frontier inside operating businesses is discovering how human judgment and agentic execution work together to deploy intelligence optimally. When that division of responsibility is designed well, people are emboldened to do the work they love, sharpen their domain craft, and experience the energy of working on a hybrid team where agents carry the repetitive synthesis and reconciliation.",
-      "This human-agentic shift also forces a candid reckoning with the twenty-year SaaS and monolithic ERP model. Among the large SaaS platforms, Marc Benioff's direction at Salesforce shows where survivors are headed: going headless and centering on metadata, governed context, and deterministic API workflows. Meanwhile, the legacy ERP model that locked customer data and operational patterns behind rigid per-seat screens is facing its first structural alternative—combining deterministic accounting, tax, and audit controls with modular, agentic workflow blocks on a company-owned Data Spine.",
+      "This human-agentic shift also forces a candid reckoning with the twenty-year SaaS and monolithic ERP model. Across major SaaS platforms, the clearest strategic direction is going headless—centering on metadata, governed business context, and deterministic API workflows rather than trapping users inside proprietary screens. Meanwhile, the legacy ERP model that held customer data and operational patterns captive is facing a practical alternative: combining deterministic accounting, tax, and audit controls with modular, agentic workflow blocks on a company-owned Data Spine.",
     ],
     titanQuote: {
-      speaker: "Marc Benioff",
-      role: "Chair & CEO, Salesforce · Investor, 8090",
-      source: "Enterprise AI & Headless Workflow Architecture",
+      speaker: "Robert Paddock",
+      role: "Practitioner Thesis · Deterministic Controls + Agentic Workflows",
+      source: "Architectural Principle from 50+ Transformations",
+      isQuoted: false,
       quote:
-        "What matters isn’t just the model—it’s the metadata, the business context, and the deterministic enterprise workflows.",
+        "What separates a durable enterprise system from a fragile demo isn't the language model alone—it is the governed metadata, the deterministic accounting and compliance rules, and the company-owned data spine underneath the workflow blocks.",
     },
     fieldNoteCards: [
       {
@@ -257,7 +262,9 @@ const COLLECTIVES: CollectivePillar[] = [
     titanQuote: {
       speaker: "Matan Grinberg & Eno Reyes",
       role: "Co-Founders, Factory (factory.ai)",
-      source: "The Software Factory Thesis",
+      source: "Factory · “The Software Factory”",
+      sourceUrl: "https://factory.ai/news/the-software-factory",
+      isQuoted: true,
       quote:
         "The incremental units of this system are AI agents. This system will be built by engineers, and in turn will build their software. This system is the software factory... We are building the machine that builds the machine.",
     },
@@ -497,15 +504,29 @@ export default function AgenticPositionView() {
 
                   {/* Supporting Industry Corroboration / Macro Consensus */}
                   <div style={{ marginTop: "18px", marginBottom: "6px" }}>
-                    <span className={s.triadSectionTag}>INDUSTRY PERSPECTIVE // THE MACRO VIEW</span>
+                    <span className={s.triadSectionTag}>
+                      {c.titanQuote.isQuoted === false ? "ARCHITECTURAL PRINCIPLE // FIELD THESIS" : "INDUSTRY PERSPECTIVE // THE MACRO VIEW"}
+                    </span>
                   </div>
                   <div className={s.triadQuoteBlock}>
                     <div className={s.triadQuoteMeta}>
                       <span className={s.triadQuoteSpeaker}>{c.titanQuote.speaker}</span>
-                      <span className={s.triadQuoteSource}>• {c.titanQuote.source}</span>
+                      {c.titanQuote.sourceUrl ? (
+                        <a
+                          href={c.titanQuote.sourceUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={s.triadQuoteSource}
+                          style={{ textDecoration: "underline" }}
+                        >
+                          • {c.titanQuote.source} &#8599;
+                        </a>
+                      ) : (
+                        <span className={s.triadQuoteSource}>• {c.titanQuote.source}</span>
+                      )}
                     </div>
                     <blockquote className={s.triadQuoteText}>
-                      &ldquo;{c.titanQuote.quote}&rdquo;
+                      {c.titanQuote.isQuoted === false ? c.titanQuote.quote : <>&ldquo;{c.titanQuote.quote}&rdquo;</>}
                     </blockquote>
                     <div className={s.triadQuoteRole}>{c.titanQuote.role}</div>
                   </div>

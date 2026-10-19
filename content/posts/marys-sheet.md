@@ -25,7 +25,7 @@ Why? Because enterprise transformations rarely fail inside the database engine. 
 In the conversation around enterprise AI and software delivery, **8090** and frontline operators alike point to the chasm between **Stated Reality** and **Actual Reality**: much of a company's real operating logic lives in unwritten parameters, exception handling, and frontline habits that automated database scrapers never see.
 
 > *"A job is more than the sum of its tasks. What's more intangible is the part between them: deciding which task matters, in what order, and when to stop; coordinating with people on other teams; and being the one accountable when it goes wrong."*
-> — Chamath Palihapitiya, CEO of 8090 ("The Space Between the Tasks")
+> — Chamath Palihapitiya, CEO of 8090 ([*"What AI spend does to headcount,"* Oct 2, 2026](https://research.socialcapital.com/p/ai-and-employment))
 
 Putting autonomous AI agents on top of disconnected systems does not magically heal a fractured enterprise. When you accelerate broken data models and unmapped cross-department handoffs at machine speed, you only automate the friction.
 
