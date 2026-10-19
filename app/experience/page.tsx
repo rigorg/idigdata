@@ -10,14 +10,14 @@ import DiagramModal from "@/components/experience/DiagramModal";
 export const metadata: Metadata = {
   title: { absolute: "Experience | idigdata" },
   description:
-    "20+ years of business leadership, over 50 enterprise transformations, and three years of hands-on agentic development across Data Integration Group, Sierra Nevada Brewing Co., Access IT, and Timberline Architectural Openings.",
+    "20+ years of CEO, CTO, and CIO business leadership, 50+ enterprise transformations through full-cycle implementations, and three years of hands-on agentic development across Data Integration Group, Sierra Nevada Brewing Co., Access IT, and Timberline Architectural Openings.",
   alternates: { canonical: "/experience/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/experience/",
     title: "Experience | idigdata",
     description:
-      "20+ years of business leadership, over 50 enterprise transformations, and three years of hands-on agentic development across Data Integration Group, Sierra Nevada Brewing Co., Access IT, and Timberline Architectural Openings.",
+      "20+ years of CEO, CTO, and CIO business leadership, 50+ enterprise transformations through full-cycle implementations, and three years of hands-on agentic development across Data Integration Group, Sierra Nevada Brewing Co., Access IT, and Timberline Architectural Openings.",
     images: [{ url: "/og-image.png?v=20260828", width: 1200, height: 630, alt: "Robert Paddock, Enterprise Transformation Executive: experience" }],
   },
 };
@@ -111,7 +111,7 @@ const estate = [
     title: "Legacy Systems & Modernization",
     tag: "Business Rules & Data",
     rows: [
-      "COBOL applications, AS/400, mainframe and legacy SQL environments",
+      "AS/400, COBOL applications, mainframe and legacy SQL environments",
       "Business-rule mapping, migration, validation and reconciliation",
       "Integration with retained enterprise systems through ETL and APIs",
     ],
@@ -170,7 +170,7 @@ export default function ExperiencePage() {
                 I connect people, systems, and workflows to shorten the path from intent to outcome.
               </p>
               <p className="p-prose mt-4">
-                <strong>20+ years of business leadership, over 50 enterprise transformations, and three years of hands-on agentic development.</strong> My perspective combines business ownership, CEO and CIO accountability, and building software around how companies actually operate—shaping engagements, organizing delivery, and leading change into daily use through <strong>The Outcome Loop</strong> (<em>Intent, Define, Deliver, Outcome</em>).
+                <strong>20+ years of business leadership, CEO, CTO, and CIO accountability, and three years of hands-on agentic development.</strong> Across 50+ enterprise transformations, I have led full-cycle implementations from migration and integration through testing, cutover, and go-live—shaping engagements, organizing delivery, and leading change into daily use through <strong>The Outcome Loop</strong> (<em>Intent, Define, Deliver, Outcome</em>).
               </p>
             </div>
             <div className="home-watermark" aria-hidden="true">
@@ -208,13 +208,14 @@ export default function ExperiencePage() {
               <h3 className="mt-2">Data Integration Group (idigdata)</h3>
               <p className="font-medium text-sm text-[#142840]/75 mt-1">Founder and Principal, Enterprise Transformation</p>
               <p className="p-prose mt-4">
-                Lead enterprise transformation for family-owned, private equity-backed, and post-acquisition businesses, connecting commercial commitments to delivery and adoption.
+                Lead enterprise transformation for family-owned, private equity-backed, and post-acquisition businesses, carrying commercial commitments from opportunity and contract through delivery and frontline adoption. Work with business, finance, and compliance leaders to carry regulatory requirements, financial controls, and traceability into system design, testing, and daily operations.
               </p>
               <ul className="mt-3 space-y-2 text-[14.5px] leading-relaxed text-[#142840]/85 list-disc pl-5">
-                <li>Shape engagements through executive discovery, sales engineering, solution design, and contracts, with clear scope and partner accountability.</li>
-                <li>Align internal IT, operations, and domain champions around business priorities. Carry workflow prototypes through end-to-end testing, user acceptance, go-live, and adoption.</li>
-                <li>Lead program recovery, acquisition integration, and custom software delivery. Selected results below show the operating and financial impact.</li>
-                <li>Build and operate an agentic development environment with independent review and human decision authority, leaving customer teams able to run and continue improving their software.</li>
+                <li>Shape engagements through executive discovery, sales engineering, solution design, and contracts, with clear scope, partner responsibilities, and financial accountability.</li>
+                <li>Align internal IT, operations, and domain champions around business priorities. Carry workflow prototypes through end-to-end testing, user acceptance, cutover, and go-live.</li>
+                <li>Design and lead delivery of modern application stacks spanning ERP, warehouse management (WMS), manufacturing execution (MES), planning, customer relationship management (CRM), and finance around a company-owned data core.</li>
+                <li>Lead migration from legacy environments, including AS/400, COBOL applications, mainframe, and legacy SQL systems, integrating retained applications and preserving essential business rules and reconciled data.</li>
+                <li>Build and operate an agentic development environment with independent review and human decision authority, turning enterprise knowledge into reusable workflows that customer teams can run and keep improving.</li>
               </ul>
             </article>
 
@@ -226,10 +227,10 @@ export default function ExperiencePage() {
                 Served as CIO and executive leadership team member for a multi-site brewer, responsible for technology strategy, investment, operations, data, cybersecurity, and governance, with reporting to the board.
               </p>
               <ul className="mt-3 space-y-2 text-[14.5px] leading-relaxed text-[#142840]/85 list-disc pl-5">
-                <li><strong>Enterprise transformation:</strong> Led 150+ project participants across 25 task forces through 26 months of architecture and implementation, connecting business and plant systems around a company-owned data core.</li>
-                <li><strong>IT leadership:</strong> Rebuilt the internal IS/IT organization, establishing accountability for technology priorities, vendor delivery, and adoption.</li>
-                <li><strong>Operational continuity:</strong> Maintained business operations through changes across purchasing, order-to-cash, planning, manufacturing, warehousing, and finance, including laboratory systems, food safety, SQF, and TTB requirements.</li>
-                <li><strong>Applied agentics:</strong> Put agentic applications into production on the company-owned data core, with training, controls, and business ownership.</li>
+                <li><strong>Enterprise transformation:</strong> Led a 26-month enterprise transformation with 150+ project participants across 25 task forces, directing architecture and implementation to consolidate business and plant systems around a company-owned data core. Aligned executive sponsors, functional leaders, and delivery partners—establishing the organizational and technical foundation to carry the company through go-live and sustain ongoing operations.</li>
+                <li><strong>IT leadership:</strong> Rebuilt the internal IS/IT organization, modernized enterprise IT, established vendor accountability, and worked with plant leaders and operational technology (OT) specialists to connect enterprise systems with plant operations.</li>
+                <li><strong>Operational continuity:</strong> Maintained operational continuity and addressed regulatory requirements across purchasing, order-to-cash, planning, manufacturing, warehousing, and finance, including laboratory systems, food safety, SQF, and TTB compliance.</li>
+                <li><strong>Applied agentics:</strong> Built an enterprise mapping digital twin and transformation command system across 25 task forces, putting agentic workflow patterns into operation on the company-owned data core with human decision authority.</li>
               </ul>
             </article>
 
@@ -608,7 +609,7 @@ export default function ExperiencePage() {
               <p className="p-kicker">Agentic Development &amp; Builder Architecture</p>
               <h2 className="p-h2 mt-1">Applied agentics on the enterprise already running.</h2>
               <p className="p-prose mt-4">
-                Today, I build and operate an <strong>Agentic Development Company</strong> proof of concept (<strong>The Rig</strong>) that builds enterprise foundation software (<strong>B.O.S.S.</strong>) and reusable human-agentic workflow blocks (<strong>FlowCraft</strong>) on a shared data core. People and agents contribute throughout <em>Intent, Define, Deliver, and Outcome</em>, with human judgment and accountability guiding the work.
+                Today, I build and operate an <strong>Agentic Development Company</strong> proof of concept (<strong>The Rig</strong>) that builds enterprise foundation software (<strong>B.O.S.S.</strong>) and reusable human-agentic workflow blocks (<strong>FlowCraft</strong>) on a shared data core. People and agents contribute throughout <em>Intent, Define, Deliver, and Outcome</em>—with human judgment guiding the work and each cycle preserving what was learned in a growing collective of business knowledge.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0">

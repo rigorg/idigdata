@@ -6,14 +6,14 @@ export const metadata: Metadata = {
     absolute: "Robert Paddock — Enterprise Transformation Executive | idigdata",
   },
   description:
-    "I connect people, systems, and workflows to shorten the path from intent to outcome. 20+ years of business leadership, over 50 enterprise transformations, and three years of hands-on agentic development.",
+    "I connect people, systems, and workflows to shorten the path from intent to outcome. 20+ years of CEO, CTO, and CIO business leadership, 50+ enterprise transformations through full-cycle implementations, and three years of hands-on agentic development.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     url: "https://idigdata.com/",
     title: "Robert Paddock — Enterprise Transformation Executive",
     description:
-      "I connect people, systems, and workflows to shorten the path from intent to outcome. 20+ years of business leadership, over 50 enterprise transformations, and three years of hands-on agentic development.",
+      "I connect people, systems, and workflows to shorten the path from intent to outcome. 20+ years of CEO, CTO, and CIO business leadership, 50+ enterprise transformations through full-cycle implementations, and three years of hands-on agentic development.",
     images: [
       {
         url: "/og-image.png?v=20260828",

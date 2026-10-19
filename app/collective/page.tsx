@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import CollectiveView from "@/components/collective/CollectiveView";
 
 export const metadata: Metadata = {
-  title: "The Collective · Agentic Development Company, Enterprise Assets & Shared Patterns | Robert Paddock",
+  title: "The Collective · Shared Field Patterns, Builder Orgs & Living Workshop | Robert Paddock",
   description:
-    "How The Rig (Agentic Development Company) builds B.O.S.S. (Enterprise Foundation Asset) and FlowCraft (Human-Agentic Runtime System & Workflow Blocks) on a shared Data Spine, paired with an open pattern commons.",
+    "Where operators, domain experts, and agentic builders compare real enterprise patterns—and how our living workshop (The Rig, B.O.S.S., and FlowCraft) turns proven patterns into modular Agentic Workflow Runtime Blocks.",
   alternates: {
     canonical: "https://idigdata.com/collective/",
   },
@@ -15,9 +15,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://idigdata.com/collective/",
-    title: "The Collective · Agentic Development Company, Enterprise Assets & Shared Patterns | Robert Paddock",
+    title: "The Collective · Shared Field Patterns, Builder Orgs & Living Workshop | Robert Paddock",
     description:
-      "How The Rig (Agentic Development Company) builds B.O.S.S. (Enterprise Foundation Asset) and FlowCraft (Human-Agentic Runtime System & Workflow Blocks) on a shared Data Spine.",
+      "Where operators, domain experts, and agentic builders compare real enterprise patterns—and how our living workshop (The Rig, B.O.S.S., and FlowCraft) turns proven patterns into modular Agentic Workflow Runtime Blocks.",
   },
 };
 

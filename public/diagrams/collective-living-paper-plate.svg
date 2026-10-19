@@ -1,0 +1,243 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 820" role="img" aria-labelledby="clp-title clp-desc">
+  <title id="clp-title">The Pattern Collective — Peer Pattern Loop &amp; Living Workshop Architecture</title>
+  <desc id="clp-desc">Architectural paper-drafting plate showing how operators, domain experts, and builders bring real field work into the workshop, how patterns move between The Rig, the B.O.S.S. and FlowCraft Builder Orgs, and Operational Instances executing Agentic Workflow Runtime Blocks (WFBs), and how verified patterns return to compound the shared Pattern Collective.</desc>
+
+  <defs>
+    <radialGradient id="colPaper" cx="50%" cy="46%" r="58%">
+      <stop offset="0%" stop-color="#FFFDF9" />
+      <stop offset="70%" stop-color="#FAF5EC" />
+      <stop offset="100%" stop-color="#F1E7D6" />
+    </radialGradient>
+
+    <pattern id="colGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#DCCFBC" stroke-width="0.55" stroke-opacity="0.45" />
+    </pattern>
+
+    <marker id="arrowGold" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#B57D1E" />
+    </marker>
+
+    <marker id="arrowTeal" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#2D5A52" />
+    </marker>
+  </defs>
+
+  <!-- Parchment Background & Border -->
+  <rect width="1120" height="820" rx="18" fill="url(#colPaper)" />
+  <rect x="16" y="16" width="1088" height="788" rx="12" fill="url(#colGrid)" stroke="#D4C4AC" stroke-width="1.2" />
+
+  <!-- Corner Drafting Marks -->
+  <g stroke="#9E8256" stroke-width="1.3" fill="none" opacity="0.65">
+    <path d="M 32 52 L 32 32 L 52 32" />
+    <path d="M 1088 52 L 1088 32 L 1068 32" />
+    <path d="M 32 768 L 32 788 L 52 788" />
+    <path d="M 1088 768 L 1088 788 L 1068 788" />
+  </g>
+
+  <!-- Header -->
+  <text x="560" y="46" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11.5" font-weight="600" letter-spacing="2.8" fill="#8B6B35">
+    ARCHITECTURAL PLATE II · PEER PATTERN LOOP &amp; LIVING WORKSHOP
+  </text>
+
+  <!-- TOP BAND: THE 4-STEP PEER COLLECTIVE LOOP -->
+  <g transform="translate(56,64)">
+    <rect x="0" y="0" width="1008" height="92" rx="12" fill="#FFFDF9" fill-opacity="0.92" stroke="#D4C4AC" stroke-width="1.3" />
+    <text x="24" y="24" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" font-weight="700" letter-spacing="2" fill="#2D5A52">
+      HOW PRACTITIONERS &amp; BUILDERS COMPOUND PATTERNS TOGETHER
+    </text>
+
+    <!-- Step 1 -->
+    <g transform="translate(24,36)">
+      <rect x="0" y="0" width="218" height="42" rx="8" fill="#FAF5EC" stroke="#B57D1E" stroke-width="1.3" />
+      <text x="14" y="17" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" font-weight="700" fill="#9B6E23">01 · BRING REAL WORK</text>
+      <text x="14" y="33" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" font-weight="700" fill="#1E242B">Operators, Experts &amp; Builders</text>
+    </g>
+    <path d="M 248 57 L 268 57" fill="none" stroke="#B57D1E" stroke-width="1.8" marker-end="url(#arrowGold)" />
+
+    <!-- Step 2 -->
+    <g transform="translate(276,36)">
+      <rect x="0" y="0" width="218" height="42" rx="8" fill="#FAF5EC" stroke="#2D5A52" stroke-width="1.3" />
+      <text x="14" y="17" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" font-weight="700" fill="#2D5A52">02 · FORGE &amp; VERIFY</text>
+      <text x="14" y="33" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" font-weight="700" fill="#1E242B">Test in the Living Workshop</text>
+    </g>
+    <path d="M 500 57 L 520 57" fill="none" stroke="#2D5A52" stroke-width="1.8" marker-end="url(#arrowTeal)" />
+
+    <!-- Step 3 -->
+    <g transform="translate(528,36)">
+      <rect x="0" y="0" width="218" height="42" rx="8" fill="#FAF5EC" stroke="#B57D1E" stroke-width="1.3" />
+      <text x="14" y="17" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" font-weight="700" fill="#9B6E23">03 · DISTILL THE PATTERN</text>
+      <text x="14" y="33" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" font-weight="700" fill="#1E242B">Keep Structure, Strip Private Data</text>
+    </g>
+    <path d="M 752 57 L 772 57" fill="none" stroke="#B57D1E" stroke-width="1.8" marker-end="url(#arrowGold)" />
+
+    <!-- Step 4 -->
+    <g transform="translate(780,36)">
+      <rect x="0" y="0" width="204" height="42" rx="8" fill="#FAF5EC" stroke="#2D5A52" stroke-width="1.3" />
+      <text x="14" y="17" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" font-weight="700" fill="#2D5A52">04 · CARRY BACK</text>
+      <text x="14" y="33" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" font-weight="700" fill="#1E242B">Deploy Stronger Next Time</text>
+    </g>
+  </g>
+
+  <!-- Subtle compass circle behind the Workshop Architecture -->
+  <circle cx="560" cy="465" r="275" fill="none" stroke="#D8C8AE" stroke-width="1" stroke-dasharray="5 5" />
+
+  <!-- TIER 1 (WORKSHOP APEX): THE RIG — AGENTIC DEVELOPMENT COMPANY -->
+  <g transform="translate(560,222)">
+    <rect x="-235" y="-42" width="470" height="84" rx="12" fill="#1D252C" stroke="#C8922A" stroke-width="2.2" />
+    <!-- 4-Harness Rosette Emblem -->
+    <g transform="translate(-182,0)" stroke="#E5B95C" stroke-width="1.3" fill="none">
+      <polygon points="0,-24 20.8,-12 20.8,12 0,24 -20.8,12 -20.8,-12" fill="#26313A" />
+      <circle cx="0" cy="-11" r="3.2" fill="#E5B95C" />
+      <circle cx="11" cy="0" r="3.2" fill="#E5B95C" />
+      <circle cx="0" cy="11" r="3.2" fill="#E5B95C" />
+      <circle cx="-11" cy="0" r="3.2" fill="#E5B95C" />
+    </g>
+    <text x="-138" y="-14" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" font-weight="700" letter-spacing="1.8" fill="#E5B95C">
+      INSIDE THE WORKSHOP · THE AGENTIC DEVELOPMENT COMPANY
+    </text>
+    <text x="-138" y="8" font-family="Georgia, 'Times New Roman', serif" font-size="18.5" font-weight="700" fill="#FAF5EC">
+      The Rig · Multi-Harness Factory &amp; Pattern Spine
+    </text>
+    <text x="-138" y="27" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" fill="#CBD5E1">
+      4-Vendor Orchestration (Claude · Codex · Gemini · Grok) · Independent Check Gates
+    </text>
+  </g>
+
+  <!-- Bi-Directional Pattern Arteries Between The Rig & Builder Orgs -->
+  <path d="M 420 264 C 350 292, 310 308, 285 334" fill="none" stroke="#B57D1E" stroke-width="2.2" marker-end="url(#arrowGold)" />
+  <path d="M 315 334 C 345 312, 385 294, 448 264" fill="none" stroke="#2D5A52" stroke-width="1.7" stroke-dasharray="5 4" marker-end="url(#arrowTeal)" />
+  <text x="315" y="294" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" font-weight="600" fill="#8B6B35">
+    Patterns ⇄ Blueprints
+  </text>
+
+  <path d="M 700 264 C 770 292, 810 308, 835 334" fill="none" stroke="#B57D1E" stroke-width="2.2" marker-end="url(#arrowGold)" />
+  <path d="M 805 334 C 775 312, 735 294, 672 264" fill="none" stroke="#2D5A52" stroke-width="1.7" stroke-dasharray="5 4" marker-end="url(#arrowTeal)" />
+  <text x="805" y="294" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" font-weight="600" fill="#8B6B35">
+    Patterns ⇄ Runtimes
+  </text>
+
+  <!-- TIER 2 (LEFT): B.O.S.S. BUILDER ORG -->
+  <g transform="translate(275,408)">
+    <rect x="-215" y="-66" width="430" height="132" rx="12" fill="#FFFDF9" stroke="#B57D1E" stroke-width="2" />
+    <!-- 7-Cell Beehive Rosette -->
+    <g transform="translate(-162,0)" stroke="#9B6E23" stroke-width="1.3" fill="#FAF5EC">
+      <polygon points="0,-13 11.2,-6.5 11.2,6.5 0,13 -11.2,6.5 -11.2,-6.5" fill="#EAD7B7" />
+      <polygon points="0,-35 11.2,-28.5 11.2,-15.5 0,-9 -11.2,-15.5 -11.2,-28.5" />
+      <polygon points="0,9 11.2,15.5 11.2,28.5 0,35 -11.2,28.5 -11.2,15.5" />
+      <polygon points="19,-24 30.2,-17.5 30.2,-4.5 19,2 7.8,-4.5 7.8,-17.5" />
+      <polygon points="19,-2 30.2,4.5 30.2,17.5 19,24 7.8,17.5 7.8,4.5" />
+      <polygon points="-19,-24 -7.8,-17.5 -7.8,-4.5 -19,2 -30.2,-4.5 -30.2,-17.5" />
+      <polygon points="-19,-2 -7.8,4.5 -7.8,17.5 -19,24 -30.2,17.5 -30.2,4.5" />
+    </g>
+    <text x="-112" y="-36" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" font-weight="700" letter-spacing="1.6" fill="#9B6E23">
+      BUILDER ORG 01 · CANONICAL DATA SPINE
+    </text>
+    <text x="-112" y="-14" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-weight="700" fill="#1E242B">
+      B.O.S.S. Builder Org
+    </text>
+    <text x="-112" y="7" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#3B434C">
+      Business Operating System Services · 7-Cell Beehive
+    </text>
+    <text x="-112" y="28" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" fill="#2D5A52">
+      6 Constellations: Ops · Finance · Workforce · Asset · Supply Chain · Gov/IT
+    </text>
+    <text x="-112" y="46" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" fill="#6E5A3A">
+      Canonical Entity Spine · Deterministic Financial &amp; Regulatory Controls
+    </text>
+  </g>
+
+  <!-- TIER 2 (RIGHT): FLOWCRAFT BUILDER ORG -->
+  <g transform="translate(845,408)">
+    <rect x="-215" y="-66" width="430" height="132" rx="12" fill="#FFFDF9" stroke="#2D5A52" stroke-width="2" />
+    <!-- Isometric Workflow Runtime Block Emblem -->
+    <g transform="translate(-162,0)" stroke="#2D5A52" stroke-width="1.4" fill="none">
+      <polygon points="0,-30 28,-14 0,2 -28,-14" fill="#E6F0EC" />
+      <polygon points="-28,-14 0,2 0,32 -28,16" fill="#D2E4DD" />
+      <polygon points="28,-14 0,2 0,32 28,16" fill="#BBD5CB" />
+    </g>
+    <text x="-112" y="-36" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" font-weight="700" letter-spacing="1.6" fill="#2D5A52">
+      BUILDER ORG 02 · WORKFLOW RUNTIME ENGINE
+    </text>
+    <text x="-112" y="-14" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-weight="700" fill="#1E242B">
+      FlowCraft Builder Org
+    </text>
+    <text x="-112" y="7" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#3B434C">
+      Modular Agentic Workflow Runtime Blocks (WFBs)
+    </text>
+    <text x="-112" y="28" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" fill="#9B6E23">
+      Human-in-the-Loop Decision Gates · Role-Scoped Execution
+    </text>
+    <text x="-112" y="46" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" fill="#6E5A3A">
+      Spawns Operational Instances &amp; Domain Workflow Blocks
+    </text>
+  </g>
+
+  <!-- Horizontal Bridge Between Builder Orgs -->
+  <path d="M 492 408 L 626 408" fill="none" stroke="#8C6A30" stroke-width="1.6" stroke-dasharray="4 4" />
+  <rect x="518" y="394" width="84" height="26" rx="6" fill="#FAF5EC" stroke="#B57D1E" stroke-width="1.1" />
+  <text x="560" y="411" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" font-weight="700" fill="#8B6B35">
+    PAIRED ORGS
+  </text>
+
+  <!-- Downward Arteries From Builder Orgs to Operational Instances & WFBs -->
+  <path d="M 275 474 L 350 536" fill="none" stroke="#B57D1E" stroke-width="2" marker-end="url(#arrowGold)" />
+  <path d="M 845 474 L 770 536" fill="none" stroke="#2D5A52" stroke-width="2" marker-end="url(#arrowTeal)" />
+
+  <!-- TIER 3: OPERATIONAL INSTANCES & AGENTIC WORKFLOW RUNTIME BLOCKS (WFBs) -->
+  <g transform="translate(56,542)">
+    <rect x="0" y="0" width="1008" height="162" rx="14" fill="#FFFDF9" stroke="#2D5A52" stroke-width="1.9" />
+    <text x="504" y="26" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10.5" font-weight="700" letter-spacing="2" fill="#2D5A52">
+      OPERATIONAL INSTANCES · AGENTIC WORKFLOW RUNTIME BLOCKS (WFBs) ON THE DATA SPINE
+    </text>
+    <text x="504" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13.5" fill="#3B434C">
+      Deployed as a paired enterprise instance (B.O.S.S. + FlowCraft) or a specialized operational instance (such as DigOps)
+    </text>
+
+    <!-- 5 Representative WFB Cards -->
+    <g transform="translate(24,62)">
+      <rect x="0" y="0" width="184" height="78" rx="8" fill="#FAF5EC" stroke="#B57D1E" stroke-width="1.3" />
+      <text x="12" y="20" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" font-weight="700" fill="#9B6E23">RUNTIME BLOCK 01</text>
+      <text x="12" y="40" font-family="Georgia, 'Times New Roman', serif" font-size="13.5" font-weight="700" fill="#1E242B">Legacy Data Migration</text>
+      <text x="12" y="59" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" fill="#5A4D3B">Schema &amp; Cutover Audit</text>
+    </g>
+
+    <g transform="translate(218,62)">
+      <rect x="0" y="0" width="184" height="78" rx="8" fill="#FAF5EC" stroke="#2D5A52" stroke-width="1.3" />
+      <text x="12" y="20" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" font-weight="700" fill="#2D5A52">RUNTIME BLOCK 02</text>
+      <text x="12" y="40" font-family="Georgia, 'Times New Roman', serif" font-size="13.5" font-weight="700" fill="#1E242B">Close &amp; Reconciliation</text>
+      <text x="12" y="59" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" fill="#5A4D3B">Ledger &amp; Variance Gates</text>
+    </g>
+
+    <g transform="translate(412,62)">
+      <rect x="0" y="0" width="184" height="78" rx="8" fill="#FAF5EC" stroke="#B57D1E" stroke-width="1.3" />
+      <text x="12" y="20" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" font-weight="700" fill="#9B6E23">RUNTIME BLOCK 03</text>
+      <text x="12" y="40" font-family="Georgia, 'Times New Roman', serif" font-size="13.5" font-weight="700" fill="#1E242B">Receiving &amp; Floor Dock</text>
+      <text x="12" y="59" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" fill="#5A4D3B">Physical-to-Digital Sync</text>
+    </g>
+
+    <g transform="translate(606,62)">
+      <rect x="0" y="0" width="184" height="78" rx="8" fill="#FAF5EC" stroke="#2D5A52" stroke-width="1.3" />
+      <text x="12" y="20" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" font-weight="700" fill="#2D5A52">RUNTIME BLOCK 04</text>
+      <text x="12" y="40" font-family="Georgia, 'Times New Roman', serif" font-size="13.5" font-weight="700" fill="#1E242B">Plant &amp; ERP Seam</text>
+      <text x="12" y="59" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" fill="#5A4D3B">IT-to-OT Telemetry Bridge</text>
+    </g>
+
+    <g transform="translate(800,62)">
+      <rect x="0" y="0" width="184" height="78" rx="8" fill="#FAF5EC" stroke="#B57D1E" stroke-width="1.3" />
+      <text x="12" y="20" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" font-weight="700" fill="#9B6E23">RUNTIME BLOCK 05</text>
+      <text x="12" y="40" font-family="Georgia, 'Times New Roman', serif" font-size="13.5" font-weight="700" fill="#1E242B">Executive Discovery</text>
+      <text x="12" y="59" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" fill="#5A4D3B">DigOps Blueprint Room</text>
+    </g>
+  </g>
+
+  <!-- BOTTOM BAND: THE PATTERN COLLECTIVE RETURN LOOP -->
+  <g transform="translate(140,722)">
+    <rect x="0" y="0" width="840" height="58" rx="29" fill="#1D252C" stroke="#C8922A" stroke-width="2" />
+    <text x="420" y="24" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="15.5" font-weight="700" fill="#FAF5EC">
+      The Pattern Collective · Shared Architectural Memory Across Every Engagement
+    </text>
+    <text x="420" y="44" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" fill="#E5B95C">
+      Reusable workflow &amp; data patterns compound the library · Customer records stay inside each boundary
+    </text>
+  </g>
+</svg>

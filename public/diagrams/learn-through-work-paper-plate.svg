@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 740" role="img" aria-labelledby="ltw-title ltw-desc">
+  <title id="ltw-title">Learn Through the Work — Intent, Define, Deliver, Outcome Around the Enterprise Seam</title>
+  <desc id="ltw-desc">Architectural paper-drafting plate showing the four-stage loop (01 Intent, 02 Define, 03 Deliver, 04 Outcome) orbiting a six-cell hexagonal rosette (People, Data, Systems, Workflows, Agents, Patterns) anchored at The Seam where human judgment and binary execution meet.</desc>
+
+  <defs>
+    <radialGradient id="paperGlow" cx="50%" cy="48%" r="54%">
+      <stop offset="0%" stop-color="#FFFDF9" />
+      <stop offset="68%" stop-color="#FAF5EC" />
+      <stop offset="100%" stop-color="#F2E9DA" />
+    </radialGradient>
+
+    <radialGradient id="seamCore" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#C8922A" stop-opacity="0.24" />
+      <stop offset="65%" stop-color="#C8922A" stop-opacity="0.07" />
+      <stop offset="100%" stop-color="#C8922A" stop-opacity="0" />
+    </radialGradient>
+
+    <pattern id="draftGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#DCCFBC" stroke-width="0.55" stroke-opacity="0.45" />
+    </pattern>
+
+    <marker id="goldArrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#B57D1E" />
+    </marker>
+  </defs>
+
+  <!-- Warm architectural parchment sheet -->
+  <rect width="920" height="740" rx="18" fill="url(#paperGlow)" />
+  <rect x="16" y="16" width="888" height="708" rx="12" fill="url(#draftGrid)" stroke="#D4C4AC" stroke-width="1.2" />
+
+  <!-- Corner drafting ticks -->
+  <g stroke="#9E8256" stroke-width="1.3" fill="none" opacity="0.65">
+    <path d="M 30 48 L 30 30 L 48 30" />
+    <path d="M 890 48 L 890 30 L 872 30" />
+    <path d="M 30 692 L 30 710 L 48 710" />
+    <path d="M 890 692 L 890 710 L 872 710" />
+  </g>
+
+  <!-- Top Plate Header -->
+  <text x="460" y="50" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11.5" font-weight="600" letter-spacing="2.8" fill="#8B6B35">
+    FIELD STUDY PLATE I · LEARN THROUGH THE WORK
+  </text>
+
+  <!-- Compass Construction Axes -->
+  <g stroke="#CDBB9E" stroke-width="0.9" stroke-dasharray="4 6">
+    <line x1="460" y1="78" x2="460" y2="632" />
+    <line x1="120" y1="360" x2="800" y2="360" />
+    <line x1="230" y1="130" x2="690" y2="590" stroke-opacity="0.55" />
+    <line x1="690" y1="130" x2="230" y2="590" stroke-opacity="0.55" />
+  </g>
+
+  <!-- Outer Braided Loop (Intent -> Define -> Deliver -> Outcome) -->
+  <circle cx="460" cy="360" r="244" fill="none" stroke="#D9C9B0" stroke-width="1.2" />
+  <circle cx="460" cy="360" r="230" fill="none" stroke="#B57D1E" stroke-width="2" stroke-opacity="0.45" />
+  <circle cx="460" cy="360" r="216" fill="none" stroke="#2D5A52" stroke-width="1.1" stroke-dasharray="6 5" stroke-opacity="0.45" />
+
+  <!-- Directional Arcs Along the Outer Ring -->
+  <path d="M 555 148 A 232 232 0 0 1 676 274" fill="none" stroke="#B57D1E" stroke-width="2.4" marker-end="url(#goldArrow)" />
+  <path d="M 676 446 A 232 232 0 0 1 555 572" fill="none" stroke="#B57D1E" stroke-width="2.4" marker-end="url(#goldArrow)" />
+  <path d="M 365 572 A 232 232 0 0 1 244 446" fill="none" stroke="#B57D1E" stroke-width="2.4" marker-end="url(#goldArrow)" />
+  <path d="M 244 274 A 232 232 0 0 1 365 148" fill="none" stroke="#B57D1E" stroke-width="2.4" marker-end="url(#goldArrow)" />
+
+  <!-- Inner Sacred Hexagonal Mesh Connecting the 6 Domain Cells -->
+  <circle cx="460" cy="360" r="142" fill="url(#seamCore)" stroke="#C8922A" stroke-width="1.1" stroke-opacity="0.4" />
+  <polygon points="460,248 557,304 557,416 460,472 363,416 363,304" fill="none" stroke="#8C6A30" stroke-width="1.2" stroke-opacity="0.45" />
+  <g stroke="#B57D1E" stroke-width="1" stroke-opacity="0.35">
+    <line x1="460" y1="248" x2="460" y2="472" />
+    <line x1="557" y1="304" x2="363" y2="416" />
+    <line x1="363" y1="304" x2="557" y2="416" />
+  </g>
+
+  <!-- 6 Surrounding Hexagonal Cells -->
+  <!-- 1. Top: PEOPLE (cx=460, cy=248, r=42) -->
+  <g transform="translate(460,248)">
+    <polygon points="0,-42 36.4,-21 36.4,21 0,42 -36.4,21 -36.4,-21" fill="#FFFDF9" stroke="#9B6E23" stroke-width="1.7" />
+    <text y="-3" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="700" fill="#1E242B">People</text>
+    <text y="14" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" fill="#6E5A3A">OPERATORS</text>
+  </g>
+
+  <!-- 2. Top-Right: DATA (cx=557, cy=304) -->
+  <g transform="translate(557,304)">
+    <polygon points="0,-42 36.4,-21 36.4,21 0,42 -36.4,21 -36.4,-21" fill="#FFFDF9" stroke="#2D5A52" stroke-width="1.7" />
+    <text y="-3" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="700" fill="#1E242B">Data</text>
+    <text y="14" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" fill="#2D5A52">SPINE TRUTH</text>
+  </g>
+
+  <!-- 3. Bottom-Right: SYSTEMS (cx=557, cy=416) -->
+  <g transform="translate(557,416)">
+    <polygon points="0,-42 36.4,-21 36.4,21 0,42 -36.4,21 -36.4,-21" fill="#FFFDF9" stroke="#9B6E23" stroke-width="1.7" />
+    <text y="-3" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="700" fill="#1E242B">Systems</text>
+    <text y="14" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" fill="#6E5A3A">CONTROLS</text>
+  </g>
+
+  <!-- 4. Bottom: WORKFLOWS (cx=460, cy=472) -->
+  <g transform="translate(460,472)">
+    <polygon points="0,-42 36.4,-21 36.4,21 0,42 -36.4,21 -36.4,-21" fill="#FFFDF9" stroke="#2D5A52" stroke-width="1.7" />
+    <text y="-3" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13.5" font-weight="700" fill="#1E242B">Workflows</text>
+    <text y="14" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" fill="#2D5A52">CADENCE</text>
+  </g>
+
+  <!-- 5. Bottom-Left: AGENTS (cx=363, cy=416) -->
+  <g transform="translate(363,416)">
+    <polygon points="0,-42 36.4,-21 36.4,21 0,42 -36.4,21 -36.4,-21" fill="#FFFDF9" stroke="#9B6E23" stroke-width="1.7" />
+    <text y="-3" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="700" fill="#1E242B">Agents</text>
+    <text y="14" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" fill="#6E5A3A">EXECUTION</text>
+  </g>
+
+  <!-- 6. Top-Left: PATTERNS (cx=363, cy=304) -->
+  <g transform="translate(363,304)">
+    <polygon points="0,-42 36.4,-21 36.4,21 0,42 -36.4,21 -36.4,-21" fill="#FFFDF9" stroke="#2D5A52" stroke-width="1.7" />
+    <text y="-3" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="700" fill="#1E242B">Patterns</text>
+    <text y="14" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" fill="#2D5A52">MEMORY</text>
+  </g>
+
+  <!-- Center Hexagonal Core: THE SEAM -->
+  <g transform="translate(460,360)">
+    <polygon points="0,-54 46.8,-27 46.8,27 0,54 -46.8,27 -46.8,-27" fill="#1D252C" stroke="#C8922A" stroke-width="2.4" />
+    <polygon points="0,-47 40.7,-23.5 40.7,23.5 0,47 -40.7,23.5 -40.7,-23.5" fill="none" stroke="#E5C178" stroke-width="0.8" stroke-opacity="0.6" />
+    <text y="-6" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="700" fill="#FAF5EC">The Seam</text>
+    <text y="13" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" font-weight="600" letter-spacing="1.2" fill="#E5B95C">HUMAN + BINARY</text>
+  </g>
+
+  <!-- 4 Cardinal Stage Cartouches (01 Intent, 02 Define, 03 Deliver, 04 Outcome) -->
+  <!-- 01 INTENT (North) -->
+  <g transform="translate(460,118)">
+    <rect x="-92" y="-28" width="184" height="56" rx="10" fill="#FFFDF9" stroke="#B57D1E" stroke-width="2" />
+    <text y="-5" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" font-weight="700" letter-spacing="2" fill="#9B6E23">01 · INTENT</text>
+    <text y="15" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" font-weight="700" fill="#1E242B">Business Mandate</text>
+  </g>
+
+  <!-- 02 DEFINE (East) -->
+  <g transform="translate(716,360)">
+    <rect x="-94" y="-28" width="188" height="56" rx="10" fill="#FFFDF9" stroke="#2D5A52" stroke-width="2" />
+    <text y="-5" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" font-weight="700" letter-spacing="2" fill="#2D5A52">02 · DEFINE</text>
+    <text y="15" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" font-weight="700" fill="#1E242B">Domain Blueprint</text>
+  </g>
+
+  <!-- 03 DELIVER (South) -->
+  <g transform="translate(460,602)">
+    <rect x="-96" y="-28" width="192" height="56" rx="10" fill="#FFFDF9" stroke="#B57D1E" stroke-width="2" />
+    <text y="-5" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" font-weight="700" letter-spacing="2" fill="#9B6E23">03 · DELIVER</text>
+    <text y="15" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" font-weight="700" fill="#1E242B">Verified Execution</text>
+  </g>
+
+  <!-- 04 OUTCOME (West) -->
+  <g transform="translate(204,360)">
+    <rect x="-94" y="-28" width="188" height="56" rx="10" fill="#FFFDF9" stroke="#2D5A52" stroke-width="2" />
+    <text y="-5" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" font-weight="700" letter-spacing="2" fill="#2D5A52">04 · OUTCOME</text>
+    <text y="15" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" font-weight="700" fill="#1E242B">Adopted Operations</text>
+  </g>
+
+  <!-- Bottom Plate Legend -->
+  <text x="460" y="688" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="14.5" fill="#4A3F31">
+    Every transformation lives or dies at the seam where human accountability meets system truth.
+  </text>
+</svg>

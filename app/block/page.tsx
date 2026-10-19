@@ -1514,7 +1514,7 @@ function TheBlockConfiguratorPage() {
                     {isSubmitting
                       ? "Transmitting Proposal Request..."
                       : selectedCount > 0
-                      ? `Request Scoping Proposal (${selectedCount} outcomes configured) →`
+                      ? `Request Scoping Proposal (${selectedCount} ${selectedCount === 1 ? "outcome" : "outcomes"} configured) →`
                       : "Request Scoping Proposal →"}
                   </button>
 
