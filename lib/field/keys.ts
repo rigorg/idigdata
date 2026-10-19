@@ -10,8 +10,8 @@ export const BPF_KEY: FieldKeyItem[] = [
   { code: "P2P", name: "Procure to Pay" },
   { code: "O2C", name: "Order to Cash" },
   { code: "P2M", name: "Plan to Manufacture" },
-  { code: "S2S", name: "Systems that Support" },
-  { code: "D2R", name: "Data to Report" },
+  { code: "S2S", name: "Systems to Support" },
+  { code: "D2R", name: "Data to Reporting" },
   { code: "MDM", name: "Master Data Management" },
 ];
 

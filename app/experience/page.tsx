@@ -139,13 +139,13 @@ const constellations = [
   },
   {
     code: "S2S",
-    name: "Systems that Support",
+    name: "Systems to Support",
     tagline: "ERP + HR",
     desc: "The ERP side and the HR side. ERP runs all three primaries; HR/HCM is the people side none of those chains own. IT, cybersecurity, and productivity span with them.",
   },
   {
     code: "D2R",
-    name: "Data to Report",
+    name: "Data to Reporting",
     tagline: "Analytics + awareness",
     desc: "Corporate planning, executive BI, financial consolidation, margin telemetry, and statutory reporting.",
   },

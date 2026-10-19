@@ -73,7 +73,7 @@ Across the industry, frontier **software factories** are proving this same archi
 > *"The incremental units of this system are AI agents. This system will be built by engineers, and in turn will build their software. This system is the software factory... We are building the machine that builds the machine."*
 > — Matan Grinberg & Eno Reyes, Co-Founders of Factory
 
-In a dated seven-day proof-of-concept engineering snapshot (**October 8–14, 2026**) across our four active harnesses (`CC`, `CX`, `AG`, and `Grokbot`), this governed pipeline recorded **188 landed engineering units** on `main` (distinct from customer business outcomes), with a **36.1-minute median first-claim-to-land** and a **97.1% (134 of 138) observed independent check-gate compliance rate** across **138 timestamped units** (operating on approximately **$4.2K/month** in base harness subscriptions, distinct from full customer delivery economics).
+In a dated seven-day proof-of-concept engineering snapshot (**October 8–14, 2026**) across our four active harnesses (`CC`, `CX`, `AG`, and `Grokbot`), this governed pipeline recorded **188 landed engineering units** on `main` (distinct from customer business outcomes), with a **36.1-minute median first-claim-to-land** across **138 timestamped units** (operating on approximately **$4.2K/month** in base harness subscriptions, distinct from full customer delivery economics).
 
 ---
 

@@ -220,7 +220,7 @@
 <path d="M616.16 1047.89A165 165 0 0 1 642.89 1035.20" fill="none" stroke="#9D813F" stroke-width="6"/>
 <circle cx="700.00" cy="1190.00" r="129" fill="#34413B"/><circle cx="700.00" cy="1190.00" r="126" fill="url(#gold)"/><circle cx="700.00" cy="1190.00" r="119" fill="url(#paper)"/><circle cx="700.00" cy="1190.00" r="110" fill="none" stroke="#B49A5C" stroke-width=".7" opacity=".6"/>
 <text x="700.00" y="1166.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="40" font-weight="700" fill="#26313A">S2S</text>
-<text x="700.00" y="1212.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#26313A">Systems that</text>
+<text x="700.00" y="1212.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#26313A">Systems to</text>
 <text x="700.00" y="1241.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#26313A">Support</text>
 </g>
 <g id="D2R">
@@ -252,7 +252,7 @@
 <path d="M393.47 822.79A165 165 0 0 1 424.46 843.14" fill="none" stroke="#9D813F" stroke-width="6"/>
 <circle cx="318.95" cy="970.00" r="129" fill="#34413B"/><circle cx="318.95" cy="970.00" r="126" fill="url(#gold)"/><circle cx="318.95" cy="970.00" r="119" fill="url(#paper)"/><circle cx="318.95" cy="970.00" r="110" fill="none" stroke="#B49A5C" stroke-width=".7" opacity=".6"/>
 <text x="318.95" y="946.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="40" font-weight="700" fill="#26313A">D2R</text>
-<text x="318.95" y="992.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#26313A">Data to Report</text>
+<text x="318.95" y="992.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#26313A">Data to Reporting</text>
 </g>
 <g id="MDM">
 <path d="M414.73 640.19A146 146 0 0 1 257.58 662.47" fill="none" stroke="#A88940" stroke-width="12"/>

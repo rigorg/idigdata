@@ -482,7 +482,7 @@ export default function CollectiveView() {
                 How our formative field lessons from <em>Mary&rsquo;s Sheet</em> and <em>Don WMS</em> are architected today as a paired <strong>B.O.S.S. + FlowCraft</strong> reference pattern for manufacturing and distribution:
               </p>
               <ul className={s.blueprintList}>
-                <li><strong>B.O.S.S. Blueprint &amp; Data Core:</strong> Mobilizes frontline supervisors and warehouse veterans inside the 7-Cell Beehive to reconcile legacy item schemas, third-party translations, and cross-department handoffs across the 6 Enterprise Constellations.</li>
+                <li><strong>B.O.S.S. Blueprint &amp; Data Core:</strong> Mobilizes frontline supervisors and warehouse veterans inside the Beehive to reconcile legacy item schemas, third-party translations, and cross-department handoffs across the 6 Enterprise Constellations.</li>
                 <li><strong>FlowCraft Workflow Runtime Blocks:</strong> Turns those canonical schemas and deterministic rules into role-scoped <strong>Agentic Workflow Runtime Blocks</strong> (floor-truth scheduling, iPad item cross-walk partner, 3-way match, and close reconciliation) on the company&rsquo;s Data Spine.</li>
                 <li><strong>Custody &amp; Pattern Return:</strong> Designed so private inventory, pricing, and financial records remain inside the customer&rsquo;s environment while reusable structural schemas compound the Collective.</li>
               </ul>

@@ -20,7 +20,7 @@ And when it is done right, there is **pure love and fun in it**. People are not 
 
 ## 1. The Joy of the New Team: Humans + Binary Intelligence Optimizing Workflows
 
-Think about what most domain experts, finance leads, plant schedulers, and IT teams have been forced to do for the last twenty years: spend 80% of their week fighting rigid software screens, exporting CSVs, reconciling mismatched keys, and waiting six months for an external consultant to change a workflow rule.
+Think about what most domain experts, finance leads, plant schedulers, and IT teams have been forced to do for the last twenty years: spend hours every week fighting rigid software screens, exporting CSVs, reconciling mismatched keys, and waiting six months for an external consultant to change a workflow rule.
 
 When you pair domain champions with governed agents around a clean, company-owned Data Core, the nature of work flips:
 - **Doing What You Love, Armed with Better Intelligence**: Just as *Don WMS* thrived when real-time iPad data became his partner (`DON`) on the warehouse floor, today's operators and builders gain an active intelligence partner that handles repeatable data preparation, cross-checking, and code scaffolding.
