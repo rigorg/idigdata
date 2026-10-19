@@ -74,11 +74,9 @@ function FactorySpot() {
 function PeopleSystemsWorkflowSpot() {
   return (
     <div className={s.emblemSpot}>
-      <a
-        href="/diagrams/learn-through-work-paper-plate.svg"
-        target="_blank"
-        rel="noreferrer"
-        aria-label="Open the Human & Binary Intelligence architectural paper plate at full size in a new tab"
+      <Link
+        href="/agentic-ai/plate/"
+        aria-label="Open the Human & Binary Intelligence architectural paper plate at full size"
         className={s.emblemLink}
       >
         <Image
@@ -90,14 +88,12 @@ function PeopleSystemsWorkflowSpot() {
           className={s.emblemImg}
           priority
         />
-      </a>
+      </Link>
       <div className={s.emblemCaption}>
         <strong className={s.emblemCaptionTitle}>The Seam &amp; The Continuous Loop</strong>
         <span className={s.emblemCaptionSubtitle}>01 Intent &middot; 02 Define &middot; 03 Deliver &middot; 04 Outcome &#8634;</span>
-        <a
-          href="/diagrams/learn-through-work-paper-plate.svg"
-          target="_blank"
-          rel="noreferrer"
+        <Link
+          href="/agentic-ai/plate/"
           style={{
             marginTop: "6px",
             fontSize: "11px",
@@ -108,8 +104,8 @@ function PeopleSystemsWorkflowSpot() {
             textDecoration: "underline",
           }}
         >
-          Open Full Paper Drafting Plate &#8599;
-        </a>
+          Open Full Paper Drafting Plate &rarr;
+        </Link>
       </div>
     </div>
   );
@@ -211,22 +207,22 @@ const COLLECTIVES: CollectivePillar[] = [
   },
   {
     num: "02",
-    tag: "THEME 02 // THE NEW ENTERPRISE WORKFORCE",
+    tag: "THEME 02 // THE HUMAN-AGENT RUNTIME & OUTCOME LOOP",
     actionLabel: "Discuss This Theme",
-    title: "People and Agents at Work",
-    subtitle: "Deploying Intelligence Optimally, Challenging the Legacy ERP Hostage Model, and the Joy of Working on a Different Kind of Team",
+    title: "The Human-Agent Runtime",
+    subtitle: "Where Intent Equals Outcome: The Continuous Learning Loop Where People and Systems Improve Together—and Why the Legacy ERP Hostage Model Is Over",
     spot: "blocks",
     paragraphs: [
-      "Agents are real, they are here, and we are at the beginning of a remarkable shift in how enterprises operate. While much of the outside commentary fixates on replacing people, the real frontier inside operating businesses is discovering how human judgment and agentic execution work together to deploy intelligence optimally. When that division of responsibility is designed well, people are emboldened to do the work they love, sharpen their domain craft, and experience the energy of working on a hybrid team where agents carry the repetitive synthesis and reconciliation.",
-      "This human-agentic shift also forces a candid reckoning with the twenty-year SaaS and monolithic ERP model. Across major SaaS platforms, the clearest strategic direction is going headless—centering on metadata, governed business context, and deterministic API workflows rather than trapping users inside proprietary screens. Meanwhile, the legacy ERP model that held customer data and operational patterns captive is facing a practical alternative: combining deterministic accounting, tax, and audit controls with modular, agentic workflow blocks on a company-owned Data Spine.",
+      "Agents are real, they are here, and they unlock a fundamentally new operating state: the Human-Agent Runtime. In legacy enterprise software, 'go-live' was treated as the finish line—the moment rigid screens froze while the business kept changing. In the Human-Agent Runtime (the essence of FlowCraft), work executes inside a continuous Outcome Loop (Intent → Define → Deliver → Outcome ↺) where Intent equals Outcome. Human operators set the bearing, exercise domain judgment, and govern exceptions while agentic workflow blocks handle repeatable preparation and reconciliation—opening a new realm where systems and people continuously learn and improve together.",
+      "This continuous runtime also forces a candid reckoning with the twenty-year SaaS and monolithic ERP model. Across major platforms, the clearest strategic direction is going headless—centering on governed metadata, shared business context, and deterministic API workflows rather than trapping users inside static per-seat screens. By anchoring deterministic accounting, tax, and audit controls on a company-owned Data Spine and running Human-Agent Runtime blocks across the seams, enterprises replace static software handoffs with living operational improvement.",
     ],
     titanQuote: {
       speaker: "Robert Paddock",
-      role: "Practitioner Thesis · Deterministic Controls + Agentic Workflows",
+      role: "Practitioner Thesis · The Human-Agent Runtime (FlowCraft)",
       source: "Architectural Principle from 50+ Transformations",
       isQuoted: false,
       quote:
-        "What separates a durable enterprise system from a fragile demo isn't the language model alone—it is the governed metadata, the deterministic accounting and compliance rules, and the company-owned data spine underneath the workflow blocks.",
+        "In a true Human-Agent Runtime, go-live is no longer a static finish line—it is a continuous outcome loop where human judgment, deterministic controls on the Data Spine, and agentic workflow blocks make both the people and the system sharper every day.",
     },
     fieldNoteCards: [
       {
@@ -241,12 +237,12 @@ const COLLECTIVES: CollectivePillar[] = [
           "Coming from the customer and operator side of the table after carrying 50+ transformations through cutover, I agreed with his premise on deterministic controls—and disagreed with his conclusion. You never ask a language model to improvise debits and credits or invent tax rules. Instead, you codify the deterministic rules—double-entry ledger invariants, three-way match tolerances, lot traceability, and statutory validations—inside a company-owned Data Spine, and use agentic workflow blocks to orchestrate the messy human and cross-system seams around them. You prove it one bounded workflow at a time—close acceleration, receiving reconciliation, catalog unification—until the hostage model loses its grip.",
         ],
         signature: "— Robert Paddock · Note from the Field 02",
-        footerLabel: "DETERMINISTIC CONTROLS + AGENTIC WORKFLOW BLOCKS",
+        footerLabel: "DETERMINISTIC CONTROLS + HUMAN-AGENT RUNTIME",
       },
     ],
     fieldNoteHref: "/agentic-ai/the-application-layer/",
-    fieldNoteLabel: "Read Full Dispatch 02: People & Agents at Work",
-    topicKey: "02 / People and Agents at Work & The Enterprise ERP Debate",
+    fieldNoteLabel: "Read Full Dispatch 02: The Human-Agent Runtime",
+    topicKey: "02 / The Human-Agent Runtime & The Enterprise ERP Debate",
   },
   {
     num: "03",
@@ -413,7 +409,7 @@ export default function AgenticPositionView() {
               Where 20+ years of business leadership and 50+ enterprise transformations meet three years of hands-on agentic software development.
             </p>
             <p className={s.heroLead}>
-              This is where I share what I see in the field—the patterns, the debates, and the lived reality of building at the intersection of enterprise operations and agentics. <strong>I call this era Binary Intelligence</strong> because it is still zeros and ones, now elevated to a level where human judgment can direct them at speed. Across plant-floor cutovers, unified data cores, and a multi-harness <strong>Agentic Development Company</strong>, <strong>people and agents contribute throughout <em>Intent, Define, Deliver, and Outcome</em>, with human judgment and accountability guiding the work</strong>.
+              This is where I share what I see in the field—the patterns, the debates, and the lived reality of building at the intersection of enterprise operations and agentics. <strong>I call this era Binary Intelligence</strong> because it is still zeros and ones, now elevated to a level where human judgment can direct them at speed. Across plant-floor cutovers, unified data cores, a live <strong>Human-Agent Runtime</strong>, and a multi-harness <strong>Agentic Development Company</strong>, <strong>people and agents execute inside a continuous <em>Outcome Loop (Intent &rarr; Define &rarr; Deliver &rarr; Outcome &#8634;)</em>—where Intent equals Outcome and both the people and the systems continuously improve</strong>.
             </p>
             <div className={s.byline}>
               <span className={s.square} />
@@ -439,13 +435,13 @@ export default function AgenticPositionView() {
                   </div>
                   <div className={s.metricDivider} />
                   <div>
-                    <strong>HUMAN LED</strong>
-                    <span>Outcome Accountable</span>
+                    <strong>HUMAN-AGENT</strong>
+                    <span>Live Runtime</span>
                   </div>
                   <div className={s.metricDivider} />
                   <div>
-                    <strong>THE LOOP</strong>
-                    <span>Intent &rarr; Outcome</span>
+                    <strong>OUTCOME LOOP</strong>
+                    <span>Intent = Outcome &#8634;</span>
                   </div>
                 </div>
               </div>
@@ -471,9 +467,9 @@ export default function AgenticPositionView() {
         <div className={s.triadInner}>
           <div className={s.triadHead}>
             <p className={s.eyebrow}>01 / Three Core Themes &amp; Notes from the Field</p>
-            <h2>What Is Old Is New, the New Workforce, and the Builder&rsquo;s Ride<span>.</span></h2>
+            <h2>What Is Old Is New, the Human-Agent Runtime, and the Builder&rsquo;s Ride<span>.</span></h2>
             <p className={s.triadDek}>
-              Three foundational theses on enterprise transformation and agentic software engineering—each grounded in personal notes from the field: from the plant floor, from a bar table with a global SI peer, and from midnight inside the builder&rsquo;s rabbit hole.
+              Three foundational theses on enterprise transformation, the continuous <strong>Human-Agent Runtime</strong> where systems and people improve together, and multi-harness software engineering—each grounded in personal notes from the field.
             </p>
           </div>
 
@@ -778,8 +774,8 @@ export default function AgenticPositionView() {
                     <option value="01 / Transforming Zeros & Ones: Mary's Sheet & Don WMS">
                       01 / Transforming Zeros &amp; Ones: What Is Old Is New, Mary&apos;s Sheet &amp; Don WMS
                     </option>
-                    <option value="02 / People and Agents at Work & The Enterprise ERP Debate">
-                      02 / People and Agents at Work &amp; Can Agentics Build an Enterprise ERP?
+                    <option value="02 / The Human-Agent Runtime & The Enterprise ERP Debate">
+                      02 / The Human-Agent Runtime: Intent = Outcome &amp; Can Agentics Build an Enterprise ERP?
                     </option>
                     <option value="03 / The Agentic Development Company: Rabbit Hole & The Disco">
                       03 / The Agentic Development Company: Down the Rabbit Hole &amp; Finding the Disco

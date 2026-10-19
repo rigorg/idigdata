@@ -87,4 +87,4 @@ Once you find your way out of the disco and have a disciplined **Agentic Develop
 
 ### Continue Reading
 - → Explore **[The Collective: How Patterns Move Between The Rig, Builder Orgs & Instance Workflow Blocks](/collective/)**
-- ← Previous: **[Field Dispatch 02: People and Agents at Work — Deploying Intelligence Optimally & Can Agentics Build an Enterprise ERP?](/agentic-ai/the-application-layer/)**
+- ← Previous: **[Field Dispatch 02: The Human-Agent Runtime — Where Intent Equals Outcome & Can Agentics Build an Enterprise ERP?](/agentic-ai/the-application-layer/)**

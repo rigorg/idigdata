@@ -359,9 +359,9 @@ export default function ExperiencePage() {
               </p>
             </article>
             <article>
-              <h3>Recovery of an at-risk $8M ERP program</h3>
+              <h3>Recovery of an off-track $10M ERP program</h3>
               <p className="p-prose mt-4">
-                Turned around an at-risk $8M enterprise ERP mandate—resetting partner governance, restoring delivery accountability, and recovering the program while saving $2M.
+                Stepped onto the customer’s side to rescue an off-track $10M enterprise ERP mandate—resetting partner governance, leading internal teams, and delivering the program into production for $8M ($2M saved).
               </p>
             </article>
             <article>

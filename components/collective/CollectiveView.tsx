@@ -369,24 +369,38 @@ export default function CollectiveView() {
                 <span>ARCHITECTURAL DRAFTING PLATE // PEER PATTERN LOOP &bull; THE RIG &#8644; B.O.S.S. &amp; FLOWCRAFT BUILDER ORGS &bull; INSTANCE WORKFLOW RUNTIME BLOCKS</span>
                 <span>THE DATA SPINE</span>
               </div>
-              <a
-                href="/diagrams/collective-living-paper-plate.svg"
-                target="_blank"
-                rel="noreferrer"
+              <Link
+                href="/collective/plate/"
                 className={s.blueprintPlateLink}
-                aria-label="Open the Living Pattern Collective architectural paper plate in a new tab"
+                aria-label="Open the Living Pattern Collective architectural paper plate at full size"
               >
                 <Image
                   src="/diagrams/collective-living-paper-plate.svg"
                   alt="The Pattern Collective peer loop and living workshop showing The Rig, B.O.S.S. and FlowCraft Builder Orgs, and Operational Instances running Agentic Workflow Runtime Blocks on The Data Spine"
                   width={1120}
-                  height={820}
+                  height={830}
                   unoptimized
                   className={s.blueprintPlateImg}
                   style={{ maxWidth: "100%", height: "auto" }}
                   priority
                 />
-              </a>
+              </Link>
+              <div style={{ textAlign: "center", padding: "10px 16px 4px" }}>
+                <Link
+                  href="/collective/plate/"
+                  style={{
+                    fontSize: "11.5px",
+                    fontFamily: "var(--font-mono)",
+                    fontWeight: 700,
+                    letterSpacing: "0.08em",
+                    textTransform: "uppercase",
+                    color: "var(--brass-dark)",
+                    textDecoration: "underline",
+                  }}
+                >
+                  Open Full Architectural Plate II &rarr;
+                </Link>
+              </div>
             </div>
           </div>
 

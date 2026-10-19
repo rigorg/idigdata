@@ -86,4 +86,4 @@ Whether you are replacing a 30-year-old AS/400 or deploying multi-harness AI age
 ---
 
 ### Continue Reading the Series
-→ Next: **[Field Dispatch 02: People and Agents at Work — Deploying Intelligence Optimally & Can Agentics Build an Enterprise ERP?](/agentic-ai/the-application-layer/)**
+→ Next: **[Field Dispatch 02: The Human-Agent Runtime — Where Intent Equals Outcome & Can Agentics Build an Enterprise ERP?](/agentic-ai/the-application-layer/)**
