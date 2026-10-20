@@ -1,89 +1,73 @@
 ---
-title: "Transforming Zeros and Ones: What Is Old Is New Again, Mary's Sheet & Don WMS"
-date: 2026-10-18
+title: "What’s Old Is New, What’s New Is Old: Bad Data, Shadow IT, and the Mighty Excel Spreadsheet"
+date: 2026-10-19
 slug: marys-sheet
-description: "Why over 70% of ERP initiatives fail to meet their expectations—and why even in the era of agentics, solving enterprise transformation still comes down to people, data, systems, and workflows."
-topic: "Field Dispatch 01 // Transforming Zeros and Ones"
+description: "Bad Data, Shadow IT, and the Mighty Excel Spreadsheet: How Businesses Actually Run—and why untangling the current-state seams still comes down to People, Systems, and Workflows."
+topic: "Chapter 01 // People, Systems & Workflows in the Current State"
 ---
 
-# Transforming Zeros and Ones: What Is Old Is New Again, Mary's Sheet & Don WMS
+# What’s Old Is New, What’s New Is Old
 
-Look back across the last twenty years of enterprise technology—from legacy AS/400s and client-server suites to modern cloud ERPs—and one sobering reality has never changed: [Gartner predicts](https://www.gartner.com/en/documents/5697891) that **more than 70% of recently implemented ERP initiatives will fail to fully meet their original business-case goals**.
+*Bad Data, Shadow IT, and the Mighty Excel Spreadsheet: How Businesses Actually Run.*
 
-You see the battle scars everywhere today, from executive boardrooms to viral war stories on TikTok and LinkedIn. Too many transformations begin the exact same way: in an air-conditioned conference room with a pristine vendor slide deck promising single-pane visibility and instant automation. Ten million, twenty million, fifty million dollars are committed.
+The ERP says the work is scheduled. The person on the floor knows the machine cannot run. Somewhere between those two facts sits a spreadsheet, a phone call, and someone making sure the business gets through the day.
 
-And then the cutover date arrives and collides with the physical operating floor.
+If you want to understand why enterprise AI is both so exciting and so misunderstood right now, you have to look at the fifty-year road that brought us here.
 
-Why? Because enterprise transformations rarely fail inside the database engine. They fail **between the seams**—across siloed data, disparate departmental systems, decades-old bastardized item schemas, unwritten floor workarounds, and the human weight of stakeholder alignment and change management.
+By the 1970s and early 1980s, **COBOL**-based systems were already carrying much of the ledger, inventory, and payroll work that established the transaction patterns companies still run on today. Then came the big **ERP wave**, promising one integrated system to run the entire enterprise. Even looking out through 2027, [Gartner forecasts](https://www.gartner.com/en/information-technology/topics/enterprise-resource-planning) that **more than 70% of recently implemented ERP initiatives will fail to fully meet their original business-case goals**. In my experience, one reason is painfully familiar: the implementation goes live while the work between the screens still sits on a clipboard. Alongside those ERPs came massive **CapEx implementation budgets** for armies of system integrators and implementation partners who somehow never quite seem to leave.
 
-**What is old is new again.** Today, as companies rush to layer AI agents on top of their enterprise stack, it is the **exact same problem—only more complicated**. It still comes down to **people, data, systems, and workflows**.
+Then the **SaaS revolution** rolled in. SaaS brought useful point tools, but in my experience, the commercial structure of most platforms—per-seat subscriptions, renewal lock-in, and data kept inside vendor walls—often leaves the software rigid where your company’s actual workflows need to bend.
 
 ---
 
-## 1. Between the Seams: Why Agentics Makes the Fundamentals Even More Consequential
+## 1. The Mighty Excel Spreadsheet, Shadow IT & Why Nobody Inside Can See the Whole
 
-In the conversation around enterprise AI and software delivery, **8090** and frontline operators alike point to the chasm between **Stated Reality** and **Actual Reality**: much of a company's real operating logic lives in unwritten parameters, exception handling, and frontline habits that automated database scrapers never see.
+So what happened on the ground? Because a business is a living machine that has to make money every single day—buying, producing, selling, shipping, paying bills, making payroll, and navigating multi-entity, multi-location taxes and regulations—people had to find a way to make the machine work.
+
+When you peel back the curtain on almost any company today, what actually runs the business? **The mighty Excel spreadsheet—and decades of Shadow IT.**
+
+To get their jobs done, functional departments had to build their own spreadsheet bridges or go out and buy their own departmental software. Over ten, twenty, or thirty years, companies accumulated custom programs, partner portals, and Shadow IT projects that got siloed, forgotten about, or left exposed. I’ve found twenty-year-old shadow systems humming away in a corner that nobody in leadership even knows exist—except the one guy who quietly fixes it whenever it breaks. Meanwhile, on the financial side, just corralling the sprawl of subscription costs, real active user counts versus unused seats, contract term dates, and now **AI token usage** has become a full-time battle of its own.
 
 > *"A job is more than the sum of its tasks. What's more intangible is the part between them: deciding which task matters, in what order, and when to stop; coordinating with people on other teams; and being the one accountable when it goes wrong."*
-> — Chamath Palihapitiya, CEO of 8090 ([*"What AI spend does to headcount,"* Oct 2, 2026](https://research.socialcapital.com/p/ai-and-employment))
+> — Chamath Palihapitiya, CEO, 8090 · Founder, Social Capital ([*"What AI spend does to headcount"*](https://research.socialcapital.com/p/ai-and-employment))
 
-Putting autonomous AI agents on top of disconnected systems does not magically heal a fractured enterprise. When you accelerate broken data models and unmapped cross-department handoffs at machine speed, you only automate the friction.
+**Those gaps are the seams**—and that intangible work between the tasks is what people like Mary and Don carry every morning. Inside a legacy company, **no one person can see the whole anymore.** They structurally can’t—from the IT department to the functional domains, it has grown into too big of a collective tangle over the decades, sitting on top of the same root problem we have fought since the beginning: **bad, disconnected data.**
 
-Each department maintains its own partial view of the world: supply chain looks at forward forecasts, production looks at tank or machine kinetics, packaging looks at line speed, warehousing looks at dock staging, and finance looks at cleared invoices. Without a unified, company-owned Data Core connecting **people, data, systems, and workflows**, frontline veterans bridge the gap by hand.
+Yet the people inside those domains show up every day and perform quiet heroics—both in the physical world and with zeros and ones—just to keep the business moving. And when a company finally decides to transform, those exact same people, who already have a full-time day job keeping the lights on, get pulled into a command-and-control marathon of project management, stakeholder alignment, and change management when up-to-date SOPs barely exist.
 
 ---
 
-## 2. Note from the Field 01-A — "Mary's Sheet": The Plant Floor vs. The Database
+## 2. Note from the Field 01-A — Mary’s Sheet, Don WMS & His Partner, "DON"
 
-To see how the seam plays out on the physical floor, consider **Mary**—a composite portrait drawn from frontline schedulers and plant coordinators I worked alongside across multi-facility brewing and manufacturing cutovers.
-
-Every morning at 6:30 AM, Mary arrives on the floor with a green metal clipboard holding three tightly folded 11x17 ledger spreadsheets. Those sheets capture the unwritten operating core of the facility:
-- Which operators hold active pasteurizer or centrifuge certifications.
-- Which crew members need light-duty or rotational assignments on a given shift.
-- How overtime balances and shift rotations affect line coverage.
-- Which packaging crew works best together on tight line changeovers.
-- The coordination with the cellar team when a tank requires extended caustic wash cycles between specialty runs.
-
-> **NOTE FROM THE FIELD 01-A // THE PLANT FLOOR VS. THE DATABASE: MARY'S SHEET**
-> Walk almost any manufacturing or brewing floor after a multimillion-dollar ERP go-live and you will find "Mary's Sheet"—the folded 11x17 spreadsheet on a green metal clipboard keeping the operation running. Drawn from frontline supervisors I worked alongside across plant cutovers, the pattern was unmistakable: in the database, Packaging Line 2 showed green, idle, and ready for a rush batch; twenty feet away on the concrete floor, mechanics had the filling pump unbolted on the bench to replace a weeping seal before logging the ticket at the terminal.
+> **NOTE FROM THE FIELD 01-A // HEROICS ON THE PHYSICAL FLOOR: MARY'S SHEET & DON WMS**
+> Walk almost any manufacturing or distribution floor after a big ERP go-live and you will meet the people whose daily heroics keep the operation running. On the plant floor, it is **Mary’s Sheet**—a composite portrait from plant cutovers I have led: the folded 11x17 Excel spreadsheet on a green metal clipboard at 6:30 AM that knows Packaging Line 2 has its filling pump unbolted on the workbench twenty feet away, even while the new ERP screen shows green and ready.
 >
-> No AI agent scraping databases alone can catch an unlogged physical exception. Only floor visibility, connected operational workflows, and cross-department trust prevent a costly collision.
-> — Robert Paddock · Note from the Field 01-A (`MARY'S SHEET`)
-
-When we unified the scheduling and floor workflows around how the plant actually ran instead of forcing the floor to serve a rigid screen, the human side surfaced immediately: without that green metal clipboard, the quiet fear behind almost every transformation is *"Well, I guess I'm going to lose my job and have nothing to do."*
-
-The answer that mattered most at cutover was simple: *"You're going to have more important things to do, Mary."*
-
-When software absorbs the clerical machinery—the certification matching, the overtime constraints, the live feeds between tank status and packaging lines—it does not eliminate frontline leaders. It liberates them to walk the floor with presence, spot maintenance issues early, and mentor the next generation of supervisors—a lesson that directly governs how we design human-in-the-loop agentic workflows today.
-
----
-
-## 3. Note from the Field 01-B — "Don WMS," Unifying a 40-Year Bastardized Item Catalog, and His Partner, "DON"
-
-If *Mary's Sheet* shows what happens when scheduling workflows ignore the plant floor, **Don WMS** shows the other side of *Transforming Zeros and Ones*: stakeholder and change management inside one of the single hardest problems in any legacy manufacturer or distributor—**getting legacy items into a unified item catalog**.
-
-Walk into almost any multi-decade manufacturing or distribution business and look at how items are identified:
-- **Bastardized "Smart Schemas"**: Decades ago, someone tried to design a "smart schema"—encoding product family, size, finish, or warehouse zone right inside the item number. Over 30 to 40 years of new product lines, acquisitions, and workarounds, that schema got bastardized over time, yet people in the field are still attached to their old codes.
-- **Third-Party Item Translations**: Vendors ship pallets without proper labels or use their own supplier part numbers, while customers, 3PLs, and distributors rely on external item translations to do business.
-- **Internal Departments with Different Keys**: Inside the company, purchasing, manufacturing, warehousing, sales, and finance each use different keys across different legacy systems to identify the exact same physical item.
-
-> **NOTE FROM THE FIELD 01-B // PERSONAL FIELD NOTE: "DON WMS," THE UNIFIED ITEM CATALOG & HIS PARTNER, "DON"**
-> This was before agentics—we called him **Don WMS**. Don worked for a multi-location manufacturing and distribution company in New York, in tight city quarters cobbled together over 30–40 years where every inch of space was at a premium and constantly in movement. Taking the systems they had—bastardized item schemas, third-party item translations, internal departments with different system keys, and vendors that didn't get proper labels—he built a fragile system that worked because he knew where every item was, where every location was, and where every person was.
+> In tight New York warehouse quarters cobbled together over 30 to 40 years, it was **Don WMS**—who held four decades of bastardized item schemas, missing vendor labels, and mismatched department keys in his head so product could keep moving fast through crowded bays.
 >
-> Unifying an item data model is one of the hardest things in legacy manufacturing, and transformation was very difficult on Don and his crew because his purpose was knowing where everything was at. Making Don WMS part of that item-catalog journey was instrumental—both for Don and for the success of the project. And when we designed the floor workflows, Don still did what Don loved to do: be around the people, armed with knowledge. Now his knowledge came from—or was helped by—real-time data on an iPad. He still touched base, talked to all the people, and knew where everything was at, but double-checked with his new partner. So it was still Don WMS, but Don WMS had a partner, **DON**—and that formative lesson is why every agentic workflow block we build today starts with the operator's domain pride.
-> — Robert Paddock · Note from the Field 01-B (`DON WMS + DON`)
+> Transformation is emotional for people like Mary and Don because holding that fragile puzzle together is their pride and purpose. Across frontline cutovers, the quiet worry that surfaces is almost always the same: *"Well, I guess I'm going to lose my job and have nothing to do."* And the answer that matters is simple: *"You're going to have more important things to do."* Taking the morning spreadsheet gymnastics off a supervisor's shoulders frees her to walk the bays, spot issues early, and mentor younger leads. And when we made Don co-architect of the unified item catalog and gave him real-time data on an iPad, he still did what he loved—walking the floor and talking with his crew—only now Don WMS had a digital partner named **DON**.
+> — Robert Paddock · Note from the Field 01-A (`MARY'S SHEET & DON WMS`)
 
 ---
 
-## 4. What Is Old Is New: The Bedrock Rules of the Operational Seam
+## 3. Note from the Field 01-B — "Integrated Business Planning" & The Day-Job Dilemma
 
-Whether you are replacing a 30-year-old AS/400 or deploying multi-harness AI agents across an enterprise, the rules of the operational seam do not change:
+> **NOTE FROM THE FIELD 01-B // HEROICS IN THE HALLWAY & EXCEL: TUESDAY NIGHT IBP**
+> Heroics don't just happen next to unbolted pumps or loading docks; they happen in office hallways, on phone calls, and in conference rooms just to keep one set of numbers standing. Look at what most companies call "Integrated Business Planning." In practice, it usually isn't integrated at all—it is a group of dedicated people who already have full-time day jobs working late into a Tuesday night, exporting CSVs, trading phone calls down the hall, and wrestling Excel sheets across Sales, Production, Inventory, and Finance just to cobble together numbers that make sense for Wednesday's meeting.
+>
+> The irony is that by the time Wednesday's meeting wraps up, the physical floor has moved and Tuesday night's spreadsheet is already out of date. When you organize the underlying data core and let intelligence handle that pre-meeting reconciliation continuously, people stop spending their evenings assembling numbers for a meeting—and actually get to use the meeting to guide the business.
+> — Robert Paddock · Note from the Field 01-B (`TUESDAY NIGHT IBP`)
 
-1. **Start With the People Who Hold the Floor Together**: Bring your Marys and your Dons directly into the data and workflow design. Their unwritten exception rules are the real specification of the business.
-2. **Reconcile the Data Core Before Automating**: Unify bastardized item catalogs, vendor translations, and cross-department keys into a company-owned Data Core so every workflow—and every agent—speaks the same truth.
-3. **Design Technology to Work as a Partner**: Good software removes clerical exhaustion and fragile single-point-of-failure heroics while empowering people to do what they love on the floor.
+---
+
+## 4. Where the Hope Lives
+
+Here is why I have genuine hope for where we are going: what is old is new, and what is new is old. The fundamentals are still **People, Systems, and Workflows**—and cleaning up the data core.
+
+With agents in the work, we no longer have to put people through a two-year root canal just to map where the business stands. We can sit beside the people doing the work—*"show me how you do it today"*—and use intelligence to accelerate the heavy lifting: organizing source material from messy spreadsheets and forgotten Shadow IT tools, comparing unwritten workflows, and surfacing inconsistencies for your people to validate.
+
+*That’s what I’m seeing in the current-state seams. Where do you see the biggest gaps between official systems and daily reality in your operation?*
 
 ---
 
 ### Continue Reading the Series
-→ Next: **[Field Dispatch 02: The Human-Agent Runtime — Where Intent Equals Outcome & Can Agentics Build an Enterprise ERP?](/agentic-ai/the-application-layer/)**
+→ Next: **[Chapter 02: Working with Intelligence — Memory, Context, and the New Daily Reality](/agentic-ai/the-application-layer/)**

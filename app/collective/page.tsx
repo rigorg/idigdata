@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import CollectiveView from "@/components/collective/CollectiveView";
 
 export const metadata: Metadata = {
-  title: "The Collective · Shared Field Patterns, Builder Orgs & Living Workshop | Robert Paddock",
+  title: "The Collective · What We Learn Should Carry Forward | Robert Paddock",
   description:
-    "Where operators, domain experts, and agentic builders compare real enterprise patterns—and how our living workshop (The Rig, B.O.S.S., and FlowCraft) turns proven patterns into modular Agentic Workflow Runtime Blocks.",
+    "People and agents, learning through the work—and leaving something useful for the next person. How lessons travel by choice while each company keeps control, and the workshop behind the idea: The Rig, B.O.S.S., and FlowCraft.",
   alternates: {
     canonical: "https://idigdata.com/collective/",
   },
@@ -15,9 +15,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://idigdata.com/collective/",
-    title: "The Collective · Shared Field Patterns, Builder Orgs & Living Workshop | Robert Paddock",
+    title: "The Collective · What We Learn Should Carry Forward | Robert Paddock",
     description:
-      "Where operators, domain experts, and agentic builders compare real enterprise patterns—and how our living workshop (The Rig, B.O.S.S., and FlowCraft) turns proven patterns into modular Agentic Workflow Runtime Blocks.",
+      "People and agents, learning through the work—and leaving something useful for the next person. How lessons travel by choice while each company keeps control, and the workshop behind the idea: The Rig, B.O.S.S., and FlowCraft.",
   },
 };
 

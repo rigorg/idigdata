@@ -349,8 +349,8 @@
 
 .briefGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  grid-template-columns: 1fr;
+  gap: 44px;
 }
 
 .briefCard {
@@ -742,8 +742,8 @@
 
 .pillarTrio {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  grid-template-columns: 1fr;
+  gap: 44px;
 }
 
 .pillarItem {
@@ -993,8 +993,8 @@
 
 .questionGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  grid-template-columns: 1fr;
+  gap: 44px;
 }
 
 .questionCard {
@@ -1601,8 +1601,8 @@
 
 .triadGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  grid-template-columns: 1fr;
+  gap: 44px;
 }
 
 @media (max-width: 1024px) {
@@ -1692,8 +1692,8 @@
 }
 
 .triadCardBody {
-  font-size: 14.5px;
-  line-height: 1.6;
+  font-size: 16.5px;
+  line-height: 1.72;
   color: var(--ink);
   margin-bottom: 20px;
 }
@@ -1983,8 +1983,8 @@
 
 .limelightGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  grid-template-columns: 1fr;
+  gap: 44px;
   margin-bottom: 40px;
 }
 
