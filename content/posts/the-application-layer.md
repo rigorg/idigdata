@@ -29,7 +29,10 @@ An operator knows their experience can improve how the workflow is designed; a C
 
 And capturing an outcome does not automatically make a system smarter—a careless loop can preserve a mistake and repeat it faster. Improvement is earned through a disciplined cycle (**01 Intent → 02 Define → 03 Deliver → 04 Outcome ↻**): people review the actual result against what was intended, test a proposed adjustment against operating rules, approve what holds up, and retain the evidence in the book.
 
-When I set out to build that kind of workspace so it holds up under audit, statutory controls, and real floor exceptions, I ran into a hard truth: **you cannot prompt or "vibe code" a system like that.** To give people a machine where they can safely run and improve their workflows, somebody has to build the machine that builds that machine.
+There is a reason [Gartner projects](https://www.gartner.com/en/newsroom) that **more than 40% of agentic AI projects will be canceled by the end of 2027** due to unclear business value, escalating token costs, and inadequate risk controls—and why, during last week’s fireside chat with IFS CEO Mark Moffat at IFS Unleashed, Chamath Palihapitiya warned that enterprises deploying AI agents need to get their auditors in the room early. When I set out to build a workspace that holds up under audit, statutory controls, and real floor exceptions, I ran into a hard truth: **you cannot prompt or "vibe code" a system like that.** To give people a machine where they can safely run and improve their workflows, somebody has to build the machine that builds that machine.
+
+> *"In the Agentic Enterprise, AI acts as an orchestrator, pulling together the right capabilities with the right context so that everything works in concert—people and AI achieving more than either could alone. What matters isn’t just the model—it’s the metadata, the business context, and the deterministic enterprise workflows."*
+> — **Marc Benioff**, Chair & CEO, Salesforce ([*Dreamforce · The Agentic Enterprise*](https://www.salesforce.com/news/))
 
 ---
 

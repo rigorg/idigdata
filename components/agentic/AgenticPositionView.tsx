@@ -178,12 +178,23 @@ const COLLECTIVES: CollectivePillar[] = [
         </a>{" "}
         that more than 70% of recently implemented ERP initiatives will fail to fully meet their original business-case goals. In my experience, one reason is painfully familiar: the implementation goes live while the work between the screens still sits on a clipboard.
       </>,
-      "When I enter a business, I go to three places first: the CFO, because the books have to hold up—GAAP-compliant financials, statutory controls, and an audit trail you can defend; the Compliance Officer, to establish which legal and regulatory obligations the business cannot compromise; and then I follow the operating cycle—Sales and Operations Planning (S&OP) or, where Finance and strategy are integrated into the same cadence, Integrated Business Planning (IBP)—all the way to the floor. That is where recorded state meets operating reality. And those two things almost never agree.",
+      "When I enter a business, I go to three places first: the CFO, because the books have to hold up—GAAP-compliant financials, statutory controls, and an audit trail you can defend; the Compliance Officer, to establish which legal and regulatory obligations the business cannot compromise; and then I follow Integrated Business Planning (IBP)—the evolution of S&OP that brings Finance and strategy into the same cadence as supply and operations (even if the industry is still figuring out what to call it)—all the way to the floor. That is where recorded state meets operating reality. And those two things almost never agree.",
     ],
     expandedParagraphs: [
       "What makes enterprise operations so demanding is that a business relies on two connected views of the same reality—each with different timing and validation requirements. Finance needs the books: accruals, postings, multi-entity consolidations, statutory controls, and a formal close that cannot be rushed or guessed. Operations needs current floor visibility: volume, cases shipped, what is sitting in the bays, and whether Packaging Line 2 can actually run right now. Both views have to reconcile to the same underlying events, yet in most companies Finance and Operations can only connect them by rebuilding the relationship in spreadsheets every month.",
-      "The consulting world calls that problem 'disparate silos.' On the floor, it means a workflow is never actually a flow—it is sporadic. An order enters in one system, inventory sits in another, freight lives in a third, and the commercial structure of most SaaS tools—per-seat subscriptions, renewal lock-in, and data kept inside vendor walls—leaves the software rigid where your company’s workflows need to bend. Meanwhile, on the financial side, just corralling subscription sprawl, real active user counts versus unused seats, contract dates, and now AI token usage has become a battle of its own.",
-      "Connecting systems does not magically erase the hard business trade-offs inside S&OP or IBP—competing commercial incentives, constrained line capacity, and tough allocation calls will always require human judgment. What breaks people is spending two weeks of nights and weekends doing manual data plumbing just to find out where the disagreement actually is.",
+      <>
+        The consulting world calls that problem &ldquo;disparate silos.&rdquo; On the floor, it means a workflow is never actually a flow—it is sporadic. An order enters in one system, inventory sits in another, freight lives in a third, and the commercial structure of most SaaS tools—per-seat subscriptions, renewal lock-in, and data kept inside vendor walls—leaves the software rigid where your company&rsquo;s workflows need to bend. That data-and-workflow disconnect is the primary reason{" "}
+        <a
+          href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: "var(--ink)", textDecoration: "underline", fontWeight: 600 }}
+        >
+          McKinsey&rsquo;s global AI research
+        </a>{" "}
+        shows that while roughly 80% of workers use AI tools for personal tasks, fewer than 40% of enterprises see measurable EBIT impact from scaling agentic workflows in production. Meanwhile, on the financial side, just corralling subscription sprawl, real active user counts versus unused seats, contract dates, and now AI token usage has become a battle of its own.
+      </>,
+      "Connecting systems does not magically erase the hard business trade-offs inside Integrated Business Planning—competing commercial incentives, constrained line capacity, and tough allocation calls will always require human judgment. What breaks people is spending two weeks of nights and weekends doing manual data plumbing just to find out where the disagreement actually is.",
       "Those gaps are the seams—and the intangible work between the tasks is what people like Mary and Don carry every morning. Inside a legacy company, no one person can see the whole anymore. Yet here is why I have genuine hope: what is old is new, and what is new is old. With agents in the work, we don't have to put exhausted teams through a two-year root canal just to map where the business stands. We can sit beside the people doing the work—'show me how you actually do it today'—and use intelligence to organize messy spreadsheets, compare unwritten workflows, and reconcile the data core so people can spend their energy on the real operating decisions.",
     ],
     titanQuote: {
@@ -249,8 +260,28 @@ const COLLECTIVES: CollectivePillar[] = [
       "For the last thirty years, enterprise software treated go-live as the finish line. Once the initial rollout was declared finished, the screens froze in place while the business kept changing—forcing people right back into spreadsheets, sporadic workarounds, and seven-figure change orders. Worse, software trained experienced operators to work like data-entry clerks: clicking through fifteen tabs and copying numbers from one window to another.",
       "Working with intelligence inside a live operation requires separating three distinct acts that often get blurred together: (1) running an established workflow in daily work, (2) proposing a change when floor reality shifts, and (3) authorizing that change under the company's rules. An operator knows their experience can improve how the workflow is designed; a CFO knows that a plain-language request in a workspace never grants new spending or policy authority on its own.",
       "And capturing an outcome does not automatically make a system smarter—a careless loop can preserve a mistake and repeat it faster. Improvement is earned through a disciplined cycle (01 Intent → 02 Define → 03 Deliver → 04 Outcome ↻): people review the actual result against what was intended, test a proposed adjustment against operating rules, approve what holds up, and retain the evidence in the book.",
-      "When I set out to build that kind of workspace so it holds up under audit, statutory controls, and real floor exceptions, I ran into a hard truth: you cannot prompt or 'vibe code' a system like that. To give people a machine where they can safely run and improve their workflows, somebody has to build the machine that builds that machine.",
+      <>
+        There is a reason{" "}
+        <a
+          href="https://www.gartner.com/en/newsroom"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: "var(--ink)", textDecoration: "underline", fontWeight: 600 }}
+        >
+          Gartner projects
+        </a>{" "}
+        that more than 40% of agentic AI projects will be canceled by the end of 2027 due to unclear business value, escalating token costs, and inadequate risk controls—and why, during last week&rsquo;s fireside chat with IFS CEO Mark Moffat at IFS Unleashed, Chamath Palihapitiya warned that enterprises deploying AI agents need to get their auditors in the room early. When I set out to build a workspace that holds up under audit, statutory controls, and real floor exceptions, I ran into a hard truth: you cannot prompt or &ldquo;vibe code&rdquo; a system like that. To give people a machine where they can safely run and improve their workflows, somebody has to build the machine that builds that machine.
+      </>,
     ],
+    titanQuote: {
+      speaker: "Marc Benioff",
+      role: "Chair & CEO, Salesforce",
+      source: "Dreamforce · The Agentic Enterprise",
+      sourceUrl: "https://www.salesforce.com/news/",
+      isQuoted: true,
+      quote:
+        "In the Agentic Enterprise, AI acts as an orchestrator, pulling together the right capabilities with the right context so that everything works in concert—people and AI achieving more than either could alone. What matters isn’t just the model—it’s the metadata, the business context, and the deterministic enterprise workflows.",
+    },
     fieldNoteCards: [
       {
         id: "fn-beer-erp",
@@ -304,6 +335,15 @@ const COLLECTIVES: CollectivePillar[] = [
       "When I say 'the machine that builds the machines that build the workflows,' I mean three distinct layers working together. At the top are the daily operational workflows—the approval routing, the planning reconciliation, the floor scheduling—that operators and leaders use every day. Beneath that is the workflow runtime where people and agents shape, test, and run those workflows on a reconciled data core. And at the foundation is the engineering foundry that constructs and verifies that software: coordinated harnesses, strict lane boundaries, and durable build evidence that carries lessons from one release to the next.",
       "That third level is not glamorous. It is late-night sessions, broken builds, and the painstaking craft of getting coordinated agents to produce software that holds up on a real plant floor or in a CFO's close. Here are the two experiences from the inside that defined my last three years: falling down the Rabbit Hole in pure builder joy, and staying down there long enough that you find what I call the Disco.",
     ],
+    titanQuote: {
+      speaker: "Matan Grinberg & Eno Reyes",
+      role: "Co-Founders, Factory (factory.ai)",
+      source: "Factory · “The Software Factory”",
+      sourceUrl: "https://factory.ai/news/the-software-factory",
+      isQuoted: true,
+      quote:
+        "The incremental units of this system are AI agents. This system will be built by engineers, and in turn will build their software. This system is the software factory... We are building the machine that builds the machine.",
+    },
     fieldNoteCards: [
       {
         id: "fn-rabbit-hole",

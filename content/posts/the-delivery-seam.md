@@ -18,6 +18,9 @@ When I say "the machine that builds the machines that build the workflows," I me
 
 That third level is not glamorous. It is late-night sessions, broken builds, and the painstaking craft of getting coordinated agents to produce software that holds up on a real plant floor or in a CFO's close. Here are the two experiences from the inside that defined my last three years: **falling down the Rabbit Hole in pure builder joy**, and **staying down there long enough that you find what I call the Disco**.
 
+> *"The incremental units of this system are AI agents. This system will be built by engineers, and in turn will build their software. This system is the software factory... We are building the machine that builds the machine."*
+> — **Matan Grinberg & Eno Reyes**, Co-Founders, Factory ([*"The Software Factory"*](https://factory.ai/news/the-software-factory))
+
 ---
 
 ## 1. Note from the Field 03-A — Down the Rabbit Hole at Midnight: When Floor Experience Meets Direct Code
