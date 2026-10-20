@@ -1,6 +1,6 @@
-# idigdata: full text for language models
+# idigdata: full text reference for language models
 
-> The primary pages of idigdata.com, each with the title and description the page itself publishes in its metadata. Compiled from the page sources; no claims appear here that the pages do not make. See https://idigdata.com/llms.txt for the short index.
+> The primary pages and field dispatches of idigdata.com, each with its canonical URL, published title, description, and verified claims. Compiled directly from the page sources; no claims appear here that the pages do not make. See https://idigdata.com/llms.txt for the concise index and https://idigdata.com/facts.txt for the deterministic fact sheet.
 
 Canonical citation: Robert Paddock, Enterprise Transformation Executive, idigdata (Data Integration Group).
 
@@ -8,34 +8,53 @@ Canonical citation: Robert Paddock, Enterprise Transformation Executive, idigdat
 
 - URL: https://idigdata.com/
 - Title: Robert Paddock — Enterprise Transformation Executive | idigdata
-- Description: I connect people, systems, and workflows to shorten the path from intent to outcome. 20+ years of business leadership, over 50 enterprise transformations, and three years of hands-on agentic development.
+- Headline: Build what's next.
+- Description: I connect people, systems, and workflows to shorten the path from intent to outcome. 20+ years of CEO, CTO, and CIO business leadership, 50+ enterprise transformations through full-cycle implementations, and three years of hands-on agentic development.
+- Summary: Available for executive leadership roles, focused transformation mandates, and defined work through The Block (fractional and interim mandates welcome). Operates across six transformation domains and guides work through The Outcome Loop (Intent, Define, Deliver, Outcome / Intent, Define, Build, Outcome).
 
 ## Experience
 
 - URL: https://idigdata.com/experience/
 - Title: Experience | idigdata
 - Description: 20+ years of business leadership, over 50 enterprise transformations, and three years of hands-on agentic development across Data Integration Group, Sierra Nevada Brewing Co., Access IT, and Timberline Architectural Openings.
+- Career Arc:
+  1. Founder & Principal — Data Integration Group (DIG LLC) (2016–Present): Enterprise transformation, ERP recovery ($10M program recovered and delivered for $8M), post-acquisition integration ($350M business close reduced from 18 days to 4 days), and multi-facility IBP/S&OP ($200M wine producer).
+  2. Chief Information Officer (Embedded Executive Mandate via DIG) — Sierra Nevada Brewing Co. (2024–2026): $15M CIO mandate, executive leadership team & board reporting, 26 months of architecture and implementation across 25 task forces and 150 participants, IS/IT rebuild, company-owned data core, and production agentic workflows.
+  3. Lead Consultant & Solution Architect — Access IT, Inc. (2012–2016): Partner-side Microsoft Dynamics NAV and ContractERP delivery across manufacturing, construction, distribution, and services.
+  4. Founder, CEO & CTO — Timberline Architectural Openings (1996–2012): Built and scaled a contractor, manufacturer, and distributor from $250K in year one to $130M by year ten with 100+ employees across Las Vegas and Macau projects; built proprietary enterprise software.
 
 ## The Block
 
 - URL: https://idigdata.com/block/
 - Title: The Block · Scoping & Outcome Configurator | idigdata
 - Description: The Block is idigdata's productized capability configurator. Explore 60 outcomes across commercial leadership, transformation, enterprise systems, data, financial integrity, and agentic workflows. Configure your scope and request an engagement proposal.
-- Disciplines: Commercial & Solution Leadership; Enterprise Transformation & Delivery Leadership; Enterprise Architecture & Business Systems; Data, Knowledge & Financial Systems; Agentic Software & Workflow Delivery; Technology Operations, Adoption & Control.
-- Engagement model: Configure target outcomes to submit a scoping proposal; engagement blocks are determined based on deliverables and dependencies.
+- Six Disciplines: Commercial & Solution Leadership; Enterprise Transformation & Delivery Leadership; Enterprise Architecture & Business Systems; Data, Knowledge & Financial Systems; Agentic Software & Workflow Delivery; Technology Operations, Adoption & Control.
 
 ## Agentic AI
 
 - URL: https://idigdata.com/agentic-ai/
 - Title: Learn through the work · Dispatches from the Operational Seam | Robert Paddock
 - Description: Field notes on enterprise transformation, operating knowledge, and hands-on agentic software development by Robert Paddock.
+- Core Themes:
+  - Binary Intelligence & One Man and a Context Window: Human judgment directing binary intelligence (zeros and ones), equalizing capability from the CEO's desk to the shop floor.
+  - Chapter One (The Business as It Actually Runs): Reconciling Finance's formal close with Operations' live shop-floor reality through Integrated Business Planning (IBP), evolved from S&OP, with frontline operators as co-architects.
+  - Chapter Two (Working with Intelligence): Separating running, proposing, and authorizing a workflow; deterministic rules before agentic inference; auditability and human sign-off on consequential actions.
+  - Chapter Three (The Machine That Builds the Machines That Build the Workflows): Multi-vendor, multi-harness engineering with independent opposing-model verification to catch physical/financial edge cases (such as split-pallet partial receipts and catch-weight variances) before production cutover.
+- Field Dispatches:
+  - https://idigdata.com/agentic-ai/marys-sheet/ — Mary's Sheet: Operational reality vs. green ERP screens and Integrated Business Planning (IBP).
+  - https://idigdata.com/agentic-ai/the-delivery-seam/ — The Delivery Seam: Separating running, proposing, and authorizing an enterprise workflow.
+  - https://idigdata.com/agentic-ai/the-application-layer/ — The Application Layer: Multi-harness verification and catching physical cutover traps.
 - Feed: https://idigdata.com/feed.xml (RSS 2.0, "Agentic AI, by Robert Paddock")
 
 ## The Collective
 
 - URL: https://idigdata.com/collective/
-- Title: The Collective · Agentic Development Company, Enterprise Assets & Shared Patterns | Robert Paddock
-- Description: How The Rig (Agentic Development Company) builds B.O.S.S. (Enterprise Foundation Asset) and FlowCraft (Human-Agentic Runtime System & Workflow Blocks) on a shared Data Spine, paired with an open pattern commons.
+- Title: The Collective · Three Systems, One Set of Patterns | Robert Paddock
+- Description: How B.O.S.S. (Living Digital Twin), FlowCraft (The Live Operating Instance), and The Rig (The Machine That Builds the Machines) run on a shared spine (org -> instance -> assets -> outcomes) and loop (intent, define, build, outcome).
+- The Three Systems:
+  1. B.O.S.S. (Where the Business Stands — The Front End of Everything · Living Digital Twin): Maps where the business actually stands, organizes the data core, builds a living digital twin across 6 process constellations (P2P, O2C, P2M, S2S, D2R, MDM), runs project and change management, builds workflows from where the company stands, and monitors the live operating instance.
+  2. FlowCraft (The Business as It Runs — The Live Operating Instance): The operating instance of an operating company (DigOps) where real daily transactions run—Purchase Orders, Payroll, Receiving & Floor Dock, Approvals, and Close & Reconciliation—built from B.O.S.S. and monitored by B.O.S.S.
+  3. The Rig (The Foundry — The Machine That Builds the Machines): Multi-vendor, multi-harness engineering foundry with shared comms, durable memory that outlasts the session, and independent opposing-model check gates before anything lands.
 
 ## Contact
 
@@ -55,16 +74,3 @@ Canonical citation: Robert Paddock, Enterprise Transformation Executive, idigdat
 - URL: https://idigdata.com/privacy/
 - Title: Privacy | idigdata
 - Description: How idigdata handles site telemetry, contact notes, cookies, and requests about your data.
-
-## Accepted public claims
-
-- Robert Paddock, Enterprise Transformation Executive; founder of Data Integration Group (DIG LLC); public practice idigdata, founded 2016.
-- 20+ years of business leadership, over 50 enterprise transformations, and three years of hands-on agentic development.
-- The Outcome Loop (*Intent, Define, Deliver, Outcome*): people and agents contribute throughout, with human judgment and accountability guiding the work.
-- Binary Intelligence: human judgment directing binary intelligence (zeros and ones), where in Robert's development work agents write the code while the human retains responsibility for intent, verification, and accepted outcomes.
-- Agentic Development Company (`The Rig`): Function 1 multi-harness software builder proof of concept, which built the Enterprise Foundation Asset (`B.O.S.S.`) and the Human-Agentic Runtime System & Workflow Blocks (`FlowCraft`) on a shared Data Spine.
-- Data Integration Group (Founder, 2016–Present): lead enterprise transformation for family-owned, private equity-backed, and post-acquisition businesses; recovered an off-track $10M ERP program and delivered it into production for $8M ($2M saved); led acquisition integration for a $350M business, reducing financial close from 18 days to four.
-- Sierra Nevada Brewing Co. (Contract CIO, 2024–2026): served on the executive leadership team with board reporting; led 26 months of architecture and implementation connecting business and plant systems around a company-owned data core; rebuilt IS/IT and led 150 project participants across 25 task forces; put agentic applications into production.
-- Access IT, Inc. (Lead Consultant & Solution Architect, 2012–2016): led partner-side Microsoft Dynamics NAV and ContractERP implementations for construction, distribution, manufacturing, and services clients across SI, ISV, and reseller roles.
-- Timberline Architectural Openings (Founder, CEO & CTO, 1996–2012): founded and scaled a contractor, manufacturer, and distributor from $250K in year one to $130M by year ten with 100+ employees; connected engineered sales with manufacturing, supply, and installation for projects in Las Vegas and Macau; built proprietary enterprise software; engaged private equity on expansion financing and advised a PE team on troubled distributors.
-- Selected organizations and enterprise leadership contributions published on the site: Sierra Nevada Brewing Co., Wynn Resorts, MGM Grand, Caesars, Duckhorn, Foley, Scheid, Rodney Strong, SOM, HOK, Turner, PCL, HCA Healthcare.

@@ -19,8 +19,35 @@ const ANALYTICS_OPT_OUT_KEY = "idig_analytics_opt_out";
 const DOOR_SESSION_SECONDS = 30 * 60;
 const MARKER_SECONDS = 365 * 24 * 60 * 60;
 
+/** Hostile vulnerability probes and bulk parasite scrapers blocked at the edge (403). */
+const EXPLOIT_PROBE_PATH =
+  /(?:\.php$|^\/wp-(?:admin|login|content|includes)|^\/\.env|^\/\.git|phpmyadmin|xmlrpc|^\/cgi-bin|^\/vendor\/phpunit)/i;
+
+const SCOUNDREL_USER_AGENT =
+  /(bytespider|petalbot|dotbot|mj12bot|blexbot|semrushbot|ahrefsbot|dataforseobot|barkrowler|seekportbot|threatview|foregenix|wp2shell|nuclei|nikto|sqlmap|zgrab|masscan|censys)/i;
+
 export function proxy(req: NextRequest, event: NextFetchEvent) {
+  const pathname = req.nextUrl.pathname;
+  const ua = (req.headers.get("user-agent") ?? "").trim();
+
+  // Block exploit path scanners and scoundrel scrapers/quoted botnet UAs immediately at the edge
+  if (
+    EXPLOIT_PROBE_PATH.test(pathname) ||
+    SCOUNDREL_USER_AGENT.test(ua) ||
+    /^["'].*["']$/.test(ua)
+  ) {
+    return new NextResponse("Forbidden", { status: 403 });
+  }
+
   const response = NextResponse.next();
+  if (
+    pathname.startsWith("/hold") ||
+    pathname.startsWith("/preview-agentic") ||
+    pathname.startsWith("/banners")
+  ) {
+    response.headers.set("X-Robots-Tag", "noindex, nofollow");
+  }
+
   syncTrafficCookies(req, response);
   syncAttributionCookie(req, response);
 
@@ -39,7 +66,7 @@ export function proxy(req: NextRequest, event: NextFetchEvent) {
   const isSeen = req.cookies.get(DOOR_SEEN_COOKIE)?.value === "1";
   const isAgentUa =
     /curl|wget|python|node-fetch|headless|playwright|puppeteer|bot|spider|crawl|x11; linux/i.test(
-      req.headers.get("user-agent") ?? "",
+      ua,
     );
 
   const doorSessionId =

@@ -149,7 +149,7 @@ export function collectiveSchema(): JsonLdNode {
     name: "The Collective",
     url: `${SITE_ORIGIN}/collective/`,
     description:
-      "How The Rig (Agentic Development Company) builds B.O.S.S. (Enterprise Foundation Asset) and FlowCraft (Human-Agentic Runtime System & Workflow Blocks) on a shared Data Spine.",
+      "Three systems built on one set of patterns (org -> instance -> assets -> outcomes): B.O.S.S. (The Front End of Everything & Living Digital Twin), FlowCraft (The Live Operating Instance), and The Rig (The Machine That Builds the Machines).",
     publisher: organizationRef(),
     author: personRef(),
     inLanguage: "en-US",

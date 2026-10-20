@@ -8,7 +8,14 @@ import {
 
 describe("websiteSignals", () => {
   it("marks DigOps paths as buyer signal when direct", () => {
-    for (const testPath of ["/approach/", "/collective/", "/agentic-ai/", "/agentic-ai/marys-sheet/"]) {
+    for (const testPath of [
+      "/approach/",
+      "/collective/",
+      "/collective/plate/",
+      "/agentic-ai/",
+      "/agentic-ai/plate/",
+      "/agentic-ai/marys-sheet/",
+    ]) {
       const signal = classifyWebsiteSignal({
         path: testPath,
         hostname: "idigdata.com",
@@ -34,9 +41,12 @@ describe("websiteSignals", () => {
     assert.equal(signal.buyer_signal, false);
   });
 
-  it("detects automation UAs", () => {
+  it("detects automation, security scanner, and literal-quoted bot UAs", () => {
     assert.equal(isBotUserAgent("curl/8.0"), true);
     assert.equal(isBotUserAgent("Mozilla/5.0"), true);
+    assert.equal(isBotUserAgent("Turaco Labs ThreatView Security Auditor (threatview.app)"), true);
+    assert.equal(isBotUserAgent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko, Foregenix) Chrome/155.0.0.0 Safari/537.36"), true);
+    assert.equal(isBotUserAgent('"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/142.0.0.0"'), true);
   });
 
   it("records localhost as internal instead of dropping the hit", () => {
