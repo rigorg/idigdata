@@ -1,14 +1,14 @@
 ---
-title: "What’s Old Is New, What’s New Is Old: Bad Data, Shadow IT, and the Mighty Excel Spreadsheet"
+title: "Chapter One: How Businesses Actually Run — What’s Old Is New, What’s New Is Old"
 date: 2026-10-19
 slug: marys-sheet
-description: "Bad Data, Shadow IT, and the Mighty Excel Spreadsheet: How Businesses Actually Run—and why untangling the current-state seams still comes down to People, Systems, and Workflows."
-topic: "Chapter 01 // People, Systems & Workflows in the Current State"
+description: "What’s Old Is New, What’s New Is Old — Bad Data, Shadow IT, and the Mighty Excel Spreadsheet: How Businesses Actually Run."
+topic: "Chapter One // People, Systems & Workflows in the Current State"
 ---
 
-# What’s Old Is New, What’s New Is Old
+# Chapter One: How Businesses Actually Run
 
-*Bad Data, Shadow IT, and the Mighty Excel Spreadsheet: How Businesses Actually Run.*
+*What’s Old Is New, What’s New Is Old — Bad Data, Shadow IT, and the Mighty Excel Spreadsheet.*
 
 The ERP says the work is scheduled. The person on the floor knows the machine cannot run. Somewhere between those two facts sits a spreadsheet, a phone call, and someone making sure the business gets through the day.
 
@@ -16,7 +16,7 @@ If you want to understand why enterprise AI is both so exciting and so misunders
 
 By the 1970s and early 1980s, **COBOL**-based systems were already carrying much of the ledger, inventory, and payroll work that established the transaction patterns companies still run on today. Then came the big **ERP wave**, promising one integrated system to run the entire enterprise. Even looking out through 2027, [Gartner forecasts](https://www.gartner.com/en/information-technology/topics/enterprise-resource-planning) that **more than 70% of recently implemented ERP initiatives will fail to fully meet their original business-case goals**. In my experience, one reason is painfully familiar: the implementation goes live while the work between the screens still sits on a clipboard. Alongside those ERPs came massive **CapEx implementation budgets** for armies of system integrators and implementation partners who somehow never quite seem to leave.
 
-Then the **SaaS revolution** rolled in. SaaS brought useful point tools, but in my experience, the commercial structure of most platforms—per-seat subscriptions, renewal lock-in, and data kept inside vendor walls—often leaves the software rigid where your company’s actual workflows need to bend.
+Then the **SaaS revolution** rolled in, bringing useful point tools whose commercial structure—per-seat subscriptions, renewal lock-in, and data kept inside vendor walls—often leaves the software rigid where your company’s actual workflows need to bend.
 
 ---
 
@@ -24,7 +24,7 @@ Then the **SaaS revolution** rolled in. SaaS brought useful point tools, but in 
 
 So what happened on the ground? Because a business is a living machine that has to make money every single day—buying, producing, selling, shipping, paying bills, making payroll, and navigating multi-entity, multi-location taxes and regulations—people had to find a way to make the machine work.
 
-When you peel back the curtain on almost any company today, what actually runs the business? **The mighty Excel spreadsheet—and decades of Shadow IT.**
+When you peel back the curtain on almost any company today, what actually runs the business in runtime? **The mighty Excel spreadsheet—and decades of Shadow IT.**
 
 To get their jobs done, functional departments had to build their own spreadsheet bridges or go out and buy their own departmental software. Over ten, twenty, or thirty years, companies accumulated custom programs, partner portals, and Shadow IT projects that got siloed, forgotten about, or left exposed. I’ve found twenty-year-old shadow systems humming away in a corner that nobody in leadership even knows exist—except the one guy who quietly fixes it whenever it breaks. Meanwhile, on the financial side, just corralling the sprawl of subscription costs, real active user counts versus unused seats, contract term dates, and now **AI token usage** has become a full-time battle of its own.
 
@@ -70,4 +70,4 @@ With agents in the work, we no longer have to put people through a two-year root
 ---
 
 ### Continue Reading the Series
-→ Next: **[Chapter 02: Working with Intelligence — Memory, Context, and the New Daily Reality](/agentic-ai/the-application-layer/)**
+→ Next: **[Chapter Two: Working with Intelligence — Where People Shape and Run Their Own Workflows](/agentic-ai/the-application-layer/)**

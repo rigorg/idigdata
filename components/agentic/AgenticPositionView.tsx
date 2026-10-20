@@ -50,7 +50,7 @@ function WorkflowBlocksSpot() {
 }
 
 /**
- * 03 / Chapter Three — The Machine That Builds the Workflows (Multi-Harness Compass & Cube)
+ * 03 / Chapter Three — The Machine That Builds the Machines That Build the Workflows
  */
 function FactorySpot() {
   return (
@@ -68,7 +68,7 @@ function FactorySpot() {
 }
 
 /**
- * Ethereal Architectural Paper-Drafting Plate (Hero Centerpiece)
+ * Architectural Paper-Drafting Plate (Centered Showcase Below the Opening Prose)
  */
 function PeopleSystemsWorkflowSpot() {
   return (
@@ -80,8 +80,8 @@ function PeopleSystemsWorkflowSpot() {
       >
         <Image
           src="/diagrams/learn-through-work-paper-plate.svg"
-          alt="Human & Binary Intelligence · People, Data, Systems, Workflows, Agents, and Patterns across 01 Intent, 02 Define, 03 Deliver, and 04 Outcome"
-          width={880}
+          alt="Human & Binary Intelligence · People, Data, Systems, Workflows, Agents, and Patterns across 01 Intent, 02 Define, 03 Deliver, and 04 Outcome anchored at The Seam"
+          width={920}
           height={760}
           unoptimized
           className={s.emblemImg}
@@ -89,8 +89,10 @@ function PeopleSystemsWorkflowSpot() {
         />
       </Link>
       <div className={s.emblemCaption}>
-        <strong className={s.emblemCaptionTitle}>The Seam &amp; The Continuous Loop</strong>
-        <span className={s.emblemCaptionSubtitle}>01 Intent &middot; 02 Define &middot; 03 Deliver &middot; 04 Outcome &#8634;</span>
+        <strong className={s.emblemCaptionTitle}>The Seam &amp; The Continuous Runtime Loop</strong>
+        <span className={s.emblemCaptionSubtitle}>
+          01 Intent (Business Mandate) &rarr; 02 Define (Workflow Blueprint) &rarr; 03 Deliver (Runtime Execution) &rarr; 04 Outcome (Memory &amp; Learning &#8634;)
+        </span>
         <Link
           href="/agentic-ai/plate/"
           style={{
@@ -175,7 +177,7 @@ const COLLECTIVES: CollectivePillar[] = [
         </a>{" "}
         that more than 70% of recently implemented ERP initiatives will fail to fully meet their original business-case goals. In my experience, one reason is painfully familiar: the implementation goes live while the work between the screens still sits on a clipboard.
       </>,
-      "Then the SaaS revolution rolled in, bringing useful point tools whose commercial structure—per-seat subscriptions, renewal lock-in, and data kept inside vendor walls—often leaves the software rigid where your company’s actual workflows need to bend. So when you peel back the curtain on almost any company today, what actually runs the business? The mighty Excel spreadsheet—and decades of Shadow IT.",
+      "Then the SaaS revolution rolled in, bringing useful point tools whose commercial structure—per-seat subscriptions, renewal lock-in, and data kept inside vendor walls—often leaves the software rigid where your company’s actual workflows need to bend. So when you peel back the curtain on almost any company today, what actually runs the business in runtime? The mighty Excel spreadsheet—and decades of Shadow IT.",
     ],
     expandedParagraphs: [
       "Because a business is a living machine that has to make money every single day—buying, producing, selling, shipping, paying bills, making payroll, and navigating multi-entity, multi-location taxes and regulations—people had to find a way to make the machine work. Alongside those ERPs came massive CapEx implementation budgets for armies of system integrators and implementation partners who somehow never quite seem to leave.",
@@ -231,19 +233,19 @@ const COLLECTIVES: CollectivePillar[] = [
   {
     num: "02",
     chapterLabel: "Chapter Two",
-    tag: "CHAPTER TWO // MEMORY & THE CONTEXT WORKSPACE",
+    tag: "CHAPTER TWO // MEMORY & THE RUNTIME WORKSPACE",
     actionLabel: "Share How You See This Shift",
     title: "Working with Intelligence",
-    subtitle: "Living Institutional Memory, the Context Workspace, and Decisions That Stay in the Book.",
+    subtitle: "Where People Shape and Run Their Own Workflows — Living Memory, the Context Workspace, and Decisions That Stay in the Book.",
     spot: "blocks",
     leadParagraphs: [
-      "Once you sit beside the people doing the work and start untangling those current-state seams with them, a big question opens up: What does daily work actually look like on the other side?",
+      "Once you sit beside the people doing the work and start untangling those current-state seams with them, a big question opens up: What does daily work actually look like on the other side? Most business leaders and operators don’t want to live inside a software foundry building the machine that builds the machines—they want to be in the machine, working with intelligence to build, adapt, and run their own workflows.",
       "For the last thirty years, enterprise software treated 'go-live' as the finish line. Once the initial rollout was declared finished, the screens froze in place while the business kept changing—forcing people right back into spreadsheets, workarounds, and costly change orders. Worse, software trained humans to work like data-entry clerks: clicking through fifteen different tabs, hunting for reports, and copying numbers from one window to another.",
       "In the agentic era, the history is gathered when you sit down, and the decision is still in the book after you close the laptop. What sits underneath a well-architected business is living institutional memory: your structured records, your historical decisions, your operational history, and the map of how your systems and workflows connect.",
     ],
     expandedParagraphs: [
-      "Because go-live is no longer a frozen finish line, you can compare what you intended against the actual outcome, learn what happened, and let both the people and the system get sharper every cycle.",
-      "How do people actually interact with that intelligence? Instead of hunting through rigid menus, the person works in a focused workspace—whether a role-tuned screen on the floor or an interactive session like the one on my desk right now—while the system assembles the relevant records, history, and a second view of the same facts into the agent's context window. A context window is a working briefing, not the system of record: it is assembled for the judgment at hand, while institutional memory is the durable record that remains in the book after the session closes. From that workspace, an authenticated human can weigh options, reach consensus, and take permitted actions—writing the decision into the system of record, dispatching an email, routing an approval, or drafting a report—with the permanent trail recorded outside the session.",
+      "Because go-live is no longer a frozen finish line, you can compare what you intended against the actual outcome (Intent → Define → Deliver → Outcome ↻), learn what happened, and let both the people and the system become self-learning and self-improving every cycle.",
+      "How do people actually interact with that intelligence in runtime? Instead of hunting through rigid menus, the person works in a focused workspace—whether a role-tuned screen on the floor or an interactive session like the one on my desk right now—while the system assembles the relevant records, history, and a second view of the same facts into the agent's context window. A context window is a working briefing, not the system of record: it is assembled for the judgment at hand, while institutional memory is the durable record that remains in the book after the session closes. From that workspace, an authenticated human can shape a workflow, weigh options, reach consensus, and take permitted actions—writing the decision into the system of record, dispatching an email, routing an approval, or drafting a report—with the permanent trail recorded outside the session.",
     ],
     fieldNoteCards: [
       {
@@ -285,13 +287,13 @@ const COLLECTIVES: CollectivePillar[] = [
     chapterLabel: "Chapter Three",
     tag: "CHAPTER THREE // THE BUILDER’S FOUNDRY",
     actionLabel: "Share Your Builder Experience",
-    title: "The Machine That Builds the Workflows",
-    subtitle: "Moving Past Prompting and Vibe Coding into Multi-Harness Engineering: Down the Rabbit Hole and Out of the Disco.",
+    title: "The Machine That Builds the Machines That Build the Workflows",
+    subtitle: "Why Empowering People to Shape Their Own Enterprise Workflow Assets Takes a Different Level of Engineering: Down the Rabbit Hole and Out of the Disco.",
     spot: "factory",
     leadParagraphs: [
-      "Across the tech world today, you hear frontier builders talk about 'building the machine that builds the machine'—software factories where AI agents help engineers build software. On the operations side of the house, our work has to land on the plant and office floor. The thing worth building is the machine that builds the workflows the business actually runs.",
-      "Over the past three years, I have spent thousands of hours hands-on in this new wave of software engineering. Building real enterprise systems with agents is a very different discipline from prompt engineering or weekend 'vibe coding.' Even inside an agentic workshop, everything comes right back to People, Systems, and Workflows.",
-      "Coordinating multiple frontier AI harnesses in isolated lanes requires the same operational discipline as running a great plant: clear human intent and architectural command at the top, stress-testing specifications before steel is cut, automated inspection, and an accountability rule that nobody signs their own release and no agent grades its own homework. To tell the truth from the inside, I want to share two connected experiences I’ve had building this way: falling down the Rabbit Hole in pure joy, and staying down there long enough that you find what I call the Disco.",
+      "Not everybody goes to the machine that builds the machines. Most people want to live in Chapter Two—inside the machine, working with intelligence to build and run their own workflows as a living enterprise asset. But to make that possible, somebody has to build the machine that builds that machine. And that is a completely different level of development—just ask the teams at 8090 or Factory.ai.",
+      "Over the past three years, I have lived through the pain, suffering, and exhilaration of building at that foundry level across thousands of hours of hands-on agentic engineering. Building the machine that builds the machines that build enterprise workflows is a world apart from prompt engineering or weekend 'vibe coding.' Even inside an agentic workshop, everything comes right back to People, Systems, and Workflows.",
+      "Because without discipline, agents run around in runtime like chickens with their heads cut off too. Coordinating multiple frontier AI harnesses in isolated lanes requires clear human intent and architectural command at the top, stress-testing specifications before steel is cut, automated inspection, and an accountability rule that nobody signs their own release and no agent grades its own homework. To tell the truth from the inside, I want to share two connected experiences from that journey: falling down the Rabbit Hole in pure joy, and staying down there long enough that you find what I call the Disco.",
     ],
     expandedParagraphs: [],
     fieldNoteCards: [
@@ -327,7 +329,7 @@ const COLLECTIVES: CollectivePillar[] = [
     closingQuestion: "If you are building with agents right now, I’d love to know: have you hit that house of mirrors yet, and what helped you find your way out?",
     fieldNoteHref: "/agentic-ai/the-delivery-seam/",
     fieldNoteLabel: "Open Standalone Chapter Three Page",
-    topicKey: "03 / Chapter Three: The Machine That Builds the Workflows (Rabbit Hole & The Disco)",
+    topicKey: "03 / Chapter Three: The Machine That Builds the Machines That Build the Workflows",
   },
 ];
 
@@ -425,7 +427,7 @@ export default function AgenticPositionView() {
   return (
     <article className={s.page}>
       {/* ====================================================================
-           MASTHEAD / HERO ("Learn through the work.")
+          MASTHEAD / HERO ("Learn through the work.")
           ==================================================================== */}
       <header className={s.hero}>
         <div className={s.heroInner}>
@@ -437,14 +439,31 @@ export default function AgenticPositionView() {
               Learn through the work<span>.</span>
             </h1>
             <p className={s.dek}>
-              Where 20+ years of business leadership and 50+ enterprise transformations meet three years of hands-on agentic development.
+              Where 20+ years of business leadership and 50+ enterprise transformations meet three years of hands-on agentic development—my journey of zeros and ones in the enterprise domain meeting Binary Intelligence.
+            </p>
+
+            {/* Highlighted Seam Epigraph Banner */}
+            <div className={s.seamHighlightBanner}>
+              <span className={s.seamHighlightTag}>THE SEAM // WHERE HUMAN ACCOUNTABILITY MEETS SYSTEM TRUTH</span>
+              <p className={s.seamHighlightQuote}>
+                &ldquo;Every transformation lives and dies at the seam where human accountability meets system truth.&rdquo;
+              </p>
+            </div>
+
+            <p className={s.heroLead}>
+              When you boil an enterprise down—really, when you boil almost everything in life down—<strong>it is workflows.</strong> We all live in runtime workflows. Yet in too many businesses today, good people spend their days in runtime running around like chickens with their heads cut off because the systems underneath them don&rsquo;t talk to each other. One of my favorite beliefs has always been simple: <strong>if you have happy systems, you have happy people—and if you have happy people, you have happy systems.</strong> We are talking about people&rsquo;s livelihoods, their pride in their craft, and their quality of life at work.
             </p>
             <p className={s.heroLead}>
-              I started this weblog to have an honest conversation about something that touches almost everyone’s working life today: how people, systems, and workflows actually fit together—and what changes now that agents are actually in the work. <strong>I call this new chapter Binary Intelligence</strong>—because underneath all the hype, it is still zeros and ones, just raised to a level where human judgment can work with them in a completely new way.
+              I started this weblog to trace my journey through decades of enterprise zeros and ones into what I call <strong>Binary Intelligence</strong>—because underneath all the hype, it is still zeros and ones, just raised to a level where human judgment and agents can finally work together inside the real flow of the business. And here is what you discover quickly: without clear workflows and boundaries, <strong>agents run around in runtime like chickens with their heads cut off too.</strong> Even inside our own multi-agent workshop right now, we are constantly perfecting our workflows so people and agents aren&rsquo;t colliding in the dark.
             </p>
-            <p className={s.heroLead} style={{ marginTop: "12px" }}>
-              These are three connected reflections from my years in the field, paired with short notes about the real people I’ve met along the way—including my own midnight trips down the builder rabbit hole. One of my favorite beliefs has always been simple: <strong>if you have happy systems, you have happy people—and if you have happy people, you have happy systems.</strong> We are talking about people’s livelihoods, their pride in their craft, and their quality of life at work. <strong>This is what I’m seeing from the work. I’d like to hear what you’re seeing in yours.</strong>
+            <p className={s.heroLead}>
+              What turns daily runtime chaos into a compounding enterprise asset is <strong>living memory</strong>—connecting <strong>People, Data, Systems, Workflows, Agents, and Patterns</strong> around a continuous loop (<strong>01 Intent &rarr; 02 Define &rarr; 03 Deliver &rarr; 04 Outcome &#8634;</strong>) that is self-learning and self-improving over time. And what we learn shouldn&rsquo;t vanish when a session closes; it carries forward through{" "}
+              <Link href="/collective/" style={{ color: "var(--ink)", textDecoration: "underline", fontWeight: 700 }}>
+                The Collective
+              </Link>
+              . <strong>Below are the three chapters of how I see this unfolding—and I&rsquo;d like to hear what you&rsquo;re seeing in your work.</strong>
             </p>
+
             <div className={s.byline}>
               <span className={s.square} />
               <span>
@@ -453,6 +472,7 @@ export default function AgenticPositionView() {
             </div>
           </div>
 
+          {/* Centered Architectural Paper Plate Showcase Below the Three Opening Paragraphs */}
           <div className={s.heroVisual}>
             <div className={s.heroPlateFrame}>
               <div className={s.plateCornerTL} />
@@ -460,22 +480,22 @@ export default function AgenticPositionView() {
               <div className={s.plateCornerBL} />
               <div className={s.plateCornerBR} />
               <div className={s.plateInner}>
-                <span className={s.plateTag}>ARCHITECTURAL NOTEBOOK PLATE &bull; HUMAN + BINARY INTELLIGENCE</span>
+                <span className={s.plateTag}>ARCHITECTURAL PLATE I &bull; THE SEAM, THE SIX ELEMENTS &amp; THE CONTINUOUS OUTCOME LOOP</span>
                 <PeopleSystemsWorkflowSpot />
                 <div className={s.plateMetrics}>
                   <div>
-                    <strong>0s &amp; 1s</strong>
-                    <span>Binary Intelligence</span>
+                    <strong>PEOPLE &amp; DATA</strong>
+                    <span>Judgment &amp; Clean Core</span>
                   </div>
                   <div className={s.metricDivider} />
                   <div>
-                    <strong>PEOPLE &amp; AGENTS</strong>
-                    <span>Context Workspace</span>
+                    <strong>SYSTEMS &amp; WORKFLOWS</strong>
+                    <span>Controls &amp; Runtime Flow</span>
                   </div>
                   <div className={s.metricDivider} />
                   <div>
-                    <strong>OUTCOME LOOP</strong>
-                    <span>Intent &rarr; Outcome &#8634;</span>
+                    <strong>AGENTS &amp; PATTERNS</strong>
+                    <span>Binary Intelligence &amp; Memory</span>
                   </div>
                 </div>
               </div>
@@ -501,9 +521,9 @@ export default function AgenticPositionView() {
         <div className={s.triadInner}>
           <div className={s.triadHead}>
             <p className={s.eyebrow}>01 / Three Chapters &amp; Notes from the Field</p>
-            <h2>How Businesses Actually Run, Working with Intelligence, and the Machine That Builds the Workflows<span>.</span></h2>
+            <h2>How Businesses Actually Run, Working with Intelligence, and the Machine That Builds the Machines<span>.</span></h2>
             <p className={s.triadDek}>
-              Three chapters on <strong>People, Systems, and Workflows</strong>. Start with the opening of each chapter in the three columns below—and click <strong>Expand to Larger Format</strong> on any chapter to read the full story and its Notes from the Field.
+              Three chapters on <strong>People, Systems, and Workflows</strong>: how businesses actually run today, how people work inside the machine with intelligence to shape and run their own workflows, and the foundry required underneath to build that machine. Read the opening of each chapter below—and expand any chapter into the larger format.
             </p>
           </div>
 
@@ -585,7 +605,7 @@ export default function AgenticPositionView() {
                         ))}
                     </div>
 
-                    {/*Collapsed View: Preview of Field Notes + Expand Button */}
+                    {/* Collapsed View: Preview of Field Notes + Expand Button */}
                     {!isExpanded && (
                       <>
                         <div className={s.triadNotePreviewList}>
@@ -782,7 +802,7 @@ export default function AgenticPositionView() {
         <div className={s.limelightInner}>
           <div className={s.limelightBanner} style={{ marginTop: 0 }}>
             <div className={s.limelightBannerContent}>
-              <p className={s.eyebrow} style={{ margin: 0 }}>02 / THE COLLECTIVE // PEOPLE &amp; AGENTS LEARNING THROUGH THE WORK</p>
+              <p className={s.eyebrow} style={{ margin: 0 }}>02 / THE COLLECTIVE // MEMORY, SELF-LEARNING &amp; SHARED PATTERNS</p>
               <h3>What we learn should carry forward.</h3>
               <p>
                 <strong>Learn through the work</strong> is where I put these field observations into words. <strong>The Collective</strong> is the place I am working toward to compare notes, build together, and let what people and agents learn through the work become useful for the next person—while each company keeps its own direction and control.
@@ -936,8 +956,8 @@ export default function AgenticPositionView() {
                     <option value="02 / Chapter Two: Working with Intelligence (ERP Debate & Approval Workflows)">
                       Chapter Two / Working with Intelligence (The ERP Debate &amp; Approval Workflows)
                     </option>
-                    <option value="03 / Chapter Three: The Machine That Builds the Workflows (Rabbit Hole & The Disco)">
-                      Chapter Three / The Machine That Builds the Workflows (Rabbit Hole &amp; The Disco)
+                    <option value="03 / Chapter Three: The Machine That Builds the Machines That Build the Workflows">
+                      Chapter Three / The Machine That Builds the Machines That Build the Workflows
                     </option>
                     <option value="The Collective / Collaboration & Shared Patterns">
                       The Collective / People, Agents &amp; Shared Patterns

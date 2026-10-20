@@ -1,22 +1,22 @@
 ---
-title: "The Machine That Builds the Machines—and the Workflows They Run: Down the Rabbit Hole & Out of the Disco"
+title: "Chapter Three: The Machine That Builds the Machines That Build the Workflows"
 date: 2026-10-19
 slug: the-delivery-seam
-description: "Moving past prompting and vibe coding into multi-harness engineering: falling down the Rabbit Hole in pure builder joy—and finding your way out of the Disco."
-topic: "Chapter 03 // The Builder’s Foundry"
+description: "Why empowering people to shape their own enterprise workflow assets takes a different level of engineering: falling down the Rabbit Hole in pure builder joy—and finding your way out of the Disco."
+topic: "Chapter Three // The Builder’s Foundry"
 ---
 
-# The Machine That Builds the Machines—and the Workflows They Run
+# Chapter Three: The Machine That Builds the Machines That Build the Workflows
 
-*Moving Past Prompting and Vibe Coding into Multi-Harness Engineering: Falling Down the Rabbit Hole in Pure Builder Joy—and Finding Your Way Out of the Disco.*
+*Why Empowering People to Shape Their Own Enterprise Workflow Assets Takes a Different Level of Engineering: Down the Rabbit Hole and Out of the Disco.*
 
-Across the tech world today, you hear frontier builders talk about *"building the machine that builds the machine"*—software factories where AI agents help engineers build software. On the operations side of the house, our work has to land on the plant and office floor. The thing worth building is **the machine that builds the workflows the business actually runs.**
+Not everybody goes to the machine that builds the machines. Most people want to live in **Chapter Two**—inside the machine, working with intelligence to build and run their own workflows as a living enterprise asset.
 
-Over the past three years, I have spent thousands of hours hands-on in this new wave of software engineering. Building real enterprise systems with agents is a very different discipline from prompt engineering or weekend "vibe coding."
+**But to make that possible, somebody has to build the machine that builds that machine.** And that is a completely different level of development—just ask the teams at **8090** or **Factory.ai**.
 
-Even inside an agentic workshop, everything comes right back to **People, Systems, and Workflows**. Coordinating multiple frontier AI harnesses in isolated lanes requires the same operational discipline as running a great plant: clear human intent and architectural command at the top, stress-testing specifications before steel is cut, automated inspection, and an accountability rule that **nobody signs their own release and no agent grades its own homework**.
+Over the past three years, I have lived through the pain, suffering, and exhilaration of building at that foundry level across thousands of hours of hands-on agentic engineering. Building the machine that builds the machines that build enterprise workflows is a world apart from prompt engineering or weekend "vibe coding." Even inside an agentic workshop, everything comes right back to **People, Systems, and Workflows**.
 
-When people talk about "software factories" from the outside, they often make it sound clinical and effortless. To tell the truth from the inside—and why I love this craft so much—I want to share two connected experiences I’ve had building this way: **falling down the Rabbit Hole in pure joy**, and **staying down there long enough that you find what I call the Disco**.
+Because without discipline, agents run around in runtime like chickens with their heads cut off too. Coordinating multiple frontier AI harnesses in isolated lanes requires clear human intent and architectural command at the top, stress-testing specifications before steel is cut, automated inspection, and an accountability rule that **nobody signs their own release and no agent grades its own homework**. To tell the truth from the inside, I want to share two connected experiences from that journey: **falling down the Rabbit Hole in pure joy**, and **staying down there long enough that you find what I call the Disco**.
 
 ---
 
@@ -50,4 +50,4 @@ When people talk about "software factories" from the outside, they often make it
 
 ### Continue Reading
 - → Step Inside **[The Collective: What We Learn Should Carry Forward](/collective/)**
-- ← Previous: **[Chapter 02: Working with Intelligence — Memory, Context, and the New Daily Reality](/agentic-ai/the-application-layer/)**
+- ← Previous: **[Chapter Two: Working with Intelligence — Where People Shape and Run Their Own Workflows](/agentic-ai/the-application-layer/)**

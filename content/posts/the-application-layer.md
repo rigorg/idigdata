@@ -1,16 +1,18 @@
 ---
-title: "Working with Intelligence: Memory, Context, and the New Daily Reality"
+title: "Chapter Two: Working with Intelligence — Where People Shape and Run Their Own Workflows"
 date: 2026-10-19
 slug: the-application-layer
-description: "What happens when institutional memory, system connectivity, and human judgment come together in one workspace—plus a debate over a beer with a Big-SI executive and the approval workflow paradox."
-topic: "Chapter 02 // People, Systems & Workflows · Memory & The Context Workspace"
+description: "Where people shape and run their own workflows: living institutional memory, the context workspace, and decisions that stay in the book."
+topic: "Chapter Two // Memory & The Runtime Workspace"
 ---
 
-# Working with Intelligence: Memory, Context, and the New Daily Reality
+# Chapter Two: Working with Intelligence
 
-*What Happens When Institutional Memory, System Connectivity, and Human Judgment Come Together in One Workspace.*
+*Where People Shape and Run Their Own Workflows — Living Institutional Memory, the Context Workspace, and Decisions That Stay in the Book.*
 
 Once you sit beside the people doing the work and start untangling those current-state seams with them, a big question opens up: *What does daily work actually look like on the other side?*
+
+Most business leaders and operators don’t want to live inside a software foundry building the machine that builds the machines—they want to be **in the machine, working with intelligence to build, adapt, and run their own workflows.**
 
 For the last thirty years, enterprise software treated "go-live" as the finish line. Once the initial rollout was declared finished, the screens froze in place while the business kept changing—forcing people right back into spreadsheets, workarounds, and costly change orders. Worse, software trained humans to work like data-entry clerks: clicking through fifteen different tabs, hunting for reports, and copying numbers from one window to another.
 
@@ -20,9 +22,9 @@ For the last thirty years, enterprise software treated "go-live" as the finish l
 
 In the agentic era, the history is gathered when you sit down, and the decision is still in the book after you close the laptop. What sits underneath a well-architected business is **living institutional memory**: your structured records, your historical decisions, your operational history, and the map of how your systems and workflows connect.
 
-Because go-live is no longer a frozen finish line, you can compare what you intended against the actual outcome, learn what happened, and let both the people and the system get sharper every cycle.
+Because go-live is no longer a frozen finish line, you can compare what you intended against the actual outcome (**Intent → Define → Deliver → Outcome ↻**), learn what happened, and let both the people and the system become self-learning and self-improving every cycle.
 
-How do people actually interact with that intelligence? Instead of hunting through rigid menus, the person works in a focused **workspace**—whether a role-tuned screen on the floor or an interactive session like the one on my desk right now—while the system assembles the relevant records, history, and a second view of the same facts into the agent's **context window**. **A context window is a working briefing, not the system of record:** it is assembled for the judgment at hand, while institutional memory is the durable record that remains in the book after the session closes. From that workspace, an authenticated human can weigh options, reach consensus, and take permitted actions—writing the decision into the system of record, dispatching an email, routing an approval, or drafting a report—with the permanent trail recorded outside the session.
+How do people actually interact with that intelligence in runtime? Instead of hunting through rigid menus, the person works in a focused **workspace**—whether a role-tuned screen on the floor or an interactive session like the one on my desk right now—while the system assembles the relevant records, history, and a second view of the same facts into the agent's **context window**. **A context window is a working briefing, not the system of record:** it is assembled for the judgment at hand, while institutional memory is the durable record that remains in the book after the session closes. From that workspace, an authenticated human can shape a workflow, weigh options, reach consensus, and take permitted actions—writing the decision into the system of record, dispatching an email, routing an approval, or drafting a report—with the permanent trail recorded outside the session.
 
 ---
 
@@ -53,5 +55,5 @@ How do people actually interact with that intelligence? Instead of hunting throu
 ---
 
 ### Continue Reading the Series
-- ← Previous: **[Chapter 01: What’s Old Is New, What’s New Is Old — Bad Data, Shadow IT, and the Mighty Excel Spreadsheet](/agentic-ai/marys-sheet/)**
-- → Next: **[Chapter 03: The Machine That Builds the Machines—and the Workflows They Run](/agentic-ai/the-delivery-seam/)**
+- ← Previous: **[Chapter One: How Businesses Actually Run — What’s Old Is New, What’s New Is Old](/agentic-ai/marys-sheet/)**
+- → Next: **[Chapter Three: The Machine That Builds the Machines That Build the Workflows](/agentic-ai/the-delivery-seam/)**
