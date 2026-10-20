@@ -514,19 +514,25 @@ export default function AgenticPositionView() {
               Where 20+ years of business leadership and 50+ enterprise transformations meet three years of hands-on agentic development—my journey of zeros and ones in the enterprise domain meeting Binary Intelligence.
             </p>
 
-            {/* Highlighted Seam Epigraph Banner */}
+            {/* Binary Intelligence Editorial Callout Box */}
             <div className={s.seamHighlightBanner}>
-              <span className={s.seamHighlightTag}>THE SEAM // WHERE HUMAN ACCOUNTABILITY MEETS RECORDED STATE</span>
+              <div className={s.seamHighlightHeader}>
+                <span className={s.seamHighlightTag}>
+                  <span className={s.seamHighlightDot} aria-hidden="true" />
+                  <span>BINARY INTELLIGENCE // HUMAN JUDGMENT &times; ZEROS AND ONES</span>
+                </span>
+                <span className={s.seamHighlightStamp}>FIELD DEFINITION &middot; ROBERT PADDOCK</span>
+              </div>
               <p className={s.seamHighlightQuote}>
-                &ldquo;Every transformation lives and dies at the seam where human accountability meets what the system records. The ERP screen says Packaging Line 2 is green while Mary&rsquo;s filling pump sits unbolted on the workbench. Years later, my own agents reported green while the underlying state was broken. I recognized the second failure because I had lived through the first.&rdquo;
+                &ldquo;When you boil an enterprise down, everything runs in workflows. Binary Intelligence is what happens when fifty years of zeros and ones meet agents that can work across those workflows—and the human judgment accountable for whether the outcome is true.&rdquo;
               </p>
             </div>
 
             <p className={s.heroLead}>
-              Across the fifty-plus enterprise transformations I have helped lead over twenty-some years, the people I have worked beside want to do good work. What exhausts them is not the craft itself—it is the unnecessary runaround when a workflow never actually flows. It is the sporadic handoffs across disparate silos: the meeting that exists because two systems don&rsquo;t talk, and the folded spreadsheet on a clipboard because the official screen does not match the physical floor. One of my favorite beliefs has always been simple: <strong>if you have happy systems, you have happy people—and if you have happy people, you have happy systems.</strong> We are talking about people&rsquo;s livelihoods, their pride in their craft, and their quality of life at work.
+              Across the fifty-plus enterprise transformations I have helped lead over twenty-some years, the people I have worked beside want to do good work. What exhausts them is not the craft itself—it is the unnecessary runaround when a workflow never actually flows. It is the sporadic handoffs across disparate silos: the meeting that exists because two systems don&rsquo;t talk, and the folded spreadsheet on a clipboard because the official screen does not match the physical floor. One of my core beliefs has always been simple: <strong>happy people and happy systems build each other.</strong> We are talking about people&rsquo;s livelihoods, their pride in their craft, and their quality of life at work.
             </p>
             <p className={s.heroLead}>
-              Three years ago, I went from leading enterprise transformations to building deep inside the agentic runtime—writing software with coordinated AI agents every day for thousands of hours. I call this new chapter <strong>Binary Intelligence</strong>, because underneath all the hype it is still zeros and ones, just raised to a level where human judgment can work with them in a completely new way. And the first thing I discovered is that <strong>without clear workflows, reconciled data, and honest boundaries, agents fall into the exact same trap as legacy software</strong>—reporting confident green summaries while the underlying state is quietly broken.
+              Three years ago, I went from leading enterprise transformations to building deep inside the agentic runtime—writing software with coordinated AI agents every day for thousands of hours. That is where <strong>Binary Intelligence</strong> became real for me: underneath all the hype, it is still zeros and ones, now raised to a level where human judgment can shape and run workflows with them directly. And the first thing I discovered is that <strong>without clear workflows, reconciled data, and honest boundaries, agents fall into the exact same trap as legacy software</strong>—reporting confident green summaries while the underlying state is quietly broken. I recognized that second failure because I had lived through the first on the plant floor.
             </p>
             <p className={s.heroLead}>
               <strong>This page is my notebook—three connected chapters of one continuous story, and the doorway into{" "}
