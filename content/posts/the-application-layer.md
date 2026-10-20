@@ -10,26 +10,28 @@ topic: "Chapter Two // Memory & The Runtime Workspace"
 
 *Where People Run, Propose, and Govern Workflows — Living Memory, the Context Workspace, and Decisions That Stay in the Book.*
 
-Pick up the story five minutes after go-live. Most business leaders and operators do not want to live inside a software foundry. They don't want to manage deployment pipelines or build the machine that builds the machines. They want to be **in the machine—working with intelligence on top of data they trust.**
+Pick up the story five minutes after go-live. Most business leaders and operators do not want to live inside a software foundry. They do not want to manage deployment pipelines or build the machine that builds the machines. They want to be **in the machine, working with intelligence on top of data they trust.**
 
-In the agentic era, the most important distinction is one almost nobody talks about: **the difference between a context window and institutional memory.** A context window is a working briefing, not the system of record: it is assembled for the judgment at hand, while institutional memory is the durable record—the decisions, the outcomes, and the audit trail—that remains in the book after the session closes.
+In the agentic era the most important distinction is one almost nobody talks about: **the difference between a context window and institutional memory.** A context window is a working briefing, not the system of record. It is assembled for the judgment at hand. Institutional memory is the durable record—the decisions, the outcomes, and the audit trail—that remains in the book after the session closes. Get that distinction right and the great equalizer becomes something a CFO can sign off on. Get it wrong and it is just a very fast way to repeat the same mistake.
 
 ---
 
-## 1. Running, Proposing, and Authorizing — And How Improvement Is Earned
+## 1. The Great Equalizer, Three Distinct Acts & How Improvement Is Earned
 
-For the last thirty years, enterprise software treated go-live as the finish line. Once the initial rollout was declared finished, the screens froze in place while the business kept changing—forcing people right back into spreadsheets, sporadic workarounds, and seven-figure change orders. Worse, software trained experienced operators to work like data-entry clerks: clicking through fifteen tabs and copying numbers from one window to another.
+For the last thirty years, enterprise software treated go-live as the finish line. Once the rollout was declared done, the screens froze in place while the business kept changing, which pushed people right back into spreadsheets, sporadic workarounds, and seven-figure change orders. Worse, the software trained experienced operators to work like data-entry clerks, clicking through fifteen tabs and copying numbers from one window to another.
 
-Working with intelligence inside a live operation requires separating three distinct acts that often get blurred together:
+This is what I mean when I say the same context window serves the CEO and Mary on Packaging Line 2. **The caliber of intelligence is identical. Nobody gets the cheap version.** What differs is what each window is loaded with, what it is permitted to touch, and what it can change on its own, which is nothing. Mary's briefing carries Line 2's schedule, the history on her filling pump, and the rules of her role. The CEO's carries the consolidated close, the demand plan, and the allocation calls. Both can ask, reason, and propose in plain language. Neither window grants new spending or policy authority by itself.
+
+Working with intelligence inside a live operation means keeping three acts separate that usually get blurred together:
 1. **Running** an established workflow in daily work,
 2. **Proposing** a change when floor reality shifts, and
-3. **Authorizing** that change under the company's rules.
+3. **Admitting** that change under the company's rules.
 
-An operator knows their experience can improve how the workflow is designed; a CFO knows that a plain-language request in a workspace never grants new spending or policy authority on its own.
+**Propose in language. Admit by rule. Remember in the book.** The operator knows her experience can improve how the workflow is designed. The CFO knows a plain-language request never becomes authority on its own.
 
-And capturing an outcome does not automatically make a system smarter—a careless loop can preserve a mistake and repeat it faster. Improvement is earned through a disciplined cycle (**01 Intent → 02 Define → 03 Deliver → 04 Outcome ↻**): people review the actual result against what was intended, test a proposed adjustment against operating rules, approve what holds up, and retain the evidence in the book.
+An orchestrator is only as trustworthy as the loop it runs inside, and capturing an outcome does not automatically make a system smarter. A careless loop preserves a mistake and repeats it faster. Improvement is earned through a disciplined cycle (**01 Intent → 02 Define → 03 Deliver → 04 Outcome ↻**): people review the actual result against what was intended, test a proposed adjustment against operating rules, approve what holds up, and retain the evidence in the book.
 
-There is a reason [Gartner projects](https://www.gartner.com/en/newsroom) that **more than 40% of agentic AI projects will be canceled by the end of 2027** due to unclear business value, escalating token costs, and inadequate risk controls—and why, during last week’s fireside chat with IFS CEO Mark Moffat at IFS Unleashed, Chamath Palihapitiya warned that enterprises deploying AI agents need to get their auditors in the room early. When I set out to build a workspace that holds up under audit, statutory controls, and real floor exceptions, I ran into a hard truth: **you cannot prompt or "vibe code" a system like that.** To give people a machine where they can safely run and improve their workflows, somebody has to build the machine that builds that machine.
+There is a reason [Gartner projects](https://www.gartner.com/en/newsroom) that **more than 40% of agentic AI projects will be canceled by the end of 2027** due to unclear business value, escalating token costs, and inadequate risk controls. It is the same reason that this October at IFS Unleashed, in a fireside chat with IFS CEO Mark Moffat, Chamath Palihapitiya warned that enterprises deploying AI agents need to get their auditors in the room early. When I set out to build a workspace that holds up under audit, statutory controls, and real floor exceptions, I ran into a hard truth: **you cannot prompt or "vibe code" a system like that.** To give people a machine where they can safely run and improve their workflows, somebody has to build the machine that builds that machine.
 
 > *"In the Agentic Enterprise, AI acts as an orchestrator, pulling together the right capabilities with the right context so that everything works in concert—people and AI achieving more than either could alone. What matters isn’t just the model—it’s the metadata, the business context, and the deterministic enterprise workflows."*
 > — **Marc Benioff**, Chair & CEO, Salesforce ([*Dreamforce · The Agentic Enterprise*](https://www.salesforce.com/news/))
