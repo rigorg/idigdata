@@ -68,7 +68,7 @@ function FactorySpot() {
 }
 
 /**
- * Architectural Paper-Drafting Plate (Centered Showcase Below the Opening Prose)
+ * Architectural Paper-Drafting Plate (Centered Showcase)
  */
 function PeopleSystemsWorkflowSpot() {
   return (
@@ -91,7 +91,7 @@ function PeopleSystemsWorkflowSpot() {
       <div className={s.emblemCaption}>
         <strong className={s.emblemCaptionTitle}>The Seam &amp; The Continuous Runtime Loop</strong>
         <span className={s.emblemCaptionSubtitle}>
-          01 Intent (Business Mandate) &rarr; 02 Define (Workflow Blueprint) &rarr; 03 Deliver (Runtime Execution) &rarr; 04 Outcome (Memory &amp; Learning &#8634;)
+          01 Intent (Business Mandate) &rarr; 02 Define (Workflow Blueprint) &rarr; 03 Deliver (Runtime Execution) &rarr; 04 Outcome (Review, Test &amp; Retain Evidence &#8634;)
         </span>
         <Link
           href="/agentic-ai/plate/"
@@ -149,6 +149,8 @@ interface CollectivePillar {
   titanQuote?: TitanQuote;
   fieldNoteCards: FieldNoteCard[];
   closingQuestion: string;
+  nextChapterNum?: string;
+  nextChapterPrompt?: string;
   fieldNoteHref: string;
   fieldNoteLabel: string;
   topicKey: string;
@@ -165,7 +167,7 @@ const COLLECTIVES: CollectivePillar[] = [
     spot: "constellation",
     leadParagraphs: [
       <>
-        Every company I walk into is standing on fifty years of accumulated technology. By the 1970s and early 1980s, COBOL-based systems were already carrying much of the ledger, inventory, and payroll work that established the transaction patterns companies still run on today—later buried under ’90s ERPs, bolted to 2010s SaaS platforms, with a twenty-year-old shadow system humming in a corner that nobody dares touch because only one person knows how to fix it when it breaks. Even looking out through 2027,{" "}
+        Every company I walk into is standing on fifty years of accumulated technology. By the 1970s and early 1980s, COBOL-based systems were already carrying much of the ledger, inventory, and payroll work that established the transaction patterns companies still run on today—later buried under ’90s ERPs, bolted to 2010s SaaS platforms, with a twenty-year-old shadow system humming in a corner that nobody dares touch because only one person knows how to fix it when it breaks. By 2027,{" "}
         <a
           href="https://www.gartner.com/en/information-technology/topics/enterprise-resource-planning"
           target="_blank"
@@ -176,19 +178,18 @@ const COLLECTIVES: CollectivePillar[] = [
         </a>{" "}
         that more than 70% of recently implemented ERP initiatives will fail to fully meet their original business-case goals. In my experience, one reason is painfully familiar: the implementation goes live while the work between the screens still sits on a clipboard.
       </>,
-      "The failures don't happen inside a single screen—they happen between them. An ERP can go live on schedule and still leave a plant supervisor or a warehouse manager compensating by hand because nobody mapped the exception logic that kept the operation moving. When you peel back the curtain on almost any company today, what actually runs the business in runtime? The mighty Excel spreadsheet—and decades of Shadow IT.",
-      "When I walk into a company, I go to three places first: the CFO, because the money has to tell the truth—GAAP-compliant financials, statutory controls, and an audit trail you can defend; the Compliance Officer, because regulatory exposure kills faster than a bad quarter; and then I follow the supply chain and Integrated Business Planning all the way to the floor, because that is where stated reality meets actual reality. And those two things almost never agree.",
+      "When I enter a business, I go to three places first: the CFO, because the books have to hold up—GAAP-compliant financials, statutory controls, and an audit trail you can defend; the Compliance Officer, to establish which legal and regulatory obligations the business cannot compromise; and then I follow the operating cycle—Sales and Operations Planning (S&OP) or, where Finance and strategy are integrated into the same cadence, Integrated Business Planning (IBP)—all the way to the floor. That is where recorded state meets operating reality. And those two things almost never agree.",
     ],
     expandedParagraphs: [
-      "What most people outside the enterprise don't realize is that a business needs two completely different sets of numbers running in real time, and they almost never live in the same place. The CFO needs the books—generally accepted accounting principles, accruals, multi-entity consolidations, tax filings, and statutory controls. The operations team needs the stats—volume, cases shipped, what is sitting in the bays, and whether Packaging Line 2 can actually run right now. Both sets of numbers need to be truthful. Both need to be current. And in most companies, there is no real-time reporting across them—only people running around in runtime trying to manufacture real-time reporting by hand.",
+      "What makes enterprise operations so demanding is that a business relies on two connected views of the same reality—each with different timing and validation requirements. Finance needs the books: accruals, postings, multi-entity consolidations, statutory controls, and a formal close that cannot be rushed or guessed. Operations needs current floor visibility: volume, cases shipped, what is sitting in the bays, and whether Packaging Line 2 can actually run right now. Both views have to reconcile to the same underlying events, yet in most companies Finance and Operations can only connect them by rebuilding the relationship in spreadsheets every month.",
       "The consulting world calls that problem 'disparate silos.' On the floor, it means a workflow is never actually a flow—it is sporadic. An order enters in one system, inventory sits in another, freight lives in a third, and the commercial structure of most SaaS tools—per-seat subscriptions, renewal lock-in, and data kept inside vendor walls—leaves the software rigid where your company’s workflows need to bend. Meanwhile, on the financial side, just corralling subscription sprawl, real active user counts versus unused seats, contract dates, and now AI token usage has become a battle of its own.",
-      "Nowhere do you feel that strain more clearly than in what used to be called S&OP (Sales and Operations Planning) and is now called Integrated Business Planning. Every company that produces or moves product has a derivative of it, and it is one of the most stressful cycles in business: people across Sales, Supply Chain, Production, and Finance pulling CSVs from disparate silos, rolling multi-spreadsheets into a master spreadsheet, and pasting the result into a monthly PowerPoint presentation just trying to get the numbers to tell the truth.",
-      "Those gaps are the seams—and the intangible work between the tasks is what people like Mary and Don carry every morning. Inside a legacy company, no one person can see the whole anymore. Yet here is why I have genuine hope: what is old is new, and what is new is old. With agents in the work, we don't have to put exhausted teams through a two-year root canal just to map where the business stands. We can sit beside the people doing the work—'show me how you actually do it today'—and use intelligence to organize messy spreadsheets, compare unwritten workflows, and clean up the data core so the numbers finally tell the truth.",
+      "Connecting systems does not magically erase the hard business trade-offs inside S&OP or IBP—competing commercial incentives, constrained line capacity, and tough allocation calls will always require human judgment. What breaks people is spending two weeks of nights and weekends doing manual data plumbing just to find out where the disagreement actually is.",
+      "Those gaps are the seams—and the intangible work between the tasks is what people like Mary and Don carry every morning. Inside a legacy company, no one person can see the whole anymore. Yet here is why I have genuine hope: what is old is new, and what is new is old. With agents in the work, we don't have to put exhausted teams through a two-year root canal just to map where the business stands. We can sit beside the people doing the work—'show me how you actually do it today'—and use intelligence to organize messy spreadsheets, compare unwritten workflows, and reconcile the data core so people can spend their energy on the real operating decisions.",
     ],
     titanQuote: {
       speaker: "Chamath Palihapitiya",
       role: "CEO, 8090 · Founder, Social Capital",
-      source: "“What AI spend does to headcount”",
+      source: "“What AI spend does to headcount” (Oct 2, 2026)",
       sourceUrl: "https://research.socialcapital.com/p/ai-and-employment",
       isQuoted: true,
       quote:
@@ -199,33 +200,35 @@ const COLLECTIVES: CollectivePillar[] = [
         id: "fn-mary",
         rubric: "NOTE FROM THE FIELD 01-A // HEROICS ON THE PHYSICAL FLOOR",
         stamp: "MARY'S SHEET & DON WMS",
-        title: "Mary’s Sheet, Don WMS & His Partner 'DON'",
+        title: "Mary’s Sheet, Don WMS & Co-Architecting the Next Role",
         excerpt:
           "From Mary's 6:30 AM clipboard next to an unbolted pump to Don WMS navigating 40 years of item schemas in tight New York warehouse bays.",
         fullText: [
           "Walk almost any manufacturing or distribution floor after a big ERP go-live and you will meet the people whose daily routines keep the operation standing. On the plant floor, it is 'Mary’s Sheet'—a composite portrait from plant cutovers I have led: the folded 11x17 Excel spreadsheet on a green metal clipboard at 6:30 AM that knows Packaging Line 2 has its filling pump unbolted on the workbench twenty feet away, even while the new ERP screen shows green and ready. Mary does not think of this as heroic. She thinks of it as Tuesday.",
           "In tight New York warehouse quarters cobbled together over 30 to 40 years, it was Don WMS—who held four decades of bastardized item schemas, missing vendor labels, and mismatched department keys in his head so product could keep moving fast through crowded bays.",
-          "Transformation is personal for people like Mary and Don because holding that fragile puzzle together is their pride and purpose. Across frontline cutovers, the quiet worry that surfaces is almost always the same: 'Well, I guess I'm going to lose my job and have nothing to do.' And the answer that matters is simple: 'You're going to have more important things to do.' Taking the morning spreadsheet gymnastics off a supervisor's shoulders frees her to walk the bays, spot issues early, and mentor younger leads. And when we made Don co-architect of the unified item catalog and gave him real-time data on an iPad, he still did what he loved—walking the floor and talking with his crew—only now Don WMS had a digital partner named DON.",
+          "Transformation is personal for people like Mary and Don because holding that fragile puzzle together is their pride and purpose. Across frontline cutovers, the quiet worry that surfaces is almost always the same: 'Well, I guess I'm going to lose my job and have nothing to do.' The only honest answer is to give their judgment real weight in shaping what comes next. When Mary helps define the exception rules and decides which floor checks matter most once the morning spreadsheet gymnastics are gone, she isn't handed a role from upstairs—she shapes it. And when we made Don co-architect of the unified item catalog and gave him live floor visibility on an iPad, he still did what he loved—walking the bays and working with his crew—only now Don WMS had a digital partner named DON.",
         ],
         signature: "— Robert Paddock · Note from the Field 01-A",
         footerLabel: "PEOPLE · SYSTEMS · WORKFLOWS · CURRENT STATE",
       },
       {
         id: "fn-don",
-        rubric: "NOTE FROM THE FIELD 01-B // S&OP, IBP & THE MONTHLY POWERPOINT",
-        stamp: "S&OP / IBP ROLL-UP",
-        title: "Integrated Business Planning, The Monthly PowerPoint & The Day-Job Dilemma",
+        rubric: "NOTE FROM THE FIELD 01-B // WHAT THE SPREADSHEETS CONCEALED",
+        stamp: "S&OP / IBP DISCOVERY",
+        title: "When the Numbers Disagreed: What the Tuesday-Night Roll-Up Was Hiding",
         excerpt:
-          "Why S&OP / Integrated Business Planning turns into a stressful marathon of rolling multi-spreadsheets into a monthly PowerPoint just to get the numbers to tell the truth.",
+          "An actual planning episode where forty minutes of spreadsheet arguments masked a unit-of-measure and lead-time mismatch on a constrained line.",
         fullText: [
-          "Every company that makes or moves product runs some version of Sales and Operations Planning (S&OP) or Integrated Business Planning (IBP). In theory, it aligns what the business will sell, make, buy, and ship. In practice, because the underlying systems don't talk to each other, it turns into a grueling monthly exercise in manual data plumbing.",
-          "Each functional area—Demand, Supply, Production, Inventory, and Finance—pulls CSVs from its own silo and massages them into its own spreadsheets. People who already have full-time day jobs work late into Tuesday nights trading phone calls down the hall, rolling multi-spreadsheets into a master spreadsheet, and pasting the figures into a PowerPoint deck for leadership. By the time the meeting starts, the physical floor has moved and the snapshot is already stale. Building the connective tissue across the data core lets intelligence handle that reconciliation continuously—so truthful GAAP and operating numbers are there in real time, and people can use the meeting to steer the business instead of assembling the deck.",
+          "In one consumer-products operation I stepped into, the monthly planning meeting spent its first forty minutes arguing over whose spreadsheet was right. Sales showed a promotional commitment in cases; Production scheduled the line in machine hours; Finance valued inventory on standard cost assumptions from two quarters back. Because each team pulled CSVs on different days and massaged them in private tabs, the master PowerPoint hid a basic operating reality: a packaging changeover and a supplier lead-time slip meant they were about to short a key retail account while building stock they didn't need.",
+          "The people in that room weren't bad planners—they had spent Tuesday night until 10:00 PM just trying to make the columns tie out, leaving no time to look at the constraint on the floor. Once we reconciled the underlying item units, open purchase orders, and actual line rates before the meeting, the forty-minute debate over whose numbers were right disappeared. The hard commercial decision—which orders to re-sequence and which customer call to make—was still tough, as it always is, but the team finally had the time and the shared facts to make it on Wednesday morning.",
         ],
         signature: "— Robert Paddock · Note from the Field 01-B",
-        footerLabel: "S&OP / IBP · TRUTHFUL NUMBERS · RECONCILED DATA CORE",
+        footerLabel: "S&OP / IBP · SHARED FACTS · REAL OPERATING DECISIONS",
       },
     ],
-    closingQuestion: "Once you sit beside the people doing the work and clean up the data core so the numbers tell the truth, what does daily work look like five minutes after go-live so they don't end up right back on a clipboard?",
+    closingQuestion: "Once you sit beside the people doing the work and reconcile the data core so Finance and Operations see the same facts, what does daily work look like five minutes after go-live so they don't end up right back on a clipboard?",
+    nextChapterNum: "02",
+    nextChapterPrompt: "Continue to Chapter Two: Working with Intelligence →",
     fieldNoteHref: "/agentic-ai/marys-sheet/",
     fieldNoteLabel: "Open Standalone Chapter One Page",
     topicKey: "01 / Chapter One: How Businesses Actually Run (Mary's Sheet, Don WMS & S&OP/IBP)",
@@ -236,17 +239,17 @@ const COLLECTIVES: CollectivePillar[] = [
     tag: "CHAPTER TWO // MEMORY & THE RUNTIME WORKSPACE",
     actionLabel: "Share How You See This Shift",
     title: "Working with Intelligence",
-    subtitle: "Where People Shape and Run Their Own Workflows — Living Memory, the Context Workspace, and Decisions That Stay in the Book.",
+    subtitle: "Where People Run, Propose, and Govern Workflows — Living Memory, the Context Workspace, and Decisions That Stay in the Book.",
     spot: "blocks",
     leadParagraphs: [
-      "Pick up the story five minutes after go-live. Most business leaders and operators do not want to live inside a software foundry. They don't want to manage deployment pipelines or build the machine that builds the machines. They want to be in the machine—working with intelligence to build, adapt, and run their own workflows on top of data they trust.",
-      "For the last thirty years, enterprise software treated go-live as the finish line. Once the initial rollout was declared finished, the screens froze in place while the business kept changing—forcing people right back into spreadsheets, sporadic workarounds, and seven-figure change orders. Worse, software trained experienced operators to work like data-entry clerks: clicking through fifteen tabs and copying numbers from one window to another.",
+      "Pick up the story five minutes after go-live. Most business leaders and operators do not want to live inside a software foundry. They don't want to manage deployment pipelines or build the machine that builds the machines. They want to be in the machine—working with intelligence on top of data they trust.",
       "In the agentic era, the most important distinction is one almost nobody talks about: the difference between a context window and institutional memory. A context window is a working briefing, not the system of record: it is assembled for the judgment at hand, while institutional memory is the durable record—the decisions, the outcomes, and the audit trail—that remains in the book after the session closes.",
     ],
     expandedParagraphs: [
-      "What turns sporadic workarounds into a compounding enterprise asset is a continuous loop: state your intent, define the workflow, deliver in runtime, and measure the actual outcome (01 Intent → 02 Define → 03 Deliver → 04 Outcome ↻). Because go-live is no longer a frozen finish line, the system and the people become self-learning and self-improving every cycle.",
-      "How does that feel in daily work? Instead of hunting through rigid menus, an authenticated person sits in a focused workspace while the system gathers the relevant records, history, and real-time operating stats into the working briefing. From that workspace, people can propose adjustments in plain language, weigh options, and execute permitted workflows—routing an approval, reconciling a variance, or updating a schedule—while hard deterministic rules govern what is admitted and the permanent trail is written into the book.",
-      "Empowering people to shape and run their own workflows inside the machine is where every business wants to be. But when I set out to build that capability so it holds up under audit, statutory controls, and ten thousand real-world edge cases, I ran into a hard truth: you cannot prompt or 'vibe code' a system like that. To give people a machine where they can safely build their own workflows, somebody has to build the machine that builds that machine.",
+      "For the last thirty years, enterprise software treated go-live as the finish line. Once the initial rollout was declared finished, the screens froze in place while the business kept changing—forcing people right back into spreadsheets, sporadic workarounds, and seven-figure change orders. Worse, software trained experienced operators to work like data-entry clerks: clicking through fifteen tabs and copying numbers from one window to another.",
+      "Working with intelligence inside a live operation requires separating three distinct acts that often get blurred together: (1) running an established workflow in daily work, (2) proposing a change when floor reality shifts, and (3) authorizing that change under the company's rules. An operator knows their experience can improve how the workflow is designed; a CFO knows that a plain-language request in a workspace never grants new spending or policy authority on its own.",
+      "And capturing an outcome does not automatically make a system smarter—a careless loop can preserve a mistake and repeat it faster. Improvement is earned through a disciplined cycle (01 Intent → 02 Define → 03 Deliver → 04 Outcome ↻): people review the actual result against what was intended, test a proposed adjustment against operating rules, approve what holds up, and retain the evidence in the book.",
+      "When I set out to build that kind of workspace so it holds up under audit, statutory controls, and real floor exceptions, I ran into a hard truth: you cannot prompt or 'vibe code' a system like that. To give people a machine where they can safely run and improve their workflows, somebody has to build the machine that builds that machine.",
     ],
     fieldNoteCards: [
       {
@@ -258,7 +261,7 @@ const COLLECTIVES: CollectivePillar[] = [
           "A spirited argument over a beer with a senior executive at a major global ERP integrator—and why separating accounting math from 'forced history' changes the game.",
         fullText: [
           "Not long ago, I sat down over a beer with a close friend I respect—a senior executive at one of the major global system integrators for tier-one ERPs. We got into a spirited debate from opposite sides of the table. His point was serious and earned: tier-one ERPs encode thirty years and billions of dollars of statutory controls, GAAP consolidation, tax rules, and audit trails where a 99% probabilistic guess is a compliance failure. In his view, that regulatory moat guarantees that giant ERP vendors and massive SI programs will always own the core.",
-          "Coming from the customer and operator side of the table after carrying 50+ transformations through cutover, I agreed with his premise on deterministic rules—and disagreed with his conclusion. You never ask a language model to improvise debits and credits or invent tax rules. Where the legacy ERP world has trapped companies is confusing accounting math with 'forced history'—where the software only remembers the path its rigid screens allowed, not the path the business actually took on Mary's clipboard, and charges seven-figure change orders whenever your reality shifts. You keep authoritative financial books and required statutory controls in proven transaction systems, and enforce hard deterministic rules (double-entry invariants, 3-way match tolerances, lot traceability, and statutory validations) before any workflow change is admitted. The first workflows you build with agents are never the general ledger; they are the seams around the books—the unbolted pump, the item that will not scan, and the S&OP reconciliation.",
+          "Coming from the customer and operator side of the table after carrying 50+ transformations through cutover, I agreed with his premise on deterministic rules—and disagreed with his conclusion. You never ask a language model to improvise debits and credits or invent tax rules. Where the legacy ERP world has trapped companies is confusing accounting math with 'forced history'—where the software only remembers the path its rigid screens allowed, not the path the business actually took on Mary's clipboard, and charges seven-figure change orders whenever your reality shifts. You keep authoritative financial books and required statutory controls in proven transaction systems, and enforce hard deterministic rules (double-entry invariants, 3-way match tolerances, lot traceability, and statutory validations) before any workflow change is admitted. The first workflows you build with agents are never the general ledger; they are the seams around the books—the unbolted pump, the item that will not scan, and the planning reconciliation.",
         ],
         signature: "— Robert Paddock · Note from the Field 02-A",
         footerLabel: "PROVEN LEDGER · DETERMINISTIC CONTROLS · BOUNDED WORKFLOWS",
@@ -272,13 +275,15 @@ const COLLECTIVES: CollectivePillar[] = [
           "How an authenticated leader can propose a route in language ('Sam from Finance while I'm on vacation'), admit by deterministic rule, and remember in the book.",
         fullText: [
           "Recently, I sat in a working session with a group of regional business leaders who run real P&Ls, exploring how people will actually work with agents five minutes after a system goes live. Out of all the debates we had, one of the sharpest centered on something that sounds dead simple on paper: approval workflows. In a real company, approvals are never simple. Once you factor in dollar limits, departmental budgets, multi-entity rules, and temporary delegations, standard SaaS approval engines turn into a tangled mess—they are all 'configurable,' yet they always seem to require painful modifications.",
-          "In that session, we walked through how the dynamic changes when you combine authenticated human identity and strict policy guardrails with a context workspace: (1) Propose in language—instead of waiting on IT to rewire a routing tree, an authenticated leader states the route in plain language: 'Get me an approver from Department X—and while I’m on vacation next week, Sam from Finance will approve on my behalf.' (2) Admit by rule—the model that understood the sentence is never the thing that admits the action; a deterministic policy check verifies whether Sam is eligible under the dollar limits and dates (and records a 'no' outside the session if a rule is crossed). (3) Remember in the book—whatever happens, the decision, evidence, and rationale go into the durable record so the CFO, the auditor, and the operations team all see the exact same truth. In fact, I prepared this essay the same way—thought-partnered, challenged, and checked from inside a live context session.",
+          "In that design session, we walked through how the dynamic changes when you separate proposing a change, authorizing it by rule, and recording the outcome: (1) Propose in language—instead of waiting on IT to rewire a routing tree, an authenticated leader states the requested delegation in plain language: 'Get me an approver from Department X—and while I’m on vacation next week, Sam from Finance will approve on my behalf.' (2) Admit by rule—the model that understood the sentence is never the thing that admits the action; a deterministic policy check verifies whether Sam is eligible under the authority matrix, dollar limits, and dates (and records a refusal outside the session if a rule is crossed). (3) Remember in the book—whatever happens, the decision, evidence, and rationale go into the durable record so Finance, audit, and operations all see the exact same trail.",
         ],
         signature: "— Robert Paddock · Note from the Field 02-B",
         footerLabel: "PROPOSE IN LANGUAGE · ADMIT BY RULE · REMEMBER IN THE BOOK",
       },
     ],
-    closingQuestion: "Empowering your people to shape and run their own workflows in runtime is the goal—so what does it take underneath to build the machine that makes that safe and real?",
+    closingQuestion: "Giving people a workspace where workflows can be run, proposed, and governed by hard rules is the goal—so what does it take underneath to build the foundry that makes that real?",
+    nextChapterNum: "03",
+    nextChapterPrompt: "Continue to Chapter Three: The Machine That Builds the Machines →",
     fieldNoteHref: "/agentic-ai/the-application-layer/",
     fieldNoteLabel: "Open Standalone Chapter Two Page",
     topicKey: "02 / Chapter Two: Working with Intelligence (ERP Debate & Approval Workflows)",
@@ -289,31 +294,30 @@ const COLLECTIVES: CollectivePillar[] = [
     tag: "CHAPTER THREE // THE BUILDER’S FOUNDRY",
     actionLabel: "Share Your Builder Experience",
     title: "The Machine That Builds the Machines That Build the Workflows",
-    subtitle: "Why Empowering People to Shape Their Own Enterprise Workflow Assets Takes a Different Level of Engineering: Down the Rabbit Hole and Out of the Disco.",
+    subtitle: "Why Building Enterprise Workflow Software with Agents Takes a Disciplined Foundry: Down the Rabbit Hole and Out of the Disco.",
     spot: "factory",
     leadParagraphs: [
-      "Not everybody goes to the machine that builds the machines—and they shouldn't have to. Most people want to live in Chapter Two: inside the machine, working with intelligence to shape and run their own workflows as a compounding enterprise asset. But somebody has to build the foundry underneath that makes it possible. And that is a completely different level of engineering—just ask the teams at 8090 or Factory.ai.",
-      "For twenty years, I could see clearly how a company's data core, financial controls, and floor workflows ought to fit together—and watched traditional software programs take eighteen months and millions of dollars just to build a fraction of it. Then three years ago, multi-harness agentic engineering reached the point where I could stop watching and start building. I went all the way in—thousands of hours, every day and late into the night.",
-      "Building at this foundry level teaches you one lesson above all: without discipline, agents get lost in sporadic silos and broken state just like legacy organizations do. Coordinating multiple frontier AI harnesses in isolated lanes requires clear human intent at the top, agreeing on the work before steel is cut, independent inspection, and an unbreakable rule that no agent ever grades its own homework.",
+      "Not everybody goes to the machine that builds the machines—and they shouldn't have to. Most people want to live in Chapter Two: inside the machine, working with intelligence to run and improve their workflows. But somebody has to build the foundry underneath that makes it possible. Today, our multi-harness engineering workshop runs daily in production for our own builds, while our operating map and workflow runtime have proven their core patterns in working proofs of concept and are now being developed into an MVP.",
+      "Building at this foundry level over the last three years taught me one lesson above all: without discipline, agents fall into the exact same trap as legacy enterprises—reporting confident green status at the surface while the underlying state is broken. Coordinating multiple AI harnesses in isolated lanes requires clear human intent at the top, agreeing on the work before steel is cut, independent inspection, and a rule that no agent ever grades its own homework.",
     ],
     expandedParagraphs: [
-      "When I say 'the machine that builds the machines that build the workflows,' I mean three distinct layers working together. At the top are the daily runtime workflows—the approval routing, the S&OP reconciliation, the floor scheduling—that operators and leaders use every day. Beneath that is the workflow runtime where people and agents shape, test, and run those workflows on a clean data core. And at the foundation is the engineering foundry that constructs and verifies that software: coordinated harnesses, strict lane boundaries, and living memory that carries lessons from one build to the next.",
-      "That third level is not glamorous. It is midnight sessions, broken builds, and the painstaking craft of getting coordinated agents to produce software that holds up on a real plant floor or in a CFO's close. To tell the truth from the inside—and why I love this craft so much—here are the two experiences that defined my last three years: falling down the Rabbit Hole in pure builder joy, and staying down there long enough that you find what I call the Disco.",
+      "When I say 'the machine that builds the machines that build the workflows,' I mean three distinct layers working together. At the top are the daily operational workflows—the approval routing, the planning reconciliation, the floor scheduling—that operators and leaders use every day. Beneath that is the workflow runtime where people and agents shape, test, and run those workflows on a reconciled data core. And at the foundation is the engineering foundry that constructs and verifies that software: coordinated harnesses, strict lane boundaries, and durable build evidence that carries lessons from one release to the next.",
+      "That third level is not glamorous. It is late-night sessions, broken builds, and the painstaking craft of getting coordinated agents to produce software that holds up on a real plant floor or in a CFO's close. Here are the two experiences from the inside that defined my last three years: falling down the Rabbit Hole in pure builder joy, and staying down there long enough that you find what I call the Disco.",
     ],
     fieldNoteCards: [
       {
         id: "fn-rabbit-hole",
-        rubric: "NOTE FROM THE FIELD 03-A // FALLING IN PURE BUILDER LOVE",
+        rubric: "NOTE FROM THE FIELD 03-A // GAINING DIRECT HANDS ON THE BUILD",
         stamp: "DOWN THE RABBIT HOLE",
-        title: "Down the Rabbit Hole at Midnight: When You Get Your Hands Back",
+        title: "Down the Rabbit Hole at Midnight: When Floor Experience Meets Direct Code",
         excerpt:
-          "After twenty years of watching traditional software programs take eighteen months just to align requirements, sitting at my desk at midnight building with coordinated agent harnesses is pure builder joy.",
+          "How twenty years of walking plant floors and sitting in cutover war rooms changes what you catch at midnight when you can build the software directly.",
         fullText: [
-          "There is a moment past midnight when the house is quiet and, after twenty years of directing, overseeing, and governing enterprise transformations through other people's hands, you finally have your own hands directly on the work.",
-          "For two decades, I could see in my head how the data core, the GAAP controls, and the floor workflows on Mary's clipboard and in Don's warehouse bays ought to connect—and then I would watch traditional software programs take eighteen months just to align requirements. When multi-harness agentic development clicked, falling down the rabbit hole felt electric. Sitting at my desk at midnight watching coordinated agent harnesses turn twenty years of operational pattern recognition into working data models, financial engines, and workflow blocks—and catching an edge case in real time because I had seen that exact edge case blow up a plant cutover years ago—was pure builder joy. For anyone who loves how businesses and systems fit together, this craft gives you your hands back.",
+          "There is a moment past midnight when the house is quiet and—after twenty years of living on plant floors, sitting in cutover war rooms, and carrying responsibility for enterprise transformations where the code itself always had to pass through a long chain of specs and developer handoffs—you can finally build the software directly with your own hands.",
+          "When multi-harness agentic engineering clicked for me three years ago, I went all the way in—thousands of hours, every day and late into the night. Sitting at my desk watching coordinated harnesses turn decades of operational scar tissue into working data models and workflow logic felt electric. Better yet, operational memory changes what you catch in the code: one night, an agent generated a clean-looking receiving-to-ledger workflow that assumed a supplier shipment always closes against a single purchase order line in one unit of measure. Because I had watched a split-pallet partial receipt with a catch-weight variance freeze a loading dock during a real cutover years ago, I spotted the trap immediately and built the exception path before it ever touched a floor. For anyone who loves how businesses and systems fit together, this craft gives you direct hands on the build.",
         ],
         signature: "— Robert Paddock · Note from the Field 03-A",
-        footerLabel: "BUILDER DISCOVERY · MULTI-HARNESS VELOCITY",
+        footerLabel: "FLOOR EXPERIENCE · DIRECT SOFTWARE CRAFT",
       },
       {
         id: "fn-disco",
@@ -324,14 +328,14 @@ const COLLECTIVES: CollectivePillar[] = [
           "The other side of midnight joy: confident green summaries over broken state, and learning to agree on the work, bound each lane, and check what actually changed.",
         fullText: [
           "Here is the other side of that midnight joy—the part nobody puts in a keynote demo: if you stay down the rabbit hole long enough building real enterprise systems, the first thing agents teach you is how easy it is to lie to yourself. You find what I call the Disco—a house of mirrors under flashing lights.",
-          "Early on, I had a build running across several coordinated agents. The summaries were confident, coherent, and all-green—just like an old war-room status report. Then I looked underneath, and the state was fundamentally broken. The agents had produced outputs that agreed with each other's reflections while never reconciling with the underlying system. I had to burn that subsystem all the way to the ground and rebuild it from scratch.",
-          "Finding my way out of that house of mirrors meant learning to ask a harder question after the midnight demo—what actually changed, where is it recorded, and can a separate harness fail it?—and locking in four disciplines: agreeing on the work before building; giving each agent a clear boundary; using independent checks appropriate to the change, including opposing-model verification where the delivery contract calls for it; and keeping the evidence and lessons with the work so the next build starts from truth, not a blank page.",
+          "Early on, I had a build running across several coordinated agents. The summaries were confident, coherent, and all-green—just like an old war-room status report or Mary's ERP screen claiming Packaging Line 2 was ready while the pump sat on the workbench. Then I inspected the underlying state, and it was fundamentally broken. The agents had produced outputs that agreed with each other's reflections while never reconciling with the actual system state. I had to burn that subsystem all the way to the ground and rebuild it from scratch.",
+          "Finding my way out of that house of mirrors meant learning to ask a harder question after the midnight demo—what actually changed, where is it recorded, and can a separate harness fail it?—and locking in four disciplines: agreeing on the work before building; giving each agent a clear boundary; using independent checks appropriate to the change, including opposing-model verification where the delivery contract calls for it; and keeping the evidence and lessons with the work so the next build starts from verified state, not a blank page.",
         ],
         signature: "— Robert Paddock · Note from the Field 03-B",
         footerLabel: "BUILD ⇄ CHECK → LAND · MULTI-HARNESS DISCIPLINE",
       },
     ],
-    closingQuestion: "If you are building or transforming workflows right now, have you hit that house of mirrors yet—and what helped you find your way out?",
+    closingQuestion: "If you are building or transforming workflows right now, have you hit that gap between green status and real operating state—and what helped you find your way through it?",
     fieldNoteHref: "/agentic-ai/the-delivery-seam/",
     fieldNoteLabel: "Open Standalone Chapter Three Page",
     topicKey: "03 / Chapter Three: The Machine That Builds the Machines That Build the Workflows",
@@ -364,6 +368,29 @@ export default function AgenticPositionView() {
   function toggleChapter(num: string) {
     setExpandedChapters((prev) => ({ ...prev, [num]: !prev[num] }));
   }
+
+  function readFromBeginning() {
+    setExpandedChapters({ "01": true, "02": true, "03": true });
+    const el = document.getElementById("field-briefs");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
+  function openAndScrollToChapter(num: string) {
+    setExpandedChapters((prev) => ({ ...prev, [num]: true }));
+    const target = COLLECTIVES.find((item) => item.num === num);
+    if (target) {
+      setTimeout(() => {
+        const el = document.getElementById(`collective-${topicSlug(target.title)}`);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 60);
+    }
+  }
+
+  const allExpanded = !!(expandedChapters["01"] && expandedChapters["02"] && expandedChapters["03"]);
 
   function handleSelectTopic(selectedTopic: string) {
     setTopic(selectedTopic);
@@ -449,61 +476,53 @@ export default function AgenticPositionView() {
 
             {/* Highlighted Seam Epigraph Banner */}
             <div className={s.seamHighlightBanner}>
-              <span className={s.seamHighlightTag}>THE SEAM // WHERE HUMAN ACCOUNTABILITY MEETS SYSTEM TRUTH</span>
+              <span className={s.seamHighlightTag}>THE SEAM // WHERE HUMAN ACCOUNTABILITY MEETS RECORDED STATE</span>
               <p className={s.seamHighlightQuote}>
-                &ldquo;Every transformation lives and dies at the seam where human accountability meets system truth. When you boil an enterprise down—really, when you boil almost everything in life down—it is workflows. We all live in runtime workflows. The question is whether yours actually flow.&rdquo;
+                &ldquo;Every transformation lives and dies at the seam where human accountability meets what the system records. The ERP screen says Packaging Line 2 is green while Mary&rsquo;s filling pump sits unbolted on the workbench. Years later, my own agents reported green while the underlying state was broken. I recognized the second failure because I had lived through the first.&rdquo;
               </p>
             </div>
 
             <p className={s.heroLead}>
-              <strong>People like to work.</strong> I have walked into more than fifty companies over twenty-some years, and that is the one thing I can tell you without qualification: people want to do good work. What exhausts them is not the work itself—it is the unnecessary runaround when a workflow never actually flows. It is the sporadic handoffs across disparate silos: the meeting that exists because two systems don&rsquo;t talk, the spreadsheet that exists because the ERP doesn&rsquo;t know what the floor is actually running, and the monthly S&amp;OP / Integrated Business Planning fire drill where teams across three departments spend weeks rolling spreadsheets into a PowerPoint just trying to get the numbers to tell the truth. One of my favorite beliefs has always been simple: <strong>if you have happy systems, you have happy people—and if you have happy people, you have happy systems.</strong> We are talking about people&rsquo;s livelihoods, their pride in their craft, and their quality of life at work.
+              Across the fifty-plus enterprise transformations I have helped lead over twenty-some years, the people I have worked beside want to do good work. What exhausts them is not the craft itself—it is the unnecessary runaround when a workflow never actually flows. It is the sporadic handoffs across disparate silos: the meeting that exists because two systems don&rsquo;t talk, and the folded spreadsheet on a clipboard because the official screen does not match the physical floor. One of my favorite beliefs has always been simple: <strong>if you have happy systems, you have happy people—and if you have happy people, you have happy systems.</strong> We are talking about people&rsquo;s livelihoods, their pride in their craft, and their quality of life at work.
             </p>
             <p className={s.heroLead}>
-              Three years ago, I went from directing enterprise transformations to building deep inside the agentic runtime—writing software with coordinated AI agents every day for thousands of hours. I call this new chapter <strong>Binary Intelligence</strong>, because underneath all the hype it is still zeros and ones, just raised to a level where human judgment can work with them in a completely new way. And the first thing I discovered is that <strong>without clear workflows, clean data, and honest boundaries, agents get lost in sporadic silos too</strong>—producing confident green summaries while the underlying state is quietly broken. Even inside our own multi-agent workshop right now, we are constantly perfecting our workflows so people and agents move in a true flow.
+              Three years ago, I went from leading enterprise transformations to building deep inside the agentic runtime—writing software with coordinated AI agents every day for thousands of hours. I call this new chapter <strong>Binary Intelligence</strong>, because underneath all the hype it is still zeros and ones, just raised to a level where human judgment can work with them in a completely new way. And the first thing I discovered is that <strong>without clear workflows, reconciled data, and honest boundaries, agents fall into the exact same trap as legacy software</strong>—reporting confident green summaries while the underlying state is quietly broken.
             </p>
             <p className={s.heroLead}>
-              What turns sporadic runtime chaos into a compounding enterprise asset is <strong>living memory and truthful real-time data</strong>—connecting <strong>People, Data, Systems, Workflows, Agents, and Patterns</strong> around a continuous loop (<strong>01 Intent &rarr; 02 Define &rarr; 03 Deliver &rarr; 04 Outcome &#8634;</strong>) that is self-learning and self-improving over time, and carrying those lessons forward through{" "}
+              <strong>This page is my notebook—three connected chapters of one continuous story, and the doorway into{" "}
               <Link href="/collective/" style={{ color: "var(--ink)", textDecoration: "underline", fontWeight: 700 }}>
                 The Collective
               </Link>
-              . <strong>This page is my notebook—three connected chapters of one continuous story. I&rsquo;d like to hear how you see it from your work.</strong>
+              .</strong> You can read the chapters in full below or step into any chapter that speaks to your work.
             </p>
 
-            <div className={s.byline}>
-              <span className={s.square} />
-              <span>
-                Robert Paddock <small>Enterprise Transformation Executive &middot; People, Systems &amp; Workflows</small>
-              </span>
-            </div>
-          </div>
-
-          {/* Centered Architectural Paper Plate Showcase Below the Three Opening Paragraphs */}
-          <div className={s.heroVisual}>
-            <div className={s.heroPlateFrame}>
-              <div className={s.plateCornerTL} />
-              <div className={s.plateCornerTR} />
-              <div className={s.plateCornerBL} />
-              <div className={s.plateCornerBR} />
-              <div className={s.plateInner}>
-                <span className={s.plateTag}>ARCHITECTURAL PLATE I &bull; THE SEAM, THE SIX ELEMENTS &amp; THE CONTINUOUS OUTCOME LOOP</span>
-                <PeopleSystemsWorkflowSpot />
-                <div className={s.plateMetrics}>
-                  <div>
-                    <strong>PEOPLE &amp; DATA</strong>
-                    <span>Judgment &amp; Clean Core</span>
-                  </div>
-                  <div className={s.metricDivider} />
-                  <div>
-                    <strong>SYSTEMS &amp; WORKFLOWS</strong>
-                    <span>Controls &amp; Runtime Flow</span>
-                  </div>
-                  <div className={s.metricDivider} />
-                  <div>
-                    <strong>AGENTS &amp; PATTERNS</strong>
-                    <span>Binary Intelligence &amp; Memory</span>
-                  </div>
-                </div>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "16px", marginTop: "10px" }}>
+              <div className={s.byline} style={{ margin: 0 }}>
+                <span className={s.square} />
+                <span>
+                  Robert Paddock <small>Enterprise Transformation Executive &middot; People, Systems &amp; Workflows</small>
+                </span>
               </div>
+
+              <button
+                type="button"
+                onClick={readFromBeginning}
+                style={{
+                  background: "var(--ink)",
+                  color: "var(--parchment)",
+                  border: "1px solid var(--brass)",
+                  borderRadius: "3px",
+                  padding: "10px 18px",
+                  fontSize: "11.5px",
+                  fontFamily: "var(--next-font-mono), monospace",
+                  fontWeight: 700,
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  cursor: "pointer",
+                }}
+              >
+                Read Full Story From Chapter One &darr;
+              </button>
             </div>
           </div>
         </div>
@@ -511,13 +530,14 @@ export default function AgenticPositionView() {
         {/* Section Navigation */}
         <nav aria-label="Dispatch navigation" className={s.chapterNav}>
           <a href="#field-briefs">01 / Three Chapters &amp; Notes from the Field</a>
-          <a href="#open-systems">02 / Lead-In to The Collective</a>
-          <a href="#conversation">03 / Direct Correspondence</a>
+          <a href="#architectural-plate">02 / The Seam &amp; Outcome Loop Plate</a>
+          <a href="#open-systems">03 / Lead-In to The Collective</a>
+          <a href="#conversation">04 / Write to Robert</a>
         </nav>
       </header>
 
       {/* ====================================================================
-          SECTION 01: THE THREE CHAPTERS & NOTES FROM THE FIELD (3-COLUMN + EXPANDABLE)
+          SECTION 01: THE THREE CHAPTERS & NOTES FROM THE FIELD (3-COLUMN + CONTINUOUS READING)
           ==================================================================== */}
       <section id="field-briefs" className={s.triadSection}>
         <span id="systems-arc" style={{ display: "block", position: "relative", top: "-80px", visibility: "hidden" }} />
@@ -528,8 +548,35 @@ export default function AgenticPositionView() {
             <p className={s.eyebrow}>01 / Three Connected Chapters &amp; Notes from the Field</p>
             <h2>How Businesses Actually Run, Working with Intelligence, and the Machine That Builds the Machines<span>.</span></h2>
             <p className={s.triadDek}>
-              One continuous story across three chapters: how businesses actually run across disparate silos today (<strong>Chapter One</strong>), how people work inside the machine with intelligence to shape and run their own workflows (<strong>Chapter Two</strong>), and the foundry required underneath to build that machine (<strong>Chapter Three</strong>). Read the opening of each chapter below—and expand any chapter into the full story.
+              One continuous story across three chapters: how businesses actually run across disparate silos today (<strong>Chapter One</strong>), how people work inside the machine with intelligence to run, propose, and govern workflows (<strong>Chapter Two</strong>), and the foundry required underneath to build that software (<strong>Chapter Three</strong>).
             </p>
+            <div style={{ marginTop: "14px", display: "flex", gap: "12px", flexWrap: "wrap" }}>
+              <button
+                type="button"
+                onClick={() =>
+                  setExpandedChapters(
+                    allExpanded ? {} : { "01": true, "02": true, "03": true }
+                  )
+                }
+                style={{
+                  background: "var(--parchment)",
+                  color: "var(--ink)",
+                  border: "1px solid var(--brass)",
+                  borderRadius: "3px",
+                  padding: "8px 14px",
+                  fontSize: "11px",
+                  fontFamily: "var(--next-font-mono), monospace",
+                  fontWeight: 700,
+                  letterSpacing: "0.07em",
+                  textTransform: "uppercase",
+                  cursor: "pointer",
+                }}
+              >
+                {allExpanded
+                  ? "Return to 3-Column Overview ▴"
+                  : "Open All Three Chapters for Continuous Reading ▾"}
+              </button>
+            </div>
           </div>
 
           <div className={s.triadGrid}>
@@ -568,7 +615,7 @@ export default function AgenticPositionView() {
                               cursor: "pointer",
                             }}
                           >
-                            Collapse to 3-Column View &#9652;
+                            Close {c.chapterLabel} &#9652;
                           </button>
                         )}
                       </div>
@@ -601,7 +648,7 @@ export default function AgenticPositionView() {
                         </p>
                       ))}
 
-                      {/* Remaining Chapter Paragraphs (Visible when expanded to larger format) */}
+                      {/* Remaining Chapter Paragraphs (Visible when expanded) */}
                       {isExpanded &&
                         c.expandedParagraphs.map((pText, idx) => (
                           <p key={`exp-${idx}`} className={s.triadCardBody} style={{ margin: 0 }}>
@@ -610,7 +657,7 @@ export default function AgenticPositionView() {
                         ))}
                     </div>
 
-                    {/* Collapsed View: Preview of Field Notes + Expand Button */}
+                    {/* Collapsed View: Preview of Field Notes + Reader-Facing Read Button */}
                     {!isExpanded && (
                       <>
                         <div className={s.triadNotePreviewList}>
@@ -656,13 +703,13 @@ export default function AgenticPositionView() {
                           onClick={() => toggleChapter(c.num)}
                           className={s.triadExpandBtn}
                         >
-                          <span>Expand {c.chapterLabel} to Larger Format</span>
+                          <span>Read {c.chapterLabel} &amp; Field Notes</span>
                           <span aria-hidden="true">&#9662;</span>
                         </button>
                       </>
                     )}
 
-                    {/* Expanded Larger Format: Quote + Full Field Notes + Closing Question */}
+                    {/* Expanded View: Quote + Full Field Notes + Next Chapter Handoff */}
                     {isExpanded && (
                       <div style={{ marginTop: "22px" }}>
                         {c.titanQuote && (
@@ -756,21 +803,43 @@ export default function AgenticPositionView() {
                           ))}
                         </div>
 
-                        {/* Closing Conversation Invitation */}
+                        {/* Closing Bridge Question */}
                         <div className={s.triadProvocation} style={{ marginTop: "22px", marginBottom: "8px" }}>
                           <span className={s.triadProvocationLabel}>NEXT IN THE STORY // HOW DO YOU SEE IT?</span>
                           <p className={s.triadProvocationText}>{c.closingQuestion}</p>
                         </div>
 
-                        <button
-                          type="button"
-                          onClick={() => toggleChapter(c.num)}
-                          className={s.triadExpandBtn}
-                          style={{ maxWidth: "360px" }}
-                        >
-                          <span>Collapse {c.chapterLabel} Back to 3-Column View</span>
-                          <span aria-hidden="true">&#9652;</span>
-                        </button>
+                        <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", alignItems: "center", marginTop: "12px" }}>
+                          {c.nextChapterNum && c.nextChapterPrompt && (
+                            <button
+                              type="button"
+                              onClick={() => openAndScrollToChapter(c.nextChapterNum!)}
+                              className={s.triadExpandBtn}
+                              style={{ maxWidth: "380px", marginTop: 0 }}
+                            >
+                              <span>{c.nextChapterPrompt}</span>
+                            </button>
+                          )}
+                          <button
+                            type="button"
+                            onClick={() => toggleChapter(c.num)}
+                            style={{
+                              background: "var(--parchment)",
+                              border: "1px solid var(--line)",
+                              borderRadius: "3px",
+                              padding: "10px 16px",
+                              fontSize: "11px",
+                              fontFamily: "var(--next-font-mono), monospace",
+                              fontWeight: 700,
+                              letterSpacing: "0.06em",
+                              textTransform: "uppercase",
+                              color: "var(--muted)",
+                              cursor: "pointer",
+                            }}
+                          >
+                            <span>Close {c.chapterLabel} &#9652;</span>
+                          </button>
+                        </div>
                       </div>
                     )}
                   </div>
@@ -797,38 +866,79 @@ export default function AgenticPositionView() {
               );
             })}
           </div>
+
+          {/* ====================================================================
+              ARCHITECTURAL PLATE I (PLACED AFTER THE THREE CHAPTERS SO THE FRAMEWORK EXPLAINS THE STORY)
+              ==================================================================== */}
+          <div id="architectural-plate" style={{ marginTop: "56px" }}>
+            <div style={{ maxWidth: "780px", margin: "0 auto 20px", textAlign: "center" }}>
+              <p className={s.eyebrow} style={{ justifyContent: "center" }}>
+                02 / Architectural Plate I &middot; How the Three Chapters Connect
+              </p>
+              <h3
+                style={{
+                  fontFamily: "var(--next-font-display), Georgia, serif",
+                  fontSize: "clamp(22px, 2.6vw, 30px)",
+                  fontWeight: 700,
+                  color: "var(--ink)",
+                  margin: "6px 0 10px",
+                }}
+              >
+                The Seam, the Six Elements, and the Earned Improvement Loop<span>.</span>
+              </h3>
+              <p style={{ fontSize: "15.5px", lineHeight: 1.7, color: "var(--ink-soft)", margin: 0 }}>
+                Once you have met Mary&rsquo;s clipboard on the floor (<strong>Chapter One</strong>), seen how people propose in language while deterministic rules govern what is admitted into the book (<strong>Chapter Two</strong>), and looked inside the multi-harness foundry (<strong>Chapter Three</strong>), this plate maps how <strong>People, Data, Systems, Workflows, Agents, and Patterns</strong> connect across the loop: people review the actual outcome against intent, test a proposed change, approve what holds up, and retain the evidence.
+              </p>
+            </div>
+
+            <div className={s.heroVisual} style={{ marginTop: "16px" }}>
+              <div className={s.heroPlateFrame}>
+                <div className={s.plateCornerTL} />
+                <div className={s.plateCornerTR} />
+                <div className={s.plateCornerBL} />
+                <div className={s.plateCornerBR} />
+                <div className={s.plateInner}>
+                  <span className={s.plateTag}>ARCHITECTURAL PLATE I &bull; THE SEAM, THE SIX ELEMENTS &amp; THE CONTINUOUS OUTCOME LOOP</span>
+                  <PeopleSystemsWorkflowSpot />
+                  <div className={s.plateMetrics}>
+                    <div>
+                      <strong>PEOPLE &amp; DATA</strong>
+                      <span>Judgment &amp; Reconciled Core</span>
+                    </div>
+                    <div className={s.metricDivider} />
+                    <div>
+                      <strong>SYSTEMS &amp; WORKFLOWS</strong>
+                      <span>Controls &amp; Runtime Flow</span>
+                    </div>
+                    <div className={s.metricDivider} />
+                    <div>
+                      <strong>AGENTS &amp; PATTERNS</strong>
+                      <span>Binary Intelligence &amp; Memory</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* ====================================================================
-          SECTION 02: THE PATTERNS & THE COLLECTIVE GATEWAY
+          SECTION 03: THE PATTERNS & THE COLLECTIVE GATEWAY
           ==================================================================== */}
       <section id="open-systems" className={s.limelightSection} style={{ padding: "56px 32px" }}>
         <div className={s.limelightInner}>
           <div className={s.limelightBanner} style={{ marginTop: 0 }}>
             <div className={s.limelightBannerContent}>
-              <p className={s.eyebrow} style={{ margin: 0 }}>02 / THE COLLECTIVE // MEMORY, SELF-LEARNING &amp; SHARED PATTERNS</p>
+              <p className={s.eyebrow} style={{ margin: 0 }}>03 / THE COLLECTIVE // PEOPLE, AGENTS &amp; SHARED PATTERNS</p>
               <h3>What we learn should carry forward.</h3>
               <p>
-                <strong>Learn through the work</strong> is where I put these field observations into words. <strong>The Collective</strong> is the place I am working toward to compare notes, build together, and let what people and agents learn through the work become useful for the next person—while each company keeps its own direction and control.
+                <strong>Learn through the work</strong> is where I put these field observations into words. <strong>The Collective</strong> is the place I am building toward to compare notes, examine the workshop behind this work, and let what people and agents learn become useful for the next person—while each company keeps its own direction and control.
               </p>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "10px", alignItems: "flex-start", flexShrink: 0 }}>
               <Link href="/collective/" className={s.limelightBannerCta}>
-                <span>Enter The Collective &rarr;</span>
-              </Link>
-              <Link
-                href="/block/"
-                style={{
-                  fontSize: "12px",
-                  fontFamily: "var(--font-mono)",
-                  color: "var(--ink)",
-                  textDecoration: "underline",
-                  opacity: 0.85,
-                  paddingLeft: "4px",
-                }}
-              >
-                <span>Configure Outcomes in The Block &rarr;</span>
+                <span>Explore The Collective &rarr;</span>
               </Link>
             </div>
           </div>
@@ -836,17 +946,17 @@ export default function AgenticPositionView() {
       </section>
 
       {/* ====================================================================
-          SECTION 03: DIRECT CORRESPONDENCE
+          SECTION 04: DIRECT CORRESPONDENCE
           ==================================================================== */}
       <section id="conversation" className={s.conversationSection}>
         <div className={s.conversationInner}>
           <div className={s.conversationHead}>
-            <p className={s.eyebrow}>03 / Direct Correspondence</p>
-            <h2>Join the conversation<span>.</span></h2>
+            <p className={s.eyebrow}>04 / Direct Correspondence</p>
+            <h2>Write to Robert<span>.</span></h2>
             <p className={s.conversationDek}>
-              For builders, peers, and enterprise operators. Have a view on why ERP transformations miss the floor, whether agentics can build an enterprise ERP, or your own trip down the rabbit hole and into the disco? Send me a note—it comes straight to my desk.
+              For people who live close to the work—on the plant floor, in planning or Finance, in operations leadership, or building with agents. If you want to share an exception your systems don&rsquo;t capture, a place where two sets of numbers disagree, or a lesson from your own trip into the house of mirrors, send me a note. I read every message myself, and we can compare notes directly.
             </p>
-            <span className={s.privacyBadge}>Private builder &amp; peer correspondence · No public comments · Straight to Robert</span>
+            <span className={s.privacyBadge}>Direct correspondence with Robert · Not publicly posted</span>
           </div>
 
           <div className={s.formCard}>
@@ -857,7 +967,7 @@ export default function AgenticPositionView() {
                 </h3>
                 <p className={s.successText}>
                   {status === "success"
-                    ? "Your message has been sent directly to Robert. He reads every peer and builder note personally and will reply to your email."
+                    ? "Your message has been sent directly to Robert. He reads every note personally and will reply to your email."
                     : "Your note was safely recorded. Direct email notification is unconfirmed on this environment — write robert@idigdata.com directly if you need a same-day response."}
                 </p>
                 <button
@@ -920,7 +1030,7 @@ export default function AgenticPositionView() {
 
                   <div>
                     <label htmlFor="reader-email" className={s.label}>
-                      Your Email
+                      Reply Email
                     </label>
                     <input
                       id="reader-email"
@@ -943,7 +1053,7 @@ export default function AgenticPositionView() {
 
                 <div className={s.formGroup}>
                   <label htmlFor="reader-topic" className={s.label}>
-                    What are you writing about?
+                    Topic <span style={{ fontWeight: 400, color: "var(--muted)" }}>(Optional — preselected when clicking from a chapter)</span>
                   </label>
                   <select
                     id="reader-topic"
@@ -953,7 +1063,7 @@ export default function AgenticPositionView() {
                     disabled={status === "submitting"}
                   >
                     <option value="Across the Three Chapters">
-                      Across the Three Chapters
+                      Across the Three Chapters (General Note)
                     </option>
                     <option value="01 / Chapter One: How Businesses Actually Run (Mary's Sheet, Don WMS & S&OP/IBP)">
                       Chapter One / How Businesses Actually Run (Mary&apos;s Sheet, Don WMS &amp; S&amp;OP/IBP)
@@ -967,21 +1077,18 @@ export default function AgenticPositionView() {
                     <option value="The Collective / Collaboration & Shared Patterns">
                       The Collective / People, Agents &amp; Shared Patterns
                     </option>
-                    <option value="General Builder / Peer Connection">
-                      General Builder / Peer Connection
-                    </option>
                   </select>
                 </div>
 
                 <div className={s.formGroup}>
                   <label htmlFor="reader-message" className={s.label}>
-                    Your Thought, Question, or Floor Reality
+                    Your Note, Exception, or Question
                   </label>
                   <textarea
                     id="reader-message"
                     required
                     rows={5}
-                    placeholder="Share what you are navigating in your enterprise, your take on the ERP bar debate, or a note from your own trip down the agentic rabbit hole..."
+                    placeholder="Describe an exception on your floor, a place where two sets of numbers disagree, or something that failed when you tested agents against real work..."
                     value={message}
                     onChange={(e) => {
                       setMessage(e.target.value);
@@ -996,7 +1103,7 @@ export default function AgenticPositionView() {
 
                 <div className={s.submitRow}>
                   <span className={s.submitMeta}>
-                    Direct to Robert Paddock &middot; Private &amp; Confidential
+                    Sent directly to Robert Paddock &middot; Not publicly posted
                   </span>
                   <button
                     type="submit"

@@ -319,10 +319,10 @@ export default function CollectiveView() {
               {/* Col 2 */}
               <div className={s.commonsCol}>
                 <div>
-                  <span className={s.commonsColTag}>02 // RUN &amp; SEE WHAT HAPPENED</span>
-                  <h3 className={s.commonsColTitle}>Learning in the Loop</h3>
+                  <span className={s.commonsColTag}>02 // REVIEW, TEST &amp; APPROVE</span>
+                  <h3 className={s.commonsColTitle}>Earned Improvement in the Loop</h3>
                   <p className={s.commonsColText}>
-                    When the workflow runs against real operating rules, people can compare what was intended against what actually happened—carrying that learning into the next attempt so the work gets clearer over time.
+                    When the workflow runs against real operating rules, people review the actual result against what was intended, test a proposed adjustment, approve what holds up, and retain the evidence for the next cycle.
                   </p>
                 </div>
                 <div className={s.commonsColFoot}>
@@ -354,10 +354,10 @@ export default function CollectiveView() {
       <section className={s.systemsSection}>
         <div className={s.sectionInner}>
           <div className={s.sectionHead}>
-            <p className={s.eyebrow}>02 / THE SYSTEMS &amp; THE PATTERNS</p>
+            <p className={s.eyebrow}>02 / THE SYSTEMS &amp; PRESENT MATURITY</p>
             <h2>The workshop behind the idea<span>.</span></h2>
             <p>
-              <strong>The Rig</strong>, <strong>B.O.S.S.</strong>, and <strong>FlowCraft</strong> are the systems I am bringing together around this work: building software, making sense of an operation, and carrying its workflows into practice. Their patterns have been tested through hands-on work; the next step is developing them from proof of concept into an MVP. The larger ambition is a company that can keep understanding, shaping, running, and improving how it works—with its people still at the center.
+              <strong>The Rig</strong>, <strong>B.O.S.S.</strong>, and <strong>FlowCraft</strong> are the systems I am bringing together around this work: building software, making sense of an operation, and carrying its workflows into practice. To be clear about present state: <strong>The Rig</strong> is what I use daily in production to build and verify our software; <strong>B.O.S.S.</strong> and <strong>FlowCraft</strong> have demonstrated their core patterns in working proofs of concept and are now being developed into an MVP.
             </p>
           </div>
 
@@ -365,7 +365,7 @@ export default function CollectiveView() {
             {/* System 1: The Rig */}
             <div className={s.systemCard}>
               <div>
-                <span className={s.systemBadge}>SYSTEM 01 // BUILDING SOFTWARE</span>
+                <span className={s.systemBadge}>SYSTEM 01 // USED DAILY IN OUR PRODUCTION BUILDS</span>
                 <h3 className={s.systemTitle}>The Rig</h3>
                 <div className={s.systemSub}>Multi-Harness Engineering Workshop</div>
                 <p className={s.systemBody}>
@@ -373,9 +373,9 @@ export default function CollectiveView() {
                 </p>
               </div>
               <div className={s.systemUseCaseBox}>
-                <span className={s.systemUseCaseLabel}>ROLE IN THE WORKSHOP</span>
+                <span className={s.systemUseCaseLabel}>INSPECTABLE EVIDENCE // DAILY PRODUCTION HARNESS</span>
                 <p className={s.systemUseCaseText}>
-                  Turns agreed specifications into tested software without letting any agent grade its own homework.
+                  Four isolated AI seats (<code>cc</code>, <code>cx</code>, <code>grok</code>, <code>ag</code>) coordinated over an append-only task ledger with opposing-model verification before any build lands—including the build and review cycle for this site.
                 </p>
               </div>
             </div>
@@ -383,7 +383,7 @@ export default function CollectiveView() {
             {/* System 2: B.O.S.S. */}
             <div className={s.systemCard}>
               <div>
-                <span className={s.systemBadge}>SYSTEM 02 // MAKING SENSE OF AN OPERATION</span>
+                <span className={s.systemBadge}>SYSTEM 02 // DEMONSTRATED POC &rarr; DEVELOPING MVP</span>
                 <h3 className={s.systemTitle}>B.O.S.S.</h3>
                 <div className={s.systemSub}>Operating Map &amp; Parallel Proving Ground</div>
                 <p className={s.systemBody}>
@@ -391,9 +391,9 @@ export default function CollectiveView() {
                 </p>
               </div>
               <div className={s.systemUseCaseBox}>
-                <span className={s.systemUseCaseLabel}>ROLE IN THE WORKSHOP</span>
+                <span className={s.systemUseCaseLabel}>INSPECTABLE EVIDENCE // WORKING POC</span>
                 <p className={s.systemUseCaseText}>
-                  Gives unwritten operational knowledge and data seams a form people can examine, test, and improve.
+                  Demonstrated across 22 canonical operating domains and a 55-step order-to-cash-to-GL reference map used to reconcile legacy item catalogs and disconnected spreadsheets alongside active operations.
                 </p>
               </div>
             </div>
@@ -401,7 +401,7 @@ export default function CollectiveView() {
             {/* System 3: FlowCraft */}
             <div className={s.systemCard}>
               <div>
-                <span className={s.systemBadge}>SYSTEM 03 // CARRYING WORKFLOWS INTO PRACTICE</span>
+                <span className={s.systemBadge}>SYSTEM 03 // DEMONSTRATED POC &rarr; DEVELOPING MVP</span>
                 <h3 className={s.systemTitle}>FlowCraft</h3>
                 <div className={s.systemSub}>Human-Agent Workflow Patterns &amp; Runtime</div>
                 <p className={s.systemBody}>
@@ -409,9 +409,9 @@ export default function CollectiveView() {
                 </p>
               </div>
               <div className={s.systemUseCaseBox}>
-                <span className={s.systemUseCaseLabel}>ROLE IN THE WORKSHOP</span>
+                <span className={s.systemUseCaseLabel}>INSPECTABLE EVIDENCE // WORKING POC &rarr; MVP</span>
                 <p className={s.systemUseCaseText}>
-                  Helps people and agents work through real operational steps with clear guardrails and a durable record.
+                  Demonstrated in our live Org Glass workflow board (<code>13</code> numbered programs with wave gates, lease locks, and audit receipts) and bounded approval-delegation POCs enforcing deterministic policy checks outside the model session.
                 </p>
               </div>
             </div>
@@ -466,15 +466,15 @@ export default function CollectiveView() {
       </section>
 
       {/* ====================================================================
-          SECTION 03: TWO DOORS OF INTERACTION
+          SECTION 03: TWO DOORS OF INTERACTION (WHAT HAPPENS WHEN YOU WRITE TODAY)
           ==================================================================== */}
       <section className={s.doorsSection}>
         <div className={s.sectionInner}>
           <div className={s.sectionHead}>
-            <p className={s.eyebrow}>03 / DIRECT CONVERSATION WITH ROBERT</p>
-            <h2>Compare notes or bring a seam<span>.</span></h2>
+            <p className={s.eyebrow}>03 / WHAT HAPPENS WHEN YOU WRITE TODAY</p>
+            <h2>Start with a direct conversation<span>.</span></h2>
             <p>
-              The Collective I am working toward begins with honest conversation between people who care about the work—whether you want to compare notes on what you are seeing and building, or talk through a specific operating problem.
+              The Collective is something I am building toward, not a pre-packaged membership funnel. Today, the experience is simple and direct: you write to me, I read it myself, we compare what you are seeing in your work, and we decide together whether there is something useful to explore.
             </p>
           </div>
 
@@ -482,10 +482,10 @@ export default function CollectiveView() {
             {/* Door 1: Compare Notes */}
             <div className={`${s.doorCard} ${s.doorCardPrimary}`}>
               <div>
-                <p className={s.doorEyebrow}>PATH 01 // OPERATORS, PRACTITIONERS &amp; BUILDERS</p>
+                <p className={s.doorEyebrow}>PATH 01 // PEOPLE WHO LIVE CLOSE TO THE WORK</p>
                 <h3 className={s.doorTitle}>Compare notes with Robert.</h3>
                 <p className={s.doorBody}>
-                  For people who live close to the work—on the floor, in Finance, in operations, or deep in agentic engineering. Reach out to compare what you are learning, talk through a workflow pattern, or discuss how The Rig, B.O.S.S., and FlowCraft are taking shape.
+                  Whether you are on the plant floor, in planning or Finance, leading operations, or building with agents—reach out to compare what you are learning, walk through a workflow exception, or look at how The Rig, B.O.S.S., and FlowCraft are being built.
                 </p>
               </div>
               <button
@@ -503,7 +503,7 @@ export default function CollectiveView() {
                 <p className={s.doorEyebrow}>PATH 02 // WORKING THROUGH A REAL SEAM</p>
                 <h3 className={s.doorTitle}>Talk through an operating problem.</h3>
                 <p className={s.doorBody}>
-                  For business owners and operations leaders dealing with a place where the official systems and daily reality don&rsquo;t match. Bring the seam you are facing—we can look at it together and talk honestly about what a practical first step looks like.
+                  For business owners and operations leaders dealing with a place where the official systems and daily reality don&rsquo;t match. Tell me where the work between the screens is stuck—we will look at the situation together and see if there is a practical first step worth testing.
                 </p>
               </div>
               <button
@@ -527,7 +527,7 @@ export default function CollectiveView() {
             <p className={s.eyebrow} style={{ marginBottom: "6px" }}>DIRECT CORRESPONDENCE</p>
             <h3>Write to Robert<span>.</span></h3>
             <p>
-              Every note comes straight to my desk. Tell me what you are working on, what you are seeing in your operation, or what you would like to compare notes on.
+              Every note comes straight to my desk and is not publicly posted. When you write, I reply personally so we can compare the situation and decide together whether there is something useful to explore.
             </p>
           </div>
 
@@ -565,7 +565,7 @@ export default function CollectiveView() {
 
               <div className={s.formField}>
                 <label htmlFor="email" className={s.fieldLabel}>
-                  Email Address
+                  Reply Email
                 </label>
                 <input
                   id="email"
@@ -580,21 +580,21 @@ export default function CollectiveView() {
 
               <div className={s.formField}>
                 <label htmlFor="company" className={s.fieldLabel}>
-                  Organization / Company
+                  Organization / Role <span style={{ fontWeight: 400, color: "var(--muted)" }}>(Optional)</span>
                 </label>
                 <input
                   id="company"
                   type="text"
                   value={formState.company}
                   onChange={(e) => setFormState({ ...formState, company: e.target.value })}
-                  placeholder="e.g. Acme Manufacturing or Independent Builder"
+                  placeholder="e.g. Plant Supervisor, Planning Analyst, CFO, or Builder"
                   className={s.fieldInput}
                 />
               </div>
 
               <div className={s.formField}>
                 <label htmlFor="interest" className={s.fieldLabel}>
-                  What are you writing about?
+                  Topic <span style={{ fontWeight: 400, color: "var(--muted)" }}>(Optional)</span>
                 </label>
                 <select
                   id="interest"
@@ -607,14 +607,14 @@ export default function CollectiveView() {
                 </select>
                 <p className={s.fieldHelp}>
                   {formState.interest === "collaborate"
-                    ? "Compare notes on what you are building or seeing in the work, or how The Rig, B.O.S.S., and FlowCraft fit together."
+                    ? "Compare notes on what you are seeing in the work, an exception that taught you something, or how The Rig, B.O.S.S., and FlowCraft fit together."
                     : "Tell me where the work between the screens is stuck and what a better day for your team would look like."}
                 </p>
               </div>
 
               <div className={s.formField}>
                 <label htmlFor="message" className={s.fieldLabel}>
-                  Your Note
+                  Your Note, Exception, or Question
                 </label>
                 <textarea
                   id="message"
@@ -622,7 +622,7 @@ export default function CollectiveView() {
                   rows={4}
                   value={formState.message}
                   onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                  placeholder="Share what you are seeing in your work, a pattern you are testing, or an operating seam you want to talk through..."
+                  placeholder="Describe an exception on your floor, a disagreement between two sets of numbers, or something that failed when you tested agents against real work..."
                   className={s.fieldTextarea}
                 />
               </div>
