@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Architectural Plate II · Peer Pattern Loop & Living Workshop | Robert Paddock",
   description:
-    "Full-scale architectural paper-drafting plate showing how peer lessons and workshop patterns move across The Rig, B.O.S.S. and FlowCraft Builder Orgs, and Instance Workflow Runtime Blocks.",
+    "Full-scale architectural paper-drafting plate showing The Rig, the machine that builds the machines; B.O.S.S., where a business finds where it stands, builds its living digital twin, and monitors the live instance; and FlowCraft, the live operating instance where the real transactions run every day.",
   alternates: {
     canonical: "https://idigdata.com/collective/plate/",
   },
@@ -132,13 +132,13 @@ export default function CollectivePlatePage() {
               color: "#8B6B35",
             }}
           >
-            <span>ARCHITECTURAL PLATE II // PEER PATTERN LOOP &bull; THE RIG &#8644; B.O.S.S. &amp; FLOWCRAFT BUILDER ORGS &bull; INSTANCE WORKFLOW RUNTIME BLOCKS</span>
-            <span>THE DATA SPINE</span>
+            <span>ARCHITECTURAL PLATE II // PEER PATTERN LOOP &bull; THE RIG BUILDS B.O.S.S. &amp; FLOWCRAFT &bull; B.O.S.S. MAPS, TWINS &amp; MONITORS THE LIVE INSTANCE</span>
+            <span>CONTINUOUS OUTCOME LOOP</span>
           </div>
 
           <Image
             src="/diagrams/collective-living-paper-plate.svg"
-            alt="The Pattern Collective peer loop and living workshop showing The Rig, B.O.S.S. and FlowCraft Builder Orgs, and Operational Instances running Agentic Workflow Runtime Blocks on The Data Spine"
+            alt="The Pattern Collective peer loop and living workshop showing The Rig building B.O.S.S. and FlowCraft, B.O.S.S. as the living digital twin that monitors the live instance, and FlowCraft as the live operating instance running purchase orders, payroll, receiving, approvals, and close"
             width={1160}
             height={860}
             unoptimized

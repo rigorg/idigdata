@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 830" role="img" aria-labelledby="clp-title clp-desc">
   <title id="clp-title">The Pattern Collective — Peer Pattern Loop &amp; Living Workshop Architecture</title>
-  <desc id="clp-desc">Architectural paper-drafting plate showing how operators, domain experts, and builders bring real field work into the workshop, how patterns move between The Rig, the B.O.S.S. and FlowCraft Builder Orgs, and Operational Instances executing Agentic Workflow Runtime Blocks (WFBs), and how verified patterns return to compound the shared Pattern Collective.</desc>
+  <desc id="clp-desc">Architectural paper-drafting plate showing how operators, domain experts, and builders bring real field work into the workshop; how The Rig, the machine that builds the machines, builds B.O.S.S. and FlowCraft; how B.O.S.S. finds where a business stands, builds its living digital twin, and monitors the live instance; how FlowCraft runs the company's real transactions every day; and how verified patterns return to compound the shared Pattern Collective.</desc>
 
   <defs>
     <radialGradient id="colPaper" cx="50%" cy="46%" r="58%">
@@ -93,27 +93,27 @@
       <circle cx="-11" cy="0" r="3.2" fill="#E5B95C" />
     </g>
     <text x="-222" y="-16" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" font-weight="700" letter-spacing="1.4" fill="#E5B95C">
-      INSIDE THE WORKSHOP · THE AGENTIC DEVELOPMENT COMPANY
+      THE FOUNDRY · THE MACHINE THAT BUILDS THE MACHINES
     </text>
     <text x="-222" y="7" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-weight="700" fill="#FAF5EC">
-      The Rig · Multi-Harness Factory &amp; Pattern Spine
+      The Rig · Multi-Harness Foundry &amp; Pattern Spine
     </text>
     <text x="-222" y="27" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.8" fill="#CBD5E1">
-      4-Vendor Orchestration (Claude · Codex · Gemini · Grok) · Independent Check Gates
+      Multi-Vendor, Multi-Harness Orchestration · Comms &amp; Memory · Independent Check Gates
     </text>
   </g>
 
-  <!-- Bi-Directional Pattern Arteries Between The Rig & Builder Orgs -->
+  <!-- Bi-Directional Arteries: The Rig builds B.O.S.S. and FlowCraft; patterns flow back -->
   <path d="M 410 269 C 345 296, 310 312, 285 338" fill="none" stroke="#B57D1E" stroke-width="2.2" marker-end="url(#arrowGold)" />
   <path d="M 315 338 C 345 316, 382 298, 442 269" fill="none" stroke="#2D5A52" stroke-width="1.7" stroke-dasharray="5 4" marker-end="url(#arrowTeal)" />
   <text x="308" y="298" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" font-weight="600" fill="#8B6B35">
-    Patterns ⇄ Blueprints
+    Builds B.O.S.S. ⇄ Patterns Back
   </text>
 
   <path d="M 710 269 C 775 296, 810 312, 835 338" fill="none" stroke="#B57D1E" stroke-width="2.2" marker-end="url(#arrowGold)" />
   <path d="M 805 338 C 775 316, 738 298, 678 269" fill="none" stroke="#2D5A52" stroke-width="1.7" stroke-dasharray="5 4" marker-end="url(#arrowTeal)" />
   <text x="812" y="298" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" font-weight="600" fill="#8B6B35">
-    Patterns ⇄ Runtimes
+    Builds FlowCraft ⇄ Patterns Back
   </text>
 
   <!-- TIER 2 (LEFT): B.O.S.S. BUILDER ORG -->
@@ -130,19 +130,19 @@
       <polygon points="-19,-2 -7.8,4.5 -7.8,17.5 -19,24 -30.2,17.5 -30.2,4.5" />
     </g>
     <text x="-138" y="-36" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" font-weight="700" letter-spacing="1.2" fill="#9B6E23">
-      BUILDER ORG 01 · CANONICAL DATA SPINE
+      SYSTEM 01 · THE FRONT END OF EVERYTHING
     </text>
     <text x="-138" y="-14" font-family="Georgia, 'Times New Roman', serif" font-size="17.5" font-weight="700" fill="#1E242B">
-      B.O.S.S. Builder Org
+      B.O.S.S. · Where the Business Stands
     </text>
     <text x="-138" y="7" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="#3B434C">
-      9 Workflow Blocks · Beehive &amp; Enterprise Digital Twin
+      Living Digital Twin of the Operating Company
     </text>
     <text x="-138" y="27" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.2" fill="#2D5A52">
-      6 Constellations: P2P · O2C · P2M · S2S · D2R · MDM (423)
+      Digital Twin · Data &amp; Change · Monitors the Live Instance
     </text>
     <text x="-138" y="45" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" fill="#6E5A3A">
-      Canonical Data Core · Deterministic Financial Controls
+      Finds &amp; Organizes the Data · Project &amp; Change Management
     </text>
   </g>
 
@@ -156,77 +156,77 @@
       <polygon points="28,-14 0,2 0,32 28,16" fill="#BBD5CB" />
     </g>
     <text x="-138" y="-36" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" font-weight="700" letter-spacing="1.2" fill="#2D5A52">
-      BUILDER ORG 02 · HUMAN-AGENT RUNTIME
+      SYSTEM 02 · THE BUSINESS AS IT RUNS
     </text>
     <text x="-138" y="-14" font-family="Georgia, 'Times New Roman', serif" font-size="17.5" font-weight="700" fill="#1E242B">
-      FlowCraft Builder Org
+      FlowCraft · Live Operating Instance
     </text>
     <text x="-138" y="7" font-family="Georgia, 'Times New Roman', serif" font-size="12.5" fill="#3B434C">
-      Modular Agentic Workflow Runtime Blocks (WFBs)
+      The Workflows the Company Actually Runs On
     </text>
-    <text x="-138" y="27" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.2" fill="#9B6E23">
-      Continuous Outcome Loop (Intent = Outcome) · Check Gates
+    <text x="-138" y="27" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8.8" fill="#9B6E23">
+      Live Operating Instance · POs, Payroll, Orders, Approvals &amp; Close
     </text>
     <text x="-138" y="45" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" fill="#6E5A3A">
-      Spawns Operational Instances &amp; Domain Workflow Blocks
+      Built From Where You Stand · Monitored by B.O.S.S.
     </text>
   </g>
 
-  <!-- Horizontal Bridge Between Builder Orgs -->
+  <!-- Horizontal Bridge: B.O.S.S. maps, twins, then monitors the live FlowCraft instance -->
   <path d="M 512 412 L 608 412" fill="none" stroke="#8C6A30" stroke-width="1.6" stroke-dasharray="4 4" />
-  <rect x="520" y="399" width="80" height="26" rx="6" fill="#FAF5EC" stroke="#B57D1E" stroke-width="1.1" />
-  <text x="560" y="416" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="700" fill="#8B6B35">
-    PAIRED ORGS
+  <rect x="514" y="399" width="92" height="26" rx="6" fill="#FAF5EC" stroke="#B57D1E" stroke-width="1.1" />
+  <text x="560" y="416" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="8.5" font-weight="700" fill="#8B6B35">
+    MAPS → MONITORS
   </text>
 
-  <!-- Downward Arteries From Builder Orgs to Operational Instances & WFBs -->
+  <!-- Downward Arteries Into the Live Operating Instance -->
   <path d="M 284 478 L 350 540" fill="none" stroke="#B57D1E" stroke-width="2" marker-end="url(#arrowGold)" />
   <path d="M 836 478 L 770 540" fill="none" stroke="#2D5A52" stroke-width="2" marker-end="url(#arrowTeal)" />
 
-  <!-- TIER 3: OPERATIONAL INSTANCES & AGENTIC WORKFLOW RUNTIME BLOCKS (WFBs) -->
+  <!-- TIER 3: INSIDE THE LIVE INSTANCE — THE WORKFLOWS THE COMPANY RUNS ON -->
   <g transform="translate(56,546)">
     <rect x="0" y="0" width="1008" height="162" rx="14" fill="#FFFDF9" stroke="#2D5A52" stroke-width="1.9" />
     <text x="504" y="26" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10.5" font-weight="700" letter-spacing="1.8" fill="#2D5A52">
-      OPERATIONAL INSTANCES · AGENTIC WORKFLOW RUNTIME BLOCKS (WFBs) ON THE DATA SPINE
+      INSIDE THE LIVE INSTANCE · THE WORKFLOWS THE COMPANY RUNS ON EVERY DAY
     </text>
     <text x="504" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13.5" fill="#3B434C">
-      Deployed as a paired enterprise instance (B.O.S.S. + FlowCraft) or a specialized operational instance (such as DigOps)
+      One live operating instance per company · Mapped and monitored by B.O.S.S. · Run on FlowCraft · Built by The Rig
     </text>
 
     <!-- 5 Representative WFB Cards -->
     <g transform="translate(24,62)">
       <rect x="0" y="0" width="184" height="78" rx="8" fill="#FAF5EC" stroke="#B57D1E" stroke-width="1.3" />
-      <text x="12" y="20" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" font-weight="700" fill="#9B6E23">RUNTIME BLOCK 01</text>
-      <text x="12" y="40" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#1E242B">Legacy Data Migration</text>
-      <text x="12" y="59" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.2" fill="#5A4D3B">Schema &amp; Cutover Audit</text>
+      <text x="12" y="20" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" font-weight="700" fill="#9B6E23">WORKFLOW 01</text>
+      <text x="12" y="40" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#1E242B">Purchase Orders</text>
+      <text x="12" y="59" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.2" fill="#5A4D3B">Request · Approve · Issue · Pay</text>
     </g>
 
     <g transform="translate(218,62)">
       <rect x="0" y="0" width="184" height="78" rx="8" fill="#FAF5EC" stroke="#2D5A52" stroke-width="1.3" />
-      <text x="12" y="20" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" font-weight="700" fill="#2D5A52">RUNTIME BLOCK 02</text>
-      <text x="12" y="40" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#1E242B">Close &amp; Reconciliation</text>
-      <text x="12" y="59" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.2" fill="#5A4D3B">Ledger &amp; Variance Gates</text>
+      <text x="12" y="20" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" font-weight="700" fill="#2D5A52">WORKFLOW 02</text>
+      <text x="12" y="40" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#1E242B">Payroll</text>
+      <text x="12" y="59" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.2" fill="#5A4D3B">Hours · Rules · Run · Record</text>
     </g>
 
     <g transform="translate(412,62)">
       <rect x="0" y="0" width="184" height="78" rx="8" fill="#FAF5EC" stroke="#B57D1E" stroke-width="1.3" />
-      <text x="12" y="20" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" font-weight="700" fill="#9B6E23">RUNTIME BLOCK 03</text>
+      <text x="12" y="20" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" font-weight="700" fill="#9B6E23">WORKFLOW 03</text>
       <text x="12" y="40" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#1E242B">Receiving &amp; Floor Dock</text>
       <text x="12" y="59" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.2" fill="#5A4D3B">Physical-to-Digital Sync</text>
     </g>
 
     <g transform="translate(606,62)">
       <rect x="0" y="0" width="184" height="78" rx="8" fill="#FAF5EC" stroke="#2D5A52" stroke-width="1.3" />
-      <text x="12" y="20" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" font-weight="700" fill="#2D5A52">RUNTIME BLOCK 04</text>
-      <text x="12" y="40" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#1E242B">Plant &amp; ERP Seam</text>
-      <text x="12" y="59" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.2" fill="#5A4D3B">IT-to-OT Telemetry Bridge</text>
+      <text x="12" y="20" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" font-weight="700" fill="#2D5A52">WORKFLOW 04</text>
+      <text x="12" y="40" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#1E242B">Approvals</text>
+      <text x="12" y="59" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.2" fill="#5A4D3B">One Person Makes the Call</text>
     </g>
 
     <g transform="translate(800,62)">
       <rect x="0" y="0" width="184" height="78" rx="8" fill="#FAF5EC" stroke="#B57D1E" stroke-width="1.3" />
-      <text x="12" y="20" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" font-weight="700" fill="#9B6E23">RUNTIME BLOCK 05</text>
-      <text x="12" y="40" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#1E242B">Executive Discovery</text>
-      <text x="12" y="59" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.2" fill="#5A4D3B">DigOps Blueprint Room</text>
+      <text x="12" y="20" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" font-weight="700" fill="#9B6E23">WORKFLOW 05</text>
+      <text x="12" y="40" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#1E242B">Close &amp; Reconciliation</text>
+      <text x="12" y="59" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.2" fill="#5A4D3B">Ledger &amp; Variance Gates</text>
     </g>
   </g>
 
