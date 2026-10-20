@@ -201,13 +201,13 @@ export default function CollectiveView() {
 
             <div className={s.leadBody}>
               <p style={{ marginBottom: "12px" }}>
-                I&rsquo;ve spent much of my working life beside people who know things their systems don&rsquo;t. They know why a number needs checking, when a plan won&rsquo;t hold, and who to call when the screen says everything is fine. A great deal of what keeps a business alive lives in those small acts of understanding.
+                I&rsquo;ve spent most of my working life next to people who know things their systems don&rsquo;t. They know why a number needs a second look, when a plan won&rsquo;t hold, and who to call when the screen says everything is fine. A lot of what keeps a business running lives in those people, and almost none of it is written down anywhere a system can read.
               </p>
               <p style={{ marginBottom: "12px" }}>
-                I keep coming back to a possibility: that this knowledge does not have to disappear when a project ends or someone moves on. We can give it a form people can examine, question, and improve. Agents can help us do that work. People bring the judgment, the purpose, and the experience of what actually happens.
+                I don&rsquo;t think that knowledge has to walk out the door when the project ends or the person moves on. It can be given a form someone else can read, question, and improve. Agents are good at the writing-down and the carrying. People bring the judgment, the reasons, and the memory of what actually happened on the floor.
               </p>
               <p style={{ marginBottom: "16px" }}>
-                That is the Collective I am working toward. A place to compare notes, build together, and let what we learn become useful beyond the moment that taught us. Each company keeps its own direction and control. Each person has something to bring. We do not all have to build the same thing to help one another get further.
+                That&rsquo;s what the Collective is. I&rsquo;ve got some patterns and three working systems from a few thousand hours in this, and I&rsquo;m opening the door. Not a product, not a pitch. A place to compare notes, build together, and leave the next person a better place to start. Every company keeps its own records and its own direction. If that sounds like your kind of work, write me.
               </p>
             </div>
 
@@ -273,10 +273,10 @@ export default function CollectiveView() {
         <div className={s.heroBottomPlate}>
           <div className={s.commonsPlate}>
             <div className={s.commonsBar}>
-              <span className={s.commonsTag}>01 / HOW A LESSON TRAVELS // INTENT &middot; DEFINE &middot; DELIVER &middot; OUTCOME</span>
+              <span className={s.commonsTag}>01 / HOW A LESSON TRAVELS</span>
               <div className={s.commonsLive}>
                 <span className={s.commonsLiveDot} />
-                <span>PATTERNS SHARED BY CHOICE &bull; YOUR COMPANY CONTROLS ITS RECORDS</span>
+                <span>SHARED BY CHOICE &bull; YOUR COMPANY KEEPS ITS RECORDS</span>
               </div>
             </div>
 
@@ -294,10 +294,10 @@ export default function CollectiveView() {
                 A lesson can travel without taking the business with it<span>.</span>
               </h2>
               <p style={{ fontSize: "15.5px", lineHeight: 1.72, color: "var(--ink)", margin: "0 0 12px 0", maxWidth: "880px" }}>
-                An approval that looks simple on a screen may depend on an absence, a spending limit, and a decision someone made last month. Working through that exception can teach us a better way to build the workflow. With permission, that lesson can become a pattern another team examines and adapts. Their circumstances will be different. The learning gives them a better place to begin.
+                An approval that looks like one click on the screen may depend on someone being out, a spending limit, and a decision made last month. Working through that exception teaches you a better way to build the workflow. With permission, that lesson becomes a pattern another team can pick up and adapt. Their plant is different. Their rules are different. The lesson still gives them a better place to begin.
               </p>
               <p style={{ fontSize: "15.5px", lineHeight: 1.72, color: "var(--muted)", margin: 0, maxWidth: "880px" }}>
-                Sharing is a choice. Private records stay under the company&rsquo;s control. A reusable pattern is reviewed for confidential details before anyone chooses to share it, and the receiving team decides whether it fits. Learning together does not require giving up what is yours.
+                Sharing is a choice, every time. Before a pattern leaves, it&rsquo;s reviewed for anything confidential. The team receiving it decides whether it fits. Nobody gives anything up to learn from each other.
               </p>
             </div>
 
@@ -306,13 +306,13 @@ export default function CollectiveView() {
               <div className={s.commonsCol}>
                 <div>
                   <span className={s.commonsColTag}>01 // UNDERSTAND &amp; SHAPE</span>
-                  <h3 className={s.commonsColTitle}>People Who Know the Work</h3>
+                  <h3 className={s.commonsColTitle}>The People Who Know the Work</h3>
                   <p className={s.commonsColText}>
-                    Instead of months of interviews that end in a binder on a shelf, the people who actually know the work sit with agents in a working session—examining why an exception happens and shaping a workflow they can see and question.
+                    Not months of interviews that end in a binder on a shelf. The people who actually do the work sit with agents in a working session, dig into why the exception happens, and shape a workflow they can see and argue with.
                   </p>
                 </div>
                 <div className={s.commonsColFoot}>
-                  <strong>INTENT &amp; DEFINE:</strong> Human judgment sets the purpose and the boundary.
+                  <strong>HUMAN JUDGMENT:</strong> People set the purpose and the boundary.
                 </div>
               </div>
 
@@ -320,27 +320,27 @@ export default function CollectiveView() {
               <div className={s.commonsCol}>
                 <div>
                   <span className={s.commonsColTag}>02 // REVIEW, TEST &amp; APPROVE</span>
-                  <h3 className={s.commonsColTitle}>Earned Improvement in the Loop</h3>
+                  <h3 className={s.commonsColTitle}>Prove It on Real Rules</h3>
                   <p className={s.commonsColText}>
-                    When the workflow runs against real operating rules, people review the actual result against what was intended, test a proposed adjustment, approve what holds up, and retain the evidence for the next cycle.
+                    The workflow runs against the real operating rules. People check what came out against what was meant, test the fix, approve what holds, and keep the evidence for next time.
                   </p>
                 </div>
                 <div className={s.commonsColFoot}>
-                  <strong>DELIVER &amp; OUTCOME:</strong> Propose in language, admit by rule, remember in the book.
+                  <strong>THE RULE:</strong> Propose in language. Admit by rule. Remember in the book.
                 </div>
               </div>
 
               {/* Col 3 */}
               <div className={s.commonsCol}>
                 <div>
-                  <span className={s.commonsColTag}>03 // PATTERNS SHARED BY CHOICE</span>
+                  <span className={s.commonsColTag}>03 // SHARE BY CHOICE</span>
                   <h3 className={s.commonsColTitle}>A Better Place to Begin</h3>
                   <p className={s.commonsColText}>
-                    Your company controls its records and what, if anything, is shared. When a team chooses to share a reviewed pattern, another team can examine it, question it, and decide whether to adapt it to their own operation.
+                    Your company decides what, if anything, leaves the building. When a team shares a reviewed pattern, another team can read it, question it, and decide whether to adapt it.
                   </p>
                 </div>
                 <div className={s.commonsColFoot}>
-                  <strong>COMPANY CONTROL:</strong> Sharing and adoption are always deliberate choices.
+                  <strong>DELIBERATE CHOICE:</strong> Sharing and adopting are both your call.
                 </div>
               </div>
             </div>
@@ -349,69 +349,73 @@ export default function CollectiveView() {
       </section>
 
       {/* ====================================================================
-          SECTION 02: THEN NAME THE WORKSHOP (THE RIG, B.O.S.S., FLOWCRAFT)
+          SECTION 02: THE SYSTEMS & WHERE THEY STAND (B.O.S.S., FLOWCRAFT, THE RIG)
           ==================================================================== */}
       <section className={s.systemsSection}>
         <div className={s.sectionInner}>
           <div className={s.sectionHead}>
-            <p className={s.eyebrow}>02 / THE SYSTEMS &amp; PRESENT MATURITY</p>
+            <p className={s.eyebrow}>02 / THE SYSTEMS &amp; WHERE THEY STAND</p>
             <h2>The workshop behind the idea<span>.</span></h2>
             <p>
-              <strong>The Rig</strong>, <strong>B.O.S.S.</strong>, and <strong>FlowCraft</strong> are the systems I am bringing together around this work: building software, making sense of an operation, and carrying its workflows into practice. To be clear about present state: <strong>The Rig</strong> is what I use daily in production to build and verify our software; <strong>B.O.S.S.</strong> and <strong>FlowCraft</strong> have demonstrated their core patterns in working proofs of concept and are now being developed into an MVP.
+              If you read the three chapters on{" "}
+              <Link href="/agentic-ai/" style={{ color: "var(--ink)", textDecoration: "underline", fontWeight: 600 }}>
+                Learn through the work
+              </Link>
+              , you&rsquo;ve already met these. <strong>Chapter One</strong> is the business as it actually runs—that&rsquo;s <strong>B.O.S.S.</strong> <strong>Chapter Two</strong> is working with intelligence—that&rsquo;s <strong>FlowCraft.</strong> <strong>Chapter Three</strong> is the machine that builds the machines—that&rsquo;s <strong>The Rig.</strong> Straight about where each one stands: <strong>The Rig</strong> is what I use every day in production to build and check our software; <strong>B.O.S.S.</strong> and <strong>FlowCraft</strong> have proven their core patterns in working proofs of concept and are being built into an MVP now.
             </p>
           </div>
 
           <div className={s.systemsGrid} style={{ marginBottom: "36px" }}>
-            {/* System 1: The Rig */}
+            {/* System 1 (Chapter One): B.O.S.S. */}
             <div className={s.systemCard}>
               <div>
-                <span className={s.systemBadge}>SYSTEM 01 // USED DAILY IN OUR PRODUCTION BUILDS</span>
-                <h3 className={s.systemTitle}>The Rig</h3>
-                <div className={s.systemSub}>Multi-Harness Engineering Workshop</div>
-                <p className={s.systemBody}>
-                  Where builders and agent harnesses work together to design, build, and check software. Work is agreed before building, each agent is given a clear lane, independent checks appropriate to the change—including opposing-model verification where the delivery contract requires it—are recorded before work lands, and lessons stay with the work.
-                </p>
-              </div>
-              <div className={s.systemUseCaseBox}>
-                <span className={s.systemUseCaseLabel}>INSPECTABLE EVIDENCE // DAILY PRODUCTION HARNESS</span>
-                <p className={s.systemUseCaseText}>
-                  Four isolated AI seats (<code>cc</code>, <code>cx</code>, <code>grok</code>, <code>ag</code>) coordinated over an append-only task ledger with opposing-model verification before any build lands—including the build and review cycle for this site.
-                </p>
-              </div>
-            </div>
-
-            {/* System 2: B.O.S.S. */}
-            <div className={s.systemCard}>
-              <div>
-                <span className={s.systemBadge}>SYSTEM 02 // DEMONSTRATED POC &rarr; DEVELOPING MVP</span>
+                <span className={s.systemBadge}>CHAPTER ONE // WORKING POC &rarr; BUILDING MVP</span>
                 <h3 className={s.systemTitle}>B.O.S.S.</h3>
                 <div className={s.systemSub}>Operating Map &amp; Parallel Proving Ground</div>
                 <p className={s.systemBody}>
-                  Where people who know the work map how the business actually runs across orders, purchasing, production, inventory, service, and master data. It helps teams organize messy source material, reconcile disconnected records, and test how a new workflow behaves alongside current operations before relying on it.
+                  Where the people who know the work map how the business really runs: orders, purchasing, production, inventory, service, master data. It takes messy source material and disconnected records, reconciles them, and lets you test a new workflow next to current operations before you lean on it.
                 </p>
               </div>
               <div className={s.systemUseCaseBox}>
                 <span className={s.systemUseCaseLabel}>INSPECTABLE EVIDENCE // WORKING POC</span>
                 <p className={s.systemUseCaseText}>
-                  Demonstrated across 22 canonical operating domains and a 55-step order-to-cash-to-GL reference map used to reconcile legacy item catalogs and disconnected spreadsheets alongside active operations.
+                  22 operating domains mapped, and a 55-step order-to-cash-to-GL reference map used to reconcile legacy item catalogs and loose spreadsheets while the business kept running.
                 </p>
               </div>
             </div>
 
-            {/* System 3: FlowCraft */}
+            {/* System 2 (Chapter Two): FlowCraft */}
             <div className={s.systemCard}>
               <div>
-                <span className={s.systemBadge}>SYSTEM 03 // DEMONSTRATED POC &rarr; DEVELOPING MVP</span>
+                <span className={s.systemBadge}>CHAPTER TWO // WORKING POC &rarr; BUILDING MVP</span>
                 <h3 className={s.systemTitle}>FlowCraft</h3>
                 <div className={s.systemSub}>Human-Agent Workflow Patterns &amp; Runtime</div>
                 <p className={s.systemBody}>
-                  Where bounded human-agent workflows are shaped and carried into daily practice—starting in our own operation and proven POC patterns as we develop toward MVP. Agents assemble the working briefing and prepare the heavy lifting, hard rules enforce policy and accounting boundaries, and an authenticated person makes the call with the permanent record kept in the book.
+                  Where bounded human-agent workflows get shaped and put into daily use. Agents assemble the briefing and do the heavy lifting. Hard rules hold the policy and accounting lines. A real, authenticated person makes the call, and the permanent record goes in the book. We&rsquo;re running it in our own operation first.
                 </p>
               </div>
               <div className={s.systemUseCaseBox}>
                 <span className={s.systemUseCaseLabel}>INSPECTABLE EVIDENCE // WORKING POC &rarr; MVP</span>
                 <p className={s.systemUseCaseText}>
-                  Demonstrated in our live Org Glass workflow board (<code>13</code> numbered programs with wave gates, lease locks, and audit receipts) and bounded approval-delegation POCs enforcing deterministic policy checks outside the model session.
+                  Our live workflow board runs <code>13</code> numbered programs with wave gates, one-owner-at-a-time locks, and an audit receipt on every step. Approval-delegation POCs enforce policy checks outside the model session, so the model can&rsquo;t talk its way past them.
+                </p>
+              </div>
+            </div>
+
+            {/* System 3 (Chapter Three): The Rig */}
+            <div className={s.systemCard}>
+              <div>
+                <span className={s.systemBadge}>CHAPTER THREE // USED DAILY IN PRODUCTION</span>
+                <h3 className={s.systemTitle}>The Rig</h3>
+                <div className={s.systemSub}>Multi-Harness Engineering Workshop</div>
+                <p className={s.systemBody}>
+                  Where builders and agent harnesses design, build, and check software together. The work is agreed before anyone builds. Each agent gets a lane. Independent checks, including an opposing model where the contract requires it, are recorded before anything lands. Lessons stay with the work.
+                </p>
+              </div>
+              <div className={s.systemUseCaseBox}>
+                <span className={s.systemUseCaseLabel}>INSPECTABLE EVIDENCE // DAILY PRODUCTION</span>
+                <p className={s.systemUseCaseText}>
+                  Four isolated AI seats (<code>cc</code>, <code>cx</code>, <code>grok</code>, and <code>ag</code>) working over an append-only task ledger, with opposing-model verification before any build lands. This site was built and reviewed that way.
                 </p>
               </div>
             </div>
@@ -425,7 +429,7 @@ export default function CollectiveView() {
               <div className={s.plateCornerBL} />
               <div className={s.plateCornerBR} />
               <div className={s.blueprintPlateBar}>
-                <span>ARCHITECTURAL DRAFTING PLATE // PEOPLE &amp; AGENTS &bull; THE RIG, B.O.S.S. &amp; FLOWCRAFT &bull; PATTERNS SHARED BY CHOICE</span>
+                <span>ARCHITECTURAL DRAFTING PLATE // PEOPLE &amp; AGENTS &bull; B.O.S.S., FLOWCRAFT &amp; THE RIG &bull; PATTERNS SHARED BY CHOICE</span>
                 <span>CONTINUOUS OUTCOME LOOP</span>
               </div>
               <Link
@@ -435,7 +439,7 @@ export default function CollectiveView() {
               >
                 <Image
                   src="/diagrams/collective-living-paper-plate.svg"
-                  alt="Architectural drafting plate showing people and agents learning through the work across The Rig, B.O.S.S., and FlowCraft"
+                  alt="Architectural drafting plate showing people and agents learning through the work across B.O.S.S., FlowCraft, and The Rig"
                   width={1120}
                   height={830}
                   unoptimized
@@ -466,15 +470,15 @@ export default function CollectiveView() {
       </section>
 
       {/* ====================================================================
-          SECTION 03: TWO DOORS OF INTERACTION (WHAT HAPPENS WHEN YOU WRITE TODAY)
+          SECTION 03: TWO DOORS OF INTERACTION (WHAT HAPPENS WHEN YOU WRITE)
           ==================================================================== */}
       <section className={s.doorsSection}>
         <div className={s.sectionInner}>
           <div className={s.sectionHead}>
-            <p className={s.eyebrow}>03 / WHAT HAPPENS WHEN YOU WRITE TODAY</p>
-            <h2>Start with a direct conversation<span>.</span></h2>
+            <p className={s.eyebrow}>03 / WHAT HAPPENS WHEN YOU WRITE</p>
+            <h2>Start with a straight conversation<span>.</span></h2>
             <p>
-              The Collective is something I am building toward, not a pre-packaged membership funnel. Today, the experience is simple and direct: you write to me, I read it myself, we compare what you are seeing in your work, and we decide together whether there is something useful to explore.
+              You write to me. I read it myself. We compare what you&rsquo;re seeing in your work with what I&rsquo;m seeing in mine, and figure out whether there&rsquo;s something worth doing together. If you want in on the Collective, that&rsquo;s how you get in.
             </p>
           </div>
 
@@ -483,9 +487,9 @@ export default function CollectiveView() {
             <div className={`${s.doorCard} ${s.doorCardPrimary}`}>
               <div>
                 <p className={s.doorEyebrow}>PATH 01 // PEOPLE WHO LIVE CLOSE TO THE WORK</p>
-                <h3 className={s.doorTitle}>Compare notes with Robert.</h3>
+                <h3 className={s.doorTitle}>Compare notes.</h3>
                 <p className={s.doorBody}>
-                  Whether you are on the plant floor, in planning or Finance, leading operations, or building with agents—reach out to compare what you are learning, walk through a workflow exception, or look at how The Rig, B.O.S.S., and FlowCraft are being built.
+                  Plant floor, planning, Finance, running operations, or building with agents. Bring what you&rsquo;re learning, a workflow exception you&rsquo;re stuck on, or questions about how B.O.S.S., FlowCraft, and The Rig are built. If you&rsquo;ve got patterns of your own, even better.
                 </p>
               </div>
               <button
@@ -503,7 +507,7 @@ export default function CollectiveView() {
                 <p className={s.doorEyebrow}>PATH 02 // WORKING THROUGH A REAL SEAM</p>
                 <h3 className={s.doorTitle}>Talk through an operating problem.</h3>
                 <p className={s.doorBody}>
-                  For business owners and operations leaders dealing with a place where the official systems and daily reality don&rsquo;t match. Tell me where the work between the screens is stuck—we will look at the situation together and see if there is a practical first step worth testing.
+                  For owners and operations leaders with a place where the official systems and the daily reality don&rsquo;t match. Tell me where the work between the screens is stuck. We&rsquo;ll look at it together and see if there&rsquo;s a practical first step worth testing.
                 </p>
               </div>
               <button
@@ -515,6 +519,20 @@ export default function CollectiveView() {
               </button>
             </div>
           </div>
+
+          <p
+            style={{
+              textAlign: "center",
+              marginTop: "28px",
+              marginBottom: 0,
+              fontSize: "16px",
+              fontWeight: 600,
+              color: "var(--ink)",
+              fontFamily: "var(--next-font-display), Georgia, serif",
+            }}
+          >
+            That&rsquo;s it. Some patterns, three systems, and an open door. Write me.
+          </p>
         </div>
       </section>
 
@@ -527,7 +545,7 @@ export default function CollectiveView() {
             <p className={s.eyebrow} style={{ marginBottom: "6px" }}>DIRECT CORRESPONDENCE</p>
             <h3>Write to Robert<span>.</span></h3>
             <p>
-              Every note comes straight to my desk and is not publicly posted. When you write, I reply personally so we can compare the situation and decide together whether there is something useful to explore.
+              Every note comes straight to my desk and is not publicly posted. I reply personally so we can compare notes and see what makes sense to do next.
             </p>
           </div>
 
@@ -607,7 +625,7 @@ export default function CollectiveView() {
                 </select>
                 <p className={s.fieldHelp}>
                   {formState.interest === "collaborate"
-                    ? "Compare notes on what you are seeing in the work, an exception that taught you something, or how The Rig, B.O.S.S., and FlowCraft fit together."
+                    ? "Compare notes on what you're seeing in the work, a pattern you're testing, or how B.O.S.S., FlowCraft, and The Rig fit together."
                     : "Tell me where the work between the screens is stuck and what a better day for your team would look like."}
                 </p>
               </div>

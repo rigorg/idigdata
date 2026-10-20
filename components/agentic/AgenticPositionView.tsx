@@ -521,13 +521,12 @@ export default function AgenticPositionView() {
                   <span className={s.seamHighlightDot} aria-hidden="true" />
                   <span>BINARY INTELLIGENCE // ONE MAN AND A CONTEXT WINDOW</span>
                 </span>
-                <span className={s.seamHighlightStamp}>FIELD DEFINITION &middot; ROBERT PADDOCK</span>
               </div>
               <p className={s.seamHighlightQuote} style={{ marginBottom: "10px" }}>
-                &ldquo;&lsquo;Artificial intelligence&rsquo; is the wrong name for what is happening. The whole world is still arguing about what to call it. It is intelligence—there is no denying that—and it is made of zeros and ones. So I call it what it is: <strong>Binary Intelligence</strong>.
+                &ldquo;Artificial intelligence&rdquo; is the wrong name for what is happening. The whole world is still arguing about what to call it. It is intelligence—there is no denying that—and it is made of zeros and ones. So I call it what it is: <strong>Binary Intelligence</strong>.
               </p>
               <p className={s.seamHighlightQuote}>
-                For twenty years I said all I needed to walk into any company and make serious outcomes happen was one man, a laptop, and an internet connection. Today I say it differently: <strong>one man and a context window.</strong> And the same context window I am working in right now serves the CEO exactly as well as it serves the operator on Packaging Line 2. The great equalizer is here. Ain&rsquo;t that something?&rdquo;
+                For twenty years I said all I needed to walk into any company and make serious outcomes happen was one man, a laptop, and an internet connection. Today I say it differently: <strong>one man and a context window.</strong> And the same context window I am working in right now serves the CEO exactly as well as it serves the operator on Packaging Line 2. The great equalizer is here. Ain&rsquo;t that something?
               </p>
             </div>
 
