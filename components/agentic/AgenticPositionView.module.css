@@ -112,13 +112,13 @@
 
 .seamHighlightBanner {
   position: relative;
-  background: #FAF5EA;
+  background: linear-gradient(135deg, #EADFC6 0%, #E3D6B9 100%);
   color: var(--ink);
-  border-top: 1px solid #DDD3BF;
-  border-bottom: 1px solid #DDD3BF;
-  border-left: 3px solid var(--brass);
-  padding: 16px 22px;
-  margin: 4px 0 22px 0;
+  border: 1px solid #C8B58A;
+  border-left: 4px solid var(--brass-dark);
+  box-shadow: 0 2px 10px rgba(108, 85, 47, 0.08);
+  padding: 18px 24px;
+  margin: 6px 0 24px 0;
   max-width: 900px;
 }
 
