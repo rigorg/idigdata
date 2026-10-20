@@ -1,5 +1,6 @@
 import { NextResponse, type NextFetchEvent, type NextRequest } from "next/server";
 import { recordDoorKnock, shouldCaptureDoorKnock } from "@/lib/server/doorKnock";
+import { recordCookielessCount } from "@/lib/server/cookielessCounts";
 import {
   ATTRIBUTION_COOKIE,
   ATTRIBUTION_SECONDS,
@@ -26,6 +27,9 @@ export function proxy(req: NextRequest, event: NextFetchEvent) {
   if (!shouldCaptureDoorKnock(req)) return response;
 
   const marks = resolveTrafficMarks(req);
+  // Separate, identifier-free request counts run independently of analytics consent.
+  event.waitUntil(recordCookielessCount(req, marks.isInternalMarked || marks.isFleetMarked)
+    .catch(() => console.error("cookieless page count unavailable")));
   const consent = req.cookies.get(COOKIE_CONSENT_KEY)?.value;
   const isOptedOut = consent === "declined" || req.cookies.get(ANALYTICS_OPT_OUT_KEY)?.value === "1";
 

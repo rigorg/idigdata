@@ -84,9 +84,9 @@ export default function CookieConsentBanner() {
       </div>
 
       <p className="mt-2 font-body text-[13.5px] leading-snug text-ink dark:text-porcelain/90">
-        We use first-party telemetry and cookies to measure visitor traffic and
-        verify engagement. We do not pre-load tracking cookies until you provide
-        consent. You may accept or decline at any time. Review our{" "}
+        You can accept or decline visitor analytics and engagement tracking.
+        Separate cookie-free counts on Agentic AI and Collective record only the
+        page, hour and known-bot classification, even if you decline. Review our{" "}
         <Link
           href="/privacy/"
           className="font-semibold text-navy underline underline-offset-2 decoration-navy/30 hover:decoration-navy dark:text-cream dark:decoration-cream/40 dark:hover:decoration-cream"

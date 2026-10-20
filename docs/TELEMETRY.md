@@ -1,6 +1,12 @@
 # Telemetry - idigdata-site
 
-Entrance truth and visitor metrics live in DigOps Supabase (`pageviews` table), shared directly with local Operations (`:3300/website`). Telemetry follows a strict legal opt-in model.
+Visitor metrics live in DigOps Supabase (`site_hits` with `pageviews` mirror), shared with Operations (`:3300/website`). Client engagement analytics require acceptance; server door knocks are suppressed on decline. A separate identifier-free request counter is described below.
+
+## Cookieless target-page counts (October 20, 2026)
+
+Capo authorized counts for `/agentic-ai/` and `/collective/`, including requests from visitors who decline analytics. `proxy.ts` records canonical path, UTC hour, `is_bot`, and fixed source `idigdata-cookieless-count` in `site_hits`; no mirror or session linkage. Database-generated row IDs/timestamps are storage bookkeeping, not visitor identifiers. No IP/hash, UA, geo, referrer, URL query or cookies are copied into these records. Existing internal/fleet marks only exclude traffic. No cookies are created by the counter. Production hosts only; GET HTML and non-prefetch RSC requests only. Browser classification is heuristic, not proof of a human; reloads count and cached client navigation can be missed. This is request measurement, not unique visitors, engagement or dwell.
+
+Operations excludes this source from every normal visitor query and uses exact count queries in a separate card. Only the selected date window applies to that card. UTC-hour timestamps are displayed within Pacific date windows. Do not add the counts to visitor totals. No historical reconstruction; collection starts after the site deployment. No new table, migration, external analytics service or public read grant is introduced. The cookie banner and privacy notice distinguish the counter from preference-controlled analytics. General hosting request logs remain separate from these minimal count records.
 
 ## Legal Compliance & Cookie Consent
 

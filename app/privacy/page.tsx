@@ -47,10 +47,10 @@ const SECTIONS: { title: string; body: React.ReactNode }[] = [
     body: (
       <>
         <p className="mb-3">
-          We distinguish between basic server-side request handling and opt-in client analytics. We do not pre-load persistent tracking cookies or fire client tracking beacons until you explicitly choose to accept measurement, and declining suppresses both client beacons and server telemetry recording.
+          We distinguish between identifier-free page counts and preference-controlled visitor analytics. For the Agentic AI and Collective pages, we count eligible page requests even if you decline analytics. These separate count records contain only the page, hour and a known-bot classification. They contain no IP address, visitor or session identifier, fingerprint, location, referrer or campaign data. They cannot tell us who visited, how many unique people visited or how long anyone read. We do not set cookies for these counts.
         </p>
         <p className="mb-3">
-          Unless you have declined telemetry, our server proxy and first-party visit log can record basic page-visit signals to evaluate engagement and protect the site: path, timestamp, referrer, basic device/browser user-agent signals, and optional UTM campaign parameters. We store an anonymous session identifier and a keyed HMAC of client IP &mdash; never the raw IP address &mdash; alongside coarse location headers (country / region / city). We do not collect precise GPS or retain raw proxy header dumps.
+          Separately, unless you have declined visitor analytics, our server proxy and first-party visit log can record basic page-visit signals to evaluate engagement and protect the site: path, timestamp, referrer, basic device/browser user-agent signals, and optional UTM campaign parameters. We store an anonymous session identifier and a keyed HMAC of client IP &mdash; never the raw IP address &mdash; alongside coarse location headers (country / region / city). Declining suppresses that visitor log and client engagement beacons. We do not collect precise GPS or retain raw proxy header dumps.
         </p>
         <p>
           When you explicitly accept cookies, we also enable client-side first-party engagement beacons, campaign attribution persistence, and Vercel Analytics for aggregate visit counts. You can change or revoke your preference at any time using the controls below.
