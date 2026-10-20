@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, type FormEvent } from "react";
+import React, { useState, type FormEvent } from "react";
 import s from "./AgenticPositionView.module.css";
 
 // ============================================================================
@@ -10,7 +10,7 @@ import s from "./AgenticPositionView.module.css";
 // ============================================================================
 
 /**
- * 01 / Theme 01 — Transforming Zeros and Ones (The Seam & Sacred Hex)
+ * 01 / Chapter One — How Businesses Actually Run (The Seam & Sacred Hex)
  */
 function ProcessConstellationSpot() {
   return (
@@ -28,7 +28,7 @@ function ProcessConstellationSpot() {
 }
 
 /**
- * 02 / Theme 02 — People and Agents at Work (Human + Binary Synthesis)
+ * 02 / Chapter Two — Working with Intelligence (Human + Binary Synthesis)
  */
 function WorkflowBlocksSpot() {
   return (
@@ -50,7 +50,7 @@ function WorkflowBlocksSpot() {
 }
 
 /**
- * 03 / Theme 03 — The Agentic Development Company (Multi-Harness Compass & Cube)
+ * 03 / Chapter Three — The Machine That Builds the Workflows (Multi-Harness Compass & Cube)
  */
 function FactorySpot() {
   return (
@@ -69,7 +69,6 @@ function FactorySpot() {
 
 /**
  * Ethereal Architectural Paper-Drafting Plate (Hero Centerpiece)
- * Replaces the commercial box chart with warm paper sacred geometry & compass drafting.
  */
 function PeopleSystemsWorkflowSpot() {
   return (
@@ -112,7 +111,7 @@ function PeopleSystemsWorkflowSpot() {
 }
 
 // ============================================================================
-// THE THREE THEMES & FIELD NOTES SPECIFICATION
+// THE THREE CHAPTERS & FIELD NOTES SPECIFICATION
 // ============================================================================
 
 interface TitanQuote {
@@ -137,12 +136,14 @@ interface FieldNoteCard {
 
 interface CollectivePillar {
   num: string;
+  chapterLabel: string;
   tag: string;
   actionLabel: string;
   title: string;
   subtitle: string;
   spot: "constellation" | "blocks" | "factory";
-  paragraphs: React.ReactNode[];
+  leadParagraphs: React.ReactNode[];
+  expandedParagraphs: React.ReactNode[];
   titanQuote?: TitanQuote;
   fieldNoteCards: FieldNoteCard[];
   closingQuestion: string;
@@ -154,12 +155,13 @@ interface CollectivePillar {
 const COLLECTIVES: CollectivePillar[] = [
   {
     num: "01",
-    tag: "CHAPTER 01 // PEOPLE, SYSTEMS & WORKFLOWS · CURRENT-STATE REALITY",
+    chapterLabel: "Chapter One",
+    tag: "CHAPTER ONE // CURRENT-STATE REALITY",
     actionLabel: "Share How You See This Seam",
-    title: "What’s Old Is New, What’s New Is Old",
-    subtitle: "Bad Data, Shadow IT, and the Mighty Excel Spreadsheet: How Businesses Actually Run.",
+    title: "How Businesses Actually Run",
+    subtitle: "What’s Old Is New, What’s New Is Old — Bad Data, Shadow IT, and the Mighty Excel Spreadsheet.",
     spot: "constellation",
-    paragraphs: [
+    leadParagraphs: [
       "The ERP says the work is scheduled. The person on the floor knows the machine cannot run. Somewhere between those two facts sits a spreadsheet, a phone call, and someone making sure the business gets through the day.",
       <>
         If you want to understand why enterprise AI is both so exciting and so misunderstood right now, you have to look at the fifty-year road that brought us here. By the 1970s and early 1980s, COBOL-based systems were already carrying much of the ledger, inventory, and payroll work that established the transaction patterns companies still run on today. Then came the big ERP wave, promising one integrated system to run the entire enterprise. Even looking out through 2027,{" "}
@@ -171,10 +173,12 @@ const COLLECTIVES: CollectivePillar[] = [
         >
           Gartner forecasts
         </a>{" "}
-        that more than 70% of recently implemented ERP initiatives will fail to fully meet their original business-case goals. In my experience, one reason is painfully familiar: the implementation goes live while the work between the screens still sits on a clipboard. Alongside those ERPs came massive CapEx implementation budgets for armies of system integrators and implementation partners who somehow never quite seem to leave.
+        that more than 70% of recently implemented ERP initiatives will fail to fully meet their original business-case goals. In my experience, one reason is painfully familiar: the implementation goes live while the work between the screens still sits on a clipboard.
       </>,
-      "Then the SaaS revolution rolled in. SaaS brought useful point tools, but in my experience, the commercial structure of most platforms—per-seat subscriptions, renewal lock-in, and data kept inside vendor walls—often leaves the software rigid where your company’s actual workflows need to bend.",
-      "So what happened on the ground? Because a business is a living machine that has to make money every single day—buying, producing, selling, shipping, paying bills, making payroll, and navigating multi-entity, multi-location taxes and regulations—people had to find a way to make the machine work. When you peel back the curtain on almost any company today, what actually runs the business? The mighty Excel spreadsheet—and decades of Shadow IT.",
+      "Then the SaaS revolution rolled in, bringing useful point tools whose commercial structure—per-seat subscriptions, renewal lock-in, and data kept inside vendor walls—often leaves the software rigid where your company’s actual workflows need to bend. So when you peel back the curtain on almost any company today, what actually runs the business? The mighty Excel spreadsheet—and decades of Shadow IT.",
+    ],
+    expandedParagraphs: [
+      "Because a business is a living machine that has to make money every single day—buying, producing, selling, shipping, paying bills, making payroll, and navigating multi-entity, multi-location taxes and regulations—people had to find a way to make the machine work. Alongside those ERPs came massive CapEx implementation budgets for armies of system integrators and implementation partners who somehow never quite seem to leave.",
       "To get their jobs done, functional departments had to build their own spreadsheet bridges or go out and buy their own departmental software. Over ten, twenty, or thirty years, companies accumulated custom programs, partner portals, and Shadow IT projects that got siloed, forgotten about, or left exposed. I’ve found twenty-year-old shadow systems humming away in a corner that nobody in leadership even knows exist—except the one guy who quietly fixes it whenever it breaks. Meanwhile, on the financial side, just corralling the sprawl of subscription costs, real active user counts versus unused seats, contract term dates, and now AI token usage has become a full-time battle of its own.",
       "Those gaps are the seams—and the intangible work between the tasks is what people like Mary and Don carry every morning. Inside a legacy company, no one person can see the whole anymore. They structurally can’t—from the IT department to the functional domains, it has grown into too big of a collective tangle over the decades, sitting on top of the same root problem we have fought since the beginning: bad, disconnected data. Yet the people inside those domains show up every day and perform quiet heroics—both in the physical world and with zeros and ones—just to keep the business moving. And when a company finally decides to transform, those exact same people, who already have a full-time day job keeping the lights on, get pulled into a command-and-control marathon of project management, stakeholder alignment, and change management when up-to-date SOPs barely exist.",
       "Here is why I have genuine hope for where we are going: what is old is new, and what is new is old. The fundamentals are still People, Systems, and Workflows—and cleaning up the data core. But with agents in the work, we no longer have to put people through a two-year root canal just to map where the business stands. We can sit beside the people doing the work—'show me how you do it today'—and use intelligence to accelerate the heavy lifting: organizing source material from messy spreadsheets and forgotten Shadow IT tools, comparing unwritten workflows, and surfacing inconsistencies for your people to validate.",
@@ -195,7 +199,7 @@ const COLLECTIVES: CollectivePillar[] = [
         stamp: "MARY'S SHEET & DON WMS",
         title: "Mary’s Sheet, Don WMS & His Partner 'DON'",
         excerpt:
-          "Walk almost any manufacturing or distribution floor after a big ERP go-live and you will meet the people whose daily heroics keep the operation running—from Mary's 6:30 AM clipboard next to an unbolted pump to Don WMS navigating 40 years of item schemas in tight New York warehouse bays.",
+          "From Mary's 6:30 AM clipboard next to an unbolted pump to Don WMS navigating 40 years of item schemas in tight New York warehouse bays.",
         fullText: [
           "Walk almost any manufacturing or distribution floor after a big ERP go-live and you will meet the people whose daily heroics keep the operation running. On the plant floor, it is 'Mary’s Sheet'—a composite portrait from plant cutovers I have led: the folded 11x17 Excel spreadsheet on a green metal clipboard at 6:30 AM that knows Packaging Line 2 has its filling pump unbolted on the workbench twenty feet away, even while the new ERP screen shows green and ready.",
           "In tight New York warehouse quarters cobbled together over 30 to 40 years, it was Don WMS—who held four decades of bastardized item schemas, missing vendor labels, and mismatched department keys in his head so product could keep moving fast through crowded bays.",
@@ -210,7 +214,7 @@ const COLLECTIVES: CollectivePillar[] = [
         stamp: "TUESDAY NIGHT IBP",
         title: "“Integrated Business Planning” & The Day-Job Dilemma",
         excerpt:
-          "In practice, 'Integrated Business Planning' usually isn't integrated at all—it is a group of dedicated people with full-time day jobs working late into a Tuesday night wrestling CSVs and Excel sheets so Wednesday's numbers make sense.",
+          "Why 'Integrated Business Planning' is usually a group of dedicated people with full-time day jobs working late into Tuesday night wrestling Excel sheets for Wednesday's meeting.",
         fullText: [
           "Heroics don't just happen next to unbolted pumps or loading docks; they happen in office hallways, on phone calls, and in conference rooms just to keep one set of numbers standing. Look at what most companies call 'Integrated Business Planning.' In practice, it usually isn't integrated at all—it is a group of dedicated people who already have full-time day jobs working late into a Tuesday night, exporting CSVs, trading phone calls down the hall, and wrestling Excel sheets across Sales, Production, Inventory, and Finance just to cobble together numbers that make sense for Wednesday's meeting.",
           "The irony is that by the time Wednesday's meeting wraps up, the physical floor has moved and Tuesday night's spreadsheet is already out of date. When you organize the underlying data core and let intelligence handle that pre-meeting reconciliation continuously, people stop spending their evenings assembling numbers for a meeting—and actually get to use the meeting to guide the business.",
@@ -221,20 +225,24 @@ const COLLECTIVES: CollectivePillar[] = [
     ],
     closingQuestion: "That’s what I’m seeing in the current-state seams. Where do you see the biggest gaps between official systems and daily reality in your operation?",
     fieldNoteHref: "/agentic-ai/marys-sheet/",
-    fieldNoteLabel: "Open Standalone Essay 01: What’s Old Is New, What’s New Is Old",
-    topicKey: "01 / What's Old Is New: Mary's Sheet, Don WMS & Shadow IT",
+    fieldNoteLabel: "Open Standalone Chapter One Page",
+    topicKey: "01 / Chapter One: How Businesses Actually Run (Mary's Sheet, Don WMS & Shadow IT)",
   },
   {
     num: "02",
-    tag: "CHAPTER 02 // PEOPLE, SYSTEMS & WORKFLOWS · MEMORY & THE CONTEXT WORKSPACE",
+    chapterLabel: "Chapter Two",
+    tag: "CHAPTER TWO // MEMORY & THE CONTEXT WORKSPACE",
     actionLabel: "Share How You See This Shift",
-    title: "Working with Intelligence: Memory, Context, and the New Daily Reality",
-    subtitle: "What Happens When Institutional Memory, System Connectivity, and Human Judgment Come Together in One Workspace.",
+    title: "Working with Intelligence",
+    subtitle: "Living Institutional Memory, the Context Workspace, and Decisions That Stay in the Book.",
     spot: "blocks",
-    paragraphs: [
+    leadParagraphs: [
       "Once you sit beside the people doing the work and start untangling those current-state seams with them, a big question opens up: What does daily work actually look like on the other side?",
       "For the last thirty years, enterprise software treated 'go-live' as the finish line. Once the initial rollout was declared finished, the screens froze in place while the business kept changing—forcing people right back into spreadsheets, workarounds, and costly change orders. Worse, software trained humans to work like data-entry clerks: clicking through fifteen different tabs, hunting for reports, and copying numbers from one window to another.",
-      "In the agentic era, the history is gathered when you sit down, and the decision is still in the book after you close the laptop. What sits underneath a well-architected business is living institutional memory: your structured records, your historical decisions, your operational history, and the map of how your systems and workflows connect. Because go-live is no longer a frozen finish line, you can compare what you intended against the actual outcome, learn what happened, and let both the people and the system get sharper every cycle.",
+      "In the agentic era, the history is gathered when you sit down, and the decision is still in the book after you close the laptop. What sits underneath a well-architected business is living institutional memory: your structured records, your historical decisions, your operational history, and the map of how your systems and workflows connect.",
+    ],
+    expandedParagraphs: [
+      "Because go-live is no longer a frozen finish line, you can compare what you intended against the actual outcome, learn what happened, and let both the people and the system get sharper every cycle.",
       "How do people actually interact with that intelligence? Instead of hunting through rigid menus, the person works in a focused workspace—whether a role-tuned screen on the floor or an interactive session like the one on my desk right now—while the system assembles the relevant records, history, and a second view of the same facts into the agent's context window. A context window is a working briefing, not the system of record: it is assembled for the judgment at hand, while institutional memory is the durable record that remains in the book after the session closes. From that workspace, an authenticated human can weigh options, reach consensus, and take permitted actions—writing the decision into the system of record, dispatching an email, routing an approval, or drafting a report—with the permanent trail recorded outside the session.",
     ],
     fieldNoteCards: [
@@ -244,7 +252,7 @@ const COLLECTIVES: CollectivePillar[] = [
         stamp: "OVER A BEER: ERP DEBATE",
         title: "Over a Beer with a Big-SI Executive: Can Agentics Build an Enterprise ERP?",
         excerpt:
-          "A spirited argument over a beer with a close friend and senior executive at a major global ERP systems integrator—and why separating deterministic accounting controls from 'forced history' lets companies regain control of their workflows.",
+          "A spirited argument over a beer with a senior executive at a major global ERP integrator—and why separating accounting math from 'forced history' changes the game.",
         fullText: [
           "Not long ago, I sat down over a beer with a close friend I respect—a senior executive at one of the major global system integrators for tier-one ERPs. We got into a spirited debate from opposite sides of the table. His point was serious and earned: tier-one ERPs encode thirty years and billions of dollars of statutory controls, multi-entity consolidation, tax rules, and audit trails where a 99% probabilistic guess is a compliance failure. In his view, that regulatory moat guarantees that giant ERP vendors and massive SI programs will always own the core.",
           "Coming from the customer and operator side of the table after carrying 50+ transformations through cutover, I agreed with his premise on deterministic rules—and disagreed with his conclusion. You never ask a language model to improvise debits and credits or invent tax rules. Where the legacy ERP world has trapped companies is confusing accounting math with 'forced history'—where the software only remembers the path its rigid screens allowed, not the path the business actually took on Mary's clipboard, and charges seven-figure change orders whenever your reality shifts. You keep authoritative financial books and required statutory controls in proven transaction systems, and enforce hard deterministic rules (double-entry invariants, 3-way match tolerances, lot traceability, and statutory validations) before any workflow change is admitted. The first workflows you build with agents are never the general ledger; they are the seams the ERP already lies about—the unbolted pump, the item that will not scan, and the Tuesday-night reconciliation.",
@@ -258,7 +266,7 @@ const COLLECTIVES: CollectivePillar[] = [
         stamp: "APPROVALS & CONTEXT",
         title: "The Approval Workflow Paradox",
         excerpt:
-          "Why approval workflows sound simple on paper but turn into a tangled mess in standard SaaS—and how an authenticated leader can propose a route in language ('Sam from Finance while I'm on vacation'), admit by deterministic rule, and remember in the book.",
+          "How an authenticated leader can propose a route in language ('Sam from Finance while I'm on vacation'), admit by deterministic rule, and remember in the book.",
         fullText: [
           "Recently, I sat in a working session with a group of regional business leaders, exploring how people will actually work with agents five minutes after a system goes live. Out of all the debates we had, one of the most interesting centered on something that sounds dead simple on paper: approval workflows. In a real company, approvals are never simple. Once you factor in dollar limits, departmental budgets, multi-entity rules, and temporary delegations, standard SaaS approval engines turn into a tangled mess—they are all 'configurable,' yet they always seem to require painful modifications.",
           "In that session, we explored how the dynamic changes when you combine authenticated human identity and strict policy guardrails with a context workspace. Instead of waiting on IT to rewire a rigid routing tree, an authenticated leader can state the route in plain language: 'Get me an approver from Department X—and while I’m on vacation next week, Sam from Finance will approve on my behalf.' Here is the rule that makes that safe: the model that understood the sentence must not be the thing that admits the action. The model proposes the route in language, a deterministic policy check verifies whether Sam is eligible under the dollar limits and dates (and records a 'no' outside the session if a rule is crossed), and the permanent audit trail is written into the book. Propose in language, admit by rule, remember in the book. In fact, I prepared this essay the same way—thought-partnered, challenged, and checked from inside a live context session.",
@@ -269,21 +277,23 @@ const COLLECTIVES: CollectivePillar[] = [
     ],
     closingQuestion: "Where do rigid screens or tangled approval trees slow your team down the most today?",
     fieldNoteHref: "/agentic-ai/the-application-layer/",
-    fieldNoteLabel: "Open Standalone Essay 02: Working with Intelligence",
-    topicKey: "02 / Working with Intelligence: ERP Debate & Approval Workflows",
+    fieldNoteLabel: "Open Standalone Chapter Two Page",
+    topicKey: "02 / Chapter Two: Working with Intelligence (ERP Debate & Approval Workflows)",
   },
   {
     num: "03",
-    tag: "CHAPTER 03 // PEOPLE, SYSTEMS & WORKFLOWS · THE BUILDER’S FOUNDRY",
+    chapterLabel: "Chapter Three",
+    tag: "CHAPTER THREE // THE BUILDER’S FOUNDRY",
     actionLabel: "Share Your Builder Experience",
-    title: "The Machine That Builds the Machines—and the Workflows They Run",
-    subtitle: "Moving Past Prompting and Vibe Coding into Multi-Harness Engineering: Falling Down the Rabbit Hole in Pure Builder Joy—and Finding Your Way Out of the Disco.",
+    title: "The Machine That Builds the Workflows",
+    subtitle: "Moving Past Prompting and Vibe Coding into Multi-Harness Engineering: Down the Rabbit Hole and Out of the Disco.",
     spot: "factory",
-    paragraphs: [
+    leadParagraphs: [
       "Across the tech world today, you hear frontier builders talk about 'building the machine that builds the machine'—software factories where AI agents help engineers build software. On the operations side of the house, our work has to land on the plant and office floor. The thing worth building is the machine that builds the workflows the business actually runs.",
-      "Over the past three years, I have spent thousands of hours hands-on in this new wave of software engineering. Building real enterprise systems with agents is a very different discipline from prompt engineering or weekend 'vibe coding.' Even inside an agentic workshop, everything comes right back to People, Systems, and Workflows. Coordinating multiple frontier AI harnesses in isolated lanes requires the same operational discipline as running a great plant: clear human intent and architectural command at the top, stress-testing specifications before steel is cut, automated inspection, and an accountability rule that nobody signs their own release and no agent grades its own homework.",
-      "When people talk about 'software factories' from the outside, they often make it sound clinical and effortless. To tell the truth from the inside—and why I love this craft so much—I want to share two connected experiences I’ve had building this way: falling down the Rabbit Hole in pure joy, and staying down there long enough that you find what I call the Disco.",
+      "Over the past three years, I have spent thousands of hours hands-on in this new wave of software engineering. Building real enterprise systems with agents is a very different discipline from prompt engineering or weekend 'vibe coding.' Even inside an agentic workshop, everything comes right back to People, Systems, and Workflows.",
+      "Coordinating multiple frontier AI harnesses in isolated lanes requires the same operational discipline as running a great plant: clear human intent and architectural command at the top, stress-testing specifications before steel is cut, automated inspection, and an accountability rule that nobody signs their own release and no agent grades its own homework. To tell the truth from the inside, I want to share two connected experiences I’ve had building this way: falling down the Rabbit Hole in pure joy, and staying down there long enough that you find what I call the Disco.",
     ],
+    expandedParagraphs: [],
     fieldNoteCards: [
       {
         id: "fn-rabbit-hole",
@@ -291,7 +301,7 @@ const COLLECTIVES: CollectivePillar[] = [
         stamp: "DOWN THE RABBIT HOLE",
         title: "Down the Rabbit Hole at Midnight: When You Get Your Hands Back",
         excerpt:
-          "The human in this field note is me: after twenty years of watching traditional software programs take eighteen months just to align requirements, sitting at my desk at midnight watching coordinated agent harnesses turn operational blueprints into working systems is pure builder joy.",
+          "After twenty years of watching traditional software programs take eighteen months just to align requirements, sitting at my desk at midnight building with coordinated agent harnesses is pure builder joy.",
         fullText: [
           "The human in this field note is me. For twenty years as an operator and transformation leader, I could see clearly in my head how a company's data core, its financial controls, and its floor workflows ought to fit together—and then I would watch traditional software programs take eighteen months just to align requirements and build a fraction of it.",
           "When multi-harness agentic development clicked, falling down the rabbit hole felt like stepping into a new world. Sitting at my desk at midnight watching coordinated agent harnesses turn decades of operational patterns into working data models, financial engines, and workflows at a pace I never thought I would see in my career was pure builder joy. For anyone who loves how businesses and systems fit together, this craft gives you your hands back.",
@@ -305,7 +315,7 @@ const COLLECTIVES: CollectivePillar[] = [
         stamp: "FINDING THE DISCO",
         title: "Stay Down Long Enough and You Find the Disco (The House of Mirrors)",
         excerpt:
-          "Here is the other side of that midnight joy: stay down the rabbit hole long enough building real systems and you find the Disco—confident green summaries over broken state, and learning to agree on the work, bound each lane, and check what actually changed.",
+          "The other side of midnight joy: confident green summaries over broken state, and learning to agree on the work, bound each lane, and check what actually changed.",
         fullText: [
           "Here is the other side of that midnight joy: if you stay down the rabbit hole long enough building real enterprise systems, you find what I call the Disco—a house of mirrors under flashing lights. That is the part nobody puts in a demo: believing an agent's confident green summary only to discover the underlying state never reconciled, having to burn a subsystem all the way down to the ground and rebuild it from scratch, and keeping your footing while model behaviors shift every week.",
           "Deep inside a real codebase, unconstrained vibe coding turns into one step forward, two steps sideways, with agents generously grading their own homework while breaking downstream rules. The hard part was learning to ask a less exciting question after the midnight demo: what actually changed, where is it recorded, and can a separate harness fail it? Finding my way out of that house of mirrors meant agreeing on the work before building, giving each agent a clear boundary, using independent checks appropriate to the change—including opposing-model verification where the delivery contract calls for it—and keeping the evidence and lessons with the work.",
@@ -316,8 +326,8 @@ const COLLECTIVES: CollectivePillar[] = [
     ],
     closingQuestion: "If you are building with agents right now, I’d love to know: have you hit that house of mirrors yet, and what helped you find your way out?",
     fieldNoteHref: "/agentic-ai/the-delivery-seam/",
-    fieldNoteLabel: "Open Standalone Essay 03: The Machine That Builds the Workflows",
-    topicKey: "03 / The Machine That Builds the Workflows: Rabbit Hole & The Disco",
+    fieldNoteLabel: "Open Standalone Chapter Three Page",
+    topicKey: "03 / Chapter Three: The Machine That Builds the Workflows (Rabbit Hole & The Disco)",
   },
 ];
 
@@ -337,22 +347,15 @@ type FormErrors = {
 export default function AgenticPositionView() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [topic, setTopic] = useState("Across the Three Themes");
+  const [topic, setTopic] = useState("Across the Three Chapters");
   const [message, setMessage] = useState("");
   const [hp, setHp] = useState("");
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "recorded" | "error">("idle");
   const [errors, setErrors] = useState<FormErrors>({});
-  const [openNotes, setOpenNotes] = useState<Record<string, boolean>>({
-    "fn-mary": true,
-    "fn-don": true,
-    "fn-beer-erp": true,
-    "fn-context-window": true,
-    "fn-rabbit-hole": true,
-    "fn-disco": true,
-  });
+  const [expandedChapters, setExpandedChapters] = useState<Record<string, boolean>>({});
 
-  function toggleFieldNote(id: string) {
-    setOpenNotes((prev) => ({ ...prev, [id]: !prev[id] }));
+  function toggleChapter(num: string) {
+    setExpandedChapters((prev) => ({ ...prev, [num]: !prev[num] }));
   }
 
   function handleSelectTopic(selectedTopic: string) {
@@ -422,7 +425,7 @@ export default function AgenticPositionView() {
   return (
     <article className={s.page}>
       {/* ====================================================================
-          MASTHEAD / HERO ("Learn through the work.")
+           MASTHEAD / HERO ("Learn through the work.")
           ==================================================================== */}
       <header className={s.hero}>
         <div className={s.heroInner}>
@@ -482,14 +485,14 @@ export default function AgenticPositionView() {
 
         {/* Section Navigation */}
         <nav aria-label="Dispatch navigation" className={s.chapterNav}>
-          <a href="#field-briefs">01 / Three Core Themes &amp; Notes from the Field</a>
+          <a href="#field-briefs">01 / Three Chapters &amp; Notes from the Field</a>
           <a href="#open-systems">02 / Lead-In to The Collective</a>
           <a href="#conversation">03 / Direct Correspondence</a>
         </nav>
       </header>
 
       {/* ====================================================================
-          SECTION 01: THE THREE CORE THEMES & NOTES FROM THE FIELD
+          SECTION 01: THE THREE CHAPTERS & NOTES FROM THE FIELD (3-COLUMN + EXPANDABLE)
           ==================================================================== */}
       <section id="field-briefs" className={s.triadSection}>
         <span id="systems-arc" style={{ display: "block", position: "relative", top: "-80px", visibility: "hidden" }} />
@@ -497,162 +500,277 @@ export default function AgenticPositionView() {
         <span id="dispatches" style={{ display: "block", position: "relative", top: "-80px", visibility: "hidden" }} />
         <div className={s.triadInner}>
           <div className={s.triadHead}>
-            <p className={s.eyebrow}>01 / Three Core Themes &amp; Notes from the Field</p>
-            <h2>What’s Old Is New, Working with Intelligence, and the Machine That Builds the Workflows<span>.</span></h2>
+            <p className={s.eyebrow}>01 / Three Chapters &amp; Notes from the Field</p>
+            <h2>How Businesses Actually Run, Working with Intelligence, and the Machine That Builds the Workflows<span>.</span></h2>
             <p className={s.triadDek}>
-              Three connected field theses on <strong>People, Systems, and Workflows</strong>: what people do today that official systems cannot see, what changes when institutional memory and permitted actions meet in a context workspace, and what it takes to build that capability without believing our own demos.
+              Three chapters on <strong>People, Systems, and Workflows</strong>. Start with the opening of each chapter in the three columns below—and click <strong>Expand to Larger Format</strong> on any chapter to read the full story and its Notes from the Field.
             </p>
           </div>
 
           <div className={s.triadGrid}>
-            {COLLECTIVES.map((c) => (
-              <article key={c.num} className={s.triadCard} id={`collective-${topicSlug(c.title)}`}>
-                <div>
-                  <div className={s.triadCardSpot}>
-                    <div className={s.triadSpotFrame}>
-                      {c.spot === "constellation" && <ProcessConstellationSpot />}
-                      {c.spot === "blocks" && <WorkflowBlocksSpot />}
-                      {c.spot === "factory" && <FactorySpot />}
-                    </div>
-                    <span className={s.triadNumTag}>{c.tag}</span>
-                  </div>
-
-                  <h3 className={s.triadCardTitle}>{c.title}</h3>
-                  <div className={s.triadCardSubtitle}>{c.subtitle}</div>
-
-                  {/* Substantive Professional Theme Write-Up */}
-                  <div style={{ marginTop: "14px", display: "flex", flexDirection: "column", gap: "14px" }}>
-                    {c.paragraphs.map((pText, idx) => (
-                      <p key={idx} className={s.triadCardBody} style={{ margin: 0 }}>
-                        {pText}
-                      </p>
-                    ))}
-                  </div>
-
-                  {/* Supporting Industry Corroboration / Macro Consensus */}
-                  {c.titanQuote && (
-                    <>
-                      <div style={{ marginTop: "20px", marginBottom: "6px" }}>
-                        <span className={s.triadSectionTag}>
-                          {c.titanQuote.isQuoted === false ? "ARCHITECTURAL PRINCIPLE // FIELD THESIS" : "INDUSTRY PERSPECTIVE // THE MACRO VIEW"}
-                        </span>
+            {COLLECTIVES.map((c) => {
+              const isExpanded = !!expandedChapters[c.num];
+              return (
+                <article
+                  key={c.num}
+                  className={`${s.triadCard} ${isExpanded ? s.triadCardExpanded : ""}`}
+                  id={`collective-${topicSlug(c.title)}`}
+                >
+                  <div>
+                    <div className={s.triadCardSpot}>
+                      <div className={s.triadSpotFrame}>
+                        {c.spot === "constellation" && <ProcessConstellationSpot />}
+                        {c.spot === "blocks" && <WorkflowBlocksSpot />}
+                        {c.spot === "factory" && <FactorySpot />}
                       </div>
-                      <div className={s.triadQuoteBlock}>
-                        <div className={s.triadQuoteMeta}>
-                          <span className={s.triadQuoteSpeaker}>{c.titanQuote.speaker}</span>
-                          {c.titanQuote.sourceUrl ? (
-                            <a
-                              href={c.titanQuote.sourceUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className={s.triadQuoteSource}
-                              style={{ textDecoration: "underline" }}
-                            >
-                              • {c.titanQuote.source} &#8599;
-                            </a>
-                          ) : (
-                            <span className={s.triadQuoteSource}>• {c.titanQuote.source}</span>
-                          )}
-                        </div>
-                        <blockquote className={s.triadQuoteText}>
-                          {c.titanQuote.isQuoted === false ? c.titanQuote.quote : <>&ldquo;{c.titanQuote.quote}&rdquo;</>}
-                        </blockquote>
-                        <div className={s.triadQuoteRole}>{c.titanQuote.role}</div>
-                      </div>
-                    </>
-                  )}
-
-                  {/* Notes from the Field (Excerpt + Expandable Drawer) */}
-                  <div style={{ marginTop: "22px", marginBottom: "8px" }}>
-                    <span className={s.triadSectionTag}>
-                      NOTES FROM THE FIELD // {c.fieldNoteCards.length > 1 ? `${c.fieldNoteCards.length} FIELD NOTES` : "1 FIELD NOTE"}
-                    </span>
-                  </div>
-
-                  {c.fieldNoteCards.map((fn) => {
-                    const isOpen = !!openNotes[fn.id];
-                    return (
-                      <div key={fn.id} className={s.triadFieldNoteCard} style={{ marginTop: "12px" }}>
-                        <div className={s.triadFieldNoteHead}>
-                          <div className={s.triadFieldNoteRubric}>
-                            <span className={s.triadFieldNoteDot} aria-hidden="true" />
-                            <span>{fn.rubric}</span>
-                          </div>
-                          <span className={s.triadFieldNoteStamp}>{fn.stamp}</span>
-                        </div>
-
-                        <div style={{ fontWeight: 700, fontSize: "15px", color: "var(--ink)", marginBottom: "6px", fontFamily: "var(--next-font-display), Georgia, serif" }}>
-                          {fn.title}
-                        </div>
-
-                        {!isOpen ? (
-                          <p className={s.triadFieldNoteText} style={{ marginBottom: "10px" }}>
-                            {fn.excerpt}
-                          </p>
-                        ) : (
-                          <div style={{ display: "flex", flexDirection: "column", gap: "10px", marginBottom: "10px" }}>
-                            {fn.fullText.map((para, pIdx) => (
-                              <p key={pIdx} className={s.triadFieldNoteText} style={{ margin: 0 }}>
-                                {para}
-                              </p>
-                            ))}
-                          </div>
-                        )}
-
-                        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "8px", paddingTop: "8px", borderTop: "1px dashed var(--line)" }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: "10px", flexWrap: "wrap" }}>
+                        <span className={s.triadNumTag}>{c.tag}</span>
+                        {isExpanded && (
                           <button
                             type="button"
-                            onClick={() => toggleFieldNote(fn.id)}
+                            onClick={() => toggleChapter(c.num)}
                             style={{
-                              background: "none",
-                              border: "none",
-                              padding: 0,
-                              cursor: "pointer",
-                              fontSize: "11.5px",
+                              background: "var(--parchment)",
+                              border: "1px solid var(--brass)",
+                              borderRadius: "3px",
+                              padding: "4px 10px",
+                              fontSize: "10.5px",
+                              fontFamily: "var(--next-font-mono), monospace",
                               fontWeight: 700,
                               letterSpacing: "0.06em",
                               textTransform: "uppercase",
-                              color: "var(--brass-dark)",
-                              textDecoration: "underline",
+                              color: "var(--ink)",
+                              cursor: "pointer",
                             }}
                           >
-                            {isOpen ? "Close Field Note ▴" : "Open Full Field Note ▾"}
+                            Collapse to 3-Column View &#9652;
                           </button>
-                          <span style={{ fontSize: "10.5px", color: "var(--muted)", fontFamily: "ui-monospace, monospace" }}>
-                            {fn.signature}
+                        )}
+                      </div>
+                    </div>
+
+                    <div
+                      style={{
+                        fontFamily: "var(--next-font-mono), monospace",
+                        fontSize: "11px",
+                        fontWeight: 700,
+                        letterSpacing: "0.1em",
+                        textTransform: "uppercase",
+                        color: "var(--brass-dark)",
+                        marginBottom: "4px",
+                      }}
+                    >
+                      {c.chapterLabel}
+                    </div>
+                    <h3 className={s.triadCardTitle}>{c.title}</h3>
+                    <div className={s.triadCardSubtitle}>{c.subtitle}</div>
+
+                    {/* Lead-In Paragraphs (Always visible to draw the reader in) */}
+                    <div
+                      className={isExpanded ? s.triadExpandedProse : undefined}
+                      style={{ marginTop: "14px", display: "flex", flexDirection: "column", gap: "14px" }}
+                    >
+                      {c.leadParagraphs.map((pText, idx) => (
+                        <p key={`lead-${idx}`} className={s.triadCardBody} style={{ margin: 0 }}>
+                          {pText}
+                        </p>
+                      ))}
+
+                      {/* Remaining Chapter Paragraphs (Visible when expanded to larger format) */}
+                      {isExpanded &&
+                        c.expandedParagraphs.map((pText, idx) => (
+                          <p key={`exp-${idx}`} className={s.triadCardBody} style={{ margin: 0 }}>
+                            {pText}
+                          </p>
+                        ))}
+                    </div>
+
+                    {/*Collapsed View: Preview of Field Notes + Expand Button */}
+                    {!isExpanded && (
+                      <>
+                        <div className={s.triadNotePreviewList}>
+                          <span className={s.triadSectionTag} style={{ marginBottom: "2px" }}>
+                            INSIDE THIS CHAPTER // {c.fieldNoteCards.length} NOTES FROM THE FIELD
+                          </span>
+                          {c.fieldNoteCards.map((fn) => (
+                            <button
+                              key={fn.id}
+                              type="button"
+                              onClick={() => toggleChapter(c.num)}
+                              className={s.triadNotePreviewItem}
+                            >
+                              <div
+                                style={{
+                                  fontSize: "10px",
+                                  fontFamily: "var(--next-font-mono), monospace",
+                                  fontWeight: 700,
+                                  letterSpacing: "0.08em",
+                                  color: "var(--brass-dark)",
+                                  textTransform: "uppercase",
+                                  marginBottom: "2px",
+                                }}
+                              >
+                                {fn.stamp}
+                              </div>
+                              <div
+                                style={{
+                                  fontSize: "13.5px",
+                                  fontWeight: 700,
+                                  color: "var(--ink)",
+                                  fontFamily: "var(--next-font-display), Georgia, serif",
+                                }}
+                              >
+                                {fn.title}
+                              </div>
+                            </button>
+                          ))}
+                        </div>
+
+                        <button
+                          type="button"
+                          onClick={() => toggleChapter(c.num)}
+                          className={s.triadExpandBtn}
+                        >
+                          <span>Expand {c.chapterLabel} to Larger Format</span>
+                          <span aria-hidden="true">&#9662;</span>
+                        </button>
+                      </>
+                    )}
+
+                    {/* Expanded Larger Format: Quote + Full Field Notes + Closing Question */}
+                    {isExpanded && (
+                      <div style={{ marginTop: "22px" }}>
+                        {c.titanQuote && (
+                          <div className={s.triadExpandedProse}>
+                            <div style={{ marginTop: "20px", marginBottom: "6px" }}>
+                              <span className={s.triadSectionTag}>
+                                {c.titanQuote.isQuoted === false ? "ARCHITECTURAL PRINCIPLE // FIELD THESIS" : "INDUSTRY PERSPECTIVE // THE MACRO VIEW"}
+                              </span>
+                            </div>
+                            <div className={s.triadQuoteBlock}>
+                              <div className={s.triadQuoteMeta}>
+                                <span className={s.triadQuoteSpeaker}>{c.titanQuote.speaker}</span>
+                                {c.titanQuote.sourceUrl ? (
+                                  <a
+                                    href={c.titanQuote.sourceUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={s.triadQuoteSource}
+                                    style={{ textDecoration: "underline" }}
+                                  >
+                                    • {c.titanQuote.source} &#8599;
+                                  </a>
+                                ) : (
+                                  <span className={s.triadQuoteSource}>• {c.titanQuote.source}</span>
+                                )}
+                              </div>
+                              <blockquote className={s.triadQuoteText}>
+                                {c.titanQuote.isQuoted === false ? c.titanQuote.quote : <>&ldquo;{c.titanQuote.quote}&rdquo;</>}
+                              </blockquote>
+                              <div className={s.triadQuoteRole}>{c.titanQuote.role}</div>
+                            </div>
+                          </div>
+                        )}
+
+                        <div style={{ marginTop: "24px", marginBottom: "8px" }}>
+                          <span className={s.triadSectionTag}>
+                            NOTES FROM THE FIELD // {c.fieldNoteCards.length} FIELD NOTES IN {c.chapterLabel.toUpperCase()}
                           </span>
                         </div>
+
+                        <div className={s.triadExpandedNotesGrid}>
+                          {c.fieldNoteCards.map((fn) => (
+                            <div key={fn.id} className={s.triadFieldNoteCard} style={{ marginTop: 0 }}>
+                              <div className={s.triadFieldNoteHead}>
+                                <div className={s.triadFieldNoteRubric}>
+                                  <span className={s.triadFieldNoteDot} aria-hidden="true" />
+                                  <span>{fn.rubric}</span>
+                                </div>
+                                <span className={s.triadFieldNoteStamp}>{fn.stamp}</span>
+                              </div>
+
+                              <div
+                                style={{
+                                  fontWeight: 700,
+                                  fontSize: "16px",
+                                  color: "var(--ink)",
+                                  marginBottom: "10px",
+                                  fontFamily: "var(--next-font-display), Georgia, serif",
+                                }}
+                              >
+                                {fn.title}
+                              </div>
+
+                              <div style={{ display: "flex", flexDirection: "column", gap: "10px", marginBottom: "12px" }}>
+                                {fn.fullText.map((para, pIdx) => (
+                                  <p key={pIdx} className={s.triadFieldNoteText} style={{ margin: 0 }}>
+                                    {para}
+                                  </p>
+                                ))}
+                              </div>
+
+                              <div
+                                style={{
+                                  display: "flex",
+                                  alignItems: "center",
+                                  justifyContent: "space-between",
+                                  flexWrap: "wrap",
+                                  gap: "8px",
+                                  paddingTop: "8px",
+                                  borderTop: "1px dashed var(--line)",
+                                }}
+                              >
+                                <span style={{ fontSize: "10.5px", color: "var(--muted)", fontFamily: "ui-monospace, monospace" }}>
+                                  {fn.signature}
+                                </span>
+                                <span style={{ fontSize: "10px", color: "var(--brass-dark)", fontFamily: "ui-monospace, monospace", fontWeight: 700 }}>
+                                  {fn.footerLabel}
+                                </span>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+
+                        {/* Closing Conversation Invitation */}
+                        <div className={s.triadProvocation} style={{ marginTop: "22px", marginBottom: "8px" }}>
+                          <span className={s.triadProvocationLabel}>OPEN CONVERSATION // HOW DO YOU SEE IT?</span>
+                          <p className={s.triadProvocationText}>{c.closingQuestion}</p>
+                        </div>
+
+                        <button
+                          type="button"
+                          onClick={() => toggleChapter(c.num)}
+                          className={s.triadExpandBtn}
+                          style={{ maxWidth: "360px" }}
+                        >
+                          <span>Collapse {c.chapterLabel} Back to 3-Column View</span>
+                          <span aria-hidden="true">&#9652;</span>
+                        </button>
                       </div>
-                    );
-                  })}
-
-                  {/* Closing Conversation Invitation (Placed After Field Notes) */}
-                  <div className={s.triadProvocation} style={{ marginTop: "20px", marginBottom: "4px" }}>
-                    <span className={s.triadProvocationLabel}>OPEN CONVERSATION // HOW DO YOU SEE IT?</span>
-                    <p className={s.triadProvocationText}>{c.closingQuestion}</p>
+                    )}
                   </div>
-                </div>
 
-                <div className={s.triadActions} style={{ marginTop: "20px" }}>
-                  <Link href={c.fieldNoteHref} className={s.triadReadBtn}>
-                    <span>{c.fieldNoteLabel}</span>
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                      <path d="M3 7H11M11 7L7.5 3.5M11 7L7.5 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </Link>
-                  <button
-                    type="button"
-                    onClick={() => handleSelectTopic(c.topicKey)}
-                    className={s.triadDiscussBtn}
-                  >
-                    <span>{c.actionLabel}</span>
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                      <path d="M3 7H11M11 7L7.5 3.5M11 7L7.5 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </button>
-                </div>
-              </article>
-            ))}
+                  <div className={s.triadActions} style={{ marginTop: "20px" }}>
+                    <Link href={c.fieldNoteHref} className={s.triadReadBtn}>
+                      <span>{c.fieldNoteLabel}</span>
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                        <path d="M3 7H11M11 7L7.5 3.5M11 7L7.5 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </Link>
+                    <button
+                      type="button"
+                      onClick={() => handleSelectTopic(c.topicKey)}
+                      className={s.triadDiscussBtn}
+                    >
+                      <span>{c.actionLabel}</span>
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                        <path d="M3 7H11M11 7L7.5 3.5M11 7L7.5 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </button>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -809,17 +927,17 @@ export default function AgenticPositionView() {
                     className={s.select}
                     disabled={status === "submitting"}
                   >
-                    <option value="Across the Three Themes">
-                      Across the Three Themes
+                    <option value="Across the Three Chapters">
+                      Across the Three Chapters
                     </option>
-                    <option value="01 / What's Old Is New: Mary's Sheet, Don WMS & Shadow IT">
-                      01 / What&apos;s Old Is New, What&apos;s New Is Old: Mary&apos;s Sheet, Don WMS &amp; Shadow IT
+                    <option value="01 / Chapter One: How Businesses Actually Run (Mary's Sheet, Don WMS & Shadow IT)">
+                      Chapter One / How Businesses Actually Run (Mary&apos;s Sheet, Don WMS &amp; Shadow IT)
                     </option>
-                    <option value="02 / Working with Intelligence: ERP Debate & Approval Workflows">
-                      02 / Working with Intelligence: The ERP Debate &amp; Approval Workflows
+                    <option value="02 / Chapter Two: Working with Intelligence (ERP Debate & Approval Workflows)">
+                      Chapter Two / Working with Intelligence (The ERP Debate &amp; Approval Workflows)
                     </option>
-                    <option value="03 / The Machine That Builds the Workflows: Rabbit Hole & The Disco">
-                      03 / The Machine That Builds the Workflows: Down the Rabbit Hole &amp; Finding the Disco
+                    <option value="03 / Chapter Three: The Machine That Builds the Workflows (Rabbit Hole & The Disco)">
+                      Chapter Three / The Machine That Builds the Workflows (Rabbit Hole &amp; The Disco)
                     </option>
                     <option value="The Collective / Collaboration & Shared Patterns">
                       The Collective / People, Agents &amp; Shared Patterns

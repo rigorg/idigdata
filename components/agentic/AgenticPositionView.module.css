@@ -1601,8 +1601,9 @@
 
 .triadGrid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 44px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: stretch;
 }
 
 @media (max-width: 1024px) {
@@ -1617,12 +1618,93 @@
   border: 1px solid var(--line);
   border-top: 4px solid var(--brass);
   border-radius: 4px;
-  padding: 32px;
+  padding: 28px 26px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-top-color 0.2s ease;
+}
+
+.triadCardExpanded {
+  grid-column: 1 / -1;
+  padding: 36px 40px;
+  border-top-width: 5px;
+  border-top-color: var(--ink);
+  box-shadow: 0 10px 30px rgba(30, 32, 36, 0.08);
+}
+
+@media (max-width: 768px) {
+  .triadCardExpanded {
+    padding: 24px 20px;
+  }
+}
+
+.triadExpandedProse {
+  max-width: 880px;
+}
+
+.triadExpandedNotesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 12px;
+}
+
+@media (max-width: 900px) {
+  .triadExpandedNotesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.triadExpandBtn {
+  width: 100%;
+  margin-top: 18px;
+  padding: 11px 16px;
+  background: #FAF6EE;
+  border: 1px solid var(--brass);
+  border-radius: 4px;
+  color: var(--ink);
+  font-family: var(--next-font-mono), monospace;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.triadExpandBtn:hover {
+  background: #F1E9D8;
+  border-color: var(--ink);
+}
+
+.triadNotePreviewList {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.triadNotePreviewItem {
+  background: #FAF6EE;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--brass);
+  border-radius: 3px;
+  padding: 9px 12px;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.triadNotePreviewItem:hover {
+  background: #F4EFE5;
+  border-color: var(--brass-dark);
 }
 
 .triadCard:hover {
