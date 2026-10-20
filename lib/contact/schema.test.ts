@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import {
   ContactSchema,
+  isLikelyBotSpam,
   sanitizeHeaderField,
 } from "./schema";
 
@@ -14,6 +15,9 @@ describe("contact schema", () => {
       message: "Need a living asset review.",
     });
     assert.equal(parsed.success, true);
+    if (parsed.success) {
+      assert.equal(isLikelyBotSpam(parsed.data), false);
+    }
   });
 
   it("rejects article_request ghost interest", () => {
@@ -48,5 +52,43 @@ describe("contact schema", () => {
 
   it("strips CR/LF from header fields", () => {
     assert.equal(sanitizeHeaderField("evil\r\nBcc: x@y.z"), "evil Bcc: x@y.z");
+  });
+
+  it("identifies automated form-stuffing bot spam without false positives on real inquiries", () => {
+    // Dot-stuffed Gmail + gibberish note
+    assert.equal(
+      isLikelyBotSpam({
+        name: "Mxoh Mkmix",
+        email: "eq.a.no.k.a.k.a0.67@gmail.com",
+        company: "Yutyfwrqzc LLC",
+        role: "",
+        message: "[THE BLOCK SCOPING PROPOSAL]\n\nMine: the_block\n\nNo outcomes pre-selected from catalog (direct inquiry).\n\nClient Note / Situation:\ngrJxQYBUStIMpuBtXfcDC",
+      }),
+      true,
+    );
+
+    // Pure numeric ("funky numbers") message inside template wrapper
+    assert.equal(
+      isLikelyBotSpam({
+        name: "John Smith",
+        email: "john.smith@example.com",
+        company: "Acme Corp",
+        role: "VP",
+        message: "[THE COLLECTIVE // INQUIRY]\nTopic: Peer Collaboration & Shared Patterns\n\n3893655059",
+      }),
+      true,
+    );
+
+    // Legitimate executive inquiry passes cleanly
+    assert.equal(
+      isLikelyBotSpam({
+        name: "Robert Paddock",
+        email: "first.last@gmail.com",
+        company: "Sierra Nevada",
+        role: "CIO",
+        message: "[THE COLLECTIVE // INQUIRY]\nTopic: Compare Notes & Shared Patterns\n\nLooking to compare notes on ERP cutover and workflow governance.",
+      }),
+      false,
+    );
   });
 });

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import {
   ContactSchema,
+  isLikelyBotSpam,
   sanitizeHeaderField,
 } from "@/lib/contact/schema";
 import { getDigOpsSupabaseForContact } from "@/lib/server/digopsSupabase";
@@ -94,6 +95,10 @@ export async function POST(req: NextRequest) {
   const parsed = ContactSchema.safeParse(body);
   if (!parsed.success) {
     return NextResponse.json({ ok: false, error: "validation_failed" }, { status: 400 });
+  }
+
+  if (isLikelyBotSpam(parsed.data)) {
+    return NextResponse.json({ ok: true, lead_id: "silenced" });
   }
 
   const { name, email, role, company, message, interestType } = parsed.data;
