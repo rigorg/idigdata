@@ -349,19 +349,19 @@ export default function CollectiveView() {
       </section>
 
       {/* ====================================================================
-          SECTION 02: THE SYSTEMS & WHERE THEY STAND (B.O.S.S., FLOWCRAFT, THE RIG)
+          SECTION 02: THE SYSTEMS (B.O.S.S., FLOWCRAFT, THE RIG) — ONE SPINE, ONE LOOP
           ==================================================================== */}
       <section className={s.systemsSection}>
         <div className={s.sectionInner}>
           <div className={s.sectionHead}>
-            <p className={s.eyebrow}>02 / THE SYSTEMS &amp; WHERE THEY STAND</p>
-            <h2>The workshop behind the idea<span>.</span></h2>
+            <p className={s.eyebrow}>02 / THE SYSTEMS</p>
+            <h2>Three systems, one set of patterns<span>.</span></h2>
             <p>
               If you read the three chapters on{" "}
               <Link href="/agentic-ai/" style={{ color: "var(--ink)", textDecoration: "underline", fontWeight: 600 }}>
                 Learn through the work
               </Link>
-              , you&rsquo;ve already met these. <strong>Chapter One</strong> is the business as it actually runs—that&rsquo;s <strong>B.O.S.S.</strong> <strong>Chapter Two</strong> is working with intelligence—that&rsquo;s <strong>FlowCraft.</strong> <strong>Chapter Three</strong> is the machine that builds the machines—that&rsquo;s <strong>The Rig.</strong> Straight about where each one stands: <strong>The Rig</strong> is what I use every day in production to build and check our software; <strong>B.O.S.S.</strong> and <strong>FlowCraft</strong> have proven their core patterns in working proofs of concept and are being built into an MVP now.
+              , you&rsquo;ve already met these. <strong>Chapter One</strong> is the business as it actually runs: that&rsquo;s <strong>B.O.S.S.</strong> <strong>Chapter Two</strong> is working with intelligence: that&rsquo;s <strong>FlowCraft.</strong> <strong>Chapter Three</strong> is the machine that builds the machines: that&rsquo;s <strong>The Rig.</strong> None of them is a product. They&rsquo;re templates and patterns, built on a few core patterns that have held up in real work. Each one tracks at the same level: an <strong>org</strong>, the <strong>instance</strong> of it that&rsquo;s actually running, the <strong>assets</strong> that instance holds, and the <strong>outcomes</strong> it produces. And every outcome runs the same loop: <strong>intent, define, build, outcome</strong>, with the outcome read back against the intent. That&rsquo;s the part that&rsquo;s ours. The rest I&rsquo;d rather show you than write up.
             </p>
           </div>
 
@@ -369,17 +369,17 @@ export default function CollectiveView() {
             {/* System 1 (Chapter One): B.O.S.S. */}
             <div className={s.systemCard}>
               <div>
-                <span className={s.systemBadge}>CHAPTER ONE // WORKING POC &rarr; BUILDING MVP</span>
+                <span className={s.systemBadge}>CHAPTER ONE // THE BUSINESS AS IT RUNS</span>
                 <h3 className={s.systemTitle}>B.O.S.S.</h3>
-                <div className={s.systemSub}>Operating Map &amp; Parallel Proving Ground</div>
+                <div className={s.systemSub}>Operating Map &amp; Proving Ground</div>
                 <p className={s.systemBody}>
-                  Where the people who know the work map how the business really runs: orders, purchasing, production, inventory, service, master data. It takes messy source material and disconnected records, reconciles them, and lets you test a new workflow next to current operations before you lean on it.
+                  Where the people who know the work map how the business really runs: orders, purchasing, production, inventory, service, master data. Messy source material and disconnected records get reconciled into one map you can read, question, and test against. A new workflow runs next to current operations before anyone leans on it.
                 </p>
               </div>
               <div className={s.systemUseCaseBox}>
-                <span className={s.systemUseCaseLabel}>INSPECTABLE EVIDENCE // WORKING POC</span>
+                <span className={s.systemUseCaseLabel}>FROM THE WORK // ONE REAL BUSINESS, MAPPED</span>
                 <p className={s.systemUseCaseText}>
-                  22 operating domains mapped, and a 55-step order-to-cash-to-GL reference map used to reconcile legacy item catalogs and loose spreadsheets while the business kept running.
+                  Twenty-two operating domains and a 55-step order-to-cash-to-GL reference map, built while the business kept running. The map is the instance. Every record on it is an asset with an owner, and every reconciliation is an outcome you can check.
                 </p>
               </div>
             </div>
@@ -387,17 +387,17 @@ export default function CollectiveView() {
             {/* System 2 (Chapter Two): FlowCraft */}
             <div className={s.systemCard}>
               <div>
-                <span className={s.systemBadge}>CHAPTER TWO // WORKING POC &rarr; BUILDING MVP</span>
+                <span className={s.systemBadge}>CHAPTER TWO // WORKING WITH INTELLIGENCE</span>
                 <h3 className={s.systemTitle}>FlowCraft</h3>
-                <div className={s.systemSub}>Human-Agent Workflow Patterns &amp; Runtime</div>
+                <div className={s.systemSub}>Workflow Patterns &amp; Runtime</div>
                 <p className={s.systemBody}>
-                  Where bounded human-agent workflows get shaped and put into daily use. Agents assemble the briefing and do the heavy lifting. Hard rules hold the policy and accounting lines. A real, authenticated person makes the call, and the permanent record goes in the book. We&rsquo;re running it in our own operation first.
+                  Where bounded human-agent workflows get shaped and put into daily use. Agents assemble the briefing and do the heavy lifting. Hard rules hold the policy and accounting lines. A real, authenticated person makes the call, and the permanent record goes in the book. We run it in our own operation first.
                 </p>
               </div>
               <div className={s.systemUseCaseBox}>
-                <span className={s.systemUseCaseLabel}>INSPECTABLE EVIDENCE // WORKING POC &rarr; MVP</span>
+                <span className={s.systemUseCaseLabel}>FROM THE WORK // RUNNING IN OUR OWN SHOP</span>
                 <p className={s.systemUseCaseText}>
-                  Our live workflow board runs <code>13</code> numbered programs with wave gates, one-owner-at-a-time locks, and an audit receipt on every step. Approval-delegation POCs enforce policy checks outside the model session, so the model can&rsquo;t talk its way past them.
+                  Named workflow blocks an instance can run: one owner at a time, a receipt on every step, and the outcome read back against the intent that started it. Policy checks sit outside the model session, so the model can&rsquo;t talk its way past them.
                 </p>
               </div>
             </div>
@@ -405,17 +405,17 @@ export default function CollectiveView() {
             {/* System 3 (Chapter Three): The Rig */}
             <div className={s.systemCard}>
               <div>
-                <span className={s.systemBadge}>CHAPTER THREE // USED DAILY IN PRODUCTION</span>
+                <span className={s.systemBadge}>CHAPTER THREE // THE FOUNDRY</span>
                 <h3 className={s.systemTitle}>The Rig</h3>
-                <div className={s.systemSub}>Multi-Harness Engineering Workshop</div>
+                <div className={s.systemSub}>The Machine That Builds the Machines</div>
                 <p className={s.systemBody}>
-                  Where builders and agent harnesses design, build, and check software together. The work is agreed before anyone builds. Each agent gets a lane. Independent checks, including an opposing model where the contract requires it, are recorded before anything lands. Lessons stay with the work.
+                  Where builders and agent harnesses design, build, and check software together. The work is agreed before anyone builds. Each agent gets a lane. Independent checks, including an opposing model where the contract requires it, are recorded before anything lands. Lessons stay with the work. Same loop as the other two: intent, define, build, outcome. Here it&rsquo;s pointed at the building itself.
                 </p>
               </div>
               <div className={s.systemUseCaseBox}>
-                <span className={s.systemUseCaseLabel}>INSPECTABLE EVIDENCE // DAILY PRODUCTION</span>
+                <span className={s.systemUseCaseLabel}>FROM THE WORK // THIS SITE</span>
                 <p className={s.systemUseCaseText}>
-                  Four isolated AI seats (<code>cc</code>, <code>cx</code>, <code>grok</code>, and <code>ag</code>) working over an append-only task ledger, with opposing-model verification before any build lands. This site was built and reviewed that way.
+                  Several AI harnesses, each in its own lane, working one shared ledger of agreed work, with an opposing model checking before anything lands. This site was built and reviewed that way.
                 </p>
               </div>
             </div>

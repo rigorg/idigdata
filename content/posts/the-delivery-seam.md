@@ -10,7 +10,7 @@ topic: "Chapter Three // The Builder’s Foundry"
 
 *Why Building Enterprise Workflow Software with Agents Takes a Disciplined Foundry: Down the Rabbit Hole and Out of the Disco.*
 
-Not everybody goes to the machine that builds the machines, and they should not have to. Most people want to live in **Chapter Two**, inside the machine, working with intelligence to run and improve their workflows. **But somebody has to build the foundry underneath that makes it possible.** Today our multi-harness engineering workshop runs daily in production for our own builds. Our operating map and workflow runtime have proven their core patterns in working proofs of concept and are being developed into an MVP. That foundry is what it takes for the equalizer to hold up under audit.
+Not everybody goes to the machine that builds the machines, and they should not have to. Most people want to live in **Chapter Two**, inside the machine, working with intelligence to run and improve their workflows. **But somebody has to build the foundry underneath that makes it possible.** Today our multi-harness engineering workshop runs daily in production for our own builds, and the operating map and workflow runtime it turns out run in our own shop first. That foundry is what it takes for the equalizer to hold up under audit.
 
 Building at this level for three years taught me one rule above all. **Discipline is not optional, because an undisciplined agent behaves exactly like an undisciplined enterprise: green status on the surface, broken state underneath.** Coordinating multiple AI harnesses in isolated lanes requires clear human intent at the top, agreement on the work before steel is cut, independent inspection, and a standing rule that no agent ever grades its own homework.
 
