@@ -1682,9 +1682,86 @@
   padding: 28px 26px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-top-color 0.2s ease;
+}
+
+/* ---- Three-column lock: HEAD / LEAD / FOOT ----------------------------------
+   The grid stretches all three cards to the tallest card. Inside each card:
+   - .triadCardHead  : spot + label + title + subtitle (title/subtitle min-heights
+                       lock the header block so the lead prose starts on one line)
+   - .triadCardLead  : the two balanced lead paragraphs (flex: 1 absorbs any
+                       residual height difference)
+   - .triadCardFoot  : margin-top:auto pins the quote bubble, INSIDE THIS CHAPTER
+                       preview, Read button, and action bar to the card bottom so
+                       they line up horizontally across the three columns.
+   ---------------------------------------------------------------------------- */
+.triadCardHead {
+  flex: 0 0 auto;
+}
+
+.triadCardLead {
+  flex: 1 1 auto;
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.triadCardFoot {
+  flex: 0 0 auto;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.triadQuoteSlot {
+  margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+.triadQuoteSlot .triadQuoteBlock {
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.triadQuoteSlot .triadQuoteText {
+  flex: 1 1 auto;
+}
+
+.triadNotePreviewTitle {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--ink);
+  font-family: var(--next-font-display), Georgia, serif;
+  line-height: 1.3;
+}
+
+@media (min-width: 1025px) {
+  .triadCardCollapsed .triadCardTitle {
+    line-height: 1.2;
+    min-height: 3.6em; /* 3 title lines ("The Machine That Builds the Machines That Build the Workflows") */
+  }
+
+  .triadCardCollapsed .triadCardSubtitle {
+    line-height: 1.5;
+    min-height: 6em; /* 4 subtitle lines */
+  }
+
+  .triadCardCollapsed .triadQuoteSlot .triadQuoteBlock {
+    min-height: 236px; /* longest bubble (Benioff) at column width; shorter quotes pad to match */
+  }
+
+  .triadCardCollapsed .triadNotePreviewItem {
+    min-height: 72px; /* stamp + 2-line title (measured at 1440px); 1-line titles pad to match */
+  }
+
+  .triadCardCollapsed .triadActions {
+    min-height: 118px; /* two stacked action buttons */
+  }
 }
 
 .triadCardExpanded {
@@ -1968,7 +2045,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-top: auto;
+  margin-top: 20px;
   padding-top: 20px;
   border-top: 1px solid var(--line);
 }

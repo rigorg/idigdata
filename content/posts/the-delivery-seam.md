@@ -53,4 +53,4 @@ That third layer is not glamorous. It is late-night sessions, broken builds, and
 
 ### Continue Reading
 - → Step Inside **[The Collective: What We Learn Should Carry Forward](/collective/)**
-- ← Previous: **[Chapter Two: Working with Intelligence — Where People Run, Propose, and Govern Workflows](/agentic-ai/the-application-layer/)**
+- ← Previous: **[Chapter Two: Working with Intelligence — Humans and Agents Running the Workflows That Run the Business](/agentic-ai/the-application-layer/)**

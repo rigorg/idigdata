@@ -167,7 +167,7 @@ const COLLECTIVES: CollectivePillar[] = [
     spot: "constellation",
     leadParagraphs: [
       <>
-        Every company I walk into is standing on fifty years of accumulated technology. By the 1970s and early 1980s, COBOL systems were already carrying the ledger, inventory, and payroll, and they set the transaction patterns companies still run on today. Those got buried under &rsquo;90s ERPs, bolted to 2010s SaaS platforms, with a twenty-year-old shadow system humming in a corner that nobody dares touch because only one person knows how to fix it when it breaks.{" "}
+        Every company I walk into is standing on fifty years of accumulated technology. COBOL systems from the 1970s still carry the ledger, inventory, and payroll, and they set the transaction patterns companies run on today. Those got buried under &rsquo;90s ERPs, bolted to 2010s SaaS platforms, with a twenty-year-old shadow system humming in a corner that nobody dares touch because only one person knows how to fix it.{" "}
         <a
           href="https://www.gartner.com/en/information-technology/topics/enterprise-resource-planning"
           target="_blank"
@@ -176,12 +176,12 @@ const COLLECTIVES: CollectivePillar[] = [
         >
           Gartner forecasts
         </a>{" "}
-        that by 2027 more than 70% of recently implemented ERP initiatives will fail to fully meet their original business-case goals. In my experience one reason is painfully familiar: the implementation goes live while the work between the screens still sits on a clipboard.
+        that by 2027 more than 70% of recently implemented ERP initiatives will fail to fully meet their original business-case goals. One reason is painfully familiar: the implementation goes live while the work between the screens still sits on a clipboard.
       </>,
-      "For twenty years my toolkit was a laptop, an internet connection, and one question: show me how you actually do it today. When I enter a business, I go to three places first. The CFO, because the books have to hold up: GAAP-compliant financials, statutory controls, and an audit trail you can defend. The Compliance Officer, to establish which legal and regulatory obligations the business cannot compromise. Then I follow Integrated Business Planning—the evolution of S&OP that puts Finance and strategy in the same cadence as supply and operations—all the way down to the floor. The industry is still arguing about what to call that, too. The floor is where recorded state meets operating reality. The two almost never agree.",
+      "For twenty years my toolkit was a laptop, an internet connection, and one question: show me how you actually do it today. I go to three places first. The CFO, because the books have to hold up under GAAP, statutory controls, and an audit trail you can defend. The Compliance Officer, for the legal and regulatory obligations the business cannot compromise. Then I follow Integrated Business Planning all the way down to the floor, where recorded state meets operating reality. The two almost never agree.",
     ],
     expandedParagraphs: [
-      "What makes enterprise operations so demanding is that a business relies on two connected views of the same reality, each with different timing and validation requirements. Finance needs the books: accruals, postings, multi-entity consolidations, statutory controls, and a formal close that cannot be rushed or guessed. Operations needs current floor visibility: volume, cases shipped, what is sitting in the bays, and whether Packaging Line 2 can actually run right now. Both views have to reconcile to the same underlying events. In most companies, Finance and Operations can only connect them by rebuilding the relationship in spreadsheets every month.",
+      "Integrated Business Planning—the evolution of S&OP that puts Finance and strategy in the same cadence as supply and operations, and the industry is still arguing about what to call it—exists because a business relies on two connected views of the same reality, each with different timing and validation requirements. Finance needs the books: accruals, postings, multi-entity consolidations, statutory controls, and a formal close that cannot be rushed or guessed. Operations needs current floor visibility: volume, cases shipped, what is sitting in the bays, and whether Packaging Line 2 can actually run right now. Both views have to reconcile to the same underlying events. In most companies, Finance and Operations can only connect them by rebuilding the relationship in spreadsheets every month.",
       <>
         The consulting world calls that problem &ldquo;disparate silos.&rdquo; On the floor it means a workflow is never actually a flow. It is sporadic. An order enters one system, inventory sits in a second, freight lives in a third, and the per-seat, renewal-locked, data-behind-the-vendor-wall economics of most SaaS leave the software rigid exactly where the company&rsquo;s workflow needs to bend.{" "}
         <a
@@ -247,18 +247,19 @@ const COLLECTIVES: CollectivePillar[] = [
   {
     num: "02",
     chapterLabel: "Chapter Two",
-    tag: "CHAPTER TWO // MEMORY & THE RUNTIME WORKSPACE",
+    tag: "CHAPTER TWO // THE OPERATING INSTANCE",
     actionLabel: "Share How You See This Shift",
     title: "Working with Intelligence",
-    subtitle: "Where People Run, Propose, and Govern Workflows — Living Memory, the Context Workspace, and Decisions That Stay in the Book.",
+    subtitle: "Humans and Agents Running the Workflows That Run the Business — The ERP Conversation, the SaaS Killer, and One Person With a Context Window.",
     spot: "blocks",
     leadParagraphs: [
-      "Pick up the story five minutes after go-live. Most business leaders and operators do not want to live inside a software foundry. They do not want to manage deployment pipelines or build the machine that builds the machines. They want to be in the machine, working with intelligence on top of data they trust.",
-      "In the agentic era the most important distinction is one almost nobody talks about: the difference between a context window and institutional memory. A context window is a working briefing, not the system of record. It is assembled for the judgment at hand. Institutional memory is the durable record—the decisions, the outcomes, and the audit trail—that remains in the book after the session closes. Get that distinction right and the great equalizer becomes something a CFO can sign off on. Get it wrong and it is just a very fast way to repeat the same mistake.",
+      "Pick up the story five minutes after go-live. The business still has to run. Purchase orders have to cut, receiving has to post, payroll has to clear, approvals have to route, and the month has to close. This is the operating instance of the company, where humans and agents work together inside the workflows that execute the actual transactions. For thirty years that meant renting the work back from software: twenty SaaS point solutions charging per-seat tolls, a monolithic ERP whose screens froze at go-live, and a seven-figure change order every time the floor changed. This is the ERP conversation, and it is the SaaS killer.",
+      "The alternative is one person and a context window, from the CEO to Mary on Packaging Line 2, working with agents directly on top of a reconciled data core and deterministic accounting rules. People and agents run the daily transactions together. When reality shifts on the floor, an operator proposes the change in plain language, a hard rule admits or refuses it, and the book remembers the outcome. The workflow and the book carry the memory of the business. The window is only the briefing.",
     ],
     expandedParagraphs: [
-      "For the last thirty years, enterprise software treated go-live as the finish line. Once the rollout was declared done, the screens froze in place while the business kept changing, which pushed people right back into spreadsheets, sporadic workarounds, and seven-figure change orders. Worse, the software trained experienced operators to work like data-entry clerks, clicking through fifteen tabs and copying numbers from one window to another.",
-      "This is what I mean when I say the same context window serves the CEO and Mary on Packaging Line 2. The caliber of intelligence is identical. Nobody gets the cheap version. What differs is what each window is loaded with, what it is permitted to touch, and what it can change on its own, which is nothing. Mary's briefing carries Line 2's schedule, the history on her filling pump, and the rules of her role. The CEO's carries the consolidated close, the demand plan, and the allocation calls. Both can ask, reason, and propose in plain language. Neither window grants new spending or policy authority by itself. Working with intelligence inside a live operation means keeping three acts separate that usually get blurred together: running an established workflow in daily work, proposing a change when floor reality shifts, and admitting that change under the company's rules. Propose in language. Admit by rule. Remember in the book. The operator knows her experience can improve how the workflow is designed. The CFO knows a plain-language request never becomes authority on its own.",
+      "For the last thirty years, enterprise software treated go-live as the finish line. The rollout was declared done, the screens froze in place, and the business kept changing, which pushed people straight back into spreadsheets, sporadic workarounds, and change orders. Worse, the software trained experienced operators to work like data-entry clerks, clicking through fifteen tabs and copying numbers from one window to another. The economics were just as rigid: per-seat licenses for twenty disconnected point solutions, renewal lock-in, and the company's own transaction data trapped behind each vendor's wall. The ERP conversation every CFO is now having is whether that model survives contact with intelligence that can read the purchase order, check the receipt against it, and draft the journal entry on its own. I do not believe it does.",
+      "What replaces it is not a chatbot bolted onto the old screens. It is an owned, bounded operating instance of the business: a clean, reconciled data core; a proven ledger with GAAP, three-way match, spending limits, and statutory controls enforced as deterministic rules outside any model session; and the daily transaction workflows running on top, where people and agents do the work together. This is what I mean when I say the same context window serves the CEO and Mary on Packaging Line 2. The caliber of intelligence is identical. Nobody gets the cheap version. What differs is what each window is loaded with, what it is permitted to touch, and what it can change on its own, which is nothing. Mary's briefing carries Line 2's schedule, the history on her filling pump, and the rules of her role. The CEO's carries the consolidated close, the demand plan, and the allocation calls. Both can ask, reason, and propose in plain language. Neither window grants new spending or policy authority by itself.",
+      "That is why the most important distinction in the agentic era is one almost nobody talks about: the difference between a context window and institutional memory. The context window is a working briefing assembled for the judgment at hand. Institutional memory is the durable record—the workflow definitions, decisions, outcomes, and audit trail—that remains in the book after the session closes. Working with intelligence inside a live operation means keeping three acts separate that usually get blurred together: running an established workflow in daily work, proposing a change when floor reality shifts, and admitting that change under the company's rules. Propose in language. Admit by rule. Remember in the book. The operator knows her experience can improve how the workflow is designed. The CFO knows a plain-language request never becomes authority on its own.",
       "An orchestrator is only as trustworthy as the loop it runs inside, and capturing an outcome does not automatically make a system smarter. A careless loop preserves a mistake and repeats it faster. Improvement is earned through a disciplined cycle (01 Intent → 02 Define → 03 Deliver → 04 Outcome ↻): people review the actual result against what was intended, test a proposed adjustment against operating rules, approve what holds up, and retain the evidence in the book.",
       <>
         There is a reason{" "}
@@ -312,7 +313,7 @@ const COLLECTIVES: CollectivePillar[] = [
         footerLabel: "PROPOSE IN LANGUAGE · ADMIT BY RULE · REMEMBER IN THE BOOK",
       },
     ],
-    closingQuestion: "Giving people a workspace where workflows can be run, proposed, and governed by hard rules is the goal—so what does it take underneath to build the foundry that makes that real?",
+    closingQuestion: "Giving people an operating instance where humans and agents run the transactions, and workflows are proposed in language and governed by hard rules, is the goal—so what does it take underneath to build the foundry that makes that real?",
     nextChapterNum: "03",
     nextChapterPrompt: "Continue to Chapter Three: The Machine That Builds the Machines →",
     fieldNoteHref: "/agentic-ai/the-application-layer/",
@@ -328,8 +329,8 @@ const COLLECTIVES: CollectivePillar[] = [
     subtitle: "Why Building Enterprise Workflow Software with Agents Takes a Disciplined Foundry: Down the Rabbit Hole and Out of the Disco.",
     spot: "factory",
     leadParagraphs: [
-      "Not everybody goes to the machine that builds the machines, and they should not have to. Most people want to live in Chapter Two, inside the machine, working with intelligence to run and improve their workflows. But somebody has to build the foundry underneath that makes it possible. Today our multi-harness engineering workshop runs daily in production for our own builds, and the operating map and workflow runtime it turns out run in our own shop first. That foundry is what it takes for the equalizer to hold up under audit.",
-      "Building at this level for three years taught me one rule above all. Discipline is not optional, because an undisciplined agent behaves exactly like an undisciplined enterprise: green status on the surface, broken state underneath. Coordinating multiple AI harnesses in isolated lanes requires clear human intent at the top, agreement on the work before steel is cut, independent inspection, and a standing rule that no agent ever grades its own homework.",
+      "Not everybody goes to the machine that builds the machines, and they should not have to. Most people want to live in Chapter Two, inside the machine, working with intelligence to run and improve their workflows. But somebody has to build the foundry underneath that makes it possible, and you cannot prompt or vibe code a system that has to hold up under audit, statutory controls, and real floor exceptions. Today our multi-harness engineering workshop runs daily in production for our own builds, and the operating map and workflow runtime it turns out run in our own shop first.",
+      "Building at this level for three years taught me one rule above all. Discipline is not optional, because an undisciplined agent behaves exactly like an undisciplined enterprise: green status on the surface, broken state underneath. Coordinating multiple AI harnesses in isolated lanes requires clear human intent at the top, agreement on the work before steel is cut, independent inspection of what actually changed, and a standing rule that no agent ever grades its own homework. That foundry is what it takes for the equalizer to hold up when a real CFO signs the close.",
     ],
     expandedParagraphs: [
       "In the enterprise, the machine's job is a workflow. When I say 'the machine that builds the machines that build the workflows,' I mean three distinct layers working together. At the top are the daily operational workflows—the approval routing, the planning reconciliation, the floor scheduling—that operators and leaders use every day. Beneath that is the workflow runtime where people and agents shape, test, and run those workflows on a reconciled data core. At the foundation is the engineering foundry that constructs and verifies that software: coordinated harnesses, strict lane boundaries, and durable build evidence that carries lessons from one release to the next.",
@@ -381,6 +382,42 @@ const COLLECTIVES: CollectivePillar[] = [
     topicKey: "03 / Chapter Three: The Machine That Builds the Machines That Build the Workflows",
   },
 ];
+
+/**
+ * The Titan quote bubble (Chamath / Benioff / Factory.ai). Rendered in BOTH the
+ * collapsed 3-column card (bottom cluster) and the expanded chapter view, so the
+ * three substantiating voices are always visible on the overview.
+ */
+function TitanQuoteBlock({ quote }: { quote: TitanQuote }) {
+  return (
+    <div className={s.triadQuoteBlock}>
+      <div className={s.triadQuoteMeta}>
+        <span className={s.triadQuoteSpeaker}>{quote.speaker}</span>
+        {quote.sourceUrl ? (
+          <a
+            href={quote.sourceUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={s.triadQuoteSource}
+            style={{ textDecoration: "underline" }}
+          >
+            • {quote.source} &#8599;
+          </a>
+        ) : (
+          <span className={s.triadQuoteSource}>• {quote.source}</span>
+        )}
+      </div>
+      <blockquote className={s.triadQuoteText}>
+        {quote.isQuoted === false ? quote.quote : <>&ldquo;{quote.quote}&rdquo;</>}
+      </blockquote>
+      <div className={s.triadQuoteRole}>{quote.role}</div>
+    </div>
+  );
+}
+
+function titanQuoteTag(quote: TitanQuote): string {
+  return quote.isQuoted === false ? "ARCHITECTURAL PRINCIPLE // FIELD THESIS" : "INDUSTRY PERSPECTIVE // THE MACRO VIEW";
+}
 
 function topicSlug(label: string): string {
   return label
@@ -633,10 +670,11 @@ export default function AgenticPositionView() {
               return (
                 <article
                   key={c.num}
-                  className={`${s.triadCard} ${isExpanded ? s.triadCardExpanded : ""}`}
+                  className={`${s.triadCard} ${isExpanded ? s.triadCardExpanded : s.triadCardCollapsed}`}
                   id={`collective-${topicSlug(c.title)}`}
                 >
-                  <div>
+                  {/* HEAD: spot + chapter label + title + subtitle (height-locked across the 3 columns) */}
+                  <div className={s.triadCardHead}>
                     <div className={s.triadCardSpot}>
                       <div className={s.triadSpotFrame}>
                         {c.spot === "constellation" && <ProcessConstellationSpot />}
@@ -684,12 +722,10 @@ export default function AgenticPositionView() {
                     </div>
                     <h3 className={s.triadCardTitle}>{c.title}</h3>
                     <div className={s.triadCardSubtitle}>{c.subtitle}</div>
+                  </div>
 
-                    {/* Lead-In Paragraphs (Always visible to draw the reader in) */}
-                    <div
-                      className={isExpanded ? s.triadExpandedProse : undefined}
-                      style={{ marginTop: "14px", display: "flex", flexDirection: "column", gap: "14px" }}
-                    >
+                  {/* LEAD: the two balanced lead-in paragraphs (always visible), plus the rest when expanded */}
+                  <div className={`${s.triadCardLead} ${isExpanded ? s.triadExpandedProse : ""}`}>
                       {c.leadParagraphs.map((pText, idx) => (
                         <p key={`lead-${idx}`} className={s.triadCardBody} style={{ margin: 0 }}>
                           {pText}
@@ -703,11 +739,133 @@ export default function AgenticPositionView() {
                             {pText}
                           </p>
                         ))}
-                    </div>
+                  </div>
 
-                    {/* Collapsed View: Preview of Field Notes + Reader-Facing Read Button */}
+                  {/* Expanded View: Quote + Full Field Notes + Next Chapter Handoff */}
+                  {isExpanded && (
+                    <div style={{ marginTop: "22px" }}>
+                      {c.titanQuote && (
+                        <div className={s.triadExpandedProse}>
+                          <div style={{ marginTop: "20px", marginBottom: "6px" }}>
+                            <span className={s.triadSectionTag}>{titanQuoteTag(c.titanQuote)}</span>
+                          </div>
+                          <TitanQuoteBlock quote={c.titanQuote} />
+                        </div>
+                      )}
+
+                      <div style={{ marginTop: "24px", marginBottom: "8px" }}>
+                        <span className={s.triadSectionTag}>
+                          NOTES FROM THE FIELD // {c.fieldNoteCards.length} FIELD NOTES IN {c.chapterLabel.toUpperCase()}
+                        </span>
+                      </div>
+
+                      <div className={s.triadExpandedNotesGrid}>
+                        {c.fieldNoteCards.map((fn) => (
+                          <div key={fn.id} className={s.triadFieldNoteCard} style={{ marginTop: 0 }}>
+                            <div className={s.triadFieldNoteHead}>
+                              <div className={s.triadFieldNoteRubric}>
+                                <span className={s.triadFieldNoteDot} aria-hidden="true" />
+                                <span>{fn.rubric}</span>
+                              </div>
+                              <span className={s.triadFieldNoteStamp}>{fn.stamp}</span>
+                            </div>
+
+                            <div
+                              style={{
+                                fontWeight: 700,
+                                fontSize: "16px",
+                                color: "var(--ink)",
+                                marginBottom: "10px",
+                                fontFamily: "var(--next-font-display), Georgia, serif",
+                              }}
+                            >
+                              {fn.title}
+                            </div>
+
+                            <div style={{ display: "flex", flexDirection: "column", gap: "10px", marginBottom: "12px" }}>
+                              {fn.fullText.map((para, pIdx) => (
+                                <p key={pIdx} className={s.triadFieldNoteText} style={{ margin: 0 }}>
+                                  {para}
+                                </p>
+                              ))}
+                            </div>
+
+                            <div
+                              style={{
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "space-between",
+                                flexWrap: "wrap",
+                                gap: "8px",
+                                paddingTop: "8px",
+                                borderTop: "1px dashed var(--line)",
+                              }}
+                            >
+                              <span style={{ fontSize: "10.5px", color: "var(--muted)", fontFamily: "ui-monospace, monospace" }}>
+                                {fn.signature}
+                              </span>
+                              <span style={{ fontSize: "10px", color: "var(--brass-dark)", fontFamily: "ui-monospace, monospace", fontWeight: 700 }}>
+                                {fn.footerLabel}
+                              </span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Closing Bridge Question */}
+                      <div className={s.triadProvocation} style={{ marginTop: "22px", marginBottom: "8px" }}>
+                        <span className={s.triadProvocationLabel}>NEXT IN THE STORY // HOW DO YOU SEE IT?</span>
+                        <p className={s.triadProvocationText}>{c.closingQuestion}</p>
+                      </div>
+
+                      <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", alignItems: "center", marginTop: "12px" }}>
+                        {c.nextChapterNum && c.nextChapterPrompt && (
+                          <button
+                            type="button"
+                            onClick={() => openAndScrollToChapter(c.nextChapterNum!)}
+                            className={s.triadExpandBtn}
+                            style={{ maxWidth: "380px", marginTop: 0 }}
+                          >
+                            <span>{c.nextChapterPrompt}</span>
+                          </button>
+                        )}
+                        <button
+                          type="button"
+                          onClick={() => toggleChapter(c.num)}
+                          style={{
+                            background: "var(--parchment)",
+                            border: "1px solid var(--line)",
+                            borderRadius: "3px",
+                            padding: "10px 16px",
+                            fontSize: "11px",
+                            fontFamily: "var(--next-font-mono), monospace",
+                            fontWeight: 700,
+                            letterSpacing: "0.06em",
+                            textTransform: "uppercase",
+                            color: "var(--muted)",
+                            cursor: "pointer",
+                          }}
+                        >
+                          <span>Close {c.chapterLabel} &#9652;</span>
+                        </button>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* FOOT: bottom-locked cluster — quote bubble, INSIDE THIS CHAPTER preview, Read button, action bar.
+                      margin-top:auto pins this cluster to the card bottom so it lines up across all three columns. */}
+                  <div className={s.triadCardFoot}>
                     {!isExpanded && (
                       <>
+                        {c.titanQuote && (
+                          <div className={s.triadQuoteSlot}>
+                            <span className={s.triadSectionTag} style={{ marginBottom: "6px" }}>
+                              {titanQuoteTag(c.titanQuote)}
+                            </span>
+                            <TitanQuoteBlock quote={c.titanQuote} />
+                          </div>
+                        )}
+
                         <div className={s.triadNotePreviewList}>
                           <span className={s.triadSectionTag} style={{ marginBottom: "2px" }}>
                             INSIDE THIS CHAPTER // {c.fieldNoteCards.length} NOTES FROM THE FIELD
@@ -732,16 +890,7 @@ export default function AgenticPositionView() {
                               >
                                 {fn.stamp}
                               </div>
-                              <div
-                                style={{
-                                  fontSize: "13.5px",
-                                  fontWeight: 700,
-                                  color: "var(--ink)",
-                                  fontFamily: "var(--next-font-display), Georgia, serif",
-                                }}
-                              >
-                                {fn.title}
-                              </div>
+                              <div className={s.triadNotePreviewTitle}>{fn.title}</div>
                             </button>
                           ))}
                         </div>
@@ -757,158 +906,24 @@ export default function AgenticPositionView() {
                       </>
                     )}
 
-                    {/* Expanded View: Quote + Full Field Notes + Next Chapter Handoff */}
-                    {isExpanded && (
-                      <div style={{ marginTop: "22px" }}>
-                        {c.titanQuote && (
-                          <div className={s.triadExpandedProse}>
-                            <div style={{ marginTop: "20px", marginBottom: "6px" }}>
-                              <span className={s.triadSectionTag}>
-                                {c.titanQuote.isQuoted === false ? "ARCHITECTURAL PRINCIPLE // FIELD THESIS" : "INDUSTRY PERSPECTIVE // THE MACRO VIEW"}
-                              </span>
-                            </div>
-                            <div className={s.triadQuoteBlock}>
-                              <div className={s.triadQuoteMeta}>
-                                <span className={s.triadQuoteSpeaker}>{c.titanQuote.speaker}</span>
-                                {c.titanQuote.sourceUrl ? (
-                                  <a
-                                    href={c.titanQuote.sourceUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className={s.triadQuoteSource}
-                                    style={{ textDecoration: "underline" }}
-                                  >
-                                    • {c.titanQuote.source} &#8599;
-                                  </a>
-                                ) : (
-                                  <span className={s.triadQuoteSource}>• {c.titanQuote.source}</span>
-                                )}
-                              </div>
-                              <blockquote className={s.triadQuoteText}>
-                                {c.titanQuote.isQuoted === false ? c.titanQuote.quote : <>&ldquo;{c.titanQuote.quote}&rdquo;</>}
-                              </blockquote>
-                              <div className={s.triadQuoteRole}>{c.titanQuote.role}</div>
-                            </div>
-                          </div>
-                        )}
-
-                        <div style={{ marginTop: "24px", marginBottom: "8px" }}>
-                          <span className={s.triadSectionTag}>
-                            NOTES FROM THE FIELD // {c.fieldNoteCards.length} FIELD NOTES IN {c.chapterLabel.toUpperCase()}
-                          </span>
-                        </div>
-
-                        <div className={s.triadExpandedNotesGrid}>
-                          {c.fieldNoteCards.map((fn) => (
-                            <div key={fn.id} className={s.triadFieldNoteCard} style={{ marginTop: 0 }}>
-                              <div className={s.triadFieldNoteHead}>
-                                <div className={s.triadFieldNoteRubric}>
-                                  <span className={s.triadFieldNoteDot} aria-hidden="true" />
-                                  <span>{fn.rubric}</span>
-                                </div>
-                                <span className={s.triadFieldNoteStamp}>{fn.stamp}</span>
-                              </div>
-
-                              <div
-                                style={{
-                                  fontWeight: 700,
-                                  fontSize: "16px",
-                                  color: "var(--ink)",
-                                  marginBottom: "10px",
-                                  fontFamily: "var(--next-font-display), Georgia, serif",
-                                }}
-                              >
-                                {fn.title}
-                              </div>
-
-                              <div style={{ display: "flex", flexDirection: "column", gap: "10px", marginBottom: "12px" }}>
-                                {fn.fullText.map((para, pIdx) => (
-                                  <p key={pIdx} className={s.triadFieldNoteText} style={{ margin: 0 }}>
-                                    {para}
-                                  </p>
-                                ))}
-                              </div>
-
-                              <div
-                                style={{
-                                  display: "flex",
-                                  alignItems: "center",
-                                  justifyContent: "space-between",
-                                  flexWrap: "wrap",
-                                  gap: "8px",
-                                  paddingTop: "8px",
-                                  borderTop: "1px dashed var(--line)",
-                                }}
-                              >
-                                <span style={{ fontSize: "10.5px", color: "var(--muted)", fontFamily: "ui-monospace, monospace" }}>
-                                  {fn.signature}
-                                </span>
-                                <span style={{ fontSize: "10px", color: "var(--brass-dark)", fontFamily: "ui-monospace, monospace", fontWeight: 700 }}>
-                                  {fn.footerLabel}
-                                </span>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-
-                        {/* Closing Bridge Question */}
-                        <div className={s.triadProvocation} style={{ marginTop: "22px", marginBottom: "8px" }}>
-                          <span className={s.triadProvocationLabel}>NEXT IN THE STORY // HOW DO YOU SEE IT?</span>
-                          <p className={s.triadProvocationText}>{c.closingQuestion}</p>
-                        </div>
-
-                        <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", alignItems: "center", marginTop: "12px" }}>
-                          {c.nextChapterNum && c.nextChapterPrompt && (
-                            <button
-                              type="button"
-                              onClick={() => openAndScrollToChapter(c.nextChapterNum!)}
-                              className={s.triadExpandBtn}
-                              style={{ maxWidth: "380px", marginTop: 0 }}
-                            >
-                              <span>{c.nextChapterPrompt}</span>
-                            </button>
-                          )}
-                          <button
-                            type="button"
-                            onClick={() => toggleChapter(c.num)}
-                            style={{
-                              background: "var(--parchment)",
-                              border: "1px solid var(--line)",
-                              borderRadius: "3px",
-                              padding: "10px 16px",
-                              fontSize: "11px",
-                              fontFamily: "var(--next-font-mono), monospace",
-                              fontWeight: 700,
-                              letterSpacing: "0.06em",
-                              textTransform: "uppercase",
-                              color: "var(--muted)",
-                              cursor: "pointer",
-                            }}
-                          >
-                            <span>Close {c.chapterLabel} &#9652;</span>
-                          </button>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-
-                  <div className={s.triadActions} style={{ marginTop: "20px" }}>
-                    <Link href={c.fieldNoteHref} className={s.triadReadBtn}>
-                      <span>{c.fieldNoteLabel}</span>
-                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                        <path d="M3 7H11M11 7L7.5 3.5M11 7L7.5 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </Link>
-                    <button
-                      type="button"
-                      onClick={() => handleSelectTopic(c.topicKey)}
-                      className={s.triadDiscussBtn}
-                    >
-                      <span>{c.actionLabel}</span>
-                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                        <path d="M3 7H11M11 7L7.5 3.5M11 7L7.5 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </button>
+                    <div className={s.triadActions}>
+                      <Link href={c.fieldNoteHref} className={s.triadReadBtn}>
+                        <span>{c.fieldNoteLabel}</span>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                          <path d="M3 7H11M11 7L7.5 3.5M11 7L7.5 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </Link>
+                      <button
+                        type="button"
+                        onClick={() => handleSelectTopic(c.topicKey)}
+                        className={s.triadDiscussBtn}
+                      >
+                        <span>{c.actionLabel}</span>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                          <path d="M3 7H11M11 7L7.5 3.5M11 7L7.5 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </button>
+                    </div>
                   </div>
                 </article>
               );

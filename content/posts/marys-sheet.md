@@ -58,4 +58,4 @@ Those gaps are the seams, and the work between the tasks is what people like Mar
 ---
 
 ### Continue Reading the Series
-→ Next: **[Chapter Two: Working with Intelligence — Where People Run, Propose, and Govern Workflows](/agentic-ai/the-application-layer/)**
+→ Next: **[Chapter Two: Working with Intelligence — Humans and Agents Running the Workflows That Run the Business](/agentic-ai/the-application-layer/)**
