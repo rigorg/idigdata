@@ -40,20 +40,18 @@ const BLOCKED_SCRAPERS = [
   "QlyzeBot",
 ] as const;
 
-const DISALLOWED_INTERNAL_PATHS = ["/hold/", "/preview-agentic/", "/banners/"];
-
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
         userAgent: "*",
         allow: ["/", "/feed.xml", "/llms.txt", "/llms-full.txt", "/facts.txt"],
-        disallow: DISALLOWED_INTERNAL_PATHS,
+        disallow: ["/api/"],
       },
       ...BONA_FIDE_CRAWLERS.map((userAgent) => ({
         userAgent,
         allow: ["/", "/feed.xml", "/llms.txt", "/llms-full.txt", "/facts.txt"],
-        disallow: DISALLOWED_INTERNAL_PATHS,
+        disallow: ["/api/"],
       })),
       ...BLOCKED_SCRAPERS.map((userAgent) => ({
         userAgent,

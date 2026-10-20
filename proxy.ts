@@ -39,6 +39,19 @@ export function proxy(req: NextRequest, event: NextFetchEvent) {
     return new NextResponse("Forbidden", { status: 403 });
   }
 
+  // Block internal/archive routes in production
+  if (
+    process.env.NODE_ENV === "production" &&
+    !process.env.NEXT_PUBLIC_ALLOW_PREVIEW &&
+    (pathname.startsWith("/hold") ||
+      pathname.startsWith("/preview-agentic") ||
+      pathname.startsWith("/preview-geometry") ||
+      pathname.startsWith("/banners") ||
+      pathname.startsWith("/geometry"))
+  ) {
+    return new NextResponse("Not Found", { status: 404 });
+  }
+
   const response = NextResponse.next();
   if (
     pathname.startsWith("/hold") ||

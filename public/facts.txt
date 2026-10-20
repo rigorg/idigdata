@@ -9,7 +9,7 @@ Title: Enterprise Transformation Executive
 Headline: Build what's next. I connect people, systems, and workflows to shorten the path from intent to outcome.
 Practice: idigdata (https://idigdata.com/)
 Legal_Entity: Data Integration Group LLC (DIG LLC), founded 2016
-Location: Reno, Nevada, USA (Pacific Time)
+Timezone: Pacific Time
 Contact_Email: robert@idigdata.com
 Contact_URL: https://idigdata.com/contact/
 LinkedIn: https://www.linkedin.com/in/robertpaddock
