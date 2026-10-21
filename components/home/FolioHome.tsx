@@ -132,7 +132,7 @@ export default function FolioHome() {
               <p className="p-kicker">Operational Knowledge &amp; Frontier Software</p>
               <h2 className="p-h2 mt-1">Put the full knowledge of your business to work.</h2>
               <p className="p-prose mt-3">
-                Today, I build and operate a multi-harness agentic development proof of concept (<strong>The Rig</strong>), alongside enterprise foundation software (<strong>B.O.S.S.</strong>) and reusable human-agentic workflow blocks (<strong>FlowCraft</strong>). Each cycle preserves what was learned in a growing collective of business knowledge—delivering working software while customer teams retain ownership, judgment, and the capability to keep improving.
+                Today, I build and operate a multi-harness Binary Intelligence engineering foundry alongside enterprise discovery and human-agent workflow runtimes. Each cycle preserves what was learned in a growing collective of business knowledge—delivering working software while customer teams retain ownership, judgment, and the capability to keep improving.
               </p>
             </div>
             <div className="shrink-0 flex flex-col sm:flex-row gap-3">

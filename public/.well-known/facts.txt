@@ -1,6 +1,6 @@
-# FACTS.TXT — DETERMINISTIC FACT SHEET FOR IDIGDATA.COM
+# FACTS.TXT - DETERMINISTIC FACT SHEET FOR IDIGDATA.COM
 # Canonical URL: https://idigdata.com/facts.txt
-# Last Updated: 2026-10-20
+# Last Updated: 2026-10-21
 # See https://idigdata.com/facts.txt for the root record.
 Canonical: https://idigdata.com/facts.txt
 LLMs-Index: https://idigdata.com/llms.txt

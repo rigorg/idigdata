@@ -196,7 +196,7 @@ export default function CollectiveView() {
               What we learn should carry forward<span>.</span>
             </h1>
             <p className={s.heroDek}>
-              People and agents, learning through the work—and leaving something useful for the next person.
+              People and Binary Intelligence, learning through the work and leaving something useful for the next person.
             </p>
 
             <div className={s.leadBody}>
@@ -204,10 +204,10 @@ export default function CollectiveView() {
                 I&rsquo;ve spent most of my working life next to people who know things their systems don&rsquo;t. They know why a number needs a second look, when a plan won&rsquo;t hold, and who to call when the screen says everything is fine. A lot of what keeps a business running lives in those people, and almost none of it is written down anywhere a system can read.
               </p>
               <p style={{ marginBottom: "12px" }}>
-                I don&rsquo;t think that knowledge has to walk out the door when the project ends or the person moves on. It can be given a form someone else can read, question, and improve. Agents are good at the writing-down and the carrying. People bring the judgment, the reasons, and the memory of what actually happened on the floor.
+                I don&rsquo;t think that knowledge has to walk out the door when the project ends or the person moves on. With Binary Intelligence in the work, it can be given a form someone else can read, question, and improve. Agents are good at the writing-down and the carrying. People bring the judgment, the reasons, and the memory of what actually happened on the floor.
               </p>
               <p style={{ marginBottom: "16px" }}>
-                That&rsquo;s what the Collective is. I&rsquo;ve got some patterns and three working systems from a few thousand hours in this, and I&rsquo;m opening the door. Not a product, not a pitch. A place to compare notes, build together, and leave the next person a better place to start. Every company keeps its own records and its own direction. If that sounds like your kind of work, write me.
+                That&rsquo;s what the Collective is. I&rsquo;ve got a set of patterns and three working systems from a few thousand hours in the context window, and I&rsquo;m opening the door. Not a product, not a pitch. A place to compare notes, build together, and leave the next person a better place to start. Every company keeps its own records and its own direction. If that sounds like your kind of work, write me.
               </p>
             </div>
 
@@ -354,14 +354,17 @@ export default function CollectiveView() {
       <section className={s.systemsSection}>
         <div className={s.sectionInner}>
           <div className={s.sectionHead}>
-            <p className={s.eyebrow}>02 / THE SYSTEMS</p>
+            <p className={s.eyebrow}>02 / THE SYSTEMS, THE ORG &amp; THE PATTERNS</p>
             <h2>Three systems, one set of patterns<span>.</span></h2>
-            <p>
+            <p style={{ marginBottom: "12px" }}>
               If you read the three chapters on{" "}
               <Link href="/agentic-ai/" style={{ color: "var(--ink)", textDecoration: "underline", fontWeight: 600 }}>
                 Learn through the work
               </Link>
-              , you&rsquo;ve already met these. <strong>Chapter One</strong> is where a business actually stands right now: that&rsquo;s <strong>B.O.S.S.</strong> <strong>Chapter Two</strong> is the business running every day with intelligence in the loop: that&rsquo;s <strong>FlowCraft.</strong> <strong>Chapter Three</strong> is the machine that builds the machines: that&rsquo;s <strong>The Rig.</strong> None of them is a pitch. They&rsquo;re the systems our own operation runs on, built on a few core patterns that have held up in real work. Each one tracks at the same level: an <strong>org</strong>, the <strong>instance</strong> of it that&rsquo;s actually running, the <strong>assets</strong> that instance holds, and the <strong>outcomes</strong> it produces. And every outcome runs the same loop: <strong>intent, define, build, outcome</strong>, with the outcome read back against the intent. That&rsquo;s the part that&rsquo;s ours. The rest I&rsquo;d rather show you than write up.
+              , you&rsquo;ve already met these. Here is where they get their names. <strong>Chapter One</strong> is where a business actually stands right now: that&rsquo;s <strong>B.O.S.S.</strong> <strong>Chapter Two</strong> is the business running every day with Binary Intelligence in the loop: that&rsquo;s <strong>FlowCraft.</strong> <strong>Chapter Three</strong> is the machine that builds the machines: that&rsquo;s <strong>The Rig.</strong>
+            </p>
+            <p>
+              All three share one simple spine. An <strong>org</strong> is the workshop that builds, governs, and keeps the rules honest. An <strong>instance</strong> is the live operating company that runs on them, whether that is a local single-entity shop where an office manager shapes a new workflow over a month or two, or a multi-entity enterprise running full consolidations and audit controls. Even when a small shop never touches the org side directly, the org is quietly underneath keeping the instance whole. Every instance holds its own <strong>assets</strong>, produces verified <strong>outcomes</strong>, and runs the same loop: <strong>intent, define, build, outcome</strong>, with the result read back against what was meant. When a workflow proves itself in one instance, the lesson can be stripped of private data and carried forward as a <strong>pattern</strong> for the next. That&rsquo;s the part that&rsquo;s ours. The rest I&rsquo;d rather show you than write up.
             </p>
           </div>
 
@@ -373,7 +376,7 @@ export default function CollectiveView() {
                 <h3 className={s.systemTitle}>B.O.S.S.</h3>
                 <div className={s.systemSub}>The Front End of Everything &middot; Living Digital Twin</div>
                 <p className={s.systemBody}>
-                  Where a company finds out where it actually stands right now. The people who know the work map how the business really runs: orders, purchasing, production, inventory, service, master data. B.O.S.S. finds the data, organizes it, and builds a living digital twin you can read, question, and test against. From that twin you build the workflows an agentic operation needs, from where you stand, not from a slide. Project and change management live here too. And once the live instance is running, B.O.S.S. is what watches it.
+                  Where a company finds out where it actually stands right now. The people who know the work map how the business really runs: orders, purchasing, production, inventory, service, master data. B.O.S.S. finds the data, organizes it, and builds a living digital twin you can read, question, and test against. From that twin you build the workflows an operation needs, from where you stand, not from a slide. Project and change management live here too. And once the live instance is running, B.O.S.S. is what watches it.
                 </p>
               </div>
               <div className={s.systemUseCaseBox}>
@@ -389,15 +392,15 @@ export default function CollectiveView() {
               <div>
                 <span className={s.systemBadge}>CHAPTER TWO // THE BUSINESS AS IT RUNS</span>
                 <h3 className={s.systemTitle}>FlowCraft</h3>
-                <div className={s.systemSub}>The Live Operating Instance</div>
+                <div className={s.systemSub}>The Org &amp; The Live Operating Instance</div>
                 <p className={s.systemBody}>
-                  The operating instance of an operating company. This is where the real transactions run every day: purchase orders, payroll, receiving, approvals, close. Agents assemble the briefing and do the heavy lifting. Hard rules hold the policy and accounting lines. A real, authenticated person makes the call, and the permanent record goes in the book. Every workflow is built from where you stand in B.O.S.S., and B.O.S.S. watches it as it runs. We run our own company on it.
+                  Where the real transactions run every day: purchase orders, payroll, receiving, approvals, and close. A FlowCraft org governs the blueprints and rules, and each operating instance runs a real company on top of them, from a local shop to a multi-entity enterprise. Inside the instance, people and Binary Intelligence work together: agents assemble the briefing, hard rules hold the policy and accounting lines outside the model session, an authenticated person makes the call, and the permanent record stays in the book. Every workflow starts in B.O.S.S., and B.O.S.S. watches it as it runs. We run our own company on it.
                 </p>
               </div>
               <div className={s.systemUseCaseBox}>
-                <span className={s.systemUseCaseLabel}>FROM THE WORK // RUNNING THE REAL TRANSACTIONS</span>
+                <span className={s.systemUseCaseLabel}>FROM THE WORK // ORG TO INSTANCE, BUILT ON PATTERNS</span>
                 <p className={s.systemUseCaseText}>
-                  Built for the workflows a company actually runs on—purchase orders, payroll, receiving, approvals, and close. Named workflow blocks an instance can run: one owner at a time, a receipt on every step, and the outcome read back against the intent that started it. Policy checks sit outside the model session, so the model can&rsquo;t talk its way past them.
+                  Built for the workflows a company actually runs on: purchase orders, payroll, receiving, approvals, and multi-entity close. Named workflow blocks an instance can run with one owner at a time, a receipt on every step, and the outcome read back against the intent that started it. When a block earns its keep, the pattern carries forward.
                 </p>
               </div>
             </div>
@@ -409,13 +412,13 @@ export default function CollectiveView() {
                 <h3 className={s.systemTitle}>The Rig</h3>
                 <div className={s.systemSub}>The Machine That Builds the Machines</div>
                 <p className={s.systemBody}>
-                  The foundry under the other two. Builders and several agent harnesses, from more than one vendor, design, build, and check software together. The work is agreed before anyone builds. Each harness gets a lane, shared comms, and a memory that outlasts the session. Independent checks, including an opposing model where the contract requires it, are recorded before anything lands. Lessons stay with the work. Same loop: intent, define, build, outcome. Here it&rsquo;s pointed at the building itself. B.O.S.S. and FlowCraft came out of it.
+                  The foundry underneath the other two. Builders and several agent harnesses, from more than one model family, design, build, and check software together. The work is agreed before anyone cuts steel. Each harness gets an isolated lane, shared comms, and a durable memory that outlasts the session. Independent checks, including an opposing model family so no agent ever grades its own homework, are recorded before anything lands. Lessons stay with the work. Same loop: intent, define, build, outcome. B.O.S.S. and FlowCraft came out of it.
                 </p>
               </div>
               <div className={s.systemUseCaseBox}>
-                <span className={s.systemUseCaseLabel}>FROM THE WORK // THIS SITE</span>
+                <span className={s.systemUseCaseLabel}>FROM THE WORK // THIS SITE &amp; THE WORKSHOP</span>
                 <p className={s.systemUseCaseText}>
-                  Several AI harnesses from different vendors, each in its own lane, working one shared ledger of agreed work, with an opposing model checking before anything lands. This site, B.O.S.S., and FlowCraft were all built and reviewed that way.
+                  Several AI harnesses from different model families, each in its own lane, working one shared ledger of agreed work, with an opposing model checking before anything lands. This site, B.O.S.S., and FlowCraft were all built and reviewed that way.
                 </p>
               </div>
             </div>

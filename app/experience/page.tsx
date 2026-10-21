@@ -609,7 +609,7 @@ export default function ExperiencePage() {
               <p className="p-kicker">Agentic Development &amp; Builder Architecture</p>
               <h2 className="p-h2 mt-1">Applied agentics on the enterprise already running.</h2>
               <p className="p-prose mt-4">
-                Today, I build and operate an <strong>Agentic Development Company</strong> proof of concept (<strong>The Rig</strong>) that builds enterprise foundation software (<strong>B.O.S.S.</strong>) and reusable human-agentic workflow blocks (<strong>FlowCraft</strong>) on a shared data core. People and agents contribute throughout <em>Intent, Define, Deliver, and Outcome</em>—with human judgment guiding the work and each cycle preserving what was learned in a growing collective of business knowledge.
+                Today, I build and operate a multi-harness Binary Intelligence engineering foundry that turns out enterprise discovery software and reusable human-agent workflow blocks on a shared data core. People and agents contribute throughout <em>Intent, Define, Deliver, and Outcome</em>—with human judgment guiding the work and each cycle preserving what was learned in a growing collective of business knowledge.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0">
