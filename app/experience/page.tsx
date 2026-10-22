@@ -118,45 +118,6 @@ const estate = [
   },
 ] as const;
 
-const constellations = [
-  {
-    code: "P2P",
-    name: "Procure to Pay",
-    tagline: "Inbound value chain",
-    desc: "Supplier lifecycle, purchase requisitions, PO dispatch, three-way matching, receiving, and accounts payable.",
-  },
-  {
-    code: "O2C",
-    name: "Order to Cash",
-    tagline: "Outbound value chain",
-    desc: "Customer master, pricing engines, order entry, depletions, fulfillment, billing, and accounts receivable.",
-  },
-  {
-    code: "P2M",
-    name: "Plan to Manufacture",
-    tagline: "Transformation core",
-    desc: "Demand planning (S&OP), MRP, BOMs, integration with plant MES and SCADA, scheduling, and batch traceability.",
-  },
-  {
-    code: "S2S",
-    name: "Systems to Support",
-    tagline: "ERP + HR",
-    desc: "The ERP side and the HR side. ERP runs all three primaries; HR/HCM is the people side none of those chains own. IT, cybersecurity, and productivity span with them.",
-  },
-  {
-    code: "D2R",
-    name: "Data to Reporting",
-    tagline: "Analytics + awareness",
-    desc: "Corporate planning, executive BI, financial consolidation, margin telemetry, and statutory reporting.",
-  },
-  {
-    code: "MDM",
-    name: "Master Data Management",
-    tagline: "Cross-cutting foundation",
-    desc: "Item master, customer master, vendor master, chart of accounts, and governance across the estate. The missing link I keep finding on transformations.",
-  },
-] as const;
-
 export default function ExperiencePage() {
   return (
     <PresenceShell>
@@ -207,15 +168,14 @@ export default function ExperiencePage() {
               <p className="font-mono text-xs font-bold uppercase tracking-wider text-[#9E7D3B]">01 // 2016–Present · Transformation &amp; Agentic Delivery</p>
               <h3 className="mt-2">Data Integration Group (idigdata)</h3>
               <p className="font-medium text-sm text-[#142840]/75 mt-1">Founder and Principal, Enterprise Transformation</p>
-              <p className="p-prose mt-4">
-                Lead enterprise transformation for family-owned, private equity-backed, and post-acquisition businesses, carrying commercial commitments from opportunity and contract through delivery and frontline adoption. Work with business, finance, and compliance leaders to carry regulatory requirements, financial controls, and traceability into system design, testing, and daily operations.
+              <p className="p-prose mt-3">
+                Lead enterprise transformation for family-owned, private equity-backed, and post-acquisition businesses—carrying engagements from executive discovery and commercial scope through architecture, cutover, go-live, and frontline adoption.
               </p>
               <ul className="mt-3 space-y-2 text-[14.5px] leading-relaxed text-[#142840]/85 list-disc pl-5">
-                <li>Shape engagements through executive discovery, sales engineering, solution design, and contracts, with clear scope, partner responsibilities, and financial accountability.</li>
-                <li>Align internal IT, operations, and domain champions around business priorities. Carry workflow prototypes through end-to-end testing, user acceptance, cutover, and go-live.</li>
-                <li>Design and lead delivery of modern application stacks spanning ERP, warehouse management (WMS), manufacturing execution (MES), planning, customer relationship management (CRM), and finance around a company-owned data core.</li>
-                <li>Lead migration from legacy environments, including AS/400, COBOL applications, mainframe, and legacy SQL systems, integrating retained applications and preserving essential business rules and reconciled data.</li>
-                <li>Build and operate an agentic development environment with independent review and human decision authority, turning enterprise knowledge into reusable workflows that customer teams can run and keep improving.</li>
+                <li>Design and deliver modern application stacks spanning ERP, WMS, MES, planning, CRM, and finance around a company-owned data core.</li>
+                <li>Lead migrations from AS/400, COBOL, mainframe, and legacy SQL environments—integrating retained applications while preserving business rules, reconciled data, and financial/regulatory controls.</li>
+                <li>Align internal IT, operations, domain champions, and delivery partners through workflow prototyping, end-to-end testing, user acceptance, and cutover.</li>
+                <li>Build and operate a multi-harness agentic engineering environment with independent review and human decision authority, turning enterprise knowledge into reusable workflows.</li>
               </ul>
             </article>
 
@@ -223,14 +183,14 @@ export default function ExperiencePage() {
               <p className="font-mono text-xs font-bold uppercase tracking-wider text-[#9E7D3B]">02 // 2024–2026 · Enterprise CIO Mandate</p>
               <h3 className="mt-2">Sierra Nevada Brewing Co.</h3>
               <p className="font-medium text-sm text-[#142840]/75 mt-1">Chief Information Officer (Contract)</p>
-              <p className="p-prose mt-4">
-                Served as CIO and executive leadership team member for a multi-site brewer, responsible for technology strategy, investment, operations, data, cybersecurity, and governance, with reporting to the board.
+              <p className="p-prose mt-3">
+                Served as CIO and executive leadership team member for a multi-site national brewer, accountable to the board for technology strategy, investment, operations, data, cybersecurity, and governance.
               </p>
               <ul className="mt-3 space-y-2 text-[14.5px] leading-relaxed text-[#142840]/85 list-disc pl-5">
-                <li><strong>Enterprise transformation:</strong> Led a 26-month enterprise transformation with 150+ project participants across 25 task forces, directing architecture and implementation to consolidate business and plant systems around a company-owned data core. Aligned executive sponsors, functional leaders, and delivery partners—establishing the organizational and technical foundation to carry the company through go-live and sustain ongoing operations.</li>
-                <li><strong>IT leadership:</strong> Rebuilt the internal IS/IT organization, modernized enterprise IT, established vendor accountability, and worked with plant leaders and operational technology (OT) specialists to connect enterprise systems with plant operations.</li>
-                <li><strong>Operational continuity:</strong> Maintained operational continuity and addressed regulatory requirements across purchasing, order-to-cash, planning, manufacturing, warehousing, and finance, including laboratory systems, food safety, SQF, and TTB compliance.</li>
-                <li><strong>Applied agentics:</strong> Built an enterprise mapping digital twin and transformation command system across 25 task forces to support discovery, prototyping, and implementation—generating the 6 process constellations, 74 clusters, and 200+ workflow patterns around the company-owned data core with human decision authority.</li>
+                <li><strong>Enterprise transformation:</strong> Led a 26-month transformation with 150+ participants across 25 task forces, consolidating business and plant systems around a company-owned data core through go-live and daily operations.</li>
+                <li><strong>IT &amp; OT leadership:</strong> Rebuilt the internal IS/IT organization, modernized enterprise infrastructure and vendor accountability, and connected enterprise systems with plant operations and operational technology (OT).</li>
+                <li><strong>Operational continuity:</strong> Maintained continuity and regulatory compliance across purchasing, order-to-cash, planning, manufacturing, warehousing, and finance—including LIMS, food safety, SQF, and TTB.</li>
+                <li><strong>Applied agentics:</strong> Built an enterprise digital twin and transformation command system across 25 task forces—generating the 6 process constellations, 74 clusters, and 200+ workflow patterns with human decision authority.</li>
               </ul>
             </article>
 
@@ -238,13 +198,12 @@ export default function ExperiencePage() {
               <p className="font-mono text-xs font-bold uppercase tracking-wider text-[#9E7D3B]">03 // 2012–2016 · Partner-Side ERP Implementation</p>
               <h3 className="mt-2">Access IT, Inc.</h3>
               <p className="font-medium text-sm text-[#142840]/75 mt-1">Lead Consultant and Solution Architect</p>
-              <p className="p-prose mt-4">
+              <p className="p-prose mt-3">
                 Led partner-side Microsoft Dynamics NAV and ContractERP implementations for construction, distribution, manufacturing, and services clients.
               </p>
               <ul className="mt-3 space-y-2 text-[14.5px] leading-relaxed text-[#142840]/85 list-disc pl-5">
-                <li>Carried delivery from business requirements through testing, cutover, and stabilization, coordinating customer teams and technical delivery partners.</li>
-                <li>Designed application customizations, data migrations, and integrations around customer workflows.</li>
-                <li>Worked across systems integrator, independent software vendor, and reseller roles, connecting functional requirements with technical delivery.</li>
+                <li>Carried delivery from business requirements through custom application design, data migration, integration, testing, cutover, and stabilization.</li>
+                <li>Bridged functional requirements and technical delivery across systems integrator, independent software vendor (ISV), and reseller roles.</li>
               </ul>
             </article>
 
@@ -252,14 +211,13 @@ export default function ExperiencePage() {
               <p className="font-mono text-xs font-bold uppercase tracking-wider text-[#9E7D3B]">04 // 1996–2012 · Business Ownership &amp; Custom Software</p>
               <h3 className="mt-2">Timberline Architectural Openings</h3>
               <p className="font-medium text-sm text-[#142840]/75 mt-1">Founder, CEO &amp; CTO</p>
-              <p className="p-prose mt-4">
+              <p className="p-prose mt-3">
                 Founded and scaled a contractor, manufacturer, and distributor of architectural openings, serving as CEO and CTO with full P&amp;L responsibility.
               </p>
               <ul className="mt-3 space-y-2 text-[14.5px] leading-relaxed text-[#142840]/85 list-disc pl-5">
                 <li>Grew revenue from $250K in year one to $130M by year ten, leading 100+ employees across commercial, manufacturing, distribution, and project operations.</li>
-                <li>Connected engineered sales with manufacturing, supply, and installation for projects in Las Vegas and Macau.</li>
-                <li>Built proprietary software connecting estimating, project delivery, purchasing, production, inventory, distribution, and finance.</li>
-                <li>Engaged private equity on expansion financing and separately advised a private equity team on troubled distributors.</li>
+                <li>Connected engineered sales with custom fabrication, supply, and field installation for major resort and commercial builds in Las Vegas, Macau, and nationwide.</li>
+                <li>Built proprietary software connecting estimating, project delivery, purchasing, production, inventory, and finance; engaged private equity on expansion financing and distributor turnarounds.</li>
               </ul>
             </article>
           </div>
@@ -272,35 +230,35 @@ export default function ExperiencePage() {
           <p className="p-kicker">Operating Foundations</p>
           <h2 className={"p-h2 " + styles.title} id="selected-clients-title">Enterprise breadth. Operating depth.</h2>
           <p className="p-prose mt-4 text-base lg:text-[17px] leading-relaxed text-[#142840]/90 max-w-[72ch]">
-            Every enterprise is uniquely standard: the books must balance and the business must run. Across industries, financial control, regulatory compliance, and operating accountability form a common foundation. The work is knowing which patterns to standardize, where the business differentiates, and how to connect people, systems, and workflows through a unified data core.
+            Every enterprise is uniquely standard: the books must balance and the business must run. Across industries, financial control, regulatory compliance, and operating accountability form a common foundation. The work is knowing where to standardize, where the business differentiates, and how to connect people, systems, and workflows through a unified data core.
           </p>
 
           <div className={styles.domainsGrid}>
             <article className={styles.domainItem}>
               <h3 className={styles.domainHeading}>Manufacturing &amp; Industrial Distribution</h3>
               <p className={styles.domainText}>
-                Items move from purchasing through production, inventory, and delivery—where planning, costing, quality, traceability, and regulatory compliance must work inside daily floor execution.
+                Purchasing through production, inventory, and delivery—where planning, costing, quality, traceability, and regulatory compliance must work inside daily floor execution.
               </p>
             </article>
 
             <article className={styles.domainItem}>
               <h3 className={styles.domainHeading}>Financial, Insurance &amp; Legal Services</h3>
               <p className={styles.domainText}>
-                Transactions, policies, cases, and obligations move through structured approvals—where risk management, information security, auditability, and financial accountability govern every workflow.
+                Transactions, policies, cases, and obligations moving through structured approvals—governed by risk management, information security, auditability, and financial control.
               </p>
             </article>
 
             <article className={styles.domainItem}>
               <h3 className={styles.domainHeading}>Healthcare &amp; Life Sciences</h3>
               <p className={styles.domainText}>
-                Healthcare facilities and regulated operations depend on tightly connected workflows—where facility infrastructure, operational systems delivery, life-safety compliance, quality, and traceability support both the mission and the business.
+                Regulated clinical and facility operations—where infrastructure, life-safety compliance, quality, and end-to-end traceability support both the mission and the business.
               </p>
             </article>
 
             <article className={styles.domainItem}>
               <h3 className={styles.domainHeading}>Energy, Utilities &amp; Infrastructure</h3>
               <p className={styles.domainText}>
-                Assets and capital projects move through planning, construction, operation, and maintenance—connecting engineering controls, field safety, project costing, and continuity of service.
+                Capital projects and critical assets across planning, construction, operation, and maintenance—connecting engineering controls, field safety, project costing, and service continuity.
               </p>
             </article>
           </div>
@@ -311,28 +269,28 @@ export default function ExperiencePage() {
               <article className={styles.orgCard}>
                 <h3 className={styles.orgTitle}>Gaming &amp; hospitality — Wynn Resorts · MGM Grand · Caesars</h3>
                 <p className={styles.orgText}>
-                  Complex project delivery across premier resort destinations in Las Vegas, Macau, and across the United States. Connected sales engineering, architectural design, specialized manufacturing, distribution, and field labor—integrating sequencing and project controls to align commercial commitments with site execution.
+                  Complex project delivery across premier resort builds in Las Vegas, Macau, and nationwide—connecting sales engineering, architectural design, specialized manufacturing, distribution, and field installation.
                 </p>
               </article>
 
               <article className={styles.orgCard}>
                 <h3 className={styles.orgTitle}>Wine industry — Duckhorn · Foley · Scheid · Rodney Strong</h3>
                 <p className={styles.orgText}>
-                  Enterprise systems and transformation across regulated multi-entity wine operations. Connected winemaking, bottling, inventory, 3-tier distribution, and financial operations—weaving compliance and traceability into the shared industry patterns and unique production rules of each winery.
+                  Enterprise transformation across regulated multi-entity wineries—connecting winemaking, bottling, inventory, 3-tier distribution, and finance with TTB compliance and lot traceability.
                 </p>
               </article>
 
               <article className={styles.orgCard}>
                 <h3 className={styles.orgTitle}>Architectural, engineering &amp; construction — SOM · HOK · Turner · PCL</h3>
                 <p className={styles.orgText}>
-                  Specification, engineering coordination, and field delivery across major commercial and institutional builds with tier-1 architects and general contractors. Connected design intent, submittals, estimating, specialized fabrication, scheduling, and site execution from blueprint to turnover.
+                  Specification, engineering coordination, and field delivery with tier-1 architects and general contractors—connecting design intent, submittals, estimating, custom fabrication, and site execution.
                 </p>
               </article>
 
               <article className={styles.orgCard}>
                 <h3 className={styles.orgTitle}>Healthcare &amp; life sciences — HCA Healthcare &amp; Regional Health Systems</h3>
                 <p className={styles.orgText}>
-                  Healthcare facility infrastructure and operational systems delivery across hospital networks and medical environments. Connected project controls, life-safety and infection-control compliance, supply chain, and operational workflows where facility continuity and regulatory traceability are non-negotiable.
+                  Facility infrastructure and operational systems delivery across hospital networks—connecting project controls, life-safety and infection-control compliance, supply chain, and clinical facility continuity.
                 </p>
               </article>
             </div>
@@ -348,38 +306,38 @@ export default function ExperiencePage() {
           <div className="home-story mt-8">
             <article>
               <h3>Multi-facility plant-floor &amp; warehouse integration</h3>
-              <p className="p-prose mt-4">
-                Led integration between enterprise systems, plant MES, and warehouse tracking, working with plant leaders and operational technology specialists to connect production information with business workflows.
+              <p className="p-prose mt-3">
+                Integrated enterprise ERP, plant MES, and warehouse tracking with plant leaders and OT specialists to connect floor execution directly to business workflows.
               </p>
             </article>
             <article>
               <h3>Financial integration after acquisition</h3>
-              <p className="p-prose mt-4">
-                Reduced financial close from 18 days to four in an 11-month transformation of a $350M post-acquisition business—consolidating systems, master data, chart of accounts, and multi-entity warehouses.
+              <p className="p-prose mt-3">
+                Cut financial close from 18 days to four in an 11-month transformation of a $350M post-acquisition business—unifying systems, master data, chart of accounts, and multi-entity warehouses.
               </p>
             </article>
             <article>
               <h3>Recovery of an off-track $10M ERP program</h3>
-              <p className="p-prose mt-4">
-                Stepped onto the customer’s side to rescue an off-track $10M enterprise ERP mandate—resetting partner governance, leading internal teams, and delivering the program into production for $8M ($2M saved).
+              <p className="p-prose mt-3">
+                Stepped onto the customer’s side to rescue a stalled $10M ERP mandate—resetting partner governance, leading internal teams, and delivering into production for $8M ($2M saved).
               </p>
             </article>
             <article>
               <h3>Core systems modernization &amp; API bridges</h3>
-              <p className="p-prose mt-4">
-                Led modernization of heavily customized legacy software through company-owned API bridges, with reconciled data, staged cutovers, and clear ownership of business continuity.
+              <p className="p-prose mt-3">
+                Modernized heavily customized legacy software through company-owned API bridges, reconciled data pipelines, and staged cutovers without business disruption.
               </p>
             </article>
             <article>
               <h3>Integrated business planning and supply chain</h3>
-              <p className="p-prose mt-4">
-                Unified planning and supply chain for a $200M multi-facility wine producer—replacing manual monthly decks with continuous S&amp;OP, cutting freight and SKU costs, and improving inventory and labor visibility.
+              <p className="p-prose mt-3">
+                Unified planning and supply chain for a $200M multi-facility wine producer—replacing manual monthly decks with continuous S&amp;OP, cutting freight and SKU costs, and improving inventory visibility.
               </p>
             </article>
             <article>
               <h3>Enterprise platform co-development &amp; shared IP</h3>
-              <p className="p-prose mt-4">
-                Aligned client, ERP partner, and custom software firm to build an integrated operations platform across legacy apps, ERP, WMS, and MES under a shared-IP model that eliminated client licensing fees.
+              <p className="p-prose mt-3">
+                Aligned client, ERP partner, and custom software firm to build an integrated operations platform across legacy apps, ERP, WMS, and MES under a shared-IP model that eliminated recurring client licensing fees.
               </p>
             </article>
           </div>
@@ -394,75 +352,152 @@ export default function ExperiencePage() {
         </div>
       </section>
 
-      {/* THREE VIEWS OF HOW AN ENTERPRISE WORKS */}
-      <section className="p-section">
+      {/* UNIFIED OPERATING ARCHITECTURE TRIAD (ALL THREE SIDE-BY-SIDE + DIRECTORY DRAWER) */}
+      <section className="p-section p-section--job" id="operating-architecture">
         <div className="page-well">
-          <p className="p-kicker">Operating Architecture</p>
-          <h2 className="p-h2">Three views of how an enterprise works</h2>
-          <p className="p-prose mt-4 text-base lg:text-[17px] leading-relaxed text-[#142840]/90 max-w-[72ch]">
-            The framework unifies people, systems, and workflows around a company-owned data core: <strong>The Systemverse</strong> maps applications and dependencies, <strong>the six constellations</strong> map recurring workflows, and <strong>The Beehive</strong> maps operating people and ownership. I work across those views—from the CFO and functional leads to delivery partners and the warehouse team using the scanners—turning operating knowledge into clear requirements, verifiable success criteria, and accountable delivery.
-          </p>
-        </div>
-      </section>
+          <div className="max-w-[76ch]">
+            <p className="p-kicker">Operating Architecture</p>
+            <h2 className="p-h2">Three views of how an enterprise works.</h2>
+            <p className="p-prose mt-4">
+              Every transformation connects three views around a company-owned data core: <strong>The Systemverse</strong> maps 20 system capability groups, <strong>The Six Process Constellations</strong> map recurring enterprise workflows, and <strong>The Beehive</strong> maps 18 functional groups and task forces with human decision authority. Best practice where you are standard; custom where you compete.
+            </p>
+          </div>
 
-      {/* THE SYSTEMVERSE PLATE & DIRECTORY */}
-      <section className="p-section p-section--job">
-        <div className="page-well">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-start">
-            <div className="md:col-span-5">
-              <p className="p-kicker">The systems</p>
-              <h2 className="p-h2">The Systemverse, and the systems beside it.</h2>
-              <p className="p-prose mt-4">
-                Best practice where you are standard; custom where you compete. The work is knowing which is which, then anchoring operational systems to a company-owned data core so master records, business rules, and operating logic remain under company control.
-              </p>
-            </div>
-
-            <div className="md:col-span-7">
-              <div className="command-plate !mt-0">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-8 items-stretch">
+            {/* 1. THE SYSTEMVERSE */}
+            <div className="command-plate !mt-0 !p-4 sm:!p-5 flex flex-col justify-between">
+              <div>
                 <div className="mb-3 text-left">
-                  <p className="font-vollkorn text-[17px] font-bold text-navy">
+                  <p className="font-mono text-[11px] font-bold uppercase tracking-wider text-[#9E7D3B]">
+                    01 // The Systems
+                  </p>
+                  <p className="font-vollkorn text-[17px] font-bold text-navy mt-0.5">
                     The Systemverse
                   </p>
                   <p className="text-[13px] text-[#5A6978]">
-                    Company-owned data core at the center. Systems around it.
+                    20 capability groups around a company-owned Data Core.
                   </p>
                 </div>
                 <DiagramModal
-                  src="/diagrams/system-verse.svg?v=family-approved-1"
-                  alt="The Systemverse: sixteen system capability groups surrounding Master Data Management and a Common Data Model"
+                  src="/diagrams/system-verse.svg?v=family-approved-3"
+                  alt="The Systemverse: twenty system capability groups connected through the Integration & Agentic Fabric to Master Data Management and a Common Data Model"
                   title="The Systemverse"
-                  subtitle="Company-owned data core at the center, systems around it"
-                  triggerText="Open the diagram"
+                  subtitle="20 system capability groups connected through one Integration, Agentic & Data Core"
+                  triggerText="Open full diagram"
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="/diagrams/system-verse.svg?v=family-approved-1"
-                    alt="The Systemverse: sixteen system capability groups surrounding Master Data Management and a Common Data Model"
+                    src="/diagrams/system-verse.svg?v=family-approved-3"
+                    alt="The Systemverse: twenty system capability groups connected through the Integration & Agentic Fabric to Master Data Management and a Common Data Model"
                     className="w-full h-auto mx-auto block cursor-pointer hover:opacity-95 transition-opacity"
                   />
                 </DiagramModal>
-                <div className="telemetry-badge !mt-3">
-                  <HaloFilm
-                    src="/media/systemverse-loop.mp4?c=2"
-                    poster="/media/systemverse-loop.png"
-                    label="The Systemverse loop in motion"
-                    size={72}
-                    round
+              </div>
+              <div className="telemetry-badge !mt-3">
+                <HaloFilm
+                  src="/media/systemverse-loop.mp4?c=2"
+                  poster="/media/systemverse-loop.png"
+                  label="The Systemverse loop in motion"
+                  size={64}
+                  round
+                />
+                <div>
+                  <p className="font-vollkorn text-[13px] font-bold text-navy">
+                    The application orbit, in motion
+                  </p>
+                  <p className="mt-0.5 text-[12.5px] text-[#243345]">
+                    Data core gravity pulling 20 capability groups into one estate.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* 2. THE SIX PROCESS CONSTELLATIONS */}
+            <div className="command-plate !mt-0 !p-4 sm:!p-5 flex flex-col justify-between">
+              <div>
+                <div className="mb-3 text-left">
+                  <p className="font-mono text-[11px] font-bold uppercase tracking-wider text-[#9E7D3B]">
+                    02 // The Workflows
+                  </p>
+                  <p className="font-vollkorn text-[17px] font-bold text-navy mt-0.5">
+                    The Six Process Constellations
+                  </p>
+                  <p className="text-[13px] text-[#5A6978]">
+                    Same six every company. Clusters and workflow blocks are yours.
+                  </p>
+                </div>
+                <DiagramModal
+                  src="/diagrams/six-constellations.svg?v=family-approved-3"
+                  alt="Six process constellations around a shared Data & Agentic Core, with cluster bands and workflow-block segments."
+                  title="The Six Process Constellations"
+                  subtitle="Same six every company. Shared Data & Agentic Core. Each business's own clusters and workflow blocks."
+                  triggerText="Open full diagram"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/diagrams/six-constellations.svg?v=family-approved-3"
+                    alt="Six process constellations around a shared Data & Agentic Core, with cluster bands and workflow-block segments."
+                    className="w-full h-auto mx-auto block cursor-pointer hover:opacity-95 transition-opacity"
                   />
-                  <div>
-                    <p className="font-vollkorn text-[13.5px] font-bold text-navy">
-                      The application orbit, in motion
-                    </p>
-                    <p className="mt-0.5 text-[13px] text-[#243345]">
-                      Visualizing data core gravity pulling functional applications into one connected estate.
-                    </p>
-                  </div>
+                </DiagramModal>
+              </div>
+              <div className="telemetry-badge !mt-3">
+                <ConstellationsFilm size={64} />
+                <div>
+                  <p className="font-vollkorn text-[13px] font-bold text-navy">
+                    The workflow rings, in motion
+                  </p>
+                  <p className="mt-0.5 text-[12.5px] text-[#243345]">
+                    Broad arcs show process clusters; fine outer segments show workflow blocks.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* 3. THE BEEHIVE */}
+            <div className="command-plate !mt-0 !p-4 sm:!p-5 flex flex-col justify-between">
+              <div>
+                <div className="mb-3 text-left">
+                  <p className="font-mono text-[11px] font-bold uppercase tracking-wider text-[#9E7D3B]">
+                    03 // The People
+                  </p>
+                  <p className="font-vollkorn text-[17px] font-bold text-navy mt-0.5">
+                    The Beehive
+                  </p>
+                  <p className="text-[13px] text-[#5A6978]">
+                    18 functional groups + shared Core crossed by the 6 flows.
+                  </p>
+                </div>
+                <DiagramModal
+                  src="/diagrams/beehive.svg?v=family-approved-3"
+                  alt="The Beehive: eighteen functional groups plus a shared Data, Analytics & Knowledge Core, crossed by the six process flows"
+                  title="The Beehive"
+                  subtitle="18 functional groups + shared Data, Analytics & Knowledge Core — crossed by the 6 process flows."
+                  triggerText="Open full diagram"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/diagrams/beehive.svg?v=family-approved-3"
+                    alt="The Beehive: eighteen functional groups plus a shared Data, Analytics & Knowledge Core, crossed by the six process flows"
+                    className="w-full h-auto mx-auto block cursor-pointer hover:opacity-95 transition-opacity"
+                  />
+                </DiagramModal>
+              </div>
+              <div className="telemetry-badge !mt-3">
+                <BeehiveFilm size={64} />
+                <div>
+                  <p className="font-vollkorn text-[13px] font-bold text-navy">
+                    The people map, in motion
+                  </p>
+                  <p className="mt-0.5 text-[12.5px] text-[#243345]">
+                    Functional groups configure into cross-workflow business task forces.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
 
-          <details className="group mt-10 rounded-xl border border-[#142840]/15 bg-[#142840]/[0.02] p-5 sm:p-6 transition-colors">
+          <details className="group mt-8 rounded-xl border border-[#142840]/15 bg-[#142840]/[0.02] p-5 sm:p-6 transition-colors">
             <summary className="cursor-pointer list-none flex items-center justify-between font-serif text-lg font-bold text-[#142840] select-none">
               <span>View core systems &amp; platforms directory ({estate.length} functional domains)</span>
               <span className="text-xs font-mono uppercase bg-[#142840]/10 px-2.5 py-1 rounded text-[#142840] group-open:hidden">Expand Directory +</span>
@@ -490,114 +525,6 @@ export default function ExperiencePage() {
               My legacy modernization work connects business rules, data, and retained systems. For plant integration, I work with operational technology specialists who own the controls and physical processes.
             </p>
           </details>
-        </div>
-      </section>
-
-      {/* SIX CONSTELLATIONS & THE BEEHIVE */}
-      <section className="p-section">
-        <div className="page-well">
-          <p className="p-kicker">Process and people</p>
-          <h2 className="p-h2" style={{ maxWidth: "20ch" }}>
-            Six constellations, and the Beehive.
-          </h2>
-          <p className="p-prose">
-            The Beehive presents twelve primary functional groups. Each business shapes them into its own groups and workflow task forces. Domain experts, people and agents contribute across workflows, with explicit human decision authority and accountability. Standard patterns guide discovery; the business determines its own configuration.
-          </p>
-
-          <div className="twin-command-grid">
-            <div className="command-plate">
-              <div className="mb-3 text-left">
-                <p className="font-vollkorn text-[17px] font-bold text-navy">
-                  The six constellations
-                </p>
-                <p className="text-[13px] text-[#5A6978]">
-                  Same six every company. The mix is yours.
-                </p>
-              </div>
-              <DiagramModal
-                src="/diagrams/six-constellations.svg?v=family-approved-1"
-                alt="Six constellations around a shared data core, with cluster bands and workflow-block segments."
-                title="The Six Process Constellations"
-                subtitle="Same six every company. The mix is yours."
-                triggerText="Open the diagram"
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/diagrams/six-constellations.svg?v=family-approved-1"
-                  alt="Six constellations around a shared data core, with cluster bands and workflow-block segments."
-                  className="w-full h-auto mx-auto block cursor-pointer hover:opacity-95 transition-opacity"
-                />
-              </DiagramModal>
-              <div className="telemetry-badge">
-                <ConstellationsFilm size={72} />
-                <div>
-                  <p className="font-vollkorn text-[13.5px] font-bold text-navy">
-                    The workflow rings, in motion
-                  </p>
-                  <p className="mt-0.5 text-[13px] text-[#243345]">
-                    Broad ring segments show clusters; fine outer segments show their workflow blocks.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="command-plate">
-              <div className="mb-3 text-left">
-                <p className="font-vollkorn text-[17px] font-bold text-navy">
-                  The Beehive
-                </p>
-                <p className="text-[13px] text-[#5A6978]">
-                  How work crosses functions, from floor to board.
-                </p>
-              </div>
-              <DiagramModal
-                src="/diagrams/beehive.svg?v=family-approved-1"
-                alt="The Beehive manufacturing reference: functional domains adapted into business groups and workflow task forces"
-                title="The Beehive Process Flow"
-                subtitle="How work crosses functions, from floor to board."
-                triggerText="Open the diagram"
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/diagrams/beehive.svg?v=family-approved-1"
-                  alt="The Beehive manufacturing reference: functional domains adapted into business groups and workflow task forces"
-                  className="w-full h-auto mx-auto block cursor-pointer hover:opacity-95 transition-opacity"
-                />
-              </DiagramModal>
-              <div className="telemetry-badge">
-                <BeehiveFilm size={80} />
-                <div>
-                  <p className="font-vollkorn text-[13.5px] font-bold text-navy">
-                    The people map, in motion
-                  </p>
-                  <p className="mt-0.5 text-[13px] text-[#243345]">
-                    Functional domains become the business’s own workflow task forces.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="constellations-grid mt-10">
-            {constellations.map((c) => (
-              <article key={c.code} className="constellation-card">
-                <div className="flex items-baseline justify-between gap-2 border-b border-[#142840]/10 pb-2">
-                  <span className="font-vollkorn text-[20px] font-black text-navy">
-                    {c.code}
-                  </span>
-                  <span className="font-brand text-[11px] font-bold uppercase tracking-[0.16em] text-[#B48A05]">
-                    {c.tagline}
-                  </span>
-                </div>
-                <h3 className="mt-3 font-vollkorn text-[16px] font-bold text-navy">
-                  {c.name}
-                </h3>
-                <p className="mt-2 text-[14.5px] leading-[1.55] text-[#334155]">
-                  {c.desc}
-                </p>
-              </article>
-            ))}
-          </div>
         </div>
       </section>
 
