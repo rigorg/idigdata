@@ -1,90 +1,528 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg viewBox="0 0 540 530" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="beehive-title beehive-desc">
-  <title id="beehive-title">AV-04 · The Beehive · brand-v2 · author-v2 · 2026-05-09</title>
-  <desc id="beehive-desc">Hexagonal honeycomb of 13 functional system groups arranged 3-2-3-2-3 (PLM, Sales, Compliance / Production MES, Supply Chain / EAM, MDM at center, WMS / HRIS, ERP / IT, Finance/Accounting, Sustainability). Six business process flows (P2P, O2C, P2M, S2S, D2R, MDM) feed in from the left, crossing the functional groups. Standard frame everywhere; bespoke fill — 100s of BPSc per BPF, unique per operator. Same six BPFs as the constellation spine; same atom (PEGS) appears in both diagrams with different coordinates. Brand v2 chrome: charcoal structure, sun-gold MDM/CDM center, cream substrate, Helvetica Black approximation title, Georgia italic captions.</desc>
-
-  <!-- Arrow marker + fabric pattern definitions -->
-  <defs>
-    <marker id="bpf-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1F2937" fill-opacity="0.55"/>
-    </marker>
-    <pattern id="fabric-mesh" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)">
-      <rect width="6" height="6" fill="#FBF9F4"/>
-      <line x1="0" y1="0" x2="0" y2="6" stroke="#7A756A" stroke-width="0.5" stroke-opacity="0.18"/>
-    </pattern>
-  </defs>
-
-  <!-- Background · cream substrate (brand v2) -->
-  <rect width="540" height="700" fill="#FBF9F4"/>
-
-  <!-- Title block · heavy geometric sans (Helvetica Black approximation) + Georgia italic subtitle -->
-  <text x="270" y="48" text-anchor="middle" font-weight="900" font-size="28" fill="#1F2937" letter-spacing="-0.3" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">THE BEEHIVE</text>
-  <text x="270" y="72" text-anchor="middle" font-style="italic" font-size="13" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Process flows × functional groups · universal frame</text>
-
-  <!-- BPF column header -->
-  <text x="70" y="115" text-anchor="middle" font-style="italic" font-size="10" fill="#6B6860" letter-spacing="2" font-family="Georgia, 'Times New Roman', serif">BPF</text>
-
-  <!-- BPF circles (left column, vertically stacked, feeding hex grid via arrows) -->
-  <g>
-    <circle cx="70" cy="165" r="22" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/>
-    <text x="70" y="170" text-anchor="middle" font-weight="bold" font-size="12" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">P2P</text>
-    <line x1="92" y1="165" x2="198" y2="165" stroke="#1F2937" stroke-width="1.5" stroke-opacity="0.4" marker-end="url(#bpf-arrow)"/>
-
-    <circle cx="70" cy="220" r="22" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/>
-    <text x="70" y="225" text-anchor="middle" font-weight="bold" font-size="12" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">O2C</text>
-    <line x1="92" y1="220" x2="198" y2="220" stroke="#1F2937" stroke-width="1.5" stroke-opacity="0.4" marker-end="url(#bpf-arrow)"/>
-
-    <circle cx="70" cy="275" r="22" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/>
-    <text x="70" y="280" text-anchor="middle" font-weight="bold" font-size="12" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">P2M</text>
-    <line x1="92" y1="275" x2="198" y2="275" stroke="#1F2937" stroke-width="1.5" stroke-opacity="0.4" marker-end="url(#bpf-arrow)"/>
-
-    <circle cx="70" cy="335" r="22" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/>
-    <text x="70" y="340" text-anchor="middle" font-weight="bold" font-size="12" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">S2S</text>
-    <line x1="92" y1="335" x2="198" y2="335" stroke="#1F2937" stroke-width="1.5" stroke-opacity="0.4" marker-end="url(#bpf-arrow)"/>
-
-    <circle cx="70" cy="390" r="22" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/>
-    <text x="70" y="395" text-anchor="middle" font-weight="bold" font-size="12" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">D2R</text>
-    <line x1="92" y1="390" x2="198" y2="390" stroke="#1F2937" stroke-width="1.5" stroke-opacity="0.4" marker-end="url(#bpf-arrow)"/>
-
-    <circle cx="70" cy="445" r="22" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/>
-    <text x="70" y="450" text-anchor="middle" font-weight="bold" font-size="12" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">MDM</text>
-    <line x1="92" y1="445" x2="198" y2="445" stroke="#1F2937" stroke-width="1.5" stroke-opacity="0.4" marker-end="url(#bpf-arrow)"/>
-  </g>
-
-  <!-- Functional groups header (above hex grid) -->
-  <text x="320" y="115" text-anchor="middle" font-style="italic" font-size="10" fill="#6B6860" letter-spacing="2" font-family="Georgia, 'Times New Roman', serif">FUNCTIONAL GROUPS</text>
-
-  <!-- Beehive fabric box (the operating fabric — BPFs connect to this; fabric routes internally to cells) -->
-  <rect x="200" y="125" width="240" height="345" rx="14" fill="url(#fabric-mesh)" stroke="#1F2937" stroke-width="1.2" stroke-opacity="0.45"/>
-
-  <!-- Hex grid: 3-2-3-2-3 honeycomb, vertical layout. Pointy-top, r=40 -->
-  <!-- Row 1: y=170 (3 cells) -->
-  <g transform="translate(250.8, 170)"><polygon points="0,-40 34.6,-20 34.6,20 0,40 -34.6,20 -34.6,-20" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="0" y="5" text-anchor="middle" font-size="11" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">PLM</text></g>
-  <g transform="translate(320, 170)"><polygon points="0,-40 34.6,-20 34.6,20 0,40 -34.6,20 -34.6,-20" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="0" y="5" text-anchor="middle" font-size="11" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Sales</text></g>
-  <g transform="translate(389.2, 170)"><polygon points="0,-40 34.6,-20 34.6,20 0,40 -34.6,20 -34.6,-20" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="0" y="5" text-anchor="middle" font-size="11" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Compliance</text></g>
-
-  <!-- Row 2: y=230 (2 cells, offset) -->
-  <g transform="translate(285.4, 230)"><polygon points="0,-40 34.6,-20 34.6,20 0,40 -34.6,20 -34.6,-20" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="0" y="-2" text-anchor="middle" font-size="10" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Production</text><text x="0" y="11" text-anchor="middle" font-size="10" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">MES</text></g>
-  <g transform="translate(354.6, 230)"><polygon points="0,-40 34.6,-20 34.6,20 0,40 -34.6,20 -34.6,-20" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="0" y="-2" text-anchor="middle" font-size="10" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Supply</text><text x="0" y="11" text-anchor="middle" font-size="10" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Chain</text></g>
-
-  <!-- Row 3: y=290 (3 cells, MDM+CDM at center · sun-gold fill matches AV-02/AV-03 data core treatment) -->
-  <g transform="translate(250.8, 290)"><polygon points="0,-40 34.6,-20 34.6,20 0,40 -34.6,20 -34.6,-20" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="0" y="5" text-anchor="middle" font-size="11" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">EAM</text></g>
-  <g transform="translate(320, 290)"><polygon points="0,-40 34.6,-20 34.6,20 0,40 -34.6,20 -34.6,-20" fill="#FACC15" stroke="#1F2937" stroke-width="2"/><text x="0" y="-3" text-anchor="middle" font-size="13" font-weight="900" fill="#1F2937" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">MDM</text><text x="0" y="13" text-anchor="middle" font-size="9" font-style="italic" fill="#1F2937" font-family="Georgia, 'Times New Roman', serif">+ CDM</text></g>
-  <g transform="translate(389.2, 290)"><polygon points="0,-40 34.6,-20 34.6,20 0,40 -34.6,20 -34.6,-20" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="0" y="5" text-anchor="middle" font-size="11" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">WMS</text></g>
-
-  <!-- Row 4: y=350 (2 cells, offset) -->
-  <g transform="translate(285.4, 350)"><polygon points="0,-40 34.6,-20 34.6,20 0,40 -34.6,20 -34.6,-20" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="0" y="5" text-anchor="middle" font-size="11" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">HRIS</text></g>
-  <g transform="translate(354.6, 350)"><polygon points="0,-40 34.6,-20 34.6,20 0,40 -34.6,20 -34.6,-20" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="0" y="5" text-anchor="middle" font-size="11" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">ERP</text></g>
-
-  <!-- Row 5: y=410 (3 cells) -->
-  <g transform="translate(250.8, 410)"><polygon points="0,-40 34.6,-20 34.6,20 0,40 -34.6,20 -34.6,-20" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="0" y="5" text-anchor="middle" font-size="11" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">IT</text></g>
-  <g transform="translate(320, 410)"><polygon points="0,-40 34.6,-20 34.6,20 0,40 -34.6,20 -34.6,-20" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="0" y="-2" text-anchor="middle" font-size="9" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Finance/</text><text x="0" y="11" text-anchor="middle" font-size="9" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Accounting</text></g>
-  <g transform="translate(389.2, 410)"><polygon points="0,-40 34.6,-20 34.6,20 0,40 -34.6,20 -34.6,-20" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="0" y="5" text-anchor="middle" font-size="10" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Sustainability</text></g>
-
-  <!-- Mid-rule callout -->
-  <text x="270" y="500" text-anchor="middle" font-style="italic" font-size="11" fill="#6B6860" letter-spacing="2" font-family="Georgia, 'Times New Roman', serif">flows × groups · BPSc lives at every intersection</text>
-
-  <!-- Stone rule + footer caption -->
-  <line x1="80" y1="640" x2="460" y2="640" stroke="#7A756A" stroke-width="0.8"/>
-  <text x="270" y="660" text-anchor="middle" font-style="italic" font-size="12" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Standard frame · bespoke fill · 100s of BPSc per BPF, unique per operator</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1660 1520" role="img" aria-labelledby="title desc">
+<title id="title">The Beehive — 18 Functional Groups + Central Data, Analytics &amp; Knowledge Core</title>
+<desc id="desc">Symmetric 3-4-5-4-3 hexagonal rosette honeycomb with a clean left-hand 6 Process Flows card rail and zero spiderweb lines.</desc>
+<defs>
+<radialGradient id="paper"><stop stop-color="#FFFDF8"/><stop offset="1" stop-color="#F6EFE0"/></radialGradient>
+<radialGradient id="paperInner"><stop stop-color="#FFFDF5"/><stop offset="1" stop-color="#EFE2C2"/></radialGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#E8D49A"/><stop offset=".5" stop-color="#B79445"/><stop offset="1" stop-color="#E3C87F"/></linearGradient>
+<radialGradient id="core"><stop stop-color="#FFF5CC"/><stop offset=".68" stop-color="#E5CA7A"/><stop offset="1" stop-color="#B79445"/></radialGradient>
+<radialGradient id="wax" cx="35%" cy="28%" r="76%">
+  <stop offset="0" stop-color="#FFFDF8"/>
+  <stop offset=".62" stop-color="#F6ECD5"/>
+  <stop offset="1" stop-color="#E8D7B1"/>
+</radialGradient>
+<linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0" stop-color="#E5CF97"/>
+  <stop offset=".52" stop-color="#B79445"/>
+  <stop offset="1" stop-color="#DEC27D"/>
+</linearGradient>
+<radialGradient id="fabricFill" cx="50%" cy="50%" r="50%">
+  <stop offset="35%" stop-color="#F3E5BE" stop-opacity="0.52"/>
+  <stop offset="70%" stop-color="#E8D49A" stop-opacity="0.38"/>
+  <stop offset="92%" stop-color="#D7BC74" stop-opacity="0.46"/>
+  <stop offset="100%" stop-color="#B79445" stop-opacity="0.60"/>
+</radialGradient>
+<pattern id="small-comb" width="28" height="24.25" patternUnits="userSpaceOnUse">
+  <path d="M14 0L28 8.08V24.25L14 16.17L0 24.25V8.08Z" fill="none" stroke="#AD9049" stroke-width="0.8"/>
+</pattern>
+<filter id="softShadow" x="-12%" y="-12%" width="124%" height="124%">
+  <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#1E2723" flood-opacity="0.16"/>
+</filter>
+</defs>
+<rect width="1660" height="1520" fill="#FBF9F4"/>
+<text x="830.00" y="56.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="42" font-weight="700" letter-spacing="1.5" fill="#26313A">THE BEEHIVE</text>
+<text x="830.00" y="95.00" text-anchor="middle" font-family="Georgia, serif" font-size="21" font-weight="400" fill="#966B26">18 functional groups + shared Data, Analytics &amp; Knowledge Core — crossed by the 6 process flows.</text>
+<rect x="92.50" y="120" width="285" height="30" rx="15" fill="#2B4C3F"/>
+<text x="235.00" y="140.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.6" font-weight="700" letter-spacing="0.3" fill="#F5E3A9">P2M · Plan &amp; Make Functions (7)</text>
+<rect x="387.50" y="120" width="275" height="30" rx="15" fill="#7C4D1B"/>
+<text x="525.00" y="140.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.6" font-weight="700" letter-spacing="0.3" fill="#FFFDF8">O2C · Commercial &amp; Fulfill (4)</text>
+<rect x="672.50" y="120" width="235" height="30" rx="15" fill="#8A681C"/>
+<text x="790.00" y="140.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.6" font-weight="700" letter-spacing="0.3" fill="#FFFDF8">P2P · Source &amp; Pay (1–2)</text>
+<rect x="917.50" y="120" width="285" height="30" rx="15" fill="#25323B"/>
+<text x="1060.00" y="140.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.6" font-weight="700" letter-spacing="0.3" fill="#E8D49A">S2S · Finance, HR, IT &amp; PMO (6)</text>
+<rect x="1212.50" y="120" width="355" height="30" rx="15" fill="#B79445" stroke="#26313A" stroke-width="1.3"/>
+<text x="1390.00" y="140.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.6" font-weight="700" letter-spacing="0.3" fill="#1F2933">Center Hex · Data, Analytics &amp; Knowledge Core</text>
+<ellipse cx="955" cy="755" rx="590" ry="555" fill="url(#fabricFill)" opacity="0.58"/>
+<ellipse cx="955" cy="755" rx="555" ry="520" fill="none" stroke="#B99A52" stroke-width="1.2" stroke-dasharray="6 5" opacity="0.38"/>
+<ellipse cx="955" cy="755" rx="569" ry="534" fill="none" stroke="#B99A52" stroke-width="1.2" stroke-dasharray="6 5" opacity="0.38"/>
+<ellipse cx="955" cy="755" rx="583" ry="548" fill="none" stroke="#B99A52" stroke-width="1.2" stroke-dasharray="6 5" opacity="0.38"/>
+<rect x="44" y="205" width="256" height="1095" rx="26" fill="#FFFDF8" stroke="#B79445" stroke-width="1.8" filter="url(#softShadow)"/>
+<text x="172.00" y="242.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.5" font-weight="700" letter-spacing="1.0" fill="#26313A">6 PROCESS FLOWS</text>
+<text x="172.00" y="262.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.2" font-weight="700" fill="#966B26">Mobilizing Cross-Functional Teams</text>
+<path d="M72 276H272" stroke="#D7BC74" stroke-width="1.0"/>
+<path d="M280 335H318" stroke="#8A681C" stroke-width="3.2" stroke-linecap="round"/>
+<circle cx="300" cy="335" r="5.0" fill="#8A681C" stroke="#FFFDF8" stroke-width="1.6"/>
+<polygon points="315,328.5 327,335 315,341.5" fill="#8A681C"/>
+<rect x="64" y="291" width="216" height="88" rx="16" fill="url(#paper)" stroke="#8A681C" stroke-width="2.0"/>
+<rect x="78" y="302" width="78" height="21" rx="10.5" fill="#8A681C"/>
+<text x="117.00" y="316.50" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.5" font-weight="700" letter-spacing="0.4" fill="#FFFDF8">01 · P2P</text>
+<text x="218.00" y="316.50" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" letter-spacing="0.8" fill="#8C6D28">FLOW</text>
+<text x="172.00" y="343.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="15.5" font-weight="700" fill="#26313A">Procure to Pay</text>
+<text x="172.00" y="362.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.4" font-weight="700" fill="#6B5119">Sourcing · Vendors · PO · AP</text>
+<path d="M280 495H318" stroke="#7C4D1B" stroke-width="3.2" stroke-linecap="round"/>
+<circle cx="300" cy="495" r="5.0" fill="#7C4D1B" stroke="#FFFDF8" stroke-width="1.6"/>
+<polygon points="315,488.5 327,495 315,501.5" fill="#7C4D1B"/>
+<rect x="64" y="451" width="216" height="88" rx="16" fill="url(#paper)" stroke="#7C4D1B" stroke-width="2.0"/>
+<rect x="78" y="462" width="78" height="21" rx="10.5" fill="#7C4D1B"/>
+<text x="117.00" y="476.50" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.5" font-weight="700" letter-spacing="0.4" fill="#FFFDF8">02 · O2C</text>
+<text x="218.00" y="476.50" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" letter-spacing="0.8" fill="#8C6D28">FLOW</text>
+<text x="172.00" y="503.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="15.5" font-weight="700" fill="#26313A">Order to Cash</text>
+<text x="172.00" y="522.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.4" font-weight="700" fill="#6B5119">Mktg · Sales · Commerce · Ship</text>
+<path d="M280 655H318" stroke="#2B4C3F" stroke-width="3.2" stroke-linecap="round"/>
+<circle cx="300" cy="655" r="5.0" fill="#2B4C3F" stroke="#FFFDF8" stroke-width="1.6"/>
+<polygon points="315,648.5 327,655 315,661.5" fill="#2B4C3F"/>
+<rect x="64" y="611" width="216" height="88" rx="16" fill="url(#paper)" stroke="#2B4C3F" stroke-width="2.0"/>
+<rect x="78" y="622" width="78" height="21" rx="10.5" fill="#2B4C3F"/>
+<text x="117.00" y="636.50" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.5" font-weight="700" letter-spacing="0.4" fill="#F5E3A9">03 · P2M</text>
+<text x="218.00" y="636.50" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" letter-spacing="0.8" fill="#8C6D28">FLOW</text>
+<text x="172.00" y="663.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="15.5" font-weight="700" fill="#26313A">Plan to Manufacture</text>
+<text x="172.00" y="682.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.4" font-weight="700" fill="#6B5119">IBP · R&amp;D · MES · OT · Quality</text>
+<path d="M280 815H318" stroke="#25323B" stroke-width="3.2" stroke-linecap="round"/>
+<circle cx="300" cy="815" r="5.0" fill="#25323B" stroke="#FFFDF8" stroke-width="1.6"/>
+<polygon points="315,808.5 327,815 315,821.5" fill="#25323B"/>
+<rect x="64" y="771" width="216" height="88" rx="16" fill="url(#paper)" stroke="#25323B" stroke-width="2.0"/>
+<rect x="78" y="782" width="78" height="21" rx="10.5" fill="#25323B"/>
+<text x="117.00" y="796.50" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.5" font-weight="700" letter-spacing="0.4" fill="#E8D49A">04 · S2S</text>
+<text x="218.00" y="796.50" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" letter-spacing="0.8" fill="#8C6D28">FLOW</text>
+<text x="172.00" y="823.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="15.5" font-weight="700" fill="#26313A">Systems to Support</text>
+<text x="172.00" y="842.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.4" font-weight="700" fill="#6B5119">Finance · HR · IT · Assets · PMO</text>
+<path d="M280 975H318" stroke="#3E5641" stroke-width="3.2" stroke-linecap="round"/>
+<circle cx="300" cy="975" r="5.0" fill="#3E5641" stroke="#FFFDF8" stroke-width="1.6"/>
+<polygon points="315,968.5 327,975 315,981.5" fill="#3E5641"/>
+<rect x="64" y="931" width="216" height="88" rx="16" fill="url(#paper)" stroke="#3E5641" stroke-width="2.0"/>
+<rect x="78" y="942" width="78" height="21" rx="10.5" fill="#3E5641"/>
+<text x="117.00" y="956.50" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.5" font-weight="700" letter-spacing="0.4" fill="#F5E3A9">05 · D2R</text>
+<text x="218.00" y="956.50" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" letter-spacing="0.8" fill="#8C6D28">FLOW</text>
+<text x="172.00" y="983.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="15.5" font-weight="700" fill="#26313A">Data to Report</text>
+<text x="172.00" y="1002.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.4" font-weight="700" fill="#6B5119">BI · Governed KPIs · Analytics</text>
+<path d="M280 1135H318" stroke="#5C4516" stroke-width="3.2" stroke-linecap="round"/>
+<circle cx="300" cy="1135" r="5.0" fill="#5C4516" stroke="#FFFDF8" stroke-width="1.6"/>
+<polygon points="315,1128.5 327,1135 315,1141.5" fill="#5C4516"/>
+<rect x="64" y="1091" width="216" height="88" rx="16" fill="url(#paper)" stroke="#5C4516" stroke-width="2.0"/>
+<rect x="78" y="1102" width="78" height="21" rx="10.5" fill="#5C4516"/>
+<text x="117.00" y="1116.50" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.5" font-weight="700" letter-spacing="0.4" fill="#F5E3A9">06 · MDM</text>
+<text x="218.00" y="1116.50" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" font-weight="700" letter-spacing="0.8" fill="#8C6D28">FLOW</text>
+<text x="172.00" y="1143.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="15.5" font-weight="700" fill="#26313A">Master Data Mgmt</text>
+<text x="172.00" y="1162.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.4" font-weight="700" fill="#6B5119">Item · Cust · Vendor · CDM</text>
+<text x="172.00" y="1245.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.2" font-weight="700" letter-spacing="0.6" fill="#6B4F16">TASK FORCE AUTHORITY</text>
+<text x="172.00" y="1265.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.8" font-weight="700" fill="#26313A">Named Humans Hold Sign-Off</text>
+<g id="BH-01" filter="url(#softShadow)">
+<polygon points="767.94,323.00 861.47,377.00 861.47,485.00 767.94,539.00 674.41,485.00 674.41,377.00" fill="#26313A" stroke="#A98A43" stroke-width="1.5"/>
+<polygon points="767.94,326.46 858.48,378.73 858.48,483.27 767.94,535.54 677.40,483.27 677.40,378.73" fill="url(#rim)"/>
+<polygon points="767.94,329.70 855.67,380.35 855.67,481.65 767.94,532.30 680.21,481.65 680.21,380.35" fill="url(#wax)" stroke="#D5BB77" stroke-width="0.8"/>
+<polygon points="767.94,331.10 854.45,381.05 854.45,480.95 767.94,530.90 681.42,480.95 681.42,381.05" fill="url(#small-comb)" opacity="0.13"/>
+<polygon points="767.94,335.42 850.71,383.21 850.71,478.79 767.94,526.58 685.16,478.79 685.16,383.21" fill="none" stroke="#AA8B40" stroke-width="0.7" opacity="0.52"/>
+<circle cx="767.94" cy="323.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="861.47" cy="377.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="861.47" cy="485.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="767.94" cy="539.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="674.41" cy="485.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="674.41" cy="377.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<rect x="727.94" y="361.02" width="80.00" height="19" rx="9.5" fill="#2B4C3F"/>
+<text x="767.94" y="374.52" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.8" font-weight="700" letter-spacing="0.4" fill="#F5E3A9">01 · P2M</text>
+<text x="767.94" y="405.35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">Integrated Business</text>
+<text x="767.94" y="424.65" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">Planning (IBP)</text>
+<path d="M705.30 433.65H830.58" stroke="#B79445" stroke-width="1.0" opacity="0.8"/>
+<text x="767.94" y="448.15" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#5C4516">Demand &amp; Supply Planning</text>
+<text x="767.94" y="461.55" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#35423C">S&amp;OP / SIOP · MPS &amp; MRP</text>
+<rect x="720.74" y="489.46" width="94.40" height="17" rx="8.5" fill="#EFE2C2" stroke="#B79445" stroke-width="0.8"/>
+<text x="767.94" y="501.46" text-anchor="middle" font-family="Arial, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.3" fill="#6B5119">FG-02 · SYS 01</text>
+</g>
+<g id="BH-02" filter="url(#softShadow)">
+<polygon points="955.00,323.00 1048.53,377.00 1048.53,485.00 955.00,539.00 861.47,485.00 861.47,377.00" fill="#26313A" stroke="#A98A43" stroke-width="1.5"/>
+<polygon points="955.00,326.46 1045.54,378.73 1045.54,483.27 955.00,535.54 864.46,483.27 864.46,378.73" fill="url(#rim)"/>
+<polygon points="955.00,329.70 1042.73,380.35 1042.73,481.65 955.00,532.30 867.27,481.65 867.27,380.35" fill="url(#wax)" stroke="#D5BB77" stroke-width="0.8"/>
+<polygon points="955.00,331.10 1041.52,381.05 1041.52,480.95 955.00,530.90 868.48,480.95 868.48,381.05" fill="url(#small-comb)" opacity="0.13"/>
+<polygon points="955.00,335.42 1037.77,383.21 1037.77,478.79 955.00,526.58 872.23,478.79 872.23,383.21" fill="none" stroke="#AA8B40" stroke-width="0.7" opacity="0.52"/>
+<circle cx="955.00" cy="323.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1048.53" cy="377.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1048.53" cy="485.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="955.00" cy="539.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="861.47" cy="485.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="861.47" cy="377.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<rect x="915.00" y="361.02" width="80.00" height="19" rx="9.5" fill="#2B4C3F"/>
+<text x="955.00" y="374.52" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.8" font-weight="700" letter-spacing="0.4" fill="#F5E3A9">02 · P2M</text>
+<text x="955.00" y="405.35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">Product Dev &amp;</text>
+<text x="955.00" y="424.65" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">Innovation</text>
+<path d="M892.36 433.65H1017.64" stroke="#B79445" stroke-width="1.0" opacity="0.8"/>
+<text x="955.00" y="448.15" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#5C4516">R&amp;D · Formulations &amp; Specs</text>
+<text x="955.00" y="461.55" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#35423C">PLM · NPD · BOMs &amp; Routings</text>
+<rect x="907.80" y="489.46" width="94.40" height="17" rx="8.5" fill="#EFE2C2" stroke="#B79445" stroke-width="0.8"/>
+<text x="955.00" y="501.46" text-anchor="middle" font-family="Arial, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.3" fill="#6B5119">FG-03 · SYS 02</text>
+</g>
+<g id="BH-03" filter="url(#softShadow)">
+<polygon points="1142.06,323.00 1235.59,377.00 1235.59,485.00 1142.06,539.00 1048.53,485.00 1048.53,377.00" fill="#26313A" stroke="#A98A43" stroke-width="1.5"/>
+<polygon points="1142.06,326.46 1232.60,378.73 1232.60,483.27 1142.06,535.54 1051.52,483.27 1051.52,378.73" fill="url(#rim)"/>
+<polygon points="1142.06,329.70 1229.79,380.35 1229.79,481.65 1142.06,532.30 1054.33,481.65 1054.33,380.35" fill="url(#wax)" stroke="#D5BB77" stroke-width="0.8"/>
+<polygon points="1142.06,331.10 1228.58,381.05 1228.58,480.95 1142.06,530.90 1055.55,480.95 1055.55,381.05" fill="url(#small-comb)" opacity="0.13"/>
+<polygon points="1142.06,335.42 1224.84,383.21 1224.84,478.79 1142.06,526.58 1059.29,478.79 1059.29,383.21" fill="none" stroke="#AA8B40" stroke-width="0.7" opacity="0.52"/>
+<circle cx="1142.06" cy="323.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1235.59" cy="377.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1235.59" cy="485.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1142.06" cy="539.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1048.53" cy="485.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1048.53" cy="377.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<rect x="1102.06" y="361.02" width="80.00" height="19" rx="9.5" fill="#7C4D1B"/>
+<text x="1142.06" y="374.52" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.8" font-weight="700" letter-spacing="0.4" fill="#FFFDF8">03 · O2C</text>
+<text x="1142.06" y="405.35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">Marketing &amp;</text>
+<text x="1142.06" y="424.65" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">Brand Intel</text>
+<path d="M1079.42 433.65H1204.70" stroke="#B79445" stroke-width="1.0" opacity="0.8"/>
+<text x="1142.06" y="448.15" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#5C4516">Brand, Campaigns &amp; Demand</text>
+<text x="1142.06" y="461.55" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#35423C">Customer Insight &amp; MarTech</text>
+<rect x="1094.86" y="489.46" width="94.40" height="17" rx="8.5" fill="#EFE2C2" stroke="#B79445" stroke-width="0.8"/>
+<text x="1142.06" y="501.46" text-anchor="middle" font-family="Arial, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.3" fill="#6B5119">FG-04 · SYS 10</text>
+</g>
+<g id="BH-04" filter="url(#softShadow)">
+<polygon points="674.41,485.00 767.94,539.00 767.94,647.00 674.41,701.00 580.88,647.00 580.88,539.00" fill="#26313A" stroke="#A98A43" stroke-width="1.5"/>
+<polygon points="674.41,488.46 764.95,540.73 764.95,645.27 674.41,697.54 583.87,645.27 583.87,540.73" fill="url(#rim)"/>
+<polygon points="674.41,491.70 762.14,542.35 762.14,643.65 674.41,694.30 586.68,643.65 586.68,542.35" fill="url(#wax)" stroke="#D5BB77" stroke-width="0.8"/>
+<polygon points="674.41,493.10 760.92,543.05 760.92,642.95 674.41,692.90 587.89,642.95 587.89,543.05" fill="url(#small-comb)" opacity="0.13"/>
+<polygon points="674.41,497.42 757.18,545.21 757.18,640.79 674.41,688.58 591.63,640.79 591.63,545.21" fill="none" stroke="#AA8B40" stroke-width="0.7" opacity="0.52"/>
+<circle cx="674.41" cy="485.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="767.94" cy="539.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="767.94" cy="647.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="674.41" cy="701.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="580.88" cy="647.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="580.88" cy="539.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<rect x="634.41" y="523.02" width="80.00" height="19" rx="9.5" fill="#7C4D1B"/>
+<text x="674.41" y="536.52" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.8" font-weight="700" letter-spacing="0.4" fill="#FFFDF8">04 · O2C</text>
+<text x="674.41" y="567.35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">Sales &amp; Channel</text>
+<text x="674.41" y="586.65" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">Management</text>
+<path d="M611.77 595.65H737.05" stroke="#B79445" stroke-width="1.0" opacity="0.8"/>
+<text x="674.41" y="610.15" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#5C4516">Wholesale, Distributors &amp; Accts</text>
+<text x="674.41" y="623.55" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#35423C">Contract Sales, Pricing &amp; CRM</text>
+<rect x="627.21" y="651.46" width="94.40" height="17" rx="8.5" fill="#EFE2C2" stroke="#B79445" stroke-width="0.8"/>
+<text x="674.41" y="663.46" text-anchor="middle" font-family="Arial, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.3" fill="#6B5119">FG-05 · SYS 09</text>
+</g>
+<g id="BH-05" filter="url(#softShadow)">
+<polygon points="861.47,485.00 955.00,539.00 955.00,647.00 861.47,701.00 767.94,647.00 767.94,539.00" fill="#26313A" stroke="#A98A43" stroke-width="1.5"/>
+<polygon points="861.47,488.46 952.01,540.73 952.01,645.27 861.47,697.54 770.93,645.27 770.93,540.73" fill="url(#rim)"/>
+<polygon points="861.47,491.70 949.20,542.35 949.20,643.65 861.47,694.30 773.74,643.65 773.74,542.35" fill="url(#wax)" stroke="#D5BB77" stroke-width="0.8"/>
+<polygon points="861.47,493.10 947.99,543.05 947.99,642.95 861.47,692.90 774.95,642.95 774.95,543.05" fill="url(#small-comb)" opacity="0.13"/>
+<polygon points="861.47,497.42 944.24,545.21 944.24,640.79 861.47,688.58 778.69,640.79 778.69,545.21" fill="none" stroke="#AA8B40" stroke-width="0.7" opacity="0.52"/>
+<circle cx="861.47" cy="485.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="955.00" cy="539.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="955.00" cy="647.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="861.47" cy="701.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="767.94" cy="647.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="767.94" cy="539.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<rect x="821.47" y="523.02" width="80.00" height="19" rx="9.5" fill="#7C4D1B"/>
+<text x="861.47" y="536.52" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.8" font-weight="700" letter-spacing="0.4" fill="#FFFDF8">05 · O2C</text>
+<text x="861.47" y="567.35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">Direct Commerce,</text>
+<text x="861.47" y="586.65" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">Guest &amp; Service</text>
+<path d="M798.83 595.65H924.11" stroke="#B79445" stroke-width="1.0" opacity="0.8"/>
+<text x="861.47" y="610.15" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#5C4516">D2C Retail · Taprooms &amp; Events</text>
+<text x="861.47" y="623.55" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#35423C">Customer Support, Claims &amp; RMA</text>
+<rect x="795.47" y="651.46" width="132.00" height="17" rx="8.5" fill="#EFE2C2" stroke="#B79445" stroke-width="0.8"/>
+<text x="861.47" y="663.46" text-anchor="middle" font-family="Arial, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.3" fill="#6B5119">FG-06..08 · SYS 09, 11</text>
+</g>
+<g id="BH-06" filter="url(#softShadow)">
+<polygon points="1048.53,485.00 1142.06,539.00 1142.06,647.00 1048.53,701.00 955.00,647.00 955.00,539.00" fill="#26313A" stroke="#A98A43" stroke-width="1.5"/>
+<polygon points="1048.53,488.46 1139.07,540.73 1139.07,645.27 1048.53,697.54 957.99,645.27 957.99,540.73" fill="url(#rim)"/>
+<polygon points="1048.53,491.70 1136.26,542.35 1136.26,643.65 1048.53,694.30 960.80,643.65 960.80,542.35" fill="url(#wax)" stroke="#D5BB77" stroke-width="0.8"/>
+<polygon points="1048.53,493.10 1135.05,543.05 1135.05,642.95 1048.53,692.90 962.01,642.95 962.01,543.05" fill="url(#small-comb)" opacity="0.13"/>
+<polygon points="1048.53,497.42 1131.31,545.21 1131.31,640.79 1048.53,688.58 965.76,640.79 965.76,545.21" fill="none" stroke="#AA8B40" stroke-width="0.7" opacity="0.52"/>
+<circle cx="1048.53" cy="485.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1142.06" cy="539.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1142.06" cy="647.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1048.53" cy="701.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="955.00" cy="647.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="955.00" cy="539.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<rect x="1008.53" y="523.02" width="80.00" height="19" rx="9.5" fill="#8A681C"/>
+<text x="1048.53" y="536.52" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.8" font-weight="700" letter-spacing="0.4" fill="#FFFDF8">06 · P2P</text>
+<text x="1048.53" y="567.35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">Procurement &amp;</text>
+<text x="1048.53" y="586.65" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">Supplier Mgmt</text>
+<path d="M985.89 595.65H1111.17" stroke="#B79445" stroke-width="1.0" opacity="0.8"/>
+<text x="1048.53" y="610.15" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#5C4516">Strategic Sourcing &amp; Contracts</text>
+<text x="1048.53" y="623.55" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#35423C">POs, Supplier Qual &amp; Buying</text>
+<rect x="990.13" y="651.46" width="116.80" height="17" rx="8.5" fill="#EFE2C2" stroke="#B79445" stroke-width="0.8"/>
+<text x="1048.53" y="663.46" text-anchor="middle" font-family="Arial, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.3" fill="#6B5119">FG-09 · SYS 12, 13</text>
+</g>
+<g id="BH-07" filter="url(#softShadow)">
+<polygon points="1235.59,485.00 1329.12,539.00 1329.12,647.00 1235.59,701.00 1142.06,647.00 1142.06,539.00" fill="#26313A" stroke="#A98A43" stroke-width="1.5"/>
+<polygon points="1235.59,488.46 1326.13,540.73 1326.13,645.27 1235.59,697.54 1145.05,645.27 1145.05,540.73" fill="url(#rim)"/>
+<polygon points="1235.59,491.70 1323.32,542.35 1323.32,643.65 1235.59,694.30 1147.86,643.65 1147.86,542.35" fill="url(#wax)" stroke="#D5BB77" stroke-width="0.8"/>
+<polygon points="1235.59,493.10 1322.11,543.05 1322.11,642.95 1235.59,692.90 1149.08,642.95 1149.08,543.05" fill="url(#small-comb)" opacity="0.13"/>
+<polygon points="1235.59,497.42 1318.37,545.21 1318.37,640.79 1235.59,688.58 1152.82,640.79 1152.82,545.21" fill="none" stroke="#AA8B40" stroke-width="0.7" opacity="0.52"/>
+<circle cx="1235.59" cy="485.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1329.12" cy="539.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1329.12" cy="647.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1235.59" cy="701.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1142.06" cy="647.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1142.06" cy="539.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<rect x="1195.59" y="523.02" width="80.00" height="19" rx="9.5" fill="#2B4C3F"/>
+<text x="1235.59" y="536.52" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.8" font-weight="700" letter-spacing="0.4" fill="#F5E3A9">07 · P2M</text>
+<text x="1235.59" y="567.35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">Warehousing &amp;</text>
+<text x="1235.59" y="586.65" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">Inventory</text>
+<path d="M1172.95 595.65H1298.23" stroke="#B79445" stroke-width="1.0" opacity="0.8"/>
+<text x="1235.59" y="610.15" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#5C4516">Receiving, Putaway &amp; Storage</text>
+<text x="1235.59" y="623.55" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#35423C">Cycle Counts, Picking &amp; WMS</text>
+<rect x="1188.39" y="651.46" width="94.40" height="17" rx="8.5" fill="#EFE2C2" stroke="#B79445" stroke-width="0.8"/>
+<text x="1235.59" y="663.46" text-anchor="middle" font-family="Arial, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.3" fill="#6B5119">FG-11 · SYS 07</text>
+</g>
+<g id="BH-08" filter="url(#softShadow)">
+<polygon points="580.88,647.00 674.41,701.00 674.41,809.00 580.88,863.00 487.35,809.00 487.35,701.00" fill="#26313A" stroke="#A98A43" stroke-width="1.5"/>
+<polygon points="580.88,650.46 671.41,702.73 671.41,807.27 580.88,859.54 490.34,807.27 490.34,702.73" fill="url(#rim)"/>
+<polygon points="580.88,653.70 668.61,704.35 668.61,805.65 580.88,856.30 493.15,805.65 493.15,704.35" fill="url(#wax)" stroke="#D5BB77" stroke-width="0.8"/>
+<polygon points="580.88,655.10 667.39,705.05 667.39,804.95 580.88,854.90 494.36,804.95 494.36,705.05" fill="url(#small-comb)" opacity="0.13"/>
+<polygon points="580.88,659.42 663.65,707.21 663.65,802.79 580.88,850.58 498.10,802.79 498.10,707.21" fill="none" stroke="#AA8B40" stroke-width="0.7" opacity="0.52"/>
+<circle cx="580.88" cy="647.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="674.41" cy="701.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="674.41" cy="809.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="580.88" cy="863.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="487.35" cy="809.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="487.35" cy="701.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<rect x="540.88" y="685.02" width="80.00" height="19" rx="9.5" fill="#7C4D1B"/>
+<text x="580.88" y="698.52" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.8" font-weight="700" letter-spacing="0.4" fill="#FFFDF8">08 · O2C</text>
+<text x="580.88" y="729.35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">Transportation &amp;</text>
+<text x="580.88" y="748.65" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">Fulfillment</text>
+<path d="M518.24 757.65H643.52" stroke="#B79445" stroke-width="1.0" opacity="0.8"/>
+<text x="580.88" y="772.15" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#5C4516">Shipment Planning &amp; Carriers</text>
+<text x="580.88" y="785.55" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#35423C">Dispatch, 3PL, Fleet &amp; Ship</text>
+<rect x="533.68" y="813.46" width="94.40" height="17" rx="8.5" fill="#EFE2C2" stroke="#B79445" stroke-width="0.8"/>
+<text x="580.88" y="825.46" text-anchor="middle" font-family="Arial, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.3" fill="#6B5119">FG-12 · SYS 08</text>
+</g>
+<g id="BH-09" filter="url(#softShadow)">
+<polygon points="767.94,647.00 861.47,701.00 861.47,809.00 767.94,863.00 674.41,809.00 674.41,701.00" fill="#26313A" stroke="#A98A43" stroke-width="1.5"/>
+<polygon points="767.94,650.46 858.48,702.73 858.48,807.27 767.94,859.54 677.40,807.27 677.40,702.73" fill="url(#rim)"/>
+<polygon points="767.94,653.70 855.67,704.35 855.67,805.65 767.94,856.30 680.21,805.65 680.21,704.35" fill="url(#wax)" stroke="#D5BB77" stroke-width="0.8"/>
+<polygon points="767.94,655.10 854.45,705.05 854.45,804.95 767.94,854.90 681.42,804.95 681.42,705.05" fill="url(#small-comb)" opacity="0.13"/>
+<polygon points="767.94,659.42 850.71,707.21 850.71,802.79 767.94,850.58 685.16,802.79 685.16,707.21" fill="none" stroke="#AA8B40" stroke-width="0.7" opacity="0.52"/>
+<circle cx="767.94" cy="647.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="861.47" cy="701.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="861.47" cy="809.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="767.94" cy="863.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="674.41" cy="809.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="674.41" cy="701.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<rect x="727.94" y="685.02" width="80.00" height="19" rx="9.5" fill="#2B4C3F"/>
+<text x="767.94" y="698.52" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.8" font-weight="700" letter-spacing="0.4" fill="#F5E3A9">09 · P2M</text>
+<text x="767.94" y="729.35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">Production &amp;</text>
+<text x="767.94" y="748.65" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">Manufacturing</text>
+<path d="M705.30 757.65H830.58" stroke="#B79445" stroke-width="1.0" opacity="0.8"/>
+<text x="767.94" y="772.15" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#5C4516">Batching, Line Execution &amp; MES</text>
+<text x="767.94" y="785.55" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#35423C">Packaging, Co-Man &amp; Labor</text>
+<rect x="720.74" y="813.46" width="94.40" height="17" rx="8.5" fill="#EFE2C2" stroke="#B79445" stroke-width="0.8"/>
+<text x="767.94" y="825.46" text-anchor="middle" font-family="Arial, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.3" fill="#6B5119">FG-10 · SYS 03</text>
+</g>
+<g id="BH-10" filter="url(#softShadow)">
+<polygon points="955.00,647.00 1048.53,701.00 1048.53,809.00 955.00,863.00 861.47,809.00 861.47,701.00" fill="#26313A" stroke="#26313A" stroke-width="2.2"/>
+<polygon points="955.00,651.86 1044.32,703.43 1044.32,806.57 955.00,858.14 865.68,806.57 865.68,703.43" fill="url(#gold)"/>
+<polygon points="955.00,656.18 1040.58,705.59 1040.58,804.41 955.00,853.82 869.42,804.41 869.42,705.59" fill="url(#core)" stroke="#7A652F" stroke-width="1.2"/>
+<polygon points="955.00,661.58 1035.90,708.29 1035.90,801.71 955.00,848.42 874.10,801.71 874.10,708.29" fill="none" stroke="#7A652F" stroke-width="0.9" stroke-dasharray="4 3" opacity="0.75"/>
+<circle cx="955.00" cy="647.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1048.53" cy="701.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1048.53" cy="809.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="955.00" cy="863.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="861.47" cy="809.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="861.47" cy="701.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<rect x="901.50" y="684.52" width="107.00" height="20" rx="10" fill="#26313A"/>
+<text x="955.00" y="698.52" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.8" font-weight="700" letter-spacing="0.5" fill="#F5E3A9">CORE · MDM+D2R</text>
+<text x="955.00" y="729.35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">Data, Analytics &amp;</text>
+<text x="955.00" y="748.65" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">Knowledge Core</text>
+<path d="M892.36 757.65H1017.64" stroke="#7A652F" stroke-width="1.0" opacity="0.8"/>
+<text x="955.00" y="772.15" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#26313A">Master Data Stewardship (MDM)</text>
+<text x="955.00" y="785.55" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#26313A">BI, Reporting &amp; Agentic Studio</text>
+<rect x="889.00" y="813.46" width="132.00" height="17" rx="8.5" fill="#26313A"/>
+<text x="955.00" y="825.46" text-anchor="middle" font-family="Arial, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.3" fill="#F5E3A9">FG-23, 24 · DATA CORE</text>
+</g>
+<g id="BH-11" filter="url(#softShadow)">
+<polygon points="1142.06,647.00 1235.59,701.00 1235.59,809.00 1142.06,863.00 1048.53,809.00 1048.53,701.00" fill="#26313A" stroke="#A98A43" stroke-width="1.5"/>
+<polygon points="1142.06,650.46 1232.60,702.73 1232.60,807.27 1142.06,859.54 1051.52,807.27 1051.52,702.73" fill="url(#rim)"/>
+<polygon points="1142.06,653.70 1229.79,704.35 1229.79,805.65 1142.06,856.30 1054.33,805.65 1054.33,704.35" fill="url(#wax)" stroke="#D5BB77" stroke-width="0.8"/>
+<polygon points="1142.06,655.10 1228.58,705.05 1228.58,804.95 1142.06,854.90 1055.55,804.95 1055.55,705.05" fill="url(#small-comb)" opacity="0.13"/>
+<polygon points="1142.06,659.42 1224.84,707.21 1224.84,802.79 1142.06,850.58 1059.29,802.79 1059.29,707.21" fill="none" stroke="#AA8B40" stroke-width="0.7" opacity="0.52"/>
+<circle cx="1142.06" cy="647.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1235.59" cy="701.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1235.59" cy="809.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1142.06" cy="863.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1048.53" cy="809.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1048.53" cy="701.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<rect x="1102.06" y="685.02" width="80.00" height="19" rx="9.5" fill="#2B4C3F"/>
+<text x="1142.06" y="698.52" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.8" font-weight="700" letter-spacing="0.4" fill="#F5E3A9">10 · P2M</text>
+<text x="1142.06" y="729.35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">Plant OT &amp;</text>
+<text x="1142.06" y="748.65" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">Automation</text>
+<path d="M1079.42 757.65H1204.70" stroke="#B79445" stroke-width="1.0" opacity="0.8"/>
+<text x="1142.06" y="772.15" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#5C4516">Controls, PLC/SCADA &amp; Hist</text>
+<text x="1142.06" y="785.55" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#35423C">Machine Connectivity &amp; IIoT</text>
+<rect x="1094.86" y="813.46" width="94.40" height="17" rx="8.5" fill="#EFE2C2" stroke="#B79445" stroke-width="0.8"/>
+<text x="1142.06" y="825.46" text-anchor="middle" font-family="Arial, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.3" fill="#6B5119">FG-15 · SYS 04</text>
+</g>
+<g id="BH-12" filter="url(#softShadow)">
+<polygon points="1329.12,647.00 1422.65,701.00 1422.65,809.00 1329.12,863.00 1235.59,809.00 1235.59,701.00" fill="#26313A" stroke="#A98A43" stroke-width="1.5"/>
+<polygon points="1329.12,650.46 1419.66,702.73 1419.66,807.27 1329.12,859.54 1238.59,807.27 1238.59,702.73" fill="url(#rim)"/>
+<polygon points="1329.12,653.70 1416.85,704.35 1416.85,805.65 1329.12,856.30 1241.39,805.65 1241.39,704.35" fill="url(#wax)" stroke="#D5BB77" stroke-width="0.8"/>
+<polygon points="1329.12,655.10 1415.64,705.05 1415.64,804.95 1329.12,854.90 1242.61,804.95 1242.61,705.05" fill="url(#small-comb)" opacity="0.13"/>
+<polygon points="1329.12,659.42 1411.90,707.21 1411.90,802.79 1329.12,850.58 1246.35,802.79 1246.35,707.21" fill="none" stroke="#AA8B40" stroke-width="0.7" opacity="0.52"/>
+<circle cx="1329.12" cy="647.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1422.65" cy="701.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1422.65" cy="809.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1329.12" cy="863.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1235.59" cy="809.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1235.59" cy="701.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<rect x="1289.12" y="685.02" width="80.00" height="19" rx="9.5" fill="#2B4C3F"/>
+<text x="1329.12" y="698.52" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.8" font-weight="700" letter-spacing="0.4" fill="#F5E3A9">11 · P2M</text>
+<text x="1329.12" y="729.35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">Quality &amp;</text>
+<text x="1329.12" y="748.65" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">Lab Assurance</text>
+<path d="M1266.48 757.65H1391.76" stroke="#B79445" stroke-width="1.0" opacity="0.8"/>
+<text x="1329.12" y="772.15" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#5C4516">QA/QC, LIMS Testing &amp; Sensory</text>
+<text x="1329.12" y="785.55" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#35423C">CAPA, Sanitation &amp; Release</text>
+<rect x="1281.92" y="813.46" width="94.40" height="17" rx="8.5" fill="#EFE2C2" stroke="#B79445" stroke-width="0.8"/>
+<text x="1329.12" y="825.46" text-anchor="middle" font-family="Arial, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.3" fill="#6B5119">FG-13 · SYS 05</text>
+</g>
+<g id="BH-13" filter="url(#softShadow)">
+<polygon points="674.41,809.00 767.94,863.00 767.94,971.00 674.41,1025.00 580.88,971.00 580.88,863.00" fill="#26313A" stroke="#A98A43" stroke-width="1.5"/>
+<polygon points="674.41,812.46 764.95,864.73 764.95,969.27 674.41,1021.54 583.87,969.27 583.87,864.73" fill="url(#rim)"/>
+<polygon points="674.41,815.70 762.14,866.35 762.14,967.65 674.41,1018.30 586.68,967.65 586.68,866.35" fill="url(#wax)" stroke="#D5BB77" stroke-width="0.8"/>
+<polygon points="674.41,817.10 760.92,867.05 760.92,966.95 674.41,1016.90 587.89,966.95 587.89,867.05" fill="url(#small-comb)" opacity="0.13"/>
+<polygon points="674.41,821.42 757.18,869.21 757.18,964.79 674.41,1012.58 591.63,964.79 591.63,869.21" fill="none" stroke="#AA8B40" stroke-width="0.7" opacity="0.52"/>
+<circle cx="674.41" cy="809.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="767.94" cy="863.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="767.94" cy="971.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="674.41" cy="1025.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="580.88" cy="971.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="580.88" cy="863.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<rect x="634.41" y="847.02" width="80.00" height="19" rx="9.5" fill="#2B4C3F"/>
+<text x="674.41" y="860.52" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.8" font-weight="700" letter-spacing="0.4" fill="#F5E3A9">12 · P2M</text>
+<text x="674.41" y="891.35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">EHS, Legal Risk</text>
+<text x="674.41" y="910.65" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">&amp; Sustainability</text>
+<path d="M611.77 919.65H737.05" stroke="#B79445" stroke-width="1.0" opacity="0.8"/>
+<text x="674.41" y="934.15" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#5C4516">Safety (OSHA), TTB/FDA &amp; GRC</text>
+<text x="674.41" y="947.55" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#35423C">Traceability, Recall &amp; ESG</text>
+<rect x="616.01" y="975.46" width="116.80" height="17" rx="8.5" fill="#EFE2C2" stroke="#B79445" stroke-width="0.8"/>
+<text x="674.41" y="987.46" text-anchor="middle" font-family="Arial, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.3" fill="#6B5119">FG-17..19 · SYS 06</text>
+</g>
+<g id="BH-14" filter="url(#softShadow)">
+<polygon points="861.47,809.00 955.00,863.00 955.00,971.00 861.47,1025.00 767.94,971.00 767.94,863.00" fill="#26313A" stroke="#A98A43" stroke-width="1.5"/>
+<polygon points="861.47,812.46 952.01,864.73 952.01,969.27 861.47,1021.54 770.93,969.27 770.93,864.73" fill="url(#rim)"/>
+<polygon points="861.47,815.70 949.20,866.35 949.20,967.65 861.47,1018.30 773.74,967.65 773.74,866.35" fill="url(#wax)" stroke="#D5BB77" stroke-width="0.8"/>
+<polygon points="861.47,817.10 947.99,867.05 947.99,966.95 861.47,1016.90 774.95,966.95 774.95,867.05" fill="url(#small-comb)" opacity="0.13"/>
+<polygon points="861.47,821.42 944.24,869.21 944.24,964.79 861.47,1012.58 778.69,964.79 778.69,869.21" fill="none" stroke="#AA8B40" stroke-width="0.7" opacity="0.52"/>
+<circle cx="861.47" cy="809.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="955.00" cy="863.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="955.00" cy="971.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="861.47" cy="1025.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="767.94" cy="971.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="767.94" cy="863.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<rect x="821.47" y="847.02" width="80.00" height="19" rx="9.5" fill="#25323B"/>
+<text x="861.47" y="860.52" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.8" font-weight="700" letter-spacing="0.4" fill="#E8D49A">13 · S2S</text>
+<text x="861.47" y="891.35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">Engineering, Assets</text>
+<text x="861.47" y="910.65" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">&amp; Facilities</text>
+<path d="M798.83 919.65H924.11" stroke="#B79445" stroke-width="1.0" opacity="0.8"/>
+<text x="861.47" y="934.15" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#5C4516">Process Eng, Maint &amp; EAM</text>
+<text x="861.47" y="947.55" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#35423C">Utilities, Energy &amp; Facilities</text>
+<rect x="803.07" y="975.46" width="116.80" height="17" rx="8.5" fill="#EFE2C2" stroke="#B79445" stroke-width="0.8"/>
+<text x="861.47" y="987.46" text-anchor="middle" font-family="Arial, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.3" fill="#6B5119">FG-14, 16 · SYS 19</text>
+</g>
+<g id="BH-15" filter="url(#softShadow)">
+<polygon points="1048.53,809.00 1142.06,863.00 1142.06,971.00 1048.53,1025.00 955.00,971.00 955.00,863.00" fill="#26313A" stroke="#A98A43" stroke-width="1.5"/>
+<polygon points="1048.53,812.46 1139.07,864.73 1139.07,969.27 1048.53,1021.54 957.99,969.27 957.99,864.73" fill="url(#rim)"/>
+<polygon points="1048.53,815.70 1136.26,866.35 1136.26,967.65 1048.53,1018.30 960.80,967.65 960.80,866.35" fill="url(#wax)" stroke="#D5BB77" stroke-width="0.8"/>
+<polygon points="1048.53,817.10 1135.05,867.05 1135.05,966.95 1048.53,1016.90 962.01,966.95 962.01,867.05" fill="url(#small-comb)" opacity="0.13"/>
+<polygon points="1048.53,821.42 1131.31,869.21 1131.31,964.79 1048.53,1012.58 965.76,964.79 965.76,869.21" fill="none" stroke="#AA8B40" stroke-width="0.7" opacity="0.52"/>
+<circle cx="1048.53" cy="809.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1142.06" cy="863.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1142.06" cy="971.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1048.53" cy="1025.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="955.00" cy="971.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="955.00" cy="863.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<rect x="1008.53" y="847.02" width="80.00" height="19" rx="9.5" fill="#25323B"/>
+<text x="1048.53" y="860.52" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.8" font-weight="700" letter-spacing="0.4" fill="#E8D49A">14 · S2S</text>
+<text x="1048.53" y="891.35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">Accounting, AP/AR</text>
+<text x="1048.53" y="910.65" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">&amp; Core Finance</text>
+<path d="M985.89 919.65H1111.17" stroke="#B79445" stroke-width="1.0" opacity="0.8"/>
+<text x="1048.53" y="934.15" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#5C4516">GL, Costing, AP &amp; Receivables</text>
+<text x="1048.53" y="947.55" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#35423C">Tax, Treasury &amp; T&amp;E Expenses</text>
+<rect x="987.33" y="975.46" width="122.40" height="17" rx="8.5" fill="#EFE2C2" stroke="#B79445" stroke-width="0.8"/>
+<text x="1048.53" y="987.46" text-anchor="middle" font-family="Arial, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.3" fill="#6B5119">FG-21a · SYS 13, 14</text>
+</g>
+<g id="BH-16" filter="url(#softShadow)">
+<polygon points="1235.59,809.00 1329.12,863.00 1329.12,971.00 1235.59,1025.00 1142.06,971.00 1142.06,863.00" fill="#26313A" stroke="#A98A43" stroke-width="1.5"/>
+<polygon points="1235.59,812.46 1326.13,864.73 1326.13,969.27 1235.59,1021.54 1145.05,969.27 1145.05,864.73" fill="url(#rim)"/>
+<polygon points="1235.59,815.70 1323.32,866.35 1323.32,967.65 1235.59,1018.30 1147.86,967.65 1147.86,866.35" fill="url(#wax)" stroke="#D5BB77" stroke-width="0.8"/>
+<polygon points="1235.59,817.10 1322.11,867.05 1322.11,966.95 1235.59,1016.90 1149.08,966.95 1149.08,867.05" fill="url(#small-comb)" opacity="0.13"/>
+<polygon points="1235.59,821.42 1318.37,869.21 1318.37,964.79 1235.59,1012.58 1152.82,964.79 1152.82,869.21" fill="none" stroke="#AA8B40" stroke-width="0.7" opacity="0.52"/>
+<circle cx="1235.59" cy="809.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1329.12" cy="863.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1329.12" cy="971.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1235.59" cy="1025.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1142.06" cy="971.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1142.06" cy="863.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<rect x="1195.59" y="847.02" width="80.00" height="19" rx="9.5" fill="#25323B"/>
+<text x="1235.59" y="860.52" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.8" font-weight="700" letter-spacing="0.4" fill="#E8D49A">15 · S2S</text>
+<text x="1235.59" y="891.35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">FP&amp;A, Close &amp;</text>
+<text x="1235.59" y="910.65" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">Financial Controls</text>
+<path d="M1172.95 919.65H1298.23" stroke="#B79445" stroke-width="1.0" opacity="0.8"/>
+<text x="1235.59" y="934.15" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#5C4516">Financial Planning &amp; Budgeting</text>
+<text x="1235.59" y="947.55" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#35423C">Close, Consolidation &amp; Audit</text>
+<rect x="1185.59" y="975.46" width="100.00" height="17" rx="8.5" fill="#EFE2C2" stroke="#B79445" stroke-width="0.8"/>
+<text x="1235.59" y="987.46" text-anchor="middle" font-family="Arial, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.3" fill="#6B5119">FG-21b · SYS 15</text>
+</g>
+<g id="BH-17" filter="url(#softShadow)">
+<polygon points="767.94,971.00 861.47,1025.00 861.47,1133.00 767.94,1187.00 674.41,1133.00 674.41,1025.00" fill="#26313A" stroke="#A98A43" stroke-width="1.5"/>
+<polygon points="767.94,974.46 858.48,1026.73 858.48,1131.27 767.94,1183.54 677.40,1131.27 677.40,1026.73" fill="url(#rim)"/>
+<polygon points="767.94,977.70 855.67,1028.35 855.67,1129.65 767.94,1180.30 680.21,1129.65 680.21,1028.35" fill="url(#wax)" stroke="#D5BB77" stroke-width="0.8"/>
+<polygon points="767.94,979.10 854.45,1029.05 854.45,1128.95 767.94,1178.90 681.42,1128.95 681.42,1029.05" fill="url(#small-comb)" opacity="0.13"/>
+<polygon points="767.94,983.42 850.71,1031.21 850.71,1126.79 767.94,1174.58 685.16,1126.79 685.16,1031.21" fill="none" stroke="#AA8B40" stroke-width="0.7" opacity="0.52"/>
+<circle cx="767.94" cy="971.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="861.47" cy="1025.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="861.47" cy="1133.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="767.94" cy="1187.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="674.41" cy="1133.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="674.41" cy="1025.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<rect x="727.94" y="1009.02" width="80.00" height="19" rx="9.5" fill="#25323B"/>
+<text x="767.94" y="1022.52" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.8" font-weight="700" letter-spacing="0.4" fill="#E8D49A">16 · S2S</text>
+<text x="767.94" y="1053.35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">People, HR &amp;</text>
+<text x="767.94" y="1072.65" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">Workplace</text>
+<path d="M705.30 1081.65H830.58" stroke="#B79445" stroke-width="1.0" opacity="0.8"/>
+<text x="767.94" y="1096.15" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#5C4516">Recruiting, HRIS, Payroll &amp; WFM</text>
+<text x="767.94" y="1109.55" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#35423C">Learning, Skills &amp; Collab</text>
+<rect x="709.54" y="1137.46" width="116.80" height="17" rx="8.5" fill="#EFE2C2" stroke="#B79445" stroke-width="0.8"/>
+<text x="767.94" y="1149.46" text-anchor="middle" font-family="Arial, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.3" fill="#6B5119">FG-20 · SYS 16, 17</text>
+</g>
+<g id="BH-18" filter="url(#softShadow)">
+<polygon points="955.00,971.00 1048.53,1025.00 1048.53,1133.00 955.00,1187.00 861.47,1133.00 861.47,1025.00" fill="#26313A" stroke="#A98A43" stroke-width="1.5"/>
+<polygon points="955.00,974.46 1045.54,1026.73 1045.54,1131.27 955.00,1183.54 864.46,1131.27 864.46,1026.73" fill="url(#rim)"/>
+<polygon points="955.00,977.70 1042.73,1028.35 1042.73,1129.65 955.00,1180.30 867.27,1129.65 867.27,1028.35" fill="url(#wax)" stroke="#D5BB77" stroke-width="0.8"/>
+<polygon points="955.00,979.10 1041.52,1029.05 1041.52,1128.95 955.00,1178.90 868.48,1128.95 868.48,1029.05" fill="url(#small-comb)" opacity="0.13"/>
+<polygon points="955.00,983.42 1037.77,1031.21 1037.77,1126.79 955.00,1174.58 872.23,1126.79 872.23,1031.21" fill="none" stroke="#AA8B40" stroke-width="0.7" opacity="0.52"/>
+<circle cx="955.00" cy="971.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1048.53" cy="1025.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1048.53" cy="1133.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="955.00" cy="1187.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="861.47" cy="1133.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="861.47" cy="1025.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<rect x="915.00" y="1009.02" width="80.00" height="19" rx="9.5" fill="#25323B"/>
+<text x="955.00" y="1022.52" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.8" font-weight="700" letter-spacing="0.4" fill="#E8D49A">17 · S2S</text>
+<text x="955.00" y="1053.35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">IT Operations &amp;</text>
+<text x="955.00" y="1072.65" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">Cybersecurity</text>
+<path d="M892.36 1081.65H1017.64" stroke="#B79445" stroke-width="1.0" opacity="0.8"/>
+<text x="955.00" y="1096.15" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#5C4516">Enterprise Apps, Cloud &amp; Help</text>
+<text x="955.00" y="1109.55" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#35423C">Identity (IAM), SecOps &amp; Cyber</text>
+<rect x="907.80" y="1137.46" width="94.40" height="17" rx="8.5" fill="#EFE2C2" stroke="#B79445" stroke-width="0.8"/>
+<text x="955.00" y="1149.46" text-anchor="middle" font-family="Arial, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.3" fill="#6B5119">FG-22 · SYS 18</text>
+</g>
+<g id="BH-19" filter="url(#softShadow)">
+<polygon points="1142.06,971.00 1235.59,1025.00 1235.59,1133.00 1142.06,1187.00 1048.53,1133.00 1048.53,1025.00" fill="#26313A" stroke="#A98A43" stroke-width="1.5"/>
+<polygon points="1142.06,974.46 1232.60,1026.73 1232.60,1131.27 1142.06,1183.54 1051.52,1131.27 1051.52,1026.73" fill="url(#rim)"/>
+<polygon points="1142.06,977.70 1229.79,1028.35 1229.79,1129.65 1142.06,1180.30 1054.33,1129.65 1054.33,1028.35" fill="url(#wax)" stroke="#D5BB77" stroke-width="0.8"/>
+<polygon points="1142.06,979.10 1228.58,1029.05 1228.58,1128.95 1142.06,1178.90 1055.55,1128.95 1055.55,1029.05" fill="url(#small-comb)" opacity="0.13"/>
+<polygon points="1142.06,983.42 1224.84,1031.21 1224.84,1126.79 1142.06,1174.58 1059.29,1126.79 1059.29,1031.21" fill="none" stroke="#AA8B40" stroke-width="0.7" opacity="0.52"/>
+<circle cx="1142.06" cy="971.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1235.59" cy="1025.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1235.59" cy="1133.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1142.06" cy="1187.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1048.53" cy="1133.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<circle cx="1048.53" cy="1025.00" r="3.6" fill="#BE9A42" stroke="#FBF9F4" stroke-width="0.9"/>
+<rect x="1102.06" y="1009.02" width="80.00" height="19" rx="9.5" fill="#25323B"/>
+<text x="1142.06" y="1022.52" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.8" font-weight="700" letter-spacing="0.4" fill="#E8D49A">18 · S2S</text>
+<text x="1142.06" y="1053.35" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">Strategy, PMO &amp;</text>
+<text x="1142.06" y="1072.65" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.8" font-weight="700" fill="#26313A">OpEx Change</text>
+<path d="M1079.42 1081.65H1204.70" stroke="#B79445" stroke-width="1.0" opacity="0.8"/>
+<text x="1142.06" y="1096.15" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#5C4516">Enterprise Portfolio &amp; PMO</text>
+<text x="1142.06" y="1109.55" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.4" font-weight="700" fill="#35423C">Process Excellence &amp; Adoption</text>
+<rect x="1076.06" y="1137.46" width="132.00" height="17" rx="8.5" fill="#EFE2C2" stroke="#B79445" stroke-width="0.8"/>
+<text x="1142.06" y="1149.46" text-anchor="middle" font-family="Arial, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.3" fill="#6B5119">FG-01, 25, 26 · SYS 20</text>
+</g>
+<text x="830.00" y="1418.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="20.5" font-weight="700" fill="#26313A">18 Functional Groups + Shared Data, Analytics &amp; Knowledge Core (19-Cell Hive)  ↔  1-to-1 Alignment with the 20 Systemverse Groups</text>
+<text x="830.00" y="1455.00" text-anchor="middle" font-family="Georgia, serif" font-size="18.5" font-weight="400" fill="#966B26">Every system capability group in the Systemverse maps to an explicit human + agent functional home in the Beehive.</text>
 </svg>

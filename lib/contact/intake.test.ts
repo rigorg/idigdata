@@ -12,6 +12,14 @@ describe("contact intake persistence and notification", () => {
     assert.equal(row().source_url, "https://idigdata.com/contact/");
     assert.equal(row().source, "website-not_sure");
     assert.equal(row().role, "(not supplied)");
+  });
+
+  it("rides a whitelisted form source in the source column, else falls back to website-<interestType>", () => {
+    const headers = new Headers({ referer: "https://idigdata.com/block/custom/" });
+    for (const source of ["website-contact", "website-reader", "website-block", "website-block-custom"] as const) {
+      assert.equal(contactIntakeRow(ContactSchema.parse({ ...payload, source }), headers).source, source);
+    }
+    assert.equal(contactIntakeRow(ContactSchema.parse({ ...payload, interestType: "applied_agentics" }), headers).source, "website-applied_agentics");
     assert.equal(row().company, null);
     assert.equal(row().message, payload.message);
   });

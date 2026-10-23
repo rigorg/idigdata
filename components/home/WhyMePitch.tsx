@@ -5,7 +5,7 @@ const beats = [
   {
     kicker: "The application layer",
     h2: "Enterprises keep buying technology and stacking it on what already runs. The failures show up between people, vendors, SI teams, and siloed data.",
-    body: "Everyone owns their piece. Vendors own the product map. SIs own the delivery map for their mandate. The company rarely owns the operating map above them. I have spent 30 years doing exactly that: keeping the business running while the stack moves.",
+    body: "Everyone owns their piece. Vendors own the product map. SIs own the delivery map for their mandate. The company rarely owns the operating map above them. I have spent 20+ years doing exactly that: keeping the business running while the stack moves.",
     gold: false,
   },
   {
@@ -16,14 +16,14 @@ const beats = [
   },
   {
     kicker: "Both layers",
-    h2: "What you get is both layers under one owner. The application layer keeps the business running while the stack moves. Enterprise-Agentics is the new layer: owned, not rented. The result is a living asset the company keeps. The work remains one job across people, data, and workflows.",
+    h2: "What you get is both layers under one owner. The application layer keeps the business running while the stack moves. Enterprise-Agentics is the new layer: owned, not rented. The result is a living asset the company keeps. The work remains one job across people, systems, and workflows.",
     body: "A capital asset the CFO can defend, not another expense line. Keep-running lives on the application layer. The agentic layer is how the new arrival actually runs. You don't rent another tool.",
     gold: false,
   },
   {
     kicker: "An owner",
     h2: "Your transformation gets an owner. I have done both layers, and I come inside to own delivery under the right mandate. The application layer is earned ground: more than 50 implementations and 15 full transformations taken through production. The agentic layer is live work right now: Enterprise-Agentics in production, with guardrails and an operating path the company owns. This is not shadow work on a laptop. The insurance is earned judgment on the first layer and live practice on the second.",
-    body: "CIO, Sierra Nevada Brewing (~$420M). $15M transformation on a company-owned data core, agentic AI in production. Earlier, CEO/CTO at Timberline. $250K to $130M. Systems that had to hold in the field.",
+    body: "CIO, Sierra Nevada Brewing. Transformation on a company-owned data core, agentic AI in production. Earlier, CEO/CTO at Timberline. $250K to $130M. Systems that had to hold in the field.",
     gold: true,
   },
 ] as const;

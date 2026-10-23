@@ -1,16 +1,15 @@
 import type { MetadataRoute } from "next";
+import { buildSitemapEntries } from "@/lib/seo/routes";
 
 export const dynamic = "force-static";
 
+/**
+ * Generated from the filesystem at build time (see lib/seo/routes.ts):
+ * every app/**\/page.tsx that is public, minus redirect-only, noindex,
+ * preview/hold/geometry/banners, api, and legacy paths in next.config.ts
+ * redirects. lastModified is the file's last git commit date; weblog posts
+ * under content/posts/*.md are added as /agentic-ai/<slug>/ when present.
+ */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://idigdata.com";
-  const lastModified = new Date("2026-08-25");
-  return [
-    { url: `${base}/`, lastModified, changeFrequency: "monthly", priority: 1.0 },
-    { url: `${base}/experience/`, lastModified, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/block/`, lastModified, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/contact/`, lastModified, changeFrequency: "yearly", priority: 0.8 },
-    { url: `${base}/faq/`, lastModified, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${base}/privacy/`, lastModified, changeFrequency: "yearly", priority: 0.3 },
-  ];
+  return buildSitemapEntries();
 }

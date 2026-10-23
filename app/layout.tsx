@@ -4,8 +4,9 @@ import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import JsonLd from "@/components/analytics/JsonLd";
+import RouteJsonLd from "@/components/analytics/RouteJsonLd";
 import PageviewBeacon from "@/components/analytics/PageviewBeacon";
-import SiteNotice from "@/components/analytics/SiteNotice";
+import CookieConsentBanner from "@/components/analytics/CookieConsentBanner";
 import VercelAnalytics from "@/components/analytics/VercelAnalytics";
 
 const display = Lora({
@@ -34,15 +35,18 @@ const vollkorn = Vollkorn({
 export const metadata: Metadata = {
   metadataBase: new URL("https://idigdata.com"),
   title: {
-    default: "Robert Paddock · Enterprise Technology Leader | idigdata",
+    default: "Robert Paddock · Enterprise Transformation Executive | idigdata",
     template: "%s | idigdata",
   },
   description:
-    "A living business asset. The full mandate, or a defined part.",
+    "I connect people, systems, and workflows to shorten the path from intent to outcome. 20+ years of business leadership, over 50 enterprise transformations, and three years of hands-on agentic development.",
   alternates: {
     canonical: "/",
     types: {
       "text/plain": "https://idigdata.com/llms.txt",
+      "application/rss+xml": [
+        { url: "https://idigdata.com/feed.xml", title: "Agentic AI, by Robert Paddock" },
+      ],
     },
   },
   icons: {
@@ -59,9 +63,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://idigdata.com",
     siteName: "idigdata",
-    title: "Robert Paddock · Enterprise Technology Leader",
+    title: "Robert Paddock · Enterprise Transformation Executive",
     description:
-      "A living business asset. The full mandate, or a defined part.",
+      "I connect people, systems, and workflows to shorten the path from intent to outcome. 20+ years of business leadership, over 50 enterprise transformations, and three years of hands-on agentic development.",
     images: [
       {
         url: "/og-image.png?v=20260828",
@@ -94,21 +98,58 @@ export const viewport: Viewport = {
   colorScheme: "light",
 };
 
+import { ThemeProvider } from "@/lib/theme";
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`scroll-smooth ${display.variable} ${body.variable} ${vollkorn.variable}`}>
+    <html lang="en" className={`scroll-smooth ${display.variable} ${body.variable} ${vollkorn.variable}`} suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                var t = localStorage.getItem('idigdata-theme');
+                if (t === 'dark') {
+                  document.documentElement.classList.add('dark');
+                  document.documentElement.setAttribute('data-theme', 'dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
+                  document.documentElement.setAttribute('data-theme', 'light');
+                }
+              } catch(e) {}
+            `,
+          }}
+        />
+        {/*
+          Feed and llms.txt discovery. These are also declared in
+          metadata.alternates.types above, but every page sets
+          alternates.canonical, and Next replaces the whole `alternates`
+          object at the deepest segment, so the layout-level types never
+          render on those pages. Keep both until pages stop overriding.
+        */}
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Agentic AI, by Robert Paddock"
+          href="https://idigdata.com/feed.xml"
+        />
+        <link rel="alternate" type="text/plain" href="https://idigdata.com/llms.txt" />
+      </head>
       <body className="font-body text-ink bg-cream">
-        <JsonLd />
-        <SiteHeader />
-        <main>{children}</main>
-        <SiteFooter />
-        <SiteNotice />
-        <VercelAnalytics />
-        <PageviewBeacon />
+        <ThemeProvider>
+          <JsonLd />
+          <RouteJsonLd />
+          <SiteHeader />
+          <main>{children}</main>
+          <SiteFooter />
+          <CookieConsentBanner />
+          <VercelAnalytics />
+          <PageviewBeacon />
+        </ThemeProvider>
       </body>
     </html>
   );

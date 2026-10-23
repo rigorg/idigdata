@@ -1,0 +1,76 @@
+# idigdata: full text reference for language models
+
+> The primary pages and field dispatches of idigdata.com, each with its canonical URL, published title, description, and verified claims. Compiled directly from the page sources; no claims appear here that the pages do not make. See https://idigdata.com/llms.txt for the concise index and https://idigdata.com/facts.txt for the deterministic fact sheet.
+
+Canonical citation: Robert Paddock, Enterprise Transformation Executive, idigdata (Data Integration Group).
+
+## Home
+
+- URL: https://idigdata.com/
+- Title: Robert Paddock · Enterprise Transformation Executive | idigdata
+- Headline: Build what's next.
+- Description: I connect people, systems, and workflows to shorten the path from intent to outcome. 20+ years of CEO, CTO, and CIO business leadership, 50+ enterprise implementations and 15 full-cycle enterprise transformations, and three years of hands-on agentic development.
+- Summary: Available for executive leadership roles, focused transformation mandates, and defined work through The Block (fractional and interim mandates welcome). Operates across six transformation domains and guides work through The Outcome Loop (Intent, Define, Deliver, Outcome / Intent, Define, Build, Outcome).
+
+## Experience
+
+- URL: https://idigdata.com/experience/
+- Title: Experience | idigdata
+- Description: 20+ years of business leadership, over 50 enterprise implementations and 15 full transformations, and three years of hands-on agentic development across Data Integration Group, Sierra Nevada Brewing Co., Access IT, and Timberline Architectural Openings.
+- Career Arc:
+  1. Founder & Principal, Data Integration Group (DIG LLC) (2016-Present): Enterprise transformation, ERP recovery ($10M program recovered and delivered for $8M), post-acquisition integration ($350M business close reduced from 18 days to 4 days), and multi-facility IBP/S&OP ($200M wine producer).
+  2. Chief Information Officer (Embedded Executive Mandate via DIG), Sierra Nevada Brewing Co. (2024-2026): $15M CIO mandate, executive leadership team and board reporting, 26 months of architecture and implementation across 25 task forces and 150 participants, IS/IT rebuild, company-owned data core, and production agentic workflows.
+  3. Lead Consultant & Solution Architect, Access IT, Inc. (2012-2016): Partner-side Microsoft Dynamics NAV and ContractERP delivery across manufacturing, construction, distribution, and services.
+  4. Founder, CEO & CTO, Timberline Architectural Openings (1996-2012): Built and scaled a contractor, manufacturer, and distributor from $250K in year one to $130M by year ten with 100+ employees across Las Vegas and Macau projects; built proprietary enterprise software.
+
+## The Block
+
+- URL: https://idigdata.com/block/
+- Title: The Block · Scoping & Outcome Configurator | idigdata
+- Description: The Block is idigdata's productized capability configurator. Explore 60 outcomes across commercial leadership, transformation, enterprise systems, data, financial integrity, and agentic workflows. Configure your scope and request an engagement proposal.
+- Six Disciplines: Commercial & Solution Leadership; Enterprise Transformation & Delivery Leadership; Enterprise Architecture & Business Systems; Data, Knowledge & Financial Systems; Agentic Software & Workflow Delivery; Technology Operations, Adoption & Control.
+
+## Agentic AI
+
+- URL: https://idigdata.com/agentic-ai/
+- Title: Learn through the work · Dispatches from the Operational Seam | Robert Paddock
+- Description: Field notes on enterprise transformation, operating knowledge, and hands-on agentic software development by Robert Paddock.
+- Core Themes:
+  - Binary Intelligence & One Man and a Context Window: Human judgment directing binary intelligence (zeros and ones), equalizing capability from the CEO's desk to Packaging Line 2.
+  - Chapter One (How Businesses Actually Run: What's Old Is New, What's New Is Old: Bad Data, Shadow IT, and the Mighty Excel Spreadsheet): Reconciling Finance's formal close with Operations' live shop-floor reality through Integrated Business Planning (IBP), and capturing the after-go-live workflow exceptions on Mary's 6:30 AM clipboard and Don WMS's colored Post-it floor zones.
+  - Chapter Two (Working with Intelligence: Humans and Agents Running the Workflows That Run the Business): Separating context windows from institutional memory (propose in language, admit by rule, remember in the book); operational continuity across frontier and open-weight models; Multi-Entity Management (MEM), intercompany eliminations, unrealized internal profit elimination, and SOX Section 404 / PCAOB AS 2201 traceability across the business spectrum.
+  - Chapter Three (The Machine That Builds the Machines That Build the Workflows): Compound reliability under Lusser's Law (0.95^10 = 59.8%), ITGC / SOX 404 Segregation of Duties inside the build loop (Build <-> Check -> Land), opposing-model verification ("the person who cuts the check does not reconcile the bank"), catching split-pallet catch-weight exceptions at midnight, and burning the machine and its state down in the Disco.
+- Field Dispatches:
+  - https://idigdata.com/agentic-ai/marys-sheet/ : Chapter One: How Businesses Actually Run (Mary's Sheet, Don WMS & the Tuesday-Night Roll-Up).
+  - https://idigdata.com/agentic-ai/the-application-layer/ : Chapter Two: Working with Intelligence (The ERP Conversation, Multi-Entity Consolidations, Over a Beer with a Big-SI Executive & The Approval Workflow Paradox).
+  - https://idigdata.com/agentic-ai/the-delivery-seam/ : Chapter Three: The Machine That Builds the Machines That Build the Workflows (Lusser's Law, Segregation of Duties, Down the Rabbit Hole & Finding the Disco).
+- Feed: https://idigdata.com/feed.xml (RSS 2.0, "Agentic AI, by Robert Paddock")
+
+## The Collective
+
+- URL: https://idigdata.com/collective/
+- Title: The Collective · What We Learn Should Carry Forward | Robert Paddock
+- Description: How B.O.S.S. (Living Digital Twin), FlowCraft (The Org & Live Operating Instance), and The Rig (The Machine That Builds the Machines) run on a shared spine (org -> instance -> assets -> outcomes) and loop (intent, define, build, outcome), allowing verified patterns to travel by choice while each company keeps its records and control.
+- The Three Systems:
+  1. B.O.S.S. (Where the Business Stands: The Front End of Everything · Living Digital Twin): Maps where the business actually stands, organizes the data core, builds a living digital twin across 6 process constellations (P2P, O2C, P2M, S2S, D2R, MDM), runs project and change management, builds workflows from where the company stands, and monitors the live operating instance.
+  2. FlowCraft (The Business as It Runs: The Org & The Live Operating Instance): Where a FlowCraft org governs the blueprints and rules, and each operating instance runs real daily transactions (Purchase Orders, Payroll, Receiving, Approvals, and Multi-Entity Close) built from B.O.S.S. and monitored by B.O.S.S., scaling from a local single-entity shop to a multi-entity enterprise.
+  3. The Rig (The Foundry: The Machine That Builds the Machines): Multi-harness engineering foundry across distinct model families with isolated lanes, shared comms, durable memory that outlasts the session, and independent opposing-model check gates before anything lands.
+
+## Contact
+
+- URL: https://idigdata.com/contact/
+- Title: Contact | idigdata
+- Description: Executive roles, focused transformation work, and fractional leadership.
+- Email: robert@idigdata.com
+
+## FAQ
+
+- URL: https://idigdata.com/faq/
+- Title: FAQ | idigdata
+- Description: Fit, non-fit, mandates, exit criteria, and company-owned operational capability - Robert Paddock / idigdata.
+
+## Privacy
+
+- URL: https://idigdata.com/privacy/
+- Title: Privacy | idigdata
+- Description: How idigdata handles site telemetry, contact notes, cookies, and requests about your data.

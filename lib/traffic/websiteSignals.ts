@@ -67,20 +67,33 @@ const ASSET_PREFIXES = [
   "/og-image",
   "/diagrams/",
   "/brand/",
+  "/.well-known/",
 ];
 
 const DIGOPS_SITE_PATHS = new Set([
   "/",
-  "/agentics",
-  "/agentics/",
-  "/applied-agentics",
-  "/applied-agentics/",
-  "/approach",
-  "/approach/",
+  "/collective",
+  "/collective/",
+  "/collective/plate",
+  "/collective/plate/",
+  "/agentic-ai",
+  "/agentic-ai/",
+  "/agentic-ai/plate",
+  "/agentic-ai/plate/",
+  "/agentic-ai/marys-sheet",
+  "/agentic-ai/marys-sheet/",
+  "/agentic-ai/the-application-layer",
+  "/agentic-ai/the-application-layer/",
+  "/agentic-ai/the-delivery-seam",
+  "/agentic-ai/the-delivery-seam/",
+  "/experience",
+  "/experience/",
+  "/block",
+  "/block/",
+  "/block/custom",
+  "/block/custom/",
   "/contact",
   "/contact/",
-  "/engagement",
-  "/engagement/",
   "/faq",
   "/faq/",
   "/privacy",
@@ -95,16 +108,24 @@ const DIGOPS_SITE_PATHS = new Set([
   "/method/",
   "/transformations",
   "/transformations/",
-  "/experience",
-  "/experience/",
-  "/block",
-  "/block/",
   "/application-layer",
   "/application-layer/",
   "/agentics",
   "/agentics/",
+  "/applied-agentics",
+  "/applied-agentics/",
   "/agentic-layer",
   "/agentic-layer/",
+  "/approach",
+  "/approach/",
+  "/engagement",
+  "/engagement/",
+  "/about",
+  "/about/",
+  "/capabilities",
+  "/capabilities/",
+  "/articles",
+  "/articles/",
   "/boss",
   "/boss/",
   "/rig",
@@ -115,9 +136,9 @@ const DIGOPS_SITE_PATHS = new Set([
 
 const ASSET_EXTENSIONS = /\.(avif|css|gif|ico|jpg|jpeg|js|json|map|pdf|png|svg|txt|webmanifest|webp|xml)$/i;
 
-/** Broader than the original list — scanners + common automation UAs. */
+/** Broader than the original list — scanners + commercial scrapers + common automation UAs. */
 const BOT_USER_AGENT =
-  /(bot|crawler|spider|crawl|slurp|curl\/|wget|python|node-fetch|axios\/|headless|playwright|puppeteer|vercel-screenshot|censys|domainscores|wp2shell|internet-measurement|cms-checker|powershell|facebookexternalhit|twitterbot|linkedinbot|slackbot|bingpreview|preview|x11; linux x86_64)/i;
+  /(bot|crawler|spider|crawl|slurp|curl\/|wget|python|node-fetch|axios\/|headless|playwright|puppeteer|vercel-screenshot|censys|domainscores|wp2shell|internet-measurement|cms-checker|powershell|facebookexternalhit|twitterbot|linkedinbot|slackbot|bingpreview|preview|x11; linux x86_64|threatview|foregenix|security auditor|scanner|nuclei|nikto|sqlmap|zgrab|masscan|httpx|bytespider|ccbot|diffbot|dotbot|mj12bot|blexbot|petalbot|semrush|ahrefs|dataforseo|barkrowler|seekport|qlyze|raylu|exasearch)/i;
 
 const FINGERPRINT_IPHONE = /iPhone OS 13_2_3/i;
 
@@ -260,14 +281,22 @@ export function isAssetPath(path: string): boolean {
   if (normalized === "/robots.txt" || normalized === "/sitemap.xml") {
     return true;
   }
-  if (normalized === "/llms.txt" || normalized === "/manifest.webmanifest") {
+  if (
+    normalized === "/llms.txt" ||
+    normalized === "/llms-full.txt" ||
+    normalized === "/facts.txt" ||
+    normalized === "/manifest.webmanifest"
+  ) {
     return true;
   }
   return ASSET_EXTENSIONS.test(normalized);
 }
 
 export function isDigOpsSitePath(path: string): boolean {
-  return DIGOPS_SITE_PATHS.has(normalizePath(path));
+  const normalized = normalizePath(path).toLowerCase();
+  if (DIGOPS_SITE_PATHS.has(normalized)) return true;
+  if (normalized.startsWith("/agentic-ai/") || normalized.startsWith("/block/") || normalized.startsWith("/collective/")) return true;
+  return false;
 }
 
 /** Non-marketing paths that scanners hammer — never buyer_signal. */
@@ -286,6 +315,8 @@ export function isBotUserAgent(userAgent: string): boolean {
   const ua = userAgent.trim();
   if (!ua) return true;
   if (ua === "Mozilla/5.0") return true;
+  // Malformed User-Agents wrapped in literal quote marks (form-stuffing botnet signature)
+  if (/^["'].*["']$/.test(ua)) return true;
   if (BOT_USER_AGENT.test(ua)) return true;
   if (FINGERPRINT_IPHONE.test(ua)) return true;
   return false;

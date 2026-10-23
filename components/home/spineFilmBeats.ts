@@ -10,7 +10,7 @@ export const BEATS: Beat[] = [
     n: "01",
     chip: "Gap",
     label: "Nobody owns it",
-    line: "Parts get delivered. Platforms get licensed. Vendors manage their slice. The business still has no one accountable for the whole - people, workflows, data, systems, decisions, and adoption.",
+    line: "Parts get delivered. Platforms get licensed. Vendors manage their slice. The business still has no one accountable for the whole — people, systems, and workflows, unified by sovereign data and human adoption.",
   },
   {
     n: "02",
@@ -48,7 +48,7 @@ export const MOBILE_BEATS: Array<{ beat: number; label: string; line: string }> 
   {
     beat: 1,
     label: "Nobody owns it",
-    line: "Parts get delivered. Platforms get licensed. Vendors manage their slice. The business still has no one accountable for the whole - people, workflows, data, systems, decisions, and adoption.",
+    line: "Parts get delivered. Platforms get licensed. Vendors manage their slice. The business still has no one accountable for the whole — people, systems, and workflows, unified by sovereign data and human adoption.",
   },
   {
     beat: 3,

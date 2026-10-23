@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 780" width="1080" height="780">
+  <defs>
+    <radialGradient id="paper5" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#FFFDF9" />
+      <stop offset="100%" stop-color="#F5EDE0" />
+    </radialGradient>
+    <linearGradient id="gold5" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#EBD79E" />
+      <stop offset="50%" stop-color="#B79242" />
+      <stop offset="100%" stop-color="#E2C77E" />
+    </linearGradient>
+    <radialGradient id="coreGold5" cx="50%" cy="42%" r="60%">
+      <stop offset="0%" stop-color="#FFF6D6" />
+      <stop offset="65%" stop-color="#E2C677" />
+      <stop offset="100%" stop-color="#B48E3E" />
+    </radialGradient>
+    <pattern id="dotgrid5" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="11" cy="11" r="1.05" fill="#C4B699" opacity="0.42" />
+    </pattern>
+    <filter id="softShadow5" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#221D14" flood-opacity="0.10" />
+    </filter>
+  </defs>
+
+  <!-- Subtle Dot-Grid Vellum Sheet (No redundant outer box border) -->
+  <rect x="0" y="0" width="1080" height="780" rx="8" fill="url(#paper5)" />
+  <rect x="6" y="6" width="1068" height="768" rx="6" fill="url(#dotgrid5)" />
+
+  <!-- Subtle Radial Construction Lines -->
+  <line x1="540" y1="20" x2="540" y2="760" stroke="#DED2BC" stroke-width="1.1" stroke-dasharray="4 5" />
+  <line x1="40" y1="390" x2="1040" y2="390" stroke="#DED2BC" stroke-width="1.1" stroke-dasharray="4 5" />
+
+  <!-- Outer Woven Orbital Halo -->
+  <ellipse cx="540" cy="390" rx="232" ry="218" transform="rotate(-18 540 390)" fill="none" stroke="#C5B494" stroke-width="1.4" />
+  <ellipse cx="540" cy="390" rx="232" ry="218" transform="rotate(18 540 390)" fill="none" stroke="#C5B494" stroke-width="1.4" />
+  <circle cx="540" cy="390" r="221" fill="none" stroke="#26313A" stroke-width="1.5" />
+
+  <!-- 4 QUADRANT ARCS (r = 172..212) -->
+  <path d="M 409.48 222.94 A 212 212 0 0 1 670.52 222.94 L 645.89 254.46 A 172 172 0 0 0 434.11 254.46 Z" fill="#26313A" stroke="#26313A" stroke-width="2" filter="url(#softShadow5)" />
+  <text x="540" y="197" text-anchor="middle" dominant-baseline="central" font-family="Arial, sans-serif" font-size="15" font-weight="800" fill="#F3E2AE" letter-spacing="1.6">01 · INTENT</text>
+
+  <path d="M 707.06 259.48 A 212 212 0 0 1 707.06 520.52 L 675.54 495.89 A 172 172 0 0 0 675.54 284.11 Z" fill="#FBF6EC" stroke="#26313A" stroke-width="2" filter="url(#softShadow5)" />
+  <text x="733" y="390" text-anchor="middle" dominant-baseline="central" transform="rotate(90 733 390)" font-family="Arial, sans-serif" font-size="15" font-weight="800" fill="#26313A" letter-spacing="1.6">02 · DEFINE</text>
+
+  <path d="M 670.52 557.06 A 212 212 0 0 1 409.48 557.06 L 434.11 525.54 A 172 172 0 0 0 645.89 525.54 Z" fill="#26313A" stroke="#26313A" stroke-width="2" filter="url(#softShadow5)" />
+  <text x="540" y="583" text-anchor="middle" dominant-baseline="central" transform="rotate(0 540 583)" font-family="Arial, sans-serif" font-size="15" font-weight="800" fill="#F3E2AE" letter-spacing="1.6">03 · DELIVER</text>
+
+  <path d="M 372.94 520.52 A 212 212 0 0 1 372.94 259.48 L 404.46 284.11 A 172 172 0 0 0 404.46 495.89 Z" fill="#FBF6EC" stroke="#26313A" stroke-width="2" filter="url(#softShadow5)" />
+  <text x="347" y="390" text-anchor="middle" dominant-baseline="central" transform="rotate(270 347 390)" font-family="Arial, sans-serif" font-size="15" font-weight="800" fill="#26313A" letter-spacing="1.6">04 · OUTCOME ↺</text>
+
+  <!-- Directional Arrows in the 4 Seams -->
+  <g transform="translate(675.8, 254.2) rotate(45)"><polygon points="-6,-6 8,0 -6,6" fill="#966B26" /></g>
+  <g transform="translate(675.8, 525.8) rotate(135)"><polygon points="-6,-6 8,0 -6,6" fill="#966B26" /></g>
+  <g transform="translate(404.2, 525.8) rotate(225)"><polygon points="-6,-6 8,0 -6,6" fill="#966B26" /></g>
+  <g transform="translate(404.2, 254.2) rotate(315)"><polygon points="-6,-6 8,0 -6,6" fill="#966B26" /></g>
+
+  <!-- BINARY STREAM CONDUIT RING (r = 136..166) -->
+  <circle cx="540" cy="390" r="166" fill="#FAF4E6" stroke="#966B26" stroke-width="1.8" />
+  <circle cx="540" cy="390" r="151" fill="none" stroke="#D8C7A0" stroke-width="1" stroke-dasharray="3 4" />
+  <circle cx="540" cy="390" r="136" fill="#FFFDF9" stroke="#26313A" stroke-width="1.8" />
+  <text x="540.0" y="232.0" text-anchor="middle" dominant-baseline="central" transform="rotate(0 540.0 232.0)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">1</text><text x="552.6" y="246.5" text-anchor="middle" dominant-baseline="central" transform="rotate(5 552.6 246.5)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">0</text><text x="567.4" y="234.4" text-anchor="middle" dominant-baseline="central" transform="rotate(10 567.4 234.4)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">1</text><text x="577.3" y="250.9" text-anchor="middle" dominant-baseline="central" transform="rotate(15 577.3 250.9)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">1</text><text x="594.0" y="241.5" text-anchor="middle" dominant-baseline="central" transform="rotate(20 594.0 241.5)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">0</text><text x="600.9" y="259.5" text-anchor="middle" dominant-baseline="central" transform="rotate(25 600.9 259.5)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">0</text><text x="619.0" y="253.2" text-anchor="middle" dominant-baseline="central" transform="rotate(30 619.0 253.2)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">1</text><text x="622.6" y="272.0" text-anchor="middle" dominant-baseline="central" transform="rotate(35 622.6 272.0)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">0</text><text x="641.6" y="269.0" text-anchor="middle" dominant-baseline="central" transform="rotate(40 641.6 269.0)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">1</text><text x="641.8" y="288.2" text-anchor="middle" dominant-baseline="central" transform="rotate(45 641.8 288.2)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">1</text><text x="661.0" y="288.4" text-anchor="middle" dominant-baseline="central" transform="rotate(50 661.0 288.4)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">0</text><text x="658.0" y="307.4" text-anchor="middle" dominant-baseline="central" transform="rotate(55 658.0 307.4)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">1</text><text x="676.8" y="311.0" text-anchor="middle" dominant-baseline="central" transform="rotate(60 676.8 311.0)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">0</text><text x="670.5" y="329.1" text-anchor="middle" dominant-baseline="central" transform="rotate(65 670.5 329.1)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">0</text><text x="688.5" y="336.0" text-anchor="middle" dominant-baseline="central" transform="rotate(70 688.5 336.0)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">1</text><text x="679.1" y="352.7" text-anchor="middle" dominant-baseline="central" transform="rotate(75 679.1 352.7)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">1</text><text x="695.6" y="362.6" text-anchor="middle" dominant-baseline="central" transform="rotate(80 695.6 362.6)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">0</text><text x="683.5" y="377.4" text-anchor="middle" dominant-baseline="central" transform="rotate(85 683.5 377.4)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">1</text><text x="698.0" y="390.0" text-anchor="middle" dominant-baseline="central" transform="rotate(90 698.0 390.0)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">0</text><text x="683.5" y="402.6" text-anchor="middle" dominant-baseline="central" transform="rotate(275 683.5 402.6)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">1</text><text x="695.6" y="417.4" text-anchor="middle" dominant-baseline="central" transform="rotate(280 695.6 417.4)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">1</text><text x="679.1" y="427.3" text-anchor="middle" dominant-baseline="central" transform="rotate(285 679.1 427.3)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">0</text><text x="688.5" y="444.0" text-anchor="middle" dominant-baseline="central" transform="rotate(290 688.5 444.0)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">0</text><text x="670.5" y="450.9" text-anchor="middle" dominant-baseline="central" transform="rotate(295 670.5 450.9)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">1</text><text x="676.8" y="469.0" text-anchor="middle" dominant-baseline="central" transform="rotate(300 676.8 469.0)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">1</text><text x="658.0" y="472.6" text-anchor="middle" dominant-baseline="central" transform="rotate(305 658.0 472.6)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">0</text><text x="661.0" y="491.6" text-anchor="middle" dominant-baseline="central" transform="rotate(310 661.0 491.6)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">1</text><text x="641.8" y="491.8" text-anchor="middle" dominant-baseline="central" transform="rotate(315 641.8 491.8)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">0</text><text x="641.6" y="511.0" text-anchor="middle" dominant-baseline="central" transform="rotate(320 641.6 511.0)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">0</text><text x="622.6" y="508.0" text-anchor="middle" dominant-baseline="central" transform="rotate(325 622.6 508.0)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">1</text><text x="619.0" y="526.8" text-anchor="middle" dominant-baseline="central" transform="rotate(330 619.0 526.8)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">0</text><text x="600.9" y="520.5" text-anchor="middle" dominant-baseline="central" transform="rotate(335 600.9 520.5)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">1</text><text x="594.0" y="538.5" text-anchor="middle" dominant-baseline="central" transform="rotate(340 594.0 538.5)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">1</text><text x="577.3" y="529.1" text-anchor="middle" dominant-baseline="central" transform="rotate(345 577.3 529.1)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">0</text><text x="567.4" y="545.6" text-anchor="middle" dominant-baseline="central" transform="rotate(350 567.4 545.6)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">1</text><text x="552.6" y="533.5" text-anchor="middle" dominant-baseline="central" transform="rotate(355 552.6 533.5)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">1</text><text x="540.0" y="548.0" text-anchor="middle" dominant-baseline="central" transform="rotate(360 540.0 548.0)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">0</text><text x="527.4" y="533.5" text-anchor="middle" dominant-baseline="central" transform="rotate(365 527.4 533.5)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">0</text><text x="512.6" y="545.6" text-anchor="middle" dominant-baseline="central" transform="rotate(370 512.6 545.6)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">1</text><text x="502.7" y="529.1" text-anchor="middle" dominant-baseline="central" transform="rotate(375 502.7 529.1)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">0</text><text x="486.0" y="538.5" text-anchor="middle" dominant-baseline="central" transform="rotate(380 486.0 538.5)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">1</text><text x="479.1" y="520.5" text-anchor="middle" dominant-baseline="central" transform="rotate(385 479.1 520.5)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">1</text><text x="461.0" y="526.8" text-anchor="middle" dominant-baseline="central" transform="rotate(390 461.0 526.8)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">0</text><text x="457.4" y="508.0" text-anchor="middle" dominant-baseline="central" transform="rotate(395 457.4 508.0)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">1</text><text x="438.4" y="511.0" text-anchor="middle" dominant-baseline="central" transform="rotate(400 438.4 511.0)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">0</text><text x="438.2" y="491.8" text-anchor="middle" dominant-baseline="central" transform="rotate(405 438.2 491.8)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">0</text><text x="419.0" y="491.6" text-anchor="middle" dominant-baseline="central" transform="rotate(410 419.0 491.6)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">1</text><text x="422.0" y="472.6" text-anchor="middle" dominant-baseline="central" transform="rotate(415 422.0 472.6)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">1</text><text x="403.2" y="469.0" text-anchor="middle" dominant-baseline="central" transform="rotate(420 403.2 469.0)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">0</text><text x="409.5" y="450.9" text-anchor="middle" dominant-baseline="central" transform="rotate(425 409.5 450.9)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">1</text><text x="391.5" y="444.0" text-anchor="middle" dominant-baseline="central" transform="rotate(430 391.5 444.0)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">0</text><text x="400.9" y="427.3" text-anchor="middle" dominant-baseline="central" transform="rotate(435 400.9 427.3)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">1</text><text x="384.4" y="417.4" text-anchor="middle" dominant-baseline="central" transform="rotate(440 384.4 417.4)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">1</text><text x="396.5" y="402.6" text-anchor="middle" dominant-baseline="central" transform="rotate(445 396.5 402.6)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">0</text><text x="382.0" y="390.0" text-anchor="middle" dominant-baseline="central" transform="rotate(270 382.0 390.0)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">0</text><text x="396.5" y="377.4" text-anchor="middle" dominant-baseline="central" transform="rotate(275 396.5 377.4)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">1</text><text x="384.4" y="362.6" text-anchor="middle" dominant-baseline="central" transform="rotate(280 384.4 362.6)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">1</text><text x="400.9" y="352.7" text-anchor="middle" dominant-baseline="central" transform="rotate(285 400.9 352.7)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">0</text><text x="391.5" y="336.0" text-anchor="middle" dominant-baseline="central" transform="rotate(290 391.5 336.0)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">1</text><text x="409.5" y="329.1" text-anchor="middle" dominant-baseline="central" transform="rotate(295 409.5 329.1)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">0</text><text x="403.2" y="311.0" text-anchor="middle" dominant-baseline="central" transform="rotate(300 403.2 311.0)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">0</text><text x="422.0" y="307.4" text-anchor="middle" dominant-baseline="central" transform="rotate(305 422.0 307.4)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">1</text><text x="419.0" y="288.4" text-anchor="middle" dominant-baseline="central" transform="rotate(310 419.0 288.4)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">0</text><text x="438.2" y="288.2" text-anchor="middle" dominant-baseline="central" transform="rotate(315 438.2 288.2)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">1</text><text x="438.4" y="269.0" text-anchor="middle" dominant-baseline="central" transform="rotate(320 438.4 269.0)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">1</text><text x="457.4" y="272.0" text-anchor="middle" dominant-baseline="central" transform="rotate(325 457.4 272.0)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">0</text><text x="461.0" y="253.2" text-anchor="middle" dominant-baseline="central" transform="rotate(330 461.0 253.2)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">1</text><text x="479.1" y="259.5" text-anchor="middle" dominant-baseline="central" transform="rotate(335 479.1 259.5)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">1</text><text x="486.0" y="241.5" text-anchor="middle" dominant-baseline="central" transform="rotate(340 486.0 241.5)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">0</text><text x="502.7" y="250.9" text-anchor="middle" dominant-baseline="central" transform="rotate(345 502.7 250.9)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">0</text><text x="512.6" y="234.4" text-anchor="middle" dominant-baseline="central" transform="rotate(350 512.6 234.4)" font-family="Courier New, monospace" font-size="11.5" font-weight="700" fill="#8C621E" opacity="0.88">1</text><text x="527.4" y="246.5" text-anchor="middle" dominant-baseline="central" transform="rotate(355 527.4 246.5)" font-family="Courier New, monospace" font-size="10.5" font-weight="700" fill="#26313A" opacity="0.62">0</text>
+
+  <!-- INNER GOLD ACCENT RING -->
+  <circle cx="540" cy="390" r="127" fill="none" stroke="url(#gold5)" stroke-width="5.5" opacity="0.75" />
+
+  <!-- CENTER MEDALLION (r = 114) -->
+  <g filter="url(#softShadow5)">
+    <circle cx="540" cy="390" r="114" fill="#26313A" stroke="url(#gold5)" stroke-width="3.2" />
+    <circle cx="540" cy="390" r="105" fill="none" stroke="#B79242" stroke-width="1.1" stroke-dasharray="4 4" />
+    <text x="540" y="342" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="800" fill="#EBD79E" letter-spacing="1.8">THE OUTCOME LOOP</text>
+    <text x="540" y="372" text-anchor="middle" font-family="Georgia, serif" font-size="21.5" font-weight="700" fill="#FFFDF9">Intent = Outcome</text>
+    <line x1="448" y1="386" x2="632" y2="386" stroke="#B79242" stroke-width="1.2" />
+    <text x="540" y="407" text-anchor="middle" font-family="Georgia, serif" font-size="13.5" fill="#F3E2AE">People &amp; Agents Contributing</text>
+    <text x="540" y="425" text-anchor="middle" font-family="Georgia, serif" font-size="13.5" fill="#F3E2AE">Throughout the Loop</text>
+    <rect x="442" y="438" width="196" height="28" rx="14" fill="url(#coreGold5)" stroke="#1E2024" stroke-width="1.4" />
+    <text x="540" y="456" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.5" font-weight="800" fill="#1E2024" letter-spacing="0.8">STEWARD: MONITOR · RECOVER</text>
+  </g>
+
+  <!-- SYNTHESIS BEACON 1 (Upper Right, 45 deg) -->
+  <g filter="url(#softShadow5)">
+    <line x1="676" y1="254" x2="722" y2="158" stroke="#26313A" stroke-width="2.2" />
+    <circle cx="676" cy="254" r="15" fill="url(#coreGold5)" stroke="#26313A" stroke-width="2.2" />
+    <circle cx="676" cy="254" r="6" fill="#26313A" />
+    <rect x="640" y="114" width="246" height="46" rx="23" fill="url(#coreGold5)" stroke="#26313A" stroke-width="2" />
+    <text x="763" y="134" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="800" fill="#1E2024" letter-spacing="0.9">SYNTHESIS 1 · PLAN LOCK</text>
+    <text x="763" y="151" text-anchor="middle" font-family="Georgia, serif" font-size="13" font-weight="700" fill="#26313A">Human-Agent Alignment</text>
+  </g>
+
+  <!-- SYNTHESIS BEACON 2 (Lower Right, 135 deg) -->
+  <g filter="url(#softShadow5)">
+    <line x1="676" y1="526" x2="722" y2="620" stroke="#26313A" stroke-width="2.2" />
+    <circle cx="676" cy="526" r="15" fill="url(#coreGold5)" stroke="#26313A" stroke-width="2.2" />
+    <circle cx="676" cy="526" r="6" fill="#26313A" />
+    <rect x="640" y="618" width="256" height="46" rx="23" fill="url(#coreGold5)" stroke="#26313A" stroke-width="2" />
+    <text x="768" y="638" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="800" fill="#1E2024" letter-spacing="0.9">SYNTHESIS 2 · PROGRAM GO</text>
+    <text x="768" y="655" text-anchor="middle" font-family="Georgia, serif" font-size="13" font-weight="700" fill="#26313A">Consensus &amp; Release Gate</text>
+  </g>
+
+  <!-- INTENT (TOP / 12 O'CLOCK) -->
+  <g filter="url(#softShadow5)">
+    <line x1="540" y1="96" x2="540" y2="169" stroke="#966B26" stroke-width="2.5" />
+    <circle cx="540" cy="169" r="5" fill="#966B26" />
+    <rect x="266" y="18" width="548" height="78" rx="12" fill="#FFFDF9" stroke="#26313A" stroke-width="2.2" />
+    <rect x="271" y="23" width="538" height="68" rx="9" fill="none" stroke="#B79242" stroke-width="1.2" />
+    <text x="540" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.5" font-weight="800" fill="#26313A" letter-spacing="1.2">INTENT · CANON, KEYSTONE &amp; MASTER PLAN</text>
+    <text x="540" y="76" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#7D591D">Governing Canon · Architecture Constraints · Master Schedule</text>
+  </g>
+
+  <!-- DEFINE A (UPPER RIGHT) -->
+  <g filter="url(#softShadow5)">
+    <line x1="734" y1="286" x2="774" y2="262" stroke="#966B26" stroke-width="2.5" />
+    <circle cx="734" cy="286" r="5" fill="#966B26" />
+    <rect x="774" y="198" width="292" height="104" rx="12" fill="#FFFDF9" stroke="#26313A" stroke-width="2.2" />
+    <rect x="779" y="203" width="282" height="94" rx="9" fill="none" stroke="#B79242" stroke-width="1.2" />
+    <text x="920" y="231" text-anchor="middle" font-family="Arial, sans-serif" font-size="15.5" font-weight="800" fill="#26313A" letter-spacing="0.8">DEFINE · PROGRAM PLANS</text>
+    <text x="920" y="256" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#7D591D">Specs &amp; Outcomes as Rows</text>
+    <text x="920" y="280" text-anchor="middle" font-family="Georgia, serif" font-size="13.5" fill="#4A4842">Bounded scope, dependencies &amp; tests</text>
+  </g>
+
+  <!-- DEFINE B (LOWER RIGHT) -->
+  <g filter="url(#softShadow5)">
+    <line x1="734" y1="494" x2="774" y2="518" stroke="#966B26" stroke-width="2.5" />
+    <circle cx="734" cy="494" r="5" fill="#966B26" />
+    <rect x="774" y="478" width="292" height="104" rx="12" fill="#FFFDF9" stroke="#26313A" stroke-width="2.2" />
+    <rect x="779" y="483" width="282" height="94" rx="9" fill="none" stroke="#B79242" stroke-width="1.2" />
+    <text x="920" y="511" text-anchor="middle" font-family="Arial, sans-serif" font-size="15.5" font-weight="800" fill="#26313A" letter-spacing="0.8">DEFINE · SEED SCHEDULE</text>
+    <text x="920" y="536" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#7D591D">Prepare · Sequence · Route</text>
+    <text x="920" y="560" text-anchor="middle" font-family="Georgia, serif" font-size="13.5" fill="#4A4842">Balances &amp; releases ready work</text>
+  </g>
+
+  <!-- DELIVER (BOTTOM / 6 O'CLOCK) -->
+  <g filter="url(#softShadow5)">
+    <line x1="540" y1="611" x2="540" y2="674" stroke="#966B26" stroke-width="2.5" />
+    <circle cx="540" cy="611" r="5" fill="#966B26" />
+    <rect x="250" y="674" width="580" height="88" rx="12" fill="#26313A" stroke="url(#gold5)" stroke-width="2.4" />
+    <text x="540" y="703" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="800" fill="#F3E2AE" letter-spacing="1.2">DELIVER · DETERMINISTIC EXECUTION PIPELINE</text>
+    <text x="540" y="728" text-anchor="middle" font-family="Georgia, serif" font-size="15.5" font-weight="700" fill="#FFFDF9">Multi-Harness Build  ⇄  Opposing-Model Check  →  Land on Main</text>
+    <text x="540" y="749" text-anchor="middle" font-family="Georgia, serif" font-size="13.5" fill="#E3D4AD">Self-remediating internal loop until verified usable exit</text>
+  </g>
+
+  <!-- OUTCOME A (LOWER LEFT) -->
+  <g filter="url(#softShadow5)">
+    <line x1="346" y1="494" x2="306" y2="518" stroke="#966B26" stroke-width="2.5" />
+    <circle cx="346" cy="494" r="5" fill="#966B26" />
+    <rect x="14" y="478" width="292" height="104" rx="12" fill="#FFFDF9" stroke="#26313A" stroke-width="2.2" />
+    <rect x="19" y="483" width="282" height="94" rx="9" fill="none" stroke="#B79242" stroke-width="1.2" />
+    <text x="160" y="511" text-anchor="middle" font-family="Arial, sans-serif" font-size="15.5" font-weight="800" fill="#26313A" letter-spacing="0.8">OUTCOME · EXAMINATION</text>
+    <text x="160" y="536" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#7D591D">Examiner &amp; Asset Books Tallied</text>
+    <text x="160" y="560" text-anchor="middle" font-family="Georgia, serif" font-size="13.5" fill="#4A4842">Acceptance, cycle time, burn &amp; cost</text>
+  </g>
+
+  <!-- OUTCOME B (UPPER LEFT) -->
+  <g filter="url(#softShadow5)">
+    <line x1="346" y1="286" x2="306" y2="262" stroke="#966B26" stroke-width="2.5" />
+    <circle cx="346" cy="286" r="5" fill="#966B26" />
+    <rect x="14" y="198" width="292" height="104" rx="12" fill="#FFFDF9" stroke="#26313A" stroke-width="2.2" />
+    <rect x="19" y="203" width="282" height="94" rx="9" fill="none" stroke="#B79242" stroke-width="1.2" />
+    <text x="160" y="231" text-anchor="middle" font-family="Arial, sans-serif" font-size="15.5" font-weight="800" fill="#26313A" letter-spacing="0.8">OUTCOME · LESSONS LEARNED ↺</text>
+    <text x="160" y="256" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#7D591D">Compounds the Next Loop</text>
+    <text x="160" y="280" text-anchor="middle" font-family="Georgia, serif" font-size="13.5" fill="#4A4842">Feeds into Canon, Plans &amp; Collective</text>
+  </g>
+</svg>
