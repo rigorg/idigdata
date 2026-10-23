@@ -3,6 +3,10 @@
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import {
+  hasUserConsented,
+  CONSENT_UPDATED_EVENT,
+} from "@/lib/traffic/cookieConsent";
+import {
   getAnonSessionId,
   getAttributionSearch,
   getCurrentTrafficSignal,
@@ -10,12 +14,9 @@ import {
   trackWebsiteEvent,
 } from "./websiteEvents";
 
-const TRACK_PAGE_NAVIGATION = process.env.NEXT_PUBLIC_TRACK_PAGE_NAVIGATION === "1";
-const TRACK_ENGAGEMENT = process.env.NEXT_PUBLIC_TRACK_PAGE_NAVIGATION === "1";
-
 function sendPageview(path: string) {
   if (typeof window === "undefined") return;
-  if (!TRACK_PAGE_NAVIGATION) return;
+  if (!hasUserConsented()) return;
 
   const signal = getCurrentTrafficSignal(path);
   if (signal.suppress_pageview) return;
@@ -66,7 +67,7 @@ function sendEngagement(
   path: string,
   payload: Record<string, unknown>,
 ) {
-  if (!TRACK_ENGAGEMENT) return;
+  if (!hasUserConsented()) return;
   const signal = getCurrentTrafficSignal(path);
   if (signal.suppress_pageview) return;
 
@@ -88,7 +89,23 @@ export default function PageviewBeacon() {
   const lastDwellSent = useRef(0);
 
   useEffect(() => {
-    syncAttributionFromLocation();
+    if (hasUserConsented()) {
+      syncAttributionFromLocation();
+    }
+  }, [pathname]);
+
+  // When visitor grants consent from the banner, fire initial pageview and sync attribution immediately
+  useEffect(() => {
+    function onConsentChanged(e: Event) {
+      const customEvent = e as CustomEvent<string>;
+      if (customEvent.detail === "accepted") {
+        syncAttributionFromLocation();
+        const activePath = pathname || (typeof window !== "undefined" ? window.location.pathname : "/");
+        sendPageview(activePath);
+      }
+    }
+    window.addEventListener(CONSENT_UPDATED_EVENT, onConsentChanged);
+    return () => window.removeEventListener(CONSENT_UPDATED_EVENT, onConsentChanged);
   }, [pathname]);
 
   useEffect(() => {
@@ -96,7 +113,7 @@ export default function PageviewBeacon() {
     if (lastPath.current === pathname) return;
 
     // Flush dwell for previous path before switching.
-    if (lastPath.current) {
+    if (lastPath.current && hasUserConsented()) {
       const dwellMs = Date.now() - enteredAt.current;
       if (dwellMs >= 3000) {
         sendEngagement("dwell", lastPath.current, {
@@ -110,11 +127,15 @@ export default function PageviewBeacon() {
     enteredAt.current = Date.now();
     maxScroll.current = 0;
     lastDwellSent.current = 0;
-    sendPageview(pathname);
+
+    if (hasUserConsented()) {
+      sendPageview(pathname);
+    }
   }, [pathname]);
 
   useEffect(() => {
     function handleClick(event: MouseEvent) {
+      if (!hasUserConsented()) return;
       const target = event.target instanceof Element ? event.target : null;
       const anchor = target?.closest("a[href]");
       if (!anchor) return;
@@ -141,9 +162,8 @@ export default function PageviewBeacon() {
   }, []);
 
   useEffect(() => {
-    if (!TRACK_ENGAGEMENT) return;
-
     function onScroll() {
+      if (!hasUserConsented()) return;
       const doc = document.documentElement;
       const scrollable = doc.scrollHeight - doc.clientHeight;
       if (scrollable <= 0) {
@@ -155,6 +175,7 @@ export default function PageviewBeacon() {
     }
 
     function flushDwell(reason: string) {
+      if (!hasUserConsented()) return;
       const path = lastPath.current ?? window.location.pathname;
       const dwellMs = Date.now() - enteredAt.current;
       if (dwellMs < 3000) return;

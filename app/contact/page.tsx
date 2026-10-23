@@ -9,6 +9,14 @@ export const metadata: Metadata = {
   description:
     "Executive roles, focused transformation work, and fractional leadership.",
   alternates: { canonical: "/contact/" },
+  openGraph: {
+    type: "website",
+    url: "https://idigdata.com/contact/",
+    title: "Contact | idigdata",
+    description:
+      "Executive roles, focused transformation work, and fractional leadership.",
+    images: [{ url: "/og-image.png?v=20260828", width: 1200, height: 630, alt: "Contact Robert Paddock, idigdata" }],
+  },
 };
 
 const breadcrumbJsonLd = {
@@ -34,7 +42,7 @@ export default function ContactPage() {
           <div className="hero-split">
           <div className="home-hero-copy">
           <p className="p-kicker">Contact</p>
-          <h1 className="p-h1">Start with the role, the transformation, or the problem.</h1>
+          <h1 className="p-h1">Start with the role or the problem.</h1>
           <p className="p-dek">
             An executive appointment, focused work, or fractional leadership.
             Tell me what your business needs, or email{" "}
@@ -48,7 +56,21 @@ export default function ContactPage() {
           </p>
           </div>
           <div className="home-watermark" aria-hidden="true">
-            <img src="/idigdata-mark.svg" alt="" />
+            <img
+              src="/idigdata-mark.svg"
+              alt=""
+              style={{
+                display: "block",
+                width: "280px",
+                height: "280px",
+                opacity: 0.18,
+                transform: "rotate(12deg)",
+                border: "none",
+                borderRadius: 0,
+                boxShadow: "none",
+                background: "transparent",
+              }}
+            />
           </div>
           </div>
           <div className="form-grid mt-8">
@@ -97,27 +119,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="p-section" style={{ borderBottom: 0 }}>
-        <div className="page-well">
-          <div className="lastmove-plate">
-            <DirectSignalObject size={220} />
-            <div>
-              <p className="font-vollkorn text-[13px] font-bold uppercase tracking-[0.16em] text-[#B48A05]">
-                Direct
-              </p>
-              <h3 className="mt-1 font-vollkorn text-[clamp(24px,3vw,32px)] font-extrabold text-navy">
-                Talk directly with me.
-              </h3>
-              <p className="mt-3 text-[17px] leading-[1.65]">
-                We’ll discuss what the work calls for, where my experience fits, and the right scope of responsibility.
-              </p>
-              <p className="mt-4 text-[15px] leading-[1.55] text-[#5A6978]">
-                Pacific Time
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+
     </PresenceShell>
   );
 }

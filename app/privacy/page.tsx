@@ -3,6 +3,7 @@ import Link from "next/link";
 import M4Watermark from "@/components/M4Watermark";
 import SectionKicker from "@/components/SectionKicker";
 import JsonLdScript from "@/components/analytics/JsonLdScript";
+import CookiePreferenceControls from "@/components/analytics/CookiePreferenceControls";
 
 export const dynamic = "force-static";
 
@@ -46,21 +47,13 @@ const SECTIONS: { title: string; body: React.ReactNode }[] = [
     body: (
       <>
         <p className="mb-3">
-          When someone opens a page on idigdata.com, we record one first-party
-          entrance (the door-knock) for operating this practice: path, time,
-          referrer, basic device/browser signals, optional UTM / click-id
-          parameters (also kept in a short first-party attribution cookie), and
-          coarse host location (country / region / city). Application Layer and
-          Agentic Layer are live pages, same as Home and Contact. We store a
-          keyed HMAC of the visitor IP - not the raw address - plus a small
-          allowlisted set of request metadata (for example accept-language and
-          fetch-site). We do not keep precise latitude/longitude or full proxy
-          header dumps.
+          We distinguish between identifier-free page counts and preference-controlled visitor analytics. For the Agentic AI and Collective pages, we count eligible page requests even if you decline analytics. These separate count records contain only the page, hour and a known-bot classification. They contain no IP address, visitor or session identifier, fingerprint, location, referrer or campaign data. They cannot tell us who visited, how many unique people visited or how long anyone read. We do not set cookies for these counts.
+        </p>
+        <p className="mb-3">
+          Separately, unless you have declined visitor analytics, our server proxy and first-party visit log can record basic page-visit signals to evaluate engagement and protect the site: path, timestamp, referrer, basic device/browser user-agent signals, and optional UTM campaign parameters. We store an anonymous session identifier and a keyed HMAC of client IP &mdash; never the raw IP address &mdash; alongside coarse location headers (country / region / city). Declining suppresses that visitor log and client engagement beacons. We do not collect precise GPS or retain raw proxy header dumps.
         </p>
         <p>
-          We also use Vercel Analytics for aggregate, privacy-oriented visit
-          counts. You can opt out of that analytics layer from the site notice or
-          the control below.
+          When you explicitly accept cookies, we also enable client-side first-party engagement beacons, campaign attribution persistence, and Vercel Analytics for aggregate visit counts. You can change or revoke your preference at any time using the controls below.
         </p>
       </>
     ),
@@ -70,26 +63,24 @@ const SECTIONS: { title: string; body: React.ReactNode }[] = [
     body: (
       <ul className="list-disc space-y-2 pl-5">
         <li>
-          <span className="font-semibold text-ink">Session door cookies</span>
+          <span className="font-semibold text-ink">Cookie consent preference</span>
           {" - "}
-          short-lived markers so we do not double-count the same entrance window.
+          remembers whether you accepted or declined telemetry so you are not prompted repeatedly.
         </li>
         <li>
           <span className="font-semibold text-ink">Attribution cookie</span>
           {" - "}
-          remembers UTM / gclid from a campaign landing for about 30 days so later
-          pages in the same browser still attribute correctly.
+          only set if you accept cookies on campaign landing; remembers UTM parameters for 30 days so subsequent page visits reflect the campaign source.
         </li>
         <li>
-          <span className="font-semibold text-ink">Analytics preference</span>
+          <span className="font-semibold text-ink">Session door markers</span>
           {" - "}
-          remembers if you opted out of Vercel Analytics.
+          short-lived markers to prevent double-counting visits during an active reading session.
         </li>
         <li>
-          <span className="font-semibold text-ink">Internal / fleet markers</span>
+          <span className="font-semibold text-ink">Operator markers</span>
           {" - "}
-          only if this practice deliberately marks a browser so operator and
-          automation traffic can be filtered from buyer traffic.
+          only if this practice intentionally marks a browser to keep operator and test traffic separate from client traffic.
         </li>
       </ul>
     ),
@@ -98,11 +89,15 @@ const SECTIONS: { title: string; body: React.ReactNode }[] = [
     title: "Contact form",
     body: (
       <>
-        If you write through{" "}
+        If you write through our contact or inquiry forms (including{" "}
         <Link href="/contact/" className="font-semibold text-navy border-b border-navy/30 hover:border-navy">
           /contact
+        </Link>{" "}
+        and{" "}
+        <Link href="/collective/" className="font-semibold text-navy border-b border-navy/30 hover:border-navy">
+          /collective
         </Link>
-        , we store the fields you send (name, email, optional role/company/message)
+        ), we store the fields you send (name, email, company, topic/interest, message)
         in our operating records and send a notification email so Robert can reply.
         We do not sell form submissions.
       </>
@@ -113,8 +108,8 @@ const SECTIONS: { title: string; body: React.ReactNode }[] = [
     body: (
       <>
         Hosting and edge delivery: Vercel. Operating database: Supabase.
-        Transactional notify mail from the contact form: Resend. Each is under
-        their own terms; we configure them for this practice site.
+        Transactional notify mail from the contact form: Resend. Each operates under
+        their own standard terms; we configure them for this practice site.
       </>
     ),
   },
@@ -149,8 +144,7 @@ export default function PrivacyPage() {
           Plain notice. No theater.
         </h1>
         <p className="mt-5 max-w-[720px] font-display italic text-warm-gray text-[18px] leading-snug">
-          What this site measures, why entrance traffic is recorded, and how to
-          opt out of aggregate analytics.
+          What this site measures, how cookie consent works, and how to manage your preferences.
         </p>
       </section>
 
@@ -169,26 +163,18 @@ export default function PrivacyPage() {
 
           <div className="border-t border-navy/10 pt-6">
             <h2 className="font-brand text-[12px] font-semibold uppercase tracking-[0.18em] text-navy">
-              Analytics opt-out
+              Cookie & Measurement Preferences
             </h2>
             <p className="mt-3 font-body text-[15.5px] leading-relaxed text-warm-gray">
-              Prefer no Vercel Analytics from this browser? Use the site notice, or
-              turn it off here. First-party entrance telemetry for operating the
-              practice still runs; this control only stops the Vercel Analytics
-              layer.
+              You can review or change your cookie and telemetry preferences at any time.
+              Choosing &ldquo;Opt Out&rdquo; removes any stored attribution cookies and
+              suppresses all client-side telemetry.
             </p>
-            <p className="mt-4 font-body text-[14px] text-navy">
-              <Link
-                href="/?va-opt-out=1"
-                className="inline-flex items-center rounded-md bg-navy px-4 py-2.5 text-[13px] font-semibold text-porcelain hover:bg-navy-mid"
-              >
-                Opt out of analytics
-              </Link>
-            </p>
+            <CookiePreferenceControls />
           </div>
 
           <p className="font-body text-[13px] text-warm-gray/80">
-            Last updated August 13, 2026.
+            Last updated October 12, 2026.
           </p>
         </div>
       </section>

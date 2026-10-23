@@ -10,6 +10,7 @@ import {
   type AttributionPayload,
 } from "@/lib/traffic/attribution";
 import { classifyWebsiteSignal, normalizePath, type WebsiteSignal } from "@/lib/traffic/websiteSignals";
+import { hasUserConsented, isUserOptedOut } from "@/lib/traffic/cookieConsent";
 
 export type WebsiteEventType =
   | "pageview_event"
@@ -58,7 +59,9 @@ export function getCurrentTrafficSignal(
   referrer: string | null = document.referrer || null,
 ): WebsiteSignal {
   syncTrafficMarkersFromLocation();
-  syncAttributionFromLocation();
+  if (hasUserConsented()) {
+    syncAttributionFromLocation();
+  }
   return classifyWebsiteSignal({
     path,
     referrer,
@@ -81,10 +84,13 @@ export function syncAttributionFromLocation() {
   if (typeof window === "undefined") return;
   try {
     const params = new URLSearchParams(window.location.search);
-    if (params.get("clear_attr") === "1") {
+    if (params.get("clear_attr") === "1" || isUserOptedOut()) {
       writeAttributionCookie(null);
       return;
     }
+    // Only write attribution cookies if user has granted consent
+    if (!hasUserConsented()) return;
+
     const live = parseAttributionSearch(window.location.search);
     if (!hasCampaignSignal(live)) return;
     const next: AttributionPayload = {
@@ -101,6 +107,7 @@ export function syncAttributionFromLocation() {
 
 export function trackWebsiteEvent(input: WebsiteEventInput) {
   if (typeof window === "undefined") return;
+  if (!hasUserConsented()) return;
   if (!INGEST_URL) return;
 
   const referrer = input.referrer ?? (document.referrer || null);
@@ -200,6 +207,7 @@ function writeAttributionCookie(payload: AttributionPayload | null) {
       document.cookie = `${ATTRIBUTION_COOKIE}=; Path=/; Max-Age=0; SameSite=Lax`;
       return;
     }
+    if (!hasUserConsented()) return;
     const secure = window.location.protocol === "https:" ? "; Secure" : "";
     document.cookie = `${ATTRIBUTION_COOKIE}=${encodeURIComponent(
       encodeAttributionCookie(payload),

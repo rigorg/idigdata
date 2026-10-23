@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  allowedDevOrigins: ["127.0.0.1", "localhost"],
   trailingSlash: true,
   async redirects() {
     return [
@@ -22,13 +23,23 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/owned-software",
+        destination: "/block/",
+        permanent: true,
+      },
+      {
+        source: "/owned-software/",
+        destination: "/block/",
+        permanent: true,
+      },
+      {
         source: "/agentic-layer",
-        destination: "/experience/",
+        destination: "/agentic-ai/",
         permanent: true,
       },
       {
         source: "/agentic-layer/",
-        destination: "/experience/",
+        destination: "/agentic-ai/",
         permanent: true,
       },
       {
@@ -43,12 +54,12 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/agentics",
-        destination: "/experience/",
+        destination: "/agentic-ai/",
         permanent: true,
       },
       {
         source: "/agentics/",
-        destination: "/experience/",
+        destination: "/agentic-ai/",
         permanent: true,
       },
       {
@@ -113,17 +124,17 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/applied-agentics",
-        destination: "/experience/",
+        destination: "/agentic-ai/",
         permanent: true,
       },
       {
         source: "/applied-agentics/",
-        destination: "/experience/",
+        destination: "/agentic-ai/",
         permanent: true,
       },
       {
         source: "/applied-agentics/:path*",
-        destination: "/experience/",
+        destination: "/agentic-ai/",
         permanent: true,
       },
       {

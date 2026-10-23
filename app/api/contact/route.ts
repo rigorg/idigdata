@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import {
   ContactSchema,
+  isLikelyBotSpam,
   sanitizeHeaderField,
 } from "@/lib/contact/schema";
 import { getDigOpsSupabaseForContact } from "@/lib/server/digopsSupabase";
@@ -96,12 +97,20 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: false, error: "validation_failed" }, { status: 400 });
   }
 
+  if (isLikelyBotSpam(parsed.data)) {
+    return NextResponse.json({ ok: true, lead_id: "silenced" });
+  }
+
   const { name, email, role, company, message, interestType } = parsed.data;
   const safeName = sanitizeHeaderField(name);
   const safeEmail = sanitizeHeaderField(email);
 
   const apiKey = process.env.RESEND_API_KEY;
-  const notifyTo = process.env.EMAIL_NOTIFY_TO ?? "robert@idigdata.com";
+  const rawNotify = process.env.EMAIL_NOTIFY_TO?.trim();
+  const notifyTo =
+    rawNotify && rawNotify.includes("@") && !rawNotify.includes("[SENSITIVE]")
+      ? rawNotify
+      : "robert@idigdata.com";
   const fromAddr =
     process.env.EMAIL_NOTIFY_FROM ?? "idigdata website <noreply@idigdata.com>";
 
@@ -111,9 +120,17 @@ export async function POST(req: NextRequest) {
   });
   const isBlockQuote =
     message.includes("THE BLOCK") || message.includes("BLOCK SCOPE QUOTE") || message.includes("DELIVERY QUOTE") || message.includes("FLIGHT SCOPE QUOTE");
-  const subject = isBlockQuote
-    ? `[The Block Quote] ${safeName}${company ? ` (${sanitizeHeaderField(company)})` : ""} / ${safeEmail}`
-    : `[idigdata] Reach out: ${safeName} / ${safeEmail}`;
+  const isReaderNote =
+    message.includes("[READER NOTE") || message.includes("AGENTIC AI WEBLOG");
+  const isCollectiveInquiry =
+    message.includes("THE COLLECTIVE") || message.includes("COLLECTIVE NOTE") || row.source === "website-collective";
+  const subject = isReaderNote
+    ? `[Reader Note: Agentic AI] ${safeName} / ${safeEmail}`
+    : isCollectiveInquiry
+      ? `[The Collective] ${safeName}${company ? ` (${sanitizeHeaderField(company)})` : ""} / ${safeEmail}`
+      : isBlockQuote
+        ? `[The Block Quote] ${safeName}${company ? ` (${sanitizeHeaderField(company)})` : ""} / ${safeEmail}`
+        : `[idigdata] Reach out: ${safeName} / ${safeEmail}`;
   const lines = [
     `From: ${safeName} <${safeEmail}>`,
     role ? `Role: ${sanitizeHeaderField(role)}` : null,

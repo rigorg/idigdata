@@ -1,83 +1,559 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg viewBox="130 5 540 625" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="sv-title sv-desc">
-  <title id="sv-title">AV-03 · The Systemverse · brand-v2 · author-v2.2 · 2026-05-09</title>
-  <desc id="sv-desc">A celestial composition. Data core at the gravitational center; 16 functional system groups form a tightly-packed ring (touching, no gaps) at the application orbit. Sixteen thin connectivity spokes radiate from each system group to the data core, signaling the constant traffic between every system and the core. An integration fabric annulus (charcoal mesh pattern at low opacity) overlays the spokes — explicit connectivity (spokes) + implicit substrate (mesh) together communicate the integration layer. Same shape every install; bespoke fill per operator. First major engagement deliverable: the future-state systems map handed to the operator at end of Phase 1. Brand v2: charcoal structure, sun-gold data core, cream substrate.</desc>
-
-  <defs>
-    <!-- Integration fabric · cross-hatch pattern weaving charcoal + sun-gold. Tile rotates 45° so lines read as diagonal weave. Charcoal carries structure; sun-gold carries brand cohesion (same device used for BPSc bands in AV-02). The substrate is no longer empty space. -->
-    <pattern id="integration-fabric" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)">
-      <rect width="8" height="8" fill="#FBF9F4"/>
-      <line x1="0" y1="0" x2="0" y2="8" stroke="#1F2937" stroke-width="0.7" stroke-opacity="0.45"/>
-      <line x1="0" y1="0" x2="8" y2="0" stroke="#FACC15" stroke-width="0.6" stroke-opacity="0.70"/>
-    </pattern>
-  </defs>
-
-  <!-- Background · cream substrate (brand v2 §3) -->
-  <rect width="800" height="900" fill="#FBF9F4"/>
-
-  <!-- Title block · heavy geometric sans (Helvetica Black approximation pending Druk Wide Super) + Georgia italic subtitle -->
-  <text x="400" y="50" text-anchor="middle" font-weight="900" font-size="28" fill="#1F2937" letter-spacing="-0.3" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">THE SYSTEMVERSE</text>
-  <text x="400" y="76" text-anchor="middle" font-style="italic" font-size="13" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Future-state systems map · what runs the process flows and data core</text>
-
-  <g transform="translate(0,-110)">
-  <!-- Application Layer label (floating just above the orbit) -->
-  <text x="400" y="200" text-anchor="middle" font-style="italic" font-size="11" fill="#6B6860" letter-spacing="3" font-family="Georgia, 'Times New Roman', serif">APPLICATION LAYER</text>
-
-  <!-- Integration fabric annulus · cross-hatch (charcoal + sun-gold) fills the substrate between data core (r=95) and application orbit inner edge (r=165). Implicit connectivity layer; spokes overlay it. -->
-  <circle cx="400" cy="470" r="130" fill="none" stroke="url(#integration-fabric)" stroke-width="70"/>
-  <circle cx="400" cy="470" r="165" fill="none" stroke="#1F2937" stroke-width="1.2" stroke-opacity="0.45"/>
-  <circle cx="400" cy="470" r="95" fill="none" stroke="#1F2937" stroke-width="1.2" stroke-opacity="0.45"/>
-
-  <!-- Connectivity spokes · 16 thin charcoal lines from each system group center to the data core center. Drawn ABOVE the mesh so they read explicitly across the substrate; under data core + groups so the visible portion is just the segment crossing the fabric annulus. -->
-  <g stroke="#1F2937" stroke-width="1.2" stroke-opacity="0.55" fill="none">
-    <line x1="400" y1="265" x2="400" y2="470"/>
-    <line x1="478.5" y1="280.5" x2="400" y2="470"/>
-    <line x1="545" y1="325" x2="400" y2="470"/>
-    <line x1="589.5" y1="391.5" x2="400" y2="470"/>
-    <line x1="605" y1="470" x2="400" y2="470"/>
-    <line x1="589.5" y1="548.5" x2="400" y2="470"/>
-    <line x1="545" y1="615" x2="400" y2="470"/>
-    <line x1="478.5" y1="659.5" x2="400" y2="470"/>
-    <line x1="400" y1="675" x2="400" y2="470"/>
-    <line x1="321.5" y1="659.5" x2="400" y2="470"/>
-    <line x1="255" y1="615" x2="400" y2="470"/>
-    <line x1="210.5" y1="548.5" x2="400" y2="470"/>
-    <line x1="195" y1="470" x2="400" y2="470"/>
-    <line x1="210.5" y1="391.5" x2="400" y2="470"/>
-    <line x1="255" y1="325" x2="400" y2="470"/>
-    <line x1="321.5" y1="280.5" x2="400" y2="470"/>
-  </g>
-
-  <!-- Integration backbone label · drawn above spokes so it stays readable -->
-  <text x="400" y="345" text-anchor="middle" font-style="italic" font-size="10" fill="#6B6860" letter-spacing="2.2" font-family="Georgia, 'Times New Roman', serif">INTEGRATION BACKBONE</text>
-
-  <!-- Data Core · sun-gold fill (matches AV-02 v2 treatment); charcoal text inside -->
-  <circle cx="400" cy="470" r="95" fill="#FACC15" stroke="#1F2937" stroke-width="2.5"/>
-  <text x="400" y="443" text-anchor="middle" font-weight="900" font-size="20" fill="#1F2937" letter-spacing="3" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">DATA CORE</text>
-  <line x1="365" y1="457" x2="435" y2="457" stroke="#1F2937" stroke-width="1.5" opacity="0.5"/>
-  <text x="400" y="475" text-anchor="middle" font-size="12" font-weight="700" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Common Data Model</text>
-  <text x="400" y="493" text-anchor="middle" font-size="10.5" fill="#1F2937" opacity="0.85" font-family="system-ui, -apple-system, sans-serif">Integrations · Ingestion</text>
-  <text x="400" y="509" text-anchor="middle" font-size="10.5" fill="#1F2937" opacity="0.85" font-family="system-ui, -apple-system, sans-serif">Transformations · DW</text>
-
-  <!-- 16 functional system groups · tightly packed (touching) at orbit r=205, each r=40 · cream fill, charcoal stroke -->
-  <g>
-    <g><circle cx="400" cy="265" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="400" y="269" text-anchor="middle" font-size="10" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">PLM</text></g>
-    <g><circle cx="478.5" cy="280.5" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="478.5" y="278" text-anchor="middle" font-size="9" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Production</text><text x="478.5" y="289" text-anchor="middle" font-size="9" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">MES</text></g>
-    <g><circle cx="545" cy="325" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="545" y="322" text-anchor="middle" font-size="9" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">QMS /</text><text x="545" y="333" text-anchor="middle" font-size="9" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">LIMS</text></g>
-    <g><circle cx="589.5" cy="391.5" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="589.5" y="395" text-anchor="middle" font-size="9" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Compliance</text></g>
-    <g><circle cx="605" cy="470" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="605" y="474" text-anchor="middle" font-size="10" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">WMS</text></g>
-    <g><circle cx="589.5" cy="548.5" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="589.5" y="552" text-anchor="middle" font-size="10" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">TMS</text></g>
-    <g><circle cx="545" cy="615" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="545" y="619" text-anchor="middle" font-size="9" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Sustainability</text></g>
-    <g><circle cx="478.5" cy="659.5" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="478.5" y="663" text-anchor="middle" font-size="10" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Safety</text></g>
-    <g><circle cx="400" cy="675" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="400" y="679" text-anchor="middle" font-size="10" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">EAM</text></g>
-    <g><circle cx="321.5" cy="659.5" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="321.5" y="663" text-anchor="middle" font-size="10" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">ERP</text></g>
-    <g><circle cx="255" cy="615" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="255" y="619" text-anchor="middle" font-size="10" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">HRIS</text></g>
-    <g><circle cx="210.5" cy="548.5" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="210.5" y="552" text-anchor="middle" font-size="10" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Procurement</text></g>
-    <g><circle cx="195" cy="470" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="195" y="474" text-anchor="middle" font-size="10" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">FP&amp;A</text></g>
-    <g><circle cx="210.5" cy="391.5" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="210.5" y="388" text-anchor="middle" font-size="9" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">IBP /</text><text x="210.5" y="399" text-anchor="middle" font-size="9" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">S&amp;OP</text></g>
-    <g><circle cx="255" cy="325" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="255" y="329" text-anchor="middle" font-size="10" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Productivity</text></g>
-    <g><circle cx="321.5" cy="280.5" r="40" fill="#FBF9F4" stroke="#1F2937" stroke-width="1.5"/><text x="321.5" y="284" text-anchor="middle" font-size="10" font-weight="bold" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">CRM</text></g>
-  </g>
-  </g>
-
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1760 1880" role="img" aria-labelledby="title desc">
+<title id="title">The Systemverse — twenty system capability groups connected through an Integration &amp; Agentic Fabric to a governed Data Core</title>
+<desc id="desc">Twenty universal enterprise system capability groups across Plan to Manufacture (P2M), Order to Cash (O2C), Procure to Pay (P2P), and Systems to Support (S2S), docked directly onto a full-annulus Integration &amp; Intelligence Fabric and AI &amp; Agentics Layer surrounding Master Data Management (MDM), Common Data Model (CDM), and Data to Reporting (D2R).</desc>
+<defs>
+<radialGradient id="paper"><stop stop-color="#FFFDF8"/><stop offset="1" stop-color="#F6EFE0"/></radialGradient>
+<radialGradient id="paperInner"><stop stop-color="#FFFDF5"/><stop offset="1" stop-color="#EFE2C2"/></radialGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#E8D49A"/><stop offset=".5" stop-color="#B79445"/><stop offset="1" stop-color="#E3C87F"/></linearGradient>
+<radialGradient id="core"><stop stop-color="#FFF5CC"/><stop offset=".68" stop-color="#E5CA7A"/><stop offset="1" stop-color="#B79445"/></radialGradient>
+<radialGradient id="fabricFill" cx="50%" cy="50%" r="50%">
+  <stop offset="42%" stop-color="#F3E5BE" stop-opacity="0.55"/>
+  <stop offset="68%" stop-color="#E8D49A" stop-opacity="0.38"/>
+  <stop offset="92%" stop-color="#D7BC74" stop-opacity="0.46"/>
+  <stop offset="100%" stop-color="#B79445" stop-opacity="0.62"/>
+</radialGradient>
+<filter id="softShadow" x="-12%" y="-12%" width="124%" height="124%">
+  <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#1E2723" flood-opacity="0.16"/>
+</filter>
+</defs>
+<rect width="1760" height="1880" fill="#FBF9F4"/>
+<text x="880.00" y="58.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="42" font-weight="700" letter-spacing="1.5" fill="#26313A">THE SYSTEMVERSE</text>
+<text x="880.00" y="98.00" text-anchor="middle" font-family="Georgia, serif" font-size="21" font-weight="400" fill="#966B26">The systems that support how your business works — connected through one Integration, Agentic &amp; Data Core.</text>
+<rect x="144.50" y="128" width="285" height="32" rx="16" fill="#2B4C3F"/>
+<text x="287.00" y="149.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="13.5" font-weight="700" letter-spacing="0.3" fill="#F5E3A9">P2M · Plan to Manufacture (7)</text>
+<rect x="443.50" y="128" width="240" height="32" rx="16" fill="#7C4D1B"/>
+<text x="563.50" y="149.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="13.5" font-weight="700" letter-spacing="0.3" fill="#FFFDF8">O2C · Order to Cash (4)</text>
+<rect x="697.50" y="128" width="235" height="32" rx="16" fill="#8A681C"/>
+<text x="815.00" y="149.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="13.5" font-weight="700" letter-spacing="0.3" fill="#FFFDF8">P2P · Procure to Pay (2)</text>
+<rect x="946.50" y="128" width="275" height="32" rx="16" fill="#25323B"/>
+<text x="1084.00" y="149.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="13.5" font-weight="700" letter-spacing="0.3" fill="#E8D49A">S2S · Systems to Support (7)</text>
+<rect x="1235.50" y="128" width="380" height="32" rx="16" fill="#B79445" stroke="#26313A" stroke-width="1.4"/>
+<text x="1425.50" y="149.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="13.5" font-weight="700" letter-spacing="0.3" fill="#1F2933">MDM + D2R · Data Core &amp; Fabric Hub</text>
+<mask id="fabricMaskFull"><rect width="2000" height="2000" fill="black"/><circle cx="880" cy="955" r="548" fill="white"/><circle cx="880" cy="955" r="272" fill="black"/></mask>
+<g mask="url(#fabricMaskFull)">
+<circle cx="880" cy="955" r="548" fill="url(#fabricFill)"/>
+<circle cx="880" cy="955" r="410.0" fill="#26313A" fill-opacity="0.06"/>
+<path d="M880.00 407.00Q880 955 1368.27 706.21" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M880.00 407.00Q880 955 1421.25 1040.73" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M880.00 407.00Q880 955 1267.49 1342.49" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M880.00 407.00Q880 955 965.73 1496.25" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M965.73 413.75Q880 955 1401.18 785.66" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M965.73 413.75Q880 955 1401.18 1124.34" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M965.73 413.75Q880 955 1202.11 1398.34" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M965.73 413.75Q880 955 880.00 1503.00" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M1049.34 433.82Q880 955 1421.25 869.27" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M1049.34 433.82Q880 955 1368.27 1203.79" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M1049.34 433.82Q880 955 1128.79 1443.27" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M1049.34 433.82Q880 955 794.27 1496.25" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M1128.79 466.73Q880 955 1428.00 955.00" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M1128.79 466.73Q880 955 1323.34 1277.11" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M1128.79 466.73Q880 955 1049.34 1476.18" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M1128.79 466.73Q880 955 710.66 1476.18" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M1202.11 511.66Q880 955 1421.25 1040.73" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M1202.11 511.66Q880 955 1267.49 1342.49" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M1202.11 511.66Q880 955 965.73 1496.25" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M1202.11 511.66Q880 955 631.21 1443.27" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M1267.49 567.51Q880 955 1401.18 1124.34" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M1267.49 567.51Q880 955 1202.11 1398.34" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M1267.49 567.51Q880 955 880.00 1503.00" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M1267.49 567.51Q880 955 557.89 1398.34" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M1323.34 632.89Q880 955 1368.27 1203.79" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M1323.34 632.89Q880 955 1128.79 1443.27" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M1323.34 632.89Q880 955 794.27 1496.25" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M1323.34 632.89Q880 955 492.51 1342.49" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M1368.27 706.21Q880 955 1323.34 1277.11" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M1368.27 706.21Q880 955 1049.34 1476.18" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M1368.27 706.21Q880 955 710.66 1476.18" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M1368.27 706.21Q880 955 436.66 1277.11" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M1401.18 785.66Q880 955 1267.49 1342.49" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M1401.18 785.66Q880 955 965.73 1496.25" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M1401.18 785.66Q880 955 631.21 1443.27" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M1401.18 785.66Q880 955 391.73 1203.79" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M1421.25 869.27Q880 955 1202.11 1398.34" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M1421.25 869.27Q880 955 880.00 1503.00" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M1421.25 869.27Q880 955 557.89 1398.34" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M1421.25 869.27Q880 955 358.82 1124.34" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M1428.00 955.00Q880 955 1128.79 1443.27" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M1428.00 955.00Q880 955 794.27 1496.25" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M1428.00 955.00Q880 955 492.51 1342.49" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M1428.00 955.00Q880 955 338.75 1040.73" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M1421.25 1040.73Q880 955 1049.34 1476.18" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M1421.25 1040.73Q880 955 710.66 1476.18" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M1421.25 1040.73Q880 955 436.66 1277.11" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M1421.25 1040.73Q880 955 332.00 955.00" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M1401.18 1124.34Q880 955 965.73 1496.25" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M1401.18 1124.34Q880 955 631.21 1443.27" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M1401.18 1124.34Q880 955 391.73 1203.79" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M1401.18 1124.34Q880 955 338.75 869.27" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M1368.27 1203.79Q880 955 880.00 1503.00" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M1368.27 1203.79Q880 955 557.89 1398.34" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M1368.27 1203.79Q880 955 358.82 1124.34" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M1368.27 1203.79Q880 955 358.82 785.66" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M1323.34 1277.11Q880 955 794.27 1496.25" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M1323.34 1277.11Q880 955 492.51 1342.49" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M1323.34 1277.11Q880 955 338.75 1040.73" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M1323.34 1277.11Q880 955 391.73 706.21" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M1267.49 1342.49Q880 955 710.66 1476.18" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M1267.49 1342.49Q880 955 436.66 1277.11" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M1267.49 1342.49Q880 955 332.00 955.00" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M1267.49 1342.49Q880 955 436.66 632.89" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M1202.11 1398.34Q880 955 631.21 1443.27" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M1202.11 1398.34Q880 955 391.73 1203.79" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M1202.11 1398.34Q880 955 338.75 869.27" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M1202.11 1398.34Q880 955 492.51 567.51" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M1128.79 1443.27Q880 955 557.89 1398.34" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M1128.79 1443.27Q880 955 358.82 1124.34" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M1128.79 1443.27Q880 955 358.82 785.66" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M1128.79 1443.27Q880 955 557.89 511.66" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M1049.34 1476.18Q880 955 492.51 1342.49" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M1049.34 1476.18Q880 955 338.75 1040.73" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M1049.34 1476.18Q880 955 391.73 706.21" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M1049.34 1476.18Q880 955 631.21 466.73" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M965.73 1496.25Q880 955 436.66 1277.11" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M965.73 1496.25Q880 955 332.00 955.00" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M965.73 1496.25Q880 955 436.66 632.89" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M965.73 1496.25Q880 955 710.66 433.82" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M880.00 1503.00Q880 955 391.73 1203.79" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M880.00 1503.00Q880 955 338.75 869.27" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M880.00 1503.00Q880 955 492.51 567.51" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M880.00 1503.00Q880 955 794.27 413.75" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M794.27 1496.25Q880 955 358.82 1124.34" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M794.27 1496.25Q880 955 358.82 785.66" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M794.27 1496.25Q880 955 557.89 511.66" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M794.27 1496.25Q880 955 880.00 407.00" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M710.66 1476.18Q880 955 338.75 1040.73" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M710.66 1476.18Q880 955 391.73 706.21" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M710.66 1476.18Q880 955 631.21 466.73" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M710.66 1476.18Q880 955 965.73 413.75" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M631.21 1443.27Q880 955 332.00 955.00" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M631.21 1443.27Q880 955 436.66 632.89" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M631.21 1443.27Q880 955 710.66 433.82" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M631.21 1443.27Q880 955 1049.34 433.82" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M557.89 1398.34Q880 955 338.75 869.27" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M557.89 1398.34Q880 955 492.51 567.51" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M557.89 1398.34Q880 955 794.27 413.75" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M557.89 1398.34Q880 955 1128.79 466.73" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M492.51 1342.49Q880 955 358.82 785.66" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M492.51 1342.49Q880 955 557.89 511.66" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M492.51 1342.49Q880 955 880.00 407.00" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M492.51 1342.49Q880 955 1202.11 511.66" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M436.66 1277.11Q880 955 391.73 706.21" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M436.66 1277.11Q880 955 631.21 466.73" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M436.66 1277.11Q880 955 965.73 413.75" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M436.66 1277.11Q880 955 1267.49 567.51" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M391.73 1203.79Q880 955 436.66 632.89" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M391.73 1203.79Q880 955 710.66 433.82" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M391.73 1203.79Q880 955 1049.34 433.82" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M391.73 1203.79Q880 955 1323.34 632.89" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M358.82 1124.34Q880 955 492.51 567.51" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M358.82 1124.34Q880 955 794.27 413.75" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M358.82 1124.34Q880 955 1128.79 466.73" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M358.82 1124.34Q880 955 1368.27 706.21" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M338.75 1040.73Q880 955 557.89 511.66" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M338.75 1040.73Q880 955 880.00 407.00" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M338.75 1040.73Q880 955 1202.11 511.66" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M338.75 1040.73Q880 955 1401.18 785.66" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M332.00 955.00Q880 955 631.21 466.73" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M332.00 955.00Q880 955 965.73 413.75" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M332.00 955.00Q880 955 1267.49 567.51" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M332.00 955.00Q880 955 1421.25 869.27" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M338.75 869.27Q880 955 710.66 433.82" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M338.75 869.27Q880 955 1049.34 433.82" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M338.75 869.27Q880 955 1323.34 632.89" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M338.75 869.27Q880 955 1428.00 955.00" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M358.82 785.66Q880 955 794.27 413.75" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M358.82 785.66Q880 955 1128.79 466.73" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M358.82 785.66Q880 955 1368.27 706.21" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M358.82 785.66Q880 955 1421.25 1040.73" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M391.73 706.21Q880 955 880.00 407.00" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M391.73 706.21Q880 955 1202.11 511.66" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M391.73 706.21Q880 955 1401.18 785.66" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M391.73 706.21Q880 955 1401.18 1124.34" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M436.66 632.89Q880 955 965.73 413.75" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M436.66 632.89Q880 955 1267.49 567.51" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M436.66 632.89Q880 955 1421.25 869.27" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M436.66 632.89Q880 955 1368.27 1203.79" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M492.51 567.51Q880 955 1049.34 433.82" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M492.51 567.51Q880 955 1323.34 632.89" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M492.51 567.51Q880 955 1428.00 955.00" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M492.51 567.51Q880 955 1323.34 1277.11" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M557.89 511.66Q880 955 1128.79 466.73" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M557.89 511.66Q880 955 1368.27 706.21" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M557.89 511.66Q880 955 1421.25 1040.73" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M557.89 511.66Q880 955 1267.49 1342.49" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M631.21 466.73Q880 955 1202.11 511.66" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M631.21 466.73Q880 955 1401.18 785.66" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M631.21 466.73Q880 955 1401.18 1124.34" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M631.21 466.73Q880 955 1202.11 1398.34" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M710.66 433.82Q880 955 1267.49 567.51" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M710.66 433.82Q880 955 1421.25 869.27" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M710.66 433.82Q880 955 1368.27 1203.79" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M710.66 433.82Q880 955 1128.79 1443.27" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M794.27 413.75Q880 955 1323.34 632.89" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M794.27 413.75Q880 955 1428.00 955.00" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.28"/>
+<path d="M794.27 413.75Q880 955 1323.34 1277.11" fill="none" stroke="#9E7E32" stroke-width="1.05" opacity="0.28"/>
+<path d="M794.27 413.75Q880 955 1049.34 1476.18" fill="none" stroke="#4E5E56" stroke-width="1.05" opacity="0.18"/>
+<path d="M880.00 683.00L880.00 407.00" stroke="#8C6D28" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.62"/>
+<path d="M964.05 696.31L1049.34 433.82" stroke="#8C6D28" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.62"/>
+<path d="M1039.88 734.95L1202.11 511.66" stroke="#8C6D28" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.62"/>
+<path d="M1100.05 795.12L1323.34 632.89" stroke="#8C6D28" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.62"/>
+<path d="M1138.69 870.95L1401.18 785.66" stroke="#8C6D28" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.62"/>
+<path d="M1152.00 955.00L1428.00 955.00" stroke="#8C6D28" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.62"/>
+<path d="M1138.69 1039.05L1401.18 1124.34" stroke="#8C6D28" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.62"/>
+<path d="M1100.05 1114.88L1323.34 1277.11" stroke="#8C6D28" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.62"/>
+<path d="M1039.88 1175.05L1202.11 1398.34" stroke="#8C6D28" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.62"/>
+<path d="M964.05 1213.69L1049.34 1476.18" stroke="#8C6D28" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.62"/>
+<path d="M880.00 1227.00L880.00 1503.00" stroke="#8C6D28" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.62"/>
+<path d="M795.95 1213.69L710.66 1476.18" stroke="#8C6D28" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.62"/>
+<path d="M720.12 1175.05L557.89 1398.34" stroke="#8C6D28" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.62"/>
+<path d="M659.95 1114.88L436.66 1277.11" stroke="#8C6D28" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.62"/>
+<path d="M621.31 1039.05L358.82 1124.34" stroke="#8C6D28" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.62"/>
+<path d="M608.00 955.00L332.00 955.00" stroke="#8C6D28" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.62"/>
+<path d="M621.31 870.95L358.82 785.66" stroke="#8C6D28" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.62"/>
+<path d="M659.95 795.12L436.66 632.89" stroke="#8C6D28" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.62"/>
+<path d="M720.12 734.95L557.89 511.66" stroke="#8C6D28" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.62"/>
+<path d="M795.95 696.31L710.66 433.82" stroke="#8C6D28" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.62"/>
+</g>
+<circle cx="880" cy="955" r="272" fill="none" stroke="#8C6D28" stroke-width="2.4" opacity="0.85"/>
+<circle cx="880" cy="955" r="286" fill="none" stroke="#AA8B40" stroke-width="1.0" stroke-dasharray="4 4" opacity="0.5"/>
+<circle cx="880" cy="955" r="404.0" fill="none" stroke="#7A5C1E" stroke-width="1.2" opacity="0.55"/>
+<circle cx="880" cy="955" r="416.0" fill="none" stroke="#2B4C3F" stroke-width="1.2" stroke-dasharray="6 4" opacity="0.55"/>
+<circle cx="880" cy="955" r="534" fill="none" stroke="#AA8B40" stroke-width="1.1" stroke-dasharray="4 4" opacity="0.55"/>
+<circle cx="880" cy="955" r="548" fill="none" stroke="#8C6D28" stroke-width="2.8" opacity="0.9"/>
+<circle cx="880" cy="955" r="642" fill="none" stroke="#B79445" stroke-width="1.5" stroke-dasharray="7 5" opacity="0.55"/>
+<circle cx="880.00" cy="407.00" r="5.2" fill="#FFFDF8" stroke="#7A5C1E" stroke-width="2.0"/>
+<circle cx="880.00" cy="683.00" r="4.2" fill="#E8D49A" stroke="#26313A" stroke-width="1.6"/>
+<circle cx="1049.34" cy="433.82" r="5.2" fill="#FFFDF8" stroke="#7A5C1E" stroke-width="2.0"/>
+<circle cx="964.05" cy="696.31" r="4.2" fill="#E8D49A" stroke="#26313A" stroke-width="1.6"/>
+<circle cx="1202.11" cy="511.66" r="5.2" fill="#FFFDF8" stroke="#7A5C1E" stroke-width="2.0"/>
+<circle cx="1039.88" cy="734.95" r="4.2" fill="#E8D49A" stroke="#26313A" stroke-width="1.6"/>
+<circle cx="1323.34" cy="632.89" r="5.2" fill="#FFFDF8" stroke="#7A5C1E" stroke-width="2.0"/>
+<circle cx="1100.05" cy="795.12" r="4.2" fill="#E8D49A" stroke="#26313A" stroke-width="1.6"/>
+<circle cx="1401.18" cy="785.66" r="5.2" fill="#FFFDF8" stroke="#7A5C1E" stroke-width="2.0"/>
+<circle cx="1138.69" cy="870.95" r="4.2" fill="#E8D49A" stroke="#26313A" stroke-width="1.6"/>
+<circle cx="1428.00" cy="955.00" r="5.2" fill="#FFFDF8" stroke="#7A5C1E" stroke-width="2.0"/>
+<circle cx="1152.00" cy="955.00" r="4.2" fill="#E8D49A" stroke="#26313A" stroke-width="1.6"/>
+<circle cx="1401.18" cy="1124.34" r="5.2" fill="#FFFDF8" stroke="#7A5C1E" stroke-width="2.0"/>
+<circle cx="1138.69" cy="1039.05" r="4.2" fill="#E8D49A" stroke="#26313A" stroke-width="1.6"/>
+<circle cx="1323.34" cy="1277.11" r="5.2" fill="#FFFDF8" stroke="#7A5C1E" stroke-width="2.0"/>
+<circle cx="1100.05" cy="1114.88" r="4.2" fill="#E8D49A" stroke="#26313A" stroke-width="1.6"/>
+<circle cx="1202.11" cy="1398.34" r="5.2" fill="#FFFDF8" stroke="#7A5C1E" stroke-width="2.0"/>
+<circle cx="1039.88" cy="1175.05" r="4.2" fill="#E8D49A" stroke="#26313A" stroke-width="1.6"/>
+<circle cx="1049.34" cy="1476.18" r="5.2" fill="#FFFDF8" stroke="#7A5C1E" stroke-width="2.0"/>
+<circle cx="964.05" cy="1213.69" r="4.2" fill="#E8D49A" stroke="#26313A" stroke-width="1.6"/>
+<circle cx="880.00" cy="1503.00" r="5.2" fill="#FFFDF8" stroke="#7A5C1E" stroke-width="2.0"/>
+<circle cx="880.00" cy="1227.00" r="4.2" fill="#E8D49A" stroke="#26313A" stroke-width="1.6"/>
+<circle cx="710.66" cy="1476.18" r="5.2" fill="#FFFDF8" stroke="#7A5C1E" stroke-width="2.0"/>
+<circle cx="795.95" cy="1213.69" r="4.2" fill="#E8D49A" stroke="#26313A" stroke-width="1.6"/>
+<circle cx="557.89" cy="1398.34" r="5.2" fill="#FFFDF8" stroke="#7A5C1E" stroke-width="2.0"/>
+<circle cx="720.12" cy="1175.05" r="4.2" fill="#E8D49A" stroke="#26313A" stroke-width="1.6"/>
+<circle cx="436.66" cy="1277.11" r="5.2" fill="#FFFDF8" stroke="#7A5C1E" stroke-width="2.0"/>
+<circle cx="659.95" cy="1114.88" r="4.2" fill="#E8D49A" stroke="#26313A" stroke-width="1.6"/>
+<circle cx="358.82" cy="1124.34" r="5.2" fill="#FFFDF8" stroke="#7A5C1E" stroke-width="2.0"/>
+<circle cx="621.31" cy="1039.05" r="4.2" fill="#E8D49A" stroke="#26313A" stroke-width="1.6"/>
+<circle cx="332.00" cy="955.00" r="5.2" fill="#FFFDF8" stroke="#7A5C1E" stroke-width="2.0"/>
+<circle cx="608.00" cy="955.00" r="4.2" fill="#E8D49A" stroke="#26313A" stroke-width="1.6"/>
+<circle cx="358.82" cy="785.66" r="5.2" fill="#FFFDF8" stroke="#7A5C1E" stroke-width="2.0"/>
+<circle cx="621.31" cy="870.95" r="4.2" fill="#E8D49A" stroke="#26313A" stroke-width="1.6"/>
+<circle cx="436.66" cy="632.89" r="5.2" fill="#FFFDF8" stroke="#7A5C1E" stroke-width="2.0"/>
+<circle cx="659.95" cy="795.12" r="4.2" fill="#E8D49A" stroke="#26313A" stroke-width="1.6"/>
+<circle cx="557.89" cy="511.66" r="5.2" fill="#FFFDF8" stroke="#7A5C1E" stroke-width="2.0"/>
+<circle cx="720.12" cy="734.95" r="4.2" fill="#E8D49A" stroke="#26313A" stroke-width="1.6"/>
+<circle cx="710.66" cy="433.82" r="5.2" fill="#FFFDF8" stroke="#7A5C1E" stroke-width="2.0"/>
+<circle cx="795.95" cy="696.31" r="4.2" fill="#E8D49A" stroke="#26313A" stroke-width="1.6"/>
+<g filter="url(#softShadow)">
+<rect x="565" y="511" width="630" height="68" rx="34" fill="#FFFDF8" stroke="#8C6D28" stroke-width="2.2"/>
+<rect x="571" y="517" width="618" height="56" rx="28" fill="none" stroke="#D7BC74" stroke-width="1.0"/>
+<text x="880.00" y="539.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="20.5" font-weight="700" letter-spacing="1.5" fill="#6B4F16">INTEGRATION &amp; INTELLIGENCE FABRIC</text>
+<text x="880.00" y="563.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="14.8" font-weight="700" fill="#3E4A44">APIs · iPaaS · EDI (850/810) · Event Mesh · CDC · ETL / ELT · IoT Broker</text>
+</g>
+<g filter="url(#softShadow)">
+<rect x="575" y="1331" width="610" height="68" rx="34" fill="#25323B" stroke="#E8D49A" stroke-width="2.2"/>
+<rect x="581" y="1337" width="598" height="56" rx="28" fill="none" stroke="#8C6D28" stroke-width="1.0"/>
+<text x="880.00" y="1359.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="20.5" font-weight="700" letter-spacing="1.6" fill="#F5E3A9">AI &amp; AGENTICS LAYER</text>
+<text x="880.00" y="1383.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="14.5" font-weight="700" fill="#FFFDF8">MCP · Autonomous Agents · LLMs · RAG · A2A · Evals · Orchestration</text>
+</g>
+<rect x="374" y="931" width="192" height="48" rx="24" fill="#FBF9F4" fill-opacity="0.92" stroke="#B79445" stroke-width="1.4"/>
+<text x="470.00" y="951.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" letter-spacing="1.0" fill="#7A5C1E">REAL-TIME</text>
+<text x="470.00" y="968.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.0" font-weight="700" letter-spacing="0.5" fill="#26313A">EVENT MESH &amp; APIs</text>
+<rect x="1194" y="931" width="192" height="48" rx="24" fill="#FBF9F4" fill-opacity="0.92" stroke="#B79445" stroke-width="1.4"/>
+<text x="1290.00" y="951.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" letter-spacing="1.0" fill="#7A5C1E">AGENTIC MCP</text>
+<text x="1290.00" y="968.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.0" font-weight="700" letter-spacing="0.5" fill="#26313A">&amp; WORKFLOW SPINE</text>
+<circle cx="880" cy="955" r="268" fill="#26313A" filter="url(#softShadow)"/>
+<circle cx="880" cy="955" r="262" fill="url(#gold)"/>
+<circle cx="880" cy="955" r="250" fill="url(#core)"/>
+<circle cx="880" cy="955" r="236" fill="none" stroke="#7A652F" stroke-width="1.2" opacity=".7"/>
+<rect x="762" y="767" width="236" height="28" rx="14" fill="#26313A"/>
+<text x="880.00" y="786.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="13.8" font-weight="700" letter-spacing="1.3" fill="#F5E3A9">MDM  ·  CDM  ·  D2R  HUB</text>
+<text x="880.00" y="837.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="44" font-weight="700" letter-spacing="1.8" fill="#26313A">DATA CORE</text>
+<text x="880.00" y="881.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="21.5" font-weight="700" fill="#26313A">Master Data (MDM · PIM · GDSN)</text>
+<text x="880.00" y="911.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#26313A">Common Data Model (CDM)</text>
+<text x="880.00" y="938.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="15.6" font-weight="700" fill="#5C4516">Customer · Product · Vendor · Asset · Finance</text>
+<path d="M700 959H1060" stroke="#846D37" stroke-width="1.3"/>
+<text x="880.00" y="989.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#26313A">D2R · Data Warehouse &amp; Lakehouse</text>
+<text x="880.00" y="1019.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#26313A">Semantic Layer · Executive BI &amp; KPIs</text>
+<text x="880.00" y="1048.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.2" font-weight="700" fill="#3E4A44">Process Mining · Lineage · Governance</text>
+<text x="880.00" y="1085.00" text-anchor="middle" font-family="Georgia, serif" font-size="16.5" font-weight="700" font-style="italic" fill="#6B5320">All 20 System Groups Input &amp; Output Here</text>
+<g id="SYS-01" filter="url(#softShadow)">
+<circle cx="880.00" cy="313.00" r="94" fill="#34413B" fill-opacity="0.98"/>
+<circle cx="880.00" cy="313.00" r="90.5" fill="url(#gold)"/>
+<circle cx="880.00" cy="313.00" r="85.5" fill="url(#paper)"/>
+<circle cx="880.00" cy="313.00" r="79" fill="none" stroke="#B49A5C" stroke-width="0.75" opacity=".75"/>
+<rect x="843.20" y="236.50" width="73.60" height="19" rx="9.5" fill="#2B4C3F"/>
+<text x="880.00" y="249.80" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.2" font-weight="700" letter-spacing="0.5" fill="#F5E3A9">01 · P2M</text>
+<text x="880.00" y="299.10" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">Integrated Business</text>
+<text x="880.00" y="318.90" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">Planning</text>
+<path d="M829.24 328.40H930.76" stroke="#B79445" stroke-width="0.85" opacity="0.65"/>
+<text x="880.00" y="342.40" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">IBP · S&amp;OP · Demand</text>
+<text x="880.00" y="356.30" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">Supply · MEIO · S&amp;OE</text>
+</g>
+<g id="SYS-02" filter="url(#softShadow)">
+<circle cx="1078.39" cy="344.42" r="94" fill="#34413B" fill-opacity="0.98"/>
+<circle cx="1078.39" cy="344.42" r="90.5" fill="url(#gold)"/>
+<circle cx="1078.39" cy="344.42" r="85.5" fill="url(#paper)"/>
+<circle cx="1078.39" cy="344.42" r="79" fill="none" stroke="#B49A5C" stroke-width="0.75" opacity=".75"/>
+<rect x="1041.59" y="267.92" width="73.60" height="19" rx="9.5" fill="#2B4C3F"/>
+<text x="1078.39" y="281.22" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.2" font-weight="700" letter-spacing="0.5" fill="#F5E3A9">02 · P2M</text>
+<text x="1078.39" y="330.52" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">Product Lifecycle</text>
+<text x="1078.39" y="350.32" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">&amp; Engineering</text>
+<path d="M1027.63 359.82H1129.15" stroke="#B79445" stroke-width="0.85" opacity="0.65"/>
+<text x="1078.39" y="373.82" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">PLM · PDM/CAD · BOM</text>
+<text x="1078.39" y="387.72" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">Recipe · Formula · Specs</text>
+</g>
+<g id="SYS-03" filter="url(#softShadow)">
+<circle cx="1257.36" cy="435.61" r="94" fill="#34413B" fill-opacity="0.98"/>
+<circle cx="1257.36" cy="435.61" r="90.5" fill="url(#gold)"/>
+<circle cx="1257.36" cy="435.61" r="85.5" fill="url(#paper)"/>
+<circle cx="1257.36" cy="435.61" r="79" fill="none" stroke="#B49A5C" stroke-width="0.75" opacity=".75"/>
+<rect x="1220.56" y="359.11" width="73.60" height="19" rx="9.5" fill="#2B4C3F"/>
+<text x="1257.36" y="372.41" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.2" font-weight="700" letter-spacing="0.5" fill="#F5E3A9">03 · P2M</text>
+<text x="1257.36" y="421.71" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">Manufacturing</text>
+<text x="1257.36" y="441.51" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">Execution</text>
+<path d="M1206.60 451.01H1308.12" stroke="#B79445" stroke-width="0.85" opacity="0.65"/>
+<text x="1257.36" y="465.01" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">MES · MOM · Plant APS</text>
+<text x="1257.36" y="478.91" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">Batch · OEE · eBR</text>
+</g>
+<g id="SYS-04" filter="url(#softShadow)">
+<circle cx="1399.39" cy="577.64" r="94" fill="#34413B" fill-opacity="0.98"/>
+<circle cx="1399.39" cy="577.64" r="90.5" fill="url(#gold)"/>
+<circle cx="1399.39" cy="577.64" r="85.5" fill="url(#paper)"/>
+<circle cx="1399.39" cy="577.64" r="79" fill="none" stroke="#B49A5C" stroke-width="0.75" opacity=".75"/>
+<rect x="1362.59" y="501.14" width="73.60" height="19" rx="9.5" fill="#2B4C3F"/>
+<text x="1399.39" y="514.44" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.2" font-weight="700" letter-spacing="0.5" fill="#F5E3A9">04 · P2M</text>
+<text x="1399.39" y="563.74" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">Industrial OT</text>
+<text x="1399.39" y="583.54" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">&amp; Automation</text>
+<path d="M1348.63 593.04H1450.15" stroke="#B79445" stroke-width="0.85" opacity="0.65"/>
+<text x="1399.39" y="607.04" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">SCADA · PLC · DCS</text>
+<text x="1399.39" y="620.94" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">HMI · IIoT · Historian</text>
+</g>
+<g id="SYS-05" filter="url(#softShadow)">
+<circle cx="1490.58" cy="756.61" r="94" fill="#34413B" fill-opacity="0.98"/>
+<circle cx="1490.58" cy="756.61" r="90.5" fill="url(#gold)"/>
+<circle cx="1490.58" cy="756.61" r="85.5" fill="url(#paper)"/>
+<circle cx="1490.58" cy="756.61" r="79" fill="none" stroke="#B49A5C" stroke-width="0.75" opacity=".75"/>
+<rect x="1453.78" y="680.11" width="73.60" height="19" rx="9.5" fill="#2B4C3F"/>
+<text x="1490.58" y="693.41" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.2" font-weight="700" letter-spacing="0.5" fill="#F5E3A9">05 · P2M</text>
+<text x="1490.58" y="742.71" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">Quality &amp;</text>
+<text x="1490.58" y="762.51" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">Laboratory</text>
+<path d="M1439.82 772.01H1541.34" stroke="#B79445" stroke-width="0.85" opacity="0.65"/>
+<text x="1490.58" y="786.01" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">QMS · eQMS · LIMS</text>
+<text x="1490.58" y="799.91" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">ELN · SPC · CAPA · COA</text>
+</g>
+<g id="SYS-06" filter="url(#softShadow)">
+<circle cx="1522.00" cy="955.00" r="94" fill="#34413B" fill-opacity="0.98"/>
+<circle cx="1522.00" cy="955.00" r="90.5" fill="url(#gold)"/>
+<circle cx="1522.00" cy="955.00" r="85.5" fill="url(#paper)"/>
+<circle cx="1522.00" cy="955.00" r="79" fill="none" stroke="#B49A5C" stroke-width="0.75" opacity=".75"/>
+<rect x="1485.20" y="878.50" width="73.60" height="19" rx="9.5" fill="#2B4C3F"/>
+<text x="1522.00" y="891.80" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.2" font-weight="700" letter-spacing="0.5" fill="#F5E3A9">06 · P2M</text>
+<text x="1522.00" y="941.10" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">Compliance, EHS</text>
+<text x="1522.00" y="960.90" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">&amp; Sustainability</text>
+<path d="M1471.24 970.40H1572.76" stroke="#B79445" stroke-width="0.85" opacity="0.65"/>
+<text x="1522.00" y="984.40" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">EHS · Regulatory/FDA/TTB</text>
+<text x="1522.00" y="998.30" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">Traceability · ESG · Risk</text>
+</g>
+<g id="SYS-07" filter="url(#softShadow)">
+<circle cx="1490.58" cy="1153.39" r="94" fill="#34413B" fill-opacity="0.98"/>
+<circle cx="1490.58" cy="1153.39" r="90.5" fill="url(#gold)"/>
+<circle cx="1490.58" cy="1153.39" r="85.5" fill="url(#paper)"/>
+<circle cx="1490.58" cy="1153.39" r="79" fill="none" stroke="#B49A5C" stroke-width="0.75" opacity=".75"/>
+<rect x="1453.78" y="1076.89" width="73.60" height="19" rx="9.5" fill="#2B4C3F"/>
+<text x="1490.58" y="1090.19" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.2" font-weight="700" letter-spacing="0.5" fill="#F5E3A9">07 · P2M</text>
+<text x="1490.58" y="1139.49" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">Warehouse &amp;</text>
+<text x="1490.58" y="1159.29" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">Inventory</text>
+<path d="M1439.82 1168.79H1541.34" stroke="#B79445" stroke-width="0.85" opacity="0.65"/>
+<text x="1490.58" y="1182.79" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">WMS · Inventory · YMS</text>
+<text x="1490.58" y="1196.69" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">WES/WCS · AS/RS · RFID</text>
+</g>
+<g id="SYS-08" filter="url(#softShadow)">
+<circle cx="1399.39" cy="1332.36" r="94" fill="#34413B" fill-opacity="0.98"/>
+<circle cx="1399.39" cy="1332.36" r="90.5" fill="url(#gold)"/>
+<circle cx="1399.39" cy="1332.36" r="85.5" fill="url(#paper)"/>
+<circle cx="1399.39" cy="1332.36" r="79" fill="none" stroke="#B49A5C" stroke-width="0.75" opacity=".75"/>
+<rect x="1362.59" y="1255.86" width="73.60" height="19" rx="9.5" fill="#7C4D1B"/>
+<text x="1399.39" y="1269.16" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.2" font-weight="700" letter-spacing="0.5" fill="#FFFDF8">08 · O2C</text>
+<text x="1399.39" y="1318.46" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">Transportation</text>
+<text x="1399.39" y="1338.26" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">&amp; Logistics</text>
+<path d="M1348.63 1347.76H1450.15" stroke="#B79445" stroke-width="0.85" opacity="0.65"/>
+<text x="1399.39" y="1361.76" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">TMS · Fleet · Routing</text>
+<text x="1399.39" y="1375.66" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">Freight Audit · 3PL · GTM</text>
+</g>
+<g id="SYS-09" filter="url(#softShadow)">
+<circle cx="1257.36" cy="1474.39" r="94" fill="#34413B" fill-opacity="0.98"/>
+<circle cx="1257.36" cy="1474.39" r="90.5" fill="url(#gold)"/>
+<circle cx="1257.36" cy="1474.39" r="85.5" fill="url(#paper)"/>
+<circle cx="1257.36" cy="1474.39" r="79" fill="none" stroke="#B49A5C" stroke-width="0.75" opacity=".75"/>
+<rect x="1220.56" y="1397.89" width="73.60" height="19" rx="9.5" fill="#7C4D1B"/>
+<text x="1257.36" y="1411.19" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.2" font-weight="700" letter-spacing="0.5" fill="#FFFDF8">09 · O2C</text>
+<text x="1257.36" y="1460.49" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">CRM, Sales</text>
+<text x="1257.36" y="1480.29" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">&amp; Service</text>
+<path d="M1206.60 1489.79H1308.12" stroke="#B79445" stroke-width="0.85" opacity="0.65"/>
+<text x="1257.36" y="1503.79" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">CRM · SFA · CPQ · TPM</text>
+<text x="1257.36" y="1517.69" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">Service · Depletions/VIP</text>
+</g>
+<g id="SYS-10" filter="url(#softShadow)">
+<circle cx="1078.39" cy="1565.58" r="94" fill="#34413B" fill-opacity="0.98"/>
+<circle cx="1078.39" cy="1565.58" r="90.5" fill="url(#gold)"/>
+<circle cx="1078.39" cy="1565.58" r="85.5" fill="url(#paper)"/>
+<circle cx="1078.39" cy="1565.58" r="79" fill="none" stroke="#B49A5C" stroke-width="0.75" opacity=".75"/>
+<rect x="1041.59" y="1489.08" width="73.60" height="19" rx="9.5" fill="#7C4D1B"/>
+<text x="1078.39" y="1502.38" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.2" font-weight="700" letter-spacing="0.5" fill="#FFFDF8">10 · O2C</text>
+<text x="1078.39" y="1551.68" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">Marketing &amp;</text>
+<text x="1078.39" y="1571.48" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">Customer Intel</text>
+<path d="M1027.63 1580.98H1129.15" stroke="#B79445" stroke-width="0.85" opacity="0.65"/>
+<text x="1078.39" y="1594.98" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">MarTech · CDP · CMS/DXP</text>
+<text x="1078.39" y="1608.88" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">Syndicated/NIQ · DAM</text>
+</g>
+<g id="SYS-11" filter="url(#softShadow)">
+<circle cx="880.00" cy="1597.00" r="94" fill="#34413B" fill-opacity="0.98"/>
+<circle cx="880.00" cy="1597.00" r="90.5" fill="url(#gold)"/>
+<circle cx="880.00" cy="1597.00" r="85.5" fill="url(#paper)"/>
+<circle cx="880.00" cy="1597.00" r="79" fill="none" stroke="#B49A5C" stroke-width="0.75" opacity=".75"/>
+<rect x="843.20" y="1520.50" width="73.60" height="19" rx="9.5" fill="#7C4D1B"/>
+<text x="880.00" y="1533.80" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.2" font-weight="700" letter-spacing="0.5" fill="#FFFDF8">11 · O2C</text>
+<text x="880.00" y="1583.10" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">Commerce, POS</text>
+<text x="880.00" y="1602.90" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">&amp; Orders</text>
+<path d="M829.24 1612.40H930.76" stroke="#B79445" stroke-width="0.85" opacity="0.65"/>
+<text x="880.00" y="1626.40" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">D2C · B2B Portal · POS</text>
+<text x="880.00" y="1640.30" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">OMS · Club/Sub · Payments</text>
+</g>
+<g id="SYS-12" filter="url(#softShadow)">
+<circle cx="681.61" cy="1565.58" r="94" fill="#34413B" fill-opacity="0.98"/>
+<circle cx="681.61" cy="1565.58" r="90.5" fill="url(#gold)"/>
+<circle cx="681.61" cy="1565.58" r="85.5" fill="url(#paper)"/>
+<circle cx="681.61" cy="1565.58" r="79" fill="none" stroke="#B49A5C" stroke-width="0.75" opacity=".75"/>
+<rect x="644.81" y="1489.08" width="73.60" height="19" rx="9.5" fill="#8A681C"/>
+<text x="681.61" y="1502.38" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.2" font-weight="700" letter-spacing="0.5" fill="#FFFDF8">12 · P2P</text>
+<text x="681.61" y="1551.68" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">Sourcing, Vendors</text>
+<text x="681.61" y="1571.48" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">&amp; Contracts</text>
+<path d="M630.85 1580.98H732.37" stroke="#B79445" stroke-width="0.85" opacity="0.65"/>
+<text x="681.61" y="1594.98" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">Spend · Sourcing · RFx</text>
+<text x="681.61" y="1608.88" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">SRM · CLM · Catalogs</text>
+</g>
+<g id="SYS-13" filter="url(#softShadow)">
+<circle cx="502.64" cy="1474.39" r="94" fill="#34413B" fill-opacity="0.98"/>
+<circle cx="502.64" cy="1474.39" r="90.5" fill="url(#gold)"/>
+<circle cx="502.64" cy="1474.39" r="85.5" fill="url(#paper)"/>
+<circle cx="502.64" cy="1474.39" r="79" fill="none" stroke="#B49A5C" stroke-width="0.75" opacity=".75"/>
+<rect x="465.84" y="1397.89" width="73.60" height="19" rx="9.5" fill="#8A681C"/>
+<text x="502.64" y="1411.19" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.2" font-weight="700" letter-spacing="0.5" fill="#FFFDF8">13 · P2P</text>
+<text x="502.64" y="1460.49" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">Purchasing, Match</text>
+<text x="502.64" y="1480.29" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">&amp; Payables</text>
+<path d="M451.88 1489.79H553.40" stroke="#B79445" stroke-width="0.85" opacity="0.65"/>
+<text x="502.64" y="1503.79" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">Requisitions · PO · GRN</text>
+<text x="502.64" y="1517.69" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">3-Way Match · AP OCR · T&amp;E</text>
+</g>
+<g id="SYS-14" filter="url(#softShadow)">
+<circle cx="360.61" cy="1332.36" r="94" fill="#1B262B" fill-opacity="0.98"/>
+<circle cx="360.61" cy="1332.36" r="90.5" fill="url(#gold)"/>
+<circle cx="360.61" cy="1332.36" r="85.5" fill="url(#paperInner)"/>
+<circle cx="360.61" cy="1332.36" r="79" fill="none" stroke="#B49A5C" stroke-width="1.5" opacity=".75"/>
+<rect x="323.81" y="1255.86" width="73.60" height="19" rx="9.5" fill="#25323B"/>
+<text x="360.61" y="1269.16" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.2" font-weight="700" letter-spacing="0.5" fill="#E8D49A">14 · S2S</text>
+<text x="360.61" y="1318.46" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">ERP &amp; Core</text>
+<text x="360.61" y="1338.26" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">Finance</text>
+<path d="M309.85 1347.76H411.37" stroke="#B79445" stroke-width="0.85" opacity="0.65"/>
+<text x="360.61" y="1361.76" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">ERP · GL · AP &amp; AR</text>
+<text x="360.61" y="1375.66" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">Costing · Tax · Legacy Core</text>
+</g>
+<g id="SYS-15" filter="url(#softShadow)">
+<circle cx="269.42" cy="1153.39" r="94" fill="#34413B" fill-opacity="0.98"/>
+<circle cx="269.42" cy="1153.39" r="90.5" fill="url(#gold)"/>
+<circle cx="269.42" cy="1153.39" r="85.5" fill="url(#paper)"/>
+<circle cx="269.42" cy="1153.39" r="79" fill="none" stroke="#B49A5C" stroke-width="0.75" opacity=".75"/>
+<rect x="232.62" y="1076.89" width="73.60" height="19" rx="9.5" fill="#25323B"/>
+<text x="269.42" y="1090.19" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.2" font-weight="700" letter-spacing="0.5" fill="#E8D49A">15 · S2S</text>
+<text x="269.42" y="1139.49" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">FP&amp;A, Close</text>
+<text x="269.42" y="1159.29" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">&amp; Controls</text>
+<path d="M218.66 1168.79H320.18" stroke="#B79445" stroke-width="0.85" opacity="0.65"/>
+<text x="269.42" y="1182.79" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">EPM/CPM · FP&amp;A · Close</text>
+<text x="269.42" y="1196.69" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">Consolidation · SOX/Audit</text>
+</g>
+<g id="SYS-16" filter="url(#softShadow)">
+<circle cx="238.00" cy="955.00" r="94" fill="#1B262B" fill-opacity="0.98"/>
+<circle cx="238.00" cy="955.00" r="90.5" fill="url(#gold)"/>
+<circle cx="238.00" cy="955.00" r="85.5" fill="url(#paperInner)"/>
+<circle cx="238.00" cy="955.00" r="79" fill="none" stroke="#B49A5C" stroke-width="1.5" opacity=".75"/>
+<rect x="201.20" y="878.50" width="73.60" height="19" rx="9.5" fill="#25323B"/>
+<text x="238.00" y="891.80" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.2" font-weight="700" letter-spacing="0.5" fill="#E8D49A">16 · S2S</text>
+<text x="238.00" y="941.10" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">Human Capital</text>
+<text x="238.00" y="960.90" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">Management</text>
+<path d="M187.24 970.40H288.76" stroke="#B79445" stroke-width="0.85" opacity="0.65"/>
+<text x="238.00" y="984.40" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">HCM · HRIS · Payroll</text>
+<text x="238.00" y="998.30" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">Time · WFM · Talent · LMS</text>
+</g>
+<g id="SYS-17" filter="url(#softShadow)">
+<circle cx="269.42" cy="756.61" r="94" fill="#34413B" fill-opacity="0.98"/>
+<circle cx="269.42" cy="756.61" r="90.5" fill="url(#gold)"/>
+<circle cx="269.42" cy="756.61" r="85.5" fill="url(#paper)"/>
+<circle cx="269.42" cy="756.61" r="79" fill="none" stroke="#B49A5C" stroke-width="0.75" opacity=".75"/>
+<rect x="232.62" y="680.11" width="73.60" height="19" rx="9.5" fill="#25323B"/>
+<text x="269.42" y="693.41" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.2" font-weight="700" letter-spacing="0.5" fill="#E8D49A">17 · S2S</text>
+<text x="269.42" y="742.71" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">Workplace, Collab</text>
+<text x="269.42" y="762.51" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">&amp; Content</text>
+<path d="M218.66 772.01H320.18" stroke="#B79445" stroke-width="0.85" opacity="0.65"/>
+<text x="269.42" y="786.01" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">M365 · Teams · Slack</text>
+<text x="269.42" y="799.91" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">Zoom · SharePoint/DMS</text>
+</g>
+<g id="SYS-18" filter="url(#softShadow)">
+<circle cx="360.61" cy="577.64" r="94" fill="#34413B" fill-opacity="0.98"/>
+<circle cx="360.61" cy="577.64" r="90.5" fill="url(#gold)"/>
+<circle cx="360.61" cy="577.64" r="85.5" fill="url(#paper)"/>
+<circle cx="360.61" cy="577.64" r="79" fill="none" stroke="#B49A5C" stroke-width="0.75" opacity=".75"/>
+<rect x="323.81" y="501.14" width="73.60" height="19" rx="9.5" fill="#25323B"/>
+<text x="360.61" y="514.44" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.2" font-weight="700" letter-spacing="0.5" fill="#E8D49A">18 · S2S</text>
+<text x="360.61" y="563.74" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">IT Operations &amp;</text>
+<text x="360.61" y="583.54" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">Cybersecurity</text>
+<path d="M309.85 593.04H411.37" stroke="#B79445" stroke-width="0.85" opacity="0.65"/>
+<text x="360.61" y="607.04" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">ITSM/CMDB · DevOps · Cloud</text>
+<text x="360.61" y="620.94" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">IAM/SSO · EDR · SIEM</text>
+</g>
+<g id="SYS-19" filter="url(#softShadow)">
+<circle cx="502.64" cy="435.61" r="94" fill="#34413B" fill-opacity="0.98"/>
+<circle cx="502.64" cy="435.61" r="90.5" fill="url(#gold)"/>
+<circle cx="502.64" cy="435.61" r="85.5" fill="url(#paper)"/>
+<circle cx="502.64" cy="435.61" r="79" fill="none" stroke="#B49A5C" stroke-width="0.75" opacity=".75"/>
+<rect x="465.84" y="359.11" width="73.60" height="19" rx="9.5" fill="#25323B"/>
+<text x="502.64" y="372.41" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.2" font-weight="700" letter-spacing="0.5" fill="#E8D49A">19 · S2S</text>
+<text x="502.64" y="421.71" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">Enterprise Assets</text>
+<text x="502.64" y="441.51" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">&amp; Field Service</text>
+<path d="M451.88 451.01H553.40" stroke="#B79445" stroke-width="0.85" opacity="0.65"/>
+<text x="502.64" y="465.01" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">EAM · CMMS · APM · MRO</text>
+<text x="502.64" y="478.91" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">Field Service · Facilities</text>
+</g>
+<g id="SYS-20" filter="url(#softShadow)">
+<circle cx="681.61" cy="344.42" r="94" fill="#34413B" fill-opacity="0.98"/>
+<circle cx="681.61" cy="344.42" r="90.5" fill="url(#gold)"/>
+<circle cx="681.61" cy="344.42" r="85.5" fill="url(#paper)"/>
+<circle cx="681.61" cy="344.42" r="79" fill="none" stroke="#B49A5C" stroke-width="0.75" opacity=".75"/>
+<rect x="644.81" y="267.92" width="73.60" height="19" rx="9.5" fill="#25323B"/>
+<text x="681.61" y="281.22" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.2" font-weight="700" letter-spacing="0.5" fill="#E8D49A">20 · S2S</text>
+<text x="681.61" y="330.52" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">Projects, Programs</text>
+<text x="681.61" y="350.32" text-anchor="middle" font-family="Arial, sans-serif" font-size="17.0" font-weight="700" fill="#26313A">&amp; Portfolio</text>
+<path d="M630.85 359.82H732.37" stroke="#B79445" stroke-width="0.85" opacity="0.65"/>
+<text x="681.61" y="373.82" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">PPM · PMO · PSA Billing</text>
+<text x="681.61" y="387.72" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.3" font-weight="700" fill="#6B5119">CapEx · Procore · Primavera</text>
+</g>
+<text x="880.00" y="1792.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#26313A">20 Enterprise System Groups: P2M (01–07) · O2C (08–11) · P2P (12–13) · S2S (14–20) · Data &amp; Agentic Core (MDM + D2R)</text>
+<text x="880.00" y="1828.00" text-anchor="middle" font-family="Georgia, serif" font-size="18.5" font-weight="400" fill="#966B26">Best practice where you are standard; custom where you compete — anchored to a company-owned Data Core.</text>
 </svg>

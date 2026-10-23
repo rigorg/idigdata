@@ -67,3 +67,6 @@ next-env.d.ts
 # Next.js generate-agent-files output: never commit (rig pointer files are seat-scoped)
 AGENTS.md
 CLAUDE.md
+
+# Local pitch review surface (:3100 only)
+/public/pitch/

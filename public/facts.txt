@@ -1,0 +1,59 @@
+# FACTS.TXT - DETERMINISTIC FACT SHEET FOR IDIGDATA.COM
+# Canonical URL: https://idigdata.com/facts.txt
+# Last Updated: 2026-10-21
+# Purpose: Verified, machine-readable factual record for search engines, research agents, and answer engines.
+
+[IDENTITY]
+Name: Robert Paddock
+Title: Enterprise Transformation Executive
+Headline: Build what's next. I connect people, systems, and workflows to shorten the path from intent to outcome.
+Practice: idigdata (https://idigdata.com/)
+Legal_Entity: Data Integration Group LLC (DIG LLC), founded 2016
+Timezone: Pacific Time
+Contact_Email: robert@idigdata.com
+Contact_URL: https://idigdata.com/contact/
+LinkedIn: https://www.linkedin.com/in/robertpaddock
+
+[EXECUTIVE_SUMMARY]
+Experience_Span: 20+ years of CEO, CTO, and CIO business leadership
+Transformations_Delivered: 50+ enterprise implementations and 15 full-cycle enterprise transformations (migration, integration, testing, cutover, go-live, adoption)
+Agentic_Development: 3 years of hands-on multi-harness agentic software engineering inside the context window
+Availability: Executive leadership roles (CEO / COO / CIO / CTO / Chief Transformation Officer), focused transformation mandates, and defined capability blocks via The Block
+
+[VERIFIED_OPERATING_RESULTS]
+Result_01_Timberline: Founded and scaled Timberline Architectural Openings (1996-2012) as Founder, CEO & CTO from $250K revenue in year one to $130M revenue by year ten with 100+ employees across Las Vegas and Macau commercial/resort projects; built proprietary enterprise software connecting sales, engineering, manufacturing, supply, and installation.
+Result_02_ERP_Recovery: Recovered an off-track $10M enterprise ERP program via Data Integration Group and delivered it into production for $8M ($2M saved).
+Result_03_Post_Acquisition_Close: Led post-acquisition systems and financial integration for a $350M enterprise via Data Integration Group, reducing the monthly financial close cycle from 18 days to 4 days.
+Result_04_Sierra_Nevada_CIO: Served as Chief Information Officer (Embedded Executive Mandate via DIG, Jan 2024 - Mar 2026) at Sierra Nevada Brewing Co., leading a $15M enterprise mandate, rebuilding IS/IT, directing 150 participants across 25 task forces over 26 months, establishing a company-owned data core connecting business and plant systems, and deploying governed agentic applications into production.
+Result_05_Wine_IBP: Led Integrated Business Planning (IBP / S&OP) and multi-facility plant/warehouse integration for a $200M wine producer.
+Result_06_Access_IT: Served as Lead Consultant & Solution Architect at Access IT, Inc. (2012-2016), leading partner-side Microsoft Dynamics NAV and ContractERP implementations across construction, distribution, manufacturing, and services.
+
+[SELECTED_ENTERPRISE_EXPERIENCE_ORGANIZATIONS]
+Beverage_and_Agribusiness: Sierra Nevada Brewing Co., Duckhorn Portfolio, Foley Family Wines, Scheid Family Wines, Rodney Strong Vineyards
+Hospitality_and_Integrated_Resorts: Wynn Resorts, MGM Grand, Caesars Entertainment
+Architecture_Engineering_and_Construction: Skidmore Owings & Merrill (SOM), HOK, Turner Construction, PCL Construction
+Healthcare_Infrastructure_and_Operations: HCA Healthcare (healthcare facility infrastructure and operational systems delivery)
+
+[SYSTEMS_AND_ARCHITECTURAL_FRAMEWORK]
+Shared_Spine: org -> instance -> assets -> outcomes
+Shared_Loop: intent -> define -> build -> outcome (with the outcome read back against the intent)
+Binary_Intelligence: Human judgment directing binary intelligence (zeros and ones); one man and a context window as the operational equalizer from the executive desk to Packaging Line 2.
+Learn_Through_The_Work_Chapters:
+  Chapter_01: How Businesses Actually Run (What's Old Is New, What's New Is Old: Bad Data, Shadow IT, and the Mighty Excel Spreadsheet). Reconciling Finance's formal close with Operations' live shop-floor reality through Integrated Business Planning (IBP), and capturing the after-go-live workflow exceptions on Mary's 6:30 AM clipboard and Don WMS's colored Post-it floor zones.
+  Chapter_02: Working with Intelligence (Humans and Agents Running the Workflows That Run the Business: The ERP Conversation, the SaaS Killer, and One Person With a Context Window). Propose in language, admit by rule, remember in the book; operational continuity across frontier and open-weight models; Multi-Entity Management (MEM), intercompany eliminations, unrealized internal profit elimination, and SOX Section 404 / PCAOB AS 2201 traceability across the business spectrum.
+  Chapter_03: The Machine That Builds the Machines That Build the Workflows (Why Building Enterprise Workflow Software with Agents Takes a Disciplined Foundry: Down the Rabbit Hole and Out of the Disco). Compound reliability under Lusser's Law (0.95^10 = 59.8%), ITGC / SOX 404 Segregation of Duties inside the build loop (Build <-> Check -> Land), opposing-model verification, and lessons from burning the machine and its state down in the Disco.
+The_Collective_Systems (https://idigdata.com/collective/):
+  System_01_BOSS: B.O.S.S. (Where the Business Stands: The Front End of Everything · Living Digital Twin). Maps where the business actually stands, organizes the data core, builds a living digital twin across 6 process constellations (P2P, O2C, P2M, S2S, D2R, MDM), runs project and change management, compiles workflows, and monitors the live operating instance.
+  System_02_FlowCraft: FlowCraft (The Business as It Runs: The Org & The Live Operating Instance). Where a FlowCraft org governs the blueprints and rules, and each operating instance runs daily enterprise workflows (Purchase Orders, Payroll, Receiving, Approvals, and Multi-Entity Close) under deterministic rules and human authorization, scaling from a single-entity local shop to a multi-entity public enterprise.
+  System_03_The_Rig: The Rig (The Foundry: The Machine That Builds the Machines). Multi-harness engineering foundry across distinct model families with isolated git worktree lanes, shared comms, durable memory, and independent opposing-model check gates before code lands.
+Capability_Configurator: The Block (https://idigdata.com/block/) - 60 enterprise outcomes across 6 transformation disciplines.
+
+[NON_CLAIMS]
+Non_Claim_01: idigdata is not a staffing agency, hands-off software license broker, or outsourced IT helpdesk vendor.
+Non_Claim_02: Workflow blocks are supervised operational capacity with deterministic rules and named human authorization gates, never claimed as autonomous "digital worker" headcount replacements.
+
+[INDEXES]
+LLMs_Index: https://idigdata.com/llms.txt
+LLMs_Full: https://idigdata.com/llms-full.txt
+RSS_Feed: https://idigdata.com/feed.xml
+Sitemap: https://idigdata.com/sitemap.xml

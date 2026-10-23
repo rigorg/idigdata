@@ -3,10 +3,25 @@ import { describe, it } from "node:test";
 import {
   ENGAGEMENT_DRAFT_KEY, LEGACY_DRAFT_KEYS, EngagementDraftSession,
   composeEngagementMessage, engagementSummary, newEngagementDraft,
-  parseEngagementDraft, selectedOutcomeNames,
+  parseEngagementDraft, selectedOutcomeNames, retiredOutcomeLabel,
 } from "./engagement-draft";
 import { PUBLIC_CATALOG_ITEMS } from "./catalog";
 import { ContactSchema } from "./contact/schema";
+
+it("preserves a retired scope beside current selections without substituting it", () => {
+  assert.equal(retiredOutcomeLabel("wa_procure_to_pay"), "Procure-to-Pay");
+  assert.equal(retiredOutcomeLabel("wa_old_scope"), "Old Scope");
+  const active = PUBLIC_CATALOG_ITEMS[0].id;
+  const raw = JSON.stringify({ ...newEngagementDraft(), outcomeIds: [active, "retired_scope"], notes: "Keep this context" });
+  const draft = parseEngagementDraft(raw, ["retired_scope"]);
+  assert.ok(draft);
+  assert.deepEqual(draft.outcomeIds, [active]);
+  assert.deepEqual(draft.retiredOutcomeIds, ["retired_scope"]);
+  assert.equal(draft.notes, "Keep this context");
+  assert.match(engagementSummary(draft), /retired_scope/);
+  assert.deepEqual(parseEngagementDraft(JSON.stringify(draft), ["retired_scope"]), draft);
+  assert.equal(parseEngagementDraft(raw, []), null);
+});
 
 class MemoryStorage {
   data = new Map<string, string>();

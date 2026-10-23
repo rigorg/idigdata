@@ -100,6 +100,12 @@ export async function POST(req: NextRequest) {
 
   const utms = resolveUtms(parsed.data.search, attribution);
 
+  const geoCountry = req.headers.get("x-vercel-ip-country") || req.headers.get("cf-ipcountry");
+  const geoRegion = req.headers.get("x-vercel-ip-country-region");
+  const geoCity = req.headers.get("x-vercel-ip-city");
+  const acceptLang = req.headers.get("accept-language")?.slice(0, 80) || null;
+  const secFetchSite = req.headers.get("sec-fetch-site")?.slice(0, 80) || null;
+
   const baseRow = {
     source: "idigdata-website",
     path: parsed.data.path,
@@ -124,6 +130,7 @@ export async function POST(req: NextRequest) {
     buyer_signal: signal.buyer_signal,
   };
 
+  // Insert into pageviews table (mirror)
   const { error } = await supabase.from("pageviews").insert(row);
   if (error) {
     if (isSchemaCacheMiss(error)) {
@@ -134,6 +141,25 @@ export async function POST(req: NextRequest) {
     } else {
       console.error(`pageview insert failed: ${error.message}`);
     }
+  }
+
+  // Insert into site_hits with geo details so DigOps Operations (:3300) picks it up with full city/country
+  try {
+    const siteHitRow = {
+      ...row,
+      occurred_at: new Date().toISOString(),
+      request_method: req.method,
+      host: req.headers.get("host")?.slice(0, 255) || null,
+      geo_country: geoCountry?.slice(0, 80) || null,
+      geo_region: geoRegion?.slice(0, 80) || null,
+      geo_city: geoCity?.slice(0, 80) || null,
+      accept_language: acceptLang,
+      sec_fetch_site: secFetchSite,
+      landing_url: parsed.data.path,
+    };
+    await supabase.from("site_hits").insert(siteHitRow);
+  } catch {
+    // Non-blocking
   }
 
   return NO_CONTENT;

@@ -1,0 +1,930 @@
+/* ==========================================================================
+   THE COLLECTIVE // ARCHITECTURAL DRAFTING PALETTE
+   Substrate: Warm Parchment (#FAF6EE)
+   Ink: Deep Slate Charcoal (#1E2024)
+   Accent: Architectural Brass (#9E7D3B)
+   Lines: Architectural Drafting Rules (#DDD7C8)
+   ========================================================================== */
+
+.page {
+  --parchment: #FAF6EE;
+  --panel-bg: #FFFFFF;
+  --surface: #F4EFE5;
+  --surface-alt: #EEE7D8;
+  --ink: #1E2024;
+  --muted: #68645C;
+  --brass: #9E7D3B;
+  --brass-dark: #6C552F;
+  --brass-light: #D4C29A;
+  --line: #DDD7C8;
+  --line-dark: #B8B0A0;
+  --rust: #8F4A38;
+
+  background-color: var(--parchment);
+  color: var(--ink);
+  font-family: var(--next-font-body), "Source Sans 3", Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+.page h1,
+.page h2,
+.page h3,
+.page h4 {
+  font-family: var(--next-font-display), Vollkorn, Lora, Georgia, serif;
+  color: var(--ink);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* Nav */
+.header {
+  border-bottom: 1px solid var(--line);
+  background: rgba(250, 246, 238, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.navInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brandLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.brandTitle {
+  font-family: var(--next-font-display), Vollkorn, Georgia, serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.brandSub {
+  font-size: 11px;
+  font-family: monospace;
+  color: var(--brass-dark);
+  border-left: 1px solid var(--line-dark);
+  padding-left: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navItem {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.navItem:hover {
+  color: var(--ink);
+}
+
+.navItemActive {
+  color: var(--brass-dark);
+  font-weight: 600;
+}
+
+/* Hero */
+.hero {
+  padding: 72px 24px 56px;
+  border-bottom: 1px solid var(--line);
+}
+
+
+/* Hero Two-Column Layout */
+.heroInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 48px;
+  align-items: center;
+}
+
+@media (max-width: 960px) {
+  .heroInner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.heroContent {
+  max-width: 100%;
+}
+
+.leadBody {
+  max-width: 820px;
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.heroVisual {
+  display: flex;
+  justify-content: center;
+}
+
+.heroPlateFrame {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  background: var(--panel-bg);
+  border: 1px solid var(--line);
+  padding: 32px;
+  box-shadow: 0 4px 20px rgba(30, 32, 36, 0.04);
+  border-radius: 2px;
+}
+
+.plateCornerTL,
+.plateCornerTR,
+.plateCornerBL,
+.plateCornerBR {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: var(--brass);
+  border-style: solid;
+}
+
+.plateCornerTL { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+.plateCornerTR { top: -1px; right: -1px; border-width: 2px 2px 0 0; }
+.plateCornerBL { bottom: -1px; left: -1px; border-width: 0 0 2px 2px; }
+.plateCornerBR { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+
+.plateInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.plateTag {
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.spotSvg {
+  width: 280px;
+  height: 280px;
+  display: block;
+}
+
+.plateMetrics {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.plateMetrics strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+
+.plateMetrics span {
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.metricDivider {
+  width: 1px;
+  height: 30px;
+  background-color: var(--line);
+}
+
+.heroBottomPlate {
+  max-width: 1200px;
+  margin: 40px auto 0;
+}
+
+
+.eyebrow {
+  font-size: 11px;
+  font-family: monospace;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--brass-dark);
+  margin-bottom: 12px;
+}
+
+.heroTitle {
+  font-size: clamp(38px, 5vw, 54px);
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: var(--ink);
+}
+
+.heroTitle span {
+  color: var(--brass);
+}
+
+.heroDek {
+  font-size: clamp(18px, 2.2vw, 22px);
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: 900px;
+  margin-bottom: 32px;
+}
+
+/* Commons Learning Loop Bay (Replaces Old Cold SVG) */
+.commonsPlate {
+  background: var(--panel-bg);
+  border: 1px solid var(--line-dark);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 40px;
+}
+
+.commonsBar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: monospace;
+  font-size: 11px;
+}
+
+.commonsTag {
+  color: var(--brass-dark);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.commonsLive {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.commonsLiveDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #16A34A;
+}
+
+.commonsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: var(--panel-bg);
+}
+
+@media (max-width: 960px) {
+  .commonsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.commonsCol {
+  padding: 32px 28px;
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.commonsCol:last-child {
+  border-right: none;
+}
+
+@media (max-width: 960px) {
+  .commonsCol {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+  .commonsCol:last-child {
+    border-bottom: none;
+  }
+}
+
+.commonsColTag {
+  display: inline-block;
+  font-family: monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brass-dark);
+  margin-bottom: 10px;
+}
+
+.commonsColTitle {
+  font-size: 22px;
+  color: var(--ink);
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.commonsColText {
+  font-size: 14.5px;
+  color: var(--ink);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.commonsColFoot {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 10px 14px;
+  border-radius: 2px;
+  font-size: 12px;
+  font-family: monospace;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.commonsColFoot strong {
+  color: var(--brass-dark);
+}
+
+.commonsBanner {
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .commonsBanner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.commonsBannerText {
+  font-size: 14px;
+  color: var(--ink);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.commonsBannerText strong {
+  color: var(--brass-dark);
+}
+
+/* Section: The Three Systems */
+.systemsSection {
+  padding: 80px 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.sectionInner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionHead {
+  max-width: 820px;
+  margin-bottom: 48px;
+}
+
+.sectionHead h2 {
+  font-size: clamp(28px, 3.5vw, 38px);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.sectionHead p {
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.blueprintPlateWrap {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 52px;
+}
+
+.blueprintPlateFrame {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  background: var(--panel-bg);
+  border: 1px solid var(--line-dark);
+  padding: 18px 20px 20px;
+  box-shadow: 0 6px 24px rgba(30, 32, 36, 0.05);
+  border-radius: 2px;
+}
+
+.blueprintPlateBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brass-dark);
+}
+
+.blueprintPlateLink {
+  display: block;
+  text-decoration: none;
+}
+
+.blueprintPlateImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 2px;
+  border: 1px solid var(--line);
+}
+
+.systemsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 900px) {
+  .systemsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.systemCard {
+  background: var(--panel-bg);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--brass);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.systemBadge {
+  display: inline-block;
+  font-family: monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brass-dark);
+  margin-bottom: 12px;
+}
+
+.systemTitle {
+  font-size: 26px;
+  line-height: 1.2;
+  margin-bottom: 4px;
+  color: var(--ink);
+}
+
+.systemSub {
+  font-size: 13px;
+  font-family: monospace;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+.systemBody {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink);
+  margin-bottom: 24px;
+}
+
+.systemUseCaseBox {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 14px 16px;
+  border-radius: 2px;
+}
+
+.systemUseCaseLabel {
+  display: block;
+  font-family: monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--brass-dark);
+  margin-bottom: 4px;
+}
+
+.systemUseCaseText {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* Section: Architectural Flywheel / Principles */
+.flywheelSection {
+  padding: 80px 24px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.flywheelGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 900px) {
+  .flywheelGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.flywheelCard {
+  background: var(--panel-bg);
+  border: 1px solid var(--line-dark);
+  border-top: 3px solid var(--brass);
+  padding: 32px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.flywheelTag {
+  font-family: monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--brass-dark);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.flywheelTitle {
+  font-size: 24px;
+  margin-bottom: 14px;
+  color: var(--ink);
+  line-height: 1.25;
+}
+
+.flywheelText {
+  font-size: 15px;
+  color: var(--ink);
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+
+.flywheelBox {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 16px 18px;
+  border-radius: 2px;
+  margin-top: auto;
+}
+
+.flywheelBoxLabel {
+  display: block;
+  font-family: monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--brass-dark);
+  margin-bottom: 6px;
+}
+
+.flywheelBoxText {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Section: Blueprints / Use Cases */
+.blueprintsSection {
+  padding: 80px 24px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.blueprintsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+@media (max-width: 800px) {
+  .blueprintsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.blueprintCard {
+  background: var(--panel-bg);
+  border: 1px solid var(--line-dark);
+  padding: 32px;
+  border-radius: 4px;
+}
+
+.blueprintTag {
+  font-family: monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--rust);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.blueprintTitle {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: var(--ink);
+}
+
+.blueprintText {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.blueprintList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
+  color: var(--ink);
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+
+.blueprintList li {
+  padding: 6px 0 6px 20px;
+  position: relative;
+  line-height: 1.55;
+}
+
+.blueprintList li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  color: var(--brass);
+  font-weight: bold;
+}
+
+/* Section: Two Doors of Interaction */
+.doorsSection {
+  padding: 80px 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.doorsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+@media (max-width: 800px) {
+  .doorsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.doorCard {
+  background: var(--panel-bg);
+  border: 1px solid var(--line-dark);
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 4px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+.doorCardPrimary {
+  border: 2px solid var(--brass);
+  background: #FCFAF6;
+}
+
+.doorEyebrow {
+  font-family: monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--brass-dark);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.doorTitle {
+  font-size: 26px;
+  margin-bottom: 14px;
+  color: var(--ink);
+}
+
+.doorBody {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.doorBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  background: var(--ink);
+  color: #FFFFFF;
+  border: 1px solid var(--ink);
+  border-radius: 2px;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.doorBtn:hover {
+  background: var(--brass-dark);
+  border-color: var(--brass-dark);
+}
+
+.doorBtnSecondary {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line-dark);
+}
+
+.doorBtnSecondary:hover {
+  background: var(--surface);
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+/* Direct Form Bay */
+.formSection {
+  padding: 80px 24px;
+  background: var(--surface);
+}
+
+.formBox {
+  max-width: 680px;
+  margin: 0 auto;
+  background: var(--panel-bg);
+  border: 1px solid var(--line-dark);
+  padding: 40px;
+  border-radius: 4px;
+}
+
+@media (max-width: 640px) {
+  .formSection {
+    padding: 48px 16px;
+  }
+  .formBox {
+    padding: 24px 16px;
+  }
+}
+
+.formHead {
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.formHead h3 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.formHead p {
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.formField {
+  margin-bottom: 20px;
+}
+
+.fieldLabel {
+  display: block;
+  font-family: monospace;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.fieldInput,
+.fieldSelect,
+.fieldTextarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--line-dark);
+  background: #FCFAF6;
+  font-size: 14px;
+  color: var(--ink);
+  border-radius: 2px;
+  font-family: inherit;
+}
+
+.fieldInput:focus,
+.fieldSelect:focus,
+.fieldTextarea:focus {
+  outline: none;
+  border-color: var(--brass);
+  background: #FFFFFF;
+}
+
+.fieldHelp {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 14px;
+  background: var(--ink);
+  color: #FFFFFF;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.submitBtn:hover {
+  background: var(--brass-dark);
+}
+
+.statusMessage {
+  padding: 16px;
+  border-radius: 2px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.statusSuccess {
+  background: #E8F5E9;
+  border: 1px solid #C8E6C9;
+  color: #1B5E20;
+}
+
+.statusError {
+  background: #FFEBEE;
+  border: 1px solid #FFCDD2;
+  color: #B71C1C;
+}
+
+

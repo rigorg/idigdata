@@ -1,142 +1,512 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg viewBox="50 12 710 848" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="six-title six-desc">
-  <title id="six-title">AV-02 · The Process Constellations · brand-v2 · author-v2.4 · 2026-05-17</title>
-  <desc id="six-desc">A radial diagram with six labeled process constellation nodes (P2P, O2C, P2M, S2S, D2R, MDM) arranged clockwise from 12 o'clock around a central data core. The colored band around each constellation is the workflow blocks that live in that constellation. The six are categorical: every business process in any company maps to exactly one. S2S is Systems that Support — the ERP side and the HR side, plus IT, cybersecurity, and productivity; these support and span the three primary chains (P2P, O2C, P2M). D2R is Data to Report (was Record to Report). MDM is required. Agentic apps are first-class peers in EVERY constellation, not categorically S2S. Each process constellation is ringed by a BPSc weight band built from the BOSS palette: charcoal anchors heavy bands, sun-gold appears in every band as the brand cohesion signal, pale-yellow appears only on the lightest bands, and a single deep-orange criticality accent marks the highest-weight constellation only. Per-constellation weight (criticality fused with size) reads via charcoal-anchoredness — heavy = charcoal-dominant, mid = gold-dominant, light = pale-dominant. Gradient stops along the arc carry within-constellation density variation across the constellation's clusters. The band gap on each constellation faces the data core and marks the constellation→cluster connector port. Hierarchy: Process Constellation → Cluster → BPSc → PEGS → Steps + Schema availability. Same six in every install; the weight pattern differs per operator. Canonical mid-market manufacturer baseline.</desc>
-
-  <defs>
-    <!-- BPSc weight gradients · BOSS palette (charcoal #1F2937 + sun-gold #FACC15 + pale-yellow #FDE68A) carries per-constellation weight signal. Sun-gold appears in every band for brand cohesion. Charcoal anchors heavy. Pale-yellow appears only on light. Deep-orange #C2410C is reserved for the highest-criticality constellation only. -->
-
-    <!-- D2R (Data to Report) — MID-LIGHT · sun-gold + pale-yellow · 8 o'clock -->
-    <linearGradient id="band-d2r" gradientUnits="userSpaceOnUse" x1="60" y1="515" x2="265" y2="715">
-      <stop offset="0%" stop-color="#FACC15" stop-opacity="0.78"/>
-      <stop offset="25%" stop-color="#FDE68A" stop-opacity="0.62"/>
-      <stop offset="50%" stop-color="#FACC15" stop-opacity="0.92"/>
-      <stop offset="75%" stop-color="#FDE68A" stop-opacity="0.55"/>
-      <stop offset="100%" stop-color="#FACC15" stop-opacity="0.72"/>
-    </linearGradient>
-
-    <!-- O2C (Order to Cash) — MID · charcoal + sun-gold balanced -->
-    <linearGradient id="band-o2c" gradientUnits="userSpaceOnUse" x1="540" y1="245" x2="745" y2="445">
-      <stop offset="0%" stop-color="#FACC15" stop-opacity="0.85"/>
-      <stop offset="22%" stop-color="#1F2937" stop-opacity="0.62"/>
-      <stop offset="44%" stop-color="#FACC15" stop-opacity="0.92"/>
-      <stop offset="68%" stop-color="#1F2937" stop-opacity="0.45"/>
-      <stop offset="100%" stop-color="#FACC15" stop-opacity="0.72"/>
-    </linearGradient>
-
-    <!-- P2M (Plan to Manufacture) — HEAVIEST · charcoal-dominant + gold + single deep-orange criticality flash (transformation core in a manufacturer) -->
-    <linearGradient id="band-p2m" gradientUnits="userSpaceOnUse" x1="745" y1="515" x2="540" y2="715">
-      <stop offset="0%" stop-color="#1F2937" stop-opacity="0.92"/>
-      <stop offset="22%" stop-color="#FACC15" stop-opacity="0.62"/>
-      <stop offset="48%" stop-color="#1F2937" stop-opacity="0.95"/>
-      <stop offset="72%" stop-color="#C2410C" stop-opacity="0.68"/>
-      <stop offset="100%" stop-color="#1F2937" stop-opacity="0.85"/>
-    </linearGradient>
-
-    <!-- MDM (Master Data Management) — MID · sun-gold dominant + charcoal anchor · 10 o'clock -->
-    <linearGradient id="band-mdm" gradientUnits="userSpaceOnUse" x1="60" y1="245" x2="265" y2="445">
-      <stop offset="0%" stop-color="#FACC15" stop-opacity="0.92"/>
-      <stop offset="32%" stop-color="#1F2937" stop-opacity="0.55"/>
-      <stop offset="62%" stop-color="#FACC15" stop-opacity="0.85"/>
-      <stop offset="100%" stop-color="#1F2937" stop-opacity="0.45"/>
-    </linearGradient>
-
-    <!-- P2P (Procure to Pay) — MID-HEAVY · charcoal + sun-gold alternation · 12 o'clock -->
-    <linearGradient id="band-p2p" gradientUnits="userSpaceOnUse" x1="300" y1="110" x2="500" y2="310">
-      <stop offset="0%" stop-color="#1F2937" stop-opacity="0.85"/>
-      <stop offset="25%" stop-color="#FACC15" stop-opacity="0.62"/>
-      <stop offset="50%" stop-color="#1F2937" stop-opacity="0.78"/>
-      <stop offset="75%" stop-color="#FACC15" stop-opacity="0.55"/>
-      <stop offset="100%" stop-color="#1F2937" stop-opacity="0.82"/>
-    </linearGradient>
-
-    <!-- S2S (Systems that Support) — ERP + HR + IT + cyber + productivity · 6 o'clock -->
-    <linearGradient id="band-s2s" gradientUnits="userSpaceOnUse" x1="300" y1="650" x2="500" y2="850">
-      <stop offset="0%" stop-color="#FDE68A" stop-opacity="0.62"/>
-      <stop offset="35%" stop-color="#FACC15" stop-opacity="0.78"/>
-      <stop offset="65%" stop-color="#FDE68A" stop-opacity="0.45"/>
-      <stop offset="100%" stop-color="#FACC15" stop-opacity="0.55"/>
-    </linearGradient>
-  </defs>
-
-  <!-- Background · cream substrate (brand v2 §3) -->
-  <rect width="810" height="940" fill="#FBF9F4"/>
-
-  <!-- Title block · heavy geometric sans (Helvetica Black approximation pending Druk Wide Super) + Georgia italic subtitle -->
-  <text x="400" y="48" text-anchor="middle" font-weight="900" font-size="28" fill="#1F2937" letter-spacing="-0.3" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">THE SIX PROCESS CONSTELLATIONS</text>
-  <text x="400" y="72" text-anchor="middle" font-style="italic" font-size="15" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Each ring is the workflow blocks in that constellation</text>
-  <text x="400" y="92" text-anchor="middle" font-style="italic" font-size="15" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Same six · one data core · the fill is yours</text>
-
-  <!-- Spokes (drawn first; nodes overlay) — charcoal at v2 spoke opacity 0.22 -->
-  <g stroke="#1F2937" stroke-width="2" stroke-opacity="0.22" fill="none">
-    <line x1="400" y1="385" x2="400" y2="298"/>
-    <line x1="482.27" y1="432.5" x2="557.62" y2="389"/>
-    <line x1="482.27" y1="527.5" x2="557.62" y2="571"/>
-    <line x1="400" y1="575" x2="400" y2="662"/>
-    <line x1="317.73" y1="527.5" x2="242.38" y2="571"/>
-    <line x1="317.73" y1="432.5" x2="242.38" y2="389"/>
-  </g>
-
-  <!-- Data Core — sun-gold fill (brand v2 inversion from v1 navy fill); charcoal text inside -->
-  <circle cx="400" cy="480" r="95" fill="#FACC15" stroke="#1F2937" stroke-width="2.5"/>
-  <text x="400" y="453" text-anchor="middle" font-weight="900" font-size="20" fill="#1F2937" letter-spacing="3" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">DATA CORE</text>
-  <line x1="365" y1="467" x2="435" y2="467" stroke="#1F2937" stroke-width="1.5" opacity="0.5"/>
-  <text x="400" y="485" text-anchor="middle" font-size="14" font-weight="700" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Common Data Model</text>
-  <text x="400" y="503" text-anchor="middle" font-size="10.5" fill="#1F2937" opacity="0.85" font-family="system-ui, -apple-system, sans-serif">Integrations · Ingestion</text>
-  <text x="400" y="519" text-anchor="middle" font-size="10.5" fill="#1F2937" opacity="0.85" font-family="system-ui, -apple-system, sans-serif">Transformations · DW</text>
-
-  <!-- P2P · 12 o'clock + BPSc weight band (gap at south, spoke angle 90°) — cadence start -->
-  <g>
-    <path d="M 374.1 306.6 A 100 100 0 1 1 425.9 306.6" fill="none" stroke="url(#band-p2p)" stroke-width="11" stroke-linecap="butt"/>
-    <circle cx="400" cy="210" r="88" fill="#FBF9F4" stroke="#1F2937" stroke-width="2"/>
-    <text x="400" y="188" text-anchor="middle" font-weight="900" font-size="24" fill="#1F2937" letter-spacing="2" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">P2P</text>
-    <text x="400" y="210" text-anchor="middle" font-size="14" font-weight="700" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Procure to Pay</text>
-    <text x="400" y="228" text-anchor="middle" font-style="italic" font-size="13" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Inbound value chain</text>
-  </g>
-
-  <!-- O2C · 2 o'clock + band (gap at lower-left, spoke angle 150°) -->
-  <g>
-    <path d="M 537.2 370.9 A 100 100 0 1 1 563.1 415.7" fill="none" stroke="url(#band-o2c)" stroke-width="11" stroke-linecap="butt"/>
-    <circle cx="633.83" cy="345" r="88" fill="#FBF9F4" stroke="#1F2937" stroke-width="2"/>
-    <text x="633.83" y="323" text-anchor="middle" font-weight="900" font-size="24" fill="#1F2937" letter-spacing="2" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">O2C</text>
-    <text x="633.83" y="345" text-anchor="middle" font-size="14" font-weight="700" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Order to Cash</text>
-    <text x="633.83" y="363" text-anchor="middle" font-style="italic" font-size="13" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Outbound value chain</text>
-  </g>
-
-  <!-- P2M · 4 o'clock + band (gap at upper-left, spoke angle 210°) — heavy -->
-  <g>
-    <path d="M 563.1 544.3 A 100 100 0 1 1 537.2 589.1" fill="none" stroke="url(#band-p2m)" stroke-width="11" stroke-linecap="butt"/>
-    <circle cx="633.83" cy="615" r="88" fill="#FBF9F4" stroke="#1F2937" stroke-width="2"/>
-    <text x="633.83" y="593" text-anchor="middle" font-weight="900" font-size="24" fill="#1F2937" letter-spacing="2" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">P2M</text>
-    <text x="633.83" y="615" text-anchor="middle" font-size="14" font-weight="700" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Plan to Manufacture</text>
-    <text x="633.83" y="633" text-anchor="middle" font-style="italic" font-size="13" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Transformation core</text>
-  </g>
-
-  <!-- S2S · 6 o'clock + band (gap at north, spoke angle 270°) -->
-  <g>
-    <path d="M 425.9 653.4 A 100 100 0 1 1 374.1 653.4" fill="none" stroke="url(#band-s2s)" stroke-width="11" stroke-linecap="butt"/>
-    <circle cx="400" cy="750" r="88" fill="#FBF9F4" stroke="#1F2937" stroke-width="2"/>
-    <text x="400" y="728" text-anchor="middle" font-weight="900" font-size="24" fill="#1F2937" letter-spacing="2" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">S2S</text>
-    <text x="400" y="750" text-anchor="middle" font-size="14" font-weight="700" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Systems that Support</text>
-    <text x="400" y="766" text-anchor="middle" font-style="italic" font-size="13" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">ERP · HR · IT</text>
-    <text x="400" y="780" text-anchor="middle" font-style="italic" font-size="13" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">cyber · productivity</text>
-  </g>
-
-  <!-- D2R · 8 o'clock + band (gap at upper-right, spoke angle 330°) -->
-  <g>
-    <path d="M 262.8 589.1 A 100 100 0 1 1 236.9 544.3" fill="none" stroke="url(#band-d2r)" stroke-width="11" stroke-linecap="butt"/>
-    <circle cx="166.17" cy="615" r="88" fill="#FBF9F4" stroke="#1F2937" stroke-width="2"/>
-    <text x="166.17" y="593" text-anchor="middle" font-weight="900" font-size="24" fill="#1F2937" letter-spacing="2" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">D2R</text>
-    <text x="166.17" y="615" text-anchor="middle" font-size="14" font-weight="700" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Data to Report</text>
-    <text x="166.17" y="633" text-anchor="middle" font-style="italic" font-size="13" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Analytics + awareness</text>
-  </g>
-
-  <!-- MDM · 10 o'clock + band (gap at lower-right, spoke angle 30°) -->
-  <g>
-    <path d="M 236.9 415.7 A 100 100 0 1 1 262.8 370.9" fill="none" stroke="url(#band-mdm)" stroke-width="11" stroke-linecap="butt"/>
-    <circle cx="166.17" cy="345" r="88" fill="#FBF9F4" stroke="#1F2937" stroke-width="2"/>
-    <text x="166.17" y="323" text-anchor="middle" font-weight="900" font-size="24" fill="#1F2937" letter-spacing="2" font-family="'Helvetica Neue', 'Arial Black', Impact, system-ui, sans-serif">MDM</text>
-    <text x="166.17" y="345" text-anchor="middle" font-size="14" font-weight="700" fill="#1F2937" font-family="system-ui, -apple-system, sans-serif">Master Data Management</text>
-    <text x="166.17" y="363" text-anchor="middle" font-style="italic" font-size="13" fill="#6B6860" font-family="Georgia, 'Times New Roman', serif">Cross-cutting foundation</text>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1740" role="img" aria-labelledby="title desc">
+<title id="title">The Six Process Constellations — Clusters and Workflow Blocks around a Shared Data &amp; Agentic Core</title>
+<desc id="desc">Six process constellations (P2P, O2C, P2M, S2S, D2R, MDM) share a governed Data Core and Workflow &amp; Agentic Fabric. Broad segmented arcs represent process clusters; fine outer segments represent workflow blocks within those clusters.</desc>
+<defs>
+<radialGradient id="paper"><stop stop-color="#FFFDF8"/><stop offset="1" stop-color="#F6EFE0"/></radialGradient>
+<radialGradient id="paperInner"><stop stop-color="#FFFDF5"/><stop offset="1" stop-color="#EFE2C2"/></radialGradient>
+<linearGradient id="wax" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFFDF7"/><stop offset=".55" stop-color="#FBF6E8"/><stop offset="1" stop-color="#F1E2BD"/></linearGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#E8D49A"/><stop offset=".5" stop-color="#B79445"/><stop offset="1" stop-color="#E3C87F"/></linearGradient>
+<linearGradient id="rim" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#DFC478"/><stop offset=".5" stop-color="#8C6B2D"/><stop offset="1" stop-color="#C5A64F"/></linearGradient>
+<radialGradient id="core"><stop stop-color="#FFF5CC"/><stop offset=".68" stop-color="#E5CA7A"/><stop offset="1" stop-color="#B79445"/></radialGradient>
+<radialGradient id="fabricFill" cx="50%" cy="50%" r="50%">
+  <stop offset="38%" stop-color="#F3E5BE" stop-opacity="0.58"/>
+  <stop offset="68%" stop-color="#E8D49A" stop-opacity="0.40"/>
+  <stop offset="92%" stop-color="#D7BC74" stop-opacity="0.48"/>
+  <stop offset="100%" stop-color="#B79445" stop-opacity="0.64"/>
+</radialGradient>
+<pattern id="small-comb" width="24" height="41.57" patternUnits="userSpaceOnUse">
+  <path d="M0 6.93L12 0L24 6.93V20.78L12 27.71L0 20.78ZM12 27.71V41.57M0 34.64L12 41.57L24 34.64" fill="none" stroke="#A88940" stroke-width=".65"/>
+</pattern>
+<filter id="softShadow" x="-12%" y="-12%" width="124%" height="124%">
+  <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#1E2723" flood-opacity="0.16"/>
+</filter>
+</defs>
+<rect width="1600" height="1740" fill="#FBF9F4"/>
+<text x="800.00" y="58.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="42" font-weight="700" letter-spacing="1.5" fill="#26313A">THE SIX PROCESS CONSTELLATIONS</text>
+<text x="800.00" y="98.00" text-anchor="middle" font-family="Georgia, serif" font-size="21" font-weight="400" fill="#966B26">Same six every company. Shared Data &amp; Agentic Core. Each business’s own clusters and workflow blocks.</text>
+<rect x="110.00" y="126" width="215" height="30" rx="15" fill="#8A681C"/>
+<text x="217.50" y="146.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.8" font-weight="700" letter-spacing="0.3" fill="#FFFDF8">01 · P2P (Procure to Pay)</text>
+<rect x="335.00" y="126" width="210" height="30" rx="15" fill="#7C4D1B"/>
+<text x="440.00" y="146.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.8" font-weight="700" letter-spacing="0.3" fill="#FFFDF8">02 · O2C (Order to Cash)</text>
+<rect x="555.00" y="126" width="240" height="30" rx="15" fill="#2B4C3F"/>
+<text x="675.00" y="146.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.8" font-weight="700" letter-spacing="0.3" fill="#F5E3A9">03 · P2M (Plan to Manufacture)</text>
+<rect x="805.00" y="126" width="235" height="30" rx="15" fill="#25323B"/>
+<text x="922.50" y="146.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.8" font-weight="700" letter-spacing="0.3" fill="#E8D49A">04 · S2S (Systems to Support)</text>
+<rect x="1050.00" y="126" width="205" height="30" rx="15" fill="#3F5147"/>
+<text x="1152.50" y="146.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.8" font-weight="700" letter-spacing="0.3" fill="#F5E3A9">05 · D2R (Data to Report)</text>
+<rect x="1265.00" y="126" width="225" height="30" rx="15" fill="#6E4F1D"/>
+<text x="1377.50" y="146.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.8" font-weight="700" letter-spacing="0.3" fill="#FFFDF8">06 · MDM (Master Data Mgmt)</text>
+<mask id="constFabMask"><rect width="1600" height="1740" fill="black"/><circle cx="800" cy="865" r="346" fill="white"/><circle cx="800" cy="865" r="210" fill="black"/></mask>
+<g mask="url(#constFabMask)">
+<circle cx="800" cy="865" r="346" fill="url(#fabricFill)"/>
+<circle cx="800" cy="865" r="278.0" fill="#26313A" fill-opacity="0.06"/>
+<path d="M800.00 519.00Q800 865 1134.21 775.45" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M800.00 519.00Q800 865 1134.21 954.55" fill="none" stroke="#4E5E56" stroke-width="1.15" opacity="0.30"/>
+<path d="M800.00 519.00Q800 865 889.55 1199.21" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M889.55 530.79Q800 865 1146.00 865.00" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M889.55 530.79Q800 865 1099.64 1038.00" fill="none" stroke="#4E5E56" stroke-width="1.15" opacity="0.30"/>
+<path d="M889.55 530.79Q800 865 800.00 1211.00" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M973.00 565.36Q800 865 1134.21 954.55" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M973.00 565.36Q800 865 1044.66 1109.66" fill="none" stroke="#4E5E56" stroke-width="1.15" opacity="0.30"/>
+<path d="M973.00 565.36Q800 865 710.45 1199.21" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M1044.66 620.34Q800 865 1099.64 1038.00" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M1044.66 620.34Q800 865 973.00 1164.64" fill="none" stroke="#4E5E56" stroke-width="1.15" opacity="0.30"/>
+<path d="M1044.66 620.34Q800 865 627.00 1164.64" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M1099.64 692.00Q800 865 1044.66 1109.66" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M1099.64 692.00Q800 865 889.55 1199.21" fill="none" stroke="#4E5E56" stroke-width="1.15" opacity="0.30"/>
+<path d="M1099.64 692.00Q800 865 555.34 1109.66" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M1134.21 775.45Q800 865 973.00 1164.64" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M1134.21 775.45Q800 865 800.00 1211.00" fill="none" stroke="#4E5E56" stroke-width="1.15" opacity="0.30"/>
+<path d="M1134.21 775.45Q800 865 500.36 1038.00" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M1146.00 865.00Q800 865 889.55 1199.21" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M1146.00 865.00Q800 865 710.45 1199.21" fill="none" stroke="#4E5E56" stroke-width="1.15" opacity="0.30"/>
+<path d="M1146.00 865.00Q800 865 465.79 954.55" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M1134.21 954.55Q800 865 800.00 1211.00" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M1134.21 954.55Q800 865 627.00 1164.64" fill="none" stroke="#4E5E56" stroke-width="1.15" opacity="0.30"/>
+<path d="M1134.21 954.55Q800 865 454.00 865.00" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M1099.64 1038.00Q800 865 710.45 1199.21" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M1099.64 1038.00Q800 865 555.34 1109.66" fill="none" stroke="#4E5E56" stroke-width="1.15" opacity="0.30"/>
+<path d="M1099.64 1038.00Q800 865 465.79 775.45" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M1044.66 1109.66Q800 865 627.00 1164.64" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M1044.66 1109.66Q800 865 500.36 1038.00" fill="none" stroke="#4E5E56" stroke-width="1.15" opacity="0.30"/>
+<path d="M1044.66 1109.66Q800 865 500.36 692.00" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M973.00 1164.64Q800 865 555.34 1109.66" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M973.00 1164.64Q800 865 465.79 954.55" fill="none" stroke="#4E5E56" stroke-width="1.15" opacity="0.30"/>
+<path d="M973.00 1164.64Q800 865 555.34 620.34" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M889.55 1199.21Q800 865 500.36 1038.00" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M889.55 1199.21Q800 865 454.00 865.00" fill="none" stroke="#4E5E56" stroke-width="1.15" opacity="0.30"/>
+<path d="M889.55 1199.21Q800 865 627.00 565.36" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M800.00 1211.00Q800 865 465.79 954.55" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M800.00 1211.00Q800 865 465.79 775.45" fill="none" stroke="#4E5E56" stroke-width="1.15" opacity="0.30"/>
+<path d="M800.00 1211.00Q800 865 710.45 530.79" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M710.45 1199.21Q800 865 454.00 865.00" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M710.45 1199.21Q800 865 500.36 692.00" fill="none" stroke="#4E5E56" stroke-width="1.15" opacity="0.30"/>
+<path d="M710.45 1199.21Q800 865 800.00 519.00" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M627.00 1164.64Q800 865 465.79 775.45" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M627.00 1164.64Q800 865 555.34 620.34" fill="none" stroke="#4E5E56" stroke-width="1.15" opacity="0.30"/>
+<path d="M627.00 1164.64Q800 865 889.55 530.79" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M555.34 1109.66Q800 865 500.36 692.00" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M555.34 1109.66Q800 865 627.00 565.36" fill="none" stroke="#4E5E56" stroke-width="1.15" opacity="0.30"/>
+<path d="M555.34 1109.66Q800 865 973.00 565.36" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M500.36 1038.00Q800 865 555.34 620.34" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M500.36 1038.00Q800 865 710.45 530.79" fill="none" stroke="#4E5E56" stroke-width="1.15" opacity="0.30"/>
+<path d="M500.36 1038.00Q800 865 1044.66 620.34" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M465.79 954.55Q800 865 627.00 565.36" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M465.79 954.55Q800 865 800.00 519.00" fill="none" stroke="#4E5E56" stroke-width="1.15" opacity="0.30"/>
+<path d="M465.79 954.55Q800 865 1099.64 692.00" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M454.00 865.00Q800 865 710.45 530.79" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M454.00 865.00Q800 865 889.55 530.79" fill="none" stroke="#4E5E56" stroke-width="1.15" opacity="0.30"/>
+<path d="M454.00 865.00Q800 865 1134.21 775.45" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M465.79 775.45Q800 865 800.00 519.00" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M465.79 775.45Q800 865 973.00 565.36" fill="none" stroke="#4E5E56" stroke-width="1.15" opacity="0.30"/>
+<path d="M465.79 775.45Q800 865 1146.00 865.00" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M500.36 692.00Q800 865 889.55 530.79" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M500.36 692.00Q800 865 1044.66 620.34" fill="none" stroke="#4E5E56" stroke-width="1.15" opacity="0.30"/>
+<path d="M500.36 692.00Q800 865 1134.21 954.55" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M555.34 620.34Q800 865 973.00 565.36" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M555.34 620.34Q800 865 1099.64 692.00" fill="none" stroke="#4E5E56" stroke-width="1.15" opacity="0.30"/>
+<path d="M555.34 620.34Q800 865 1099.64 1038.00" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M627.00 565.36Q800 865 1044.66 620.34" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M627.00 565.36Q800 865 1134.21 775.45" fill="none" stroke="#4E5E56" stroke-width="1.15" opacity="0.30"/>
+<path d="M627.00 565.36Q800 865 1044.66 1109.66" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M710.45 530.79Q800 865 1099.64 692.00" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+<path d="M710.45 530.79Q800 865 1146.00 865.00" fill="none" stroke="#4E5E56" stroke-width="1.15" opacity="0.30"/>
+<path d="M710.45 530.79Q800 865 973.00 1164.64" fill="none" stroke="#9E7E32" stroke-width="1.15" opacity="0.30"/>
+</g>
+<circle cx="800" cy="865" r="210" fill="none" stroke="#8C6D28" stroke-width="2.4" opacity="0.85"/>
+<circle cx="800" cy="865" r="222" fill="none" stroke="#AA8B40" stroke-width="1.0" stroke-dasharray="4 4" opacity="0.5"/>
+<circle cx="800" cy="865" r="278.0" fill="none" stroke="#2B4C3F" stroke-width="1.3" stroke-dasharray="6 4" opacity="0.55"/>
+<circle cx="800" cy="865" r="334" fill="none" stroke="#AA8B40" stroke-width="1.0" stroke-dasharray="4 4" opacity="0.55"/>
+<circle cx="800" cy="865" r="346" fill="none" stroke="#8C6D28" stroke-width="2.6" opacity="0.9"/>
+<circle cx="800" cy="865" r="490" fill="none" stroke="#B79445" stroke-width="1.4" stroke-dasharray="8 6" opacity="0.35"/>
+<path d="M800.00 375.00Q800 865 1224.35 620.00" fill="none" stroke="#AA8B40" stroke-width="1.0" opacity="0.22"/>
+<path d="M800.00 375.00Q800 865 1224.35 1110.00" fill="none" stroke="#AA8B40" stroke-width="1.0" opacity="0.22"/>
+<path d="M800.00 375.00Q800 865 800.00 1355.00" fill="none" stroke="#AA8B40" stroke-width="1.0" opacity="0.22"/>
+<path d="M800.00 375.00Q800 865 375.65 1110.00" fill="none" stroke="#AA8B40" stroke-width="1.0" opacity="0.22"/>
+<path d="M800.00 375.00Q800 865 375.65 620.00" fill="none" stroke="#AA8B40" stroke-width="1.0" opacity="0.22"/>
+<path d="M800.00 655.00L800.00 519.00" stroke="#6B4F16" stroke-width="2.6" stroke-dasharray="6 4" opacity="0.82"/>
+<circle cx="800.00" cy="519.00" r="6.5" fill="#FFFDF8" stroke="#6B4F16" stroke-width="2.2"/>
+<circle cx="800.00" cy="655.00" r="5.0" fill="#E8D49A" stroke="#26313A" stroke-width="1.8"/>
+<path d="M1224.35 620.00Q800 865 1224.35 1110.00" fill="none" stroke="#AA8B40" stroke-width="1.0" opacity="0.22"/>
+<path d="M1224.35 620.00Q800 865 800.00 1355.00" fill="none" stroke="#AA8B40" stroke-width="1.0" opacity="0.22"/>
+<path d="M1224.35 620.00Q800 865 375.65 1110.00" fill="none" stroke="#AA8B40" stroke-width="1.0" opacity="0.22"/>
+<path d="M1224.35 620.00Q800 865 375.65 620.00" fill="none" stroke="#AA8B40" stroke-width="1.0" opacity="0.22"/>
+<path d="M981.87 760.00L1099.64 692.00" stroke="#6B4F16" stroke-width="2.6" stroke-dasharray="6 4" opacity="0.82"/>
+<circle cx="1099.64" cy="692.00" r="6.5" fill="#FFFDF8" stroke="#6B4F16" stroke-width="2.2"/>
+<circle cx="981.87" cy="760.00" r="5.0" fill="#E8D49A" stroke="#26313A" stroke-width="1.8"/>
+<path d="M1224.35 1110.00Q800 865 800.00 1355.00" fill="none" stroke="#AA8B40" stroke-width="1.0" opacity="0.22"/>
+<path d="M1224.35 1110.00Q800 865 375.65 1110.00" fill="none" stroke="#AA8B40" stroke-width="1.0" opacity="0.22"/>
+<path d="M1224.35 1110.00Q800 865 375.65 620.00" fill="none" stroke="#AA8B40" stroke-width="1.0" opacity="0.22"/>
+<path d="M981.87 970.00L1099.64 1038.00" stroke="#6B4F16" stroke-width="2.6" stroke-dasharray="6 4" opacity="0.82"/>
+<circle cx="1099.64" cy="1038.00" r="6.5" fill="#FFFDF8" stroke="#6B4F16" stroke-width="2.2"/>
+<circle cx="981.87" cy="970.00" r="5.0" fill="#E8D49A" stroke="#26313A" stroke-width="1.8"/>
+<path d="M800.00 1355.00Q800 865 375.65 1110.00" fill="none" stroke="#AA8B40" stroke-width="1.0" opacity="0.22"/>
+<path d="M800.00 1355.00Q800 865 375.65 620.00" fill="none" stroke="#AA8B40" stroke-width="1.0" opacity="0.22"/>
+<path d="M800.00 1075.00L800.00 1211.00" stroke="#6B4F16" stroke-width="2.6" stroke-dasharray="6 4" opacity="0.82"/>
+<circle cx="800.00" cy="1211.00" r="6.5" fill="#FFFDF8" stroke="#6B4F16" stroke-width="2.2"/>
+<circle cx="800.00" cy="1075.00" r="5.0" fill="#E8D49A" stroke="#26313A" stroke-width="1.8"/>
+<path d="M375.65 1110.00Q800 865 375.65 620.00" fill="none" stroke="#AA8B40" stroke-width="1.0" opacity="0.22"/>
+<path d="M618.13 970.00L500.36 1038.00" stroke="#6B4F16" stroke-width="2.6" stroke-dasharray="6 4" opacity="0.82"/>
+<circle cx="500.36" cy="1038.00" r="6.5" fill="#FFFDF8" stroke="#6B4F16" stroke-width="2.2"/>
+<circle cx="618.13" cy="970.00" r="5.0" fill="#E8D49A" stroke="#26313A" stroke-width="1.8"/>
+<path d="M618.13 760.00L500.36 692.00" stroke="#6B4F16" stroke-width="2.6" stroke-dasharray="6 4" opacity="0.82"/>
+<circle cx="500.36" cy="692.00" r="6.5" fill="#FFFDF8" stroke="#6B4F16" stroke-width="2.2"/>
+<circle cx="618.13" cy="760.00" r="5.0" fill="#E8D49A" stroke="#26313A" stroke-width="1.8"/>
+<g id="P2P">
+<path d="M745.80 525.54A160 160 0 0 1 649.46 429.20" fill="none" stroke="#8A681C" stroke-width="13"/>
+<path d="M739.03 544.36A180 180 0 0 1 713.61 532.92" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M710.33 531.07A180 180 0 0 1 687.31 515.36" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M684.39 512.97A180 180 0 0 1 664.48 493.47" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M662.03 490.61A180 180 0 0 1 645.84 467.92" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M643.93 464.67A180 180 0 0 1 631.96 439.51" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M646.35 419.64A160 160 0 0 1 736.46 228.16" fill="none" stroke="#A88940" stroke-width="13"/>
+<path d="M627.15 425.22A180 180 0 0 1 621.36 397.09" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M620.94 393.35A180 180 0 0 1 620.30 364.64" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M620.55 360.88A180 180 0 0 1 625.08 332.52" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M626.01 328.87A180 180 0 0 1 635.56 301.79" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M637.13 298.36A180 180 0 0 1 651.39 273.44" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M653.55 270.35A180 180 0 0 1 672.06 248.39" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M674.74 245.74A180 180 0 0 1 696.88 227.46" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M700.00 225.34A180 180 0 0 1 725.07 211.34" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M745.80 224.46A160 160 0 0 1 854.20 224.46" fill="none" stroke="#34413B" stroke-width="13"/>
+<path d="M739.03 205.64A180 180 0 0 1 765.35 198.37" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M769.05 197.68A180 180 0 0 1 796.23 195.04" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M800.00 195.00A180 180 0 0 1 827.23 197.07" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M830.95 197.68A180 180 0 0 1 857.41 204.40" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M863.54 228.16A160 160 0 0 1 959.29 359.94" fill="none" stroke="#CFB775" stroke-width="13"/>
+<path d="M871.49 209.80A180 180 0 0 1 896.45 223.02" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M899.61 225.07A180 180 0 0 1 921.84 242.50" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M924.59 245.08A180 180 0 0 1 943.38 266.17" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M945.62 269.20A180 180 0 0 1 960.38 293.28" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M962.06 296.66A180 180 0 0 1 972.32 322.97" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M973.37 326.59A180 180 0 0 1 978.81 354.31" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M959.92 369.97A160 160 0 0 1 854.20 525.54" fill="none" stroke="#8A681C" stroke-width="13"/>
+<path d="M979.91 369.35A180 180 0 0 1 978.55 397.83" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M978.03 401.56A180 180 0 0 1 971.60 429.34" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M970.43 432.92A180 180 0 0 1 959.14 459.11" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M957.34 462.42A180 180 0 0 1 941.57 486.17" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M939.21 489.11A180 180 0 0 1 919.44 509.66" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M916.59 512.14A180 180 0 0 1 893.48 528.83" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M890.23 530.75A180 180 0 0 1 864.51 543.04" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<g filter="url(#softShadow)">
+<circle cx="800.00" cy="375.00" r="142" fill="#26313A"/>
+<circle cx="800.00" cy="375.00" r="138" fill="url(#gold)"/>
+<circle cx="800.00" cy="375.00" r="131" fill="url(#paper)"/>
+<circle cx="800.00" cy="375.00" r="123" fill="none" stroke="#B49A5C" stroke-width="0.9" opacity="0.75"/>
+<rect x="753.00" y="256.00" width="94" height="22" rx="11" fill="#8A681C"/>
+<text x="800.00" y="271.50" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" letter-spacing="0.6" fill="#FFFDF8">01 · P2P</text>
+<text x="800.00" y="319.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="31" font-weight="700" letter-spacing="1.0" fill="#26313A">P2P</text>
+<text x="800.00" y="347.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="19.5" font-weight="700" fill="#26313A">Procure to Pay</text>
+<path d="M711.96 361.00H888.04" stroke="#B79445" stroke-width="1.1" opacity="0.75"/>
+<text x="800.00" y="379.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.8" font-weight="700" fill="#5C4516">Sourcing &amp; Vendor Onboarding</text>
+<text x="800.00" y="397.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.8" font-weight="700" fill="#26313A">Contracting &amp; Catalogs</text>
+<text x="800.00" y="415.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.8" font-weight="700" fill="#5C4516">Requisitions &amp; Purchase Orders</text>
+<text x="800.00" y="433.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.8" font-weight="700" fill="#26313A">Receiving, 3-Way Match &amp; AP</text>
+</g></g>
+<g id="O2C">
+<path d="M1066.88 648.33A160 160 0 0 1 1108.06 510.11" fill="none" stroke="#7C4D1B" stroke-width="13"/>
+<path d="M1047.20 651.88A180 180 0 0 1 1044.52 627.76" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1044.40 623.99A180 180 0 0 1 1045.49 599.75" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1045.96 596.01A180 180 0 0 1 1050.81 572.24" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1051.84 568.61A180 180 0 0 1 1060.32 545.88" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1061.91 542.46A180 180 0 0 1 1073.82 521.31" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1075.92 518.18A180 180 0 0 1 1090.96 499.15" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1115.18 503.03A160 160 0 0 1 1200.69 461.76" fill="none" stroke="#A88940" stroke-width="13"/>
+<path d="M1101.54 488.41A180 180 0 0 1 1119.59 473.63" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1122.67 471.47A180 180 0 0 1 1142.73 459.57" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1146.11 457.89A180 180 0 0 1 1167.73 449.14" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1171.32 447.99A180 180 0 0 1 1194.01 442.58" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1210.67 460.59A160 160 0 0 1 1360.34 535.69" fill="none" stroke="#34413B" stroke-width="13"/>
+<path d="M1208.96 440.66A180 180 0 0 1 1233.49 440.23" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1237.25 440.46A180 180 0 0 1 1261.54 443.88" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1265.22 444.70A180 180 0 0 1 1288.68 451.89" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1292.19 453.27A180 180 0 0 1 1314.23 464.04" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1317.48 465.96A180 180 0 0 1 1337.56 480.05" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1340.46 482.46A180 180 0 0 1 1358.09 499.52" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1360.58 502.35A180 180 0 0 1 1375.31 521.96" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1365.36 544.39A160 160 0 0 1 1378.27 663.69" fill="none" stroke="#CFB775" stroke-width="13"/>
+<path d="M1382.99 534.94A180 180 0 0 1 1392.85 556.70" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1394.14 560.24A180 180 0 0 1 1400.56 583.25" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1401.29 586.95A180 180 0 0 1 1404.11 610.67" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1404.27 614.43A180 180 0 0 1 1403.42 638.31" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1403.00 642.05A180 180 0 0 1 1398.50 665.52" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1375.22 673.27A160 160 0 0 1 1218.54 779.89" fill="none" stroke="#7C4D1B" stroke-width="13"/>
+<path d="M1394.08 679.93A180 180 0 0 1 1384.27 702.63" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1382.50 705.96A180 180 0 0 1 1369.22 726.83" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1366.95 729.84A180 180 0 0 1 1350.55 748.35" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1347.83 750.97A180 180 0 0 1 1328.71 766.66" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1325.62 768.81A180 180 0 0 1 1304.26 781.29" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1300.87 782.93A180 180 0 0 1 1277.81 791.88" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1274.20 792.96A180 180 0 0 1 1250.02 798.16" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1246.28 798.66A180 180 0 0 1 1221.58 799.98" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1208.51 779.21A160 160 0 0 1 1121.08 742.21" fill="none" stroke="#A88940" stroke-width="13"/>
+<path d="M1206.53 799.12A180 180 0 0 1 1183.52 795.31" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1179.86 794.41A180 180 0 0 1 1157.68 787.20" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1154.19 785.76A180 180 0 0 1 1133.35 775.30" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1130.11 773.36A180 180 0 0 1 1111.07 759.89" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<g filter="url(#softShadow)">
+<circle cx="1224.35" cy="620.00" r="142" fill="#26313A"/>
+<circle cx="1224.35" cy="620.00" r="138" fill="url(#gold)"/>
+<circle cx="1224.35" cy="620.00" r="131" fill="url(#paper)"/>
+<circle cx="1224.35" cy="620.00" r="123" fill="none" stroke="#B49A5C" stroke-width="0.9" opacity="0.75"/>
+<rect x="1177.35" y="501.00" width="94" height="22" rx="11" fill="#7C4D1B"/>
+<text x="1224.35" y="516.50" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" letter-spacing="0.6" fill="#FFFDF8">02 · O2C</text>
+<text x="1224.35" y="564.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="31" font-weight="700" letter-spacing="1.0" fill="#26313A">O2C</text>
+<text x="1224.35" y="592.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="19.5" font-weight="700" fill="#26313A">Order to Cash</text>
+<path d="M1136.31 606.00H1312.39" stroke="#B79445" stroke-width="1.1" opacity="0.75"/>
+<text x="1224.35" y="624.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.8" font-weight="700" fill="#5C4516">Demand Gen, CRM &amp; Quoting</text>
+<text x="1224.35" y="642.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.8" font-weight="700" fill="#26313A">Order Capture, Pricing &amp; Alloc</text>
+<text x="1224.35" y="660.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.8" font-weight="700" fill="#5C4516">Pick, Pack, Ship &amp; Logistics</text>
+<text x="1224.35" y="678.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.8" font-weight="700" fill="#26313A">Invoicing, AR &amp; Claims/Service</text>
+</g></g>
+<g id="P2M">
+<path d="M1121.08 987.79A160 160 0 0 1 1231.29 950.15" fill="none" stroke="#2B4C3F" stroke-width="13"/>
+<path d="M1108.17 972.52A180 180 0 0 1 1120.33 963.10" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1123.43 960.95A180 180 0 0 1 1136.53 952.88" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1139.84 951.08A180 180 0 0 1 1153.71 944.44" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1157.20 943.00A180 180 0 0 1 1171.70 937.87" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1175.32 936.81A180 180 0 0 1 1190.28 933.25" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1193.99 932.58A180 180 0 0 1 1209.25 930.63" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1213.01 930.36A180 180 0 0 1 1228.39 930.05" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1241.32 950.90A160 160 0 0 1 1365.62 1034.87" fill="none" stroke="#A88940" stroke-width="13"/>
+<path d="M1243.44 931.01A180 180 0 0 1 1259.00 933.37" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1262.69 934.13A180 180 0 0 1 1277.91 938.15" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1281.50 939.31A180 180 0 0 1 1296.19 944.96" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1299.63 946.50A180 180 0 0 1 1313.63 953.70" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1316.88 955.60A180 180 0 0 1 1330.02 964.28" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1333.05 966.52A180 180 0 0 1 1345.17 976.57" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1347.94 979.13A180 180 0 0 1 1358.90 990.43" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1361.37 993.27A180 180 0 0 1 1371.05 1005.69" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1373.20 1008.78A180 180 0 0 1 1381.47 1022.17" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1370.06 1043.89A160 160 0 0 1 1383.73 1124.10" fill="none" stroke="#34413B" stroke-width="13"/>
+<path d="M1388.27 1035.63A180 180 0 0 1 1393.80 1049.29" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1395.04 1052.85A180 180 0 0 1 1399.14 1067.00" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1400.00 1070.67A180 180 0 0 1 1402.63 1085.17" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1403.11 1088.91A180 180 0 0 1 1404.24 1103.61" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1404.33 1107.38A180 180 0 0 1 1403.94 1122.11" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1382.53 1134.08A160 160 0 0 1 1309.25 1245.62" fill="none" stroke="#CFB775" stroke-width="13"/>
+<path d="M1402.30 1137.09A180 180 0 0 1 1399.29 1152.38" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1398.37 1156.04A180 180 0 0 1 1393.73 1170.92" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1392.42 1174.45A180 180 0 0 1 1386.21 1188.75" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1384.53 1192.12A180 180 0 0 1 1376.82 1205.67" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1374.79 1208.84A180 180 0 0 1 1365.67 1221.48" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1363.31 1224.42A180 180 0 0 1 1352.89 1236.01" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1350.22 1238.67A180 180 0 0 1 1338.62 1249.08" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1335.68 1251.44A180 180 0 0 1 1323.03 1260.54" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1300.56 1250.68A160 160 0 0 1 1203.11 1268.58" fill="none" stroke="#2B4C3F" stroke-width="13"/>
+<path d="M1310.09 1268.27A180 180 0 0 1 1296.51 1274.90" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1293.04 1276.38A180 180 0 0 1 1278.84 1281.55" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1275.24 1282.66A180 180 0 0 1 1260.57 1286.32" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1256.87 1287.04A180 180 0 0 1 1241.90 1289.14" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1238.15 1289.47A180 180 0 0 1 1223.04 1290.00" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1219.28 1289.93A180 180 0 0 1 1204.20 1288.87" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1193.20 1266.94A160 160 0 0 1 1076.92 1172.16" fill="none" stroke="#A88940" stroke-width="13"/>
+<path d="M1189.30 1286.55A180 180 0 0 1 1174.01 1282.82" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1170.40 1281.72A180 180 0 0 1 1155.61 1276.35" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1152.14 1274.88A180 180 0 0 1 1138.01 1267.94" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1134.72 1266.10A180 180 0 0 1 1121.42 1257.67" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1118.35 1255.48A180 180 0 0 1 1106.05 1245.66" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1103.23 1243.16A180 180 0 0 1 1092.06 1232.06" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1089.54 1229.27A180 180 0 0 1 1079.63 1217.03" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1077.42 1213.98A180 180 0 0 1 1068.90 1200.74" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1067.03 1197.47A180 180 0 0 1 1059.99 1183.39" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1073.31 1162.78A160 160 0 0 1 1066.88 1081.67" fill="none" stroke="#34413B" stroke-width="13"/>
+<path d="M1054.43 1169.38A180 180 0 0 1 1050.14 1155.28" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1049.23 1151.62A180 180 0 0 1 1046.41 1137.15" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1045.88 1133.42A180 180 0 0 1 1044.56 1118.74" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M1044.42 1114.98A180 180 0 0 1 1044.62 1100.24" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M1044.86 1096.48A180 180 0 0 1 1046.57 1081.84" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<g filter="url(#softShadow)">
+<circle cx="1224.35" cy="1110.00" r="142" fill="#26313A"/>
+<circle cx="1224.35" cy="1110.00" r="138" fill="url(#gold)"/>
+<circle cx="1224.35" cy="1110.00" r="131" fill="url(#paper)"/>
+<circle cx="1224.35" cy="1110.00" r="123" fill="none" stroke="#B49A5C" stroke-width="0.9" opacity="0.75"/>
+<rect x="1177.35" y="991.00" width="94" height="22" rx="11" fill="#2B4C3F"/>
+<text x="1224.35" y="1006.50" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" letter-spacing="0.6" fill="#F5E3A9">03 · P2M</text>
+<text x="1224.35" y="1054.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="31" font-weight="700" letter-spacing="1.0" fill="#26313A">P2M</text>
+<text x="1224.35" y="1082.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="19.5" font-weight="700" fill="#26313A">Plan to Manufacture</text>
+<path d="M1136.31 1096.00H1312.39" stroke="#B79445" stroke-width="1.1" opacity="0.75"/>
+<text x="1224.35" y="1114.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.8" font-weight="700" fill="#5C4516">IBP, S&amp;OP, Demand &amp; Supply</text>
+<text x="1224.35" y="1132.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.8" font-weight="700" fill="#26313A">PLM, Recipes, BOMs &amp; Specs</text>
+<text x="1224.35" y="1150.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.8" font-weight="700" fill="#5C4516">Batch/Line Execution, MES &amp; OT</text>
+<text x="1224.35" y="1168.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.8" font-weight="700" fill="#26313A">Quality, LIMS, Warehouse &amp; EHS</text>
+</g></g>
+<g id="S2S">
+<path d="M854.20 1204.46A160 160 0 0 1 946.22 1290.04" fill="none" stroke="#25323B" stroke-width="13"/>
+<path d="M860.97 1185.64A180 180 0 0 1 890.44 1199.37" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M893.68 1201.30A180 180 0 0 1 919.80 1220.65" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M922.58 1223.19A180 180 0 0 1 944.29 1247.39" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M946.51 1250.43A180 180 0 0 1 962.93 1278.49" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M950.01 1299.35A160 160 0 0 1 901.09 1479.02" fill="none" stroke="#A88940" stroke-width="13"/>
+<path d="M968.76 1292.39A180 180 0 0 1 977.43 1324.70" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M978.03 1328.42A180 180 0 0 1 979.87 1361.81" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M979.69 1365.58A180 180 0 0 1 974.63 1398.64" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M973.68 1402.29A180 180 0 0 1 961.93 1433.60" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M960.25 1436.98A180 180 0 0 1 942.32 1465.21" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M939.98 1468.16A180 180 0 0 1 916.62 1492.11" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M893.10 1485.12A160 160 0 0 1 737.17 1502.15" fill="none" stroke="#34413B" stroke-width="13"/>
+<path d="M904.74 1501.39A180 180 0 0 1 876.19 1518.08" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M872.76 1519.64A180 180 0 0 1 841.41 1530.17" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M837.74 1531.00A180 180 0 0 1 804.90 1534.93" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M801.13 1535.00A180 180 0 0 1 768.18 1532.17" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M764.48 1531.46A180 180 0 0 1 732.79 1521.98" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M728.05 1497.91A160 160 0 0 1 649.99 1299.35" fill="none" stroke="#CFB775" stroke-width="13"/>
+<path d="M719.06 1515.77A180 180 0 0 1 690.50 1497.86" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M687.53 1495.54A180 180 0 0 1 663.30 1472.10" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M660.87 1469.21A180 180 0 0 1 642.02 1441.26" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M640.24 1437.93A180 180 0 0 1 627.58 1406.69" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M626.54 1403.07A180 180 0 0 1 620.62 1369.88" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M620.34 1366.12A180 180 0 0 1 621.42 1332.42" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M621.93 1328.68A180 180 0 0 1 629.96 1295.94" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M653.78 1290.04A160 160 0 0 1 745.80 1204.46" fill="none" stroke="#25323B" stroke-width="13"/>
+<path d="M635.50 1281.92A180 180 0 0 1 651.33 1253.53" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M653.49 1250.43A180 180 0 0 1 674.68 1225.79" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M677.42 1223.19A180 180 0 0 1 703.12 1203.29" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M706.32 1201.30A180 180 0 0 1 735.49 1186.96" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<g filter="url(#softShadow)">
+<circle cx="800.00" cy="1355.00" r="142" fill="#26313A"/>
+<circle cx="800.00" cy="1355.00" r="138" fill="url(#gold)"/>
+<circle cx="800.00" cy="1355.00" r="131" fill="url(#paper)"/>
+<circle cx="800.00" cy="1355.00" r="123" fill="none" stroke="#B49A5C" stroke-width="0.9" opacity="0.75"/>
+<rect x="753.00" y="1236.00" width="94" height="22" rx="11" fill="#25323B"/>
+<text x="800.00" y="1251.50" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" letter-spacing="0.6" fill="#E8D49A">04 · S2S</text>
+<text x="800.00" y="1299.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="31" font-weight="700" letter-spacing="1.0" fill="#26313A">S2S</text>
+<text x="800.00" y="1327.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="19.5" font-weight="700" fill="#26313A">Systems to Support</text>
+<path d="M711.96 1341.00H888.04" stroke="#B79445" stroke-width="1.1" opacity="0.75"/>
+<text x="800.00" y="1359.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.8" font-weight="700" fill="#5C4516">Record to Report, GL, Cost &amp; FP&amp;A</text>
+<text x="800.00" y="1377.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.8" font-weight="700" fill="#26313A">Hire to Retire, Payroll, Time &amp; LMS</text>
+<text x="800.00" y="1395.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.8" font-weight="700" fill="#5C4516">IT Ops, Cyber, Workplace &amp; PMO</text>
+<text x="800.00" y="1413.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.8" font-weight="700" fill="#26313A">Enterprise Assets, MRO &amp; Facilities</text>
+</g></g>
+<g id="D2R">
+<path d="M533.12 1081.67A160 160 0 0 1 456.04 1248.34" fill="none" stroke="#3F5147" stroke-width="13"/>
+<path d="M552.80 1078.12A180 180 0 0 1 555.46 1118.19" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M555.25 1121.95A180 180 0 0 1 548.13 1161.47" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M547.02 1165.07A180 180 0 0 1 530.55 1201.69" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M528.59 1204.91A180 180 0 0 1 503.75 1236.45" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M501.07 1239.11A180 180 0 0 1 469.33 1263.70" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M447.20 1253.11A160 160 0 0 1 222.70 1156.97" fill="none" stroke="#A88940" stroke-width="13"/>
+<path d="M456.14 1271.00A180 180 0 0 1 417.82 1284.99" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M414.15 1285.83A180 180 0 0 1 373.57 1289.99" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M369.80 1289.90A180 180 0 0 1 329.44 1283.97" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M325.81 1282.96A180 180 0 0 1 288.14 1267.30" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M284.86 1265.43A180 180 0 0 1 252.20 1241.00" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M249.48 1238.38A180 180 0 0 1 223.81 1206.68" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M221.82 1203.48A180 180 0 0 1 204.72 1166.44" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M220.05 1147.28A160 160 0 0 1 256.44 1003.28" fill="none" stroke="#34413B" stroke-width="13"/>
+<path d="M200.60 1151.94A180 180 0 0 1 195.67 1112.66" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M195.65 1108.89A180 180 0 0 1 200.25 1069.56" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M201.13 1065.90A180 180 0 0 1 214.99 1028.82" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M216.73 1025.47A180 180 0 0 1 239.05 992.77" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M263.38 996.00A160 160 0 0 1 478.92 987.79" fill="none" stroke="#CFB775" stroke-width="13"/>
+<path d="M249.34 981.76A180 180 0 0 1 281.23 956.75" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M284.46 954.81A180 180 0 0 1 321.49 938.34" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M325.10 937.24A180 180 0 0 1 365.03 930.31" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M368.79 930.13A180 180 0 0 1 409.21 933.16" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M412.90 933.90A180 180 0 0 1 451.36 946.70" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M454.76 948.32A180 180 0 0 1 488.93 970.11" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<g filter="url(#softShadow)">
+<circle cx="375.65" cy="1110.00" r="142" fill="#26313A"/>
+<circle cx="375.65" cy="1110.00" r="138" fill="url(#gold)"/>
+<circle cx="375.65" cy="1110.00" r="131" fill="url(#paper)"/>
+<circle cx="375.65" cy="1110.00" r="123" fill="none" stroke="#B49A5C" stroke-width="0.9" opacity="0.75"/>
+<rect x="328.65" y="991.00" width="94" height="22" rx="11" fill="#3F5147"/>
+<text x="375.65" y="1006.50" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" letter-spacing="0.6" fill="#F5E3A9">05 · D2R</text>
+<text x="375.65" y="1054.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="31" font-weight="700" letter-spacing="1.0" fill="#26313A">D2R</text>
+<text x="375.65" y="1082.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="19.5" font-weight="700" fill="#26313A">Data to Report</text>
+<path d="M287.61 1096.00H463.69" stroke="#B79445" stroke-width="1.1" opacity="0.75"/>
+<text x="375.65" y="1114.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.8" font-weight="700" fill="#5C4516">Ingestion, CDC &amp; Lakehouse</text>
+<text x="375.65" y="1132.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.8" font-weight="700" fill="#26313A">Semantic Layer &amp; Governed KPIs</text>
+<text x="375.65" y="1150.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.8" font-weight="700" fill="#5C4516">Executive, Ops &amp; Regulatory BI</text>
+<text x="375.65" y="1168.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.8" font-weight="700" fill="#26313A">Process Mining, AI &amp; Decisions</text>
+</g></g>
+<g id="MDM">
+<path d="M478.92 742.21A160 160 0 0 1 306.44 764.26" fill="none" stroke="#6E4F1D" stroke-width="13"/>
+<path d="M491.83 757.48A180 180 0 0 1 466.81 775.21" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M463.54 777.08A180 180 0 0 1 435.61 789.72" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M432.04 790.94A180 180 0 0 1 402.21 798.03" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M398.47 798.55A180 180 0 0 1 367.84 799.83" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M364.08 799.63A180 180 0 0 1 333.76 795.06" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M330.10 794.14A180 180 0 0 1 301.21 783.89" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M297.52 759.63A160 160 0 0 1 223.55 669.67" fill="none" stroke="#A88940" stroke-width="13"/>
+<path d="M287.75 777.08A180 180 0 0 1 263.10 760.48" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M260.19 758.09A180 180 0 0 1 239.04 737.21" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M236.61 734.32A180 180 0 0 1 219.70 709.88" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M217.85 706.60A180 180 0 0 1 205.75 679.45" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M220.73 660.02A160 160 0 0 1 302.80 477.55" fill="none" stroke="#34413B" stroke-width="13"/>
+<path d="M201.37 665.02A180 180 0 0 1 196.23 634.53" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M195.97 630.76A180 180 0 0 1 196.78 599.85" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M197.24 596.10A180 180 0 0 1 203.97 565.92" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M205.14 562.33A180 180 0 0 1 217.52 533.99" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M219.36 530.70A180 180 0 0 1 236.96 505.26" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M239.39 502.38A180 180 0 0 1 261.53 480.79" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M264.48 478.43A180 180 0 0 1 290.35 461.49" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M311.88 473.25A160 160 0 0 1 457.51 482.53" fill="none" stroke="#CFB775" stroke-width="13"/>
+<path d="M303.91 454.91A180 180 0 0 1 332.61 445.22" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M336.28 444.36A180 180 0 0 1 366.28 440.24" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M370.05 440.09A180 180 0 0 1 400.29 441.69" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M404.02 442.25A180 180 0 0 1 433.42 449.52" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M436.97 450.77A180 180 0 0 1 464.48 463.45" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M465.98 487.94A160 160 0 0 1 533.12 648.33" fill="none" stroke="#6E4F1D" stroke-width="13"/>
+<path d="M477.27 471.43A180 180 0 0 1 501.01 490.83" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M503.69 493.48A180 180 0 0 1 523.30 517.05" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M525.42 520.17A180 180 0 0 1 540.20 547.03" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M541.69 550.50A180 180 0 0 1 551.07 579.68" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M551.88 583.37A180 180 0 0 1 555.54 613.81" fill="none" stroke="#37413D" stroke-width="6.5"/>
+<path d="M555.63 617.58A180 180 0 0 1 553.43 648.16" fill="none" stroke="#9D813F" stroke-width="6.5"/>
+<g filter="url(#softShadow)">
+<circle cx="375.65" cy="620.00" r="142" fill="#26313A"/>
+<circle cx="375.65" cy="620.00" r="138" fill="url(#gold)"/>
+<circle cx="375.65" cy="620.00" r="131" fill="url(#paper)"/>
+<circle cx="375.65" cy="620.00" r="123" fill="none" stroke="#B49A5C" stroke-width="0.9" opacity="0.75"/>
+<rect x="328.65" y="501.00" width="94" height="22" rx="11" fill="#6E4F1D"/>
+<text x="375.65" y="516.50" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" letter-spacing="0.6" fill="#FFFDF8">06 · MDM</text>
+<text x="375.65" y="564.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="31" font-weight="700" letter-spacing="1.0" fill="#26313A">MDM</text>
+<text x="375.65" y="592.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="19.5" font-weight="700" fill="#26313A">Master Data Mgmt</text>
+<path d="M287.61 606.00H463.69" stroke="#B79445" stroke-width="1.1" opacity="0.75"/>
+<text x="375.65" y="624.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.8" font-weight="700" fill="#5C4516">Item, BOM, Formula &amp; Packaging</text>
+<text x="375.65" y="642.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.8" font-weight="700" fill="#26313A">Customer, Distributor &amp; Location</text>
+<text x="375.65" y="660.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.8" font-weight="700" fill="#5C4516">Vendor, Carrier &amp; Co-Man Master</text>
+<text x="375.65" y="678.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.8" font-weight="700" fill="#26313A">Chart of Accounts &amp; Stewardship</text>
+</g></g>
+<g filter="url(#softShadow)">
+<circle cx="800" cy="865" r="206" fill="#26313A"/>
+<circle cx="800" cy="865" r="201" fill="url(#gold)"/>
+<circle cx="800" cy="865" r="191" fill="url(#core)"/>
+<circle cx="800" cy="865" r="179" fill="none" stroke="#7A652F" stroke-width="1.1" opacity="0.7"/>
+<rect x="692" y="720" width="216" height="25" rx="12.5" fill="#26313A"/>
+<text x="800.00" y="737.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.0" font-weight="700" letter-spacing="1.0" fill="#F5E3A9">SHARED PROCESS &amp; DATA HUB</text>
+<text x="800.00" y="781.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="37" font-weight="700" letter-spacing="1.5" fill="#26313A">DATA CORE</text>
+<text x="800.00" y="819.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="19.0" font-weight="700" fill="#26313A">Common Data Model (CDM)</text>
+<text x="800.00" y="844.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.0" font-weight="700" fill="#5C4516">Master Data &amp; Shared Definitions</text>
+<path d="M660 862H940" stroke="#846D37" stroke-width="1.2"/>
+<text x="800.00" y="888.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="18.0" font-weight="700" fill="#26313A">Governed Workflow State</text>
+<text x="800.00" y="913.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="16.0" font-weight="700" fill="#3E4A44">Cross-Constellation Handoffs</text>
+<text x="800.00" y="938.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="15.0" font-weight="700" fill="#3E4A44">End-to-End Audit &amp; Lineage</text>
+<text x="800.00" y="971.00" text-anchor="middle" font-family="Georgia, serif" font-size="14.8" font-weight="700" font-style="italic" fill="#6B5320">Every workflow reads &amp; writes here</text>
+</g>
+<g filter="url(#softShadow)">
+<rect x="457" y="840" width="130" height="50" rx="25" fill="#FFFDF8" stroke="#8C6D28" stroke-width="1.8"/>
+<text x="522.00" y="861.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.4" font-weight="700" letter-spacing="0.5" fill="#6B4F16">WORKFLOW FABRIC</text>
+<text x="522.00" y="878.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.6" font-weight="700" fill="#26313A">Cross-Flow Handoffs</text>
+</g>
+<g filter="url(#softShadow)">
+<rect x="1013" y="840" width="130" height="50" rx="25" fill="#25323B" stroke="#E8D49A" stroke-width="1.8"/>
+<text x="1078.00" y="861.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.4" font-weight="700" letter-spacing="0.5" fill="#F5E3A9">AGENTIC &amp; MCP</text>
+<text x="1078.00" y="878.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="10.6" font-weight="700" fill="#FFFDF8">Human + Agent Spine</text>
+</g>
+<text x="800.00" y="1585.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#26313A">Constellation (6 Macro Flows)  →  Clusters (Broad Arcs)  →  Workflow Blocks (Fine Outer Segments)</text>
+<path d="M350 1630H415" stroke="#2B4C3F" stroke-width="13"/>
+<path d="M422 1630H487" stroke="#A88940" stroke-width="13"/>
+<text x="505.00" y="1638.00" text-anchor="start" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#26313A">Process Clusters</text>
+<path d="M760 1630h8" stroke="#37413D" stroke-width="6.5"/>
+<path d="M772 1630h8" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M784 1630h8" stroke="#37413D" stroke-width="6.5"/>
+<path d="M796 1630h8" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M808 1630h8" stroke="#37413D" stroke-width="6.5"/>
+<path d="M820 1630h8" stroke="#9D813F" stroke-width="6.5"/>
+<path d="M832 1630h8" stroke="#37413D" stroke-width="6.5"/>
+<path d="M844 1630h8" stroke="#9D813F" stroke-width="6.5"/>
+<text x="875.00" y="1638.00" text-anchor="start" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#26313A">Workflow Blocks (Human + Agent)</text>
+<text x="800.00" y="1685.00" text-anchor="middle" font-family="Georgia, serif" font-size="19" font-weight="400" fill="#966B26">Same six constellations in every enterprise — each business configures its own cluster mix and workflow blocks.</text>
 </svg>

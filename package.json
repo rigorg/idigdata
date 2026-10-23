@@ -3,12 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "catalog:import": "tsx scripts/import-outcome-catalog.ts",
+    "catalog:import-factory": "tsx scripts/import-factory-outcome-catalog.ts",
     "dev": "next dev -p 3100",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 3100",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "test": "tsx --test \"lib/**/*.test.ts\" \"lib/**/*.test.tsx\"",
-    "audit:prod": "npm audit --omit=dev"
+    "audit:prod": "npm audit --omit=dev",
+    "indexnow": "node scripts/indexnow-ping.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "2.108.0",
@@ -31,6 +34,7 @@
   },
   "overrides": {
     "postcss": "8.5.23",
-    "sharp": "0.35.4"
+    "sharp": "^0.35.5",
+    "source-map-js": "^1.2.2"
   }
 }
